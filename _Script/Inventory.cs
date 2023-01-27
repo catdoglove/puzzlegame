@@ -14,6 +14,10 @@ public class Inventory : MonoBehaviour
     public int in_i=0;
     public int inout_i = 0;
 
+    public GameObject GM;
+    public GameObject think_obj;
+    public Sprite[] think_spr;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +34,7 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             if (in_i==0)
             {
@@ -38,18 +42,23 @@ public class Inventory : MonoBehaviour
                 {
                     in_i = 1;
                     StopCoroutine("ShowWindow");
+                    StopCoroutine("Show");
                     StartCoroutine("ShowWindow");
+                    StartCoroutine("Show");
+                    GM.GetComponent<MoveCharacter>().canMove = false;
                 }
                 else
                 {
                     in_i = 1;
                     StopCoroutine("ShowWindow");
+                    StopCoroutine("CloseWindow");
                     StartCoroutine("CloseWindow");
+                    GM.GetComponent<MoveCharacter>().canMove = true;
                 }
             }
         }
 
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (in_i == 0)
             {
@@ -57,13 +66,18 @@ public class Inventory : MonoBehaviour
                 {
                     in_i = 1;
                     StopCoroutine("ShowWindow");
+                    StopCoroutine("Show");
                     StartCoroutine("ShowWindow");
+                    StartCoroutine("Show");
+                    GM.GetComponent<MoveCharacter>().canMove = false;
                 }
                 else
                 {
                     in_i = 1;
                     StopCoroutine("ShowWindow");
+                    StopCoroutine("CloseWindow");
                     StartCoroutine("CloseWindow");
+                    GM.GetComponent<MoveCharacter>().canMove = true;
                 }
             }
         }
@@ -129,6 +143,7 @@ public class Inventory : MonoBehaviour
     /// <returns></returns>
     IEnumerator CloseWindow()
     {
+        think_obj.SetActive(false);
         while (in_i == 1)
         {
             position.y = position.y + 5f * Time.deltaTime;
@@ -140,7 +155,24 @@ public class Inventory : MonoBehaviour
             }
             yield return new WaitForSeconds(0.01f);
         }
+
     }
 
 
+    IEnumerator Show()
+    {
+        int k=0;
+        think_obj.SetActive(true);
+
+        while (k <= 2)
+        {
+            if (k<=2)
+            {
+                think_obj.GetComponent<SpriteRenderer>().sprite = think_spr[k];
+                k++;
+            }
+
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
 }
