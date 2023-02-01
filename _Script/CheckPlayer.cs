@@ -23,6 +23,7 @@ public class CheckPlayer : MonoBehaviour
     public string SetItemPref_str = "text";
     public int SetItemPref_i = 0;
     public bool itemQ_b;
+    public GameObject GetItem_obj, GetItemS_obj;
 
 
     public string SetEventPref_str = "text";
@@ -73,10 +74,6 @@ public class CheckPlayer : MonoBehaviour
             else
             {
 
-                if (Input.GetKeyUp(KeyCode.Space))
-                {
-                    EventOrItem();
-                }
                 //Debug.Log(hit.name);
                 if (a == 0)
                 {
@@ -88,6 +85,11 @@ public class CheckPlayer : MonoBehaviour
                     balloon_obj.transform.position = position;
                 }
                 balloon_obj.SetActive(true);
+
+                if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    EventOrItem();
+                }
             }
             yield return new WaitForSeconds(0.01f);
         }
@@ -127,6 +129,11 @@ public class CheckPlayer : MonoBehaviour
             a++;
             PlayerPrefs.SetInt("inventorynum", a);
             PlayerPrefs.SetInt("item" + SetItemPref_i, 1);
+
+            GetItem_obj.SetActive(true);
+            GetItemS_obj.SetActive(true);
+            balloon_obj.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
 

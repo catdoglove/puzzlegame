@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    public GameObject invenItem_obj;
+    public GameObject[] invenItem_obj;
     public Sprite[] Item_spr;
     public int a = 0;
 
@@ -90,26 +90,36 @@ public class Inventory : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("inventoryget0", 0) == 0)
             {
-                invenItem_obj.SetActive(false);
-                if (invenItem_obj.GetComponent<Image>().sprite != null)
+                invenItem_obj[0].SetActive(false);
+                if (invenItem_obj[0].GetComponent<Image>().sprite != null)
                 {
-                    invenItem_obj.GetComponent<Image>().sprite = null;
+                    invenItem_obj[0].GetComponent<Image>().sprite = null;
                 }
             }
             else
+
+
             {
-                invenItem_obj.SetActive(true);
-                if (invenItem_obj.GetComponent<Image>().sprite == null)
+                invenItem_obj[0].SetActive(true);
+                if (invenItem_obj[0].GetComponent<Image>().sprite == null)
                 {
-                    invenItem_obj.GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("inventoryget0", 0)];
+                    invenItem_obj[0].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("inventoryget0", 0)];
                 }
                 if (PlayerPrefs.GetInt("inventoryget1", 0) == 0)
                 {
-
+                    invenItem_obj[1].SetActive(false);
+                    if (invenItem_obj[1].GetComponent<Image>().sprite != null)
+                    {
+                        invenItem_obj[1].GetComponent<Image>().sprite = null;
+                    }
                 }
                 else
                 {
-
+                    invenItem_obj[1].SetActive(true);
+                    if (invenItem_obj[1].GetComponent<Image>().sprite == null)
+                    {
+                        invenItem_obj[1].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("inventoryget1", 0)];
+                    }
                 }
             }
 
