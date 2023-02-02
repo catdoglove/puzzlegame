@@ -1,17 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AnimationSample : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public Animator doorAni;
+    public Animator doorAni, NPC_hedgehogAni, NPC_rabbit1Ani, NPC_rabbit2Ani, NPC_cat1Ani, NPC_bear1Ani, NPC_bear2Ani;
+    public GameObject NPC_sheep1;
+    public Sprite[] NPC_sheepSpr;
     public GameObject testBtnobj;
     void Start()
     {
         doorAni.GetComponent<Animator>().speed = 0.0f;//멈춤
          StartCoroutine("openDoor");
+        //talkAnimation();
+
+
+    }
+
+    void talkAnimation()
+    {
+        NPC_bear1Ani.Play("ani_npc_bear1_talk");
+        NPC_bear2Ani.Play("ani_npc_bear2_talk");
+        NPC_hedgehogAni.Play("ani_npc_hedgehog1_talk");
+        NPC_rabbit1Ani.Play("ani_npc_rabbit1_talk");
+        NPC_rabbit2Ani.Play("ani_npc_rabbit2_talk");
+        NPC_cat1Ani.Play("ani_npc_cat1_talk");
+
+        NPC_sheep1.GetComponent<SpriteRenderer>().sprite = NPC_sheepSpr[1];
+
+
     }
 
 
