@@ -38,11 +38,11 @@ public class PositionToOrder : MonoBehaviour
             {
                 if (IsUp_b)
                 {
-                    changeOrder_obj.GetComponent<SpriteRenderer>().sortingOrder = 11;
+                    changeOrder_obj.GetComponent<SpriteRenderer>().sortingOrder = 13;
                 }
                 else
                 {
-                    changeOrder_obj.GetComponent<SpriteRenderer>().sortingOrder = 9;
+                    changeOrder_obj.GetComponent<SpriteRenderer>().sortingOrder = 10;
                 }
             }
             yield return new WaitForSeconds(0.1f);

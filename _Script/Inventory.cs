@@ -22,11 +22,6 @@ public class Inventory : MonoBehaviour
     void Start()
     {
 
-        PlayerPrefs.SetInt("inventorynum", 0);
-        PlayerPrefs.SetInt("inventoryget0", 0);
-        PlayerPrefs.SetInt("item0", 0);
-        PlayerPrefs.SetInt("inventoryget1", 0);
-        PlayerPrefs.SetInt("item1", 0);
 
         position = itemWindow_obj.transform.position;
     }
@@ -81,8 +76,8 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
-
-        if (PlayerPrefs.GetInt("inventorynum", 0) == a)
+        
+        if (PlayerPrefs.GetInt("changeitem", 0) == 0)
         {
 
         }
@@ -100,11 +95,8 @@ public class Inventory : MonoBehaviour
 
 
             {
-                invenItem_obj[0].SetActive(true);
-                if (invenItem_obj[0].GetComponent<Image>().sprite == null)
-                {
-                    invenItem_obj[0].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("inventoryget0", 0)];
-                }
+
+                SetItem(0);
                 if (PlayerPrefs.GetInt("inventoryget1", 0) == 0)
                 {
                     invenItem_obj[1].SetActive(false);
@@ -115,18 +107,53 @@ public class Inventory : MonoBehaviour
                 }
                 else
                 {
-                    invenItem_obj[1].SetActive(true);
-                    if (invenItem_obj[1].GetComponent<Image>().sprite == null)
-                    {
-                        invenItem_obj[1].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("inventoryget1", 0)];
-                    }
+                    SetItem(1);
                 }
             }
 
             a = PlayerPrefs.GetInt("inventorynum", 0);
+
+
+            PlayerPrefs.SetInt("changeitem", 0);
         }
     }
 
+
+    /// <summary>
+    /// 아이템 번호를 받고 슬롯 이미지를 바꾸고 슬롯을 켜준다
+    /// </summary>
+    /// <param name="a"></param>
+    void SetItem(int a)
+    {
+
+        int p = PlayerPrefs.GetInt("inventoryget" + a, 0);
+
+        Debug.Log("a"+a);
+        int o = PlayerPrefs.GetInt("itemnum" + p);
+        
+        int t = PlayerPrefs.GetInt("stacking", 0);
+        int t2 = PlayerPrefs.GetInt("whierestacking", 0);
+        if (t == 1&& t2==a)
+        {
+            PlayerPrefs.SetInt("stacking", 0);
+            PlayerPrefs.SetInt("whierestacking", 0);
+
+            invenItem_obj[a].SetActive(true);
+            if (invenItem_obj[a].GetComponent<Image>().sprite == null)
+            {
+                invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[p];
+            }
+        }
+        else
+        {
+            invenItem_obj[a].SetActive(true);
+            if (invenItem_obj[a].GetComponent<Image>().sprite == null)
+            {
+                invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[p];
+            }
+        }
+        
+    }
 
     /// <summary>
     /// 아래로 내려오기
