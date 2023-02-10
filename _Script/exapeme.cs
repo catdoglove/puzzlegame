@@ -6,7 +6,7 @@ using UnityEngine;
 public class exapeme : MonoBehaviour
 {
     private float moveSpeed = 5.0f;                 //이동 속도
-    private BoxCollider2D rigid2D;
+    private PolygonCollider2D rigid2D;
     // Start is called before the first frame update
 
     public Animator charAni;
@@ -24,7 +24,7 @@ public class exapeme : MonoBehaviour
     }
     void Awake()
     {
-        rigid2D = GetComponent<BoxCollider2D>();
+        rigid2D = GetComponent<PolygonCollider2D>();
     }
 
     // Update is called once per frame
@@ -90,17 +90,17 @@ public class exapeme : MonoBehaviour
         rigid2D.enabled = false;    //캐릭터 자신의 박스컬라이더를 인식못하게 해줌
         hit = Physics2D.Linecast(start, position, layerMask);
         rigid2D.enabled = true;
-
+        /*
         if (hit.transform != null)    //부딪히면 다음 명령어들은 실행하지 않음
         {
-            moveX = 0;
-            moveY = 0;
+           // moveX = 0;
+           // moveY = 0;
         }
         else
         {
-
+            Debug.Log("test");
         }
-
+        */
 
         transform.Translate(new Vector3(moveX, moveY, 0) * 0.1f);
 
