@@ -5,17 +5,16 @@ using UnityEngine;
 
 public class exapeme : MonoBehaviour
 {
-    private float moveSpeed = 5.0f;                 //이동 속도
     private PolygonCollider2D rigid2D;
-    // Start is called before the first frame update
+    int ckwalk = 0;
+    int ckCrash = 0;
 
     public Animator charAni;
     float moveX, moveY, charspeed;
-    float normalSpeed = 0.2f,runSpeed=0.3f;
+    float normalSpeed = 0.1f,runSpeed=0.2f, crushSpeed=0.05f;
     public Action keyaction = null;
 
     public GameObject charSpr;
-    public LayerMask layerMask; //통과가 불가능한 레이어를 설정 
     public Vector3 position;
 
 
@@ -34,84 +33,77 @@ public class exapeme : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    /*void FixedUpdate()
-    {
-        float h = Input.GetAxisRaw("Horizontal");
-        rigid2D.AddForce(Vector2.right * h, ForceMode2D.Impulse);
-
-    }*/
-
-
-
 
 
     void charWalk()
     {
-        RaycastHit2D hit;
         Vector2 start = transform.position;
 
         moveX = 0f;
         moveY = 0f;
 
         if (Input.GetKey(KeyCode.RightShift))
-            charspeed = runSpeed;
+        {
+            if (ckCrash == 1) charspeed = crushSpeed;
+            else charspeed = runSpeed;
+        }
         else
-            charspeed = normalSpeed;
+        {
+            if (ckCrash == 1) charspeed = crushSpeed;
+            else charspeed = normalSpeed;
+        }
 
+        if (Input.GetKey(KeyCode.W))
+        {
+            moveY += charspeed; ckwalk = 1;
+        }
 
-
-
-        if (Input.GetKey(KeyCode.W)) moveY += charspeed;
-
-        if (Input.GetKey(KeyCode.S)) moveY -= charspeed;
+        if (Input.GetKey(KeyCode.S))
+        {
+            moveY -= charspeed; ckwalk = 1;
+        }
 
         if (Input.GetKey(KeyCode.A))
         {
-            moveX -= charspeed; charSpr.GetComponent<SpriteRenderer>().flipX = true;
+            moveX -= charspeed; charSpr.GetComponent<SpriteRenderer>().flipX = true; ckwalk = 1;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            moveX += charspeed; charSpr.GetComponent<SpriteRenderer>().flipX = false;
+            moveX += charspeed; charSpr.GetComponent<SpriteRenderer>().flipX = false; ckwalk = 1;
         }
 
 
         if (Input.anyKey == false)
         {
             charAni.Play("ani_char_stop");
-        }
-        else
+            ckwalk = 0;
+        } 
+        else if (ckwalk == 1)
         {
             charAni.Play("ani_char_walk");
         }
 
-
-        rigid2D.enabled = false;    //캐릭터 자신의 박스컬라이더를 인식못하게 해줌
-        hit = Physics2D.Linecast(start, position, layerMask);
-        rigid2D.enabled = true;
-        /*
-        if (hit.transform != null)    //부딪히면 다음 명령어들은 실행하지 않음
-        {
-           // moveX = 0;
-           // moveY = 0;
-        }
-        else
-        {
-            Debug.Log("test");
-        }
-        */
-
-        transform.Translate(new Vector3(moveX, moveY, 0) * 0.1f);
+        transform.Translate(new Vector3(moveX, moveY, 0) * 0.1f);        
 
     }
 
-
-    //enterstay
-
-    private void OnCollisionEnter(Collision collision)
+        
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("test");
+        ckCrash = 1;
+        Debug.Log("충돌시작");
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+       // Debug.Log("충돌중");
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        Debug.Log("충돌종료");
+        ckCrash = 0;
+    }
+
 
 }
