@@ -8,9 +8,12 @@ public class AnimationSample : MonoBehaviour
     // Start is called before the first frame update
 
     public Animator doorAni, NPC_hedgehogAni, NPC_rabbit1Ani, NPC_rabbit2Ani, NPC_cat1Ani, NPC_bear1Ani, NPC_bear2Ani;
-    public GameObject NPC_sheep1;
+    public GameObject NPC_sheep1, charmeme,lakeboat;
     public Sprite[] NPC_sheepSpr;
     public GameObject testBtnobj;
+
+
+    float moveX, moveY;
     void Start()
     {
         doorAni.GetComponent<Animator>().speed = 0.0f;//멈춤
