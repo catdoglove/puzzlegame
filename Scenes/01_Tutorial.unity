@@ -13566,7 +13566,8 @@ MonoBehaviour:
   map2_obj:
   - {fileID: 1482578062}
   - {fileID: 1495904707}
-  mapRespawn_obj: []
+  mapRespawn_obj:
+  - {fileID: 1090878517}
   mapToGo_i: 1
   mapNow_i: 0
   mapRespawn_i: 0
