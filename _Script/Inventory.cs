@@ -18,6 +18,13 @@ public class Inventory : MonoBehaviour
     public GameObject think_obj;
     public Sprite[] think_spr;
 
+    public GameObject selected_obj;
+    public GameObject[] selectBox_obj;
+    public Sprite _spr;
+    public int selected_i = 0;
+
+    public int[] items_i;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -116,6 +123,13 @@ public class Inventory : MonoBehaviour
 
             PlayerPrefs.SetInt("changeitem", 0);
         }
+
+        if (GM.GetComponent<MoveCharacter>().canMove==false)
+        {
+            SelectMove();
+            SelectItem();
+        }
+
     }
 
 
@@ -125,23 +139,27 @@ public class Inventory : MonoBehaviour
     /// <param name="a"></param>
     void SetItem(int a)
     {
-
         int p = PlayerPrefs.GetInt("inventoryget" + a, 0);
-
-        Debug.Log("a"+a);
         int o = PlayerPrefs.GetInt("itemnum" + p);
-        
         int t = PlayerPrefs.GetInt("stacking", 0);
         int t2 = PlayerPrefs.GetInt("whierestacking", 0);
+        
         if (t == 1&& t2==a)
         {
             PlayerPrefs.SetInt("stacking", 0);
             PlayerPrefs.SetInt("whierestacking", 0);
-
             invenItem_obj[a].SetActive(true);
             if (invenItem_obj[a].GetComponent<Image>().sprite == null)
             {
                 invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[p];
+                items_i[a] = p;
+            }
+            else
+            {
+                invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[o];
+                items_i[a] = o;
+
+                //Debug.Log("a"+o);
             }
         }
         else
@@ -150,6 +168,7 @@ public class Inventory : MonoBehaviour
             if (invenItem_obj[a].GetComponent<Image>().sprite == null)
             {
                 invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[p];
+                items_i[a] = p;
             }
         }
         
@@ -211,5 +230,68 @@ public class Inventory : MonoBehaviour
 
             yield return new WaitForSeconds(0.2f);
         }
+    }
+
+
+    void SelectItem()
+    {
+        if (items_i[selected_i] != 0)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                selected_obj.SetActive(true);
+                selected_obj.GetComponent<Image>().sprite = invenItem_obj[selected_i].GetComponent<Image>().sprite;
+                PlayerPrefs.SetInt("selecteditemnum", items_i[selected_i]);
+            }
+        }
+    }
+
+    void DelItem()
+    {
+        selected_obj.SetActive(false);
+    }
+
+    void SelectMove()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                selectBox_obj[i].SetActive(false);
+            }
+            if (selected_i<6)
+            {
+                selected_i++;
+            }
+
+            selectBox_obj[selected_i].SetActive(true);
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    selectBox_obj[i].SetActive(false);
+                }
+
+                if (selected_i > 0)
+                {
+                    selected_i--;
+                }
+                selectBox_obj[selected_i].SetActive(true);
+            }
+        }
+    }
+    
+
+
+    void SeletR()
+    {
+
+    }
+    void SeletL()
+    {
+
     }
 }

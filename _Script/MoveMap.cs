@@ -69,15 +69,22 @@ public class MoveMap : MonoBehaviour
     void MovingMap()
     {
         //mapNow_i = PlayerPrefs.GetInt("mapindexnum", 0);
-        
+
+        if (mapRespawn_obj[0] == null)
+        {
+            mapRespawn_obj = GameObject.FindGameObjectsWithTag("Map");
+        }
+
         map2_obj[mapToGo_i].SetActive(true);
         map_obj[mapToGo_i].SetActive(true);
         map2_obj[mapNow_i].SetActive(false);
         map_obj[mapNow_i].SetActive(false);
 
+        int k = mapRespawn_obj.Length;
+        k--;
         GM.GetComponent<MoveCharacter>().canMove = false;
-        player_obj.transform.position = mapRespawn_obj[mapRespawn_i].transform.position;
-        GM.GetComponent<MoveCharacter>().position = mapRespawn_obj[mapRespawn_i].transform.position;
+        player_obj.transform.position = mapRespawn_obj[k-mapRespawn_i].transform.position;
+        GM.GetComponent<MoveCharacter>().position = mapRespawn_obj[k - mapRespawn_i].transform.position;
         GM.GetComponent<MoveCharacter>().canMove = true;
 
         PlayerPrefs.SetInt("mapindexnum", mapToGo_i);

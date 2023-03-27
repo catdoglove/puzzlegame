@@ -16,8 +16,8 @@ public class CheckPlayer : MonoBehaviour
     public GameObject balloon_obj;
     public float x_f, y_f;
     int a = 0;
-
-    public GameObject GMS;
+    int k = 0;
+    public GameObject GMS,GM;
 
     //
     public string SetItemPref_str = "text";
@@ -27,9 +27,11 @@ public class CheckPlayer : MonoBehaviour
 
 
     public string SetEventPref_str = "text";
-    public int[] EventNum_i;
-    public Sprite[] Event_spr;
-    public GameObject talkBall_obj;
+    public int[] EventNum_i, EventNum1_i, EventNum2_i;
+    public Sprite[] Event_spr, Event2_spr;
+    public GameObject talkBall_obj, talkBallB_obj;
+
+    public GameObject char_obj;
 
     private void OnEnable()
     {
@@ -38,6 +40,8 @@ public class CheckPlayer : MonoBehaviour
 
     void Start()
     {
+        PlayerPrefs.DeleteAll();
+        /*
         PlayerPrefs.SetInt("inventorynum", 0);
         PlayerPrefs.SetInt("inventoryget0", 0);
         PlayerPrefs.SetInt("item0", 0);
@@ -52,8 +56,10 @@ public class CheckPlayer : MonoBehaviour
         PlayerPrefs.SetInt("inventoryget2", 0);
         PlayerPrefs.SetInt("itemnum2", 0);
         PlayerPrefs.SetInt("mapindexnum", 0);
-        
-        position = this.transform.position;
+        PlayerPrefs.SetInt("stacking", 0);
+        PlayerPrefs.SetInt("whierestacking", 0);
+        PlayerPrefs.SetInt("changeitem", 0);
+        */
     }
 
     void OnDrawGizmos()
@@ -64,26 +70,45 @@ public class CheckPlayer : MonoBehaviour
 
     private void Update()
     {
-        Collider2D hit = Physics2D.OverlapBox(transform.position, size, 0, whatIsLayer);
+
+            Collider2D hit = Physics2D.OverlapBox(transform.position, size, 0, whatIsLayer);
         if (hit == null)
         {
-            balloon_obj.SetActive(false);
-            GMS.GetComponent<BounceAnim>().resetAnim();
+            if (a==1)
+            {
+                balloon_obj.SetActive(false);
+                GMS.GetComponent<BounceAnim>().resetAnim();
+            }
+            a = 0;
         }
         else
         {
             //Debug.Log(hit.name);
             if (a == 0)
             {
+                position = this.transform.position;
                 x_f = balloon_spr.bounds.size.x;
                 y_f = balloon_spr.bounds.size.y;
-                position.x = position.x - balloon_spr.bounds.size.x * 3f;
+                //position.x = position.x - balloon_spr.bounds.size.x * 3f;
                 position.y = position.y + (balloon_spr.bounds.size.y) * 1.5f;
                 a = 1;
                 balloon_obj.transform.position = position;
             }
-            balloon_obj.SetActive(true);
 
+            if (char_obj.transform.position.x > this.transform.position.x)
+            {
+                position.x = this.transform.position.x - balloon_spr.bounds.size.x * 3f - 0.5f;
+                balloon_obj.GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else
+            {
+                position.x = this.transform.position.x + balloon_spr.bounds.size.x * 3f + 0.5f;
+                balloon_obj.GetComponent<SpriteRenderer>().flipX = true;
+            }
+
+            balloon_obj.transform.position = position;
+
+            balloon_obj.SetActive(true);
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 EventOrItem();
@@ -104,7 +129,7 @@ public class CheckPlayer : MonoBehaviour
     /// </summary>
     void EventOrItem()
     {
-        /*
+        
         if (itemQ_b)
         {
             ItemSetting();
@@ -114,7 +139,7 @@ public class CheckPlayer : MonoBehaviour
         {
             EventSetting();
         }
-        */
+        
     }
 
     /// <summary>
@@ -131,7 +156,7 @@ public class CheckPlayer : MonoBehaviour
 
 
             int p = PlayerPrefs.GetInt("inventoryget" + a, 0);
-            int o = PlayerPrefs.GetInt("itemnum" + p);
+            int o = PlayerPrefs.GetInt("itemnum" + SetItemPref_i, 0);
 
         CheckStack();
 
@@ -144,20 +169,17 @@ public class CheckPlayer : MonoBehaviour
             if (PlayerPrefs.GetInt("inventoryget" + a, 0) == 0)
             {
                 PlayerPrefs.SetInt("inventoryget" + a, SetItemPref_i);
+                
             }
             a++;
         }
+
         
-
         o++;
-        //Debug.Log("o" + o);
-        //Debug.Log("a" + a);
         PlayerPrefs.SetInt("inventorynum", a);
-
-            PlayerPrefs.SetInt("itemnum" + p, o);
-        Debug.Log("o" + o);
+        p = PlayerPrefs.GetInt("inventoryget" + a, 0);
+        PlayerPrefs.SetInt("itemnum" + SetItemPref_i, o);
         //PlayerPrefs.SetInt("itemnum" + SetItemPref_i, 1);
-
         GetItem_obj.SetActive(true);
             GetItemS_obj.SetActive(true);
             balloon_obj.SetActive(false);
@@ -183,6 +205,8 @@ public class CheckPlayer : MonoBehaviour
             {
                 PlayerPrefs.SetInt("stacking", 1);
                 PlayerPrefs.SetInt("whierestacking", i);
+
+                Debug.Log(i);
             }
         }
     }
@@ -207,12 +231,7 @@ public class CheckPlayer : MonoBehaviour
         }
         PlayerPrefs.SetInt("inventorynum", a);
     }
-
-
-
-
-
-
+    
 
 
     /// <summary>
@@ -222,34 +241,73 @@ public class CheckPlayer : MonoBehaviour
     {
         int a = 0;
         a = PlayerPrefs.GetInt(SetEventPref_str, 0);
-
+        k = a;
         Debug.Log("a"+ a);
         switch (EventNum_i[a])
         {
             case 0:
                 break;
-            case 1://말풍선띄우고 다음 행동으로
+            case 1://말풍선띄우고 다음으로
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StopCoroutine("talkBall");
                 StartCoroutine("talkBall");
+                StopAndTalk();
                 a++;
                 break;
             case 2://말풍선 띄우고 아이템 요구
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StopCoroutine("talkBall");
                 StartCoroutine("talkBall");
-
                 break;
-            case 3://말풍선 띄우고 멈춤
-                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
-                StartCoroutine("talkBall");
+            case 3://대화 멈춤
+                StopTalk();
+                talkBallB_obj.SetActive(false);
+                a++;
                 break;
             case 4://말풍선 띄우고 특수 아이템요구
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StopCoroutine("talkBall");
                 StartCoroutine("talkBall");
+                StopAndTalk();
+                a++;
+                if (PlayerPrefs.GetInt("selecteditemnum", 0)== SetItemPref_i)
+                {
+                    a++;
+                }
+                break;
+            case 5://대화 종료
+                StopTalk();
+                talkBallB_obj.SetActive(false);
+                a--;
+                break;
+            case 6://위로 이동
+                StopTalk();
+                talkBallB_obj.SetActive(false);
+                a--;
                 break;
             default:
                 break;
         }
         PlayerPrefs.SetInt(SetEventPref_str, a);
+    }
+
+    public void StopAndTalk()
+    {
+        GM.GetComponent<MoveCharacter>().canMove = false;
+        
+    }
+
+
+
+    public void StopTalk()
+    {
+
+        GM.GetComponent<MoveCharacter>().canMove = true;
+
+
     }
 
     void sw()
@@ -261,15 +319,25 @@ public class CheckPlayer : MonoBehaviour
 
     IEnumerator talkBall()
     {
+        
         int c = 1;
-        while (c <= 100)
+        int s = 0;
+        while (c <= 20)
         {
-            talkBall_obj.SetActive(true);
-            yield return new WaitForSeconds(0.01f);
-            c++;
+            if (s==0)
+            {
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[k];
+                s = 1;
+            }
+            else
+            {
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event2_spr[k];
+                s = 0;
+            }
+            yield return new WaitForSeconds(0.3f);
+            //c++;
         }
 
-        talkBall_obj.SetActive(false);
     }
 
 }
