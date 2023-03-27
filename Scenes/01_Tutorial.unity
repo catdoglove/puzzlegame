@@ -11429,10 +11429,10 @@ MonoBehaviour:
   - {fileID: 572611130}
   - {fileID: 572611130}
   mapRespawn_obj:
-  - {fileID: 0}
+  - {fileID: 1072630255}
   mapToGo_i: 1
   mapNow_i: 2
-  mapRespawn_i: 3
+  mapRespawn_i: 0
   move_obj: {fileID: 1044358943}
   player_obj: {fileID: 1255164370}
   size: {x: 2, y: 2}
@@ -18820,10 +18820,11 @@ MonoBehaviour:
   map2_obj:
   - {fileID: 1482578062}
   - {fileID: 1495904707}
-  mapRespawn_obj: []
+  mapRespawn_obj:
+  - {fileID: 651129192}
   mapToGo_i: 0
   mapNow_i: 1
-  mapRespawn_i: 1
+  mapRespawn_i: 0
   move_obj: {fileID: 1638960263}
   player_obj: {fileID: 1255164370}
   size: {x: 2, y: 2}
@@ -22731,10 +22732,11 @@ MonoBehaviour:
   - {fileID: 1482578062}
   - {fileID: 1495904707}
   - {fileID: 572611130}
-  mapRespawn_obj: []
+  mapRespawn_obj:
+  - {fileID: 1329453181}
   mapToGo_i: 2
   mapNow_i: 1
-  mapRespawn_i: 2
+  mapRespawn_i: 0
   move_obj: {fileID: 2082945983}
   player_obj: {fileID: 1255164370}
   size: {x: 2, y: 2}
