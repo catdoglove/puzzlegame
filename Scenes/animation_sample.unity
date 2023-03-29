@@ -983,14 +983,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214e674e48e71d14d872f128c9c716c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charAni: {fileID: 0}
-  charSpr: {fileID: 0}
-  charSPR: []
-  position: {x: 0, y: 0, z: 0}
-  Target: {fileID: 0}
-  firingAngle: 0
-  gravity: 1.5
-  Projectile: {fileID: 0}
 --- !u!212 &140044535
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3712,7 +3704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &437996818
 Transform:
   m_ObjectHideFlags: 0
@@ -6815,7 +6807,6 @@ MonoBehaviour:
   NPC_bear1Ani: {fileID: 1252781937}
   NPC_bear2Ani: {fileID: 71566615}
   NPC_sheep1: {fileID: 293883328}
-  charmeme: {fileID: 2026407349}
   lakeboat: {fileID: 1164762042}
   NPC_sheepSpr:
   - {fileID: 21300000, guid: 62ef9847cbd05a9479d3d57e435621c9, type: 3}
@@ -13334,14 +13325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd50f038c65f7f45a4fde2ae8e2b8d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charAni: {fileID: 0}
-  charSpr: {fileID: 0}
-  charSPR: []
-  position: {x: 0, y: 0, z: 0}
-  Target: {fileID: 1339488784}
-  firingAngle: 0
-  gravity: 5
-  Projectile: {fileID: 1800099438}
 --- !u!1 &1802236014
 GameObject:
   m_ObjectHideFlags: 0
@@ -15681,9 +15664,9 @@ GameObject:
   - component: {fileID: 2026407353}
   - component: {fileID: 2026407355}
   - component: {fileID: 2026407354}
-  - component: {fileID: 2026407356}
+  - component: {fileID: 2026407352}
   m_Layer: 0
-  m_Name: "\uCE90\uB9AD\uD130\uC6C0\uC9C1"
+  m_Name: "\uC8FC\uC778\uACF5"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15747,12 +15730,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026407349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.45, y: -1.74, z: -1.686955}
+  m_LocalPosition: {x: -1.25, y: -1.76, z: -1.686955}
   m_LocalScale: {x: 0.94, y: 0.94, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2026407352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026407349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f50f47cac99644d459e82cef5a987b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charAni: {fileID: 2026407353}
+  charSpr: {fileID: 2026407349}
+  charSPR:
+  - {fileID: 21300000, guid: 0fc7f128f5860564d90b47c1f43f539d, type: 3}
+  - {fileID: 21300000, guid: 6b0b25f47ba708f4c8ba22f56d0e8b66, type: 3}
+  position: {x: 0, y: 0, z: 0}
+  Target: {fileID: 1339488786}
+  firingAngle: 45
+  gravity: 1.5
+  Projectile: {fileID: 2026407351}
 --- !u!95 &2026407353
 Animator:
   serializedVersion: 3
@@ -15824,28 +15829,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2026407356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2026407349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cd50f038c65f7f45a4fde2ae8e2b8d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charAni: {fileID: 2026407353}
-  charSpr: {fileID: 2026407349}
-  charSPR:
-  - {fileID: 21300000, guid: 0fc7f128f5860564d90b47c1f43f539d, type: 3}
-  - {fileID: 21300000, guid: 6b0b25f47ba708f4c8ba22f56d0e8b66, type: 3}
-  position: {x: 0, y: 0, z: 0}
-  Target: {fileID: 1339488786}
-  firingAngle: 45
-  gravity: 1.5
-  Projectile: {fileID: 2026407351}
 --- !u!1 &2052767479
 GameObject:
   m_ObjectHideFlags: 0
@@ -15862,7 +15845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2052767480
 Transform:
   m_ObjectHideFlags: 0

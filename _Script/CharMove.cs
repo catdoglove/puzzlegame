@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class example2 : MonoBehaviour
+public class CharMove : MonoBehaviour
 {
     private PolygonCollider2D rigid2D;
     int ckwalk = 0;
@@ -25,6 +25,8 @@ public class example2 : MonoBehaviour
     public Transform Projectile;
     private Transform myTransform;
 
+    // Start is called before the first frame update
+
     void Awake()
     {
         myTransform = transform;
@@ -33,7 +35,7 @@ public class example2 : MonoBehaviour
 
     void Start()
     {
-        jump();
+       // jump();
     }
 
     void Update()
@@ -105,7 +107,7 @@ public class example2 : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         ckCrash = 1;
-        Debug.Log("충돌시작");
+        //Debug.Log("충돌시작");
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -114,18 +116,15 @@ public class example2 : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        Debug.Log("충돌종료");
+        //Debug.Log("충돌종료");
         ckCrash = 0;
     }
 
 
     public void jump()
     {
-        // if (Input.GetKey(KeyCode.Space))
         {
-
             StartCoroutine("jumpMotion");
-
         }
     }
 
@@ -163,13 +162,13 @@ public class example2 : MonoBehaviour
 
             Debug.Log(Time.deltaTime);
 
-            Projectile.Translate(0.01f, (Vy - (gravity * elapse_time)) * (Time.deltaTime+f), 0);  //(a,b) a는 좌-우+구분 b는 점프 높이
+            Projectile.Translate(0.01f, (Vy - (gravity * elapse_time)) * (Time.deltaTime + f), 0);  //(a,b) a는 좌-우+구분 b는 점프 높이
 
             // Projectile.rotation = Quaternion.identity;
 
             elapse_time += Time.deltaTime;
 
-            f= f+0.0001f; //올라가는 속도 조절, 숫자가 클 수록 높이 점프
+            f = f + 0.0001f; //올라가는 속도 조절, 숫자가 클 수록 높이 점프
 
             yield return null;
         }
