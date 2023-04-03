@@ -7,13 +7,13 @@ public class EventScenes : MonoBehaviour
     public GameObject[] move_obj;
     public GameObject main_obj,w_obj, a_obj, s_obj, d_obj;
     public GameObject[] OutOfScreen_obj;
-    public GameObject note_obj;
+    public GameObject note_obj, note2_obj;
     public Sprite[] event_spr;
     public GameObject goal_obj, pBox_obj;
 
     public int eventP_i;
 
-    public Vector3 position0, position1,position2;
+    public Vector3 position0, position1,position2, position3;
     public float Speed = 8;
 
     public int turn_i=0;
@@ -36,7 +36,7 @@ public class EventScenes : MonoBehaviour
         dream_obj.SetActive(true);
         StartCoroutine("StartEvent");
 
-        GM.GetComponent<MoveCharacter>().canMove = false;
+        GM.GetComponent<CharMove>().canMove = false;
     }
 
     // Update is called once per frame
@@ -46,11 +46,13 @@ public class EventScenes : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
 
-            if (eventP_i == 3&& turn_i==1)
+            if (eventP_i == 4 && turn_i == 1)
             {
-                Event3();
+                Event4();
                 turn_i = 0;
+                a_obj.SetActive(false);
             }
+
         }
 
         if (Input.GetKey(KeyCode.D))
@@ -60,6 +62,7 @@ public class EventScenes : MonoBehaviour
             {
                 Event2();
                 turn_i = 0;
+                d_obj.SetActive(false);
             }
         }
         if (Input.GetKey(KeyCode.W))
@@ -68,11 +71,19 @@ public class EventScenes : MonoBehaviour
             if (eventP_i == 1)
             {
                 Event1();
+                w_obj.SetActive(false);
             }
         }
 
         if (Input.GetKey(KeyCode.S))
         {
+
+            if (eventP_i == 3 && turn_i == 1)
+            {
+                Event3();
+                turn_i = 0;
+                s_obj.SetActive(false);
+            }
         }
     }
 
@@ -98,6 +109,12 @@ public class EventScenes : MonoBehaviour
         eventP_i++;
     }
     void Event3()
+    {
+        StartCoroutine("EventDown");
+        eventP_i++;
+    }
+    
+    void Event4()
     {
         StartCoroutine("EventL");
         eventP_i++;
@@ -129,6 +146,7 @@ public class EventScenes : MonoBehaviour
             {
                 in_i = 0;
                 turn_i = 1;
+                d_obj.SetActive(true);
             }
             
             yield return new WaitForSeconds(0.01f);
@@ -150,6 +168,7 @@ public class EventScenes : MonoBehaviour
                 in_i = 0;
                 note_obj.SetActive(true);
                 turn_i = 1;
+                s_obj.SetActive(true);
             }
 
             yield return new WaitForSeconds(0.01f);
@@ -173,13 +192,32 @@ public class EventScenes : MonoBehaviour
                 in_i = 0;
                 turn_i = 1;
                 main_obj.SetActive(false);
-                GM.GetComponent<MoveCharacter>().canMove = true;
+                GM.GetComponent<CharMove>().canMove = true;
                 pBox_obj.SetActive(false);
             }
 
             yield return new WaitForSeconds(0.01f);
         }
 
+    }
+
+    IEnumerator EventDown()
+    {
+        int in_i = 1;
+        position3 = note_obj.transform.position;
+        while (in_i == 1)
+        {
+            position3.y = position3.y - 40f * Time.deltaTime;
+            note_obj.transform.position = position3;
+            if (position3.y <= OutOfScreen_obj[2].transform.position.y)
+            {
+                in_i = 0;
+                turn_i = 1;
+                note_obj.SetActive(false);
+                a_obj.SetActive(true);
+            }
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 
 
@@ -197,8 +235,8 @@ public class EventScenes : MonoBehaviour
             {
                 in_i = 0;
                 turn_i = 1;
-                GM.GetComponent<MoveCharacter>().position = cPosition;
-                GM.GetComponent<MoveCharacter>().canMove = true;
+               // GM.GetComponent<MoveCharacter>().position = cPosition;
+                GM.GetComponent<CharMove>().canMove = true;
             }
 
             yield return new WaitForSeconds(0.01f);

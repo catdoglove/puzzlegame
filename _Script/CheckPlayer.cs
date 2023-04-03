@@ -296,7 +296,7 @@ public class CheckPlayer : MonoBehaviour
 
     public void StopAndTalk()
     {
-        GM.GetComponent<MoveCharacter>().canMove = false;
+        GM.GetComponent<CharMove>().canMove = false;
         
     }
 
@@ -305,7 +305,7 @@ public class CheckPlayer : MonoBehaviour
     public void StopTalk()
     {
 
-        GM.GetComponent<MoveCharacter>().canMove = true;
+        GM.GetComponent<CharMove>().canMove = true;
 
 
     }

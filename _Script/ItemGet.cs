@@ -17,7 +17,7 @@ public class ItemGet : MonoBehaviour
 
     private void OnEnable()
     {
-        this.transform.position = main_obj.transform.position;
+        //this.transform.position = main_obj.transform.position;
         this.GetComponent<Animation>().Play();
     }
 

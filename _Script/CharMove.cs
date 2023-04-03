@@ -6,7 +6,7 @@ using UnityEngine;
 public class CharMove : MonoBehaviour
 {
     private PolygonCollider2D rigid2D;
-    int ckwalk = 0;
+    public int ckwalk = 0;
     int ckCrash = 0;
 
     public Animator charAni;
@@ -25,6 +25,9 @@ public class CharMove : MonoBehaviour
     public Transform Projectile;
     private Transform myTransform;
 
+
+    public bool canMove = true;
+
     // Start is called before the first frame update
 
     void Awake()
@@ -35,13 +38,17 @@ public class CharMove : MonoBehaviour
 
     void Start()
     {
-       // jump();
+        // jump();
+        charAni.Play("ani_char_stop");
+        ckwalk = 0;
     }
 
     void Update()
     {
-        charWalk();
-
+        if (canMove)
+        {
+            charWalk();
+        }
     }
 
 

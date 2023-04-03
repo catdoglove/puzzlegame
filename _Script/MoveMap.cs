@@ -82,12 +82,12 @@ public class MoveMap : MonoBehaviour
 
         int k = mapRespawn_obj.Length;
         k--;
-        GM.GetComponent<MoveCharacter>().canMove = false;
+        GM.GetComponent<CharMove>().canMove = false;
         //player_obj.transform.position = mapRespawn_obj[k-mapRespawn_i].transform.position;
         //GM.GetComponent<MoveCharacter>().position = mapRespawn_obj[k - mapRespawn_i].transform.position;
         player_obj.transform.position = mapRespawn_obj[0].transform.position;
-        GM.GetComponent<MoveCharacter>().position = mapRespawn_obj[0].transform.position;
-        GM.GetComponent<MoveCharacter>().canMove = true;
+        //GM.GetComponent<MoveCharacter>().position = mapRespawn_obj[0].transform.position;
+        GM.GetComponent<CharMove>().canMove = true;
 
         PlayerPrefs.SetInt("mapindexnum", mapToGo_i);
     }

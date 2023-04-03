@@ -36,6 +36,7 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             if (in_i==0)
@@ -47,7 +48,7 @@ public class Inventory : MonoBehaviour
                     StopCoroutine("Show");
                     StartCoroutine("ShowWindow");
                     StartCoroutine("Show");
-                    GM.GetComponent<MoveCharacter>().canMove = false;
+                    GM.GetComponent<CharMove>().canMove = false;
                 }
                 else
                 {
@@ -55,10 +56,11 @@ public class Inventory : MonoBehaviour
                     StopCoroutine("ShowWindow");
                     StopCoroutine("CloseWindow");
                     StartCoroutine("CloseWindow");
-                    GM.GetComponent<MoveCharacter>().canMove = true;
+                    GM.GetComponent<CharMove>().canMove = true;
                 }
             }
         }
+        */
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -71,7 +73,9 @@ public class Inventory : MonoBehaviour
                     StopCoroutine("Show");
                     StartCoroutine("ShowWindow");
                     StartCoroutine("Show");
-                    GM.GetComponent<MoveCharacter>().canMove = false;
+                    GM.GetComponent<CharMove>().canMove = false;
+                    GM.GetComponent<CharMove>().charAni.Play("ani_char_stop");
+                    GM.GetComponent<CharMove>().ckwalk = 0;
                 }
                 else
                 {
@@ -79,7 +83,7 @@ public class Inventory : MonoBehaviour
                     StopCoroutine("ShowWindow");
                     StopCoroutine("CloseWindow");
                     StartCoroutine("CloseWindow");
-                    GM.GetComponent<MoveCharacter>().canMove = true;
+                    GM.GetComponent<CharMove>().canMove = true;
                 }
             }
         }
@@ -124,7 +128,7 @@ public class Inventory : MonoBehaviour
             PlayerPrefs.SetInt("changeitem", 0);
         }
 
-        if (GM.GetComponent<MoveCharacter>().canMove==false)
+        if (GM.GetComponent<CharMove>().canMove==false)
         {
             SelectMove();
             SelectItem();
@@ -153,12 +157,14 @@ public class Inventory : MonoBehaviour
             {
                 invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[p];
                 items_i[a] = p;
+                Debug.Log("1a"+ p);
             }
             else
             {
                 invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[o];
                 items_i[a] = o;
 
+                Debug.Log("2a" + o);
                 //Debug.Log("a"+o);
             }
         }
@@ -168,8 +174,11 @@ public class Inventory : MonoBehaviour
             if (invenItem_obj[a].GetComponent<Image>().sprite == null)
             {
                 invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[p];
-                items_i[a] = p;
             }
+
+            items_i[a] = p;
+
+            Debug.Log("3a" + p);
         }
         
     }
