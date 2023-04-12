@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CharMove : MonoBehaviour
 {
-    private PolygonCollider2D rigid2D;
+    private Rigidbody2D rigid2D;
     public int ckwalk = 0;
     int ckCrash = 0;
 
@@ -27,20 +27,35 @@ public class CharMove : MonoBehaviour
 
 
     public bool canMove = true;
+    public AudioSource ausrc;
+    public AudioClip auCP;
+
+
+    //걷기 관련
+    public AudioClip sp_walk, sp_walk_wood;
+    public AudioSource se_walk, se_walk_wood;
+
+    bool isMoving;
+
+    public GameObject GM, GM_B;
+
+    int walkint = 0;
+
 
     // Start is called before the first frame update
 
     void Awake()
     {
         myTransform = transform;
-        rigid2D = GetComponent<PolygonCollider2D>();
+        rigid2D = GetComponent<Rigidbody2D>();
     }
 
     void Start()
     {
-        // jump();
+        //jump();
         charAni.Play("ani_char_stop");
         ckwalk = 0;
+        ausrc = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -65,14 +80,15 @@ public class CharMove : MonoBehaviour
         {
             if (ckCrash == 1) charspeed = crushSpeed;
             else charspeed = runSpeed;
-
             charAni.speed = 1.6f;
+            ausrc.GetComponent<AudioSource>().pitch = 1.3f;
         }
         else
         {
             if (ckCrash == 1) charspeed = crushSpeed;
             else charspeed = normalSpeed;
             charAni.speed = 1.2f;
+            ausrc.GetComponent<AudioSource>().pitch = 1f;
         }
 
         if (Input.GetKey(KeyCode.W))
@@ -108,7 +124,125 @@ public class CharMove : MonoBehaviour
 
         transform.Translate(new Vector3(moveX, moveY, 0) * 0.1f);
 
+        rigid2D.velocity = new Vector2(moveX, moveY);
+        if (rigid2D.velocity.x != 0 || rigid2D.velocity.y != 0)
+        {
+            isMoving = true;
+        }
+        else isMoving = false;
+
+        if (isMoving)
+        {
+            if (!ausrc.isPlaying)
+            {
+                ausrc.Play();
+
+            }
+        }
+        else
+        {
+            ausrc.Stop();
+        }
+
+
+
+        //changeVolume(); 
+        //changeVolume2();
+
     }
+
+
+    public AudioClip walkSouneEvt(string walkSE) //걸음 소리 변경 함수
+    {
+        switch (walkSE)
+        {
+            case "sand":
+                auCP = sp_walk;
+                ausrc.clip = auCP;
+                break;
+
+            case "wood":
+                auCP = sp_walk_wood;
+                ausrc.clip = auCP;
+                break;
+        }
+
+        return auCP;
+
+    }
+
+    public void changeVolume2()
+    {
+        if (transform.position.x <= 5.9f) //위치 도달 전의 값
+        {
+            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0f;
+        }
+
+        if (transform.position.x >= 6f)
+        {
+            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0.2f;
+        }
+    }
+
+
+    public void changeVolume()
+    //특정 위치 값에서 발동되는 배경음악 페이드인아웃효과, x축 y축 값을 각각 맞춰 수정하면 언제든 ㅇㅋ
+    {
+        if (transform.position.x <= -1f) //위치 도달 전의 값
+        {
+            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 1f;
+            GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0f;
+
+            ausrc.clip = walkSouneEvt("sand");          
+        }
+        
+
+        if (transform.position.x >= -0.7f) //위치 도달 이후 부터 ~~
+        {
+            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0.8f;
+
+            ausrc.clip = walkSouneEvt("wood");
+        }
+
+        if (transform.position.x >= 0f)
+        {
+            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0.6f;
+            GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0.2f;
+
+            ausrc.clip = walkSouneEvt("wood");
+        }
+        if (transform.position.x >= 0.5f)
+        {
+            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0.5f;
+            GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0.5f;
+
+            ausrc.clip = walkSouneEvt("wood");
+        }
+
+        if (transform.position.x >= 3f)
+        {
+            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0.2f;
+            GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0.6f;
+
+            ausrc.clip = walkSouneEvt("wood");
+        }
+
+        if (transform.position.x >= 4.5f)
+        {
+            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0f;
+            GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0.8f;
+
+            ausrc.clip = walkSouneEvt("wood");
+        }
+
+        if (transform.position.x >= 6f)
+        {
+            GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 1f;
+
+            ausrc.clip = walkSouneEvt("wood");
+        }
+    }
+
 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -132,6 +266,7 @@ public class CharMove : MonoBehaviour
     {
         {
             StartCoroutine("jumpMotion");
+            GM.GetComponent<SoundEvt>().soundSample();
         }
     }
 
@@ -175,7 +310,7 @@ public class CharMove : MonoBehaviour
 
             elapse_time += Time.deltaTime;
 
-            f = f + 0.0001f; //올라가는 속도 조절, 숫자가 클 수록 높이 점프
+            f = f + 0.00001f; //올라가는 속도 조절, 숫자가 클 수록 높이 점프
 
             yield return null;
         }
@@ -183,4 +318,6 @@ public class CharMove : MonoBehaviour
         //전체적으로 속도를 올리는 방법을 못 찾음 추후 해결해보기
 
     }
+
+
 }
