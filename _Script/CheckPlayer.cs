@@ -17,7 +17,7 @@ public class CheckPlayer : MonoBehaviour
     public float x_f, y_f;
     int a = 0;
     int k = 0;
-    public GameObject GMS,GM;
+    public GameObject GMS,GM, GMI;
 
     //
     public string SetItemPref_str = "text";
@@ -32,6 +32,10 @@ public class CheckPlayer : MonoBehaviour
     public GameObject talkBall_obj, talkBallB_obj;
 
     public GameObject char_obj;
+
+
+    public Vector3 position0;
+    public GameObject move_obj;
 
     private void OnEnable()
     {
@@ -112,6 +116,7 @@ public class CheckPlayer : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 EventOrItem();
+
             }
         }
     }
@@ -286,6 +291,12 @@ public class CheckPlayer : MonoBehaviour
             case 6://위로 이동
                 StopTalk();
                 talkBallB_obj.SetActive(false);
+                StartCoroutine("EventUp");
+                a++;
+                break;
+            case 7://종료
+                StopTalk();
+                talkBallB_obj.SetActive(false);
                 a--;
                 break;
             default:
@@ -340,4 +351,27 @@ public class CheckPlayer : MonoBehaviour
 
     }
 
+
+
+    /// <summary>
+    /// 위로 올라가기
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator EventUp()
+    {
+        int in_i = 1;
+        position0 = transform.position;
+        while (in_i == 1)
+        {
+            position0.y = position0.y + 30f * Time.deltaTime;
+            transform.position = position0;
+
+            if (position0.y >= move_obj.transform.position.y)
+            {
+                in_i = 0;
+            }
+
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
 }

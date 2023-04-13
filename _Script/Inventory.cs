@@ -22,6 +22,7 @@ public class Inventory : MonoBehaviour
     public GameObject[] selectBox_obj;
     public Sprite _spr;
     public int selected_i = 0;
+    public int selectedNow_i = -1;
 
     public int[] items_i;
 
@@ -61,6 +62,7 @@ public class Inventory : MonoBehaviour
             }
         }
         */
+
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -130,10 +132,27 @@ public class Inventory : MonoBehaviour
 
         if (GM.GetComponent<CharMove>().canMove==false)
         {
-            SelectMove();
-            SelectItem();
+
+            if (inout_i == 1)
+            {
+                SelectMove();
+
+                if (selected_i == selectedNow_i)
+                {
+                    DisSelectItem();
+                    CheckSelect();
+                }
+                else
+                {
+                    SelectItem();
+                }
+            }
+                
         }
 
+
+        CheckSelect();
+        
     }
 
 
@@ -251,7 +270,32 @@ public class Inventory : MonoBehaviour
                 selected_obj.SetActive(true);
                 selected_obj.GetComponent<Image>().sprite = invenItem_obj[selected_i].GetComponent<Image>().sprite;
                 PlayerPrefs.SetInt("selecteditemnum", items_i[selected_i]);
+                selectedNow_i = 0 + selected_i;
             }
+        }
+    }
+
+    void DisSelectItem()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            selected_obj.SetActive(false);
+            PlayerPrefs.SetInt("selecteditemnum", 0);
+            selectedNow_i = -1;
+        }
+    }
+
+    public void CheckSelect()
+    {
+        //Debug.Log("selectedNow_i" + selectedNow_i);
+        if (selectedNow_i !=-1)
+        {
+            selected_obj.SetActive(true);
+            selected_obj.GetComponent<Image>().sprite = invenItem_obj[selectedNow_i].GetComponent<Image>().sprite;
+        }
+        else
+        {
+            selected_obj.SetActive(false);
         }
     }
 
@@ -262,35 +306,35 @@ public class Inventory : MonoBehaviour
 
     void SelectMove()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            for (int i = 0; i < 7; i++)
-            {
-                selectBox_obj[i].SetActive(false);
-            }
-            if (selected_i<6)
-            {
-                selected_i++;
-            }
-
-            selectBox_obj[selected_i].SetActive(true);
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.A))
             {
                 for (int i = 0; i < 7; i++)
                 {
                     selectBox_obj[i].SetActive(false);
                 }
-
-                if (selected_i > 0)
+                if (selected_i < 6)
                 {
-                    selected_i--;
+                    selected_i++;
                 }
+
                 selectBox_obj[selected_i].SetActive(true);
             }
-        }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    for (int i = 0; i < 7; i++)
+                    {
+                        selectBox_obj[i].SetActive(false);
+                    }
+
+                    if (selected_i > 0)
+                    {
+                        selected_i--;
+                    }
+                    selectBox_obj[selected_i].SetActive(true);
+                }
+            }
     }
     
 

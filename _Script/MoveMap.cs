@@ -22,8 +22,9 @@ public class MoveMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
 
+
+        StopCoroutine("CheckingMap");
         StartCoroutine("CheckingMap");
 
 
@@ -35,6 +36,7 @@ public class MoveMap : MonoBehaviour
 
     private void OnEnable()
     {
+        StopCoroutine("CheckingMap");
         StartCoroutine("CheckingMap");
     }
 
@@ -50,6 +52,9 @@ public class MoveMap : MonoBehaviour
             }
             else
             {
+                hit = null;
+                player_obj.transform.position = mapRespawn_obj[0].transform.position;
+
                 MovingMap();
                 //position = player_obj.transform.position;
                 //position.x = -5.66f;
@@ -68,24 +73,24 @@ public class MoveMap : MonoBehaviour
     /// </summary>
     void MovingMap()
     {
+
         //mapNow_i = PlayerPrefs.GetInt("mapindexnum", 0);
 
         //if (mapRespawn_obj[0] == null)
         //{
-            //mapRespawn_obj = GameObject.FindGameObjectsWithTag("Map");
+        //mapRespawn_obj = GameObject.FindGameObjectsWithTag("Map");
         //}
 
         map2_obj[mapToGo_i].SetActive(true);
-        map_obj[mapToGo_i].SetActive(true);
+        //map_obj[mapToGo_i].SetActive(true);
         map2_obj[mapNow_i].SetActive(false);
-        map_obj[mapNow_i].SetActive(false);
+        //map_obj[mapNow_i].SetActive(false);
 
         int k = mapRespawn_obj.Length;
         k--;
         GM.GetComponent<CharMove>().canMove = false;
         //player_obj.transform.position = mapRespawn_obj[k-mapRespawn_i].transform.position;
         //GM.GetComponent<MoveCharacter>().position = mapRespawn_obj[k - mapRespawn_i].transform.position;
-        player_obj.transform.position = mapRespawn_obj[0].transform.position;
         //GM.GetComponent<MoveCharacter>().position = mapRespawn_obj[0].transform.position;
         GM.GetComponent<CharMove>().canMove = true;
 
