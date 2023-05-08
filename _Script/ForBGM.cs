@@ -14,7 +14,7 @@ public class ForBGM : MonoBehaviour
     // Inspector 에표시할 배경음악 목록
     public BgmType[] BGMList;
 
-    public AudioSource BGMfirst, BGM2;
+    public AudioSource BGMfirst, BGM2, BGMbook;
     private string NowBGMname = "";
 
     int i; //bgmtest
@@ -62,7 +62,6 @@ public class ForBGM : MonoBehaviour
 
         //BGMfirst.Play();
         BGM2.Play();
-        Debug.Log("etst");
     }
 
 
@@ -80,6 +79,11 @@ public class ForBGM : MonoBehaviour
         {
             i++;
         }
+    }
+
+    public void forbook() //도감 열었을 때 음향 효과
+    {
+        BGMbook.GetComponent<AudioSource>().spatialBlend = 0.9f;
     }
 
 }

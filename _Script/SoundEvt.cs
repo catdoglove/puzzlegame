@@ -49,6 +49,7 @@ public class SoundEvt : MonoBehaviour {
 		audioSE.clip = audioCP;
 		auSE = audioSE;
 		auCP= audioCP;
+		auSE.GetComponent<AudioSource>().pitch = 1f;
 	}
 
 
@@ -64,6 +65,13 @@ public class SoundEvt : MonoBehaviour {
 		//putSound(se_pickup, sp_pickup); //아이템 줍는소리
 		putSound(se_jump, sp_jump); //점프소리
 		auSE.Play ();
+	}
+
+	public void soundBook()
+	{
+		putSound(se_adkey, sp_adkey);
+		auSE.GetComponent<AudioSource>().pitch = 1.2f;
+		auSE.Play();
 	}
 
 
