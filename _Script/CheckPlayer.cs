@@ -30,12 +30,30 @@ public class CheckPlayer : MonoBehaviour
     public int[] EventNum_i, EventNum1_i, EventNum2_i;
     public Sprite[] Event_spr, Event2_spr;
     public GameObject talkBall_obj, talkBallB_obj;
+    public int giveItemPref_i = 0;
+    public int getItemPref_i = 0;
+
 
     public GameObject char_obj;
 
 
     public Vector3 position0;
     public GameObject move_obj;
+    public GameObject[] npc_obj;
+
+
+    /// <summary>
+    /// 말중간에다른 상호작용금지
+    /// </summary>
+    public bool talk_b = true;
+
+
+
+    Color color;
+    public GameObject fade_obj;
+    public float moveY, moveX;
+    Vector2 mouseDragPos;
+    public Vector2 wldObjectPos;
 
     private void OnEnable()
     {
@@ -44,6 +62,7 @@ public class CheckPlayer : MonoBehaviour
 
     void Start()
     {
+
         PlayerPrefs.DeleteAll();
         /*
         PlayerPrefs.SetInt("inventorynum", 0);
@@ -115,7 +134,11 @@ public class CheckPlayer : MonoBehaviour
             balloon_obj.SetActive(true);
             if (Input.GetKeyUp(KeyCode.Space))
             {
-                EventOrItem();
+                
+                if (GMI.GetComponent<Inventory>().inout_i==0)
+                {
+                    EventOrItem();
+                }
 
             }
         }
@@ -142,7 +165,10 @@ public class CheckPlayer : MonoBehaviour
         }
         else
         {
-            EventSetting();
+            if (talk_b)
+            {
+                EventSetting();
+            }
         }
         
     }
@@ -185,12 +211,13 @@ public class CheckPlayer : MonoBehaviour
         p = PlayerPrefs.GetInt("inventoryget" + a, 0);
         PlayerPrefs.SetInt("itemnum" + SetItemPref_i, o);
         //PlayerPrefs.SetInt("itemnum" + SetItemPref_i, 1);
-        GetItem_obj.SetActive(true);
-            GetItemS_obj.SetActive(true);
+        //GetItem_obj.SetActive(true);
             balloon_obj.SetActive(false);
             this.gameObject.SetActive(false);
 
         PlayerPrefs.SetInt("changeitem", 1);
+
+        //StartCoroutine("imgFadeOut");
         //}
         DelThis();
     }
@@ -247,7 +274,6 @@ public class CheckPlayer : MonoBehaviour
         int a = 0;
         a = PlayerPrefs.GetInt(SetEventPref_str, 0);
         k = a;
-        Debug.Log("a"+ a);
         switch (EventNum_i[a])
         {
             case 0:
@@ -278,7 +304,7 @@ public class CheckPlayer : MonoBehaviour
                 StartCoroutine("talkBall");
                 StopAndTalk();
                 a++;
-                if (PlayerPrefs.GetInt("selecteditemnum", 0)== SetItemPref_i)
+                if (PlayerPrefs.GetInt("selecteditemnum", 0)== giveItemPref_i)
                 {
                     a++;
                 }
@@ -288,10 +314,10 @@ public class CheckPlayer : MonoBehaviour
                 talkBallB_obj.SetActive(false);
                 a--;
                 break;
-            case 6://위로 이동
+            case 6://아래 이동
                 StopTalk();
                 talkBallB_obj.SetActive(false);
-                StartCoroutine("EventUp");
+                StartCoroutine("EventDown");
                 a++;
                 break;
             case 7://종료
@@ -299,6 +325,80 @@ public class CheckPlayer : MonoBehaviour
                 talkBallB_obj.SetActive(false);
                 a--;
                 break;
+            case 8://말풍선 띄우고 특수 아이템요구 아이템제거
+                a++;
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    a++;
+                    GMI.GetComponent<Inventory>().DelItem();
+                }
+
+                Debug.Log("awe" + a);
+                StopCoroutine("talkBall");
+                k = a;
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StartCoroutine("talkBall");
+                StopAndTalk();
+                break;
+            case 9://말풍선 띄우고 특수 플레그 요구
+                a++;
+                if (PlayerPrefs.GetInt(""+ SetItemPref_str, 0) == 1)
+                {
+                    a++;
+                }
+                StopCoroutine("talkBall");
+                k = a;
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StartCoroutine("talkBall");
+                StopAndTalk();
+                break;
+            case 10://말풍선 두가지반복
+                StopTalk();
+                talkBallB_obj.SetActive(false);
+                a--;
+                a--;
+                a--;
+                break;
+            case 11://말풍선 띄우고 아이템 얻음
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StopCoroutine("talkBall");
+                StartCoroutine("talkBall");
+                StopAndTalk();
+                a++;
+                ItemSettingOnEvent();
+                break;
+            case 12://말풍선 띄우고 퀘스트 시작
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StopCoroutine("talkBall");
+                StartCoroutine("talkBall");
+                StopAndTalk();
+                a++;
+                PlayerPrefs.SetInt(SetItemPref_str, 1);
+                break;
+            case 13://말풍선 띄우고 퀘스트 시작
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StopCoroutine("talkBall");
+                StartCoroutine("talkBall");
+                StopAndTalk();
+                a++;
+                PlayerPrefs.SetInt(SetItemPref_str, 1);
+                npc_obj[1].SetActive(true);
+                npc_obj[0].SetActive(false);
+                npc_obj[3].SetActive(true);
+                npc_obj[2].SetActive(false);
+                break;
+            case 14://위 이동
+                StopTalk();
+                talkBallB_obj.SetActive(false);
+                StartCoroutine("EventUp");
+                a++;
+                break;
+
             default:
                 break;
         }
@@ -328,9 +428,78 @@ public class CheckPlayer : MonoBehaviour
     }
 
 
+
+    /// <summary>
+    /// 아이템값받아오고 인벤토리에넣는다.
+    /// </summary>
+    void ItemSettingOnEvent()
+    {
+        int a = 0;
+        a = PlayerPrefs.GetInt("inventorynum", 0);
+
+
+        //if (PlayerPrefs.GetInt("itemnum" + SetItemPref_i, 0) == 0)
+        //{
+
+
+        int p = PlayerPrefs.GetInt("inventoryget" + a, 0);
+        int o = PlayerPrefs.GetInt("itemnum" + SetItemPref_i, 0);
+
+        CheckStack();
+        if (PlayerPrefs.GetInt("stacking", 0) == 1)
+        {
+
+        }
+        else
+        {
+            
+            if (GMI.GetComponent<Inventory>().items_i[a] == 11)
+            {
+                PlayerPrefs.SetInt("inventoryget" + a, 6);
+            }
+            else
+            {
+                if (GMI.GetComponent<Inventory>().items_i[a] == 5)
+                {
+                    PlayerPrefs.SetInt("inventoryget" + a, 6);
+                }
+                else
+                {
+                    if (PlayerPrefs.GetInt("inventoryget" + a, 0) == 0)
+                    {
+                        PlayerPrefs.SetInt("inventoryget" + a, SetItemPref_i);
+                    }
+                }
+            }
+
+
+            //GetItem_obj.SetActive(true);
+
+            PlayerPrefs.SetInt("changeitem", 1);
+
+            //StartCoroutine("imgFadeOut");
+
+
+            a++;
+
+
+        }
+
+
+        o++;
+        PlayerPrefs.SetInt("inventorynum", a);
+        p = PlayerPrefs.GetInt("inventoryget" + a, 0);
+        PlayerPrefs.SetInt("itemnum" + SetItemPref_i, o);
+
+        PlayerPrefs.SetInt("changeitem", 1);
+        
+    }
+
+
+
+
     IEnumerator talkBall()
     {
-        
         int c = 1;
         int s = 0;
         while (c <= 20)
@@ -345,7 +514,7 @@ public class CheckPlayer : MonoBehaviour
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event2_spr[k];
                 s = 0;
             }
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.5f);
             //c++;
         }
 
@@ -359,6 +528,7 @@ public class CheckPlayer : MonoBehaviour
     /// <returns></returns>
     IEnumerator EventUp()
     {
+        talk_b = false;
         int in_i = 1;
         position0 = transform.position;
         while (in_i == 1)
@@ -373,5 +543,51 @@ public class CheckPlayer : MonoBehaviour
 
             yield return new WaitForSeconds(0.01f);
         }
+        talk_b = true;
     }
+
+
+    /// <summary>
+    /// 위로 올라가기
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator EventDown()
+    {
+        talk_b = false;
+        int in_i = 1;
+        position0 = transform.position;
+        while (in_i == 1)
+        {
+            position0.y = position0.y - 30f * Time.deltaTime;
+            transform.position = position0;
+
+            if (position0.y <= move_obj.transform.position.y)
+            {
+                in_i = 0;
+            }
+
+            yield return new WaitForSeconds(0.01f);
+        }
+        talk_b = true;
+    }
+
+
+    IEnumerator imgFadeOut()
+    {
+        color = GetItem_obj.GetComponent<SpriteRenderer>().color;
+        moveX = this.transform.position.x;
+        moveY = this.transform.position.y;
+        color.a = Mathf.Lerp(0f, 1f, 1f);
+        for (float i = 1f; i > 0f; i -= 0.05f)
+        {
+            color.a = Mathf.Lerp(0f, 1f, i);
+            GetItem_obj.GetComponent<SpriteRenderer>().color = color;
+            moveY = moveY + 0.02f;
+            GetItem_obj.transform.position = new Vector2(moveX, moveY);
+            yield return null;
+        }
+        GetItem_obj.transform.position = new Vector2(15f, 15f);
+    }
+
+
 }

@@ -7,6 +7,10 @@ public class Inventory : MonoBehaviour
 {
     public GameObject[] invenItem_obj;
     public Sprite[] Item_spr;
+
+    /// <summary>
+    /// 인벤토리번호
+    /// </summary>
     public int a = 0;
 
     public GameObject itemWindow_obj, itemWindowEnd_obj, itemWindowStart_obj;
@@ -105,8 +109,6 @@ public class Inventory : MonoBehaviour
                 }
             }
             else
-
-
             {
 
                 SetItem(0);
@@ -121,6 +123,18 @@ public class Inventory : MonoBehaviour
                 else
                 {
                     SetItem(1);
+                    if (PlayerPrefs.GetInt("inventoryget2", 0) == 0)
+                    {
+                        invenItem_obj[2].SetActive(false);
+                        if (invenItem_obj[2].GetComponent<Image>().sprite != null)
+                        {
+                            invenItem_obj[2].GetComponent<Image>().sprite = null;
+                        }
+                    }
+                    else
+                    {
+                        SetItem(2);
+                    }
                 }
             }
 
@@ -192,14 +206,16 @@ public class Inventory : MonoBehaviour
             invenItem_obj[a].SetActive(true);
             if (invenItem_obj[a].GetComponent<Image>().sprite == null)
             {
-                invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[p];
             }
 
+            invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[p];
             items_i[a] = p;
 
             Debug.Log("3a" + p);
         }
         
+
+
     }
 
     /// <summary>
@@ -299,9 +315,27 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    void DelItem()
+    public void DelItem()
     {
+
+        Debug.Log("aaaa" + a);
+        a--;
+        int p = PlayerPrefs.GetInt("inventoryget" + a, 0);
+        int o = PlayerPrefs.GetInt("itemnum" + p);
+        int t = PlayerPrefs.GetInt("stacking", 0);
+        int t2 = PlayerPrefs.GetInt("whierestacking", 0);
+
+
+        PlayerPrefs.SetInt("inventoryget" + a, 0);
+        invenItem_obj[a].GetComponent<Image>().sprite = null;
+        invenItem_obj[a].SetActive(false);
+        items_i[a] = 0;
         selected_obj.SetActive(false);
+        PlayerPrefs.SetInt("selecteditemnum", 0);
+        selectedNow_i = -1;
+
+
+        PlayerPrefs.SetInt("inventorynum", a);
     }
 
     void SelectMove()
