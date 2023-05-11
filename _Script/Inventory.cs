@@ -30,6 +30,8 @@ public class Inventory : MonoBehaviour
 
     public int[] items_i;
 
+    public GameObject selectWin_obj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -91,6 +93,13 @@ public class Inventory : MonoBehaviour
                     StartCoroutine("CloseWindow");
                     GM.GetComponent<CharMove>().canMove = true;
                 }
+            }
+
+
+            if (PlayerPrefs.GetInt("setselectone", 0) == 0)
+            {
+                selectWin_obj.SetActive(true);
+                PlayerPrefs.SetInt("setselectone", 1);
             }
         }
         

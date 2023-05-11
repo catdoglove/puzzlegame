@@ -17,7 +17,10 @@ public class MoveMap : MonoBehaviour
     public LayerMask whatIsLayer;
     public GameObject GM;
 
-    
+    int nowMoving_i = 1;
+    int nowDonMove_i = 0;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -52,10 +55,12 @@ public class MoveMap : MonoBehaviour
             }
             else
             {
+
+
                 hit = null;
                 player_obj.transform.position = mapRespawn_obj[0].transform.position;
 
-                MovingMap();
+                Invoke("MovingMap", 0.019f);
                 //position = player_obj.transform.position;
                 //position.x = -5.66f;
                 //position.y = -1.55f;
@@ -74,27 +79,28 @@ public class MoveMap : MonoBehaviour
     void MovingMap()
     {
 
-        //mapNow_i = PlayerPrefs.GetInt("mapindexnum", 0);
+        if (nowDonMove_i==0)
+        {
+            //mapNow_i = PlayerPrefs.GetInt("mapindexnum", 0);
+            //if (mapRespawn_obj[0] == null)
+            //{
+            //mapRespawn_obj = GameObject.FindGameObjectsWithTag("Map");
+            //}
+            map2_obj[mapToGo_i].SetActive(true);
+            //map_obj[mapToGo_i].SetActive(true);
+            map2_obj[mapNow_i].SetActive(false);
+            //map_obj[mapNow_i].SetActive(false);
 
-        //if (mapRespawn_obj[0] == null)
-        //{
-        //mapRespawn_obj = GameObject.FindGameObjectsWithTag("Map");
-        //}
+            int k = mapRespawn_obj.Length;
+            k--;
+            GM.GetComponent<CharMove>().canMove = false;
+            //player_obj.transform.position = mapRespawn_obj[k-mapRespawn_i].transform.position;
+            //GM.GetComponent<MoveCharacter>().position = mapRespawn_obj[k - mapRespawn_i].transform.position;
+            //GM.GetComponent<MoveCharacter>().position = mapRespawn_obj[0].transform.position;
+            GM.GetComponent<CharMove>().canMove = true;
+            PlayerPrefs.SetInt("mapindexnum", mapToGo_i);
+        }
 
-        map2_obj[mapToGo_i].SetActive(true);
-        //map_obj[mapToGo_i].SetActive(true);
-        map2_obj[mapNow_i].SetActive(false);
-        //map_obj[mapNow_i].SetActive(false);
-
-        int k = mapRespawn_obj.Length;
-        k--;
-        GM.GetComponent<CharMove>().canMove = false;
-        //player_obj.transform.position = mapRespawn_obj[k-mapRespawn_i].transform.position;
-        //GM.GetComponent<MoveCharacter>().position = mapRespawn_obj[k - mapRespawn_i].transform.position;
-        //GM.GetComponent<MoveCharacter>().position = mapRespawn_obj[0].transform.position;
-        GM.GetComponent<CharMove>().canMove = true;
-
-        PlayerPrefs.SetInt("mapindexnum", mapToGo_i);
     }
 
 
@@ -103,4 +109,8 @@ public class MoveMap : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, size);
     }
+
+
+
+
 }

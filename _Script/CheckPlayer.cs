@@ -113,25 +113,32 @@ public class CheckPlayer : MonoBehaviour
                 x_f = balloon_spr.bounds.size.x;
                 y_f = balloon_spr.bounds.size.y;
                 //position.x = position.x - balloon_spr.bounds.size.x * 3f;
-                position.y = position.y + (balloon_spr.bounds.size.y) * 1.5f;
+                position.y = position.y + (balloon_spr.bounds.size.y) * 1.5f + 0.2f;
                 a = 1;
                 balloon_obj.transform.position = position;
             }
 
             if (char_obj.transform.position.x > this.transform.position.x)
             {
-                position.x = this.transform.position.x - balloon_spr.bounds.size.x * 3f - 0.5f;
+                position.x = this.transform.position.x - balloon_spr.bounds.size.x * 3f - 0.7f;
                 balloon_obj.GetComponent<SpriteRenderer>().flipX = false;
             }
             else
             {
-                position.x = this.transform.position.x + balloon_spr.bounds.size.x * 3f + 0.5f;
+                position.x = this.transform.position.x + balloon_spr.bounds.size.x * 3f + 0.7f;
                 balloon_obj.GetComponent<SpriteRenderer>().flipX = true;
             }
 
             balloon_obj.transform.position = position;
 
-            balloon_obj.SetActive(true);
+            if (GM.GetComponent<CharMove>().canMove == true)
+            {
+                balloon_obj.SetActive(true);
+            }
+            else
+            {
+                balloon_obj.SetActive(false);
+            }
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 
@@ -533,7 +540,7 @@ public class CheckPlayer : MonoBehaviour
         position0 = transform.position;
         while (in_i == 1)
         {
-            position0.y = position0.y + 30f * Time.deltaTime;
+            position0.y = position0.y + 20f * Time.deltaTime;
             transform.position = position0;
 
             if (position0.y >= move_obj.transform.position.y)
@@ -553,12 +560,13 @@ public class CheckPlayer : MonoBehaviour
     /// <returns></returns>
     IEnumerator EventDown()
     {
+        GM.GetComponent<CharMove>().canMove = false;
         talk_b = false;
         int in_i = 1;
         position0 = transform.position;
         while (in_i == 1)
         {
-            position0.y = position0.y - 30f * Time.deltaTime;
+            position0.y = position0.y - 20f * Time.deltaTime;
             transform.position = position0;
 
             if (position0.y <= move_obj.transform.position.y)
@@ -569,6 +577,7 @@ public class CheckPlayer : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         talk_b = true;
+        GM.GetComponent<CharMove>().canMove = true;
     }
 
 

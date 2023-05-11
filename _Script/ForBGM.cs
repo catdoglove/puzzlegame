@@ -81,7 +81,7 @@ public class ForBGM : MonoBehaviour
         }
     }
 
-    public void forbook() //도감 열었을 때 음향 효과
+    public void forbook() //도감 열었을 때 배경음이 줄어들도록 음향 효과
     {
         BGMbook.GetComponent<AudioSource>().spatialBlend = 0.9f;
     }
