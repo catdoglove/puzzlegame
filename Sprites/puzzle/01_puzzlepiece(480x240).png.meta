@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: b2749a0df15454a419bc569d746d825a
+guid: 634afdef949d0044486d13e7c8181aa9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4258772439519725845
-    second: bg04_broken(420x248)_0
+      213: -7568967432881038407
+    second: 01_puzzlepiece(480x240)_0
   - first:
-      213: 7277011613210247573
-    second: bg04_broken(420x248)_1
+      213: -5824110718748801310
+    second: 01_puzzlepiece(480x240)_1
   - first:
-      213: 8477894727117780521
-    second: bg04_broken(420x248)_2
+      213: -643856987187397926
+    second: 01_puzzlepiece(480x240)_2
+  - first:
+      213: 1787085042131177573
+    second: 01_puzzlepiece(480x240)_3
+  - first:
+      213: -6200422735417703020
+    second: 01_puzzlepiece(480x240)_4
+  - first:
+      213: 4363061409079801648
+    second: 01_puzzlepiece(480x240)_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -108,13 +117,76 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bg04_broken(420x248)_0
+      name: 01_puzzlepiece(480x240)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 480
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb10aec830a5f690800000000000000
+      internalID: -7568967432881038407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01_puzzlepiece(480x240)_1
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 240
+        width: 480
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e6ce64a82a9c2fa0800000000000000
+      internalID: -5824110718748801310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01_puzzlepiece(480x240)_2
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 240
+        width: 480
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adaba804b7f8017f0800000000000000
+      internalID: -643856987187397926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01_puzzlepiece(480x240)_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 440
-        height: 280
+        width: 480
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5190cc448f23a1b30800000000000000
-      internalID: 4258772439519725845
+      spriteID: 56094af90600dc810800000000000000
+      internalID: 1787085042131177573
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bg04_broken(420x248)_1
+      name: 01_puzzlepiece(480x240)_4
       rect:
         serializedVersion: 2
-        x: 440
+        x: 480
         y: 0
-        width: 440
-        height: 280
+        width: 480
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5910ac7c1832df460800000000000000
-      internalID: 7277011613210247573
+      spriteID: 4950c269f5ca3f9a0800000000000000
+      internalID: -6200422735417703020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bg04_broken(420x248)_2
+      name: 01_puzzlepiece(480x240)_5
       rect:
         serializedVersion: 2
-        x: 880
+        x: 960
         y: 0
-        width: 440
-        height: 280
+        width: 480
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9263305265887a570800000000000000
-      internalID: 8477894727117780521
+      spriteID: 037ba6d2c35bc8c30800000000000000
+      internalID: 4363061409079801648
       vertices: []
       indices: 
       edges: []

@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: b2749a0df15454a419bc569d746d825a
+guid: 18cebbdb71aa89044a2478da870fe77c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4258772439519725845
-    second: bg04_broken(420x248)_0
+      213: 3138432410321946769
+    second: title_language(280x140)_0
   - first:
-      213: 7277011613210247573
-    second: bg04_broken(420x248)_1
-  - first:
-      213: 8477894727117780521
-    second: bg04_broken(420x248)_2
+      213: -7353449056471923161
+    second: title_language(280x140)_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -108,13 +105,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bg04_broken(420x248)_0
+      name: title_language(280x140)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 140
+        width: 260
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19800d826a3fd8b20800000000000000
+      internalID: 3138432410321946769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: title_language(280x140)_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 440
-        height: 280
+        width: 260
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,50 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5190cc448f23a1b30800000000000000
-      internalID: 4258772439519725845
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg04_broken(420x248)_1
-      rect:
-        serializedVersion: 2
-        x: 440
-        y: 0
-        width: 440
-        height: 280
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5910ac7c1832df460800000000000000
-      internalID: 7277011613210247573
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg04_broken(420x248)_2
-      rect:
-        serializedVersion: 2
-        x: 880
-        y: 0
-        width: 440
-        height: 280
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9263305265887a570800000000000000
-      internalID: 8477894727117780521
+      spriteID: 7264f0b1b0d43f990800000000000000
+      internalID: -7353449056471923161
       vertices: []
       indices: 
       edges: []

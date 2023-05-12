@@ -18,7 +18,14 @@ public class AnimailInformation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        data_animal = CSVReader.Read("CSV/animals_information");
+        if(PlayerPrefs.GetString("changeLanguage", "KOR") == "KOR")
+        {
+            data_animal = CSVReader.Read("CSV/animals_information");
+        }
+        else if (PlayerPrefs.GetString("changeLanguage", "KOR") == "ENG")
+        {
+            data_animal = CSVReader.Read("CSV/animals_information_eng");
+        }
         spRer = animalImg.GetComponent<SpriteRenderer>();
         checkAnimal();
         insideInformation();

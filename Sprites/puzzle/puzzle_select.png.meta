@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: b2749a0df15454a419bc569d746d825a
+guid: e9c9ca28177e0354b86d4186bc390ae9
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 4258772439519725845
-    second: bg04_broken(420x248)_0
-  - first:
-      213: 7277011613210247573
-    second: bg04_broken(420x248)_1
-  - first:
-      213: 8477894727117780521
-    second: bg04_broken(420x248)_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -49,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,70 +97,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: bg04_broken(420x248)_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 440
-        height: 280
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5190cc448f23a1b30800000000000000
-      internalID: 4258772439519725845
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg04_broken(420x248)_1
-      rect:
-        serializedVersion: 2
-        x: 440
-        y: 0
-        width: 440
-        height: 280
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5910ac7c1832df460800000000000000
-      internalID: 7277011613210247573
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg04_broken(420x248)_2
-      rect:
-        serializedVersion: 2
-        x: 880
-        y: 0
-        width: 440
-        height: 280
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9263305265887a570800000000000000
-      internalID: 8477894727117780521
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
