@@ -31,7 +31,7 @@ public class TitleEvt : MonoBehaviour
 	{
 		while (true)
 		{
-			if (Input.anyKey)
+			if (Input.anyKeyDown)
 			{
                 Debug.Log("씬전환");
                 SceneManager.LoadScene("01_Tutorial");

@@ -10,7 +10,7 @@ public class AnimationSample : MonoBehaviour
     public Animator doorAni, NPC_hedgehogAni, NPC_rabbit1Ani, NPC_rabbit2Ani, NPC_cat1Ani, NPC_bear1Ani, NPC_bear2Ani;
     public GameObject NPC_sheep1, lakeboat;
     public Sprite[] NPC_sheepSpr;
-    public GameObject testBtnobj;
+    public GameObject testBtnobj, ESCevent;
 
 
     float moveX, moveY;
@@ -62,7 +62,35 @@ public class AnimationSample : MonoBehaviour
         {
             testBtnobj.SetActive(true);
         }//애니메이션이 종료됨을 감지하는 코드
-        
+
+
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            showESCwindow();
+        }
+
+    }
+
+    public void quitGame()
+    {
+        Application.Quit();
+    }
+
+    public void showFeedback()
+    {
+        Application.OpenURL("https://forms.gle/CGuVE8nRbE1QaRSc6");
+    }
+
+    public void showESCwindow()
+    {
+        ESCevent.SetActive(true);
+    }
+
+
+    public void closeESCwindow()
+    {
+        ESCevent.SetActive(false);
     }
 
 }
