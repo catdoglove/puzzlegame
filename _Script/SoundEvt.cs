@@ -39,9 +39,7 @@ public class SoundEvt : MonoBehaviour {
 
 	public GameObject charGM;
 
-
-
-
+    
 
 	// Use this for initialization
 	void Start()

@@ -46,7 +46,7 @@ public class CheckPlayer : MonoBehaviour
     /// 말중간에다른 상호작용금지
     /// </summary>
     public bool talk_b = true;
-
+    int wait = 0;
 
 
     Color color;
@@ -54,6 +54,10 @@ public class CheckPlayer : MonoBehaviour
     public float moveY, moveX;
     Vector2 mouseDragPos;
     public Vector2 wldObjectPos;
+
+
+
+    public GameObject SGM;
 
     private void OnEnable()
     {
@@ -63,7 +67,7 @@ public class CheckPlayer : MonoBehaviour
     void Start()
     {
 
-        PlayerPrefs.DeleteAll();
+        //
         /*
         PlayerPrefs.SetInt("inventorynum", 0);
         PlayerPrefs.SetInt("inventoryget0", 0);
@@ -94,59 +98,64 @@ public class CheckPlayer : MonoBehaviour
     private void Update()
     {
 
+        wait = PlayerPrefs.GetInt("wait", 0);
+        if (wait == 0)
+        {
+
             Collider2D hit = Physics2D.OverlapBox(transform.position, size, 0, whatIsLayer);
-        if (hit == null)
-        {
-            if (a==1)
+            if (hit == null)
             {
-                balloon_obj.SetActive(false);
-                GMS.GetComponent<BounceAnim>().resetAnim();
-            }
-            a = 0;
-        }
-        else
-        {
-            //Debug.Log(hit.name);
-            if (a == 0)
-            {
-                position = this.transform.position;
-                x_f = balloon_spr.bounds.size.x;
-                y_f = balloon_spr.bounds.size.y;
-                //position.x = position.x - balloon_spr.bounds.size.x * 3f;
-                position.y = position.y + (balloon_spr.bounds.size.y) * 1.5f + 0.2f;
-                a = 1;
-                balloon_obj.transform.position = position;
-            }
-
-            if (char_obj.transform.position.x > this.transform.position.x)
-            {
-                position.x = this.transform.position.x - balloon_spr.bounds.size.x * 3f - 0.7f;
-                balloon_obj.GetComponent<SpriteRenderer>().flipX = false;
-            }
-            else
-            {
-                position.x = this.transform.position.x + balloon_spr.bounds.size.x * 3f + 0.7f;
-                balloon_obj.GetComponent<SpriteRenderer>().flipX = true;
-            }
-
-            balloon_obj.transform.position = position;
-
-            if (GM.GetComponent<CharMove>().canMove == true)
-            {
-                balloon_obj.SetActive(true);
-            }
-            else
-            {
-                balloon_obj.SetActive(false);
-            }
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                
-                if (GMI.GetComponent<Inventory>().inout_i==0)
+                if (a == 1)
                 {
-                    EventOrItem();
+                    balloon_obj.SetActive(false);
+                    GMS.GetComponent<BounceAnim>().resetAnim();
+                }
+                a = 0;
+            }
+            else
+            {
+                //Debug.Log(hit.name);
+                if (a == 0)
+                {
+                    position = this.transform.position;
+                    x_f = balloon_spr.bounds.size.x;
+                    y_f = balloon_spr.bounds.size.y;
+                    //position.x = position.x - balloon_spr.bounds.size.x * 3f;
+                    position.y = position.y + (balloon_spr.bounds.size.y) * 1.5f + 0.2f;
+                    a = 1;
+                    balloon_obj.transform.position = position;
                 }
 
+                if (char_obj.transform.position.x > this.transform.position.x)
+                {
+                    position.x = this.transform.position.x - balloon_spr.bounds.size.x * 3f - 0.7f;
+                    balloon_obj.GetComponent<SpriteRenderer>().flipX = false;
+                }
+                else
+                {
+                    position.x = this.transform.position.x + balloon_spr.bounds.size.x * 3f + 0.7f;
+                    balloon_obj.GetComponent<SpriteRenderer>().flipX = true;
+                }
+
+                balloon_obj.transform.position = position;
+
+                if (GM.GetComponent<CharMove>().canMove == true)
+                {
+                    balloon_obj.SetActive(true);
+                }
+                else
+                {
+                    balloon_obj.SetActive(false);
+                }
+                if (Input.GetKeyUp(KeyCode.Space))
+                {
+
+                    if (GMI.GetComponent<Inventory>().inout_i == 0)
+                    {
+                        EventOrItem();
+                    }
+
+                }
             }
         }
     }
@@ -185,6 +194,9 @@ public class CheckPlayer : MonoBehaviour
     /// </summary>
     void ItemSetting()
     {
+
+
+        SGM.GetComponent<SoundEvt>().soundPickUp();
         int a = 0;
         a = PlayerPrefs.GetInt("inventorynum", 0);
 
@@ -238,16 +250,28 @@ public class CheckPlayer : MonoBehaviour
     {
         int k = 7;
 
+        if (SetItemPref_i == 14)
+        {
+            SetItemPref_i = 13;
+        }
+        if (SetItemPref_i == 2)
+        {
+            SetItemPref_i = 1;
+        }
+        
         for (int i = 0; i < k; i++)
         {
+            //Debug.Log("inventoryget" + PlayerPrefs.GetInt("inventoryget" + i, 0)+"i"+ SetItemPref_i);
+
             if (PlayerPrefs.GetInt("inventoryget" + i, 0) == SetItemPref_i)
             {
                 PlayerPrefs.SetInt("stacking", 1);
                 PlayerPrefs.SetInt("whierestacking", i);
-
+                PlayerPrefs.SetInt("saveinventoryget", SetItemPref_i);
                 Debug.Log(i);
             }
         }
+        
     }
     
 
@@ -286,6 +310,7 @@ public class CheckPlayer : MonoBehaviour
             case 0:
                 break;
             case 1://말풍선띄우고 다음으로
+                SGM.GetComponent<SoundEvt>().soundTalk();
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StopCoroutine("talkBall");
@@ -294,6 +319,7 @@ public class CheckPlayer : MonoBehaviour
                 a++;
                 break;
             case 2://말풍선 띄우고 아이템 요구
+                SGM.GetComponent<SoundEvt>().soundTalk();
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StopCoroutine("talkBall");
@@ -305,6 +331,7 @@ public class CheckPlayer : MonoBehaviour
                 a++;
                 break;
             case 4://말풍선 띄우고 특수 아이템요구
+                SGM.GetComponent<SoundEvt>().soundTalk();
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StopCoroutine("talkBall");
@@ -333,6 +360,7 @@ public class CheckPlayer : MonoBehaviour
                 a--;
                 break;
             case 8://말풍선 띄우고 특수 아이템요구 아이템제거
+                SGM.GetComponent<SoundEvt>().soundTalk();
                 a++;
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                 {
@@ -349,6 +377,7 @@ public class CheckPlayer : MonoBehaviour
                 StopAndTalk();
                 break;
             case 9://말풍선 띄우고 특수 플레그 요구
+                SGM.GetComponent<SoundEvt>().soundTalk();
                 a++;
                 if (PlayerPrefs.GetInt(""+ SetItemPref_str, 0) == 1)
                 {
@@ -366,9 +395,9 @@ public class CheckPlayer : MonoBehaviour
                 talkBallB_obj.SetActive(false);
                 a--;
                 a--;
-                a--;
                 break;
             case 11://말풍선 띄우고 아이템 얻음
+                SGM.GetComponent<SoundEvt>().soundTalk();
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StopCoroutine("talkBall");
@@ -378,6 +407,7 @@ public class CheckPlayer : MonoBehaviour
                 ItemSettingOnEvent();
                 break;
             case 12://말풍선 띄우고 퀘스트 시작
+                SGM.GetComponent<SoundEvt>().soundTalk();
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StopCoroutine("talkBall");
@@ -387,6 +417,7 @@ public class CheckPlayer : MonoBehaviour
                 PlayerPrefs.SetInt(SetItemPref_str, 1);
                 break;
             case 13://말풍선 띄우고 퀘스트 시작
+                SGM.GetComponent<SoundEvt>().soundTalk();
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StopCoroutine("talkBall");
@@ -459,16 +490,24 @@ public class CheckPlayer : MonoBehaviour
         }
         else
         {
-            
-            if (GMI.GetComponent<Inventory>().items_i[a] == 11)
+            //Debug.Log("a"+a+"p"+GMI.GetComponent<Inventory>().items_i[a]);
+            if (a != 0)
             {
-                PlayerPrefs.SetInt("inventoryget" + a, 6);
+                k = a - 1;
+            }
+            if (GMI.GetComponent<Inventory>().items_i[k] == 11)
+            {
+
+                Debug.Log(GMI.GetComponent<Inventory>().items_i[k]);
+                PlayerPrefs.SetInt("inventoryget" + k, 6);
             }
             else
             {
-                if (GMI.GetComponent<Inventory>().items_i[a] == 5)
+                if (GMI.GetComponent<Inventory>().items_i[k] == 5)
                 {
-                    PlayerPrefs.SetInt("inventoryget" + a, 6);
+
+                    Debug.Log(GMI.GetComponent<Inventory>().items_i[k]);
+                    PlayerPrefs.SetInt("inventoryget" + k, 6);
                 }
                 else
                 {

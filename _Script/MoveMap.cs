@@ -20,6 +20,11 @@ public class MoveMap : MonoBehaviour
     int nowMoving_i = 1;
     int nowDonMove_i = 0;
 
+    int wait = 0;
+
+    public bool openSound_b;
+    
+    public GameObject SGM;
 
 
     // Start is called before the first frame update
@@ -47,29 +52,34 @@ public class MoveMap : MonoBehaviour
     {
         while (mapTime_i == 1)
         {
-
-            Collider2D hit = Physics2D.OverlapBox(transform.position, size, 0, whatIsLayer);
-            
-            if (hit == null)
+            wait = PlayerPrefs.GetInt("wait", 0);
+            if (wait == 0)
             {
+                Collider2D hit = Physics2D.OverlapBox(transform.position, size, 0, whatIsLayer);
+
+                if (hit == null)
+                {
+                }
+                else
+                {
+
+                    wait = 1;
+                    PlayerPrefs.SetInt("wait", 1);
+                    hit = null;
+                    player_obj.transform.position = mapRespawn_obj[0].transform.position;
+
+                    Invoke("MovingMap", 0.018f);
+                    //position = player_obj.transform.position;
+                    //position.x = -5.66f;
+                    //position.y = -1.55f;
+                    //player_obj.transform.position = position;
+                    //Debug.Log("a");
+                    //-5.664642 -1.550424
+                    //StopCoroutine("CheckingMap");
+                }
+
             }
-            else
-            {
-
-
-                hit = null;
-                player_obj.transform.position = mapRespawn_obj[0].transform.position;
-
-                Invoke("MovingMap", 0.019f);
-                //position = player_obj.transform.position;
-                //position.x = -5.66f;
-                //position.y = -1.55f;
-                //player_obj.transform.position = position;
-                //Debug.Log("a");
-                //-5.664642 -1.550424
-                //StopCoroutine("CheckingMap");
-            }
-                yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
@@ -81,26 +91,23 @@ public class MoveMap : MonoBehaviour
 
         if (nowDonMove_i==0)
         {
-            //mapNow_i = PlayerPrefs.GetInt("mapindexnum", 0);
-            //if (mapRespawn_obj[0] == null)
-            //{
-            //mapRespawn_obj = GameObject.FindGameObjectsWithTag("Map");
-            //}
             map2_obj[mapToGo_i].SetActive(true);
-            //map_obj[mapToGo_i].SetActive(true);
             map2_obj[mapNow_i].SetActive(false);
-            //map_obj[mapNow_i].SetActive(false);
 
             int k = mapRespawn_obj.Length;
             k--;
             GM.GetComponent<CharMove>().canMove = false;
-            //player_obj.transform.position = mapRespawn_obj[k-mapRespawn_i].transform.position;
-            //GM.GetComponent<MoveCharacter>().position = mapRespawn_obj[k - mapRespawn_i].transform.position;
-            //GM.GetComponent<MoveCharacter>().position = mapRespawn_obj[0].transform.position;
             GM.GetComponent<CharMove>().canMove = true;
             PlayerPrefs.SetInt("mapindexnum", mapToGo_i);
+
+            wait = 0;
+            PlayerPrefs.SetInt("wait", 0);
         }
 
+        if (openSound_b == true)
+        {
+            SGM.GetComponent<SoundEvt>().soundOpenObject();
+        }
     }
 
 

@@ -28,6 +28,8 @@ public class EventScenes : MonoBehaviour
     //첫이벤트
     public GameObject dream_obj;
 
+    public GameObject SGM;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,7 @@ public class EventScenes : MonoBehaviour
         StartCoroutine("StartEvent");
 
         GM.GetComponent<CharMove>().canMove = false;
+
     }
 
     // Update is called once per frame
@@ -135,6 +138,8 @@ public class EventScenes : MonoBehaviour
     /// <returns></returns>
     IEnumerator EventUp()
     {
+
+        SGM.GetComponent<SoundEvt>().soundBoxWASD();
         int in_i = 1;
         position0 = move_obj[0].transform.position;
         while (in_i == 1)
@@ -156,6 +161,7 @@ public class EventScenes : MonoBehaviour
 
     IEnumerator EventR()
     {
+        SGM.GetComponent<SoundEvt>().soundBoxWASD();
         int in_i = 1;
         position1 = move_obj[1].transform.position;
         while (in_i == 1)
@@ -178,6 +184,7 @@ public class EventScenes : MonoBehaviour
 
     IEnumerator EventL()
     {
+        SGM.GetComponent<SoundEvt>().soundBoxWASD();
         note_obj.SetActive(false);
         int in_i = 1;
         position2 = move_obj[2].transform.position;
@@ -203,6 +210,7 @@ public class EventScenes : MonoBehaviour
 
     IEnumerator EventDown()
     {
+        SGM.GetComponent<SoundEvt>().soundBoxWASD();
         int in_i = 1;
         position3 = note_obj.transform.position;
         while (in_i == 1)
@@ -224,6 +232,7 @@ public class EventScenes : MonoBehaviour
 
     IEnumerator EventCharR()
     {
+        SGM.GetComponent<SoundEvt>().soundBoxWASD();
         int in_i = 1;
         cPosition = cMain_obj.transform.position;
         while (in_i == 1)
@@ -259,6 +268,7 @@ public class EventScenes : MonoBehaviour
         dream_obj.SetActive(false);
         yield return new WaitForSeconds(0.8f);
         StartEvent1();
+        SGM.GetComponent<SoundEvt>().soundBoxOpen();
     }
 
 }

@@ -22,14 +22,14 @@ public class ForBGM : MonoBehaviour
     void Start()
     {
         //BGMfirst.clip = BGMList[2].audio;
-        BGMfirst.loop = true;
+        //BGMfirst.loop = true;
 
         //BGM2.clip = BGMList[0].audio;
-        BGM2.loop = true;
+        //BGM2.loop = true;
 
         if (BGMList.Length > 0) PlayBGM(BGMList[0].name);
 
-        BGM2.Stop(); //특정 지역의 위치값에서 실행되기 위해 초기에 필요 없음
+        //BGM2.Stop(); //특정 지역의 위치값에서 실행되기 위해 초기에 필요 없음
 
     }
 
