@@ -7,7 +7,7 @@ public class BounceAnim : MonoBehaviour
     float time = 0;
     public float _size = 1;
 
-    public float _upSizeTime =0.2f;
+    public float _upSizeTime;
 
 
     // Start is called before the first frame update

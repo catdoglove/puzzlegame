@@ -22,10 +22,10 @@ public class MoveMap : MonoBehaviour
 
     int wait = 0;
 
-    public bool openSound_b;
+    public bool openSound_b, onSound_b;
     
     public GameObject SGM;
-
+    public GameObject BGM1;
 
     // Start is called before the first frame update
     void Start()
@@ -107,6 +107,11 @@ public class MoveMap : MonoBehaviour
         if (openSound_b == true)
         {
             SGM.GetComponent<SoundEvt>().soundOpenObject();
+        }
+
+        if (onSound_b == true)
+        {
+            BGM1.SetActive(true);
         }
     }
 

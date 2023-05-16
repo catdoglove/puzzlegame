@@ -30,6 +30,12 @@ public class EventScenes : MonoBehaviour
 
     public GameObject SGM;
 
+
+    /// <summary>
+    /// 캐릭터 방울 착용
+    /// </summary>
+    public GameObject noneBell_obj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -269,6 +275,9 @@ public class EventScenes : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         StartEvent1();
         SGM.GetComponent<SoundEvt>().soundBoxOpen();
+
+
+    noneBell_obj.SetActive(false);
     }
 
 }

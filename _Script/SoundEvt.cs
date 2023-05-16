@@ -44,7 +44,7 @@ public class SoundEvt : MonoBehaviour {
 	// Use this for initialization
 	void Start()
 	{
-		StartCoroutine("soundKeyboard");
+
 	}
 
 
@@ -252,35 +252,5 @@ public class SoundEvt : MonoBehaviour {
 	}
 
 
-	IEnumerator soundKeyboard()
-	{
-		while (true)
-		{
-			if (Input.GetKey(KeyCode.Space))
-			{
-				putSound(se_talk_low, sp_talk_low);
-				//auSE.GetComponent<AudioSource>().pitch = 1.1f; 캐릭터마다 말하는 속도 조절
-				auSE.Play();
-			}
-			else if (Input.GetKey(KeyCode.E))
-			{
-				putSound(se_item_open, sp_item_open);
-				auSE.Play();
-			}
-			/*
-			else if (Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.D)) //아이템창 열렸을 때
-			{
-				putSound(se_adkey, sp_adkey);
-				auSE.Play();
-			}
-			else if (Input.GetKey(KeyCode.Space))
-			{
-				putSound(se_item_select, sp_item_select);
-				auSE.Play();
-			}
-			*/
-
-			yield return new WaitForSeconds(0.1f);
-		}
-	}
+	
 }

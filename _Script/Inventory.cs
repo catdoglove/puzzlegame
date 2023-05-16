@@ -35,6 +35,8 @@ public class Inventory : MonoBehaviour
 
     public GameObject SGM;
 
+    public static bool itemGetting_b;
+
 
     // Start is called before the first frame update
     void Start()
@@ -78,40 +80,43 @@ public class Inventory : MonoBehaviour
         }
 
 
-            if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
 
-
-            if (in_i == 0)
+            if (itemGetting_b == false)
             {
-                if (inout_i == 0)
-                {
-                    SGM.GetComponent<SoundEvt>().soundItemWndOpen();
-                    in_i = 1;
-                    StopCoroutine("ShowWindow");
-                    StopCoroutine("Show");
-                    StartCoroutine("ShowWindow");
-                    StartCoroutine("Show");
-                    GM.GetComponent<CharMove>().canMove = false;
-                    GM.GetComponent<CharMove>().charAni.Play("ani_char_stop");
-                    GM.GetComponent<CharMove>().ckwalk = 0;
-                }
-                else
-                {
-                    SGM.GetComponent<SoundEvt>().soundItemWndOpen();
-                    in_i = 1;
-                    StopCoroutine("ShowWindow");
-                    StopCoroutine("CloseWindow");
-                    StartCoroutine("CloseWindow");
-                    GM.GetComponent<CharMove>().canMove = true;
-                }
-            }
 
 
-            if (PlayerPrefs.GetInt("setselectone", 0) == 0)
-            {
-                selectWin_obj.SetActive(true);
-                PlayerPrefs.SetInt("setselectone", 1);
+                if (in_i == 0)
+                {
+                    if (inout_i == 0)
+                    {
+                        in_i = 1;
+                        StopCoroutine("ShowWindow");
+                        StopCoroutine("Show");
+                        StartCoroutine("ShowWindow");
+                        StartCoroutine("Show");
+                        GM.GetComponent<CharMove>().canMove = false;
+                        GM.GetComponent<CharMove>().charAni.Play("ani_char_stop");
+                        GM.GetComponent<CharMove>().ckwalk = 0;
+                    }
+                    else
+                    {
+                        in_i = 1;
+                        StopCoroutine("ShowWindow");
+                        StopCoroutine("CloseWindow");
+                        StartCoroutine("CloseWindow");
+                        GM.GetComponent<CharMove>().canMove = true;
+                    }
+                }
+
+
+                if (PlayerPrefs.GetInt("setselectone", 0) == 0)
+                {
+                    selectWin_obj.SetActive(true);
+                    PlayerPrefs.SetInt("setselectone", 1);
+                }
+
             }
         }
         
@@ -257,32 +262,53 @@ public class Inventory : MonoBehaviour
             {
                 invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1];
                 items_i[a] = PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1;
+
+                invenItem_obj[a].SetActive(true);
+                invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1];
+                //PlayerPrefs.SetInt("inventoryget" + a, items_i[a]);
             }
             if (p == 1)
             {
                 invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1];
                 items_i[a] = PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1;
-            }
 
+                //PlayerPrefs.SetInt("inventoryget" + a, items_i[a]);
 
-            if (p == 1)
-            {
+                invenItem_obj[a].SetActive(true);
                 invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1];
-                items_i[a] = PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1;
             }
+
+            
 
             PlayerPrefs.SetInt("stacking", 0);
             PlayerPrefs.SetInt("whierestacking", 0);
         }
         else
         {
-            invenItem_obj[a].SetActive(true);
-            if (invenItem_obj[a].GetComponent<Image>().sprite == null)
-            {
-            }
 
-            invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[p];
-            items_i[a] = p;
+            if (p == 13 || p == 1)
+            {
+                if(PlayerPrefs.GetInt("itemnum" + p, 0) == 1)
+                {
+                    invenItem_obj[a].SetActive(true);
+                    if (invenItem_obj[a].GetComponent<Image>().sprite == null)
+                    {
+                    }
+
+                    invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[p];
+                    items_i[a] = p;
+                }
+            }
+            else
+            {
+                invenItem_obj[a].SetActive(true);
+                if (invenItem_obj[a].GetComponent<Image>().sprite == null)
+                {
+                }
+
+                invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[p];
+                items_i[a] = p;
+            }
 
             Debug.Log("3a" + p);
         }
@@ -297,9 +323,11 @@ public class Inventory : MonoBehaviour
     /// <returns></returns>
     IEnumerator ShowWindow()
     {
+
+        SGM.GetComponent<SoundEvt>().soundItemWndOpen();
         while (in_i == 1)
         {
-            position.y = position.y - 10f * Time.deltaTime;
+            position.y = position.y - 27f * Time.deltaTime;
             itemWindow_obj.transform.position = position;
             if (position.y <= itemWindowEnd_obj.transform.position.y)
             {
@@ -316,10 +344,12 @@ public class Inventory : MonoBehaviour
     /// <returns></returns>
     IEnumerator CloseWindow()
     {
+
+        SGM.GetComponent<SoundEvt>().soundItemWndOpen();
         think_obj.SetActive(false);
         while (in_i == 1)
         {
-            position.y = position.y + 10f * Time.deltaTime;
+            position.y = position.y + 27f * Time.deltaTime;
             itemWindow_obj.transform.position = position;
             if (position.y >= itemWindowStart_obj.transform.position.y)
             {
@@ -393,6 +423,8 @@ public class Inventory : MonoBehaviour
 
     public void DelItem()
     {
+
+        a = PlayerPrefs.GetInt("inventorynum", 0);
         Debug.Log("aaaa" + a);
         a--;
         int p = PlayerPrefs.GetInt("inventoryget" + a, 0);

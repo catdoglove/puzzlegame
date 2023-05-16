@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckPlayer : MonoBehaviour
+public class CheckPlayerEvent : MonoBehaviour
 {
     public int move_i = 1;
     // Start is called before the first frame update
@@ -41,6 +41,7 @@ public class CheckPlayer : MonoBehaviour
     public GameObject move_obj;
     public GameObject[] npc_obj;
 
+    public Sprite change_spr;
 
     /// <summary>
     /// 말중간에다른 상호작용금지
@@ -54,11 +55,14 @@ public class CheckPlayer : MonoBehaviour
     public float moveY, moveX;
     Vector2 mouseDragPos;
     public Vector2 wldObjectPos;
+
     public Sprite item_spr;
 
 
-
     public GameObject SGM;
+
+
+    public GameObject laterEvent_obj;
 
     private void OnEnable()
     {
@@ -196,9 +200,6 @@ public class CheckPlayer : MonoBehaviour
     void ItemSetting()
     {
 
-        GMI.GetComponent<ItemGetMotion>().fade_obj.GetComponent<SpriteRenderer>().sprite = this.GetComponent<SpriteRenderer>().sprite;
-        GMI.GetComponent<ItemGetMotion>().fade_obj.transform.position = this.transform.position;
-        GMI.GetComponent<ItemGetMotion>().FadeItem();
 
         SGM.GetComponent<SoundEvt>().soundPickUp();
         int a = 0;
@@ -239,7 +240,6 @@ public class CheckPlayer : MonoBehaviour
             this.gameObject.SetActive(false);
 
         PlayerPrefs.SetInt("changeitem", 1);
-
 
         //StartCoroutine("imgFadeOut");
         //}
@@ -316,19 +316,11 @@ public class CheckPlayer : MonoBehaviour
                 break;
             case 1://말풍선띄우고 다음으로
                 SGM.GetComponent<SoundEvt>().soundTalk();
-                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
-                talkBallB_obj.SetActive(true);
-                StopCoroutine("talkBall");
-                StartCoroutine("talkBall");
                 StopAndTalk();
                 a++;
                 break;
             case 2://말풍선 띄우고 아이템 요구
                 SGM.GetComponent<SoundEvt>().soundTalk();
-                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
-                talkBallB_obj.SetActive(true);
-                StopCoroutine("talkBall");
-                StartCoroutine("talkBall");
                 break;
             case 3://대화 멈춤
                 StopTalk();
@@ -337,10 +329,6 @@ public class CheckPlayer : MonoBehaviour
                 break;
             case 4://말풍선 띄우고 특수 아이템요구
                 SGM.GetComponent<SoundEvt>().soundTalk();
-                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
-                talkBallB_obj.SetActive(true);
-                StopCoroutine("talkBall");
-                StartCoroutine("talkBall");
                 StopAndTalk();
                 a++;
                 if (PlayerPrefs.GetInt("selecteditemnum", 0)== giveItemPref_i)
@@ -350,7 +338,6 @@ public class CheckPlayer : MonoBehaviour
                 break;
             case 5://대화 종료
                 StopTalk();
-                talkBallB_obj.SetActive(false);
                 a--;
                 break;
             case 6://아래 이동
@@ -364,22 +351,18 @@ public class CheckPlayer : MonoBehaviour
                 talkBallB_obj.SetActive(false);
                 a--;
                 break;
-            case 8://말풍선 띄우고 특수 아이템요구 아이템제거
+            case 8://특수 아이템요구 아이템제거
                 SGM.GetComponent<SoundEvt>().soundTalk();
                 a++;
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                 {
                     a++;
                     GMI.GetComponent<Inventory>().DelItem();
+                    move_obj.GetComponent<SpriteRenderer>().sprite = change_spr;
                 }
-
-                Debug.Log("awe" + a);
-                StopCoroutine("talkBall");
+                
                 k = a;
-                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
-                talkBallB_obj.SetActive(true);
-                StartCoroutine("talkBall");
-                StopAndTalk();
+                //StopAndTalk();
                 break;
             case 9://말풍선 띄우고 특수 플레그 요구
                 SGM.GetComponent<SoundEvt>().soundTalk();
@@ -388,11 +371,8 @@ public class CheckPlayer : MonoBehaviour
                 {
                     a++;
                 }
-                StopCoroutine("talkBall");
+
                 k = a;
-                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
-                talkBallB_obj.SetActive(true);
-                StartCoroutine("talkBall");
                 StopAndTalk();
                 break;
             case 10://말풍선 두가지반복
@@ -401,32 +381,41 @@ public class CheckPlayer : MonoBehaviour
                 a--;
                 a--;
                 break;
-            case 11://말풍선 띄우고 아이템 얻음
+            case 11://특수 아이템요구 아이템제거 아이템획득
                 SGM.GetComponent<SoundEvt>().soundTalk();
-                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
-                talkBallB_obj.SetActive(true);
-                StopCoroutine("talkBall");
-                StartCoroutine("talkBall");
-                StopAndTalk();
                 a++;
-                ItemSettingOnEvent();
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == getItemPref_i)
+                {
+                    a++;
+                    GMI.GetComponent<Inventory>().DelItem();
+                    ItemSettingOnEvent();
+                    laterEvent_obj.SetActive(true);
+                }
+
+                k = a;
+
+
+
                 break;
-            case 12://말풍선 띄우고 퀘스트 시작
+            case 12://특수 아이템요구 
                 SGM.GetComponent<SoundEvt>().soundTalk();
-                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
-                talkBallB_obj.SetActive(true);
-                StopCoroutine("talkBall");
-                StartCoroutine("talkBall");
-                StopAndTalk();
                 a++;
-                PlayerPrefs.SetInt(SetItemPref_str, 1);
+                Debug.Log(PlayerPrefs.GetInt("selecteditemnum", 0)+"d" + getItemPref_i);
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+
+                    Debug.Log(PlayerPrefs.GetInt("selecteditemnum", 0) + getItemPref_i);
+                    a++;
+                    move_obj.GetComponent<SpriteRenderer>().sprite = change_spr;
+                    move_obj.gameObject.SetActive(false);
+                    ItemSettingOnEvent();
+                }
+
+                k = a;
+                //StopAndTalk();
                 break;
             case 13://말풍선 띄우고 퀘스트 시작
                 SGM.GetComponent<SoundEvt>().soundTalk();
-                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
-                talkBallB_obj.SetActive(true);
-                StopCoroutine("talkBall");
-                StartCoroutine("talkBall");
                 StopAndTalk();
                 a++;
                 PlayerPrefs.SetInt(SetItemPref_str, 1);
@@ -551,7 +540,6 @@ public class CheckPlayer : MonoBehaviour
         {
             PlayerPrefs.SetInt("inventorynum", (a-1));
         }
-
 
 
         GMI.GetComponent<ItemGetMotion>().fade_obj.GetComponent<SpriteRenderer>().sprite = item_spr;
