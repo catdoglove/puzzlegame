@@ -14,22 +14,22 @@ public class MiniGame : MonoBehaviour
 
     public bool select_b;
 
-    public int[][] num_i;
+    public int[,] num_i = new int[3,4];
+
+    public int nowSelect_i;
 
     // Start is called before the first frame update
     void Start()
     {
         x_i = 0;
-        y_i = 0;
+        y_i = 2;
 
-        num_i[0][2] = 1;
-        num_i[1][2] = 1;
-        num_i[2][2] = 1;
-        num_i[3][2] = 1;
-        num_i[0][3] = 1;
-        num_i[1][3] = 1;
-        num_i[2][3] = 1;
-        num_i[3][3] = 1;
+        num_i[0,2] = 1;
+        num_i[1,2] = 2;
+        num_i[2,2] = 3;
+        num_i[0,3] = 4;
+        num_i[1,3] = 5;
+        num_i[2,3] = 6;
     }
 
     // Update is called once per frame
@@ -43,6 +43,19 @@ public class MiniGame : MonoBehaviour
             {
                 x_i--;
             }
+
+            if (select_b)
+            {
+                if (num_i[x_i, y_i] != 0)
+                {
+                    x_i++;
+                }
+                SetRow();
+            }
+            else
+            {
+                SetSelect();
+            }
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -50,12 +63,38 @@ public class MiniGame : MonoBehaviour
             {
                 x_i++;
             }
+
+            if (select_b)
+            {
+                if (num_i[x_i, y_i] != 0)
+                {
+                    x_i--;
+                }
+                SetRow();
+            }
+            else
+            {
+                SetSelect();
+            }
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
             if (y_i > 0)
             {
                 y_i--;
+            }
+
+            if (select_b)
+            {
+                if (num_i[x_i, y_i] != 0)
+                {
+                    y_i++;
+                }
+                SetRow();
+            }
+            else
+            {
+                SetSelect();
             }
 
         }
@@ -69,6 +108,10 @@ public class MiniGame : MonoBehaviour
 
             if (select_b)
             {
+                if (num_i[x_i, y_i] != 0)
+                {
+                    y_i--;
+                }
                 SetRow();
             }
             else
@@ -79,15 +122,25 @@ public class MiniGame : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (num_i[x_i][y_i]==1)
+            if (num_i[x_i,y_i]!=0)
             {
                 if (select_b)
                 {
-                    select_b = false;
                 }
                 else
                 {
                     select_b = true;
+                    nowSelect_i = 0 + num_i[x_i, y_i];
+                    num_i[x_i, y_i] = 0;
+                }
+            }
+            else
+            {
+                if (select_b)
+                {
+                    select_b = false;
+                    num_i[x_i, y_i] = 0 + nowSelect_i;
+                    nowSelect_i = 0;
                 }
             }
         }
@@ -101,17 +154,22 @@ public class MiniGame : MonoBehaviour
         switch (x_i)
         {
             case 0:
-                //Row1_obj[y_i];
+                wood_obj[nowSelect_i].transform.position = Row1_obj[y_i].transform.position;
                 break;
             case 1:
+                wood_obj[nowSelect_i].transform.position = Row2_obj[y_i].transform.position;
                 break;
             case 2:
+                wood_obj[nowSelect_i].transform.position = Row3_obj[y_i].transform.position;
                 break;
             case 3:
+                wood_obj[nowSelect_i].transform.position = Row4_obj[y_i].transform.position;
                 break;
             default:
                 break;
         }
+
+        SetSelect();
     }
 
 

@@ -37,6 +37,8 @@ public class Inventory : MonoBehaviour
 
     public static bool itemGetting_b;
 
+    
+
 
     // Start is called before the first frame update
     void Start()

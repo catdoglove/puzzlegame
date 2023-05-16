@@ -27,6 +27,11 @@ public class MoveMap : MonoBehaviour
     public GameObject SGM;
     public GameObject BGM1;
 
+    public bool door_b;
+
+
+    public GameObject door1_obj, door2_obj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -113,6 +118,8 @@ public class MoveMap : MonoBehaviour
         {
             BGM1.SetActive(true);
         }
+
+        OpenDoor();
     }
 
 
@@ -123,6 +130,29 @@ public class MoveMap : MonoBehaviour
     }
 
 
+
+    void OpenDoor()
+    {
+
+        if (door_b)
+        {
+            if (PlayerPrefs.GetInt("opendoorone", 0)==1)
+            {
+                door1_obj.SetActive(false);
+                door2_obj.SetActive(true);
+            }
+            else
+            {
+            }
+
+            PlayerPrefs.SetInt("opendoorone", 1);
+        }
+        else
+        {
+
+        }
+
+    }
 
 
 }

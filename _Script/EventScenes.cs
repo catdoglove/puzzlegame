@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EventScenes : MonoBehaviour
 {
@@ -36,16 +37,26 @@ public class EventScenes : MonoBehaviour
     /// </summary>
     public GameObject noneBell_obj;
 
+    public GameObject letter_obj;
+    public Sprite letter_spr;
+
+    public GameObject black_obj;
+
+
     // Start is called before the first frame update
     void Start()
     {
         eventP_i = 0;
 
-        dream_obj.SetActive(true);
         StartCoroutine("StartEvent");
 
         GM.GetComponent<CharMove>().canMove = false;
 
+
+        if (PlayerPrefs.GetString("changeLanguage", "") == "ENG")
+        {
+            note_obj.GetComponent<Image>().sprite = letter_spr;
+        }
     }
 
     // Update is called once per frame
@@ -264,6 +275,10 @@ public class EventScenes : MonoBehaviour
     {
         int in_i = 1;
 
+        yield return new WaitForSeconds(2f);
+
+        black_obj.SetActive(false);
+        dream_obj.SetActive(true);
         while (in_i == 1)
         {
 
@@ -277,7 +292,7 @@ public class EventScenes : MonoBehaviour
         SGM.GetComponent<SoundEvt>().soundBoxOpen();
 
 
-    noneBell_obj.SetActive(false);
+        noneBell_obj.SetActive(false);
     }
 
 }

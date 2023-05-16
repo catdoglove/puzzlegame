@@ -60,6 +60,12 @@ public class CheckPlayer : MonoBehaviour
 
     public GameObject SGM;
 
+    public bool purple_b, soundLow_b;
+
+
+    public GameObject bearColl_obj;
+
+
     private void OnEnable()
     {
         //StartCoroutine("Checking");
@@ -315,7 +321,7 @@ public class CheckPlayer : MonoBehaviour
             case 0:
                 break;
             case 1://말풍선띄우고 다음으로
-                SGM.GetComponent<SoundEvt>().soundTalk();
+                TalkSound();
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StopCoroutine("talkBall");
@@ -324,7 +330,7 @@ public class CheckPlayer : MonoBehaviour
                 a++;
                 break;
             case 2://말풍선 띄우고 아이템 요구
-                SGM.GetComponent<SoundEvt>().soundTalk();
+                TalkSound();
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StopCoroutine("talkBall");
@@ -336,7 +342,7 @@ public class CheckPlayer : MonoBehaviour
                 a++;
                 break;
             case 4://말풍선 띄우고 특수 아이템요구
-                SGM.GetComponent<SoundEvt>().soundTalk();
+                TalkSound();
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StopCoroutine("talkBall");
@@ -365,7 +371,7 @@ public class CheckPlayer : MonoBehaviour
                 a--;
                 break;
             case 8://말풍선 띄우고 특수 아이템요구 아이템제거
-                SGM.GetComponent<SoundEvt>().soundTalk();
+                TalkSound();
                 a++;
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                 {
@@ -382,7 +388,7 @@ public class CheckPlayer : MonoBehaviour
                 StopAndTalk();
                 break;
             case 9://말풍선 띄우고 특수 플레그 요구
-                SGM.GetComponent<SoundEvt>().soundTalk();
+                TalkSound();
                 a++;
                 if (PlayerPrefs.GetInt(""+ SetItemPref_str, 0) == 1)
                 {
@@ -402,7 +408,7 @@ public class CheckPlayer : MonoBehaviour
                 a--;
                 break;
             case 11://말풍선 띄우고 아이템 얻음
-                SGM.GetComponent<SoundEvt>().soundTalk();
+                TalkSound();
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StopCoroutine("talkBall");
@@ -412,7 +418,7 @@ public class CheckPlayer : MonoBehaviour
                 ItemSettingOnEvent();
                 break;
             case 12://말풍선 띄우고 퀘스트 시작
-                SGM.GetComponent<SoundEvt>().soundTalk();
+                TalkSound();
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StopCoroutine("talkBall");
@@ -422,7 +428,7 @@ public class CheckPlayer : MonoBehaviour
                 PlayerPrefs.SetInt(SetItemPref_str, 1);
                 break;
             case 13://말풍선 띄우고 퀘스트 시작
-                SGM.GetComponent<SoundEvt>().soundTalk();
+                TalkSound();
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StopCoroutine("talkBall");
@@ -438,6 +444,7 @@ public class CheckPlayer : MonoBehaviour
             case 14://위 이동
                 StopTalk();
                 talkBallB_obj.SetActive(false);
+                bearColl_obj.SetActive(false);
                 StartCoroutine("EventUp");
                 a++;
                 break;
@@ -454,7 +461,24 @@ public class CheckPlayer : MonoBehaviour
         
     }
 
+    void TalkSound()
+    {
+        SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
+        if (purple_b)
+        {
+            SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 0.8f;
+        }
+        if (soundLow_b)
+        {
+            SGM.GetComponent<SoundEvt>().soundTalkLow();
+        }
+        else
+        {
+            SGM.GetComponent<SoundEvt>().soundTalk();
+        }
 
+    }
+    
 
     public void StopTalk()
     {
@@ -617,6 +641,7 @@ public class CheckPlayer : MonoBehaviour
     /// <returns></returns>
     IEnumerator EventDown()
     {
+
         GM.GetComponent<CharMove>().canMove = false;
         talk_b = false;
         int in_i = 1;
@@ -635,6 +660,7 @@ public class CheckPlayer : MonoBehaviour
         }
         talk_b = true;
         GM.GetComponent<CharMove>().canMove = true;
+
     }
 
 
