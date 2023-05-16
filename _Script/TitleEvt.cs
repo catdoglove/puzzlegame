@@ -5,16 +5,14 @@ using UnityEngine.SceneManagement; // 필요
 
 public class TitleEvt : MonoBehaviour
 {
+    public GameObject GM,startObj;
+   
 
-    /// <summary>
-    /// 할일
-    /// 1. 버튼 선택에 따른 언어 변경 기본값은 한글
-    /// 2. 씬전환 아무키나 누르면 가능
-    /// </summary>
     // Start is called before the first frame update
     void Start()
 	{
 		StartCoroutine("keyboardEvt");
+        
 	}
 
     public void changeLanguageKOR()
@@ -27,13 +25,34 @@ public class TitleEvt : MonoBehaviour
         PlayerPrefs.SetString("changeLanguage", "ENG");
     }
 
+    public void resolutionSetting()
+    {
+        int rWidth = 1920;
+        int rHeight = 1080;
+
+        Screen.SetResolution(rWidth,rHeight,true);
+    }
+
 	IEnumerator keyboardEvt()
-	{
-		while (true)
+    {
+        while (true)
 		{
-			if (Input.anyKeyDown)
-			{
+			if (Input.GetKey(KeyCode.Space))
+            {
+                GM.GetComponent<SoundEvt>().soundStart();
                 Debug.Log("씬전환");
+                startObj.SetActive(false);
+                yield return new WaitForSeconds(0.2f);
+                startObj.SetActive(true);
+                yield return new WaitForSeconds(0.2f);
+                startObj.SetActive(false);
+                yield return new WaitForSeconds(0.2f);
+                startObj.SetActive(true);
+                yield return new WaitForSeconds(0.2f);
+                startObj.SetActive(false);
+                yield return new WaitForSeconds(0.2f);
+                startObj.SetActive(true);
+                yield return new WaitForSeconds(0.2f);
                 SceneManager.LoadScene("01_Tutorial");
             }
 			yield return new WaitForSeconds(0.1f);

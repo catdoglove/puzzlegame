@@ -5976,7 +5976,7 @@ GameObject:
   - component: {fileID: 691798335}
   - component: {fileID: 691798336}
   m_Layer: 0
-  m_Name: "\uB3C4\uAD50\uC785\uAD6C (1)"
+  m_Name: "\uD638\uC218\uC52C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15233,7 +15233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1614719354
 Transform:
   m_ObjectHideFlags: 0
@@ -17333,7 +17333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1829395022
 Transform:
   m_ObjectHideFlags: 0
