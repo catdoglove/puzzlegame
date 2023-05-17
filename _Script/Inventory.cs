@@ -37,7 +37,8 @@ public class Inventory : MonoBehaviour
 
     public static bool itemGetting_b;
 
-    
+
+    public GameObject ESCevent;
 
 
     // Start is called before the first frame update
@@ -49,6 +50,11 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            showESCwindow();
+        }
         /*
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -492,5 +498,28 @@ public class Inventory : MonoBehaviour
     void SeletL()
     {
 
+    }
+
+
+
+    public void quitGame()
+    {
+        Application.Quit();
+    }
+
+    public void showFeedback()
+    {
+        Application.OpenURL("https://forms.gle/CGuVE8nRbE1QaRSc6");
+    }
+
+    public void showESCwindow()
+    {
+        ESCevent.SetActive(true);
+    }
+
+
+    public void closeESCwindow()
+    {
+        ESCevent.SetActive(false);
     }
 }

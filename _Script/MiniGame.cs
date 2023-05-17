@@ -18,6 +18,11 @@ public class MiniGame : MonoBehaviour
 
     public int nowSelect_i;
 
+
+    public GameObject puzzleWin_obj;
+    public GameObject GM;
+    public GameObject pan;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -119,7 +124,7 @@ public class MiniGame : MonoBehaviour
                 SetSelect();
             }
         }
-
+        //1t5t3t4t6t2
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (num_i[x_i,y_i]!=0)
@@ -141,6 +146,28 @@ public class MiniGame : MonoBehaviour
                     select_b = false;
                     num_i[x_i, y_i] = 0 + nowSelect_i;
                     nowSelect_i = 0;
+
+                    if (num_i[0, 0]==1)
+                    {
+                        if (num_i[1, 0] == 5)
+                        {
+                            if (num_i[2, 0] == 3)
+                            {
+                                if (num_i[0, 1] == 4)
+                                {
+                                    if (num_i[1, 1] == 6)
+                                    {
+                                        if (num_i[2, 1] == 2)
+                                        {
+                                            puzzleWin_obj.SetActive(false);
+                                            GM.GetComponent<CheckPlayerEvent>().ItemSettingOnEvent();
+                                            pan.SetActive(false);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

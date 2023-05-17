@@ -64,6 +64,10 @@ public class CheckPlayerEvent : MonoBehaviour
 
     public GameObject laterEvent_obj;
 
+    public GameObject puzzle_obj;
+
+    public GameObject hall_obj, hallFix_obj;
+
     private void OnEnable()
     {
         //StartCoroutine("Checking");
@@ -430,6 +434,44 @@ public class CheckPlayerEvent : MonoBehaviour
                 StartCoroutine("EventUp");
                 a++;
                 break;
+            case 15://퍼즐 이벤트
+                //SGM.GetComponent<SoundEvt>().soundTalk();
+                StopAndTalk();
+                a++;
+                puzzle_obj.SetActive(true);
+                break;
+
+            case 16://특수 아이템요구 아이템제거 아이템획득
+                a++;
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == getItemPref_i )
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemUse();
+                    a = 2;
+                    GMI.GetComponent<Inventory>().DelItem();
+                    hallFix_obj.SetActive(true);
+                    hall_obj.SetActive(false);
+                    SetItemPref_i = getItemPref_i;
+                }
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == getItemPref_i + 1)
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemUse();
+                    a = 2;
+                    GMI.GetComponent<Inventory>().DelItem();
+                    hallFix_obj.SetActive(true);
+                    hall_obj.SetActive(false);
+                    SetItemPref_i = getItemPref_i + 1;
+                }
+                k = a;
+                break;
+
+            case 17://특수 아이템요구 아이템제거 아이템획득
+                SGM.GetComponent<SoundEvt>().soundItemUse();
+                a = 0;
+                    ItemSettingOnEvent();
+                hallFix_obj.SetActive(false);
+                hall_obj.SetActive(true);
+                k = a;
+                break;
 
             default:
                 break;
@@ -464,7 +506,7 @@ public class CheckPlayerEvent : MonoBehaviour
     /// <summary>
     /// 아이템값받아오고 인벤토리에넣는다.
     /// </summary>
-    void ItemSettingOnEvent()
+    public void ItemSettingOnEvent()
     {
         int a = 0;
         a = PlayerPrefs.GetInt("inventorynum", 0);
