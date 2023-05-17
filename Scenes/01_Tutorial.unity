@@ -763,7 +763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15719629}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.88, y: 6.92, z: 0}
+  m_LocalPosition: {x: 4.12, y: 6.59, z: 0}
   m_LocalScale: {x: 76.10853, y: 17.48565, z: 1}
   m_Children: []
   m_Father: {fileID: 1781928804}
@@ -797,7 +797,7 @@ MonoBehaviour:
   mapRespawn_i: 0
   move_obj: {fileID: 15719629}
   player_obj: {fileID: 1236708166}
-  size: {x: 6, y: 2}
+  size: {x: 7, y: 2}
   whatIsLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -2417,7 +2417,7 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: beard
-  EventNum_i: 010000000300000008000000050000000b0000000f0000000100000001000000010000000a0000000a0000000a00000005000000
+  EventNum_i: 01000000030000000800000005000000130000000300000001000000010000000a0000000a0000000a0000000a00000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
@@ -2425,27 +2425,27 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 120eff00de912e9489f7b3ee9e323152, type: 3}
   - {fileID: 21300000, guid: 120eff00de912e9489f7b3ee9e323152, type: 3}
   - {fileID: 21300000, guid: 120eff00de912e9489f7b3ee9e323152, type: 3}
+  - {fileID: 21300000, guid: 285a429b3754d704a87750196dbd2dc6, type: 3}
   - {fileID: 21300000, guid: 790f3b2024168634386aef5420e4f593, type: 3}
   - {fileID: 21300000, guid: 6024dde1fe958874f9deaf8f4ceaf10f, type: 3}
-  - {fileID: 21300000, guid: 6024dde1fe958874f9deaf8f4ceaf10f, type: 3}
-  - {fileID: 21300000, guid: 6024dde1fe958874f9deaf8f4ceaf10f, type: 3}
   - {fileID: 21300000, guid: 285a429b3754d704a87750196dbd2dc6, type: 3}
   - {fileID: 21300000, guid: 285a429b3754d704a87750196dbd2dc6, type: 3}
-  - {fileID: 21300000, guid: 285a429b3754d704a87750196dbd2dc6, type: 3}
-  - {fileID: 21300000, guid: 285a429b3754d704a87750196dbd2dc6, type: 3}
+  - {fileID: 21300000, guid: 790f3b2024168634386aef5420e4f593, type: 3}
+  - {fileID: 21300000, guid: 790f3b2024168634386aef5420e4f593, type: 3}
+  - {fileID: 21300000, guid: 790f3b2024168634386aef5420e4f593, type: 3}
   Event2_spr:
   - {fileID: 21300000, guid: ba53efe60e10c7b40b4db08d0fbe9974, type: 3}
   - {fileID: 21300000, guid: ba53efe60e10c7b40b4db08d0fbe9974, type: 3}
   - {fileID: 21300000, guid: ba53efe60e10c7b40b4db08d0fbe9974, type: 3}
   - {fileID: 21300000, guid: ba53efe60e10c7b40b4db08d0fbe9974, type: 3}
+  - {fileID: 21300000, guid: 894bf908a89c206408c0a4e0175ba03f, type: 3}
   - {fileID: 21300000, guid: 961fbeeca1162a941aa9345c8cb76ac7, type: 3}
   - {fileID: 21300000, guid: a6e6aea93bd7d284e81809962007e3b9, type: 3}
-  - {fileID: 21300000, guid: a6e6aea93bd7d284e81809962007e3b9, type: 3}
-  - {fileID: 21300000, guid: a6e6aea93bd7d284e81809962007e3b9, type: 3}
   - {fileID: 21300000, guid: 894bf908a89c206408c0a4e0175ba03f, type: 3}
   - {fileID: 21300000, guid: 894bf908a89c206408c0a4e0175ba03f, type: 3}
-  - {fileID: 21300000, guid: 894bf908a89c206408c0a4e0175ba03f, type: 3}
-  - {fileID: 21300000, guid: 894bf908a89c206408c0a4e0175ba03f, type: 3}
+  - {fileID: 21300000, guid: 961fbeeca1162a941aa9345c8cb76ac7, type: 3}
+  - {fileID: 21300000, guid: 961fbeeca1162a941aa9345c8cb76ac7, type: 3}
+  - {fileID: 21300000, guid: 961fbeeca1162a941aa9345c8cb76ac7, type: 3}
   talkBall_obj: {fileID: 222865027}
   talkBallB_obj: {fileID: 48938279}
   giveItemPref_i: 6
@@ -8452,20 +8452,20 @@ MonoBehaviour:
   whatIsLayer:
     serializedVersion: 2
     m_Bits: 512
-  balloon_spr: {fileID: 21300000, guid: a9c4bf23103ba4e4ba70f548381e5ab9, type: 3}
+  balloon_spr: {fileID: 21300000, guid: d6a44ab95b0def041a7929981a2c23a1, type: 3}
   balloon_obj: {fileID: 1648107670}
   x_f: 0
   y_f: 0
   GMS: {fileID: 1648107670}
   GM: {fileID: 1236708166}
   GMI: {fileID: 1283954030}
-  SetItemPref_str: hurttree
+  SetItemPref_str: pan2
   SetItemPref_i: 19
   itemQ_b: 0
   GetItem_obj: {fileID: 1648107670}
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
-  SetEventPref_str: hurttree
+  SetEventPref_str: pan1
   EventNum_i: 0f000000050000000b00000005000000000000000000000000000000000000000000000000000000
   EventNum1_i: 
   EventNum2_i: 
@@ -10620,7 +10620,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411734312}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.22, y: -3.86, z: 10}
+  m_LocalPosition: {x: -1.9, y: -3.36, z: 10}
   m_LocalScale: {x: 1.4258347, y: 1.4258347, z: 1.4258347}
   m_Children: []
   m_Father: {fileID: 1618348495}
@@ -11987,20 +11987,20 @@ MonoBehaviour:
   whatIsLayer:
     serializedVersion: 2
     m_Bits: 512
-  balloon_spr: {fileID: 21300000, guid: a9c4bf23103ba4e4ba70f548381e5ab9, type: 3}
+  balloon_spr: {fileID: 21300000, guid: d6a44ab95b0def041a7929981a2c23a1, type: 3}
   balloon_obj: {fileID: 1648107670}
   x_f: 0
   y_f: 0
   GMS: {fileID: 1648107670}
   GM: {fileID: 1236708166}
   GMI: {fileID: 1283954030}
-  SetItemPref_str: hurttree
+  SetItemPref_str: hallfix2
   SetItemPref_i: 18
   itemQ_b: 0
   GetItem_obj: {fileID: 1648107670}
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
-  SetEventPref_str: hurttree
+  SetEventPref_str: hallfix2
   EventNum_i: 10000000050000001100000005000000000000000000000000000000000000000000000000000000
   EventNum1_i: 
   EventNum2_i: 
@@ -20582,20 +20582,20 @@ MonoBehaviour:
   whatIsLayer:
     serializedVersion: 2
     m_Bits: 512
-  balloon_spr: {fileID: 21300000, guid: a9c4bf23103ba4e4ba70f548381e5ab9, type: 3}
+  balloon_spr: {fileID: 21300000, guid: d6a44ab95b0def041a7929981a2c23a1, type: 3}
   balloon_obj: {fileID: 1648107670}
   x_f: 0
   y_f: 0
   GMS: {fileID: 1648107670}
   GM: {fileID: 1236708166}
   GMI: {fileID: 1283954030}
-  SetItemPref_str: hurttree
+  SetItemPref_str: hallfix
   SetItemPref_i: 18
   itemQ_b: 0
   GetItem_obj: {fileID: 1648107670}
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
-  SetEventPref_str: hurttree
+  SetEventPref_str: hallfix1
   EventNum_i: 10000000050000001100000005000000000000000000000000000000000000000000000000000000
   EventNum1_i: 
   EventNum2_i: 
@@ -20902,7 +20902,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879451249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.57, y: -10.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1618348495}
@@ -21282,20 +21282,20 @@ MonoBehaviour:
   whatIsLayer:
     serializedVersion: 2
     m_Bits: 512
-  balloon_spr: {fileID: 21300000, guid: a9c4bf23103ba4e4ba70f548381e5ab9, type: 3}
+  balloon_spr: {fileID: 21300000, guid: d6a44ab95b0def041a7929981a2c23a1, type: 3}
   balloon_obj: {fileID: 1648107670}
   x_f: 0
   y_f: 0
   GMS: {fileID: 1648107670}
   GM: {fileID: 1236708166}
   GMI: {fileID: 1283954030}
-  SetItemPref_str: hurttree
+  SetItemPref_str: pan1
   SetItemPref_i: 18
   itemQ_b: 0
   GetItem_obj: {fileID: 1648107670}
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
-  SetEventPref_str: hurttree
+  SetEventPref_str: pan1
   EventNum_i: 0f000000050000000b00000005000000000000000000000000000000000000000000000000000000
   EventNum1_i: 
   EventNum2_i: 
@@ -21530,7 +21530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &895976248
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29203,7 +29203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1213087002
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29724,7 +29724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236708166}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.67, y: 0.39, z: 8.3130455}
+  m_LocalPosition: {x: 1.14, y: -0.6, z: 8.3130455}
   m_LocalScale: {x: 0.94, y: 0.94, z: 1}
   m_Children:
   - {fileID: 709243688}
@@ -31183,6 +31183,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d9226d6bccc553e45b87d309635de3dd, type: 3}
   - {fileID: 21300000, guid: 31167bfa3a5d16440b9aa015c7f9d57f, type: 3}
   - {fileID: 21300000, guid: 31167bfa3a5d16440b9aa015c7f9d57f, type: 3}
+  - {fileID: 21300000, guid: f69f87f9ad578cb459d185b4a3548918, type: 3}
   - {fileID: 21300000, guid: f69f87f9ad578cb459d185b4a3548918, type: 3}
   - {fileID: 21300000, guid: f69f87f9ad578cb459d185b4a3548918, type: 3}
   a: 0
@@ -35812,7 +35813,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554112340}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.64, y: 4.01, z: 10}
+  m_LocalPosition: {x: 3.22, y: 4.77, z: 10}
   m_LocalScale: {x: 1.4258347, y: 1.4258347, z: 1.4258347}
   m_Children: []
   m_Father: {fileID: 1618348495}
@@ -42344,20 +42345,20 @@ MonoBehaviour:
   whatIsLayer:
     serializedVersion: 2
     m_Bits: 512
-  balloon_spr: {fileID: 21300000, guid: a9c4bf23103ba4e4ba70f548381e5ab9, type: 3}
+  balloon_spr: {fileID: 21300000, guid: d6a44ab95b0def041a7929981a2c23a1, type: 3}
   balloon_obj: {fileID: 1648107670}
   x_f: 0
   y_f: 0
   GMS: {fileID: 1648107670}
   GM: {fileID: 1236708166}
   GMI: {fileID: 1283954030}
-  SetItemPref_str: hurttree
+  SetItemPref_str: hallfix3
   SetItemPref_i: 18
   itemQ_b: 0
   GetItem_obj: {fileID: 1648107670}
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
-  SetEventPref_str: hurttree
+  SetEventPref_str: hallfix3
   EventNum_i: 10000000050000001100000005000000000000000000000000000000000000000000000000000000
   EventNum1_i: 
   EventNum2_i: 

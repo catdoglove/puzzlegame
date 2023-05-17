@@ -460,6 +460,7 @@ public class CheckPlayer : MonoBehaviour
                 ItemSettingOnEvent();
                 talkBallB_obj.SetActive(false);
                 a++;
+                StopTalk();
                 break;
             case 16://말풍선 띄우고 퀘스트 시작
                 TalkSound();
@@ -483,6 +484,16 @@ public class CheckPlayer : MonoBehaviour
                 StopTalk();
                 talkBallB_obj.SetActive(false);
                 StartCoroutine("EventR");
+                a++;
+                break;
+            case 19://말풍선 띄우고 아이템 얻음
+                TalkSound();
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StopCoroutine("talkBall");
+                StartCoroutine("talkBall");
+                ItemSettingOnEvent();
+                StopAndTalk();
                 a++;
                 break;
 
