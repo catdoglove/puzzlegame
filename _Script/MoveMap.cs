@@ -27,7 +27,8 @@ public class MoveMap : MonoBehaviour
     public GameObject SGM;
     public GameObject BGM1;
 
-    public bool door_b;
+    public bool door_b, char_b;
+
 
 
     public GameObject door1_obj, door2_obj;
@@ -73,7 +74,7 @@ public class MoveMap : MonoBehaviour
                     hit = null;
                     player_obj.transform.position = mapRespawn_obj[0].transform.position;
 
-                    Invoke("MovingMap", 0.018f);
+                    Invoke("MovingMap", 0.02f);
                     //position = player_obj.transform.position;
                     //position.x = -5.66f;
                     //position.y = -1.55f;
@@ -91,7 +92,7 @@ public class MoveMap : MonoBehaviour
     /// <summary>
     /// 어느맵으로 갈지 찾아준다.
     /// </summary>
-    void MovingMap()
+    public void MovingMap()
     {
 
         if (nowDonMove_i==0)
@@ -152,6 +153,10 @@ public class MoveMap : MonoBehaviour
 
         }
 
+        if (char_b)
+        {
+            player_obj.SetActive(true);
+        }
     }
 
 

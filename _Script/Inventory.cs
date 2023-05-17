@@ -336,7 +336,7 @@ public class Inventory : MonoBehaviour
         SGM.GetComponent<SoundEvt>().soundItemWndOpen();
         while (in_i == 1)
         {
-            position.y = position.y - 15f * Time.deltaTime;
+            position.y = position.y - 10f * Time.deltaTime;
             itemWindow_obj.transform.position = position;
             if (position.y <= itemWindowEnd_obj.transform.position.y)
             {
@@ -358,7 +358,7 @@ public class Inventory : MonoBehaviour
         think_obj.SetActive(false);
         while (in_i == 1)
         {
-            position.y = position.y + 15f * Time.deltaTime;
+            position.y = position.y + 10f * Time.deltaTime;
             itemWindow_obj.transform.position = position;
             if (position.y >= itemWindowStart_obj.transform.position.y)
             {
@@ -423,6 +423,7 @@ public class Inventory : MonoBehaviour
         {
             selected_obj.SetActive(true);
             selected_obj.GetComponent<Image>().sprite = invenItem_obj[selectedNow_i].GetComponent<Image>().sprite;
+            PlayerPrefs.SetInt("selecteditemnum", items_i[selectedNow_i]);
         }
         else
         {
@@ -441,6 +442,19 @@ public class Inventory : MonoBehaviour
         int t = PlayerPrefs.GetInt("stacking", 0);
         int t2 = PlayerPrefs.GetInt("whierestacking", 0);
 
+        /*
+        for (int i = 0; i < a; i++)
+        {
+            int p_a = PlayerPrefs.GetInt("inventoryget" + (i + 1), 0);
+            PlayerPrefs.SetInt("inventoryget" + i, p_a); items_i[i] = p_a;
+            if (p_a != 0)
+            {
+                invenItem_obj[i].SetActive(true);
+                invenItem_obj[i].GetComponent<Image>().sprite = Item_spr[p_a];
+            }
+            Debug.Log("afor" + a); Debug.Log("pafor" + p_a);
+        }
+        */
 
         PlayerPrefs.SetInt("inventoryget" + a, 0);
         invenItem_obj[a].GetComponent<Image>().sprite = null;
@@ -452,6 +466,8 @@ public class Inventory : MonoBehaviour
 
 
         PlayerPrefs.SetInt("inventorynum", a);
+        /*
+        */
     }
 
     void SelectMove()

@@ -68,6 +68,10 @@ public class CheckPlayerEvent : MonoBehaviour
 
     public GameObject hall_obj, hallFix_obj;
 
+    public GameObject rideGM, moveGM;
+
+    public bool d_b;
+
     private void OnEnable()
     {
         //StartCoroutine("Checking");
@@ -356,10 +360,19 @@ public class CheckPlayerEvent : MonoBehaviour
                 a--;
                 break;
             case 8://특수 아이템요구 아이템제거
-                SGM.GetComponent<SoundEvt>().soundTalk();
+                SGM.GetComponent<SoundEvt>().soundItemFail();
                 a++;
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                 {
+
+                    if (d_b)
+                    {
+                        SGM.GetComponent<SoundEvt>().soundDamage();
+                    }
+                    else
+                    {
+                        SGM.GetComponent<SoundEvt>().soundItemUse();
+                    }
                     a++;
                     GMI.GetComponent<Inventory>().DelItem();
                     move_obj.GetComponent<SpriteRenderer>().sprite = change_spr;
@@ -386,10 +399,11 @@ public class CheckPlayerEvent : MonoBehaviour
                 a--;
                 break;
             case 11://특수 아이템요구 아이템제거 아이템획득
-                SGM.GetComponent<SoundEvt>().soundTalk();
+                SGM.GetComponent<SoundEvt>().soundItemFail();
                 a++;
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == getItemPref_i)
                 {
+                    SGM.GetComponent<SoundEvt>().soundItemUse();
                     a++;
                     GMI.GetComponent<Inventory>().DelItem();
                     ItemSettingOnEvent();
@@ -473,6 +487,13 @@ public class CheckPlayerEvent : MonoBehaviour
                 hallFix_obj.SetActive(false);
                 hall_obj.SetActive(true);
                 k = a;
+                break;
+            case 18://외부 함수 실행
+
+                StopTalk();
+                rideGM.GetComponent<example>().mapwhere =99;
+                //
+                char_obj.SetActive(false);
                 break;
 
             default:

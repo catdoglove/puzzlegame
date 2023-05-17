@@ -7,10 +7,12 @@ public class example : MonoBehaviour
     private Rigidbody2D rigid2D;
     public Animator boatAni;
     bool onetime = true;
-    int mapwhere = 88; //보트맵
+    public int mapwhere = 88; //보트맵
 
     float moveX;
     public GameObject boatSpr, hiddenSpr,backBG,frontBG;
+
+    public GameObject moveGM;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,9 @@ public class example : MonoBehaviour
     { 
         if (mapwhere == 99)
         {
-            Invoke("boatAnimation", 2f);
+            boatAnimation();
+            //Invoke("boatAnimation", 2f);//2초뒤에 배타는 모션 실행
+            mapwhere = 0;
         }
         else if (mapwhere == 88)
         {
@@ -90,9 +94,15 @@ public class example : MonoBehaviour
 
     IEnumerator Action_go()
     {
-        Vector3 destination = new Vector3(13, transform.position.y, 0);
-        transform.position =
-            Vector3.MoveTowards(transform.position, destination, 2.5f * Time.deltaTime);
-        yield return new WaitForSeconds(1f);
+        int a = 1;
+        while (a <= 50)
+        {
+            Vector3 destination = new Vector3(13, transform.position.y, 0);
+            transform.position = Vector3.MoveTowards(transform.position, destination, 6.5f * Time.deltaTime);
+            yield return new WaitForSeconds(0.01f);
+            a++;
+        }
+
+        moveGM.GetComponent<MoveMap>().MovingMap();
     }
 }

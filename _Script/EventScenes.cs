@@ -161,7 +161,7 @@ public class EventScenes : MonoBehaviour
         position0 = move_obj[0].transform.position;
         while (in_i == 1)
         {
-            position0.y = position0.y + 25f * Time.deltaTime;
+            position0.y = position0.y + 20f * Time.deltaTime;
             move_obj[0].transform.position = position0;
             
             if (position0.y >= OutOfScreen_obj[0].transform.position.y)
@@ -183,7 +183,7 @@ public class EventScenes : MonoBehaviour
         position1 = move_obj[1].transform.position;
         while (in_i == 1)
         {
-            position1.x = position1.x + 25f * Time.deltaTime;
+            position1.x = position1.x + 20f * Time.deltaTime;
             move_obj[1].transform.position = position1;
             
             if (position1.x >= OutOfScreen_obj[3].transform.position.x)
@@ -207,7 +207,7 @@ public class EventScenes : MonoBehaviour
         position2 = move_obj[2].transform.position;
         while (in_i == 1)
         {
-            position2.x = position2.x - 25f * Time.deltaTime;
+            position2.x = position2.x - 20f * Time.deltaTime;
             move_obj[2].transform.position = position2;
             
             if (position2.x <= OutOfScreen_obj[1].transform.position.x)
@@ -232,7 +232,7 @@ public class EventScenes : MonoBehaviour
         position3 = note_obj.transform.position;
         while (in_i == 1)
         {
-            position3.y = position3.y - 25f * Time.deltaTime;
+            position3.y = position3.y - 20f * Time.deltaTime;
             note_obj.transform.position = position3;
             if (position3.y <= OutOfScreen_obj[2].transform.position.y)
             {

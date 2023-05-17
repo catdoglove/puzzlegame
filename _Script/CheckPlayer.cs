@@ -485,6 +485,7 @@ public class CheckPlayer : MonoBehaviour
                 talkBallB_obj.SetActive(false);
                 StartCoroutine("EventR");
                 a++;
+                bearColl_obj.SetActive(true);
                 break;
             case 19://말풍선 띄우고 아이템 얻음
                 TalkSound();
@@ -705,7 +706,7 @@ public class CheckPlayer : MonoBehaviour
         position0 = transform.position;
         while (in_i == 1)
         {
-            position0.y = position0.y + 10f * Time.deltaTime;
+            position0.y = position0.y + 5f * Time.deltaTime;
             transform.position = position0;
 
             if (position0.y >= move_obj.transform.position.y)
@@ -732,7 +733,7 @@ public class CheckPlayer : MonoBehaviour
         position0 = transform.position;
         while (in_i == 1)
         {
-            position0.y = position0.y - 10f * Time.deltaTime;
+            position0.y = position0.y - 5f * Time.deltaTime;
             transform.position = position0;
 
             if (position0.y <= move_obj.transform.position.y)
@@ -760,7 +761,7 @@ public class CheckPlayer : MonoBehaviour
         position0 = moveOther_obj.transform.position;
         while (in_i == 1)
         {
-            position0.x = position0.x + 10f * Time.deltaTime;
+            position0.x = position0.x + 5f * Time.deltaTime;
             moveOther_obj.transform.position = position0;
 
             if (position0.x >= move_obj.transform.position.x)
