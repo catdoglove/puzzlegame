@@ -495,6 +495,10 @@ public class CheckPlayerEvent : MonoBehaviour
                 //
                 char_obj.SetActive(false);
                 break;
+            case 19://외부 함수 실행
+
+                moveGM.SetActive(true);
+                break;
 
             default:
                 break;

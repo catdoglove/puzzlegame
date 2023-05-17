@@ -27,11 +27,13 @@ public class MoveMap : MonoBehaviour
     public GameObject SGM;
     public GameObject BGM1;
 
-    public bool door_b, char_b;
+    public bool door_b, char_b, comeHere_b;
 
 
 
     public GameObject door1_obj, door2_obj;
+    public GameObject endEvent_obj, endEvent2_obj, endEvent3_obj;
+
 
     // Start is called before the first frame update
     void Start()
@@ -56,37 +58,51 @@ public class MoveMap : MonoBehaviour
 
     IEnumerator CheckingMap()
     {
-        while (mapTime_i == 1)
-        {
-            wait = PlayerPrefs.GetInt("wait", 0);
-            if (wait == 0)
+        
+            while (mapTime_i == 1)
             {
-                Collider2D hit = Physics2D.OverlapBox(transform.position, size, 0, whatIsLayer);
-
-                if (hit == null)
+                wait = PlayerPrefs.GetInt("wait", 0);
+                if (wait == 0)
                 {
+                    Collider2D hit = Physics2D.OverlapBox(transform.position, size, 0, whatIsLayer);
+
+                    if (hit == null)
+                    {
+                    }
+                    else
+                    {
+
+
+                    if (comeHere_b)
+                    {
+                        GM.GetComponent<CharMove>().canMove = false;
+                        endEvent3_obj.SetActive(true);
+                        Invoke("MovingMap", 2f);
+                    }
+                    else
+                    {
+
+                        wait = 1;
+                        PlayerPrefs.SetInt("wait", 1);
+                        hit = null;
+                        player_obj.transform.position = mapRespawn_obj[0].transform.position;
+
+                        Invoke("MovingMap", 0.02f);
+                        //position = player_obj.transform.position;
+                        //position.x = -5.66f;
+                        //position.y = -1.55f;
+                        //player_obj.transform.position = position;
+                        //Debug.Log("a");
+                        //-5.664642 -1.550424
+                        //StopCoroutine("CheckingMap");
+                    }
+
                 }
-                else
-                {
 
-                    wait = 1;
-                    PlayerPrefs.SetInt("wait", 1);
-                    hit = null;
-                    player_obj.transform.position = mapRespawn_obj[0].transform.position;
-
-                    Invoke("MovingMap", 0.02f);
-                    //position = player_obj.transform.position;
-                    //position.x = -5.66f;
-                    //position.y = -1.55f;
-                    //player_obj.transform.position = position;
-                    //Debug.Log("a");
-                    //-5.664642 -1.550424
-                    //StopCoroutine("CheckingMap");
                 }
-
+                yield return new WaitForSeconds(0.1f);
             }
-            yield return new WaitForSeconds(0.1f);
-        }
+        
     }
 
     /// <summary>
@@ -94,33 +110,40 @@ public class MoveMap : MonoBehaviour
     /// </summary>
     public void MovingMap()
     {
-
-        if (nowDonMove_i==0)
+        if (comeHere_b)
         {
-            map2_obj[mapToGo_i].SetActive(true);
-            map2_obj[mapNow_i].SetActive(false);
-
-            int k = mapRespawn_obj.Length;
-            k--;
-            GM.GetComponent<CharMove>().canMove = false;
-            GM.GetComponent<CharMove>().canMove = true;
-            PlayerPrefs.SetInt("mapindexnum", mapToGo_i);
-
-            wait = 0;
-            PlayerPrefs.SetInt("wait", 0);
+            //크로우어택 후 스페이스바 누르면 엔딩
+            endEvent_obj.SetActive(true);
+            endEvent2_obj.SetActive(true);
         }
-
-        if (openSound_b == true)
+        else
         {
-            SGM.GetComponent<SoundEvt>().soundOpenObject();
-        }
+            if (nowDonMove_i == 0)
+            {
+                map2_obj[mapToGo_i].SetActive(true);
+                map2_obj[mapNow_i].SetActive(false);
 
-        if (onSound_b == true)
-        {
-            BGM1.SetActive(true);
-        }
+                int k = mapRespawn_obj.Length;
+                k--;
+                GM.GetComponent<CharMove>().canMove = false;
+                GM.GetComponent<CharMove>().canMove = true;
+                PlayerPrefs.SetInt("mapindexnum", mapToGo_i);
 
-        OpenDoor();
+                wait = 0;
+                PlayerPrefs.SetInt("wait", 0);
+            }
+
+            if (openSound_b == true)
+            {
+                SGM.GetComponent<SoundEvt>().soundOpenObject();
+            }
+
+            if (onSound_b == true)
+            {
+                BGM1.SetActive(true);
+            }
+            OpenDoor();
+        }
     }
 
 
