@@ -20,8 +20,9 @@ public class MiniGame : MonoBehaviour
 
 
     public GameObject puzzleWin_obj;
-    public GameObject GM;
+    public GameObject GM, GMM;
     public GameObject pan;
+    public GameObject SGM;
 
     // Start is called before the first frame update
     void Start()
@@ -55,11 +56,17 @@ public class MiniGame : MonoBehaviour
                 {
                     x_i++;
                 }
+                else
+                {
+
+                    SGM.GetComponent<SoundEvt>().soundItemWndAD();
+                }
                 SetRow();
             }
             else
             {
                 SetSelect();
+                SGM.GetComponent<SoundEvt>().soundItemWndAD();
             }
         }
         if (Input.GetKeyDown(KeyCode.D))
@@ -75,11 +82,17 @@ public class MiniGame : MonoBehaviour
                 {
                     x_i--;
                 }
+                else
+                {
+
+                    SGM.GetComponent<SoundEvt>().soundItemWndAD();
+                }
                 SetRow();
             }
             else
             {
                 SetSelect();
+                SGM.GetComponent<SoundEvt>().soundItemWndAD();
             }
         }
         if (Input.GetKeyDown(KeyCode.W))
@@ -95,11 +108,17 @@ public class MiniGame : MonoBehaviour
                 {
                     y_i++;
                 }
+                else
+                {
+
+                    SGM.GetComponent<SoundEvt>().soundItemWndAD();
+                }
                 SetRow();
             }
             else
             {
                 SetSelect();
+                SGM.GetComponent<SoundEvt>().soundItemWndAD();
             }
 
         }
@@ -117,11 +136,17 @@ public class MiniGame : MonoBehaviour
                 {
                     y_i--;
                 }
+                else
+                {
+
+                    SGM.GetComponent<SoundEvt>().soundItemWndAD();
+                }
                 SetRow();
             }
             else
             {
                 SetSelect();
+                SGM.GetComponent<SoundEvt>().soundItemWndAD();
             }
         }
         //1t5t3t4t6t2
@@ -137,6 +162,7 @@ public class MiniGame : MonoBehaviour
                     select_b = true;
                     nowSelect_i = 0 + num_i[x_i, y_i];
                     num_i[x_i, y_i] = 0;
+                    SGM.GetComponent<SoundEvt>().soundItemWndSelect();
                 }
             }
             else
@@ -146,6 +172,7 @@ public class MiniGame : MonoBehaviour
                     select_b = false;
                     num_i[x_i, y_i] = 0 + nowSelect_i;
                     nowSelect_i = 0;
+                    SGM.GetComponent<SoundEvt>().soundItemWndSelect();
 
                     if (num_i[0, 0]==1)
                     {
@@ -162,6 +189,7 @@ public class MiniGame : MonoBehaviour
                                             puzzleWin_obj.SetActive(false);
                                             GM.GetComponent<CheckPlayerEvent>().ItemSettingOnEvent();
                                             pan.SetActive(false);
+                                            GMM.GetComponent<CharMove>().canMove = true;
                                         }
                                     }
                                 }

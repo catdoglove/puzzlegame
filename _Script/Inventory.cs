@@ -84,6 +84,7 @@ public class Inventory : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
+            SGM.GetComponent<SoundEvt>().soundItemWndOpen();
             MainGM.GetComponent<SceneAdd>().AtiveScene();
         }
 
@@ -335,7 +336,7 @@ public class Inventory : MonoBehaviour
         SGM.GetComponent<SoundEvt>().soundItemWndOpen();
         while (in_i == 1)
         {
-            position.y = position.y - 27f * Time.deltaTime;
+            position.y = position.y - 15f * Time.deltaTime;
             itemWindow_obj.transform.position = position;
             if (position.y <= itemWindowEnd_obj.transform.position.y)
             {
@@ -357,7 +358,7 @@ public class Inventory : MonoBehaviour
         think_obj.SetActive(false);
         while (in_i == 1)
         {
-            position.y = position.y + 27f * Time.deltaTime;
+            position.y = position.y + 15f * Time.deltaTime;
             itemWindow_obj.transform.position = position;
             if (position.y >= itemWindowStart_obj.transform.position.y)
             {

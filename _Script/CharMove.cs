@@ -11,7 +11,7 @@ public class CharMove : MonoBehaviour
 
     public Animator charAni;
     float moveX, moveY, charspeed;
-    float normalSpeed = 0.1f, runSpeed = 0.2f, crushSpeed = 0.05f;
+    float normalSpeed = 0.3f, runSpeed = 0.5f, crushSpeed = 0.05f;
     public Action keyaction = null;
 
     public GameObject charSpr;
@@ -145,7 +145,7 @@ public class CharMove : MonoBehaviour
         }
 
 
-
+        //전환하기
         //changeVolume(); 
         //changeVolume2();
 

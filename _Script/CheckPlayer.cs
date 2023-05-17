@@ -496,6 +496,34 @@ public class CheckPlayer : MonoBehaviour
                 StopAndTalk();
                 a++;
                 break;
+            case 20://말풍선 띄우고 특수 아이템요구 아이템제거
+                TalkSound();
+                a++;
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    a++;
+                    GMI.GetComponent<Inventory>().DelItem();
+                    giveItemPref_i = 19;
+                    SetItemPref_i = 21;
+                }
+
+                Debug.Log("awe" + a);
+                StopCoroutine("talkBall");
+                k = a;
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StartCoroutine("talkBall");
+                StopAndTalk();
+                break;
+            case 21://말풍선띄우고 다음으로
+                a++;
+                TalkSound();
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StopCoroutine("talkBall");
+                StartCoroutine("talkBall");
+                StopAndTalk();
+                break;
 
             default:
                 break;
@@ -555,6 +583,8 @@ public class CheckPlayer : MonoBehaviour
     /// </summary>
     void ItemSettingOnEvent()
     {
+
+        SGM.GetComponent<SoundEvt>().soundItemSuccess();
         int a = 0;
         a = PlayerPrefs.GetInt("inventorynum", 0);
 
@@ -675,7 +705,7 @@ public class CheckPlayer : MonoBehaviour
         position0 = transform.position;
         while (in_i == 1)
         {
-            position0.y = position0.y + 20f * Time.deltaTime;
+            position0.y = position0.y + 10f * Time.deltaTime;
             transform.position = position0;
 
             if (position0.y >= move_obj.transform.position.y)
@@ -702,7 +732,7 @@ public class CheckPlayer : MonoBehaviour
         position0 = transform.position;
         while (in_i == 1)
         {
-            position0.y = position0.y - 20f * Time.deltaTime;
+            position0.y = position0.y - 10f * Time.deltaTime;
             transform.position = position0;
 
             if (position0.y <= move_obj.transform.position.y)
@@ -730,7 +760,7 @@ public class CheckPlayer : MonoBehaviour
         position0 = moveOther_obj.transform.position;
         while (in_i == 1)
         {
-            position0.x = position0.x + 20f * Time.deltaTime;
+            position0.x = position0.x + 10f * Time.deltaTime;
             moveOther_obj.transform.position = position0;
 
             if (position0.x >= move_obj.transform.position.x)

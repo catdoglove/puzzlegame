@@ -439,6 +439,8 @@ public class CheckPlayerEvent : MonoBehaviour
                 StopAndTalk();
                 a++;
                 puzzle_obj.SetActive(true);
+                GM.GetComponent<CharMove>().canMove = false;
+                this.gameObject.SetActive(false);
                 break;
 
             case 16://특수 아이템요구 아이템제거 아이템획득

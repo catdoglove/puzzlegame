@@ -6,8 +6,8 @@ public class ItemGetMotion : MonoBehaviour
 {
 
 
-    Color color;
-    public GameObject fade_obj;
+    Color color, color2;
+    public GameObject fade_obj, fade2_obj;
     public float moveY, moveX;
     Vector2 mouseDragPos;
     public Vector2 wldObjectPos;
@@ -35,6 +35,8 @@ public class ItemGetMotion : MonoBehaviour
         i_f = 0;
         fade_obj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         StopAllCoroutines();
+        fade2_obj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        
 
         i_i = 0;
         i_f = 1;
@@ -46,12 +48,15 @@ public class ItemGetMotion : MonoBehaviour
     IEnumerator imgFadeOut()
     {
         color = fade_obj.GetComponent<SpriteRenderer>().color;
+        //color2 = fade_obj.GetComponent<SpriteRenderer>().color;
         moveX = fade_obj.transform.position.x;
         moveY = fade_obj.transform.position.y;
         fade_obj.GetComponent<SpriteRenderer>().color  = new Color(1f, 1f, 1f, 1f);
+        fade2_obj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         for (i_i = 0; i_i < 30; i_i++)
         {
             color = new Color(1f, 1f, 1f, 1f);
+            //color2 = new Color(1f, 1f, 1f, 1f);
             fade_obj.transform.position = new Vector2(moveX, moveY);
             moveY = moveY + 0.05f;
             yield return new WaitForSeconds(0.01f);
@@ -59,7 +64,9 @@ public class ItemGetMotion : MonoBehaviour
         for (i_f = 1f; i_f > 0f; i_f -= 0.05f)
         {
             color.a = Mathf.Lerp(0f, 1f, i_f);
+            //color2.a = Mathf.Lerp(0f, 1f, i_f);
             fade_obj.GetComponent<SpriteRenderer>().color = color;
+            fade2_obj.GetComponent<SpriteRenderer>().color = color;
             yield return null;
         }
         fade_obj.transform.position = new Vector2(15f, 15f);
