@@ -416,12 +416,12 @@ public class CheckPlayerEvent : MonoBehaviour
 
                 break;
             case 12://특수 아이템요구 
-                SGM.GetComponent<SoundEvt>().soundTalk();
+                SGM.GetComponent<SoundEvt>().soundItemFail();
                 a++;
                 Debug.Log(PlayerPrefs.GetInt("selecteditemnum", 0)+"d" + getItemPref_i);
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                 {
-
+                    SGM.GetComponent<SoundEvt>().soundItemUse();
                     Debug.Log(PlayerPrefs.GetInt("selecteditemnum", 0) + getItemPref_i);
                     a++;
                     move_obj.GetComponent<SpriteRenderer>().sprite = change_spr;

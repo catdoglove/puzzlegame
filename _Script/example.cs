@@ -95,10 +95,10 @@ public class example : MonoBehaviour
     IEnumerator Action_go()
     {
         int a = 1;
-        while (a <= 50)
+        while (a <= 50) //늘리기
         {
             Vector3 destination = new Vector3(13, transform.position.y, 0);
-            transform.position = Vector3.MoveTowards(transform.position, destination, 6.5f * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, destination, 6.5f * Time.deltaTime); //노젓는속도
             yield return new WaitForSeconds(0.01f);
             a++;
         }
