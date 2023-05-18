@@ -9,7 +9,7 @@ public class DogamStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Debug.Log("eat");
         StartCoroutine("UpdateSec");
 
     }
@@ -20,8 +20,8 @@ public class DogamStart : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            GM.SetActive(false);
-            SceneAdd.dogamOpen_i = 0;
+                GM.SetActive(false);
+                SceneAdd.dogamOpen_i = 0;
         }
     }
 
