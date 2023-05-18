@@ -910,6 +910,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -1651,6 +1653,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -3749,6 +3753,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 1
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 1
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -4204,6 +4210,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -4880,6 +4888,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -9491,6 +9501,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -13092,6 +13104,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 1
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -13889,6 +13903,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -14956,6 +14972,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -16514,14 +16532,14 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628257161}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c7d426b20bfe0774fae3d9e35629cc1a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 37bd073e4bab24742ad548aaf1077006, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -23660,6 +23678,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -24364,6 +24384,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -27356,7 +27378,7 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: rideboat
-  EventNum_i: 08000000050000001200000005000000050000000000000000000000000000000000000000000000
+  EventNum_i: 12000000050000001200000005000000050000000000000000000000000000000000000000000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr: []
@@ -27659,6 +27681,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -29184,6 +29208,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -31663,6 +31689,8 @@ MonoBehaviour:
   dogam_b: 1
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -36569,6 +36597,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -37449,6 +37479,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -38427,6 +38459,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 1
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -40323,6 +40357,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -41985,6 +42021,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -42394,6 +42432,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -42773,8 +42813,10 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
-  bridge_b: 1
-  bridgeback_b: 0
+  bridge_b: 0
+  bridgeback_b: 1
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -45639,6 +45681,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -47082,6 +47126,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -47464,6 +47510,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -47709,7 +47757,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -49423,31 +49471,31 @@ MonoBehaviour:
   GMS: {fileID: 1648107670}
   GM: {fileID: 1236708166}
   GMI: {fileID: 1283954030}
-  SetItemPref_str: zelly
+  SetItemPref_str: crow33
   SetItemPref_i: 3
   itemQ_b: 0
   GetItem_obj: {fileID: 0}
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
-  SetEventPref_str: tokki3
-  EventNum_i: 16000000170000000a000000050000000100000005000000010000000500000005000000
+  SetEventPref_str: crow33
+  EventNum_i: 0100000016000000170000000a0000000500000001000000050000000100000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
+  - {fileID: 21300000, guid: 3d42edecffb89ee42926425684ebccf6, type: 3}
   - {fileID: 21300000, guid: 8ac2bf62e3315bd46b7f2dc3009ecafe, type: 3}
   - {fileID: 21300000, guid: 8ac2bf62e3315bd46b7f2dc3009ecafe, type: 3}
   - {fileID: 21300000, guid: 8ac2bf62e3315bd46b7f2dc3009ecafe, type: 3}
-  - {fileID: 21300000, guid: 200d76ac2b8018748a3174e2cec7f486, type: 3}
-  - {fileID: 21300000, guid: 35984806233a27e4e981280c8ba1dead, type: 3}
+  - {fileID: 21300000, guid: 8ac2bf62e3315bd46b7f2dc3009ecafe, type: 3}
   - {fileID: 21300000, guid: 6024dde1fe958874f9deaf8f4ceaf10f, type: 3}
   - {fileID: 21300000, guid: 6024dde1fe958874f9deaf8f4ceaf10f, type: 3}
   - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
   Event2_spr:
+  - {fileID: 21300000, guid: aa4f1e3468b80b443b610db1dfa2d141, type: 3}
   - {fileID: 21300000, guid: d3e9bab0058e80f4d81d45403cd57535, type: 3}
   - {fileID: 21300000, guid: d3e9bab0058e80f4d81d45403cd57535, type: 3}
   - {fileID: 21300000, guid: d3e9bab0058e80f4d81d45403cd57535, type: 3}
-  - {fileID: 21300000, guid: b765f9c1a9073e942b51d95e20474a57, type: 3}
-  - {fileID: 21300000, guid: faf78a4ca0ad35b4796b48f02eb23368, type: 3}
+  - {fileID: 21300000, guid: d3e9bab0058e80f4d81d45403cd57535, type: 3}
   - {fileID: 21300000, guid: bbd9380532c312f468aeb30f54a1eccf, type: 3}
   - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
   - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
@@ -50548,8 +50596,10 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
-  bridge_b: 1
-  bridgeback_b: 0
+  bridge_b: 0
+  bridgeback_b: 1
+  lake_b: 1
+  lake1_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -52088,6 +52138,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -52897,13 +52949,15 @@ MonoBehaviour:
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
-  BGM1: {fileID: 0}
+  BGM1: {fileID: 1221732710}
   door_b: 0
   char_b: 0
   comeHere_b: 1
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 628257161}
@@ -53137,6 +53191,8 @@ MonoBehaviour:
   dogam_b: 0
   bridge_b: 0
   bridgeback_b: 0
+  lake_b: 0
+  lake1_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}

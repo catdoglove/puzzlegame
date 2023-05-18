@@ -27,7 +27,7 @@ public class MoveMap : MonoBehaviour
     public GameObject SGM;
     public GameObject BGM1;
 
-    public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b;
+    public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b;
 
 
 
@@ -78,6 +78,7 @@ public class MoveMap : MonoBehaviour
                         GM.GetComponent<CharMove>().canMove = false;
                         endEvent3_obj.SetActive(true);
                         Invoke("MovingMap", 0.5f);
+                        BGM1.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0f;
                     }
                     else
                     {
@@ -189,19 +190,21 @@ public class MoveMap : MonoBehaviour
         if (bridge_b)
         {
 
-            if (PlayerPrefs.GetInt("gobrige", 0) == 0)
-            {
-                PlayerPrefs.SetInt("gobrige", 1);
-            }
-            else
-            {
-                PlayerPrefs.SetInt("gobrige", 0);
-            }
+            PlayerPrefs.SetInt("gobrige", 1);
         }
         if (bridgeback_b)
         {
 
-            PlayerPrefs.SetInt("gobrigeback", 1);
+            PlayerPrefs.SetInt("gobrige", 0);
+        }
+        if (lake_b)
+        {
+
+            PlayerPrefs.SetInt("lakebool", 1);
+        }
+        if (lake1_b)
+        {
+            PlayerPrefs.SetInt("lakebool", 0);
         }
     }
 

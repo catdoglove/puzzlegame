@@ -157,13 +157,21 @@ public class CharMove : MonoBehaviour
 
             //GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 1f;
             //ausrc.clip = walkSouneEvt("sand");
+            
 
-            if (PlayerPrefs.GetInt("gobrigeback", 0)==1)
+            if (PlayerPrefs.GetInt("lakebool", 0) == 1)
             {
+
+                GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0f;
+                GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 1f;
+                ausrc.clip = walkSouneEvt("wood");
+            }
+            else
+            {
+                GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0f;
                 GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 1f;
                 ausrc.clip = walkSouneEvt("sand");
 
-                PlayerPrefs.SetInt("gobrigeback", 0);
             }
 
         }
