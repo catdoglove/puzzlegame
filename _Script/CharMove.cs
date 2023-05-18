@@ -149,7 +149,6 @@ public class CharMove : MonoBehaviour
 
         if (PlayerPrefs.GetInt("gobrige", 0) == 1)
         {
-            changeVolume2();
             changeVolume();
         }
         else

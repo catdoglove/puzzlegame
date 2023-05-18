@@ -27,7 +27,7 @@ public class MoveMap : MonoBehaviour
     public GameObject SGM;
     public GameObject BGM1;
 
-    public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b;
+    public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b;
 
 
 
@@ -78,7 +78,7 @@ public class MoveMap : MonoBehaviour
                         GM.GetComponent<CharMove>().canMove = false;
                         endEvent3_obj.SetActive(true);
                         Invoke("MovingMap", 0.5f);
-                        BGM1.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0f;
+                        BGM1.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0f;
                     }
                     else
                     {
@@ -206,11 +206,20 @@ public class MoveMap : MonoBehaviour
         {
             PlayerPrefs.SetInt("lakebool", 0);
         }
+        if (crow_b)
+        {
+            move_obj.GetComponent<Animator>().Play("ani_npc_crow_surprise");
+            Invoke("WaitSecCrow", 1f);
+        }
     }
 
     void WaitSec()
     {
         GM.GetComponent<CharMove>().canMove = true;
+    }
+    void WaitSecCrow()
+    {
+        move_obj.GetComponent<Animator>().Play("ani_npc_crow_talk");
     }
 
 }

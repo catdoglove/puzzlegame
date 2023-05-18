@@ -79,6 +79,10 @@ public class CheckPlayer : MonoBehaviour
 
     public Animator crow_Ani;
 
+    //낚시대
+    public GameObject stick_obj, makeBoad_obj;
+    public bool stick_b;
+
     private void OnEnable()
     {
         //StartCoroutine("Checking");
@@ -408,6 +412,11 @@ public class CheckPlayer : MonoBehaviour
                     a++;
                     GMI.GetComponent<Inventory>().DelItem();
                     SetDogam2();
+
+                    if (stick_b)
+                    { //stick_obj, makeBoad_obj;
+                        makeBoad_obj.SetActive(true);
+                    }
                 }
 
                 Debug.Log("awe" + a);
@@ -527,9 +536,14 @@ public class CheckPlayer : MonoBehaviour
                 {
                     a++;
                     GMI.GetComponent<Inventory>().DelItem();
-                    giveItemPref_i = 19;
+                    giveItemPref_i = 18;
                     SetItemPref_i = 21;
                     SetDogam2();
+                    
+                    if (stick_b)
+                    { 
+                        stick_obj.SetActive(true);
+                    }
                 }
 
                 Debug.Log("awe" + a);
@@ -574,6 +588,16 @@ public class CheckPlayer : MonoBehaviour
                 StopTalk();
                 talkBallB_obj.SetActive(false);
                 a--;
+                break;
+            case 24://말풍선띄우고 다음으로
+                crow_Ani.Play("ani_npc_crow_talk");
+                TalkSound();
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StopCoroutine("talkBall");
+                StartCoroutine("talkBall");
+                StopAndTalk();
+                a++;
                 break;
             default:
                 break;

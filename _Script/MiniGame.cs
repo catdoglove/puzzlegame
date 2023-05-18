@@ -24,6 +24,8 @@ public class MiniGame : MonoBehaviour
     public GameObject pan;
     public GameObject SGM;
 
+    public bool eazy_b;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,17 @@ public class MiniGame : MonoBehaviour
         num_i[0,3] = 4;
         num_i[1,3] = 5;
         num_i[2,3] = 6;
+
+        if (eazy_b)
+        {
+            num_i[0, 0] = 1;
+
+            num_i[2, 0] = 3;
+
+            num_i[0, 2] = 0;
+
+            num_i[2, 2] = 0;
+        }
     }
 
     // Update is called once per frame
