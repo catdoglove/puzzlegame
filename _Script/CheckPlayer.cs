@@ -551,16 +551,16 @@ public class CheckPlayer : MonoBehaviour
                 break;
             case 22://말풍선띄우고 애니메이션 재생
                 a++;
-                if (PlayerPrefs.GetInt("" + SetItemPref_str, 0) == 1)
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                 {
                     a++;
                     //SetDogam2();
-                    //crow_Ani.Play("ani_boat_up");
+                    crow_Ani.Play("ani_npc_crow_angry");
                 }
                 else
                 {
 
-                    //crow_Ani.Play("ani_boat_up");
+                    crow_Ani.Play("ani_npc_crow_talk");
                 }
                 TalkSound();
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
@@ -568,6 +568,12 @@ public class CheckPlayer : MonoBehaviour
                 StopCoroutine("talkBall");
                 StartCoroutine("talkBall");
                 StopAndTalk();
+                break;
+            case 23://까마귀 대화종료
+                crow_Ani.Play("ani_npc_crow_sleep");
+                StopTalk();
+                talkBallB_obj.SetActive(false);
+                a--;
                 break;
             default:
                 break;

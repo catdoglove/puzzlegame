@@ -20,7 +20,7 @@ public class MiniGame : MonoBehaviour
 
 
     public GameObject puzzleWin_obj;
-    public GameObject GM, GMM;
+    public GameObject GM, GMM, GMS;
     public GameObject pan;
     public GameObject SGM;
 
@@ -190,6 +190,7 @@ public class MiniGame : MonoBehaviour
                                             GM.GetComponent<CheckPlayerEvent>().ItemSettingOnEvent();
                                             pan.SetActive(false);
                                             GMM.GetComponent<CharMove>().canMove = true;
+                                            SGM.GetComponent<SoundEvt>().soundItemSuccess();
                                         }
                                     }
                                 }

@@ -908,6 +908,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -1647,6 +1649,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -3743,6 +3747,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 1
+  bridgeback_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -4196,6 +4202,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -4870,6 +4878,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -8870,6 +8880,87 @@ Transform:
   m_Father: {fileID: 1618348495}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &316625002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 316625003}
+  - component: {fileID: 316625004}
+  m_Layer: 0
+  m_Name: "\uD0C0\uAC9F"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &316625003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316625002}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.19162227, y: -1.521129, z: 0}
+  m_LocalScale: {x: 0.43446743, y: 0.47718808, z: 1.0638298}
+  m_Children: []
+  m_Father: {fileID: 1588028280}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &316625004
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316625002}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 21300000, guid: a5141f59f08ee61459f4eb467755dfeb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.8, y: 2.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &326388389
 GameObject:
   m_ObjectHideFlags: 0
@@ -9398,6 +9489,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -12997,6 +13090,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 1
+  bridgeback_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -13639,6 +13734,7 @@ MonoBehaviour:
   puzzleWin_obj: {fileID: 516651399}
   GM: {fileID: 886766692}
   GMM: {fileID: 1236708166}
+  GMS: {fileID: 0}
   pan: {fileID: 191261502}
   SGM: {fileID: 879451249}
 --- !u!1 &517247824
@@ -13791,6 +13887,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -14856,6 +14954,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -20489,7 +20589,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &818920355
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21940,7 +22040,7 @@ MonoBehaviour:
   whatIsLayer:
     serializedVersion: 2
     m_Bits: 512
-  balloon_spr: {fileID: 21300000, guid: 626b9cddb29049e4cac50cd87b419945, type: 3}
+  balloon_spr: {fileID: 21300000, guid: 144aa74618b85974a9a50f612c2fa8fd, type: 3}
   balloon_obj: {fileID: 1648107670}
   x_f: 0
   y_f: 0
@@ -23558,6 +23658,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -24212,7 +24314,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906247533}
   m_LocalRotation: {x: -0, y: -0, z: 0.70714664, w: -0.707067}
-  m_LocalPosition: {x: 10.75, y: -0.86985254, z: 0}
+  m_LocalPosition: {x: 12.37, y: -0.86985254, z: 0}
   m_LocalScale: {x: 76.10854, y: 17.48565, z: 1.0638298}
   m_Children: []
   m_Father: {fileID: 301131847}
@@ -24260,6 +24362,8 @@ MonoBehaviour:
   char_b: 1
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -27553,6 +27657,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -29076,6 +29182,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -31553,6 +31661,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 1
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -33305,19 +33415,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0fc7f128f5860564d90b47c1f43f539d, type: 3}
   - {fileID: 21300000, guid: 6b0b25f47ba708f4c8ba22f56d0e8b66, type: 3}
   position: {x: 0, y: 0, z: 0}
-  Target: {fileID: 0}
+  Target: {fileID: 316625003}
   firingAngle: 45
   gravity: 1.5
   Projectile: {fileID: 1236708172}
   canMove: 1
   ausrc: {fileID: 0}
   auCP: {fileID: 0}
-  sp_walk: {fileID: 0}
-  sp_walk_wood: {fileID: 0}
+  sp_walk: {fileID: 8300000, guid: 30d0f00afcbfb6640864880f816c549f, type: 3}
+  sp_walk_wood: {fileID: 8300000, guid: 4b7ea87201152bc4292a9f2efd14c822, type: 3}
   se_walk: {fileID: 0}
   se_walk_wood: {fileID: 0}
-  GM: {fileID: 0}
-  GM_B: {fileID: 0}
+  GM: {fileID: 879451249}
+  GM_B: {fileID: 1221732710}
 --- !u!61 &1236708168
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33442,7 +33552,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236708166}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.89, y: -1.56, z: 8.3130455}
+  m_LocalPosition: {x: -4.05, y: -1.64, z: 8.3130455}
   m_LocalScale: {x: 0.94, y: 0.94, z: 1}
   m_Children:
   - {fileID: 709243688}
@@ -36457,6 +36567,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -37335,6 +37447,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -38311,6 +38425,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -38778,7 +38894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1482578063
 Transform:
   m_ObjectHideFlags: 0
@@ -40205,6 +40321,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -40821,6 +40939,7 @@ Transform:
   - {fileID: 514134733}
   - {fileID: 845600762}
   - {fileID: 2014545236}
+  - {fileID: 316625003}
   m_Father: {fileID: 1618348495}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41864,6 +41983,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -42097,6 +42218,7 @@ MonoBehaviour:
   puzzleWin_obj: {fileID: 1641183601}
   GM: {fileID: 326388389}
   GMM: {fileID: 1236708166}
+  GMS: {fileID: 0}
   pan: {fileID: 65992990}
   SGM: {fileID: 879451249}
 --- !u!1 &1648107670
@@ -42270,6 +42392,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -42649,6 +42773,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 1
+  bridgeback_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -45511,6 +45637,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -46952,6 +47080,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -47332,6 +47462,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -47548,7 +47680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1878541203
 Transform:
   m_ObjectHideFlags: 0
@@ -47575,7 +47707,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c2546ade2e3645343864bd9e6e9e6ae6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -49298,7 +49430,7 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: tokki3
-  EventNum_i: 16000000050000000a000000050000000100000005000000010000000500000005000000
+  EventNum_i: 16000000170000000a000000050000000100000005000000010000000500000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
@@ -49321,7 +49453,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
   talkBall_obj: {fileID: 529413515}
   talkBallB_obj: {fileID: 1943076623}
-  giveItemPref_i: 0
+  giveItemPref_i: 17
   getItemPref_i: 0
   char_obj: {fileID: 1236708166}
   position0: {x: 0, y: 0, z: 0}
@@ -49343,7 +49475,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
   animalNum_i: 5
-  crow_Ani: {fileID: 0}
+  crow_Ani: {fileID: 1958244931}
 --- !u!1 &1968520993
 GameObject:
   m_ObjectHideFlags: 0
@@ -50416,6 +50548,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 1
+  bridgeback_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -51952,6 +52086,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -52766,6 +52902,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 1
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 628257161}
@@ -52997,6 +53135,8 @@ MonoBehaviour:
   char_b: 0
   comeHere_b: 0
   dogam_b: 0
+  bridge_b: 0
+  bridgeback_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}

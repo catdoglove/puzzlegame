@@ -493,10 +493,21 @@ public class CheckPlayerEvent : MonoBehaviour
                 break;
             case 18://외부 함수 실행
 
-                StopTalk();
-                rideGM.GetComponent<example>().mapwhere =99;
-                //
-                char_obj.SetActive(false);
+                SGM.GetComponent<SoundEvt>().soundItemFail();
+                a++;
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemUse();
+                    StopTalk();
+                    rideGM.GetComponent<example>().mapwhere = 99;
+                    //
+                    char_obj.SetActive(false);
+                    GMI.GetComponent<Inventory>().DelItem();
+                    move_obj.GetComponent<SpriteRenderer>().sprite = change_spr;
+                }
+
+                k = a;
+
                 break;
             case 19://외부 함수 실행
 

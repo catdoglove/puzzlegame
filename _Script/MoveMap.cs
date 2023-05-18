@@ -27,7 +27,7 @@ public class MoveMap : MonoBehaviour
     public GameObject SGM;
     public GameObject BGM1;
 
-    public bool door_b, char_b, comeHere_b, dogam_b;
+    public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b;
 
 
 
@@ -185,6 +185,23 @@ public class MoveMap : MonoBehaviour
         if (dogam_b)
         {
             GMI.GetComponent<Inventory>().WaitSec();
+        }
+        if (bridge_b)
+        {
+
+            if (PlayerPrefs.GetInt("gobrige", 0) == 0)
+            {
+                PlayerPrefs.SetInt("gobrige", 1);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("gobrige", 0);
+            }
+        }
+        if (bridgeback_b)
+        {
+
+            PlayerPrefs.SetInt("gobrigeback", 1);
         }
     }
 

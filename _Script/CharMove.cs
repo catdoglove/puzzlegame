@@ -146,8 +146,28 @@ public class CharMove : MonoBehaviour
 
 
         //전환하기
-        //changeVolume(); 
-        //changeVolume2();
+
+        if (PlayerPrefs.GetInt("gobrige", 0) == 1)
+        {
+            changeVolume2();
+            changeVolume();
+        }
+        else
+        {
+
+            //GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 1f;
+            //ausrc.clip = walkSouneEvt("sand");
+
+            if (PlayerPrefs.GetInt("gobrigeback", 0)==1)
+            {
+                GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 1f;
+                ausrc.clip = walkSouneEvt("sand");
+
+                PlayerPrefs.SetInt("gobrigeback", 0);
+            }
+
+        }
+
 
     }
 
