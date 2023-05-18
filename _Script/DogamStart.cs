@@ -23,8 +23,21 @@ public class DogamStart : MonoBehaviour
                 GM.SetActive(false);
                 SceneAdd.dogamOpen_i = 0;
         }
+
+        
+        if (PlayerPrefs.GetInt("helpdogam", 0) == 1)
+        {
+            WaitSec();
+            PlayerPrefs.SetInt("helpdogam", 0);
+        }   
+        
     }
 
+    void WaitSec()
+    {
+        GM.SetActive(false);
+        SceneAdd.dogamOpen_i = 0;
+    }
 
 
     IEnumerator UpdateSec()

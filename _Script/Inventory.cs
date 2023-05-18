@@ -40,11 +40,21 @@ public class Inventory : MonoBehaviour
 
     public GameObject ESCevent;
 
+    private void Awake()
+    {
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         position = itemWindow_obj.transform.position;
+    }
+
+    public void WaitSec()
+    {
+
+        MainGM.GetComponent<SceneAdd>().AtiveScene();
+        PlayerPrefs.SetInt("helpdogam",1);
     }
 
     // Update is called once per frame
@@ -80,6 +90,7 @@ public class Inventory : MonoBehaviour
             }
         }
         */
+
 
 
         if (Input.GetKeyDown(KeyCode.Tab))

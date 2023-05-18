@@ -460,6 +460,7 @@ public class CheckPlayerEvent : MonoBehaviour
                 break;
 
             case 16://특수 아이템요구 아이템제거 아이템획득
+                SGM.GetComponent<SoundEvt>().soundItemFail();
                 a++;
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == getItemPref_i )
                 {
@@ -483,7 +484,7 @@ public class CheckPlayerEvent : MonoBehaviour
                 break;
 
             case 17://특수 아이템요구 아이템제거 아이템획득
-                SGM.GetComponent<SoundEvt>().soundItemUse();
+                SGM.GetComponent<SoundEvt>().soundPickUp();
                 a = 0;
                     ItemSettingOnEvent();
                 hallFix_obj.SetActive(false);

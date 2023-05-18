@@ -1848,6 +1848,7 @@ MonoBehaviour:
   materialArea3: {fileID: 1971943151}
   infoArea1: {fileID: 629876278}
   infoArea2: {fileID: 854167706}
+  spRer: {fileID: 723389231}
 --- !u!114 &896736643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2937,7 +2938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1807709694
 RectTransform:
   m_ObjectHideFlags: 0

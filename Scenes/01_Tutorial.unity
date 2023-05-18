@@ -899,6 +899,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -906,6 +907,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -1636,6 +1638,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -1643,6 +1646,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -2661,6 +2665,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
   animalNum_i: 4
+  crow_Ani: {fileID: 0}
 --- !u!1 &72057342
 GameObject:
   m_ObjectHideFlags: 0
@@ -3729,6 +3734,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -3736,6 +3742,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -4180,6 +4187,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -4187,6 +4195,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -4735,6 +4744,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
   animalNum_i: 0
+  crow_Ani: {fileID: 0}
 --- !u!212 &137990810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4851,6 +4861,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -4858,6 +4869,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -6937,6 +6949,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
   animalNum_i: 0
+  crow_Ani: {fileID: 0}
 --- !u!1 &226644110
 GameObject:
   m_ObjectHideFlags: 0
@@ -9376,6 +9389,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -9383,6 +9397,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -11782,6 +11797,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
   animalNum_i: 7
+  crow_Ani: {fileID: 0}
 --- !u!1 &448573638
 GameObject:
   m_ObjectHideFlags: 0
@@ -12972,6 +12988,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -12979,6 +12996,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -13764,6 +13782,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -13771,6 +13790,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -14760,6 +14780,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
   animalNum_i: 2
+  crow_Ani: {fileID: 0}
 --- !u!1 &560459893
 GameObject:
   m_ObjectHideFlags: 0
@@ -14826,6 +14847,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -14833,6 +14855,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -21976,6 +21999,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 1947656090}
   animalNum_i: 6
+  crow_Ani: {fileID: 0}
 --- !u!1 &855306064
 GameObject:
   m_ObjectHideFlags: 0
@@ -22194,6 +22218,7 @@ MonoBehaviour:
     type: 3}
   other_obj: {fileID: 0}
   animalNum_i: 0
+  crow_Ani: {fileID: 0}
 --- !u!212 &858163630
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23524,6 +23549,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -23531,6 +23557,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -24224,6 +24251,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -24231,6 +24259,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 1
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -26861,6 +26890,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
   animalNum_i: 1
+  crow_Ani: {fileID: 0}
 --- !u!1 &1005509628
 GameObject:
   m_ObjectHideFlags: 0
@@ -27076,6 +27106,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
   animalNum_i: 3
+  crow_Ani: {fileID: 0}
 --- !u!1 &1006602531
 GameObject:
   m_ObjectHideFlags: 0
@@ -27513,6 +27544,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -27520,6 +27552,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -27737,6 +27770,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
   animalNum_i: 0
+  crow_Ani: {fileID: 0}
 --- !u!212 &1044864061
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28499,6 +28533,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
   animalNum_i: 0
+  crow_Ani: {fileID: 0}
 --- !u!212 &1080766758
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29032,6 +29067,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -29039,6 +29075,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -31507,6 +31544,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   GM: {fileID: 1236708166}
+  GMI: {fileID: 1283954030}
   openSound_b: 0
   onSound_b: 1
   SGM: {fileID: 0}
@@ -31514,6 +31552,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 1
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -32285,6 +32324,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
   animalNum_i: 0
+  crow_Ani: {fileID: 0}
 --- !u!212 &1202256422
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34446,6 +34486,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
   animalNum_i: 0
+  crow_Ani: {fileID: 0}
 --- !u!212 &1255413182
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35226,6 +35267,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
   animalNum_i: 0
+  crow_Ani: {fileID: 0}
 --- !u!212 &1285010634
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35666,6 +35708,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
   animalNum_i: 0
+  crow_Ani: {fileID: 0}
 --- !u!61 &1313099850
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36405,6 +36448,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -36412,6 +36456,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -37281,6 +37326,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -37288,6 +37334,7 @@ MonoBehaviour:
   door_b: 1
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -38255,6 +38302,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -38262,6 +38310,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -38729,7 +38778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1482578063
 Transform:
   m_ObjectHideFlags: 0
@@ -40147,6 +40196,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 1
   onSound_b: 0
   SGM: {fileID: 879451249}
@@ -40154,6 +40204,7 @@ MonoBehaviour:
   door_b: 1
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -40933,6 +40984,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
   animalNum_i: 0
+  crow_Ani: {fileID: 0}
 --- !u!95 &1593957968
 Animator:
   serializedVersion: 3
@@ -41360,7 +41412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1618348495
 Transform:
   m_ObjectHideFlags: 0
@@ -41803,6 +41855,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -41810,6 +41863,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -42207,6 +42261,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -42214,6 +42269,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -42584,6 +42640,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -42591,6 +42648,7 @@ MonoBehaviour:
   door_b: 1
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -45444,6 +45502,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -45451,6 +45510,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -46883,6 +46943,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -46890,6 +46951,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -47261,6 +47323,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -47268,6 +47331,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -49234,29 +49298,29 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: tokki3
-  EventNum_i: 010000000300000009000000050000000100000005000000010000000500000005000000
+  EventNum_i: 16000000050000000a000000050000000100000005000000010000000500000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
-  - {fileID: 21300000, guid: 200d76ac2b8018748a3174e2cec7f486, type: 3}
-  - {fileID: 21300000, guid: 200d76ac2b8018748a3174e2cec7f486, type: 3}
-  - {fileID: 21300000, guid: 200d76ac2b8018748a3174e2cec7f486, type: 3}
+  - {fileID: 21300000, guid: 8ac2bf62e3315bd46b7f2dc3009ecafe, type: 3}
+  - {fileID: 21300000, guid: 8ac2bf62e3315bd46b7f2dc3009ecafe, type: 3}
+  - {fileID: 21300000, guid: 8ac2bf62e3315bd46b7f2dc3009ecafe, type: 3}
   - {fileID: 21300000, guid: 200d76ac2b8018748a3174e2cec7f486, type: 3}
   - {fileID: 21300000, guid: 35984806233a27e4e981280c8ba1dead, type: 3}
   - {fileID: 21300000, guid: 6024dde1fe958874f9deaf8f4ceaf10f, type: 3}
   - {fileID: 21300000, guid: 6024dde1fe958874f9deaf8f4ceaf10f, type: 3}
   - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
   Event2_spr:
-  - {fileID: 21300000, guid: b765f9c1a9073e942b51d95e20474a57, type: 3}
-  - {fileID: 21300000, guid: b765f9c1a9073e942b51d95e20474a57, type: 3}
-  - {fileID: 21300000, guid: b765f9c1a9073e942b51d95e20474a57, type: 3}
+  - {fileID: 21300000, guid: d3e9bab0058e80f4d81d45403cd57535, type: 3}
+  - {fileID: 21300000, guid: d3e9bab0058e80f4d81d45403cd57535, type: 3}
+  - {fileID: 21300000, guid: d3e9bab0058e80f4d81d45403cd57535, type: 3}
   - {fileID: 21300000, guid: b765f9c1a9073e942b51d95e20474a57, type: 3}
   - {fileID: 21300000, guid: faf78a4ca0ad35b4796b48f02eb23368, type: 3}
   - {fileID: 21300000, guid: bbd9380532c312f468aeb30f54a1eccf, type: 3}
   - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
   - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
-  talkBall_obj: {fileID: 2072643839}
-  talkBallB_obj: {fileID: 3933682}
+  talkBall_obj: {fileID: 529413515}
+  talkBallB_obj: {fileID: 1943076623}
   giveItemPref_i: 0
   getItemPref_i: 0
   char_obj: {fileID: 1236708166}
@@ -49279,6 +49343,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
   animalNum_i: 5
+  crow_Ani: {fileID: 0}
 --- !u!1 &1968520993
 GameObject:
   m_ObjectHideFlags: 0
@@ -50342,6 +50407,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -50349,6 +50415,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -51265,6 +51332,7 @@ MonoBehaviour:
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
   animalNum_i: 2
+  crow_Ani: {fileID: 0}
 --- !u!70 &2072454499
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -51875,6 +51943,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -51882,6 +51951,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -52687,6 +52757,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -52694,6 +52765,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 1
+  dogam_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 628257161}
@@ -52916,6 +52988,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GM: {fileID: 1236708166}
+  GMI: {fileID: 0}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -52923,6 +52996,7 @@ MonoBehaviour:
   door_b: 0
   char_b: 0
   comeHere_b: 0
+  dogam_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}

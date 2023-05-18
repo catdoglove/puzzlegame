@@ -15,7 +15,7 @@ public class MoveMap : MonoBehaviour
     int mapTime_i = 1;
     public Vector2 size;
     public LayerMask whatIsLayer;
-    public GameObject GM;
+    public GameObject GM, GMI;
 
     int nowMoving_i = 1;
     int nowDonMove_i = 0;
@@ -27,7 +27,7 @@ public class MoveMap : MonoBehaviour
     public GameObject SGM;
     public GameObject BGM1;
 
-    public bool door_b, char_b, comeHere_b;
+    public bool door_b, char_b, comeHere_b, dogam_b;
 
 
 
@@ -77,7 +77,7 @@ public class MoveMap : MonoBehaviour
                     {
                         GM.GetComponent<CharMove>().canMove = false;
                         endEvent3_obj.SetActive(true);
-                        Invoke("MovingMap", 2f);
+                        Invoke("MovingMap", 0.5f);
                     }
                     else
                     {
@@ -181,6 +181,10 @@ public class MoveMap : MonoBehaviour
             player_obj.SetActive(true);
             GM.GetComponent<CharMove>().canMove = false;
             Invoke("WaitSec", 1f);
+        }
+        if (dogam_b)
+        {
+            GMI.GetComponent<Inventory>().WaitSec();
         }
     }
 

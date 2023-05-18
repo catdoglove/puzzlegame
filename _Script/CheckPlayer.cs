@@ -75,6 +75,10 @@ public class CheckPlayer : MonoBehaviour
 
     public int animalNum_i;
 
+    //까마귀 애니메이션
+
+    public Animator crow_Ani;
+
     private void OnEnable()
     {
         //StartCoroutine("Checking");
@@ -545,7 +549,26 @@ public class CheckPlayer : MonoBehaviour
                 StartCoroutine("talkBall");
                 StopAndTalk();
                 break;
+            case 22://말풍선띄우고 애니메이션 재생
+                a++;
+                if (PlayerPrefs.GetInt("" + SetItemPref_str, 0) == 1)
+                {
+                    a++;
+                    //SetDogam2();
+                    //crow_Ani.Play("ani_boat_up");
+                }
+                else
+                {
 
+                    //crow_Ani.Play("ani_boat_up");
+                }
+                TalkSound();
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StopCoroutine("talkBall");
+                StartCoroutine("talkBall");
+                StopAndTalk();
+                break;
             default:
                 break;
         }

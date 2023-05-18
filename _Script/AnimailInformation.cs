@@ -12,7 +12,7 @@ public class AnimailInformation : MonoBehaviour
     int pageNum = 0 , animalNum=3; //0토끼 2양 3곰, 
     public Sprite[] animalSpr, materialSpr;
     public GameObject animalImg, material1, material2, material3, materialArea1, materialArea2, materialArea3, infoArea1, infoArea2;
-    SpriteRenderer spRer;
+    public SpriteRenderer spRer;
 
     private void OnEnable()
     {
@@ -31,7 +31,7 @@ public class AnimailInformation : MonoBehaviour
         {
             data_animal = CSVReader.Read("CSV/animals_information_eng");
         }
-        spRer = animalImg.GetComponent<SpriteRenderer>();
+        //spRer = animalImg.GetComponent<SpriteRenderer>();
         checkAnimal();
         insideInformation();
 
