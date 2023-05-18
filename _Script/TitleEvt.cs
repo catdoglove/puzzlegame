@@ -11,7 +11,9 @@ public class TitleEvt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
 	{
-		StartCoroutine("keyboardEvt");
+        PlayerPrefs.DeleteAll();
+
+        StartCoroutine("keyboardEvt");
         
 	}
 

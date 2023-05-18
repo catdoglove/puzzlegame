@@ -10,7 +10,6 @@ public class SceneAdd : MonoBehaviour
     public GameObject main_obj;
     void Start()
     {
-        PlayerPrefs.DeleteAll();
         LoadSceneAdditive();
     }
 

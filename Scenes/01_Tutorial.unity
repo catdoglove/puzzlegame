@@ -38143,6 +38143,7 @@ MonoBehaviour:
   backBG: {fileID: 468479882}
   frontBG: {fileID: 1221732710}
   moveGM: {fileID: 560459893}
+  SGM: {fileID: 0}
 --- !u!61 &1426309074
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46706,6 +46707,7 @@ MonoBehaviour:
   backBG: {fileID: 869468245}
   frontBG: {fileID: 789295970}
   moveGM: {fileID: 0}
+  SGM: {fileID: 0}
 --- !u!95 &1807311261
 Animator:
   serializedVersion: 3
