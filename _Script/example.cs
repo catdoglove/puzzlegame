@@ -12,7 +12,7 @@ public class example : MonoBehaviour
     float moveX;
     public GameObject boatSpr, hiddenSpr,backBG,frontBG;
 
-    public GameObject moveGM;
+    public GameObject moveGM, SGM;
 
     // Start is called before the first frame update
     void Start()
@@ -55,21 +55,21 @@ public class example : MonoBehaviour
 
             if (transform.position.x >= -6f) //위치 도달 이후 부터 ~~
             {
-                frontBG.transform.Translate(new Vector3(moveX, 0, 0) * -0.09f);
-                backBG.transform.Translate(new Vector3(moveX, 0, 0) * -0.06f);
+                frontBG.transform.Translate(new Vector3(moveX, 0, 0) * -0.24f);
+                backBG.transform.Translate(new Vector3(moveX, 0, 0) * -0.20f);
             }
 
         }
 
 
-        transform.Translate(new Vector3(moveX, 0, 0) * 0.1f);
+        transform.Translate(new Vector3(moveX, 0, 0) * 0.3f);
 
 
         float ff = 0;
         if (transform.position.x >= 4.5f) //위치 도달 이후 부터 ~~
         {
             ff--;
-            hiddenSpr.transform.Translate(new Vector3(0, ff, 0) * 0.08f);
+            hiddenSpr.transform.Translate(new Vector3(0, ff, 0) * 0.2f);
         }
 
     }
@@ -94,11 +94,13 @@ public class example : MonoBehaviour
 
     IEnumerator Action_go()
     {
+        yield return new WaitForSeconds(1f);
+        //SGM.GetComponent<SoundEvt>().soundWaterWalk(); //배에 audioaouscer선언
         int a = 1;
-        while (a <= 50) //늘리기
+        while (a <= 220) //늘리기
         {
             Vector3 destination = new Vector3(13, transform.position.y, 0);
-            transform.position = Vector3.MoveTowards(transform.position, destination, 6.5f * Time.deltaTime); //노젓는속도
+            transform.position = Vector3.MoveTowards(transform.position, destination, 4f * Time.deltaTime); //노젓는속도
             yield return new WaitForSeconds(0.01f);
             a++;
         }
