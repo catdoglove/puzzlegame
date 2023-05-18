@@ -179,8 +179,14 @@ public class MoveMap : MonoBehaviour
         if (char_b)
         {
             player_obj.SetActive(true);
+            GM.GetComponent<CharMove>().canMove = false;
+            Invoke("WaitSec", 1f);
         }
     }
 
+    void WaitSec()
+    {
+        GM.GetComponent<CharMove>().canMove = true;
+    }
 
 }

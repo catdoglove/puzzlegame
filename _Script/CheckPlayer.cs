@@ -73,6 +73,8 @@ public class CheckPlayer : MonoBehaviour
 
     public GameObject other_obj;
 
+    public int animalNum_i;
+
     private void OnEnable()
     {
         //StartCoroutine("Checking");
@@ -315,13 +317,27 @@ public class CheckPlayer : MonoBehaviour
         PlayerPrefs.SetInt("inventorynum", a);
     }
 
+    void SetDogam1()
+    {
+        //PlayerPrefs.SetInt("showAnimal", animalNum_i); //0부터 해당 캐릭터 보여주기
+        PlayerPrefs.SetInt("AmImet" + animalNum_i, 99); //캐릭터 만났는가 체크
+    }
+    void SetDogam2()
+    {
 
+        //PlayerPrefs.SetInt("showAnimal", animalNum_i); //0부터 해당 캐릭터 보여주기
+        PlayerPrefs.SetInt("AmImet" + animalNum_i, 99); //캐릭터 만났는가 체크
+        PlayerPrefs.SetInt("canSeeMaterial" + animalNum_i, 99); //퀘스트를 깼는가
+        PlayerPrefs.SetInt("canSeeInfo_basic" + animalNum_i, 99); //퀘스트를 깼는가
+        //PlayerPrefs.SetInt("canSeeInfo_detail" + animalNum_i, 0); //추가 퀘스트를 깼는가
+    }
 
     /// <summary>
     /// 이벤트값받아오고 진행처리해준다.
     /// </summary>
     void EventSetting()
     {
+        SetDogam1();
         int a = 0;
         a = PlayerPrefs.GetInt(SetEventPref_str, 0);
         k = a;
@@ -361,6 +377,7 @@ public class CheckPlayer : MonoBehaviour
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                 {
                     a++;
+                    SetDogam2();
                 }
                 break;
             case 5://대화 종료
@@ -386,6 +403,7 @@ public class CheckPlayer : MonoBehaviour
                 {
                     a++;
                     GMI.GetComponent<Inventory>().DelItem();
+                    SetDogam2();
                 }
 
                 Debug.Log("awe" + a);
@@ -402,6 +420,7 @@ public class CheckPlayer : MonoBehaviour
                 if (PlayerPrefs.GetInt("" + SetItemPref_str, 0) == 1)
                 {
                     a++;
+                    //SetDogam2();
                 }
                 StopCoroutine("talkBall");
                 k = a;
@@ -506,6 +525,7 @@ public class CheckPlayer : MonoBehaviour
                     GMI.GetComponent<Inventory>().DelItem();
                     giveItemPref_i = 19;
                     SetItemPref_i = 21;
+                    SetDogam2();
                 }
 
                 Debug.Log("awe" + a);

@@ -84,8 +84,17 @@ public class Inventory : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            SGM.GetComponent<SoundEvt>().soundItemWndOpen();
-            MainGM.GetComponent<SceneAdd>().AtiveScene();
+            if (GM.GetComponent<CharMove>().canMove )
+            {
+                if (in_i==0)
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemWndOpen();
+                    MainGM.GetComponent<SceneAdd>().AtiveScene();
+                }
+            }
+            else
+            {
+            }
         }
 
 
@@ -100,14 +109,18 @@ public class Inventory : MonoBehaviour
                 {
                     if (inout_i == 0)
                     {
-                        in_i = 1;
-                        StopCoroutine("ShowWindow");
-                        StopCoroutine("Show");
-                        StartCoroutine("ShowWindow");
-                        StartCoroutine("Show");
-                        GM.GetComponent<CharMove>().canMove = false;
-                        GM.GetComponent<CharMove>().charAni.Play("ani_char_stop");
-                        GM.GetComponent<CharMove>().ckwalk = 0;
+
+                        if (GM.GetComponent<CharMove>().canMove)
+                        {
+                            in_i = 1;
+                            StopCoroutine("ShowWindow");
+                            StopCoroutine("Show");
+                            StartCoroutine("ShowWindow");
+                            StartCoroutine("Show");
+                            GM.GetComponent<CharMove>().canMove = false;
+                            GM.GetComponent<CharMove>().charAni.Play("ani_char_stop");
+                            GM.GetComponent<CharMove>().ckwalk = 0;
+                        }
                     }
                     else
                     {

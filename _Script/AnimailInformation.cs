@@ -14,6 +14,11 @@ public class AnimailInformation : MonoBehaviour
     public GameObject animalImg, material1, material2, material3, materialArea1, materialArea2, materialArea3, infoArea1, infoArea2;
     SpriteRenderer spRer;
 
+    private void OnEnable()
+    {
+
+        insideInformation();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -34,11 +39,13 @@ public class AnimailInformation : MonoBehaviour
 
     void checkAnimal()
     {
+        /*
         animalNum = PlayerPrefs.GetInt("showAnimal", animalNum); //0부터 해당 캐릭터 보여주기
         PlayerPrefs.SetInt("AmImet" + animalNum, 99); //캐릭터 만났는가 체크
         PlayerPrefs.SetInt("canSeeMaterial" + animalNum, 99); //퀘스트를 깼는가
         PlayerPrefs.SetInt("canSeeInfo_basic" + animalNum, 99); //퀘스트를 깼는가
         PlayerPrefs.SetInt("canSeeInfo_detail" + animalNum, 0); //추가 퀘스트를 깼는가
+        */
 
     }
 
@@ -93,9 +100,10 @@ public class AnimailInformation : MonoBehaviour
         }
 
 
-        if(pageNum == animalNum) //해당 캐릭터 보여주기
+        unlockAnimal();
+
+        if (pageNum == animalNum) //해당 캐릭터 보여주기
         {
-            unlockAnimal();
         }
 
         text_str = "" + data_animal[0]["No" + (pageNum + 1)];
@@ -109,6 +117,7 @@ public class AnimailInformation : MonoBehaviour
 
     void unlockAnimal()
     {
+        Debug.Log(PlayerPrefs.GetInt("AmImet" + pageNum, 0) + "ds" + PlayerPrefs.GetInt("canSeeMaterial" + pageNum, 0));
         if (PlayerPrefs.GetInt("AmImet" + pageNum, 0) == 99) //만난적이 있다면 열리기
         {
             spRer.color = new Color(0.9f, 0.9f, 0.9f, 1);

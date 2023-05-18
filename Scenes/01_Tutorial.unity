@@ -2289,7 +2289,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: 741216c66493cc24c97c82b938fef36b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2660,6 +2660,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
+  animalNum_i: 4
 --- !u!1 &72057342
 GameObject:
   m_ObjectHideFlags: 0
@@ -4733,6 +4734,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
+  animalNum_i: 0
 --- !u!212 &137990810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6934,6 +6936,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
+  animalNum_i: 0
 --- !u!1 &226644110
 GameObject:
   m_ObjectHideFlags: 0
@@ -11778,6 +11781,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
+  animalNum_i: 7
 --- !u!1 &448573638
 GameObject:
   m_ObjectHideFlags: 0
@@ -14755,6 +14759,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
+  animalNum_i: 2
 --- !u!1 &560459893
 GameObject:
   m_ObjectHideFlags: 0
@@ -21926,7 +21931,7 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: catfihs1
-  EventNum_i: 010000000300000008000000050000001200000005000000010000000500000005000000
+  EventNum_i: 01000000030000000800000005000000120000000100000005000000050000000500000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
@@ -21970,6 +21975,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 1947656090}
+  animalNum_i: 6
 --- !u!1 &855306064
 GameObject:
   m_ObjectHideFlags: 0
@@ -22187,6 +22193,7 @@ MonoBehaviour:
   candy_spr: {fileID: 6826385773342309493, guid: e76458b63b0f6874d8246b32672e9e75,
     type: 3}
   other_obj: {fileID: 0}
+  animalNum_i: 0
 --- !u!212 &858163630
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22538,7 +22545,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &872436565
 Transform:
   m_ObjectHideFlags: 0
@@ -23506,7 +23513,7 @@ MonoBehaviour:
   - {fileID: 872436564}
   - {fileID: 1107387873}
   mapRespawn_obj:
-  - {fileID: 625178304}
+  - {fileID: 595314650}
   mapToGo_i: 1
   mapNow_i: 2
   mapRespawn_i: 0
@@ -26853,6 +26860,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
+  animalNum_i: 1
 --- !u!1 &1005509628
 GameObject:
   m_ObjectHideFlags: 0
@@ -27067,6 +27075,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
+  animalNum_i: 3
 --- !u!1 &1006602531
 GameObject:
   m_ObjectHideFlags: 0
@@ -27212,7 +27221,7 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: rideboat
-  EventNum_i: 08000000050000000b00000012000000050000000000000000000000000000000000000000000000
+  EventNum_i: 08000000050000001200000005000000050000000000000000000000000000000000000000000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr: []
@@ -27727,6 +27736,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
+  animalNum_i: 0
 --- !u!212 &1044864061
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28488,6 +28498,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
+  animalNum_i: 0
 --- !u!212 &1080766758
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30972,7 +30983,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 9
   m_Sprite: {fileID: 2840002398806625177, guid: d558669f98b4819469ac839c2da5f1fe,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -32273,6 +32284,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
+  animalNum_i: 0
 --- !u!212 &1202256422
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33040,7 +33052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move_i: 1
-  size: {x: 10, y: 10}
+  size: {x: 100, y: 100}
   whatIsLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -33390,7 +33402,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236708166}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.12, y: -1.25, z: 8.3130455}
+  m_LocalPosition: {x: -0.08, y: 0.02, z: 8.3130455}
   m_LocalScale: {x: 0.94, y: 0.94, z: 1}
   m_Children:
   - {fileID: 709243688}
@@ -34433,6 +34445,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
+  animalNum_i: 0
 --- !u!212 &1255413182
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35212,6 +35225,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
+  animalNum_i: 0
 --- !u!212 &1285010634
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35651,6 +35665,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
+  animalNum_i: 0
 --- !u!61 &1313099850
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38714,7 +38729,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1482578063
 Transform:
   m_ObjectHideFlags: 0
@@ -40917,6 +40932,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
+  animalNum_i: 0
 --- !u!95 &1593957968
 Animator:
   serializedVersion: 3
@@ -41344,7 +41360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1618348495
 Transform:
   m_ObjectHideFlags: 0
@@ -47166,7 +47182,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: f9b5a4ea0c5daf84a9cb0e74197e4659, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -49262,6 +49278,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
+  animalNum_i: 5
 --- !u!1 &1968520993
 GameObject:
   m_ObjectHideFlags: 0
@@ -51247,6 +51264,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
+  animalNum_i: 2
 --- !u!70 &2072454499
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
