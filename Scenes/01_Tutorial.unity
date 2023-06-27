@@ -35429,12 +35429,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invenItem_obj:
-  - {fileID: 937289935}
-  - {fileID: 64300100}
-  - {fileID: 1235934583}
-  - {fileID: 430311387}
-  - {fileID: 1426072060}
+  - {fileID: 753025791}
   - {fileID: 2141231012}
+  - {fileID: 1426072060}
+  - {fileID: 430311387}
+  - {fileID: 1235934583}
+  - {fileID: 64300100}
+  - {fileID: 937289935}
   Item_spr:
   - {fileID: 21300000, guid: ed8151558d722f0439c322c0e8d19af1, type: 3}
   - {fileID: 21300000, guid: ed8151558d722f0439c322c0e8d19af1, type: 3}
@@ -35476,13 +35477,13 @@ MonoBehaviour:
   - {fileID: 2537015566836106236, guid: 7a082855750d44747acace48b7dac218, type: 3}
   selected_obj: {fileID: 852963037}
   selectBox_obj:
-  - {fileID: 1741117953}
-  - {fileID: 865315761}
-  - {fileID: 1003945593}
-  - {fileID: 2127248375}
-  - {fileID: 1044352480}
-  - {fileID: 965147915}
   - {fileID: 1546923980}
+  - {fileID: 965147915}
+  - {fileID: 1044352480}
+  - {fileID: 2127248375}
+  - {fileID: 1003945593}
+  - {fileID: 865315761}
+  - {fileID: 1741117953}
   _spr: {fileID: 0}
   selected_i: 0
   selectedNow_i: -1
@@ -40284,7 +40285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1546923981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45232,7 +45233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1741117954
 RectTransform:
   m_ObjectHideFlags: 0

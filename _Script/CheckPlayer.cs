@@ -200,8 +200,8 @@ public class CheckPlayer : MonoBehaviour
 
         if (itemQ_b)
         {
-            ItemSetting();
-
+            ItemSettings();
+            //ItemSettingOnEvents();
         }
         else
         {
@@ -268,6 +268,59 @@ public class CheckPlayer : MonoBehaviour
 
         //StartCoroutine("imgFadeOut");
         //}
+        DelThis();
+    }
+
+
+    /// <summary>
+    /// 아이템값받아오고 인벤토리에넣는다.
+    /// </summary>
+    void ItemSettings()
+    {
+        int a = 0;
+        //빈공간저장하기
+        a = PlayerPrefs.GetInt("itemgetpoint", 0);
+        //소리
+        SGM.GetComponent<SoundEvt>().soundPickUp();
+
+        int hel = 0;
+
+        //a번칸에 값저장
+        PlayerPrefs.SetInt("inventoryget" + a, SetItemPref_i);
+        PlayerPrefs.SetInt("changeitem", 1);
+        a++;
+        if (PlayerPrefs.GetInt("fillpotint", 0) < a)
+        {
+            PlayerPrefs.SetInt("fillpotint", a);
+
+            Debug.Log("aaaaa" + a);
+        }
+
+        Debug.Log("aaaaa" + a);
+        Debug.Log("aaaaa" + PlayerPrefs.GetInt("fillpotint", 0));
+        PlayerPrefs.SetInt("itemgetpoint", a);
+
+        //아이템갯수증가
+        int o = 0;
+        o = PlayerPrefs.GetInt("itemnum" + SetItemPref_i, 0);
+        PlayerPrefs.SetInt("inventorynum", a);
+        o++;
+        PlayerPrefs.SetInt("itemnum" + SetItemPref_i, o);
+        PlayerPrefs.SetInt("changeitem", 1);
+
+
+        if (hel == 1)
+        {
+            PlayerPrefs.SetInt("inventorynum", (a - 1));
+        }
+        GMI.GetComponent<ItemGetMotion>().fade_obj.GetComponent<SpriteRenderer>().sprite = this.GetComponent<SpriteRenderer>().sprite;
+        GMI.GetComponent<ItemGetMotion>().fade_obj.transform.position = this.transform.position;
+        GMI.GetComponent<ItemGetMotion>().FadeItem();
+        
+
+        balloon_obj.SetActive(false);
+        this.gameObject.SetActive(false);
+        candy();
         DelThis();
     }
 
@@ -489,7 +542,7 @@ public class CheckPlayer : MonoBehaviour
                 a++;
                 break;
             case 15://아이템 얻기
-                ItemSettingOnEvent();
+                ItemSettingOnEvents();
                 talkBallB_obj.SetActive(false);
                 a++;
                 StopTalk();
@@ -525,7 +578,7 @@ public class CheckPlayer : MonoBehaviour
                 talkBallB_obj.SetActive(true);
                 StopCoroutine("talkBall");
                 StartCoroutine("talkBall");
-                ItemSettingOnEvent();
+                ItemSettingOnEvents();
                 StopAndTalk();
                 a++;
                 break;
@@ -661,7 +714,7 @@ public class CheckPlayer : MonoBehaviour
         SGM.GetComponent<SoundEvt>().soundItemSuccess();
         int a = 0;
         a = PlayerPrefs.GetInt("inventorynum", 0);
-
+        PlayerPrefs.SetInt("itemgetpoint", a);
         int hel = 0;
 
         //if (PlayerPrefs.GetInt("itemnum" + SetItemPref_i, 0) == 0)
@@ -718,8 +771,6 @@ public class CheckPlayer : MonoBehaviour
 
 
             a++;
-
-
         }
 
 
@@ -743,8 +794,59 @@ public class CheckPlayer : MonoBehaviour
 
 
 
+    void ItemSettingOnEvents()
+    {
 
-    IEnumerator talkBall()
+        int a = 0;
+        //빈공간저장하기
+        a = PlayerPrefs.GetInt("itemgetpoint", 0);
+        //소리
+        SGM.GetComponent<SoundEvt>().soundItemSuccess();
+
+
+        int hel = 0;
+
+
+
+        //a번칸에 값저장
+        PlayerPrefs.SetInt("inventoryget" + a, SetItemPref_i);
+        PlayerPrefs.SetInt("changeitem", 1);
+        a++;
+        if (PlayerPrefs.GetInt("fillpotint", 0) < a)
+        {
+            PlayerPrefs.SetInt("fillpotint", a);
+
+            Debug.Log("aaaaa" + a);
+        }
+
+        Debug.Log("aaaaa" + a);
+        Debug.Log("aaaaa" + PlayerPrefs.GetInt("fillpotint", 0));
+        PlayerPrefs.SetInt("itemgetpoint", a);
+
+        //아이템갯수증가
+        int o = 0;
+        o = PlayerPrefs.GetInt("itemnum" + SetItemPref_i, 0);
+        PlayerPrefs.SetInt("inventorynum", a);
+        o++;
+        PlayerPrefs.SetInt("itemnum" + SetItemPref_i, o);
+        PlayerPrefs.SetInt("changeitem", 1);
+
+
+        if (hel == 1)
+        {
+            PlayerPrefs.SetInt("inventorynum", (a - 1));
+        }
+
+
+
+        GMI.GetComponent<ItemGetMotion>().fade_obj.GetComponent<SpriteRenderer>().sprite = item_spr;
+        GMI.GetComponent<ItemGetMotion>().fade_obj.transform.position = this.transform.position;
+        GMI.GetComponent<ItemGetMotion>().FadeItem();
+    }
+
+
+
+        IEnumerator talkBall()
     {
         int c = 1;
         int s = 0;

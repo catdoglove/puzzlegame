@@ -152,7 +152,39 @@ public class Inventory : MonoBehaviour
 
             }
         }
+        CheckThePoint();
+        //Sub();
+        AddItem();
+
+
+        if (GM.GetComponent<CharMove>().canMove==false)
+        {
+
+            if (inout_i == 1)
+            {
+                SelectMove();
+
+                if (selected_i == selectedNow_i)
+                {
+                    DisSelectItem();
+                    CheckSelect();
+                }
+                else
+                {
+                    SelectItem();
+                }
+            }
+                
+        }
+
+
+        CheckSelect();
         
+    }
+
+    void Sub()
+    {
+
         if (PlayerPrefs.GetInt("changeitem", 0) == 0)
         {
 
@@ -214,30 +246,6 @@ public class Inventory : MonoBehaviour
 
             PlayerPrefs.SetInt("changeitem", 0);
         }
-
-        if (GM.GetComponent<CharMove>().canMove==false)
-        {
-
-            if (inout_i == 1)
-            {
-                SelectMove();
-
-                if (selected_i == selectedNow_i)
-                {
-                    DisSelectItem();
-                    CheckSelect();
-                }
-                else
-                {
-                    SelectItem();
-                }
-            }
-                
-        }
-
-
-        CheckSelect();
-        
     }
 
 
@@ -492,11 +500,57 @@ public class Inventory : MonoBehaviour
         PlayerPrefs.SetInt("inventorynum", a);
         /*
         */
+
+
+        PlayerPrefs.SetInt("itemgetpoint", a);
+    }
+
+    public void DelItems()
+    {
+
+        a = PlayerPrefs.GetInt("selecteditemnum", 0);
+        int p = PlayerPrefs.GetInt("inventoryget" + a, 0);
+        int o = PlayerPrefs.GetInt("itemnum" + p);
+        int t = PlayerPrefs.GetInt("stacking", 0);
+        int t2 = PlayerPrefs.GetInt("whierestacking", 0);
+
+        /*
+        for (int i = 0; i < a; i++)
+        {
+            int p_a = PlayerPrefs.GetInt("inventoryget" + (i + 1), 0);
+            PlayerPrefs.SetInt("inventoryget" + i, p_a); items_i[i] = p_a;
+            if (p_a != 0)
+            {
+                invenItem_obj[i].SetActive(true);
+                invenItem_obj[i].GetComponent<Image>().sprite = Item_spr[p_a];
+            }
+            Debug.Log("afor" + a); Debug.Log("pafor" + p_a);
+        }
+        */
+
+        PlayerPrefs.SetInt("inventoryget" + a, 0);
+        invenItem_obj[a].GetComponent<Image>().sprite = null;
+        invenItem_obj[a].SetActive(false);
+        items_i[a] = 0;
+        selected_obj.SetActive(false);
+        PlayerPrefs.SetInt("selecteditemnum", 0);
+        selectedNow_i = -1;
+
+
+        PlayerPrefs.SetInt("inventorynum", a);
+        /*
+        */
+
+
+        if (PlayerPrefs.GetInt("itemgetpoint", 0) > a)
+        {
+            PlayerPrefs.SetInt("itemgetpoint", a);
+        }
     }
 
     void SelectMove()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             SGM.GetComponent<SoundEvt>().soundItemWndAD();
             for (int i = 0; i < 7; i++)
@@ -512,7 +566,7 @@ public class Inventory : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.A))
             {
 
                 SGM.GetComponent<SoundEvt>().soundItemWndAD();
@@ -563,4 +617,108 @@ public class Inventory : MonoBehaviour
     {
         ESCevent.SetActive(false);
     }
+
+
+    public void CheckThePoint()
+    {
+        //아이템이 바뀌었는가?
+        if (PlayerPrefs.GetInt("changeitem", 0) == 0)
+        {
+
+        }
+        else
+        {
+            //아이템이 바뀌었을 때 아이템을 비워준다
+            for (int i = 0; i < PlayerPrefs.GetInt("fillpotint", 0); i++)
+            {
+                if (PlayerPrefs.GetInt("inventoryget" + i, 0) == 0)
+                {
+                    invenItem_obj[i].SetActive(false);
+                    if (invenItem_obj[i].GetComponent<Image>().sprite != null)
+                    {
+                        invenItem_obj[i].GetComponent<Image>().sprite = null;
+                    }
+                }
+            }
+            
+
+
+
+        }
+    }
+
+    public void AddItem()
+    {
+        //아이템이 바뀌었는가?
+        if (PlayerPrefs.GetInt("changeitem", 0) == 0)
+        {
+
+        }
+        else
+        {
+
+            SetItems();
+
+
+            a = PlayerPrefs.GetInt("inventorynum", 0);
+        }
+        PlayerPrefs.SetInt("changeitem", 0);
+    }
+
+    //아이템에 변화가 생기는 타이밍 아이템의 제거 아이템의 합체 아이템의 획득 아이템의 사용
+    //아이템의 빈공간 포인트에 새 아이템을 넣는다
+    //스택의 경우 예외처리
+    //빈공간 포인트가 채워진 포인트보다 클경우 채워진 포인트를 증가시킨다
+
+    void SetItems()
+    {
+        //p번 아이템이 a번째 칸에 차있다
+        int p = PlayerPrefs.GetInt("inventoryget" + a, 0);
+        //p번 아이템을 o 개자지고 있다
+        int o = PlayerPrefs.GetInt("itemnum" + p, 0);
+        //쌓이는가
+        int t = PlayerPrefs.GetInt("stacking", 0);
+        //t2에 쌓여있다
+        int t2 = PlayerPrefs.GetInt("whierestacking", 0);
+
+
+        //채워진 곳까지 아이템이미지 갱신
+        if (PlayerPrefs.GetInt("fillpotint", 0)<8)
+        {
+            for (int i = 0; i < PlayerPrefs.GetInt("fillpotint", 0); i++)
+            {
+                p = PlayerPrefs.GetInt("inventoryget" + i, 0);
+                o = PlayerPrefs.GetInt("itemnum" + p, 0);
+                if (o != 0)
+                {
+                    invenItem_obj[i].GetComponent<Image>().sprite = Item_spr[p + o - 1];
+                    items_i[i] = p + o - 1;
+                }
+                invenItem_obj[i].SetActive(true);
+                if (p == 13)
+                {
+                    invenItem_obj[i].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1];
+                    items_i[i] = PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1;
+
+                    invenItem_obj[i].SetActive(true);
+                }
+                if (p == 1)
+                {
+                    invenItem_obj[i].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1];
+                    items_i[i] = PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1;
+                    invenItem_obj[i].SetActive(true);
+                }
+            }
+        }
+
+
+    }
+
+    /*
+     * 겹치는 아이템을 받을 때 1. 가지고 있는 아이탬 종류의 수를 늘리지 않음 2. 아이템창을 새로고침함 3. 먼저 얻은 아이템을 사용할때 아이탬의 위치가 바뀌지 않음 
+     * 4. 좌측정렬로 변환 5. 빈공간포인터는 좌측에서 제일 가까운 빈공간을 가르킨다 6. 아이탬이 몇번까지 차있는지 포인트가 가르키고 있다. 
+     * 7. 아이템
+     * 아이템을 
+     
+    */
 }
