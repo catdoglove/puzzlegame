@@ -2274,7 +2274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &243045147
 Transform:
   m_ObjectHideFlags: 0
@@ -7819,7 +7819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &877747622
 Animator:
   serializedVersion: 3
@@ -8276,6 +8276,7 @@ MonoBehaviour:
   NPC_cat1Ani: {fileID: 1310307522}
   NPC_bear1Ani: {fileID: 1252781937}
   NPC_bear2Ani: {fileID: 71566615}
+  NPC_cat2Ani: {fileID: 326288459}
   NPC_sheep1: {fileID: 293883328}
   lakeboat: {fileID: 1164762042}
   NPC_sheepSpr:
@@ -8310,9 +8311,11 @@ MonoBehaviour:
   sp_box_etc: {fileID: 8300000, guid: 564cb66ff19f464428a01ae0016f0ea0, type: 3}
   sp_box_open: {fileID: 8300000, guid: cefdc02a0999740498b8e00e6ed5c9e7, type: 3}
   sp_crow_attack: {fileID: 8300000, guid: 8901b74a3e724524fa924e8078b92972, type: 3}
+  sp_hide1: {fileID: 0}
   se_box_etc: {fileID: 0}
   se_box_open: {fileID: 0}
   se_crow_attack: {fileID: 0}
+  se_hide1: {fileID: 0}
   sp_walk: {fileID: 8300000, guid: 30d0f00afcbfb6640864880f816c549f, type: 3}
   sp_walk_wood: {fileID: 8300000, guid: 4b7ea87201152bc4292a9f2efd14c822, type: 3}
   se_walk: {fileID: 0}
@@ -9430,6 +9433,7 @@ GameObject:
   - component: {fileID: 1074944040}
   - component: {fileID: 1074944039}
   - component: {fileID: 1074944041}
+  - component: {fileID: 1074944042}
   m_Layer: 0
   m_Name: "\uBC30"
   m_TagString: Untagged
@@ -9445,7 +9449,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074944037}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.65, y: -2.49, z: 0}
+  m_LocalPosition: {x: -12.24, y: -2.49, z: 0}
   m_LocalScale: {x: 0.94, y: 0.94, z: 1}
   m_Children: []
   m_Father: {fileID: 1401230573}
@@ -9508,7 +9512,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: -8398581448420359578, guid: eab36ebabb346a64cbefc4f91b7b0e76,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9547,6 +9551,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.16, y: 0.7361404}
   m_EdgeRadius: 0
+--- !u!114 &1074944042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074944037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 982008034f00a184e9c23530999beed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boatAni: {fileID: 1074944039}
+  mapwhere: 88
+  boatSpr: {fileID: 0}
+  hiddenSpr: {fileID: 0}
+  backBG: {fileID: 0}
+  frontBG: {fileID: 0}
+  moveGM: {fileID: 0}
+  SGM: {fileID: 0}
 --- !u!1 &1076271507
 GameObject:
   m_ObjectHideFlags: 0
@@ -10271,10 +10295,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boatAni: {fileID: 1164762044}
+  mapwhere: 88
   boatSpr: {fileID: 0}
   hiddenSpr: {fileID: 0}
   backBG: {fileID: 0}
   frontBG: {fileID: 0}
+  moveGM: {fileID: 0}
+  SGM: {fileID: 0}
 --- !u!1 &1207356953
 GameObject:
   m_ObjectHideFlags: 0
@@ -12339,10 +12366,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boatAni: {fileID: 1382953083}
+  mapwhere: 88
   boatSpr: {fileID: 1382953082}
   hiddenSpr: {fileID: 129845051}
   backBG: {fileID: 1311325419}
   frontBG: {fileID: 1402255898}
+  moveGM: {fileID: 0}
+  SGM: {fileID: 0}
 --- !u!50 &1382953087
 Rigidbody2D:
   serializedVersion: 4
@@ -14911,7 +14941,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 12
   m_Sprite: {fileID: 21300000, guid: 3c72a02438cedd945b49c26f4c8e2bb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -17333,7 +17363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1829395022
 Transform:
   m_ObjectHideFlags: 0
@@ -19943,7 +19973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &2026407350
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19988,7 +20018,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.8, y: 2.6}
+  m_Size: {x: 2.8, y: 3.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -20002,7 +20032,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026407349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.42, y: -1.32, z: -1.686955}
+  m_LocalPosition: {x: -2.9, y: -2.02, z: -1.686955}
   m_LocalScale: {x: 0.94, y: 0.94, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -20194,7 +20224,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.8, y: 3.2}
-    newSize: {x: 2.8, y: 2.6}
+    newSize: {x: 2.8, y: 3.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -20220,7 +20250,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.8, y: 3.2}
-    newSize: {x: 2.8, y: 2.6}
+    newSize: {x: 2.8, y: 3.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

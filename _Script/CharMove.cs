@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CharMove : MonoBehaviour
 {
@@ -40,6 +41,13 @@ public class CharMove : MonoBehaviour
     public GameObject GM, GM_B;
 
     int walkint = 0;
+    int rannd, rannndint;
+
+
+    string[] waitNum = new string[3];
+
+    int ran = 0;
+
 
 
     // Start is called before the first frame update
@@ -52,7 +60,7 @@ public class CharMove : MonoBehaviour
 
     void Start()
     {
-        //jump();
+        charWaitingMotion();
         charAni.Play("ani_char_stop");
         ckwalk = 0;
         ausrc = GetComponent<AudioSource>();
@@ -114,12 +122,19 @@ public class CharMove : MonoBehaviour
 
         if (Input.anyKey == false)
         {
-            charAni.Play("ani_char_stop");
+            charAni.Play(waitNum[ran]);
+            StartCoroutine("charwaitAnimation");
             ckwalk = 0;
         }
         else if (ckwalk == 1)
         {
             charAni.Play("ani_char_walk");
+           /* if (PlayerPrefs.GetInt("getrandnum", 0) == 0)
+            {
+                ran = Random.Range(0, 3);
+                PlayerPrefs.SetInt("getrandnum", 99);
+                Debug.Log(ran);
+            }*/
         }
 
         transform.Translate(new Vector3(moveX, moveY, 0) * 0.1f);
@@ -178,6 +193,42 @@ public class CharMove : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// 대기모션리스트
+    /// </summary>
+    void charWaitingMotion()
+    {
+        waitNum[0] = "ani_char_stop";
+        waitNum[1] = "ani_char_wait";
+        waitNum[2] = "ani_char_wait2";
+
+    }
+
+    /// <summary>
+    /// 순서대로 대기모션 불러오기
+    /// </summary>
+    IEnumerator charwaitAnimation()
+    {
+        while (true)
+        {
+            Debug.Log(ran);
+            switch (ran)
+            {
+                case 0:
+                    yield return new WaitForSeconds(5f);
+                    ran = 1;
+                    break;
+                case 1:
+                    yield return new WaitForSeconds(5f);
+                    ran = 2;
+                    break;
+                case 2:
+                    yield return new WaitForSeconds(5f);
+                    ran = 0;
+                    break;
+            }
+        }
+    }
 
     public AudioClip walkSouneEvt(string walkSE) //걸음 소리 변경 함수
     {

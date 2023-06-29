@@ -9,8 +9,8 @@ public class SoundEvt : MonoBehaviour {
 	public AudioSource se_start, se_pickup, se_damage, se_open_object, se_jump, se_water_walk;
 
 	//이벤트 관련
-	public AudioClip sp_box_etc, sp_box_open, sp_crow_attack;
-	public AudioSource se_box_etc, se_box_open, se_crow_attack;
+	public AudioClip sp_box_etc, sp_box_open, sp_crow_attack, sp_hide1;
+	public AudioSource se_box_etc, se_box_open, se_crow_attack, se_hide1;
 
 	//걷기 관련
 	public AudioClip sp_walk, sp_walk_wood;
@@ -196,12 +196,24 @@ public class SoundEvt : MonoBehaviour {
 		putSound(se_talk, sp_talk);
 		auSE.Play();
 	}
+
 	/// <summary>
 	/// 대화소리 (몸집이 큰)
 	/// </summary>
 	public void soundTalkLow()
 	{
 		putSound(se_talk_low, sp_talk_low);
+		auSE.Play();
+	}
+
+
+
+	/// <summary>
+	/// 숨는소리
+	/// </summary>
+	public void soundHide1()
+	{
+		putSound(se_hide1, sp_hide1);
 		auSE.Play();
 	}
 

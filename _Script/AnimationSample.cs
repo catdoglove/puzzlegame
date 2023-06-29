@@ -7,7 +7,7 @@ public class AnimationSample : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public Animator doorAni, NPC_hedgehogAni, NPC_rabbit1Ani, NPC_rabbit2Ani, NPC_cat1Ani, NPC_bear1Ani, NPC_bear2Ani;
+    public Animator doorAni, NPC_hedgehogAni, NPC_rabbit1Ani, NPC_rabbit2Ani, NPC_cat1Ani, NPC_bear1Ani, NPC_bear2Ani, NPC_cat2Ani;
     public GameObject NPC_sheep1, lakeboat;
     public Sprite[] NPC_sheepSpr;
     public GameObject testBtnobj, ESCevent;
@@ -20,6 +20,8 @@ public class AnimationSample : MonoBehaviour
          StartCoroutine("openDoor");
         //talkAnimation();
 
+        //낚시 고양이 애니 움직임 멈춤
+        NPC_cat2Ani.speed = 0f;
 
     }
 
@@ -36,6 +38,7 @@ public class AnimationSample : MonoBehaviour
 
 
     }
+
 
 
 
