@@ -508,27 +508,17 @@ public class Inventory : MonoBehaviour
     public void DelItems()
     {
 
-        a = PlayerPrefs.GetInt("selecteditemnum", 0);
+        a = 0 + selected_i;
         int p = PlayerPrefs.GetInt("inventoryget" + a, 0);
         int o = PlayerPrefs.GetInt("itemnum" + p);
         int t = PlayerPrefs.GetInt("stacking", 0);
         int t2 = PlayerPrefs.GetInt("whierestacking", 0);
 
-        /*
-        for (int i = 0; i < a; i++)
-        {
-            int p_a = PlayerPrefs.GetInt("inventoryget" + (i + 1), 0);
-            PlayerPrefs.SetInt("inventoryget" + i, p_a); items_i[i] = p_a;
-            if (p_a != 0)
-            {
-                invenItem_obj[i].SetActive(true);
-                invenItem_obj[i].GetComponent<Image>().sprite = Item_spr[p_a];
-            }
-            Debug.Log("afor" + a); Debug.Log("pafor" + p_a);
-        }
-        */
+
+        Debug.Log("a"+a);
 
         PlayerPrefs.SetInt("inventoryget" + a, 0);
+        PlayerPrefs.SetInt("itemnum" + p, 0);
         invenItem_obj[a].GetComponent<Image>().sprite = null;
         invenItem_obj[a].SetActive(false);
         items_i[a] = 0;
@@ -540,12 +530,34 @@ public class Inventory : MonoBehaviour
         PlayerPrefs.SetInt("inventorynum", a);
         /*
         */
+        if (PlayerPrefs.GetInt("itemgetpoint", 0) == PlayerPrefs.GetInt("fillpotint", 0))
+        {
 
+            Debug.Log("fillpotint1" + (PlayerPrefs.GetInt("fillpotint", 0) - 1));
+            PlayerPrefs.SetInt("fillpotint", (PlayerPrefs.GetInt("fillpotint", 0) - 1));
 
+            Debug.Log("itemgetpoint"+ PlayerPrefs.GetInt("itemgetpoint", 0));
+        }
+        else
+        {
+        }
+
+        for (int i = 6; i >= 0; i--)
+        {
+            if (items_i[i] == 0)
+            {
+                PlayerPrefs.SetInt("itemgetpoint", a);
+            }
+        }
+
+        /*
         if (PlayerPrefs.GetInt("itemgetpoint", 0) > a)
         {
             PlayerPrefs.SetInt("itemgetpoint", a);
         }
+        */
+        PlayerPrefs.SetInt("changeitem", 1);
+
     }
 
     void SelectMove()
@@ -681,6 +693,7 @@ public class Inventory : MonoBehaviour
         //t2에 쌓여있다
         int t2 = PlayerPrefs.GetInt("whierestacking", 0);
 
+        int g = 0;
 
         //채워진 곳까지 아이템이미지 갱신
         if (PlayerPrefs.GetInt("fillpotint", 0)<8)
@@ -699,7 +712,6 @@ public class Inventory : MonoBehaviour
                 {
                     invenItem_obj[i].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1];
                     items_i[i] = PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1;
-
                     invenItem_obj[i].SetActive(true);
                 }
                 if (p == 1)
@@ -708,6 +720,15 @@ public class Inventory : MonoBehaviour
                     items_i[i] = PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1;
                     invenItem_obj[i].SetActive(true);
                 }
+                
+
+
+                if (o == 0 && g == 0)
+                {
+                    PlayerPrefs.SetInt("itemgetpoint", i);
+                    g = 1;
+                }
+
             }
         }
 

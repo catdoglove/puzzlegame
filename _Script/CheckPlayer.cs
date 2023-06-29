@@ -285,34 +285,58 @@ public class CheckPlayer : MonoBehaviour
 
         int hel = 0;
 
-        //a번칸에 값저장
-        PlayerPrefs.SetInt("inventoryget" + a, SetItemPref_i);
-        PlayerPrefs.SetInt("changeitem", 1);
-        a++;
-        if (PlayerPrefs.GetInt("fillpotint", 0) < a)
-        {
-            PlayerPrefs.SetInt("fillpotint", a);
 
-            Debug.Log("aaaaa" + a);
+
+        if ((PlayerPrefs.GetInt("itemnum" + 1, 0) == 1|| PlayerPrefs.GetInt("itemnum" + 1, 0)==2) && SetItemPref_i==1)
+        {
+            int num =PlayerPrefs.GetInt("itemnum" + 1, 0);
+            num++;
+            PlayerPrefs.SetInt("itemnum" + 1, num);
+        }
+        else
+        {
+            if ((PlayerPrefs.GetInt("itemnum" + 13, 0) == 1 || PlayerPrefs.GetInt("itemnum" + 13, 0) == 2) && SetItemPref_i == 13)
+            {
+                int num = PlayerPrefs.GetInt("itemnum" + 13, 0);
+                num++;
+                PlayerPrefs.SetInt("itemnum" + 13, num);
+            }
+            else
+            {
+                //a번칸에 값저장
+                PlayerPrefs.SetInt("inventoryget" + a, SetItemPref_i);
+                PlayerPrefs.SetInt("changeitem", 1);
+                a++;
+                if (PlayerPrefs.GetInt("fillpotint", 0) < a)
+                {
+                    Debug.Log("fillpotint1" + a);
+                    PlayerPrefs.SetInt("fillpotint", a);
+
+                    Debug.Log("aaaaa" + a);
+                }
+
+                Debug.Log("aaaaa" + a);
+                Debug.Log("fillpotint" + PlayerPrefs.GetInt("fillpotint", 0));
+                PlayerPrefs.SetInt("itemgetpoint", a);
+
+                //아이템갯수증가
+                int o = 0;
+                o = PlayerPrefs.GetInt("itemnum" + SetItemPref_i, 0);
+                PlayerPrefs.SetInt("inventorynum", a);
+                o++;
+                PlayerPrefs.SetInt("itemnum" + SetItemPref_i, o);
+
+
+                if (hel == 1)
+                {
+                    PlayerPrefs.SetInt("inventorynum", (a - 1));
+                }
+            }
         }
 
-        Debug.Log("aaaaa" + a);
-        Debug.Log("aaaaa" + PlayerPrefs.GetInt("fillpotint", 0));
-        PlayerPrefs.SetInt("itemgetpoint", a);
 
-        //아이템갯수증가
-        int o = 0;
-        o = PlayerPrefs.GetInt("itemnum" + SetItemPref_i, 0);
-        PlayerPrefs.SetInt("inventorynum", a);
-        o++;
-        PlayerPrefs.SetInt("itemnum" + SetItemPref_i, o);
         PlayerPrefs.SetInt("changeitem", 1);
 
-
-        if (hel == 1)
-        {
-            PlayerPrefs.SetInt("inventorynum", (a - 1));
-        }
         GMI.GetComponent<ItemGetMotion>().fade_obj.GetComponent<SpriteRenderer>().sprite = this.GetComponent<SpriteRenderer>().sprite;
         GMI.GetComponent<ItemGetMotion>().fade_obj.transform.position = this.transform.position;
         GMI.GetComponent<ItemGetMotion>().FadeItem();
@@ -460,10 +484,14 @@ public class CheckPlayer : MonoBehaviour
             case 8://말풍선 띄우고 특수 아이템요구 아이템제거
                 TalkSound();
                 a++;
+                if (PlayerPrefs.GetInt("selecteditemnum", 0)==19)
+                {
+                    PlayerPrefs.SetInt("selecteditemnum", 18);
+                }
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                 {
                     a++;
-                    GMI.GetComponent<Inventory>().DelItem();
+                    GMI.GetComponent<Inventory>().DelItems();
                     SetDogam2();
 
                     if (stick_b)
@@ -588,7 +616,7 @@ public class CheckPlayer : MonoBehaviour
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                 {
                     a++;
-                    GMI.GetComponent<Inventory>().DelItem();
+                    GMI.GetComponent<Inventory>().DelItems();
                     giveItemPref_i = 18;
                     SetItemPref_i = 21;
                     SetDogam2();
@@ -807,41 +835,110 @@ public class CheckPlayer : MonoBehaviour
         int hel = 0;
 
 
-
-        //a번칸에 값저장
-        PlayerPrefs.SetInt("inventoryget" + a, SetItemPref_i);
-        PlayerPrefs.SetInt("changeitem", 1);
-        a++;
-        if (PlayerPrefs.GetInt("fillpotint", 0) < a)
+        Debug.Log("fillpotint" + PlayerPrefs.GetInt("fillpotint", 0));
+        for (int i = 0; i < PlayerPrefs.GetInt("fillpotint", 0); i++)
         {
-            PlayerPrefs.SetInt("fillpotint", a);
+            if (GMI.GetComponent<Inventory>().items_i[i] == 11)
+            {
+                Debug.Log(PlayerPrefs.GetInt("inventoryget" + i, 0));
+                PlayerPrefs.SetInt("inventoryget" + i, 6);
+                PlayerPrefs.SetInt("itemnum" + 6, 1);
+                GMI.GetComponent<Inventory>().items_i[i] = 6;
+            }
+            else
+            {
+                if (GMI.GetComponent<Inventory>().items_i[i] == 5)
+                {
+                    Debug.Log(PlayerPrefs.GetInt("inventoryget" + i, 0));
+                    PlayerPrefs.SetInt("inventoryget" + i, 6);
+                    PlayerPrefs.SetInt("itemnum" + 6, 1);
+                GMI.GetComponent<Inventory>().items_i[i] = 6;
+                }
+                else
+                {
+                    //a번칸에 값저장
+                    PlayerPrefs.SetInt("inventoryget" + a, SetItemPref_i);
+                    PlayerPrefs.SetInt("changeitem", 1);
+                    a++;
+                    if (PlayerPrefs.GetInt("fillpotint", 0) < a)
+                    {
+                        Debug.Log("fillpotint1" + a);
+                        PlayerPrefs.SetInt("fillpotint", a);
+
+                        Debug.Log("aaaaa" + a);
+                    }
+
+                    Debug.Log("aaaaa" + a);
+                    Debug.Log("aaaaa" + PlayerPrefs.GetInt("fillpotint", 0));
+                    PlayerPrefs.SetInt("itemgetpoint", a);
+
+                    //아이템갯수증가
+                    int o = 0;
+                    o = PlayerPrefs.GetInt("itemnum" + SetItemPref_i, 0);
+                    PlayerPrefs.SetInt("inventorynum", a);
+                    o++;
+                    PlayerPrefs.SetInt("itemnum" + SetItemPref_i, o);
+
+
+                    if (hel == 1)
+                    {
+                        PlayerPrefs.SetInt("inventorynum", (a - 1));
+                    }
+
+                    if (PlayerPrefs.GetInt("inventoryget" + (a + 1), 0) > 0)
+                    {
+                        PlayerPrefs.SetInt("itemgetpoint", (PlayerPrefs.GetInt("fillpotint", 0) + 1));
+                    }
+                }
+            }
+        }
+
+        if (PlayerPrefs.GetInt("fillpotint", 0) == 0)
+        {
+
+            //a번칸에 값저장
+            PlayerPrefs.SetInt("inventoryget" + a, SetItemPref_i);
+            PlayerPrefs.SetInt("changeitem", 1);
+            a++;
+            if (PlayerPrefs.GetInt("fillpotint", 0) < a)
+            {
+                Debug.Log("fillpotint1" + a);
+                PlayerPrefs.SetInt("fillpotint", a);
+
+                Debug.Log("aaaaa" + a);
+            }
 
             Debug.Log("aaaaa" + a);
+            Debug.Log("aaaaa" + PlayerPrefs.GetInt("fillpotint", 0));
+            PlayerPrefs.SetInt("itemgetpoint", a);
+
+            //아이템갯수증가
+            int o = 0;
+            o = PlayerPrefs.GetInt("itemnum" + SetItemPref_i, 0);
+            PlayerPrefs.SetInt("inventorynum", a);
+            o++;
+            PlayerPrefs.SetInt("itemnum" + SetItemPref_i, o);
+
+
+            if (hel == 1)
+            {
+                PlayerPrefs.SetInt("inventorynum", (a - 1));
+            }
+
+            if (PlayerPrefs.GetInt("inventoryget" + (a + 1), 0) > 0)
+            {
+                PlayerPrefs.SetInt("itemgetpoint", (PlayerPrefs.GetInt("fillpotint", 0) + 1));
+            }
         }
 
-        Debug.Log("aaaaa" + a);
-        Debug.Log("aaaaa" + PlayerPrefs.GetInt("fillpotint", 0));
-        PlayerPrefs.SetInt("itemgetpoint", a);
 
-        //아이템갯수증가
-        int o = 0;
-        o = PlayerPrefs.GetInt("itemnum" + SetItemPref_i, 0);
-        PlayerPrefs.SetInt("inventorynum", a);
-        o++;
-        PlayerPrefs.SetInt("itemnum" + SetItemPref_i, o);
         PlayerPrefs.SetInt("changeitem", 1);
-
-
-        if (hel == 1)
-        {
-            PlayerPrefs.SetInt("inventorynum", (a - 1));
-        }
-
-
 
         GMI.GetComponent<ItemGetMotion>().fade_obj.GetComponent<SpriteRenderer>().sprite = item_spr;
         GMI.GetComponent<ItemGetMotion>().fade_obj.transform.position = this.transform.position;
         GMI.GetComponent<ItemGetMotion>().FadeItem();
+        
+
     }
 
 
