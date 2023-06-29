@@ -530,10 +530,11 @@ public class Inventory : MonoBehaviour
         PlayerPrefs.SetInt("inventorynum", a);
         /*
         */
+        Debug.Log("fillpotint1ii" + PlayerPrefs.GetInt("fillpotint", 0));
         if (PlayerPrefs.GetInt("itemgetpoint", 0) == PlayerPrefs.GetInt("fillpotint", 0))
         {
 
-            Debug.Log("fillpotint1" + (PlayerPrefs.GetInt("fillpotint", 0) - 1));
+            Debug.Log("fillpotint1i" + (PlayerPrefs.GetInt("fillpotint", 0) - 1));
             PlayerPrefs.SetInt("fillpotint", (PlayerPrefs.GetInt("fillpotint", 0) - 1));
 
             Debug.Log("itemgetpoint"+ PlayerPrefs.GetInt("itemgetpoint", 0));
@@ -684,6 +685,8 @@ public class Inventory : MonoBehaviour
 
     void SetItems()
     {
+        FillPoint();
+        /*
         //p번 아이템이 a번째 칸에 차있다
         int p = PlayerPrefs.GetInt("inventoryget" + a, 0);
         //p번 아이템을 o 개자지고 있다
@@ -731,8 +734,63 @@ public class Inventory : MonoBehaviour
 
             }
         }
+        */
+
+    }
+
+    void FillPoint()
+    {
+        //p번 아이템이 a번째 칸에 차있다
+        int p = PlayerPrefs.GetInt("inventoryget" + a, 0);
+        //p번 아이템을 o 개자지고 있다
+        int o = PlayerPrefs.GetInt("itemnum" + p, 0);
+        //쌓이는가
+        int t = PlayerPrefs.GetInt("stacking", 0);
+        //t2에 쌓여있다
+        int t2 = PlayerPrefs.GetInt("whierestacking", 0);
+
+        int g = 0;
+
+        for (int i = 0; i < 7; i++)
+        {
+            p = PlayerPrefs.GetInt("inventoryget" + i, 0);
+            o = PlayerPrefs.GetInt("itemnum" + p, 0);
+            if (p == 18 || p == 19)
+            {
+                o = 1;
+            }
+            if (o != 0)
+            {
+                invenItem_obj[i].GetComponent<Image>().sprite = Item_spr[p + o - 1];
+                items_i[i] = p + o - 1;
+            }
+            invenItem_obj[i].SetActive(true);
+            if (p == 13)
+            {
+                invenItem_obj[i].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1];
+                items_i[i] = PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1;
+                invenItem_obj[i].SetActive(true);
+            }
+            if (p == 1)
+            {
+                invenItem_obj[i].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1];
+                items_i[i] = PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1;
+                invenItem_obj[i].SetActive(true);
+            }
+
+            if (items_i[i]==0)
+            {
+                invenItem_obj[i].SetActive(false);
+            }
 
 
+            if (o == 0 && g == 0)
+            {
+                PlayerPrefs.SetInt("itemgetpoint", i);
+                g = 1;
+            }
+
+        }
     }
 
     /*

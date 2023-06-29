@@ -374,7 +374,7 @@ public class CheckPlayerEvent : MonoBehaviour
                         SGM.GetComponent<SoundEvt>().soundItemUse();
                     }
                     a++;
-                    GMI.GetComponent<Inventory>().DelItem();
+                    GMI.GetComponent<Inventory>().DelItems();
                     move_obj.GetComponent<SpriteRenderer>().sprite = change_spr;
                 }
                 
@@ -405,7 +405,7 @@ public class CheckPlayerEvent : MonoBehaviour
                 {
                     SGM.GetComponent<SoundEvt>().soundItemUse();
                     a++;
-                    GMI.GetComponent<Inventory>().DelItem();
+                    GMI.GetComponent<Inventory>().DelItems();
                     ItemSettingOnEvent();
                     laterEvent_obj.SetActive(true);
                 }
@@ -466,7 +466,7 @@ public class CheckPlayerEvent : MonoBehaviour
                 {
                     SGM.GetComponent<SoundEvt>().soundItemUse();
                     a = 2;
-                    GMI.GetComponent<Inventory>().DelItem();
+                    GMI.GetComponent<Inventory>().DelItems();
                     hallFix_obj.SetActive(true);
                     hall_obj.SetActive(false);
                     SetItemPref_i = getItemPref_i;
@@ -475,7 +475,7 @@ public class CheckPlayerEvent : MonoBehaviour
                 {
                     SGM.GetComponent<SoundEvt>().soundItemUse();
                     a = 2;
-                    GMI.GetComponent<Inventory>().DelItem();
+                    GMI.GetComponent<Inventory>().DelItems();
                     hallFix_obj.SetActive(true);
                     hall_obj.SetActive(false);
                     SetItemPref_i = getItemPref_i + 1;
@@ -502,7 +502,7 @@ public class CheckPlayerEvent : MonoBehaviour
                     rideGM.GetComponent<example>().mapwhere = 99;
                     //
                     char_obj.SetActive(false);
-                    GMI.GetComponent<Inventory>().DelItem();
+                    GMI.GetComponent<Inventory>().DelItems();
                     move_obj.GetComponent<SpriteRenderer>().sprite = change_spr;
                 }
 
