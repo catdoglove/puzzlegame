@@ -211,7 +211,7 @@ public class CharMove : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log(ran);
+            //Debug.Log(ran);
             switch (ran)
             {
                 case 0:

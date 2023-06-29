@@ -508,7 +508,7 @@ public class Inventory : MonoBehaviour
     public void DelItems()
     {
 
-        a = 0 + selected_i;
+        a = 0 + selectedNow_i;
         int p = PlayerPrefs.GetInt("inventoryget" + a, 0);
         int o = PlayerPrefs.GetInt("itemnum" + p);
         int t = PlayerPrefs.GetInt("stacking", 0);
@@ -531,7 +531,7 @@ public class Inventory : MonoBehaviour
         /*
         */
         Debug.Log("fillpotint1ii" + PlayerPrefs.GetInt("fillpotint", 0));
-        if (PlayerPrefs.GetInt("itemgetpoint", 0) == PlayerPrefs.GetInt("fillpotint", 0))
+        if (PlayerPrefs.GetInt("itemgetpoint", 0) == PlayerPrefs.GetInt("fillpotint", 0)&& PlayerPrefs.GetInt("itemgetpoint", 0)!=0)
         {
 
             Debug.Log("fillpotint1i" + (PlayerPrefs.GetInt("fillpotint", 0) - 1));

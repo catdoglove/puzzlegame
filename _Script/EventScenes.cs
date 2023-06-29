@@ -218,6 +218,8 @@ public class EventScenes : MonoBehaviour
                 main_obj.SetActive(false);
                 GM.GetComponent<CharMove>().canMove = true;
                 pBox_obj.SetActive(false);
+
+                SGM.GetComponent<SoundEvt>().soundBoxWASD();
             }
 
             yield return new WaitForSeconds(0.01f);
