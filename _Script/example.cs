@@ -17,6 +17,11 @@ public class example : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (mapwhere == 77)
+        {
+            boatAni.Play("ani_boat_up");
+        }
+        PlayerPrefs.SetInt("hide_sound1", 0);
         Application.targetFrameRate = 60; 
 
         rigid2D = GetComponent<Rigidbody2D>();
@@ -29,35 +34,24 @@ public class example : MonoBehaviour
         {
             boatAnimation();
             //Invoke("boatAnimation", 2f);//2초뒤에 배타는 모션 실행
-            mapwhere = 0;
+            //mapwhere = 0;
         }
         else if (mapwhere == 88)
         {
-            //smallBoatGO();
-            boatAnimation();
-            mapwhere = 0;
+            smallBoatGO();
+            //boatAnimation();
+            //mapwhere = 0;
         }
         else if (mapwhere == 77)
         {
             boatAnimation();
-            mapwhere = 0;
+         //   mapwhere = 0;
         }
     }
 
     void smallBoatGO()
     {
         moveX = 0f;
-        /*
-        if (Input.GetKey(KeyCode.A))
-        {
-            moveX -= 0.07f; boatSpr.GetComponent<SpriteRenderer>().flipX = true;
-            if (transform.position.x <= 0f) //위치 도달 이후 부터 ~~
-            {
-                frontBG.transform.Translate(new Vector3(moveX, 0, 0) * -0.09f);
-                backBG.transform.Translate(new Vector3(moveX, 0, 0) * -0.06f);
-            }
-        }
-        */
         if (Input.GetKey(KeyCode.D))
         {
             moveX += 0.07f; boatSpr.GetComponent<SpriteRenderer>().flipX = false;
@@ -95,34 +89,37 @@ public class example : MonoBehaviour
             while (onetime)
             {
                 boatAni.Play("ani_boat_ready");
+                Invoke("waterSound", 2f);
                 onetime = false;
             }
             Invoke("boatGOani", 2f);
         }
         else if (mapwhere == 77) //호수건넌후
         {
-            boatAni.Play("ani_boat_up");
+            StopCoroutine("Action_go");
             StartCoroutine("Action_go2");
         }
-
+        Debug.Log(mapwhere);
     }
 
     void boatGOani()
     {                
         boatAni.Play("ani_boat_up");
-        StartCoroutine("Action_go");
-        
+        StartCoroutine("Action_go");        
+    }
+
+    void waterSound()
+    {
+        SGM.GetComponent<SoundEvt>().soundWaterWalk(); //배에 audioaouscer선언
     }
 
     IEnumerator Action_go()
     {
-        yield return new WaitForSeconds(1f);
-        //SGM.GetComponent<SoundEvt>().soundWaterWalk(); //배에 audioaouscer선언
         int a = 1;
         while (a <= 220) //늘리기
         {
             Vector3 destination = new Vector3(13, transform.position.y, 0);
-            transform.position = Vector3.MoveTowards(transform.position, destination, 4f * Time.deltaTime); //노젓는속도
+            transform.position = Vector3.MoveTowards(transform.position, destination, 0.03f * Time.deltaTime); //노젓는속도
             yield return new WaitForSeconds(0.01f);
             a++;
         }
@@ -133,12 +130,12 @@ public class example : MonoBehaviour
 
     IEnumerator Action_go2()
     {
-        //SGM.GetComponent<SoundEvt>().soundWaterWalk(); //배에 audioaouscer선언
+
         int a = 1;
-        while (a <= 400) //늘리기
+        while (a <= 200) //늘리기
         {
-            Vector3 destination = new Vector3(13, transform.position.y, 0);
-            transform.position = Vector3.MoveTowards(transform.position, destination, 4f * Time.deltaTime); //노젓는속도
+            Vector3 destination = new Vector3(3, transform.position.y, 0);
+            transform.position = Vector3.MoveTowards(transform.position, destination, 0.025f * Time.deltaTime); //노젓는속도
             yield return new WaitForSeconds(0.01f);
             a++;
         }
@@ -146,7 +143,7 @@ public class example : MonoBehaviour
         
         while (onetime)
         {
-            boatAni.Play("ani_boat_ready");
+            boatAni.Play("ani_boat_ready_next");
             onetime = false;
         }
 

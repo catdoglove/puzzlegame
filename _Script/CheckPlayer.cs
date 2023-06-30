@@ -1031,9 +1031,10 @@ public class CheckPlayer : MonoBehaviour
         talk_b = false;
         int in_i = 1;
         position0 = moveOther_obj.transform.position;
+        SGM.GetComponent<SoundEvt>().soundOpenObject();
         while (in_i == 1)
         {
-            position0.x = position0.x + 5f * Time.deltaTime;
+            position0.x = position0.x + 4f * Time.deltaTime;
             moveOther_obj.transform.position = position0;
 
             if (position0.x >= move_obj.transform.position.x)
