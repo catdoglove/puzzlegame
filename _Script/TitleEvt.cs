@@ -14,8 +14,9 @@ public class TitleEvt : MonoBehaviour
         PlayerPrefs.DeleteAll();
 
         StartCoroutine("keyboardEvt");
-        
-	}
+        Cursor.visible = true;
+
+    }
 
     public void changeLanguageKOR()
     {

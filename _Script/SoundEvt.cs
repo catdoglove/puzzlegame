@@ -9,8 +9,8 @@ public class SoundEvt : MonoBehaviour {
 	public AudioSource se_start, se_pickup, se_damage, se_open_object, se_jump, se_water_walk;
 
 	//이벤트 관련
-	public AudioClip sp_box_etc, sp_box_open, sp_crow_attack, sp_hide1;
-	public AudioSource se_box_etc, se_box_open, se_crow_attack, se_hide1;
+	public AudioClip sp_box_etc, sp_box_open, sp_box_bell, sp_crow_attack, sp_hide1;
+	public AudioSource se_box_etc, se_box_open, se_box_bell, se_crow_attack, se_hide1;
 
 	//걷기 관련
 	public AudioClip sp_walk, sp_walk_wood;
@@ -26,8 +26,8 @@ public class SoundEvt : MonoBehaviour {
 
 
 	//아이템 창 관련
-	public AudioClip sp_item_open, sp_item_select, sp_adkey;
-	public AudioSource se_item_open, se_item_select, se_adkey;
+	public AudioClip sp_item_open, sp_item_select, sp_adkey, sp_item_select_no;
+	public AudioSource se_item_open, se_item_select, se_adkey, se_item_select_no;
 
 
 	//대화 관련
@@ -44,7 +44,6 @@ public class SoundEvt : MonoBehaviour {
 	// Use this for initialization
 	void Start()
 	{
-
 	}
 
 
@@ -122,6 +121,16 @@ public class SoundEvt : MonoBehaviour {
 	}
 
 	/// <summary>
+	/// 튜토리얼 상자 방울
+	/// </summary>
+	public void soundBoxBell()
+	{
+		putSound(se_box_bell, sp_box_bell);
+		auSE.Play();
+	}
+	
+
+	/// <summary>
 	/// 까마귀의 습격
 	/// </summary>
 	public void soundCrowAttack()
@@ -177,7 +186,19 @@ public class SoundEvt : MonoBehaviour {
 		putSound(se_item_select, sp_item_select);
 		auSE.Play();
 	}
+
+	/// <summary>
+	/// 아이템창 선택해제
+	/// </summary>
+	public void soundItemWndSelectNO()
+	{
+		putSound(se_item_select_no, sp_item_select_no);
+		auSE.Play();
+	}
 	
+
+
+
 	/// <summary>
 	/// 아이템창 좌우 'AD'
 	/// </summary>
@@ -216,7 +237,6 @@ public class SoundEvt : MonoBehaviour {
 		putSound(se_hide1, sp_hide1);
 		auSE.Play();
 	}
-
 
 	public void putSound(AudioSource audioSE, AudioClip audioCP)
 	{

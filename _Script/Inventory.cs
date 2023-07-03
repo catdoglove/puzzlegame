@@ -48,6 +48,7 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         position = itemWindow_obj.transform.position;
+        StartCoroutine("cursorState");
     }
 
     public void WaitSec()
@@ -56,6 +57,27 @@ public class Inventory : MonoBehaviour
         MainGM.GetComponent<SceneAdd>().AtiveScene();
         PlayerPrefs.SetInt("helpdogam",1);
     }
+
+    /// <summary>
+    /// 커서상태
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator cursorState() 
+    {
+        while (true)
+        {
+            if (PlayerPrefs.GetInt("cursorActive", 0) == 1)
+            {
+                Cursor.visible = true;
+            }
+            else if (PlayerPrefs.GetInt("cursorActive", 0) == 0)
+            {
+                Cursor.visible = false;
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -623,12 +645,18 @@ public class Inventory : MonoBehaviour
     public void showESCwindow()
     {
         ESCevent.SetActive(true);
+
+        if (ESCevent.activeSelf == true)
+        {
+            PlayerPrefs.SetInt("cursorActive", 1);
+        }
     }
 
 
     public void closeESCwindow()
     {
         ESCevent.SetActive(false);
+        PlayerPrefs.SetInt("cursorActive",0);
     }
 
 
