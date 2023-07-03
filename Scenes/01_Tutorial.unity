@@ -263,7 +263,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128888}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -539,7 +539,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3933682}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -1778,7 +1778,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48938279}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -2676,9 +2676,13 @@ MonoBehaviour:
   other_obj: {fileID: 0}
   animalNum_i: 4
   crow_Ani: {fileID: 0}
+  flipX_b: 0
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  aniTalk_str: 
+  ani_str: ani_npc_bear2
+  all_Ani: {fileID: 0}
 --- !u!1 &72057342
 GameObject:
   m_ObjectHideFlags: 0
@@ -3335,7 +3339,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94142266}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -3918,7 +3922,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117716523}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.47, y: -3.3, z: 0}
+  m_LocalPosition: {x: -3.2, y: -3.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 298548695}
@@ -4768,9 +4772,13 @@ MonoBehaviour:
   other_obj: {fileID: 0}
   animalNum_i: 0
   crow_Ani: {fileID: 0}
+  flipX_b: 0
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  aniTalk_str: 
+  ani_str: 
+  all_Ani: {fileID: 0}
 --- !u!212 &137990810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6744,7 +6752,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222865027}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -7083,9 +7091,13 @@ MonoBehaviour:
   other_obj: {fileID: 0}
   animalNum_i: 0
   crow_Ani: {fileID: 0}
+  flipX_b: 0
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  aniTalk_str: ani_npc_rabbit1_talk
+  ani_str: ani_npc_rabbit1
+  all_Ani: {fileID: 225774919}
 --- !u!1 &226644110
 GameObject:
   m_ObjectHideFlags: 0
@@ -8316,7 +8328,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289999889}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -10069,7 +10081,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358044941}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -12117,9 +12129,13 @@ MonoBehaviour:
   other_obj: {fileID: 0}
   animalNum_i: 7
   crow_Ani: {fileID: 0}
+  flipX_b: 0
   stick_obj: {fileID: 892969963}
   makeBoad_obj: {fileID: 65992990}
   stick_b: 1
+  aniTalk_str: 
+  ani_str: 
+  all_Ani: {fileID: 0}
 --- !u!1 &448573638
 GameObject:
   m_ObjectHideFlags: 0
@@ -13593,7 +13609,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506612632}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -13740,7 +13756,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &513080950
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14326,7 +14342,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529413515}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -15115,9 +15131,13 @@ MonoBehaviour:
   other_obj: {fileID: 0}
   animalNum_i: 2
   crow_Ani: {fileID: 0}
+  flipX_b: 0
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  aniTalk_str: 
+  ani_str: 
+  all_Ani: {fileID: 0}
 --- !u!1 &560459893
 GameObject:
   m_ObjectHideFlags: 0
@@ -17199,7 +17219,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651061846}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -21146,7 +21166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820014223}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.02, y: -3.34, z: 0}
+  m_LocalPosition: {x: 0.47, y: -3.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 298548695}
@@ -21266,7 +21286,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826025793}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -22506,9 +22526,13 @@ MonoBehaviour:
   other_obj: {fileID: 1947656090}
   animalNum_i: 6
   crow_Ani: {fileID: 0}
+  flipX_b: 0
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  aniTalk_str: 
+  ani_str: ani_npc_cat1
+  all_Ani: {fileID: 0}
 --- !u!1 &855306064
 GameObject:
   m_ObjectHideFlags: 0
@@ -22728,9 +22752,13 @@ MonoBehaviour:
   other_obj: {fileID: 0}
   animalNum_i: 0
   crow_Ani: {fileID: 0}
+  flipX_b: 0
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  aniTalk_str: 
+  ani_str: 
+  all_Ani: {fileID: 0}
 --- !u!212 &858163630
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27576,9 +27604,13 @@ MonoBehaviour:
   other_obj: {fileID: 0}
   animalNum_i: 1
   crow_Ani: {fileID: 0}
+  flipX_b: 0
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  aniTalk_str: 
+  ani_str: ani_char_rabbitp
+  all_Ani: {fileID: 0}
 --- !u!1 &1005509628
 GameObject:
   m_ObjectHideFlags: 0
@@ -27795,9 +27827,13 @@ MonoBehaviour:
   other_obj: {fileID: 0}
   animalNum_i: 3
   crow_Ani: {fileID: 0}
+  flipX_b: 0
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  aniTalk_str: 
+  ani_str: ani_npc_bear1
+  all_Ani: {fileID: 0}
 --- !u!1 &1006602531
 GameObject:
   m_ObjectHideFlags: 0
@@ -28467,9 +28503,13 @@ MonoBehaviour:
   other_obj: {fileID: 0}
   animalNum_i: 0
   crow_Ani: {fileID: 0}
+  flipX_b: 0
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  aniTalk_str: 
+  ani_str: 
+  all_Ani: {fileID: 0}
 --- !u!212 &1044864061
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29233,9 +29273,13 @@ MonoBehaviour:
   other_obj: {fileID: 0}
   animalNum_i: 0
   crow_Ani: {fileID: 0}
+  flipX_b: 0
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  aniTalk_str: 
+  ani_str: 
+  all_Ani: {fileID: 0}
 --- !u!212 &1080766758
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30604,7 +30648,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123499078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -30700,7 +30744,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126609713}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -31181,7 +31225,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150475349}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -31454,7 +31498,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163094774}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -33038,9 +33082,13 @@ MonoBehaviour:
   other_obj: {fileID: 0}
   animalNum_i: 0
   crow_Ani: {fileID: 0}
+  flipX_b: 0
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  aniTalk_str: 
+  ani_str: 
+  all_Ani: {fileID: 0}
 --- !u!212 &1202256422
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34691,7 +34739,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247092751}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -35203,9 +35251,13 @@ MonoBehaviour:
   other_obj: {fileID: 0}
   animalNum_i: 0
   crow_Ani: {fileID: 0}
+  flipX_b: 0
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  aniTalk_str: 
+  ani_str: 
+  all_Ani: {fileID: 0}
 --- !u!212 &1255413182
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35988,9 +36040,13 @@ MonoBehaviour:
   other_obj: {fileID: 0}
   animalNum_i: 0
   crow_Ani: {fileID: 0}
+  flipX_b: 0
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  aniTalk_str: ani_npc_hedgehog1_talk
+  ani_str: ani_npc_hedgehog1
+  all_Ani: {fileID: 572670345}
 --- !u!212 &1285010634
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36432,9 +36488,13 @@ MonoBehaviour:
   other_obj: {fileID: 0}
   animalNum_i: 0
   crow_Ani: {fileID: 0}
+  flipX_b: 0
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  aniTalk_str: 
+  ani_str: 
+  all_Ani: {fileID: 0}
 --- !u!61 &1313099850
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41814,9 +41874,13 @@ MonoBehaviour:
   other_obj: {fileID: 0}
   animalNum_i: 0
   crow_Ani: {fileID: 0}
+  flipX_b: 0
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  aniTalk_str: ani_npc_rabbit1_talk
+  ani_str: ani_npc_rabbit1
+  all_Ani: {fileID: 1593957968}
 --- !u!95 &1593957968
 Animator:
   serializedVersion: 3
@@ -45597,7 +45661,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742609197}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -46127,7 +46191,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760257566}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -48598,7 +48662,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885163289}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -49271,7 +49335,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943076623}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -50210,9 +50274,13 @@ MonoBehaviour:
   other_obj: {fileID: 0}
   animalNum_i: 5
   crow_Ani: {fileID: 1958244931}
+  flipX_b: 1
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  aniTalk_str: 
+  ani_str: 
+  all_Ani: {fileID: 0}
 --- !u!1 &1968520993
 GameObject:
   m_ObjectHideFlags: 0
@@ -52228,9 +52296,13 @@ MonoBehaviour:
   other_obj: {fileID: 0}
   animalNum_i: 2
   crow_Ani: {fileID: 0}
+  flipX_b: 0
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  aniTalk_str: 
+  ani_str: 
+  all_Ani: {fileID: 0}
 --- !u!70 &2072454499
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -52377,7 +52449,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072643839}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 
@@ -54613,7 +54685,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146769772}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c57c3ff167921f40a4e30c81dcb0d7b, type: 3}
   m_Name: 

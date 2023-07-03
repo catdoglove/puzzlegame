@@ -78,10 +78,15 @@ public class CheckPlayer : MonoBehaviour
     //까마귀 애니메이션
 
     public Animator crow_Ani;
+    public bool flipX_b;
 
     //낚시대
     public GameObject stick_obj, makeBoad_obj;
     public bool stick_b;
+
+
+    public string aniTalk_str, ani_str;
+    public Animator all_Ani;
 
     private void OnEnable()
     {
@@ -91,6 +96,17 @@ public class CheckPlayer : MonoBehaviour
     void Start()
     {
 
+        if (itemQ_b)
+        {
+        }
+        else
+        {
+            //ani_str = all_Ani;
+            if (aniTalk_str=="")
+            {
+                aniTalk_str = ani_str + "_talk";
+            }
+        }
         //
         /*
         PlayerPrefs.SetInt("inventorynum", 0);
@@ -132,7 +148,7 @@ public class CheckPlayer : MonoBehaviour
                 if (a == 1)
                 {
                     balloon_obj.SetActive(false);
-                    GMS.GetComponent<BounceAnim>().resetAnim();
+                    //GMS.GetComponent<BounceAnim>().resetAnim();
                 }
                 a = 0;
             }
@@ -154,11 +170,21 @@ public class CheckPlayer : MonoBehaviour
                 {
                     position.x = this.transform.position.x - balloon_spr.bounds.size.x * 3f - 0.7f;
                     balloon_obj.GetComponent<SpriteRenderer>().flipX = false;
+                    if (flipX_b)
+                    {
+                        position.x = this.transform.position.x + balloon_spr.bounds.size.x * 3f + 0.7f;
+                        balloon_obj.GetComponent<SpriteRenderer>().flipX = true;
+                    }
                 }
                 else
                 {
                     position.x = this.transform.position.x + balloon_spr.bounds.size.x * 3f + 0.7f;
                     balloon_obj.GetComponent<SpriteRenderer>().flipX = true;
+                    if (flipX_b)
+                    {
+                        position.x = this.transform.position.x - balloon_spr.bounds.size.x * 3f - 0.7f;
+                        balloon_obj.GetComponent<SpriteRenderer>().flipX = false;
+                    }
                 }
 
                 balloon_obj.transform.position = position;
@@ -417,6 +443,12 @@ public class CheckPlayer : MonoBehaviour
         //PlayerPrefs.SetInt("canSeeInfo_detail" + animalNum_i, 0); //추가 퀘스트를 깼는가
     }
 
+
+
+    
+
+
+
     /// <summary>
     /// 이벤트값받아오고 진행처리해준다.
     /// </summary>
@@ -426,6 +458,20 @@ public class CheckPlayer : MonoBehaviour
         int a = 0;
         a = PlayerPrefs.GetInt(SetEventPref_str, 0);
         k = a;
+
+        //this.GetComponent<Animation>().Play();
+
+        if (ani_str != "")
+        {
+            if (all_Ani==null)
+            {
+                this.GetComponent<Animator>().Play(aniTalk_str);
+            }
+            else
+            {
+                all_Ani.Play(aniTalk_str);
+            }
+        }
         switch (EventNum_i[a])
         {
             case 0:
@@ -690,6 +736,7 @@ public class CheckPlayer : MonoBehaviour
     {
         GM.GetComponent<CharMove>().canMove = false;
 
+
     }
 
     void TalkSound()
@@ -718,6 +765,18 @@ public class CheckPlayer : MonoBehaviour
         GM.GetComponent<CharMove>().canMove = true;
 
 
+        if (ani_str != "")
+        {
+            if (all_Ani == null)
+            {
+                this.GetComponent<Animator>().Play(ani_str);
+            }
+            else
+            {
+                all_Ani.Play(ani_str);
+            }
+        }
+        Debug.Log("a"+ ani_str);
     }
 
     void candy()

@@ -121,7 +121,7 @@ public class CheckPlayerEvent : MonoBehaviour
                 if (a == 1)
                 {
                     balloon_obj.SetActive(false);
-                    GMS.GetComponent<BounceAnim>().resetAnim();
+                    //GMS.GetComponent<BounceAnim>().resetAnim();
                 }
                 a = 0;
             }
