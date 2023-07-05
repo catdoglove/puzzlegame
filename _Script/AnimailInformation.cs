@@ -20,10 +20,9 @@ public class AnimailInformation : MonoBehaviour
         insideInformation();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        if(PlayerPrefs.GetString("changeLanguage", "KOR") == "KOR")
+        if (PlayerPrefs.GetString("changeLanguage", "KOR") == "KOR")
         {
             data_animal = CSVReader.Read("CSV/animals_information");
         }
@@ -31,9 +30,15 @@ public class AnimailInformation : MonoBehaviour
         {
             data_animal = CSVReader.Read("CSV/animals_information_eng");
         }
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
         //spRer = animalImg.GetComponent<SpriteRenderer>();
         checkAnimal();
-        insideInformation();
+        Invoke("insideInformation", 2f);
+        //insideInformation();
 
     }
 

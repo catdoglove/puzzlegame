@@ -85,7 +85,11 @@ public class Inventory : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Escape))
         {
-            showESCwindow();
+
+            if (PlayerPrefs.GetInt("prmove", 0) == 1)
+            {
+                showESCwindow();
+            }
         }
         /*
         if (Input.GetKeyDown(KeyCode.LeftControl))

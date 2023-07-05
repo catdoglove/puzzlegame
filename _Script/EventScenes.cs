@@ -220,6 +220,8 @@ public class EventScenes : MonoBehaviour
                 pBox_obj.SetActive(false);
 
                 SGM.GetComponent<SoundEvt>().soundBoxBell();
+
+                PlayerPrefs.SetInt("prmove",1);
             }
 
             yield return new WaitForSeconds(0.01f);

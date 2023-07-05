@@ -126,7 +126,8 @@ public class example : MonoBehaviour
         while (a <= 220) //늘리기
         {
             Vector3 destination = new Vector3(13, transform.position.y, 0);
-            transform.position = Vector3.MoveTowards(transform.position, destination, 0.03f * Time.deltaTime); //노젓는속도
+            transform.position = Vector3.MoveTowards(transform.position, destination, 3.9f * Time.deltaTime); //노젓는속도
+            //transform.position = Vector3.MoveTowards(transform.position, destination, 0.03f * Time.deltaTime); //노젓는속도
             yield return new WaitForSeconds(0.01f);
             a++;
         }

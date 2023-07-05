@@ -674,6 +674,7 @@ public class CheckPlayer : MonoBehaviour
                 StartCoroutine("EventR");
                 a++;
                 bearColl_obj.SetActive(true);
+                bearColl_obj.GetComponent<SpriteRenderer>().sprite = candy_spr;
                 break;
             case 19://말풍선 띄우고 아이템 얻음
                 TalkSound();
@@ -790,7 +791,16 @@ public class CheckPlayer : MonoBehaviour
 
             if (PlayerPrefs.GetInt("poped", 0) == 1)
             {
-                SGM.GetComponent<SoundEvt>().soundItemSuccess();
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == 17)
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemSuccess();
+                    bearColl_obj.SetActive(true);
+
+                }
+                else
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemFail();
+                }
             }
         }
     }
@@ -1146,6 +1156,7 @@ public class CheckPlayer : MonoBehaviour
         other_obj.SetActive(false);
 
         GM.GetComponent<CharMove>().canMove = true;
+        this.gameObject.SetActive(false);
     }
 
 

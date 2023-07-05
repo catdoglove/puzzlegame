@@ -4872,7 +4872,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146705584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.87, y: -6.49, z: 0}
+  m_LocalPosition: {x: -1.88, y: -6.52, z: 0}
   m_LocalScale: {x: 76.10853, y: 17.48565, z: 1}
   m_Children: []
   m_Father: {fileID: 1781928804}
@@ -15212,7 +15212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &560459894
 Transform:
   m_ObjectHideFlags: 0
@@ -31870,7 +31870,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 2840002398806625177, guid: d558669f98b4819469ac839c2da5f1fe,
+  m_Sprite: {fileID: 2234310096665086253, guid: d558669f98b4819469ac839c2da5f1fe,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -50099,7 +50099,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953189579}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.22, y: -3.86, z: 10}
+  m_LocalPosition: {x: -2.21, y: -3.78, z: 10}
   m_LocalScale: {x: 1.4258347, y: 1.4258347, z: 1.4258347}
   m_Children: []
   m_Father: {fileID: 1618348495}
@@ -51145,7 +51145,7 @@ MonoBehaviour:
   whatIsLayer:
     serializedVersion: 2
     m_Bits: 512
-  balloon_spr: {fileID: 21300000, guid: 144aa74618b85974a9a50f612c2fa8fd, type: 3}
+  balloon_spr: {fileID: 21300000, guid: 3086d66a563317b40a20a20da2c64ac0, type: 3}
   balloon_obj: {fileID: 1648107670}
   x_f: 0
   y_f: 0
@@ -51159,7 +51159,7 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: catfihs123
-  EventNum_i: 08000000050000001200000001000000050000000500000005000000050000000500000005000000
+  EventNum_i: 08000000030000001200000001000000050000000500000005000000050000000500000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
@@ -51201,7 +51201,8 @@ MonoBehaviour:
   bearColl_obj: {fileID: 1167658952}
   candyBar_obj: {fileID: 0}
   broken_b: 0
-  candy_spr: {fileID: 0}
+  candy_spr: {fileID: 2840002398806625177, guid: d558669f98b4819469ac839c2da5f1fe,
+    type: 3}
   other_obj: {fileID: 1947656090}
   animalNum_i: 6
   crow_Ani: {fileID: 0}
