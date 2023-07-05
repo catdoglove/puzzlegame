@@ -13,6 +13,9 @@ public class example : MonoBehaviour
     public GameObject boatSpr, hiddenSpr,backBG,frontBG;
 
     public GameObject moveGM, SGM;
+    int a = 0;
+
+    public GameObject player_obj;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +35,11 @@ public class example : MonoBehaviour
     { 
         if (mapwhere == 99)
         {
-            boatAnimation();
+            if (a==0)
+            {
+                boatAnimation();
+                a = 1;
+            }
             //Invoke("boatAnimation", 2f);//2초뒤에 배타는 모션 실행
             //mapwhere = 0;
         }
@@ -150,6 +157,7 @@ public class example : MonoBehaviour
         yield return new WaitForSeconds(2f);
         boatAni.Play("ani_boat2");
         //주인공 true
+        player_obj.SetActive(true);
 
     }
 }

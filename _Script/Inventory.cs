@@ -467,6 +467,7 @@ public class Inventory : MonoBehaviour
             selected_obj.SetActive(false);
             PlayerPrefs.SetInt("selecteditemnum", 0);
             selectedNow_i = -1;
+            SGM.GetComponent<SoundEvt>().soundItemWndSelectNO();
         }
     }
 

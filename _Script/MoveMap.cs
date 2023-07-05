@@ -34,6 +34,8 @@ public class MoveMap : MonoBehaviour
     public GameObject door1_obj, door2_obj;
     public GameObject endEvent_obj, endEvent2_obj, endEvent3_obj;
 
+    public bool muteOff_b, muteOn_b;
+
 
     // Start is called before the first frame update
     void Start()
@@ -143,6 +145,22 @@ public class MoveMap : MonoBehaviour
             {
                 BGM1.SetActive(true);
             }
+
+            if (muteOff_b)
+            {
+                if (PlayerPrefs.GetInt("poped", 0) == 1)
+                {
+                    BGM1.GetComponent<AudioSource>().mute = true;
+                    BGM1.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().mute = true;
+                }
+            }
+            if (muteOn_b)
+            {
+                BGM1.GetComponent<AudioSource>().mute = false;
+                BGM1.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().mute = false;
+            }
+
+
             OpenDoor();
         }
     }
@@ -179,7 +197,7 @@ public class MoveMap : MonoBehaviour
 
         if (char_b)
         {
-            player_obj.SetActive(true);
+            //player_obj.SetActive(true);
             GM.GetComponent<CharMove>().canMove = false;
             Invoke("WaitSec", 1f);
         }

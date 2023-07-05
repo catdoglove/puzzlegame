@@ -35,19 +35,18 @@ public class MiniGame : MonoBehaviour
         num_i[0,2] = 1;
         num_i[1,2] = 2;
         num_i[2,2] = 3;
-        num_i[0,3] = 5;
-        num_i[1,3] = 4;
+        num_i[0,3] = 4;
+        num_i[1,3] = 5;
         num_i[2,3] = 6;
 
         if (eazy_b)
         {
             num_i[0, 0] = 1;
-
             num_i[2, 0] = 3;
-
             num_i[0, 2] = 0;
-
             num_i[2, 2] = 0;
+            num_i[0, 3] = 5;
+            num_i[1, 3] = 4;
         }
     }
 

@@ -88,6 +88,12 @@ public class CheckPlayer : MonoBehaviour
     public string aniTalk_str, ani_str;
     public Animator all_Ani;
 
+    public bool esterEgg_b;
+
+    public GameObject BGM1, pop_obj;
+    public Animator stop_Ani;
+
+
     private void OnEnable()
     {
         //StartCoroutine("Checking");
@@ -445,7 +451,7 @@ public class CheckPlayer : MonoBehaviour
 
 
 
-    
+
 
 
 
@@ -458,6 +464,29 @@ public class CheckPlayer : MonoBehaviour
         int a = 0;
         a = PlayerPrefs.GetInt(SetEventPref_str, 0);
         k = a;
+
+
+        if (PlayerPrefs.GetInt("selecteditemnum", 0) == 12)
+        {
+            if (esterEgg_b)
+            {
+                if (PlayerPrefs.GetInt("poped", 0) == 0)
+                {
+                    SGM.GetComponent<SoundEvt>().soundDamage();
+                    this.gameObject.SetActive(false);
+                    pop_obj.gameObject.SetActive(true);
+                    BGM1.GetComponent<AudioSource>().mute = true;
+                    BGM1.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().mute = true;
+                    stop_Ani.speed = 0f;
+                    GMS.SetActive(false);
+                    PlayerPrefs.SetInt("poped", 1);
+                    //BGM1.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0f;
+                    return;
+                }
+            }
+        }
+    
+
 
         //this.GetComponent<Animation>().Play();
 
@@ -756,6 +785,14 @@ public class CheckPlayer : MonoBehaviour
             SGM.GetComponent<SoundEvt>().soundTalk();
         }
 
+        if (esterEgg_b)
+        {
+
+            if (PlayerPrefs.GetInt("poped", 0) == 1)
+            {
+                SGM.GetComponent<SoundEvt>().soundItemSuccess();
+            }
+        }
     }
 
 
@@ -1087,6 +1124,8 @@ public class CheckPlayer : MonoBehaviour
     /// <returns></returns>
     IEnumerator EventR()
     {
+
+        GM.GetComponent<CharMove>().canMove = false;
         talk_b = false;
         int in_i = 1;
         position0 = moveOther_obj.transform.position;
@@ -1105,6 +1144,8 @@ public class CheckPlayer : MonoBehaviour
         }
         talk_b = true;
         other_obj.SetActive(false);
+
+        GM.GetComponent<CharMove>().canMove = true;
     }
 
 

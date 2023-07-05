@@ -211,19 +211,18 @@ public class CharMove : MonoBehaviour
     {
         while (true)
         {
-            //Debug.Log(ran);
             switch (ran)
             {
                 case 0:
-                    yield return new WaitForSeconds(5f);
+                    yield return new WaitForSeconds(30f);
                     ran = 1;
                     break;
                 case 1:
-                    yield return new WaitForSeconds(5f);
+                    yield return new WaitForSeconds(30f);
                     ran = 2;
                     break;
                 case 2:
-                    yield return new WaitForSeconds(5f);
+                    yield return new WaitForSeconds(30f);
                     ran = 0;
                     break;
             }
