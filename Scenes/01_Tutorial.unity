@@ -13378,7 +13378,7 @@ MonoBehaviour:
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
-  BGM1: {fileID: 0}
+  BGM1: {fileID: 1221732710}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -13393,7 +13393,7 @@ MonoBehaviour:
   endEvent_obj: {fileID: 0}
   endEvent2_obj: {fileID: 0}
   endEvent3_obj: {fileID: 0}
-  muteOff_b: 0
+  muteOff_b: 1
   muteOn_b: 0
 --- !u!61 &496115207
 BoxCollider2D:
@@ -43768,7 +43768,7 @@ MonoBehaviour:
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
-  BGM1: {fileID: 0}
+  BGM1: {fileID: 1221732710}
   door_b: 1
   char_b: 0
   comeHere_b: 0
@@ -43784,7 +43784,7 @@ MonoBehaviour:
   endEvent2_obj: {fileID: 0}
   endEvent3_obj: {fileID: 0}
   muteOff_b: 0
-  muteOn_b: 0
+  muteOn_b: 1
 --- !u!61 &1666469026
 BoxCollider2D:
   m_ObjectHideFlags: 0
