@@ -88,10 +88,14 @@ public class CheckPlayer : MonoBehaviour
     public string aniTalk_str, ani_str;
     public Animator all_Ani;
 
-    public bool esterEgg_b;
+    public bool esterEgg_b, sheep_b;
 
     public GameObject BGM1, pop_obj;
     public Animator stop_Ani;
+
+    public int num;
+
+    public Sprite ori_spr;
 
 
     private void OnEnable()
@@ -113,6 +117,9 @@ public class CheckPlayer : MonoBehaviour
                 aniTalk_str = ani_str + "_talk";
             }
         }
+
+        ori_spr = this.GetComponent<SpriteRenderer>().sprite;
+
         //
         /*
         PlayerPrefs.SetInt("inventorynum", 0);
@@ -501,6 +508,14 @@ public class CheckPlayer : MonoBehaviour
                 all_Ani.Play(aniTalk_str);
             }
         }
+
+        if (sheep_b)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = candy_spr;
+            //NPC_sheep1.GetComponent<SpriteRenderer>().sprite = NPC_sheepSpr[1];
+        }
+
+        num = a;
         switch (EventNum_i[a])
         {
             case 0:
@@ -669,12 +684,13 @@ public class CheckPlayer : MonoBehaviour
                 //this.GetComponent<Animation>().Play();
                 break;
             case 18://이동 오른쪽
-                StopTalk();
-                talkBallB_obj.SetActive(false);
-                StartCoroutine("EventR");
-                a++;
-                bearColl_obj.SetActive(true);
-                bearColl_obj.GetComponent<SpriteRenderer>().sprite = candy_spr;
+                
+                    StopTalk();
+                    talkBallB_obj.SetActive(false);
+                    StartCoroutine("EventR");
+                    a++;
+                    bearColl_obj.SetActive(true);
+                    bearColl_obj.GetComponent<SpriteRenderer>().sprite = candy_spr;
                 break;
             case 19://말풍선 띄우고 아이템 얻음
                 TalkSound();
@@ -800,6 +816,7 @@ public class CheckPlayer : MonoBehaviour
                 else
                 {
                     SGM.GetComponent<SoundEvt>().soundItemFail();
+                    //a--;
                 }
             }
         }
@@ -824,6 +841,12 @@ public class CheckPlayer : MonoBehaviour
             }
         }
         Debug.Log("a"+ ani_str);
+
+
+        if (sheep_b)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = ori_spr;
+        }
     }
 
     void candy()

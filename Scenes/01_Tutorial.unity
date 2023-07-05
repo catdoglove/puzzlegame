@@ -2688,9 +2688,12 @@ MonoBehaviour:
   ani_str: ani_npc_bear2
   all_Ani: {fileID: 0}
   esterEgg_b: 0
+  sheep_b: 0
   BGM1: {fileID: 0}
   pop_obj: {fileID: 0}
   stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!1 &72057342
 GameObject:
   m_ObjectHideFlags: 0
@@ -4792,9 +4795,12 @@ MonoBehaviour:
   ani_str: 
   all_Ani: {fileID: 0}
   esterEgg_b: 0
+  sheep_b: 0
   BGM1: {fileID: 0}
   pop_obj: {fileID: 0}
   stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!212 &137990810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7117,9 +7123,12 @@ MonoBehaviour:
   ani_str: ani_npc_rabbit1
   all_Ani: {fileID: 225774919}
   esterEgg_b: 0
+  sheep_b: 0
   BGM1: {fileID: 0}
   pop_obj: {fileID: 0}
   stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!1 &226644110
 GameObject:
   m_ObjectHideFlags: 0
@@ -12181,9 +12190,12 @@ MonoBehaviour:
   ani_str: 
   all_Ani: {fileID: 0}
   esterEgg_b: 0
+  sheep_b: 0
   BGM1: {fileID: 0}
   pop_obj: {fileID: 0}
   stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!1 &448573638
 GameObject:
   m_ObjectHideFlags: 0
@@ -15179,7 +15191,7 @@ MonoBehaviour:
   bearColl_obj: {fileID: 0}
   candyBar_obj: {fileID: 0}
   broken_b: 0
-  candy_spr: {fileID: 0}
+  candy_spr: {fileID: 21300000, guid: 3e4bce2cf1a910246b61ba1ba1a832a5, type: 3}
   other_obj: {fileID: 0}
   animalNum_i: 2
   crow_Ani: {fileID: 0}
@@ -15191,9 +15203,12 @@ MonoBehaviour:
   ani_str: 
   all_Ani: {fileID: 0}
   esterEgg_b: 0
+  sheep_b: 1
   BGM1: {fileID: 0}
   pop_obj: {fileID: 0}
   stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!1 &560459893
 GameObject:
   m_ObjectHideFlags: 0
@@ -22593,9 +22608,12 @@ MonoBehaviour:
   ani_str: ani_npc_cat1
   all_Ani: {fileID: 853909696}
   esterEgg_b: 1
+  sheep_b: 0
   BGM1: {fileID: 1221732710}
   pop_obj: {fileID: 1548193112}
   stop_Ani: {fileID: 438536330}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!1 &855306064
 GameObject:
   m_ObjectHideFlags: 0
@@ -22823,9 +22841,12 @@ MonoBehaviour:
   ani_str: 
   all_Ani: {fileID: 0}
   esterEgg_b: 0
+  sheep_b: 0
   BGM1: {fileID: 0}
   pop_obj: {fileID: 0}
   stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!212 &858163630
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27635,7 +27656,7 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: tokki3
-  EventNum_i: 010000000300000009000000050000000100000005000000010000000500000005000000
+  EventNum_i: 010000000300000009000000050000000300000001000000050000000100000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
@@ -27686,12 +27707,15 @@ MonoBehaviour:
   makeBoad_obj: {fileID: 0}
   stick_b: 0
   aniTalk_str: 
-  ani_str: ani_char_rabbitp
-  all_Ani: {fileID: 0}
+  ani_str: ani_npc_rabbit2
+  all_Ani: {fileID: 1005217851}
   esterEgg_b: 0
+  sheep_b: 0
   BGM1: {fileID: 0}
   pop_obj: {fileID: 0}
   stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!1 &1005509628
 GameObject:
   m_ObjectHideFlags: 0
@@ -27854,12 +27878,10 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: bear1
-  EventNum_i: 0d00000003000000090000000500000008000000050000000e00000001000000010000000a000000
+  EventNum_i: 0d0000000300000008000000050000000e00000001000000010000000a0000000a0000000a000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
-  - {fileID: 21300000, guid: 2f97e970ea8aa9e44b65ff34ef67e1d9, type: 3}
-  - {fileID: 21300000, guid: 2f97e970ea8aa9e44b65ff34ef67e1d9, type: 3}
   - {fileID: 21300000, guid: 2f97e970ea8aa9e44b65ff34ef67e1d9, type: 3}
   - {fileID: 21300000, guid: 2f97e970ea8aa9e44b65ff34ef67e1d9, type: 3}
   - {fileID: 21300000, guid: 2f97e970ea8aa9e44b65ff34ef67e1d9, type: 3}
@@ -27868,15 +27890,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: abf972692da326249bce984839a57a4d, type: 3}
   - {fileID: 21300000, guid: 05bb77ef6da52cb4d89e8b70d28547bf, type: 3}
   - {fileID: 21300000, guid: 05bb77ef6da52cb4d89e8b70d28547bf, type: 3}
+  - {fileID: 21300000, guid: 05bb77ef6da52cb4d89e8b70d28547bf, type: 3}
+  - {fileID: 21300000, guid: 05bb77ef6da52cb4d89e8b70d28547bf, type: 3}
   Event2_spr:
-  - {fileID: 21300000, guid: 629c8c73d366b0346a726602838d4edc, type: 3}
-  - {fileID: 21300000, guid: 629c8c73d366b0346a726602838d4edc, type: 3}
   - {fileID: 21300000, guid: 629c8c73d366b0346a726602838d4edc, type: 3}
   - {fileID: 21300000, guid: 629c8c73d366b0346a726602838d4edc, type: 3}
   - {fileID: 21300000, guid: 629c8c73d366b0346a726602838d4edc, type: 3}
   - {fileID: 21300000, guid: 629c8c73d366b0346a726602838d4edc, type: 3}
   - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
   - {fileID: 21300000, guid: edfa8f06d3416b5478f0d0734db87441, type: 3}
+  - {fileID: 21300000, guid: b886086bbac5b52448f43b4d493a6940, type: 3}
+  - {fileID: 21300000, guid: b886086bbac5b52448f43b4d493a6940, type: 3}
   - {fileID: 21300000, guid: b886086bbac5b52448f43b4d493a6940, type: 3}
   - {fileID: 21300000, guid: b886086bbac5b52448f43b4d493a6940, type: 3}
   talkBall_obj: {fileID: 1885163289}
@@ -27916,9 +27940,12 @@ MonoBehaviour:
   ani_str: ani_npc_bear1
   all_Ani: {fileID: 0}
   esterEgg_b: 0
+  sheep_b: 0
   BGM1: {fileID: 0}
   pop_obj: {fileID: 0}
   stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!1 &1006602531
 GameObject:
   m_ObjectHideFlags: 0
@@ -28598,9 +28625,12 @@ MonoBehaviour:
   ani_str: 
   all_Ani: {fileID: 0}
   esterEgg_b: 0
+  sheep_b: 0
   BGM1: {fileID: 0}
   pop_obj: {fileID: 0}
   stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!212 &1044864061
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29372,9 +29402,12 @@ MonoBehaviour:
   ani_str: 
   all_Ani: {fileID: 0}
   esterEgg_b: 0
+  sheep_b: 0
   BGM1: {fileID: 0}
   pop_obj: {fileID: 0}
   stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!212 &1080766758
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33189,9 +33222,12 @@ MonoBehaviour:
   ani_str: 
   all_Ani: {fileID: 0}
   esterEgg_b: 0
+  sheep_b: 0
   BGM1: {fileID: 0}
   pop_obj: {fileID: 0}
   stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!212 &1202256422
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35362,9 +35398,12 @@ MonoBehaviour:
   ani_str: 
   all_Ani: {fileID: 0}
   esterEgg_b: 0
+  sheep_b: 0
   BGM1: {fileID: 0}
   pop_obj: {fileID: 0}
   stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!212 &1255413182
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36155,9 +36194,12 @@ MonoBehaviour:
   ani_str: ani_npc_hedgehog1
   all_Ani: {fileID: 572670345}
   esterEgg_b: 0
+  sheep_b: 0
   BGM1: {fileID: 0}
   pop_obj: {fileID: 0}
   stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!212 &1285010634
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36607,9 +36649,12 @@ MonoBehaviour:
   ani_str: 
   all_Ani: {fileID: 0}
   esterEgg_b: 0
+  sheep_b: 0
   BGM1: {fileID: 0}
   pop_obj: {fileID: 0}
   stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!61 &1313099850
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42089,9 +42134,12 @@ MonoBehaviour:
   ani_str: ani_npc_rabbit1
   all_Ani: {fileID: 1593957968}
   esterEgg_b: 0
+  sheep_b: 0
   BGM1: {fileID: 0}
   pop_obj: {fileID: 0}
   stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!95 &1593957968
 Animator:
   serializedVersion: 3
@@ -50099,7 +50147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953189579}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.21, y: -3.78, z: 10}
+  m_LocalPosition: {x: -2.15, y: -3.62, z: 10}
   m_LocalScale: {x: 1.4258347, y: 1.4258347, z: 1.4258347}
   m_Children: []
   m_Father: {fileID: 1618348495}
@@ -50506,9 +50554,12 @@ MonoBehaviour:
   ani_str: 
   all_Ani: {fileID: 0}
   esterEgg_b: 0
+  sheep_b: 0
   BGM1: {fileID: 0}
   pop_obj: {fileID: 0}
   stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!1 &1968520993
 GameObject:
   m_ObjectHideFlags: 0
@@ -51153,13 +51204,13 @@ MonoBehaviour:
   GM: {fileID: 1236708166}
   GMI: {fileID: 1283954030}
   SetItemPref_str: catfihs1
-  SetItemPref_i: 3
+  SetItemPref_i: 17
   itemQ_b: 0
   GetItem_obj: {fileID: 0}
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: catfihs123
-  EventNum_i: 08000000030000001200000001000000050000000500000005000000050000000500000005000000
+  EventNum_i: 08000000050000001200000001000000050000000500000005000000050000000500000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
@@ -51214,9 +51265,12 @@ MonoBehaviour:
   ani_str: 
   all_Ani: {fileID: 853909696}
   esterEgg_b: 1
+  sheep_b: 0
   BGM1: {fileID: 1221732710}
   pop_obj: {fileID: 1548193112}
   stop_Ani: {fileID: 438536330}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!111 &1987721204
 Animation:
   m_ObjectHideFlags: 0
@@ -52738,7 +52792,7 @@ MonoBehaviour:
   bearColl_obj: {fileID: 0}
   candyBar_obj: {fileID: 0}
   broken_b: 0
-  candy_spr: {fileID: 0}
+  candy_spr: {fileID: 21300000, guid: 3e4bce2cf1a910246b61ba1ba1a832a5, type: 3}
   other_obj: {fileID: 0}
   animalNum_i: 2
   crow_Ani: {fileID: 0}
@@ -52750,9 +52804,12 @@ MonoBehaviour:
   ani_str: 
   all_Ani: {fileID: 0}
   esterEgg_b: 0
+  sheep_b: 1
   BGM1: {fileID: 0}
   pop_obj: {fileID: 0}
   stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
 --- !u!70 &2072454499
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
