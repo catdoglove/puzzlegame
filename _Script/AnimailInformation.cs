@@ -22,6 +22,7 @@ public class AnimailInformation : MonoBehaviour
 
     private void Awake()
     {
+        PlayerPrefs.SetInt("cursorActive",0);
         if (PlayerPrefs.GetString("changeLanguage", "KOR") == "KOR")
         {
             data_animal = CSVReader.Read("CSV/animals_information");

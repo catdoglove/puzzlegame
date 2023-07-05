@@ -32,6 +32,7 @@ public class SceneAdd : MonoBehaviour
         SceneAdd.dogamOpen_i = 1;
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("dogam_sample"));
         main_obj.SetActive(false);
+        Cursor.visible = true;
     }
 
     public void ChangeMainScene()

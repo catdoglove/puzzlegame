@@ -48,7 +48,7 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         position = itemWindow_obj.transform.position;
-        StartCoroutine("cursorState");
+        //StartCoroutine("cursorState");
     }
 
     public void WaitSec()
@@ -75,7 +75,10 @@ public class Inventory : MonoBehaviour
                 Cursor.visible = false;
             }
             yield return new WaitForSeconds(0.1f);
+            int i = PlayerPrefs.GetInt("cursorActive", 0);
+            Debug.Log("tt " + i);
         }
+
     }
 
 
@@ -83,13 +86,19 @@ public class Inventory : MonoBehaviour
     void Update()
     {
 
+
+        if (PlayerPrefs.GetInt("cursorActive", 0) == 1)
+        {
+            Cursor.visible = true;
+        }
+        else if (PlayerPrefs.GetInt("cursorActive", 0) == 0)
+        {
+            Cursor.visible = false;
+        }
+
         if (Input.GetKey(KeyCode.Escape))
         {
-
-            if (PlayerPrefs.GetInt("prmove", 0) == 1)
-            {
-                showESCwindow();
-            }
+            showESCwindow();
         }
         /*
         if (Input.GetKeyDown(KeyCode.LeftControl))
