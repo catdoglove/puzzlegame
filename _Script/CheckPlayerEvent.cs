@@ -510,9 +510,10 @@ public class CheckPlayerEvent : MonoBehaviour
                 k = a;
 
                 break;
-            case 19://외부 함수 실행
+            case 19:// 까마귀 삽화
 
                 moveGM.SetActive(true);
+                PlayerPrefs.SetInt("cursorActive", 1);
                 break;
 
             default:

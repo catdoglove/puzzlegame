@@ -72,6 +72,13 @@ public class CharMove : MonoBehaviour
         {
             charWalk();
         }
+
+
+        if (PlayerPrefs.GetInt("nowtalk", 0) == 1)
+        {
+            ran = 0;
+            charAni.Play(waitNum[ran]);
+        }
     }
 
 
@@ -129,12 +136,6 @@ public class CharMove : MonoBehaviour
         else if (ckwalk == 1)
         {
             charAni.Play("ani_char_walk");
-           /* if (PlayerPrefs.GetInt("getrandnum", 0) == 0)
-            {
-                ran = Random.Range(0, 3);
-                PlayerPrefs.SetInt("getrandnum", 99);
-                Debug.Log(ran);
-            }*/
         }
 
         transform.Translate(new Vector3(moveX, moveY, 0) * 0.1f);
