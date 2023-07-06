@@ -780,8 +780,8 @@ public class CheckPlayer : MonoBehaviour
 
     public void StopAndTalk()
     {
+        PlayerPrefs.SetInt("nowtalk", 1);
         GM.GetComponent<CharMove>().canMove = false;
-
 
     }
 
@@ -847,6 +847,8 @@ public class CheckPlayer : MonoBehaviour
         {
             this.GetComponent<SpriteRenderer>().sprite = ori_spr;
         }
+
+        PlayerPrefs.SetInt("nowtalk", 0);
     }
 
     void candy()

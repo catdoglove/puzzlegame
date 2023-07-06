@@ -452,6 +452,7 @@ public class CheckPlayerEvent : MonoBehaviour
                 //SGM.GetComponent<SoundEvt>().soundTalk();
                 StopAndTalk();
                 a++;
+                PlayerPrefs.SetInt("nowtalk", 1);
                 puzzle_obj.SetActive(true);
                 GM.GetComponent<CharMove>().canMove = false;
                 this.gameObject.SetActive(false);

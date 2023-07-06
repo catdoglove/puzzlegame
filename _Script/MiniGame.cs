@@ -203,6 +203,7 @@ public class MiniGame : MonoBehaviour
                                             pan.SetActive(false);
                                             GMM.GetComponent<CharMove>().canMove = true;
                                             SGM.GetComponent<SoundEvt>().soundItemSuccess();
+                                            PlayerPrefs.SetInt("nowtalk", 0);
                                         }
                                     }
                                 }

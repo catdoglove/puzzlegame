@@ -167,6 +167,14 @@ public class Inventory : MonoBehaviour
                             GM.GetComponent<CharMove>().charAni.Play("ani_char_stop");
                             GM.GetComponent<CharMove>().ckwalk = 0;
                         }
+
+                        /*
+                        if (PlayerPrefs.GetInt("nowtalk", 0) == 0)
+                        {
+                            GM.GetComponent<CharMove>().canMove = true;
+                        }
+                        */
+
                     }
                     else
                     {
@@ -175,7 +183,16 @@ public class Inventory : MonoBehaviour
                         StopCoroutine("CloseWindow");
                         StartCoroutine("CloseWindow");
                         GM.GetComponent<CharMove>().canMove = true;
+
+                        if (PlayerPrefs.GetInt("nowtalk", 0) == 1)
+                        {
+                            GM.GetComponent<CharMove>().canMove = false;
+                        }
                     }
+                }
+                else
+                {
+
                 }
 
 
@@ -412,6 +429,8 @@ public class Inventory : MonoBehaviour
             }
             yield return new WaitForSeconds(0.01f);
         }
+
+        GM.GetComponent<CharMove>().canMove = false;
     }
 
     /// <summary>
@@ -435,6 +454,7 @@ public class Inventory : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
 
+        GM.GetComponent<CharMove>().canMove = true;
     }
 
 
