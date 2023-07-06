@@ -572,22 +572,74 @@ public class CheckPlayer : MonoBehaviour
                 a--;
                 break;
             case 8://말풍선 띄우고 특수 아이템요구 아이템제거
-                TalkSound();
                 a++;
                 if (PlayerPrefs.GetInt("selecteditemnum", 0)==19)
                 {
                     PlayerPrefs.SetInt("selecteditemnum", 18);
                 }
-                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
-                {
-                    a++;
-                    GMI.GetComponent<Inventory>().DelItems();
-                    SetDogam2();
 
-                    if (stick_b)
-                    { //stick_obj, makeBoad_obj;
-                        makeBoad_obj.SetActive(true);
+                StopAndTalk();
+
+                if (esterEgg_b)
+                {
+
+                    if (PlayerPrefs.GetInt("poped", 0) == 1)
+                    {
+                        if (PlayerPrefs.GetInt("selecteditemnum", 0) == 17)
+                        {
+                            SGM.GetComponent<SoundEvt>().soundItemSuccess();
+                            bearColl_obj.SetActive(true);
+                            StopTalk();
+
+                            a++;
+                            GMI.GetComponent<Inventory>().DelItems();
+                            SetDogam2();
+
+                            if (stick_b)
+                            { //stick_obj, makeBoad_obj;
+                                makeBoad_obj.SetActive(true);
+                            }
+                        }
+                        else
+                        {
+                            SGM.GetComponent<SoundEvt>().soundItemFail();
+                            StopTalk();
+                            a--;
+                        }
                     }
+                    else
+                    {
+                        TalkSound();
+                        if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                        {
+
+                            a++;
+                            GMI.GetComponent<Inventory>().DelItems();
+                            SetDogam2();
+
+                            if (stick_b)
+                            { //stick_obj, makeBoad_obj;
+                                makeBoad_obj.SetActive(true);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    TalkSound();
+                    if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                    {
+
+                        a++;
+                        GMI.GetComponent<Inventory>().DelItems();
+                        SetDogam2();
+
+                        if (stick_b)
+                        { //stick_obj, makeBoad_obj;
+                            makeBoad_obj.SetActive(true);
+                        }
+                    }
+
                 }
 
                 Debug.Log("awe" + a);
@@ -596,7 +648,8 @@ public class CheckPlayer : MonoBehaviour
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StartCoroutine("talkBall");
-                StopAndTalk();
+
+                
                 break;
             case 9://말풍선 띄우고 특수 플레그 요구
                 TalkSound();
@@ -811,12 +864,13 @@ public class CheckPlayer : MonoBehaviour
                 {
                     SGM.GetComponent<SoundEvt>().soundItemSuccess();
                     bearColl_obj.SetActive(true);
+                    StopTalk();
 
                 }
                 else
                 {
                     SGM.GetComponent<SoundEvt>().soundItemFail();
-                    //a--;
+                    StopTalk();
                 }
             }
         }
@@ -1159,7 +1213,7 @@ public class CheckPlayer : MonoBehaviour
     /// <returns></returns>
     IEnumerator EventR()
     {
-
+        balloon_obj.SetActive(true);
         GM.GetComponent<CharMove>().canMove = false;
         talk_b = false;
         int in_i = 1;
@@ -1181,7 +1235,11 @@ public class CheckPlayer : MonoBehaviour
         other_obj.SetActive(false);
 
         GM.GetComponent<CharMove>().canMove = true;
-        this.gameObject.SetActive(false);
+
+        if (PlayerPrefs.GetInt("poped", 0) == 1)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
 
