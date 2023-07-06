@@ -1875,10 +1875,14 @@ MonoBehaviour:
   se_water_walk: {fileID: 0}
   sp_box_etc: {fileID: 8300000, guid: 564cb66ff19f464428a01ae0016f0ea0, type: 3}
   sp_box_open: {fileID: 8300000, guid: cefdc02a0999740498b8e00e6ed5c9e7, type: 3}
+  sp_box_bell: {fileID: 0}
   sp_crow_attack: {fileID: 8300000, guid: 8901b74a3e724524fa924e8078b92972, type: 3}
+  sp_hide1: {fileID: 0}
   se_box_etc: {fileID: 0}
   se_box_open: {fileID: 0}
+  se_box_bell: {fileID: 0}
   se_crow_attack: {fileID: 0}
+  se_hide1: {fileID: 0}
   sp_walk: {fileID: 8300000, guid: 30d0f00afcbfb6640864880f816c549f, type: 3}
   sp_walk_wood: {fileID: 8300000, guid: 4b7ea87201152bc4292a9f2efd14c822, type: 3}
   se_walk: {fileID: 0}
@@ -1892,9 +1896,11 @@ MonoBehaviour:
   sp_item_open: {fileID: 8300000, guid: ad3622f5b3ffc824182d9cda7da412fb, type: 3}
   sp_item_select: {fileID: 8300000, guid: 7e38073a245f22e4dab58515681dda83, type: 3}
   sp_adkey: {fileID: 8300000, guid: e70cfb611fe3a954a93c028258f2f8d5, type: 3}
+  sp_item_select_no: {fileID: 0}
   se_item_open: {fileID: 0}
   se_item_select: {fileID: 0}
   se_adkey: {fileID: 0}
+  se_item_select_no: {fileID: 0}
   sp_talk: {fileID: 8300000, guid: c3a0c02c780a9a844bfe6ce8f889d1ae, type: 3}
   sp_talk_low: {fileID: 8300000, guid: 288bbfb179e16994fb1e44234ca67c13, type: 3}
   se_talk: {fileID: 0}
@@ -2808,7 +2814,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

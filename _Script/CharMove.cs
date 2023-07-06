@@ -273,14 +273,15 @@ public class CharMove : MonoBehaviour
             ausrc.clip = walkSouneEvt("sand");          
         }
         
-
-        if (transform.position.x >= -0.7f) //위치 도달 이후 부터 ~~
+        /*
+        if (transform.position.x >= -0.5f) //위치 도달 이후 부터 ~~
         {
             GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0.8f;
 
-            ausrc.clip = walkSouneEvt("wood");
-        }
+            ausrc.clip = walkSouneEvt("sand");
 
+        }
+        */
         if (transform.position.x >= 0f)
         {
             GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0.6f;
