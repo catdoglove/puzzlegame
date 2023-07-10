@@ -68,10 +68,19 @@ public class CharMove : MonoBehaviour
 
     void Update()
     {
+        if (canMove == false)
+        {
+            charspeed = 0;
+            moveX = 0f;
+            moveY = 0f;
+            transform.Translate(new Vector3(moveX, moveY, 0) * 0.1f);
+            rigid2D.velocity = new Vector2(moveX, moveY);
+        }
         if (canMove)
         {
             charWalk();
         }
+
 
 
         if (PlayerPrefs.GetInt("nowtalk", 0) == 1)
@@ -190,7 +199,6 @@ public class CharMove : MonoBehaviour
             }
 
         }
-
 
     }
 

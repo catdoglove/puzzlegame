@@ -163,7 +163,8 @@ public class Inventory : MonoBehaviour
                             StopCoroutine("Show");
                             StartCoroutine("ShowWindow");
                             StartCoroutine("Show");
-                            GM.GetComponent<CharMove>().canMove = false;
+
+                            CanMoveF();
                             GM.GetComponent<CharMove>().charAni.Play("ani_char_stop");
                             GM.GetComponent<CharMove>().ckwalk = 0;
                         }
@@ -182,11 +183,11 @@ public class Inventory : MonoBehaviour
                         StopCoroutine("ShowWindow");
                         StopCoroutine("CloseWindow");
                         StartCoroutine("CloseWindow");
-                        GM.GetComponent<CharMove>().canMove = true;
+                        CanMoveT();
 
                         if (PlayerPrefs.GetInt("nowtalk", 0) == 1)
                         {
-                            GM.GetComponent<CharMove>().canMove = false;
+                            CanMoveF();
                         }
                     }
                 }
@@ -429,8 +430,7 @@ public class Inventory : MonoBehaviour
             }
             yield return new WaitForSeconds(0.01f);
         }
-
-        GM.GetComponent<CharMove>().canMove = false;
+        CanMoveF();
     }
 
     /// <summary>
@@ -453,8 +453,7 @@ public class Inventory : MonoBehaviour
             }
             yield return new WaitForSeconds(0.01f);
         }
-
-        GM.GetComponent<CharMove>().canMove = true;
+        CanMoveT();
     }
 
 
@@ -473,6 +472,26 @@ public class Inventory : MonoBehaviour
 
             yield return new WaitForSeconds(0.2f);
         }
+    }
+
+    void CanMoveT()
+    {
+        /*
+        GM.GetComponent<CharMove>().normalSpeed = 0.3f;
+        GM.GetComponent<CharMove>().runSpeed = 0.5f;
+        GM.GetComponent<CharMove>().crushSpeed = 0.05f;
+        */
+        GM.GetComponent<CharMove>().canMove = true;
+    }
+    void CanMoveF()
+    {
+
+        /*
+        GM.GetComponent<CharMove>().normalSpeed = 0f;
+        GM.GetComponent<CharMove>().runSpeed = 0f;
+        GM.GetComponent<CharMove>().crushSpeed = 0f;
+        */
+        GM.GetComponent<CharMove>().canMove = false;
     }
 
 
