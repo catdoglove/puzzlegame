@@ -256,6 +256,18 @@ public class CharMove : MonoBehaviour
         return auCP;
 
     }
+    
+    public void changeVolume3() //이 함수를 '물밖'영역에서만 실행할 것
+    {
+        if (transform.position.x <= 0f) //위치 도달 전의 값
+        {
+            ausrc.clip = walkSouneEvt("wood");
+        }else
+        {
+            ausrc.clip = walkSouneEvt("sand");
+        }
+    }
+
 
     public void changeVolume2()
     {

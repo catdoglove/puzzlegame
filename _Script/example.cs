@@ -20,6 +20,7 @@ public class example : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.SetInt("justOneBoatMove", 0);
         if (mapwhere == 77)
         {
             boatAni.Play("ani_boat_up");
@@ -40,19 +41,14 @@ public class example : MonoBehaviour
                 boatAnimation();
                 a = 1;
             }
-            //Invoke("boatAnimation", 2f);//2초뒤에 배타는 모션 실행
-            //mapwhere = 0;
         }
         else if (mapwhere == 88)
         {
             smallBoatGO();
-            //boatAnimation();
-            //mapwhere = 0;
         }
         else if (mapwhere == 77)
         {
             boatAnimation();
-         //   mapwhere = 0;
         }
     }
 
@@ -103,8 +99,11 @@ public class example : MonoBehaviour
         }
         else if (mapwhere == 77) //호수건넌후
         {
-            StopCoroutine("Action_go");
-            StartCoroutine("Action_go2");
+            if(PlayerPrefs.GetInt("justOneBoatMove", 0) == 0)
+            {
+                StartCoroutine("Action_go2");
+                PlayerPrefs.SetInt("justOneBoatMove", 1);
+            }
         }
         Debug.Log(mapwhere);
     }
@@ -138,12 +137,11 @@ public class example : MonoBehaviour
 
     IEnumerator Action_go2()
     {
-
         int a = 1;
-        while (a <= 200) //늘리기
+        while (a <= 230) //늘리기
         {
-            Vector3 destination = new Vector3(3, transform.position.y, 0);
-            transform.position = Vector3.MoveTowards(transform.position, destination, 0.025f * Time.deltaTime); //노젓는속도
+            Vector3 destination = new Vector3(13, transform.position.y, 0);
+            transform.position = Vector3.MoveTowards(transform.position, destination, 3.3f * Time.deltaTime); //노젓는속도
             yield return new WaitForSeconds(0.01f);
             a++;
         }
