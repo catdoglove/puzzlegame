@@ -182,32 +182,35 @@ public class CharMove : MonoBehaviour
 
         //전환하기
 
-        if (PlayerPrefs.GetInt("gobrige", 0) == 1)
+        if (PlayerPrefs.GetInt("lakebooloff", 0) == 0)
         {
-            changeVolume();
-        }
-        else
-        {
-
-            //GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 1f;
-            //ausrc.clip = walkSouneEvt("sand");
-            
-
-            if (PlayerPrefs.GetInt("lakebool", 0) == 1)
+            if (PlayerPrefs.GetInt("gobrige", 0) == 1)
             {
-
-                GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0f;
-                GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 1f;
-                ausrc.clip = walkSouneEvt("wood");
+                changeVolume();
             }
             else
             {
-                GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0f;
-                GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 1f;
-                ausrc.clip = walkSouneEvt("sand");
+
+                //GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 1f;
+                //ausrc.clip = walkSouneEvt("sand");
+
+
+                if (PlayerPrefs.GetInt("lakebool", 0) == 1)
+                {
+
+                    GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0f;
+                    GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 1f;
+                    ausrc.clip = walkSouneEvt("wood");
+                }
+                else
+                {
+                    GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0f;
+                    GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 1f;
+                    ausrc.clip = walkSouneEvt("sand");
+
+                }
 
             }
-
         }
 
     }
@@ -266,14 +269,18 @@ public class CharMove : MonoBehaviour
         return auCP;
 
     }
-    
-    public void changeVolume3() //이 함수를 '물밖'영역에서만 실행할 것
+
+    public void changeVolume3(float a) //이 함수를 '물밖'영역에서만 실행할 것
     {
-        if (transform.position.x <= 0f) //위치 도달 전의 값
+
+        Debug.Log("asads");
+        if (transform.position.x <= a) //위치 도달 전의 값
         {
             ausrc.clip = walkSouneEvt("wood");
-        }else
+        }
+        else
         {
+            PlayerPrefs.SetInt("lakebooloff", 1);
             ausrc.clip = walkSouneEvt("sand");
         }
     }
