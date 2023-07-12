@@ -11,13 +11,27 @@ public class SceneAdd : MonoBehaviour
     void Start()
     {
         LoadSceneAdditive();
+        StartCoroutine("dogamOpenTab");
     }
 
     private void Update()
     {
-        if (SceneAdd.dogamOpen_i == 0)
+    }
+
+    IEnumerator dogamOpenTab()
+    {
+        while (true)
         {
-            ChangeMainScene();
+            if (SceneAdd.dogamOpen_i == 0)
+            {
+                ChangeMainScene();
+                yield return new WaitForSeconds(0.1f);
+            }
+            else if (SceneAdd.dogamOpen_i == 1)
+            {
+                AtiveScene();
+                yield return new WaitForSeconds(0.1f);
+            }
         }
     }
 
@@ -30,6 +44,7 @@ public class SceneAdd : MonoBehaviour
     public void AtiveScene()
     {
         SceneAdd.dogamOpen_i = 1;
+        Invoke("aboutTabEvt", 1f);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("dogam_sample"));
         main_obj.SetActive(false);
         Cursor.visible = true;
@@ -40,5 +55,10 @@ public class SceneAdd : MonoBehaviour
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("01_Tutorial"));
         main_obj.SetActive(true);
         SceneAdd.dogamOpen_i = 0;
+    }
+
+    void aboutTabEvt()
+    {
+        PlayerPrefs.SetInt("dogamisopen",1);
     }
 }

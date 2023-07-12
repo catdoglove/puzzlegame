@@ -56,6 +56,7 @@ public class CharMove : MonoBehaviour
     {
         myTransform = transform;
         rigid2D = GetComponent<Rigidbody2D>();
+        PlayerPrefs.SetInt("movmovmeme", 0);
     }
 
     void Start()
@@ -118,28 +119,37 @@ public class CharMove : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             moveY += charspeed; ckwalk = 1;
+            PlayerPrefs.SetInt("movmovmeme", 1);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             moveY -= charspeed; ckwalk = 1;
+            PlayerPrefs.SetInt("movmovmeme", 1);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             moveX -= charspeed; charSpr.GetComponent<SpriteRenderer>().flipX = true; ckwalk = 1;
+            PlayerPrefs.SetInt("movmovmeme", 1);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             moveX += charspeed; charSpr.GetComponent<SpriteRenderer>().flipX = false; ckwalk = 1;
+            PlayerPrefs.SetInt("movmovmeme", 1);
         }
 
 
         if (Input.anyKey == false)
         {
+            if (PlayerPrefs.GetInt("movmovmeme", 0) == 1)
+            {
+                PlayerPrefs.SetInt("movmovmeme", 0);
+                ran = 0;
+                StartCoroutine("charwaitAnimation");
+            }
             charAni.Play(waitNum[ran]);
-            StartCoroutine("charwaitAnimation");
             ckwalk = 0;
         }
         else if (ckwalk == 1)

@@ -54,8 +54,8 @@ public class Inventory : MonoBehaviour
     public void WaitSec()
     {
 
-        MainGM.GetComponent<SceneAdd>().AtiveScene();
-        PlayerPrefs.SetInt("helpdogam",1);
+       // MainGM.GetComponent<SceneAdd>().AtiveScene();
+     //   PlayerPrefs.SetInt("helpdogam",1);
     }
 
     /// <summary>

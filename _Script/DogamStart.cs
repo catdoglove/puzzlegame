@@ -16,14 +16,13 @@ public class DogamStart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && PlayerPrefs.GetInt("dogamisopen", 0) == 1)
         {
-                GM.SetActive(false);
-                SceneAdd.dogamOpen_i = 0;
+            GM.SetActive(false);
+            SceneAdd.dogamOpen_i = 0;
+            PlayerPrefs.SetInt("dogamisopen", 0);
         }
 
-        
         if (PlayerPrefs.GetInt("helpdogam", 0) == 1)
         {
             WaitSec();
@@ -31,6 +30,7 @@ public class DogamStart : MonoBehaviour
         }   
         
     }
+
 
     void WaitSec()
     {

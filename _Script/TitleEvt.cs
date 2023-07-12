@@ -12,6 +12,7 @@ public class TitleEvt : MonoBehaviour
     void Start()
 	{
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("dogamisopen", 0);
 
         StartCoroutine("keyboardEvt");
         Cursor.visible = true;
