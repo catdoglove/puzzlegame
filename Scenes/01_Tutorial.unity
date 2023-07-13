@@ -9660,7 +9660,7 @@ MonoBehaviour:
   plank_obj: {fileID: 2098702265}
   plankHall_obj: {fileID: 1244180813}
   plankA_obj: {fileID: 1850516299}
-  rage_obj: {fileID: 0}
+  rage_obj: {fileID: 1648107670}
 --- !u!61 &339310463
 BoxCollider2D:
   m_ObjectHideFlags: 0

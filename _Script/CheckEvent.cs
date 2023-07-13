@@ -131,6 +131,7 @@ public class CheckEvent : MonoBehaviour
     {
         plank_obj.SetActive(false);
         plankA_obj.SetActive(false);
+        rage_obj.SetActive(false);
         plankHall_obj.SetActive(true);
         SGM.GetComponent<SoundEvt>().soundDamage();
         PlayerPrefs.SetInt("broken",1);
