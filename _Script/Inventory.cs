@@ -536,6 +536,17 @@ public class Inventory : MonoBehaviour
         {
             selected_obj.SetActive(false);
         }
+
+
+        for (int i = 6; i >= 0; i--)
+        {
+            if (items_i[i] == 0)
+            {
+                PlayerPrefs.SetInt("itemgetpoint", a);
+            }
+
+        }
+        //Debug.Log("itemgetpoint" + PlayerPrefs.GetInt("itemgetpoint", 0));
     }
 
     public void DelItem()

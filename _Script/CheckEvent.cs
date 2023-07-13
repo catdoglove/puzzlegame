@@ -35,8 +35,9 @@ public class CheckEvent : MonoBehaviour
 
     public bool muteOff_b, muteOn_b;
 
-    public bool walk_b, walkW_b;
-    public GameObject triger_obj;
+    public bool walk_b, walkW_b, pickup_b, broken_b;
+    public GameObject triger_obj, plank_obj, plankHall_obj, plankA_obj;
+    public GameObject rage_obj;
 
     // Start is called before the first frame update
     void Start()
@@ -78,10 +79,26 @@ public class CheckEvent : MonoBehaviour
                     {
                             GM.GetComponent<CharMove>().changeVolume3(triger_obj.transform.position.x);
                     }
-                    if (walkW_b)
+
+                    if (pickup_b)
+                    {
+                    }
+                    if (broken_b)
                     {
 
+                        if (PlayerPrefs.GetInt("broken", 0) == 0)
+                        {
+                            for (int i = 6; i >= 0; i--)
+                            {
+                                if (GMI.GetComponent<Inventory>().items_i[i] == 21)
+                                {
+                                    BreakP();
+                                }
+                            }
+                        }
                     }
+                    
+
 
 
                 }
@@ -107,6 +124,15 @@ public class CheckEvent : MonoBehaviour
         Gizmos.DrawWireCube(transform.position, size);
     }
 
-    
-
+    /// <summary>
+    /// 판자가 부서짐
+    /// </summary>
+    void BreakP()
+    {
+        plank_obj.SetActive(false);
+        plankA_obj.SetActive(false);
+        plankHall_obj.SetActive(true);
+        SGM.GetComponent<SoundEvt>().soundDamage();
+        PlayerPrefs.SetInt("broken",1);
+    }
 }

@@ -1263,20 +1263,6 @@ public class CheckPlayer : MonoBehaviour
 
     void DistoryWood()
     {
-        //노를 가지고 있을때
-        if (PlayerPrefs.GetInt("0", 0) == 0)
-        {
-
-        }
-
-        //마지막 판자 사용하는 장소인가?
-        if (true)
-        {
-
-        }
-
-        //건너갔는지 위치 판단
-
 
     }
 }
