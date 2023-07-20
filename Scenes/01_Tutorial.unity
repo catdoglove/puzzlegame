@@ -21030,6 +21030,7 @@ GameObject:
   m_Component:
   - component: {fileID: 792906963}
   - component: {fileID: 792906964}
+  - component: {fileID: 792906965}
   m_Layer: 0
   m_Name: UI_item_get(224x200)_0
   m_TagString: Untagged
@@ -21102,6 +21103,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &792906965
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792906962}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 834f0d45cef9f5a41b2ae2b5ba7a3ba4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &805128666
 GameObject:
   m_ObjectHideFlags: 0

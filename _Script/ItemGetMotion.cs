@@ -53,12 +53,12 @@ public class ItemGetMotion : MonoBehaviour
         moveY = fade_obj.transform.position.y;
         fade_obj.GetComponent<SpriteRenderer>().color  = new Color(1f, 1f, 1f, 1f);
         fade2_obj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-        for (i_i = 0; i_i < 30; i_i++)
+        for (i_i = 0; i_i < 15; i_i++)
         {
             color = new Color(1f, 1f, 1f, 1f);
             //color2 = new Color(1f, 1f, 1f, 1f);
             fade_obj.transform.position = new Vector2(moveX, moveY);
-            moveY = moveY + 0.05f;
+            moveY = moveY + 0.1f;
             yield return new WaitForSeconds(0.01f);
         }
         for (i_f = 1f; i_f > 0f; i_f -= 0.05f)

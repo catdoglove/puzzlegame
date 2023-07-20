@@ -244,7 +244,7 @@ public class SoundEvt : MonoBehaviour {
 		audioSE.clip = audioCP;
 		auSE = audioSE;
 		auCP= audioCP;
-		auSE.GetComponent<AudioSource>().pitch = 1f;
+		//auSE.GetComponent<AudioSource>().pitch = 1f;
 	}
 
 

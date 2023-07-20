@@ -19,7 +19,8 @@ public class EventScenes : MonoBehaviour
 
     public int turn_i=0;
 
-    
+    Color color, color2;
+
 
     //char
     public Vector3 cPosition;
@@ -290,13 +291,76 @@ public class EventScenes : MonoBehaviour
             in_i = 0;
         }
 
+        black_obj.SetActive(true);
+        black_obj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+        StartCoroutine("FadeIn");
+
+    }
+
+    IEnumerator FadeIn()
+    {
+        int in_i = 1;
+
+        yield return new WaitForSeconds(0.5f);
+
+
+
+
+        black_obj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+
+
+        while (in_i == 1)
+        {
+
+            float i_f = 0f;
+
+            for (i_f = 0f; i_f < 1f; i_f += 0.05f)
+            {
+                color.a = Mathf.Lerp(0f, 1f, i_f);
+                black_obj.GetComponent<SpriteRenderer>().color = color;
+                yield return new WaitForSeconds(0.05f);
+            }
+            //yield return new WaitForSeconds(5f);
+            in_i = 0;
+        }
+
+
+        black_obj.SetActive(false);
         dream_obj.SetActive(false);
+
+        SGM.GetComponent<SoundEvt>().soundItemFail();
+
         yield return new WaitForSeconds(0.8f);
         StartEvent1();
         SGM.GetComponent<SoundEvt>().soundBoxOpen();
 
 
         noneBell_obj.SetActive(false);
-    }
 
+        /*
+        color = fade_obj.GetComponent<SpriteRenderer>().color;
+        //color2 = fade_obj.GetComponent<SpriteRenderer>().color;
+        moveX = fade_obj.transform.position.x;
+        moveY = fade_obj.transform.position.y;
+        fade_obj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        fade2_obj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        for (i_i = 0; i_i < 15; i_i++)
+        {
+            color = new Color(1f, 1f, 1f, 1f);
+            //color2 = new Color(1f, 1f, 1f, 1f);
+            fade_obj.transform.position = new Vector2(moveX, moveY);
+            moveY = moveY + 0.1f;
+            yield return new WaitForSeconds(0.01f);
+        }
+        for (i_f = 1f; i_f > 0f; i_f -= 0.05f)
+        {
+            color.a = Mathf.Lerp(0f, 1f, i_f);
+            //color2.a = Mathf.Lerp(0f, 1f, i_f);
+            fade_obj.GetComponent<SpriteRenderer>().color = color;
+            fade2_obj.GetComponent<SpriteRenderer>().color = color;
+            yield return null;
+        }
+        fade_obj.transform.position = new Vector2(15f, 15f);
+        */
+    }
 }

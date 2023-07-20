@@ -843,7 +843,7 @@ public class CheckPlayer : MonoBehaviour
         SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
         if (purple_b)
         {
-            SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 0.5f;
+            SGM.GetComponent<AudioSource>().pitch = 0.7f;
             SGM.GetComponent<SoundEvt>().soundTalk();
         }
         if (soundLow_b)
@@ -874,6 +874,7 @@ public class CheckPlayer : MonoBehaviour
                 }
             }
         }
+
     }
 
 
