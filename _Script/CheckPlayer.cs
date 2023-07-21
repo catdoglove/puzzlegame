@@ -82,7 +82,7 @@ public class CheckPlayer : MonoBehaviour
 
     //낚시대
     public GameObject stick_obj, makeBoad_obj;
-    public bool stick_b;
+    public bool stick_b, board_b;
 
 
     public string aniTalk_str, ani_str;
@@ -629,15 +629,15 @@ public class CheckPlayer : MonoBehaviour
                     TalkSound();
                     if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                     {
-
                         a++;
                         GMI.GetComponent<Inventory>().DelItems();
                         SetDogam2();
-
+                        /*
                         if (stick_b)
                         { //stick_obj, makeBoad_obj;
                             makeBoad_obj.SetActive(true);
                         }
+                        */
                     }
 
                 }
@@ -717,6 +717,10 @@ public class CheckPlayer : MonoBehaviour
                 talkBallB_obj.SetActive(false);
                 a++;
                 StopTalk();
+                if (board_b)
+                { //stick_obj, makeBoad_obj;
+                    makeBoad_obj.SetActive(true);
+                }
                 break;
             case 16://말풍선 띄우고 퀘스트 시작
                 TalkSound();

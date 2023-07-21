@@ -2626,7 +2626,7 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: beard
-  EventNum_i: 01000000030000000800000005000000130000000300000001000000010000000a0000000a0000000a0000000a00000005000000
+  EventNum_i: 010000000300000008000000050000000f00000001000000010000000a0000000a0000000a0000000a0000000a00000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
@@ -2635,8 +2635,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 120eff00de912e9489f7b3ee9e323152, type: 3}
   - {fileID: 21300000, guid: 120eff00de912e9489f7b3ee9e323152, type: 3}
   - {fileID: 21300000, guid: 790f3b2024168634386aef5420e4f593, type: 3}
-  - {fileID: 21300000, guid: 790f3b2024168634386aef5420e4f593, type: 3}
   - {fileID: 21300000, guid: 6024dde1fe958874f9deaf8f4ceaf10f, type: 3}
+  - {fileID: 21300000, guid: 285a429b3754d704a87750196dbd2dc6, type: 3}
   - {fileID: 21300000, guid: 285a429b3754d704a87750196dbd2dc6, type: 3}
   - {fileID: 21300000, guid: 285a429b3754d704a87750196dbd2dc6, type: 3}
   - {fileID: 21300000, guid: 790f3b2024168634386aef5420e4f593, type: 3}
@@ -2648,8 +2648,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ba53efe60e10c7b40b4db08d0fbe9974, type: 3}
   - {fileID: 21300000, guid: ba53efe60e10c7b40b4db08d0fbe9974, type: 3}
   - {fileID: 21300000, guid: 961fbeeca1162a941aa9345c8cb76ac7, type: 3}
-  - {fileID: 21300000, guid: 961fbeeca1162a941aa9345c8cb76ac7, type: 3}
   - {fileID: 21300000, guid: a6e6aea93bd7d284e81809962007e3b9, type: 3}
+  - {fileID: 21300000, guid: 894bf908a89c206408c0a4e0175ba03f, type: 3}
   - {fileID: 21300000, guid: 894bf908a89c206408c0a4e0175ba03f, type: 3}
   - {fileID: 21300000, guid: 894bf908a89c206408c0a4e0175ba03f, type: 3}
   - {fileID: 21300000, guid: 961fbeeca1162a941aa9345c8cb76ac7, type: 3}
@@ -2684,6 +2684,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: 
   ani_str: ani_npc_bear2
   all_Ani: {fileID: 0}
@@ -4791,6 +4792,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: 
   ani_str: 
   all_Ani: {fileID: 0}
@@ -7119,6 +7121,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: ani_npc_rabbit1_talk
   ani_str: ani_npc_rabbit1
   all_Ani: {fileID: 225774919}
@@ -12263,17 +12266,17 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: catfish2
-  EventNum_i: 010000000300000014000000050000001500000001000000080000000a0000000f00000001000000050000000a0000000500000005000000050000000500000005000000050000000500000005000000
+  EventNum_i: 010000000300000014000000050000000300000001000000080000000a0000000f00000001000000050000000a0000000500000005000000050000000500000005000000050000000500000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
   - {fileID: 21300000, guid: 90b96bf757efef74eac7579c1e158a25, type: 3}
   - {fileID: 21300000, guid: 90b96bf757efef74eac7579c1e158a25, type: 3}
-  - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
-  - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
+  - {fileID: 21300000, guid: 90b96bf757efef74eac7579c1e158a25, type: 3}
+  - {fileID: 21300000, guid: 90b96bf757efef74eac7579c1e158a25, type: 3}
   - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
   - {fileID: 21300000, guid: f909d8532b9b26940a490909c13d689a, type: 3}
-  - {fileID: 21300000, guid: f909d8532b9b26940a490909c13d689a, type: 3}
+  - {fileID: 21300000, guid: 4447870ccccf42c43bae57e4c22bd338, type: 3}
   - {fileID: 21300000, guid: 4447870ccccf42c43bae57e4c22bd338, type: 3}
   - {fileID: 21300000, guid: 4447870ccccf42c43bae57e4c22bd338, type: 3}
   - {fileID: 21300000, guid: 6aeae853d2325534cb66c444a4241feb, type: 3}
@@ -12290,11 +12293,11 @@ MonoBehaviour:
   Event2_spr:
   - {fileID: 21300000, guid: 47bed423d56d5ca4c9c83dc975362391, type: 3}
   - {fileID: 21300000, guid: 47bed423d56d5ca4c9c83dc975362391, type: 3}
-  - {fileID: 21300000, guid: f99f42199d99ed34ca574f48965a93ca, type: 3}
-  - {fileID: 21300000, guid: f99f42199d99ed34ca574f48965a93ca, type: 3}
+  - {fileID: 21300000, guid: 47bed423d56d5ca4c9c83dc975362391, type: 3}
+  - {fileID: 21300000, guid: 47bed423d56d5ca4c9c83dc975362391, type: 3}
   - {fileID: 21300000, guid: f99f42199d99ed34ca574f48965a93ca, type: 3}
   - {fileID: 21300000, guid: 2d57443f0fc36d049a8a18e3c6d4eea3, type: 3}
-  - {fileID: 21300000, guid: 2d57443f0fc36d049a8a18e3c6d4eea3, type: 3}
+  - {fileID: 21300000, guid: 7f98e2fedc0904542a54ab1e161a6c36, type: 3}
   - {fileID: 21300000, guid: 7f98e2fedc0904542a54ab1e161a6c36, type: 3}
   - {fileID: 21300000, guid: 7f98e2fedc0904542a54ab1e161a6c36, type: 3}
   - {fileID: 21300000, guid: 15e422bb5da711444964cb20fe9a0654, type: 3}
@@ -12341,6 +12344,7 @@ MonoBehaviour:
   stick_obj: {fileID: 892969963}
   makeBoad_obj: {fileID: 65992990}
   stick_b: 1
+  board_b: 1
   aniTalk_str: 
   ani_str: 
   all_Ani: {fileID: 0}
@@ -15509,6 +15513,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: 
   ani_str: 
   all_Ani: {fileID: 0}
@@ -22893,7 +22898,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 74ecd83f544785b449fbf806210709f3, type: 3}
   - {fileID: 21300000, guid: 74ecd83f544785b449fbf806210709f3, type: 3}
   - {fileID: 21300000, guid: be39d79b7329c1e499795798f657a97e, type: 3}
-  - {fileID: 21300000, guid: be39d79b7329c1e499795798f657a97e, type: 3}
+  - {fileID: 21300000, guid: 6aeae853d2325534cb66c444a4241feb, type: 3}
   - {fileID: 21300000, guid: be39d79b7329c1e499795798f657a97e, type: 3}
   - {fileID: 21300000, guid: be39d79b7329c1e499795798f657a97e, type: 3}
   Event2_spr:
@@ -22902,7 +22907,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4d2c12871084e1e47b8b8d91cb443fe7, type: 3}
   - {fileID: 21300000, guid: 4d2c12871084e1e47b8b8d91cb443fe7, type: 3}
   - {fileID: 21300000, guid: c8b98b23ccd323644b6bff6a7fc282a0, type: 3}
-  - {fileID: 21300000, guid: c8b98b23ccd323644b6bff6a7fc282a0, type: 3}
+  - {fileID: 21300000, guid: 15e422bb5da711444964cb20fe9a0654, type: 3}
   - {fileID: 21300000, guid: c8b98b23ccd323644b6bff6a7fc282a0, type: 3}
   - {fileID: 21300000, guid: c8b98b23ccd323644b6bff6a7fc282a0, type: 3}
   talkBall_obj: {fileID: 289999889}
@@ -22935,6 +22940,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: 
   ani_str: ani_npc_cat1
   all_Ani: {fileID: 853909696}
@@ -23168,6 +23174,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: 
   ani_str: 
   all_Ani: {fileID: 0}
@@ -27989,7 +27996,7 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: tokki3
-  EventNum_i: 010000000300000009000000050000000300000001000000050000000100000005000000
+  EventNum_i: 010000000300000009000000050000000300000001000000010000000a00000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
@@ -27999,8 +28006,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 200d76ac2b8018748a3174e2cec7f486, type: 3}
   - {fileID: 21300000, guid: 35984806233a27e4e981280c8ba1dead, type: 3}
   - {fileID: 21300000, guid: 6024dde1fe958874f9deaf8f4ceaf10f, type: 3}
-  - {fileID: 21300000, guid: 6024dde1fe958874f9deaf8f4ceaf10f, type: 3}
-  - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
+  - {fileID: 21300000, guid: bbd9380532c312f468aeb30f54a1eccf, type: 3}
+  - {fileID: 21300000, guid: bbd9380532c312f468aeb30f54a1eccf, type: 3}
   - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
   Event2_spr:
   - {fileID: 21300000, guid: b765f9c1a9073e942b51d95e20474a57, type: 3}
@@ -28008,9 +28015,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b765f9c1a9073e942b51d95e20474a57, type: 3}
   - {fileID: 21300000, guid: b765f9c1a9073e942b51d95e20474a57, type: 3}
   - {fileID: 21300000, guid: faf78a4ca0ad35b4796b48f02eb23368, type: 3}
-  - {fileID: 21300000, guid: bbd9380532c312f468aeb30f54a1eccf, type: 3}
-  - {fileID: 21300000, guid: bbd9380532c312f468aeb30f54a1eccf, type: 3}
-  - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
+  - {fileID: 21300000, guid: a6e6aea93bd7d284e81809962007e3b9, type: 3}
+  - {fileID: 21300000, guid: a900b10df8e8d834b9c7b9248abd6a18, type: 3}
+  - {fileID: 21300000, guid: a900b10df8e8d834b9c7b9248abd6a18, type: 3}
   - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
   talkBall_obj: {fileID: 2072643839}
   talkBallB_obj: {fileID: 3933682}
@@ -28041,6 +28048,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: 
   ani_str: ani_npc_rabbit2
   all_Ani: {fileID: 1005217851}
@@ -28271,6 +28279,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: 
   ani_str: ani_npc_bear1
   all_Ani: {fileID: 0}
@@ -28956,6 +28965,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: 
   ani_str: 
   all_Ani: {fileID: 0}
@@ -29733,6 +29743,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: 
   ani_str: 
   all_Ani: {fileID: 0}
@@ -33553,6 +33564,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: 
   ani_str: 
   all_Ani: {fileID: 0}
@@ -35729,6 +35741,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: 
   ani_str: 
   all_Ani: {fileID: 0}
@@ -36525,6 +36538,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: ani_npc_hedgehog1_talk
   ani_str: ani_npc_hedgehog1
   all_Ani: {fileID: 572670345}
@@ -36980,6 +36994,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: 
   ani_str: 
   all_Ani: {fileID: 0}
@@ -42465,6 +42480,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: ani_npc_rabbit1_talk
   ani_str: ani_npc_rabbit1
   all_Ani: {fileID: 1593957968}
@@ -50967,6 +50983,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: 
   ani_str: 
   all_Ani: {fileID: 0}
@@ -51678,6 +51695,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: 
   ani_str: 
   all_Ani: {fileID: 853909696}
@@ -53167,24 +53185,24 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: sheep2
-  EventNum_i: 0b0000000f000000010000000300000001000000010000000a0000000a00000005000000
+  EventNum_i: 01000000010000000f00000001000000010000000a0000000a0000000a00000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
   - {fileID: 21300000, guid: 8f5c9b99dd749c840ba5e89e4db395b9, type: 3}
-  - {fileID: 21300000, guid: 8f5c9b99dd749c840ba5e89e4db395b9, type: 3}
-  - {fileID: 21300000, guid: 8f5c9b99dd749c840ba5e89e4db395b9, type: 3}
-  - {fileID: 21300000, guid: 8f5c9b99dd749c840ba5e89e4db395b9, type: 3}
+  - {fileID: 21300000, guid: 5df51cc974c592a42aa22b71978065a5, type: 3}
+  - {fileID: 21300000, guid: 5df51cc974c592a42aa22b71978065a5, type: 3}
   - {fileID: 21300000, guid: 6024dde1fe958874f9deaf8f4ceaf10f, type: 3}
   - {fileID: 21300000, guid: 9d09c0524ecb75b4b87b189a14868720, type: 3}
   - {fileID: 21300000, guid: 9d09c0524ecb75b4b87b189a14868720, type: 3}
   - {fileID: 21300000, guid: 9d09c0524ecb75b4b87b189a14868720, type: 3}
+  - {fileID: 21300000, guid: 9d09c0524ecb75b4b87b189a14868720, type: 3}
   Event2_spr:
+  - {fileID: 21300000, guid: 5df51cc974c592a42aa22b71978065a5, type: 3}
   - {fileID: 21300000, guid: a909f740232b95e4a9032472171cf758, type: 3}
   - {fileID: 21300000, guid: a909f740232b95e4a9032472171cf758, type: 3}
-  - {fileID: 21300000, guid: 5df51cc974c592a42aa22b71978065a5, type: 3}
-  - {fileID: 21300000, guid: 5df51cc974c592a42aa22b71978065a5, type: 3}
   - {fileID: 21300000, guid: a6e6aea93bd7d284e81809962007e3b9, type: 3}
+  - {fileID: 21300000, guid: 2a92c0e391abb8547be0f2582309b9d5, type: 3}
   - {fileID: 21300000, guid: 2a92c0e391abb8547be0f2582309b9d5, type: 3}
   - {fileID: 21300000, guid: 2a92c0e391abb8547be0f2582309b9d5, type: 3}
   - {fileID: 21300000, guid: 2a92c0e391abb8547be0f2582309b9d5, type: 3}
@@ -53217,6 +53235,7 @@ MonoBehaviour:
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
   stick_b: 0
+  board_b: 0
   aniTalk_str: 
   ani_str: 
   all_Ani: {fileID: 0}

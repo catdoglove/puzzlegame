@@ -280,7 +280,7 @@ public class EventScenes : MonoBehaviour
     {
         int in_i = 1;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
 
         black_obj.SetActive(false);
         dream_obj.SetActive(true);
@@ -320,7 +320,7 @@ public class EventScenes : MonoBehaviour
                 black_obj.GetComponent<SpriteRenderer>().color = color;
                 yield return new WaitForSeconds(0.05f);
             }
-            //yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(1f);
             in_i = 0;
         }
 
