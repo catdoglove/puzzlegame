@@ -24014,11 +24014,13 @@ MonoBehaviour:
   sp_box_bell: {fileID: 8300000, guid: a3bfbbf837c14934ca84cc2346ec83b1, type: 3}
   sp_crow_attack: {fileID: 8300000, guid: 37bd073e4bab24742ad548aaf1077006, type: 3}
   sp_hide1: {fileID: 8300000, guid: d3f724ea21b08ee4c8d0e1ac8e3242eb, type: 3}
+  sp_doorclose: {fileID: 8300000, guid: cc59dc41bd423c0489b56c00b154b996, type: 3}
   se_box_etc: {fileID: 879451252}
   se_box_open: {fileID: 879451252}
   se_box_bell: {fileID: 879451252}
   se_crow_attack: {fileID: 879451252}
   se_hide1: {fileID: 0}
+  se_doorclose: {fileID: 0}
   sp_walk: {fileID: 8300000, guid: 30d0f00afcbfb6640864880f816c549f, type: 3}
   sp_walk_wood: {fileID: 8300000, guid: 4b7ea87201152bc4292a9f2efd14c822, type: 3}
   se_walk: {fileID: 879451252}

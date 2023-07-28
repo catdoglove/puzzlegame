@@ -325,12 +325,12 @@ public class EventScenes : MonoBehaviour
         }
 
 
+        SGM.GetComponent<SoundEvt>().soundCloseDoor();
         black_obj.SetActive(false);
         dream_obj.SetActive(false);
 
-        SGM.GetComponent<SoundEvt>().soundItemFail();
 
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1.5f);
         StartEvent1();
         SGM.GetComponent<SoundEvt>().soundBoxOpen();
 
