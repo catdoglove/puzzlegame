@@ -141,7 +141,7 @@ public class SoundEvt : MonoBehaviour {
 	
 	
 	/// <summary>
-	/// 까마귀의 습격
+	/// 문닫는 소리
 	/// </summary>
 	public void soundCloseDoor()
 	{

@@ -11,8 +11,15 @@ public class CharMove : MonoBehaviour
     int ckCrash = 0;
 
     public Animator charAni;
-    float moveX, moveY, charspeed;
-    float normalSpeed = 0.3f, runSpeed = 0.5f, crushSpeed = 0.05f;
+    //float moveX, moveY, charspeed;
+    //float normalSpeed = 0.3f, runSpeed = 0.5f, crushSpeed = 0.3f;
+
+    public float Speed;
+    float h;
+    float v;
+
+
+
     public Action keyaction = null;
 
     public GameObject charSpr;
@@ -71,11 +78,11 @@ public class CharMove : MonoBehaviour
     {
         if (canMove == false)
         {
-            charspeed = 0;
-            moveX = 0f;
-            moveY = 0f;
-            transform.Translate(new Vector3(moveX, moveY, 0) * 0.1f);
-            rigid2D.velocity = new Vector2(moveX, moveY);
+           // charspeed = 0;
+           // moveX = 0f;
+          //  moveY = 0f;
+          //  transform.Translate(new Vector3(moveX, moveY, 0) * 0.1f);
+          //  rigid2D.velocity = new Vector2(moveX, moveY);
         }
         if (canMove)
         {
@@ -96,50 +103,56 @@ public class CharMove : MonoBehaviour
     {
         Vector2 start = transform.position;
 
-        moveX = 0f;
-        moveY = 0f;
+
+        h = Input.GetAxisRaw("Horizontal");
+        v = Input.GetAxisRaw("Vertical");
+
+        //  moveX = 0f;
+        //   moveY = 0f;
 
         //Debug.Log(charAni.speed);
 
         if (Input.GetKey(KeyCode.RightShift))
         {
-            if (ckCrash == 1) charspeed = crushSpeed;
-            else charspeed = runSpeed;
-            charAni.speed = 1.6f;
+            //  if (ckCrash == 1) charspeed = crushSpeed;
+            //  else charspeed = runSpeed;
+            Speed = 10f;
             ausrc.GetComponent<AudioSource>().pitch = 1.3f;
         }
         else
         {
-            if (ckCrash == 1) charspeed = crushSpeed;
-            else charspeed = normalSpeed;
-            charAni.speed = 1.2f;
+          //  if (ckCrash == 1) charspeed = crushSpeed;
+          //  else charspeed = normalSpeed;
+            Speed = 5f;
             ausrc.GetComponent<AudioSource>().pitch = 1f;
         }
 
         if (Input.GetKey(KeyCode.W))
         {
-            moveY += charspeed;
+         //   moveY += charspeed;
             charAni.Play("ani_char_walk");
             PlayerPrefs.SetInt("movmovmeme", 1);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            moveY -= charspeed;
+         //   moveY -= charspeed;
             charAni.Play("ani_char_walk");
             PlayerPrefs.SetInt("movmovmeme", 1);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            moveX -= charspeed; charSpr.GetComponent<SpriteRenderer>().flipX = true;
+          //  moveX -= charspeed; 
+            charSpr.GetComponent<SpriteRenderer>().flipX = true;
             charAni.Play("ani_char_walk");
             PlayerPrefs.SetInt("movmovmeme", 1);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            moveX += charspeed; charSpr.GetComponent<SpriteRenderer>().flipX = false;
+         //   moveX += charspeed; 
+            charSpr.GetComponent<SpriteRenderer>().flipX = false;
             charAni.Play("ani_char_walk");
             PlayerPrefs.SetInt("movmovmeme", 1);
         }
@@ -157,8 +170,9 @@ public class CharMove : MonoBehaviour
             ckwalk = 0;
         }
 
-        transform.Translate(new Vector3(moveX, moveY, 0) * 0.1f);
+      //  transform.Translate(new Vector3(moveX, moveY, 0) * 0.1f);
 
+        /*
         rigid2D.velocity = new Vector2(moveX, moveY);
         if (rigid2D.velocity.x != 0 || rigid2D.velocity.y != 0)
         {
@@ -179,6 +193,7 @@ public class CharMove : MonoBehaviour
             ausrc.Stop();
         }
 
+        */
 
         //전환하기
 
@@ -215,10 +230,18 @@ public class CharMove : MonoBehaviour
 
     }
 
-    /// <summary>
-    /// 대기모션리스트
-    /// </summary>
-    void charWaitingMotion()
+
+
+    private void FixedUpdate()
+    {
+        rigid2D.velocity = new Vector2(h, v) * Speed;
+    }
+
+
+/// <summary>
+/// 대기모션리스트
+/// </summary>
+void charWaitingMotion()
     {
         waitNum[0] = "ani_char_stop";
         waitNum[1] = "ani_char_wait";
