@@ -51,7 +51,7 @@ public class CharMove : MonoBehaviour
     int rannd, rannndint;
 
 
-    string[] waitNum = new string[3];
+    string[] waitNum = new string[6];
 
     int ran = 0;
 
@@ -69,7 +69,9 @@ public class CharMove : MonoBehaviour
     void Start()
     {
         charWaitingMotion();
-        charAni.Play("ani_char_stop");
+        charAni.Play("ani_char_stop");        
+        //charAni.Play("ani_charnobell_stop"); 숲 이후로
+
         ckwalk = 0;
         ausrc = GetComponent<AudioSource>();
     }
@@ -131,6 +133,7 @@ public class CharMove : MonoBehaviour
         {
          //   moveY += charspeed;
             charAni.Play("ani_char_walk");
+         //   charAni.Play("ani_charnobell_walk"); 숲 이후로
             PlayerPrefs.SetInt("movmovmeme", 1);
         }
 
@@ -138,6 +141,7 @@ public class CharMove : MonoBehaviour
         {
          //   moveY -= charspeed;
             charAni.Play("ani_char_walk");
+            //   charAni.Play("ani_charnobell_walk"); 숲 이후로
             PlayerPrefs.SetInt("movmovmeme", 1);
         }
 
@@ -146,6 +150,7 @@ public class CharMove : MonoBehaviour
           //  moveX -= charspeed; 
             charSpr.GetComponent<SpriteRenderer>().flipX = true;
             charAni.Play("ani_char_walk");
+            //   charAni.Play("ani_charnobell_walk"); 숲 이후로
             PlayerPrefs.SetInt("movmovmeme", 1);
         }
 
@@ -154,6 +159,7 @@ public class CharMove : MonoBehaviour
          //   moveX += charspeed; 
             charSpr.GetComponent<SpriteRenderer>().flipX = false;
             charAni.Play("ani_char_walk");
+            //   charAni.Play("ani_charnobell_walk"); 숲 이후로
             PlayerPrefs.SetInt("movmovmeme", 1);
         }
 
@@ -247,6 +253,10 @@ void charWaitingMotion()
         waitNum[1] = "ani_char_wait";
         waitNum[2] = "ani_char_wait2";
 
+        waitNum[3] = "ani_charnobell_stop";
+        waitNum[4] = "ani_charnobell_wait";
+        waitNum[5] = "ani_charnobell_wait2";
+
     }
 
     /// <summary>
@@ -271,6 +281,24 @@ void charWaitingMotion()
                     ran = 0;
                     break;
             }
+
+            /*숲 이후
+            switch (ran)
+            {
+                case 3:
+                    yield return new WaitForSeconds(30f);
+                    ran = 4;
+                    break;
+                case 4:
+                    yield return new WaitForSeconds(30f);
+                    ran = 5;
+                    break;
+                case 5:
+                    yield return new WaitForSeconds(30f);
+                    ran = 3;
+                    break;
+            }
+            */
         }
     }
 
