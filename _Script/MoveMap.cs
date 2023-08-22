@@ -27,7 +27,7 @@ public class MoveMap : MonoBehaviour
     public GameObject SGM;
     public GameObject BGM1;
 
-    public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b;
+    public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b, rot_b;
 
 
 
@@ -228,6 +228,11 @@ public class MoveMap : MonoBehaviour
         {
             move_obj.GetComponent<Animator>().Play("ani_npc_crow_surprise");
             Invoke("WaitSecCrow", 1f);
+        }
+        if (rot_b)
+        {
+            GMI.GetComponent<Inventory>().RottonItemDel();
+            PlayerPrefs.SetInt("rotton",1);
         }
     }
 

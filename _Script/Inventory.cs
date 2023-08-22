@@ -29,6 +29,7 @@ public class Inventory : MonoBehaviour
     public int selectedNow_i = -1;
 
     public int[] items_i;
+    public Sprite[] itemsRot_spr;
 
     public GameObject selectWin_obj;
 
@@ -502,12 +503,39 @@ public class Inventory : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
 
-                SGM.GetComponent<SoundEvt>().soundItemWndSelect();
+                if (items_i[selected_i] == 8|| items_i[selected_i] == 10||items_i[selected_i] == 11|| items_i[selected_i] == 9)
+                {
 
-                selected_obj.SetActive(true);
-                selected_obj.GetComponent<Image>().sprite = invenItem_obj[selected_i].GetComponent<Image>().sprite;
-                PlayerPrefs.SetInt("selecteditemnum", items_i[selected_i]);
-                selectedNow_i = 0 + selected_i;
+                    if (PlayerPrefs.GetInt("rotton", 0) == 1)
+                    {
+                        selectedNow_i = 0 + selected_i;
+                        RottonItem();
+                    }
+                    else
+                    {
+                        SGM.GetComponent<SoundEvt>().soundItemWndSelect();
+
+                        selected_obj.SetActive(true);
+                        selected_obj.GetComponent<Image>().sprite = invenItem_obj[selected_i].GetComponent<Image>().sprite;
+                        PlayerPrefs.SetInt("selecteditemnum", items_i[selected_i]);
+                        selectedNow_i = 0 + selected_i;
+                    }
+                }
+                else
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemWndSelect();
+
+                    selected_obj.SetActive(true);
+                    selected_obj.GetComponent<Image>().sprite = invenItem_obj[selected_i].GetComponent<Image>().sprite;
+                    PlayerPrefs.SetInt("selecteditemnum", items_i[selected_i]);
+                    selectedNow_i = 0 + selected_i;
+                }
+
+
+                if (PlayerPrefs.GetInt("0", 0) == 0)
+                {
+
+                }
             }
         }
     }
@@ -851,6 +879,7 @@ public class Inventory : MonoBehaviour
             {
                 o = 1;
             }
+            Debug.Log("p" + p + "o" + o);
             if (o != 0)
             {
                 invenItem_obj[i].GetComponent<Image>().sprite = Item_spr[p + o - 1];
@@ -882,14 +911,213 @@ public class Inventory : MonoBehaviour
                 g = 1;
             }
 
+
         }
     }
+    
 
-    /*
-     * 겹치는 아이템을 받을 때 1. 가지고 있는 아이탬 종류의 수를 늘리지 않음 2. 아이템창을 새로고침함 3. 먼저 얻은 아이템을 사용할때 아이탬의 위치가 바뀌지 않음 
-     * 4. 좌측정렬로 변환 5. 빈공간포인터는 좌측에서 제일 가까운 빈공간을 가르킨다 6. 아이탬이 몇번까지 차있는지 포인트가 가르키고 있다. 
-     * 7. 아이템
-     * 아이템을 
-     
-    */
+    /// <summary>
+    /// 썩은 아이템을 선택하면 없어진다
+    /// </summary>
+    void RottonItem()
+    {
+        a = 0 + selectedNow_i;
+        int p = PlayerPrefs.GetInt("inventoryget" + a, 0);
+        int o = PlayerPrefs.GetInt("itemnum" + p);
+        int t = PlayerPrefs.GetInt("stacking", 0);
+        int t2 = PlayerPrefs.GetInt("whierestacking", 0);
+        PlayerPrefs.SetInt("inventoryget" + a, 0);
+        PlayerPrefs.SetInt("itemnum" + p, 0);
+        Debug.Log("invenItem_obj" + a);
+        try
+        {
+            invenItem_obj[a].GetComponent<Image>().sprite = null;
+            invenItem_obj[a].SetActive(false);
+        }
+        catch (System.Exception)
+        {
+
+            throw;
+        }
+        items_i[a] = 0;
+        selected_obj.SetActive(false);
+        PlayerPrefs.SetInt("selecteditemnum", 0);
+        selectedNow_i = -1;
+        PlayerPrefs.SetInt("inventorynum", a);
+        if (PlayerPrefs.GetInt("itemgetpoint", 0) == PlayerPrefs.GetInt("fillpotint", 0) && PlayerPrefs.GetInt("itemgetpoint", 0) != 0)
+        {
+            PlayerPrefs.SetInt("fillpotint", (PlayerPrefs.GetInt("fillpotint", 0) - 1));
+        }
+        else
+        {
+        }
+        for (int i = 6; i >= 0; i--)
+        {
+            if (items_i[i] == 0)
+            {
+                PlayerPrefs.SetInt("itemgetpoint", a);
+            }
+        }
+        PlayerPrefs.SetInt("changeitem", 1);
+    }
+
+    /// <summary>
+    /// 맵을 이동하면 아이템을 없앤다
+    /// </summary>
+    public void RottonItemDel()
+    {
+        int r1 = 0;
+        int r2 = 0;
+        int r3 = 0;
+        int r4 = 0;
+
+        for (int i = 6; i >= 0; i--)
+        {
+            if (items_i[i] == 11)
+            {
+                a = 0 + i;
+                int p = PlayerPrefs.GetInt("inventoryget" + a, 0);
+                int o = PlayerPrefs.GetInt("itemnum" + p);
+                int t = PlayerPrefs.GetInt("stacking", 0);
+                int t2 = PlayerPrefs.GetInt("whierestacking", 0);
+                PlayerPrefs.SetInt("inventoryget" + a, 0);
+                PlayerPrefs.SetInt("itemnum" + p, 0);
+                invenItem_obj[a].GetComponent<Image>().sprite = null;
+                invenItem_obj[a].SetActive(false);
+                items_i[a] = 0;
+                selected_obj.SetActive(false);
+                PlayerPrefs.SetInt("selecteditemnum", 0);
+                selectedNow_i = -1;
+                PlayerPrefs.SetInt("inventorynum", a);
+                r1 = 1;
+            }
+            if (items_i[i] == 8)
+            {
+                a = 0 + i;
+                int p = PlayerPrefs.GetInt("inventoryget" + a, 0);
+                int o = PlayerPrefs.GetInt("itemnum" + p);
+                int t = PlayerPrefs.GetInt("stacking", 0);
+                int t2 = PlayerPrefs.GetInt("whierestacking", 0);
+                PlayerPrefs.SetInt("inventoryget" + a, 0);
+                PlayerPrefs.SetInt("itemnum" + p, 0);
+                invenItem_obj[a].GetComponent<Image>().sprite = null;
+                invenItem_obj[a].SetActive(false);
+                items_i[a] = 0;
+                selected_obj.SetActive(false);
+                PlayerPrefs.SetInt("selecteditemnum", 0);
+                selectedNow_i = -1;
+                PlayerPrefs.SetInt("inventorynum", a);
+                r2 = 1;
+            }
+            if (items_i[i] == 9)
+            {
+                a = 0 + i;
+                int p = PlayerPrefs.GetInt("inventoryget" + a, 0);
+                int o = PlayerPrefs.GetInt("itemnum" + p);
+                int t = PlayerPrefs.GetInt("stacking", 0);
+                int t2 = PlayerPrefs.GetInt("whierestacking", 0);
+                PlayerPrefs.SetInt("inventoryget" + a, 0);
+                PlayerPrefs.SetInt("itemnum" + p, 0);
+                invenItem_obj[a].GetComponent<Image>().sprite = null;
+                invenItem_obj[a].SetActive(false);
+                items_i[a] = 0;
+                selected_obj.SetActive(false);
+                PlayerPrefs.SetInt("selecteditemnum", 0);
+                selectedNow_i = -1;
+                PlayerPrefs.SetInt("inventorynum", a);
+                r3 = 1;
+            }
+            if (items_i[i] == 10)
+            {
+                a = 0 + i;
+                int p = PlayerPrefs.GetInt("inventoryget" + a, 0);
+                int o = PlayerPrefs.GetInt("itemnum" + p);
+                int t = PlayerPrefs.GetInt("stacking", 0);
+                int t2 = PlayerPrefs.GetInt("whierestacking", 0);
+                PlayerPrefs.SetInt("inventoryget" + a, 0);
+                PlayerPrefs.SetInt("itemnum" + p, 0);
+                invenItem_obj[a].GetComponent<Image>().sprite = null;
+                invenItem_obj[a].SetActive(false);
+                items_i[a] = 0;
+                selected_obj.SetActive(false);
+                PlayerPrefs.SetInt("selecteditemnum", 0);
+                selectedNow_i = -1;
+                PlayerPrefs.SetInt("inventorynum", a);
+                r4 = 1;
+            }
+        }
+
+
+
+        if (PlayerPrefs.GetInt("itemgetpoint", 0) == PlayerPrefs.GetInt("fillpotint", 0) && PlayerPrefs.GetInt("itemgetpoint", 0) != 0)
+        {
+            PlayerPrefs.SetInt("fillpotint", (PlayerPrefs.GetInt("fillpotint", 0) - 1));
+        }
+        else
+        {
+        }
+        for (int i = 6; i >= 0; i--)
+        {
+            if (items_i[i] == 0)
+            {
+                PlayerPrefs.SetInt("itemgetpoint", a);
+            }
+        }
+        if (r1 == 1)
+        {
+            RottonItemGet(23);
+        }
+        if (r2 == 1)
+        {
+            RottonItemGet(24);
+        }
+        if (r3 == 1)
+        {
+            RottonItemGet(25);
+        }
+        if (r4 == 1)
+        {
+            RottonItemGet(26);
+        }
+
+        PlayerPrefs.SetInt("changeitem", 1);
+    }
+
+    /// <summary>
+    /// 썩은 아이템을 얻는다
+    /// </summary>
+    /// <param name="iNum"></param>
+    void RottonItemGet(int iNum)
+    {
+        int a = 0;
+        //빈공간저장하기
+        a = PlayerPrefs.GetInt("itemgetpoint", 0);
+
+        
+            //a번칸에 값저장
+            PlayerPrefs.SetInt("inventoryget" + a, iNum);
+            PlayerPrefs.SetInt("changeitem", 1);
+            a++;
+            if (PlayerPrefs.GetInt("fillpotint", 0) < a)
+            {
+                PlayerPrefs.SetInt("fillpotint", a);
+            }
+
+            PlayerPrefs.SetInt("itemgetpoint", a);
+
+            //아이템갯수증가
+            int o = 0;
+            o = PlayerPrefs.GetInt("itemnum" + iNum, 0);
+            PlayerPrefs.SetInt("inventorynum", a);
+            o++;
+            PlayerPrefs.SetInt("itemnum" + iNum, o);
+
+        if (PlayerPrefs.GetInt("inventoryget" + (a + 1), 0) > 0)
+        {
+            PlayerPrefs.SetInt("itemgetpoint", (PlayerPrefs.GetInt("fillpotint", 0) + 1));
+        }
+        PlayerPrefs.SetInt("changeitem", 1);
+        
+
+    }
 }

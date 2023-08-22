@@ -88,7 +88,7 @@ public class CheckPlayer : MonoBehaviour
     public string aniTalk_str, ani_str;
     public Animator all_Ani;
 
-    public bool esterEgg_b, sheep_b;
+    public bool esterEgg_b, sheep_b,hidden_b;
 
     public GameObject BGM1, pop_obj;
     public Animator stop_Ani;
@@ -97,6 +97,8 @@ public class CheckPlayer : MonoBehaviour
 
     public Sprite ori_spr;
 
+
+    public GameObject q1_obj, q2_obj, q3_obj, q4_obj, o1_obj, o2_obj, o3_obj, o4_obj;
 
     private void OnEnable()
     {
@@ -711,6 +713,11 @@ public class CheckPlayer : MonoBehaviour
                 bearColl_obj.SetActive(false);
                 StartCoroutine("EventUp");
                 a++;
+                if (hidden_b)
+                {
+
+                    PlayerPrefs.SetInt("canSeeInfo_detail" + animalNum_i, 0); //추가 퀘스트를 깼는가
+                }
                 break;
             case 15://아이템 얻기
                 ItemSettingOnEvents();
@@ -958,8 +965,12 @@ public class CheckPlayer : MonoBehaviour
             if (GMI.GetComponent<Inventory>().items_i[k] == 11)
             {
 
-                Debug.Log(GMI.GetComponent<Inventory>().items_i[k]);
+                Debug.Log("aaaaaaa"+SetItemPref_i);
                 PlayerPrefs.SetInt("inventoryget" + k, 6);
+                if (SetItemPref_i == 8)
+                {
+                    PlayerPrefs.SetInt("inventoryget" + k, 9);
+                }
                 hel = 1;
             }
             else
@@ -973,12 +984,24 @@ public class CheckPlayer : MonoBehaviour
                 }
                 else
                 {
-                    if (PlayerPrefs.GetInt("inventoryget" + a, 0) == 0)
+
+                    if (GMI.GetComponent<Inventory>().items_i[k] == 8)
                     {
-                        PlayerPrefs.SetInt("inventoryget" + a, SetItemPref_i);
+
+                        Debug.Log(GMI.GetComponent<Inventory>().items_i[k]);
+                        PlayerPrefs.SetInt("inventoryget" + k, 9);
+                        hel = 1;
+                    }
+                    else
+                    {
+                        if (PlayerPrefs.GetInt("inventoryget" + a, 0) == 0)
+                        {
+                            PlayerPrefs.SetInt("inventoryget" + a, SetItemPref_i);
+                        }
                     }
                 }
             }
+            
 
 
             //GetItem_obj.SetActive(true);
@@ -1024,8 +1047,8 @@ public class CheckPlayer : MonoBehaviour
 
         int hel = 0;
 
-
-        Debug.Log("fillpotint" + PlayerPrefs.GetInt("fillpotint", 0));
+        
+        Debug.Log("iiiiiiiiiiihelp" + PlayerPrefs.GetInt("fillpotint", 0));
         for (int i = 0; i < PlayerPrefs.GetInt("fillpotint", 0); i++)
         {
             if (GMI.GetComponent<Inventory>().items_i[i] == 11)
@@ -1034,6 +1057,18 @@ public class CheckPlayer : MonoBehaviour
                 PlayerPrefs.SetInt("inventoryget" + i, 6);
                 PlayerPrefs.SetInt("itemnum" + 6, 1);
                 GMI.GetComponent<Inventory>().items_i[i] = 6;
+
+
+                Debug.Log("iiiiiiiiiiihelp" + SetItemPref_i);
+                if (SetItemPref_i == 8)
+                {
+
+                    Debug.Log("iiiiiiiiiiihelp" + i);
+                    PlayerPrefs.SetInt("inventoryget" + i, 9);
+                    PlayerPrefs.SetInt("itemnum" + 9, 1);
+                    GMI.GetComponent<Inventory>().items_i[i] = 9;
+                }
+                hel = 1;
             }
             else
             {
@@ -1043,63 +1078,44 @@ public class CheckPlayer : MonoBehaviour
                     PlayerPrefs.SetInt("inventoryget" + i, 6);
                     PlayerPrefs.SetInt("itemnum" + 6, 1);
                 GMI.GetComponent<Inventory>().items_i[i] = 6;
+                    hel = 1;
                 }
                 else
                 {
-                    //a번칸에 값저장
-                    PlayerPrefs.SetInt("inventoryget" + a, SetItemPref_i);
-                    PlayerPrefs.SetInt("changeitem", 1);
-                    a++;
-                    if (PlayerPrefs.GetInt("fillpotint", 0) < a)
-                    {
-                        Debug.Log("fillpotint1" + a);
-                        PlayerPrefs.SetInt("fillpotint", a);
+                    
 
-                        Debug.Log("aaaaa" + a);
-                    }
-
-                    Debug.Log("aaaaa" + a);
-                    Debug.Log("aaaaa" + PlayerPrefs.GetInt("fillpotint", 0));
-                    PlayerPrefs.SetInt("itemgetpoint", a);
-
-                    //아이템갯수증가
-                    int o = 0;
-                    o = PlayerPrefs.GetInt("itemnum" + SetItemPref_i, 0);
-                    PlayerPrefs.SetInt("inventorynum", a);
-                    o++;
-                    PlayerPrefs.SetInt("itemnum" + SetItemPref_i, o);
-
-
-                    if (hel == 1)
-                    {
-                        PlayerPrefs.SetInt("inventorynum", (a - 1));
-                    }
-
-                    if (PlayerPrefs.GetInt("inventoryget" + (a + 1), 0) > 0)
-                    {
-                        PlayerPrefs.SetInt("itemgetpoint", (PlayerPrefs.GetInt("fillpotint", 0) + 1));
-                    }
                 }
+            }
+
+            if (GMI.GetComponent<Inventory>().items_i[i] == 8)
+            {
+                PlayerPrefs.SetInt("inventoryget" + i, 9);
+                PlayerPrefs.SetInt("itemnum" + 9, 1);
+                GMI.GetComponent<Inventory>().items_i[i] = 9;
+                hel = 1;
             }
         }
 
-        if (PlayerPrefs.GetInt("fillpotint", 0) == 0)
-        {
+        //if (PlayerPrefs.GetInt("fillpotint", 0) == 0)
+        //{
 
+
+
+            if (hel == 1)
+            {
+                PlayerPrefs.SetInt("inventorynum", (a - 1));
+        }
+        else
+        {
             //a번칸에 값저장
             PlayerPrefs.SetInt("inventoryget" + a, SetItemPref_i);
             PlayerPrefs.SetInt("changeitem", 1);
             a++;
             if (PlayerPrefs.GetInt("fillpotint", 0) < a)
             {
-                Debug.Log("fillpotint1" + a);
                 PlayerPrefs.SetInt("fillpotint", a);
-
-                Debug.Log("aaaaa" + a);
             }
-
-            Debug.Log("aaaaa" + a);
-            Debug.Log("aaaaa" + PlayerPrefs.GetInt("fillpotint", 0));
+            
             PlayerPrefs.SetInt("itemgetpoint", a);
 
             //아이템갯수증가
@@ -1108,18 +1124,13 @@ public class CheckPlayer : MonoBehaviour
             PlayerPrefs.SetInt("inventorynum", a);
             o++;
             PlayerPrefs.SetInt("itemnum" + SetItemPref_i, o);
-
-
-            if (hel == 1)
-            {
-                PlayerPrefs.SetInt("inventorynum", (a - 1));
-            }
+        }
 
             if (PlayerPrefs.GetInt("inventoryget" + (a + 1), 0) > 0)
             {
                 PlayerPrefs.SetInt("itemgetpoint", (PlayerPrefs.GetInt("fillpotint", 0) + 1));
             }
-        }
+        //}
 
 
         PlayerPrefs.SetInt("changeitem", 1);
@@ -1179,6 +1190,8 @@ public class CheckPlayer : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         talk_b = true;
+
+        SetQuest();
     }
 
 
@@ -1269,5 +1282,20 @@ public class CheckPlayer : MonoBehaviour
     void DistoryWood()
     {
 
+    }
+
+    /// <summary>
+    /// 히든퀘스트 시작
+    /// </summary>
+    void SetQuest()
+    {
+        q1_obj.SetActive(true);
+        q2_obj.SetActive(true);
+        q3_obj.SetActive(true);
+        q4_obj.SetActive(true);
+        o1_obj.SetActive(false);
+        o2_obj.SetActive(false);
+        o3_obj.SetActive(false);
+        o4_obj.SetActive(false);
     }
 }
