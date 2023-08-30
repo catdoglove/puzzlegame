@@ -15,7 +15,7 @@ public class MoveMap : MonoBehaviour
     int mapTime_i = 1;
     public Vector2 size;
     public LayerMask whatIsLayer;
-    public GameObject GM, GMI;
+    public GameObject GM, GMI, GMC;
 
     int nowMoving_i = 1;
     int nowDonMove_i = 0;
@@ -28,7 +28,7 @@ public class MoveMap : MonoBehaviour
     public GameObject BGM1;
 
     public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b, rot_b;
-
+    public bool lakeOut_b, caveRoad_b, caveEnter_b;
 
 
     public GameObject door1_obj, door2_obj;
@@ -207,7 +207,7 @@ public class MoveMap : MonoBehaviour
         }
         if (bridge_b)
         {
-
+            GMC.GetComponent<ShaderEffect>().changeShader1();
             PlayerPrefs.SetInt("gobrige", 1);
         }
         if (bridgeback_b)
@@ -218,6 +218,7 @@ public class MoveMap : MonoBehaviour
         if (lake_b)
         {
 
+            GMC.GetComponent<ShaderEffect>().changeShader2();
             PlayerPrefs.SetInt("lakebool", 1);
         }
         if (lake1_b)
@@ -233,6 +234,18 @@ public class MoveMap : MonoBehaviour
         {
             GMI.GetComponent<Inventory>().RottonItemDel();
             PlayerPrefs.SetInt("rotton",1);
+        }
+        if (lakeOut_b)
+        {
+            GMC.GetComponent<ShaderEffect>().changeShader3();
+        }
+        if (caveRoad_b)
+        {
+            GMC.GetComponent<ShaderEffect>().changeShader4();
+        }
+        if (caveEnter_b)
+        {
+            GMC.GetComponent<ShaderEffect>().changeShader5();
         }
     }
 

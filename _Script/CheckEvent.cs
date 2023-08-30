@@ -82,6 +82,11 @@ public class CheckEvent : MonoBehaviour
 
                     if (pickup_b)
                     {
+                        if (PlayerPrefs.GetInt("broken", 0) == 0)
+                        {
+                            block();
+                        }
+
                     }
                     if (broken_b)
                     {
@@ -135,5 +140,14 @@ public class CheckEvent : MonoBehaviour
         plankHall_obj.SetActive(true);
         SGM.GetComponent<SoundEvt>().soundDamage();
         PlayerPrefs.SetInt("broken",1);
+    }
+
+    void block()
+    {
+        
+            move_obj.GetComponent<Animator>().Play("ani_npc_fox_stop");
+            SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
+            SGM.GetComponent<SoundEvt>().soundDamage();
+        PlayerPrefs.SetInt("block", 1);
     }
 }

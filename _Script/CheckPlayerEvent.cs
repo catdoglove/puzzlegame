@@ -515,6 +515,25 @@ public class CheckPlayerEvent : MonoBehaviour
                 moveGM.SetActive(true);
                 PlayerPrefs.SetInt("cursorActive", 1);
                 break;
+            case 20://퍼즐 이벤트
+
+                puzzle_obj.GetComponent<RockMini>().ShowPuzzle();
+                PlayerPrefs.SetInt("cursorActive", 1);
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    SGM.GetComponent<SoundEvt>().soundTalk();
+                    StopAndTalk();
+                    a++;
+                    GM.GetComponent<CharMove>().canMove = false;
+                    PlayerPrefs.SetInt("cursorActive", 1);
+                    puzzle_obj.GetComponent<RockMini>().ShowPuzzle();
+
+                }
+                else
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemFail();
+                }
+                break;
 
             default:
                 break;

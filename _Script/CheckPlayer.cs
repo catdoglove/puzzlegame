@@ -261,6 +261,11 @@ public class CheckPlayer : MonoBehaviour
     {
 
         GMI.GetComponent<ItemGetMotion>().fade_obj.GetComponent<SpriteRenderer>().sprite = this.GetComponent<SpriteRenderer>().sprite;
+
+        if (purple_b)
+        {
+            GMI.GetComponent<ItemGetMotion>().fade_obj.GetComponent<SpriteRenderer>().sprite = item_spr;
+        }
         GMI.GetComponent<ItemGetMotion>().fade_obj.transform.position = this.transform.position;
         GMI.GetComponent<ItemGetMotion>().FadeItem();
 
@@ -379,6 +384,11 @@ public class CheckPlayer : MonoBehaviour
         PlayerPrefs.SetInt("changeitem", 1);
 
         GMI.GetComponent<ItemGetMotion>().fade_obj.GetComponent<SpriteRenderer>().sprite = this.GetComponent<SpriteRenderer>().sprite;
+
+        if (purple_b)
+        {
+            GMI.GetComponent<ItemGetMotion>().fade_obj.GetComponent<SpriteRenderer>().sprite = item_spr;
+        }
         GMI.GetComponent<ItemGetMotion>().fade_obj.transform.position = this.transform.position;
         GMI.GetComponent<ItemGetMotion>().FadeItem();
         
@@ -925,7 +935,7 @@ public class CheckPlayer : MonoBehaviour
             SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
             SGM.GetComponent<SoundEvt>().soundDamage();
         }
-
+        
     }
 
 

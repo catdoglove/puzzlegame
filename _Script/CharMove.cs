@@ -129,7 +129,7 @@ public class CharMove : MonoBehaviour
             ausrc.GetComponent<AudioSource>().pitch = 1f;
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.UpArrow))
         {
          //   moveY += charspeed;
             charAni.Play("ani_char_walk");
@@ -137,7 +137,7 @@ public class CharMove : MonoBehaviour
             PlayerPrefs.SetInt("movmovmeme", 1);
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
          //   moveY -= charspeed;
             charAni.Play("ani_char_walk");
@@ -145,7 +145,7 @@ public class CharMove : MonoBehaviour
             PlayerPrefs.SetInt("movmovmeme", 1);
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
           //  moveX -= charspeed; 
             charSpr.GetComponent<SpriteRenderer>().flipX = true;
@@ -154,7 +154,7 @@ public class CharMove : MonoBehaviour
             PlayerPrefs.SetInt("movmovmeme", 1);
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.RightArrow))
         {
          //   moveX += charspeed; 
             charSpr.GetComponent<SpriteRenderer>().flipX = false;
