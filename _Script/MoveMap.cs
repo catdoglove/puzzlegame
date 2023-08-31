@@ -28,7 +28,7 @@ public class MoveMap : MonoBehaviour
     public GameObject BGM1;
 
     public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b, rot_b;
-    public bool lakeOut_b, caveRoad_b, caveEnter_b;
+    public bool lakeOut_b, caveRoad_b, caveEnter_b, crowSet_b, setEff_b, hidden2_b, waterOut_b;
 
 
     public GameObject door1_obj, door2_obj;
@@ -36,6 +36,7 @@ public class MoveMap : MonoBehaviour
 
     public bool muteOff_b, muteOn_b;
 
+    
 
     // Start is called before the first frame update
     void Start()
@@ -246,6 +247,24 @@ public class MoveMap : MonoBehaviour
         if (caveEnter_b)
         {
             GMC.GetComponent<ShaderEffect>().changeShader5();
+        }
+        if (hidden2_b)
+        {
+            GMC.GetComponent<ShaderEffect>().changeShader6();
+        }
+        if (setEff_b)
+        {
+            GMC.GetComponent<ShaderEffect>().OffShader();
+        }
+
+        if (waterOut_b)
+        {
+            GMC.GetComponent<ShaderEffect>().changeShader1();
+        }
+
+        if (crowSet_b)
+        {
+            //PlayerPrefs.SetInt("lostbell", 1);
         }
     }
 

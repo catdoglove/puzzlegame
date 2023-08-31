@@ -32,47 +32,75 @@ public class RockMini : MonoBehaviour
 
     public void Button1()
     {
-        pass_i = 0;
-        setNum();
+
+        if (PlayerPrefs.GetInt("waitting", 0) == 0)
+        {
+            pass_i = 0;
+            setNum();
+        }
     }
     public void Button2()
     {
+
         pass_i = 1;
         setNum();
+        if (PlayerPrefs.GetInt("waitting", 0) == 0)
+        {
+        }
     }
     public void Button3()
     {
-        pass_i = 2;
-        setNum();
+        if (PlayerPrefs.GetInt("waitting", 0) == 0)
+        {
+            pass_i = 2;
+            setNum();
+        }
     }
     public void Button4()
     {
-        pass_i = 3;
-        setNum();
+        if (PlayerPrefs.GetInt("waitting", 0) == 0)
+        {
+            pass_i = 3;
+            setNum();
+        }
     }
     public void ButtonD1()
     {
-        pass_i = 4;
-        setNum();
+        if (PlayerPrefs.GetInt("waitting", 0) == 0)
+        {
+            pass_i = 4;
+            setNum();
+        }
     }
     public void ButtonD2()
     {
-        pass_i = 5;
-        setNum();
+        if (PlayerPrefs.GetInt("waitting", 0) == 0)
+        {
+            pass_i = 5;
+            setNum();
+        }
     }
     public void ButtonD3()
     {
-        pass_i = 6;
-        setNum();
+        if (PlayerPrefs.GetInt("waitting", 0) == 0)
+        {
+            pass_i = 6;
+            setNum();
+        }
     }
     public void ButtonD4()
     {
-        pass_i = 7;
-        setNum();
+        if (PlayerPrefs.GetInt("waitting", 0) == 0)
+        {
+            pass_i = 7;
+            setNum();
+        }
     }
 
     void setNum()
     {
+
+        SGM.GetComponent<SoundEvt>().soundItemWndSelect();
         if (number_i<4)
         {
             num_i[number_i] = pass_i;
@@ -80,8 +108,18 @@ public class RockMini : MonoBehaviour
             button_obj[pass_i].SetActive(false);
             pass_obj[number_i - 1].SetActive(true);
         }
+        PlayerPrefs.SetInt("waitting",1);
+        SGM.GetComponent<SoundEvt>().soundItemWndSelect();
 
-        Invoke("Wait", 1f);
+        if (number_i==4)
+        {
+            Invoke("Wait", 1f);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("waitting", 0);
+        }
+
     }
 
     void Wait()
@@ -111,11 +149,13 @@ public class RockMini : MonoBehaviour
                 puzzleWin_obj.SetActive(false);
                 GM.GetComponent<CharMove>().canMove = true;
                 PlayerPrefs.SetInt("cursorActive", 0);
+                SGM.GetComponent<SoundEvt>().soundItemSuccess();
             }
             coin_i--;
             if (coin_i == 0)
             {
                 ClosePuzzle();
+                SGM.GetComponent<SoundEvt>().soundItemFail();
             }
             else
             {
@@ -132,6 +172,9 @@ public class RockMini : MonoBehaviour
             }
             number_i = 0;
         }
+
+        PlayerPrefs.SetInt("waitting", 0);
+
     }
 
     public void ShowPuzzle()

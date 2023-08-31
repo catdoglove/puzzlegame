@@ -69,8 +69,16 @@ public class CharMove : MonoBehaviour
     void Start()
     {
         charWaitingMotion();
-        charAni.Play("ani_char_stop");        
-        //charAni.Play("ani_charnobell_stop"); 숲 이후로
+
+        if (PlayerPrefs.GetInt("lostbell", 0) == 1)
+        {
+            charAni.Play("ani_charnobell_stop"); 
+        }
+        else
+        {
+            charAni.Play("ani_char_stop");
+        }     
+        //숲 이후로
 
         ckwalk = 0;
         ausrc = GetComponent<AudioSource>();
@@ -131,36 +139,28 @@ public class CharMove : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.UpArrow))
         {
-         //   moveY += charspeed;
-            charAni.Play("ani_char_walk");
-         //   charAni.Play("ani_charnobell_walk"); 숲 이후로
-            PlayerPrefs.SetInt("movmovmeme", 1);
+            //   moveY += charspeed;
+            SetWalk();
         }
 
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
-         //   moveY -= charspeed;
-            charAni.Play("ani_char_walk");
-            //   charAni.Play("ani_charnobell_walk"); 숲 이후로
-            PlayerPrefs.SetInt("movmovmeme", 1);
+            //   moveY -= charspeed;
+            SetWalk();
         }
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
           //  moveX -= charspeed; 
             charSpr.GetComponent<SpriteRenderer>().flipX = true;
-            charAni.Play("ani_char_walk");
-            //   charAni.Play("ani_charnobell_walk"); 숲 이후로
-            PlayerPrefs.SetInt("movmovmeme", 1);
+            SetWalk();
         }
 
         if (Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.RightArrow))
         {
          //   moveX += charspeed; 
             charSpr.GetComponent<SpriteRenderer>().flipX = false;
-            charAni.Play("ani_char_walk");
-            //   charAni.Play("ani_charnobell_walk"); 숲 이후로
-            PlayerPrefs.SetInt("movmovmeme", 1);
+            SetWalk();
         }
 
 
@@ -236,6 +236,20 @@ public class CharMove : MonoBehaviour
 
     }
 
+    void SetWalk()
+    {
+
+        if (PlayerPrefs.GetInt("lostbell", 0) == 1)
+        {
+            charAni.Play("ani_charnobell_walk");
+        }
+        else
+        {
+            charAni.Play("ani_char_walk");
+        }
+
+        PlayerPrefs.SetInt("movmovmeme", 1);
+    }
 
 
     private void FixedUpdate()
@@ -266,39 +280,43 @@ void charWaitingMotion()
     {
         while (true)
         {
-            switch (ran)
-            {
-                case 0:
-                    yield return new WaitForSeconds(30f);
-                    ran = 1;
-                    break;
-                case 1:
-                    yield return new WaitForSeconds(30f);
-                    ran = 2;
-                    break;
-                case 2:
-                    yield return new WaitForSeconds(30f);
-                    ran = 0;
-                    break;
-            }
 
-            /*숲 이후
-            switch (ran)
+            if (PlayerPrefs.GetInt("lostbell", 0) == 1)
             {
-                case 3:
-                    yield return new WaitForSeconds(30f);
-                    ran = 4;
-                    break;
-                case 4:
-                    yield return new WaitForSeconds(30f);
-                    ran = 5;
-                    break;
-                case 5:
-                    yield return new WaitForSeconds(30f);
-                    ran = 3;
-                    break;
+                switch (ran)
+                {
+                    case 3:
+                        yield return new WaitForSeconds(30f);
+                        ran = 4;
+                        break;
+                    case 4:
+                        yield return new WaitForSeconds(30f);
+                        ran = 5;
+                        break;
+                    case 5:
+                        yield return new WaitForSeconds(30f);
+                        ran = 3;
+                        break;
+                }
             }
-            */
+            else
+            {
+                switch (ran)
+                {
+                    case 0:
+                        yield return new WaitForSeconds(30f);
+                        ran = 1;
+                        break;
+                    case 1:
+                        yield return new WaitForSeconds(30f);
+                        ran = 2;
+                        break;
+                    case 2:
+                        yield return new WaitForSeconds(30f);
+                        ran = 0;
+                        break;
+                }
+            }
         }
     }
 

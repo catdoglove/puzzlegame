@@ -26,6 +26,8 @@ public class ShaderEffect : MonoBehaviour
     {
         Mcamera.SetActive(false);
 
+        photo.SwitchCameraToCamera2 = 1f;
+        photo.BlendFX = 1f;
 
         effectShaderimg.GetComponent<Image>().sprite = effectImg[0];
 
@@ -41,7 +43,9 @@ public class ShaderEffect : MonoBehaviour
     public void changeShader2()
     {
         Mcamera.SetActive(false);
-        
+
+        photo.SwitchCameraToCamera2 = 1f;
+        photo.BlendFX = 1f;
 
         effectShaderimg.GetComponent<Image>().sprite = effectImg[1];
 
@@ -57,7 +61,9 @@ public class ShaderEffect : MonoBehaviour
     public void changeShader3()
     {
         Mcamera.SetActive(false);
-        
+
+        photo.SwitchCameraToCamera2 = 1f;
+        photo.BlendFX = 1f;
 
         effectShaderimg.GetComponent<Image>().sprite = effectImg[2];
 
@@ -73,7 +79,9 @@ public class ShaderEffect : MonoBehaviour
     public void changeShader4()
     {
         Mcamera.SetActive(false);
-        
+
+        photo.SwitchCameraToCamera2 = 1f;
+        photo.BlendFX = 1f;
 
         effectShaderimg.GetComponent<Image>().sprite = effectImg[3];
 
@@ -89,12 +97,40 @@ public class ShaderEffect : MonoBehaviour
     public void changeShader5()
     {
         Mcamera.SetActive(false);
-        
 
+
+        photo.SwitchCameraToCamera2 = 1f;
+        photo.BlendFX = 1f;
         effectShaderimg.GetComponent<Image>().sprite = effectImg[4];
 
         photo.SCShader = Shader.Find("CameraFilterPack/Blend2Camera_Overlay");
         photo.filterchoice = CameraFilterPack_Blend2Camera_PhotoshopFilters.filters.Overlay;
+
+        Mcamera.SetActive(true);
+    }
+
+    public void changeShader6()
+    {
+        Mcamera.SetActive(false);
+
+
+        photo.SwitchCameraToCamera2 = 1f;
+        photo.BlendFX = 1f;
+        effectShaderimg.GetComponent<Image>().sprite = effectImg[5];
+
+        photo.SCShader = Shader.Find("CameraFilterPack/Blend2Camera_Overlay");
+        photo.filterchoice = CameraFilterPack_Blend2Camera_PhotoshopFilters.filters.Multiply;
+
+        Mcamera.SetActive(true);
+    }
+
+
+    public void OffShader()
+    {
+        Mcamera.SetActive(false);
+
+        photo.SwitchCameraToCamera2 = 0f;
+        photo.BlendFX = 0f;
 
         Mcamera.SetActive(true);
     }

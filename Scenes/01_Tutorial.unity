@@ -1147,6 +1147,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -2110,6 +2114,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -2821,7 +2829,7 @@ MonoBehaviour:
   GM: {fileID: 1236708166}
   GMM: {fileID: 0}
   GMS: {fileID: 0}
-  SGM: {fileID: 0}
+  SGM: {fileID: 879451249}
   point_obj: {fileID: 0}
   num1_i: 0
   num2_i: 0
@@ -2871,7 +2879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &61868297
 Transform:
   m_ObjectHideFlags: 0
@@ -2920,7 +2928,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 873359115}
+  m_TargetTexture: {fileID: 1245905244}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -4816,6 +4824,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -5263,7 +5275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120457507}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.58, y: -3.62, z: 10}
+  m_LocalPosition: {x: -3.31, y: -2.77, z: 10}
   m_LocalScale: {x: 1.4258347, y: 1.4258347, z: 1.4258347}
   m_Children: []
   m_Father: {fileID: 1618348495}
@@ -5434,6 +5446,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -5633,6 +5649,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -6419,6 +6439,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -9077,6 +9101,10 @@ MonoBehaviour:
   lakeOut_b: 1
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -12520,6 +12548,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -13406,6 +13438,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -17620,6 +17656,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -18428,6 +18468,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -19255,6 +19299,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -19937,6 +19985,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -24130,7 +24182,7 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: tokki3h
-  EventNum_i: 010000000300000009000000050000000b0000000f000000010000000a00000005000000
+  EventNum_i: 010000000300000009000000050000000b0000000f00000001000000010000000a00000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
@@ -24140,8 +24192,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 200d76ac2b8018748a3174e2cec7f486, type: 3}
   - {fileID: 21300000, guid: 16788484b651ef04e9f88b9db56bddf5, type: 3}
   - {fileID: 21300000, guid: 6024dde1fe958874f9deaf8f4ceaf10f, type: 3}
+  - {fileID: 21300000, guid: 6024dde1fe958874f9deaf8f4ceaf10f, type: 3}
   - {fileID: 21300000, guid: bbd9380532c312f468aeb30f54a1eccf, type: 3}
-  - {fileID: 21300000, guid: bbd9380532c312f468aeb30f54a1eccf, type: 3}
+  - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
   - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
   Event2_spr:
   - {fileID: 21300000, guid: b765f9c1a9073e942b51d95e20474a57, type: 3}
@@ -24150,7 +24203,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b765f9c1a9073e942b51d95e20474a57, type: 3}
   - {fileID: 21300000, guid: c4c66bb51ecb130438eb6569e59ed71c, type: 3}
   - {fileID: 21300000, guid: a6e6aea93bd7d284e81809962007e3b9, type: 3}
-  - {fileID: 21300000, guid: a900b10df8e8d834b9c7b9248abd6a18, type: 3}
+  - {fileID: 21300000, guid: a6e6aea93bd7d284e81809962007e3b9, type: 3}
   - {fileID: 21300000, guid: a900b10df8e8d834b9c7b9248abd6a18, type: 3}
   - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
   talkBall_obj: {fileID: 1821607004}
@@ -25056,7 +25109,7 @@ MonoBehaviour:
     m_Bits: 512
   GM: {fileID: 1236708166}
   GMI: {fileID: 0}
-  GMC: {fileID: 0}
+  GMC: {fileID: 201580947}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -25074,6 +25127,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 1
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -29913,41 +29970,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!84 &873359115
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 558
-  m_Height: 314
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &874619683
 GameObject:
   m_ObjectHideFlags: 0
@@ -30885,6 +30907,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -31279,7 +31305,7 @@ MonoBehaviour:
     m_Bits: 512
   GM: {fileID: 1236708166}
   GMI: {fileID: 0}
-  GMC: {fileID: 0}
+  GMC: {fileID: 201580947}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -31295,8 +31321,12 @@ MonoBehaviour:
   crow_b: 0
   rot_b: 0
   lakeOut_b: 0
-  caveRoad_b: 0
+  caveRoad_b: 1
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -31765,6 +31795,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -32014,6 +32048,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -32573,7 +32611,7 @@ MonoBehaviour:
     m_Bits: 512
   GM: {fileID: 1236708166}
   GMI: {fileID: 0}
-  GMC: {fileID: 0}
+  GMC: {fileID: 201580947}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -32591,6 +32629,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 1
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -33283,7 +33325,7 @@ MonoBehaviour:
     m_Bits: 512
   GM: {fileID: 1236708166}
   GMI: {fileID: 0}
-  GMC: {fileID: 0}
+  GMC: {fileID: 201580947}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -33301,6 +33343,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 1
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -33488,7 +33534,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 199
   m_TargetDisplay: 0
 --- !u!1 &952475621
 GameObject:
@@ -34969,6 +35015,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -35117,7 +35167,7 @@ MonoBehaviour:
     m_Bits: 512
   GM: {fileID: 1236708166}
   GMI: {fileID: 0}
-  GMC: {fileID: 0}
+  GMC: {fileID: 201580947}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -35133,8 +35183,12 @@ MonoBehaviour:
   crow_b: 0
   rot_b: 0
   lakeOut_b: 0
-  caveRoad_b: 0
+  caveRoad_b: 1
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -35369,7 +35423,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: 94806875de8c12e47afff5bfe2bbc9a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -36859,6 +36913,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -38104,6 +38162,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -38689,6 +38751,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -40617,6 +40683,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -41633,6 +41703,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -44302,6 +44376,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!84 &1245905244
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 811
+  m_Height: 456
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1247092751
 GameObject:
   m_ObjectHideFlags: 0
@@ -45537,10 +45646,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 64360db74f67a7e4d983431065371a56, type: 3}
   - {fileID: 21300000, guid: 62d4e44f11fffef46a6343092a0d8fe5, type: 3}
   - {fileID: 21300000, guid: 604c0125966ada84cafdbf8afc314c0e, type: 3}
-  - {fileID: 21300000, guid: 6305952fed857644da0f7cecb0ac5ae8, type: 3}
-  - {fileID: 21300000, guid: 739131dec4788b841b2e5e3a35072328, type: 3}
-  - {fileID: 21300000, guid: 739131dec4788b841b2e5e3a35072328, type: 3}
-  - {fileID: 21300000, guid: 739131dec4788b841b2e5e3a35072328, type: 3}
+  - {fileID: 21300000, guid: c4561a4cbf675f943b8dfaf611ff904d, type: 3}
+  - {fileID: 21300000, guid: 65c7463de1b7fef47b147646f927f9ad, type: 3}
+  - {fileID: 21300000, guid: a54556dbbd5c5bb4eb5dd16a4a2337f7, type: 3}
+  - {fileID: 21300000, guid: b2f861a8c82e806458b45697db9263a9, type: 3}
   a: 0
   itemWindow_obj: {fileID: 1283954030}
   itemWindowEnd_obj: {fileID: 1664427781}
@@ -47265,6 +47374,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -48368,6 +48481,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -49439,6 +49556,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -51754,6 +51875,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -53037,7 +53162,7 @@ MonoBehaviour:
     m_Bits: 512
   GM: {fileID: 1236708166}
   GMI: {fileID: 0}
-  GMC: {fileID: 0}
+  GMC: {fileID: 201580947}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -53054,7 +53179,11 @@ MonoBehaviour:
   rot_b: 0
   lakeOut_b: 0
   caveRoad_b: 0
-  caveEnter_b: 0
+  caveEnter_b: 1
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -54062,6 +54191,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -54564,6 +54697,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -54955,6 +55092,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -55357,6 +55498,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 1
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -57118,7 +57263,7 @@ MonoBehaviour:
     m_Bits: 512
   GM: {fileID: 1236708166}
   GMI: {fileID: 0}
-  GMC: {fileID: 0}
+  GMC: {fileID: 201580947}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -57136,6 +57281,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 1
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -58806,7 +58955,7 @@ MonoBehaviour:
     m_Bits: 512
   GM: {fileID: 1236708166}
   GMI: {fileID: 0}
-  GMC: {fileID: 0}
+  GMC: {fileID: 201580947}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -58824,6 +58973,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 1
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -61133,6 +61286,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -61688,6 +61845,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -62894,7 +63055,7 @@ MonoBehaviour:
     m_Bits: 512
   GM: {fileID: 1236708166}
   GMI: {fileID: 0}
-  GMC: {fileID: 0}
+  GMC: {fileID: 201580947}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -62909,9 +63070,13 @@ MonoBehaviour:
   lake1_b: 0
   crow_b: 0
   rot_b: 0
-  lakeOut_b: 0
+  lakeOut_b: 1
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -65935,6 +66100,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -66689,7 +66858,7 @@ MonoBehaviour:
   - {fileID: 1693577845}
   - {fileID: 1107387873}
   mapRespawn_obj:
-  - {fileID: 378379747}
+  - {fileID: 698914059}
   mapToGo_i: 1
   mapNow_i: 0
   mapRespawn_i: 0
@@ -66719,6 +66888,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -68064,6 +68237,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -68891,6 +69068,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 628257161}
@@ -69216,6 +69397,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -69889,6 +70074,10 @@ MonoBehaviour:
   lakeOut_b: 0
   caveRoad_b: 0
   caveEnter_b: 0
+  crowSet_b: 0
+  setEff_b: 0
+  hidden2_b: 0
+  waterOut_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}

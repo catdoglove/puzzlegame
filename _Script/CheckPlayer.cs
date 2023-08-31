@@ -721,12 +721,16 @@ public class CheckPlayer : MonoBehaviour
                 StopTalk();
                 talkBallB_obj.SetActive(false);
                 bearColl_obj.SetActive(false);
-                StartCoroutine("EventUp");
                 a++;
                 if (hidden_b)
                 {
 
-                    PlayerPrefs.SetInt("canSeeInfo_detail" + animalNum_i, 0); //추가 퀘스트를 깼는가
+                    PlayerPrefs.SetInt("canSeeInfo_detail" + animalNum_i, 99); //추가 퀘스트를 깼는가
+                }
+                else
+                {
+
+                    StartCoroutine("EventUp");
                 }
                 break;
             case 15://아이템 얻기
