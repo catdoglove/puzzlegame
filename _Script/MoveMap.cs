@@ -264,7 +264,7 @@ public class MoveMap : MonoBehaviour
 
         if (crowSet_b)
         {
-            //PlayerPrefs.SetInt("lostbell", 1);
+            PlayerPrefs.SetInt("lostbell", 1);
         }
     }
 

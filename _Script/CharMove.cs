@@ -103,7 +103,15 @@ public class CharMove : MonoBehaviour
 
         if (PlayerPrefs.GetInt("nowtalk", 0) == 1)
         {
-            ran = 0;
+
+            if (PlayerPrefs.GetInt("lostbell", 0) == 1)
+            {
+                ran = 3;
+            }
+            else
+            {
+                ran = 0;
+            }
             charAni.Play(waitNum[ran]);
         }
     }
@@ -169,14 +177,30 @@ public class CharMove : MonoBehaviour
             if (PlayerPrefs.GetInt("movmovmeme", 0) == 1)
             {
                 PlayerPrefs.SetInt("movmovmeme", 0);
-                ran = 0;
-                StartCoroutine("charwaitAnimation");
+                
+
+
+
+                if (PlayerPrefs.GetInt("lostbell", 0) == 1)
+                {
+                    ran = 3;
+                    StopCoroutine("charwaitAnimation");
+                    StartCoroutine("charwaitAnimation2");
+                }
+                else
+                {
+                    ran = 0;
+                    StopCoroutine("charwaitAnimation2");
+                    StartCoroutine("charwaitAnimation");
+                }
+
+
             }
             charAni.Play(waitNum[ran]);
             ckwalk = 0;
         }
 
-      //  transform.Translate(new Vector3(moveX, moveY, 0) * 0.1f);
+        //  transform.Translate(new Vector3(moveX, moveY, 0) * 0.1f);
 
         /*
         rigid2D.velocity = new Vector2(moveX, moveY);
@@ -200,6 +224,21 @@ public class CharMove : MonoBehaviour
         }
 
         */
+
+        if (isMoving)
+        {
+            if (!ausrc.isPlaying)
+            {
+                ausrc.Play();
+
+            }
+        }
+        else
+        {
+            ausrc.Stop();
+        }
+        isMoving = false;
+
 
         //전환하기
 
@@ -238,6 +277,7 @@ public class CharMove : MonoBehaviour
 
     void SetWalk()
     {
+        isMoving = true;
 
         if (PlayerPrefs.GetInt("lostbell", 0) == 1)
         {
@@ -280,27 +320,6 @@ void charWaitingMotion()
     {
         while (true)
         {
-
-            if (PlayerPrefs.GetInt("lostbell", 0) == 1)
-            {
-                switch (ran)
-                {
-                    case 3:
-                        yield return new WaitForSeconds(30f);
-                        ran = 4;
-                        break;
-                    case 4:
-                        yield return new WaitForSeconds(30f);
-                        ran = 5;
-                        break;
-                    case 5:
-                        yield return new WaitForSeconds(30f);
-                        ran = 3;
-                        break;
-                }
-            }
-            else
-            {
                 switch (ran)
                 {
                     case 0:
@@ -315,10 +334,35 @@ void charWaitingMotion()
                         yield return new WaitForSeconds(30f);
                         ran = 0;
                         break;
-                }
+                
             }
         }
     }
+
+
+    IEnumerator charwaitAnimation2()
+    {
+        while (true)
+        {
+                switch (ran)
+                {
+                    case 3:
+                        yield return new WaitForSeconds(30f);
+                        ran = 4;
+                        break;
+                    case 4:
+                        yield return new WaitForSeconds(30f);
+                        ran = 5;
+                        break;
+                    case 5:
+                        yield return new WaitForSeconds(30f);
+                        ran = 3;
+                        break;
+                
+            }
+        }
+    }
+
 
     public AudioClip walkSouneEvt(string walkSE) //걸음 소리 변경 함수
     {
