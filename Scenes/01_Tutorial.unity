@@ -1134,6 +1134,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -1151,6 +1153,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -2101,6 +2105,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -2118,6 +2124,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -2811,7 +2819,7 @@ Transform:
   - {fileID: 1707171884}
   - {fileID: 948125333}
   m_Father: {fileID: 1618348495}
-  m_RootOrder: 61
+  m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &59681810
 MonoBehaviour:
@@ -2893,7 +2901,7 @@ Transform:
   m_Children:
   - {fileID: 1839086308}
   m_Father: {fileID: 1618348495}
-  m_RootOrder: 65
+  m_RootOrder: 66
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &61868298
 Camera:
@@ -2928,7 +2936,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 319089960}
+  m_TargetTexture: {fileID: 1698362780}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -4811,6 +4819,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 1221732710}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -4828,6 +4838,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -5311,7 +5323,7 @@ Transform:
   m_Children:
   - {fileID: 2130456416}
   m_Father: {fileID: 1618348495}
-  m_RootOrder: 64
+  m_RootOrder: 65
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &120630248
 SpriteRenderer:
@@ -5433,6 +5445,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -5450,6 +5464,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -5636,6 +5652,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -5653,6 +5671,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -6426,6 +6446,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -6443,6 +6465,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -8006,7 +8030,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: db5b2feb261d2f842b1b612a1bd3ea08, type: 3}
   - {fileID: 21300000, guid: 97cfcee536d45554fbae1e9b04def578, type: 3}
   - {fileID: 21300000, guid: 852a0fcf58673df4c8270ac0fb0d5bc9, type: 3}
-  - {fileID: 21300000, guid: db5b2feb261d2f842b1b612a1bd3ea08, type: 3}
+  - {fileID: 21300000, guid: e686e8d5e8523c7458e27a61a040949a, type: 3}
 --- !u!1 &211728271
 GameObject:
   m_ObjectHideFlags: 0
@@ -9088,6 +9112,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -9105,6 +9131,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -11758,41 +11786,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!84 &319089960
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 648
-  m_Height: 364
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &321201023
 GameObject:
   m_ObjectHideFlags: 0
@@ -12135,7 +12128,7 @@ Transform:
   m_Children:
   - {fileID: 792906963}
   m_Father: {fileID: 1618348495}
-  m_RootOrder: 57
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &331962259
 SpriteRenderer:
@@ -12570,6 +12563,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -12587,6 +12582,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -13460,6 +13457,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -13477,6 +13476,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -14934,7 +14935,7 @@ Transform:
   - {fileID: 1682732099}
   - {fileID: 118601968}
   m_Father: {fileID: 1618348495}
-  m_RootOrder: 62
+  m_RootOrder: 63
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &407362771
 SpriteRenderer:
@@ -17678,6 +17679,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 1221732710}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -17695,6 +17698,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -18176,7 +18181,7 @@ Transform:
   m_LocalScale: {x: 21.049585, y: 12.932625, z: 1}
   m_Children: []
   m_Father: {fileID: 1618348495}
-  m_RootOrder: 60
+  m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &514134732
 GameObject:
@@ -18292,7 +18297,7 @@ Transform:
   - {fileID: 298548695}
   - {fileID: 1087242420}
   m_Father: {fileID: 1618348495}
-  m_RootOrder: 58
+  m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &516651401
 MonoBehaviour:
@@ -18490,6 +18495,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -18507,6 +18514,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -19321,6 +19330,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -19338,6 +19349,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -20007,6 +20020,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -20024,6 +20039,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -22081,7 +22098,7 @@ Transform:
   - {fileID: 967660435}
   - {fileID: 963200145}
   m_Father: {fileID: 1618348495}
-  m_RootOrder: 63
+  m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &628257163
 AudioSource:
@@ -22745,6 +22762,7 @@ MonoBehaviour:
   frontBG: {fileID: 0}
   moveGM: {fileID: 0}
   SGM: {fileID: 879451249}
+  GMC: {fileID: 0}
   player_obj: {fileID: 0}
 --- !u!114 &661504725
 MonoBehaviour:
@@ -25149,6 +25167,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -25166,6 +25186,8 @@ MonoBehaviour:
   setEff_b: 1
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -30929,6 +30951,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -30946,6 +30970,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -31345,6 +31371,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -31362,6 +31390,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -31817,6 +31847,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 1
   comeHere_b: 0
@@ -31834,6 +31866,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -32070,6 +32104,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -32087,6 +32123,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -32651,6 +32689,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -32668,6 +32708,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 1
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -33365,6 +33407,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 1221732710}
+  BGM4: {fileID: 1548432491}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -33382,6 +33426,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 1
+  flip_b: 1
+  BGM_b: 1
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -35037,6 +35083,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -35054,6 +35102,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -35207,6 +35257,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -35224,6 +35276,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -36935,6 +36989,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -36952,6 +37008,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -38184,6 +38242,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -38201,6 +38261,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -38773,6 +38835,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -38790,6 +38854,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -40705,6 +40771,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -40722,6 +40790,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -41725,6 +41795,8 @@ MonoBehaviour:
   onSound_b: 1
   SGM: {fileID: 0}
   BGM1: {fileID: 1221732710}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -41742,6 +41814,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -47361,6 +47435,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -47378,6 +47454,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -48468,6 +48546,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 1
   char_b: 0
   comeHere_b: 0
@@ -48485,6 +48565,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -48926,6 +49008,7 @@ MonoBehaviour:
   frontBG: {fileID: 1221732710}
   moveGM: {fileID: 560459893}
   SGM: {fileID: 879451249}
+  GMC: {fileID: 0}
   player_obj: {fileID: 0}
 --- !u!61 &1426309074
 BoxCollider2D:
@@ -49543,6 +49626,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -49560,6 +49645,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -51447,6 +51534,133 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1548432491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1548432492}
+  - component: {fileID: 1548432493}
+  m_Layer: 0
+  m_Name: BGM4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1548432492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548432491}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1618348495}
+  m_RootOrder: 57
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1548432493
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548432491}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: bfdfe4a85d3253d459837b74b46c69ee, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1554112340
 GameObject:
   m_ObjectHideFlags: 0
@@ -51862,6 +52076,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 879451249}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 1
   char_b: 0
   comeHere_b: 0
@@ -51879,6 +52095,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -53167,6 +53385,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -53184,6 +53404,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -53801,6 +54023,7 @@ Transform:
   - {fileID: 468479883}
   - {fileID: 1221732711}
   - {fileID: 1878541203}
+  - {fileID: 1548432492}
   - {fileID: 331962258}
   - {fileID: 516651400}
   - {fileID: 1641183602}
@@ -54178,6 +54401,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -54195,6 +54420,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -54383,7 +54610,7 @@ Transform:
   - {fileID: 752192775}
   - {fileID: 648916854}
   m_Father: {fileID: 1618348495}
-  m_RootOrder: 59
+  m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1641183603
 MonoBehaviour:
@@ -54684,6 +54911,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -54701,6 +54930,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -55079,6 +55310,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 1221732710}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 1
   char_b: 0
   comeHere_b: 0
@@ -55093,9 +55326,11 @@ MonoBehaviour:
   caveRoad_b: 0
   caveEnter_b: 0
   crowSet_b: 0
-  setEff_b: 0
+  setEff_b: 1
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -55485,6 +55720,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -55502,6 +55739,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -56700,6 +56939,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!84 &1698362780
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 648
+  m_Height: 364
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1699787221
 GameObject:
   m_ObjectHideFlags: 0
@@ -57268,6 +57542,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -57285,6 +57561,8 @@ MonoBehaviour:
   setEff_b: 1
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -58960,6 +59238,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 1221732710}
+  BGM4: {fileID: 1548432491}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -58977,6 +59257,8 @@ MonoBehaviour:
   setEff_b: 1
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 1
+  BGM_b: 1
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -60180,6 +60462,7 @@ MonoBehaviour:
   frontBG: {fileID: 789295970}
   moveGM: {fileID: 0}
   SGM: {fileID: 879451249}
+  GMC: {fileID: 0}
   player_obj: {fileID: 0}
 --- !u!95 &1807311261
 Animator:
@@ -61273,6 +61556,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -61290,6 +61575,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -61832,6 +62119,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -61849,6 +62138,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -63060,6 +63351,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -63077,6 +63370,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -66087,6 +66382,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 1221732710}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -66104,6 +66401,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -66875,6 +67174,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -66892,6 +67193,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}
@@ -67323,6 +67626,7 @@ MonoBehaviour:
   frontBG: {fileID: 0}
   moveGM: {fileID: 0}
   SGM: {fileID: 879451249}
+  GMC: {fileID: 0}
   player_obj: {fileID: 1236708166}
 --- !u!1 &2071231024
 GameObject:
@@ -68224,6 +68528,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -68241,6 +68547,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -69055,6 +69363,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 1221732710}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 1
@@ -69072,6 +69382,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 628257161}
@@ -69384,6 +69696,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -69401,6 +69715,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 0}
   door2_obj: {fileID: 0}
   endEvent_obj: {fileID: 0}
@@ -70061,6 +70377,8 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 0}
+  BGM2: {fileID: 0}
+  BGM4: {fileID: 0}
   door_b: 0
   char_b: 0
   comeHere_b: 0
@@ -70078,6 +70396,8 @@ MonoBehaviour:
   setEff_b: 0
   hidden2_b: 0
   waterOut_b: 0
+  flip_b: 0
+  BGM_b: 0
   door1_obj: {fileID: 1615615392}
   door2_obj: {fileID: 2106744370}
   endEvent_obj: {fileID: 0}

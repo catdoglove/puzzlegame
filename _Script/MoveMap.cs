@@ -25,10 +25,10 @@ public class MoveMap : MonoBehaviour
     public bool openSound_b, onSound_b;
     
     public GameObject SGM;
-    public GameObject BGM1;
+    public GameObject BGM1, BGM2, BGM4;
 
     public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b, rot_b;
-    public bool lakeOut_b, caveRoad_b, caveEnter_b, crowSet_b, setEff_b, hidden2_b, waterOut_b;
+    public bool lakeOut_b, caveRoad_b, caveEnter_b, crowSet_b, setEff_b, hidden2_b, waterOut_b, flip_b, BGM_b;
 
 
     public GameObject door1_obj, door2_obj;
@@ -161,6 +161,19 @@ public class MoveMap : MonoBehaviour
                 BGM1.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().mute = false;
             }
 
+            if (BGM_b)
+            {
+                if (BGM4.activeSelf)
+                {
+                    BGM4.SetActive(false);
+                    BGM2.SetActive(true);
+                }
+                else
+                {
+                    BGM4.SetActive(true);
+                    BGM2.SetActive(false);
+                }
+            }
 
             OpenDoor();
         }
@@ -260,6 +273,11 @@ public class MoveMap : MonoBehaviour
         if (waterOut_b)
         {
             GMC.GetComponent<ShaderEffect>().changeShader1();
+        }
+        if (flip_b)
+        {
+
+            GMC.GetComponent<ShaderEffect>().ShaderFilp();
         }
 
         if (crowSet_b)

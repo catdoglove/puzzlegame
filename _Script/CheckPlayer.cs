@@ -769,6 +769,8 @@ public class CheckPlayer : MonoBehaviour
                     a++;
                     bearColl_obj.SetActive(true);
                     bearColl_obj.GetComponent<SpriteRenderer>().sprite = candy_spr;
+
+
                 break;
             case 19://말풍선 띄우고 아이템 얻음
                 TalkSound();

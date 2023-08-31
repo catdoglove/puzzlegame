@@ -12,7 +12,7 @@ public class example : MonoBehaviour
     float moveX;
     public GameObject boatSpr, hiddenSpr,backBG,frontBG;
 
-    public GameObject moveGM, SGM;
+    public GameObject moveGM, SGM, GMC;
     int a = 0;
 
     public GameObject player_obj;
@@ -131,6 +131,9 @@ public class example : MonoBehaviour
             a++;
         }
 
+        GMC.GetComponent<ShaderEffect>().ShaderFilp();
+        GMC.GetComponent<ShaderEffect>().changeShader1();
+        GMC.GetComponent<ShaderEffect>().OffShader();
         moveGM.GetComponent<MoveMap>().MovingMap();
     }
 
@@ -157,6 +160,7 @@ public class example : MonoBehaviour
         boatAni.Play("ani_boat2");
         //주인공 true
         player_obj.SetActive(true);
+        GMC.GetComponent<ShaderEffect>().changeShader1();
 
     }
 }
