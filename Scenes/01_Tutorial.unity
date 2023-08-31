@@ -2928,7 +2928,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1245905244}
+  m_TargetTexture: {fileID: 319089960}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -9287,8 +9287,8 @@ MonoBehaviour:
   SCShader: {fileID: 4800000, guid: b886f736a61014e4fb53da213c89eefd, type: 3}
   Camera2: {fileID: 61868298}
   filterchoice: 10
-  SwitchCameraToCamera2: 1
-  BlendFX: 1
+  SwitchCameraToCamera2: 0
+  BlendFX: 0
 --- !u!1 &253180722
 GameObject:
   m_ObjectHideFlags: 0
@@ -11758,6 +11758,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!84 &319089960
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 648
+  m_Height: 364
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &321201023
 GameObject:
   m_ObjectHideFlags: 0
@@ -21517,7 +21552,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 16
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 5e5d8159870e69147980bef25f88ea31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -24182,28 +24217,28 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: tokki3h
-  EventNum_i: 010000000300000009000000050000000b0000000f00000001000000010000000a00000005000000
+  EventNum_i: 01000000030000000b000000030000000f00000001000000010000000a0000000a00000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
   - {fileID: 21300000, guid: 200d76ac2b8018748a3174e2cec7f486, type: 3}
   - {fileID: 21300000, guid: 200d76ac2b8018748a3174e2cec7f486, type: 3}
-  - {fileID: 21300000, guid: 200d76ac2b8018748a3174e2cec7f486, type: 3}
-  - {fileID: 21300000, guid: 200d76ac2b8018748a3174e2cec7f486, type: 3}
+  - {fileID: 21300000, guid: 16788484b651ef04e9f88b9db56bddf5, type: 3}
+  - {fileID: 21300000, guid: 16788484b651ef04e9f88b9db56bddf5, type: 3}
   - {fileID: 21300000, guid: 16788484b651ef04e9f88b9db56bddf5, type: 3}
   - {fileID: 21300000, guid: 6024dde1fe958874f9deaf8f4ceaf10f, type: 3}
-  - {fileID: 21300000, guid: 6024dde1fe958874f9deaf8f4ceaf10f, type: 3}
+  - {fileID: 21300000, guid: bbd9380532c312f468aeb30f54a1eccf, type: 3}
   - {fileID: 21300000, guid: bbd9380532c312f468aeb30f54a1eccf, type: 3}
   - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
   - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
   Event2_spr:
   - {fileID: 21300000, guid: b765f9c1a9073e942b51d95e20474a57, type: 3}
   - {fileID: 21300000, guid: b765f9c1a9073e942b51d95e20474a57, type: 3}
-  - {fileID: 21300000, guid: b765f9c1a9073e942b51d95e20474a57, type: 3}
-  - {fileID: 21300000, guid: b765f9c1a9073e942b51d95e20474a57, type: 3}
+  - {fileID: 21300000, guid: c4c66bb51ecb130438eb6569e59ed71c, type: 3}
+  - {fileID: 21300000, guid: c4c66bb51ecb130438eb6569e59ed71c, type: 3}
   - {fileID: 21300000, guid: c4c66bb51ecb130438eb6569e59ed71c, type: 3}
   - {fileID: 21300000, guid: a6e6aea93bd7d284e81809962007e3b9, type: 3}
-  - {fileID: 21300000, guid: a6e6aea93bd7d284e81809962007e3b9, type: 3}
+  - {fileID: 21300000, guid: a900b10df8e8d834b9c7b9248abd6a18, type: 3}
   - {fileID: 21300000, guid: a900b10df8e8d834b9c7b9248abd6a18, type: 3}
   - {fileID: 21300000, guid: c5d9401237667d741b6e42f42a565abb, type: 3}
   talkBall_obj: {fileID: 1821607004}
@@ -34736,7 +34771,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 17
+  m_SortingOrder: 27
   m_Sprite: {fileID: 21300000, guid: 1230444097e006d4db6cdcea264996e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -39325,7 +39360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1107387874
 Transform:
   m_ObjectHideFlags: 0
@@ -44376,41 +44411,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!84 &1245905244
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 811
-  m_Height: 456
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1247092751
 GameObject:
   m_ObjectHideFlags: 0
@@ -50193,7 +50193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1482578063
 Transform:
   m_ObjectHideFlags: 0

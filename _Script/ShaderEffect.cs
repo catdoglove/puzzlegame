@@ -118,7 +118,7 @@ public class ShaderEffect : MonoBehaviour
         photo.BlendFX = 1f;
         effectShaderimg.GetComponent<Image>().sprite = effectImg[5];
 
-        photo.SCShader = Shader.Find("CameraFilterPack/Blend2Camera_Overlay");
+        photo.SCShader = Shader.Find("CameraFilterPack/Blend2Camera_Multiply");
         photo.filterchoice = CameraFilterPack_Blend2Camera_PhotoshopFilters.filters.Multiply;
 
         Mcamera.SetActive(true);
