@@ -88,7 +88,7 @@ public class CheckPlayer : MonoBehaviour
     public string aniTalk_str, ani_str;
     public Animator all_Ani;
 
-    public bool esterEgg_b, sheep_b,hidden_b, dontdis_b;
+    public bool esterEgg_b, sheep_b,hidden_b, dontdis_b, function_b;
 
     public GameObject BGM1, pop_obj;
     public Animator stop_Ani;
@@ -241,7 +241,18 @@ public class CheckPlayer : MonoBehaviour
 
         if (itemQ_b)
         {
-            ItemSettings();
+            if (function_b)
+            {
+
+                SGM.GetComponent<SoundEvt>().soundItemUse();
+                talkBall_obj.SetActive(true);
+                balloon_obj.SetActive(false);
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
+                ItemSettings();
+            }
             //ItemSettingOnEvents();
         }
         else
@@ -418,9 +429,10 @@ public class CheckPlayer : MonoBehaviour
         candy();
         if (dontdis_b)
         {
+
+            this.gameObject.SetActive(false);
             if (PlayerPrefs.GetInt("itemnum27", 0) == 3)
             {
-                this.gameObject.SetActive(false);
             }
         }
         else
@@ -1003,6 +1015,7 @@ public class CheckPlayer : MonoBehaviour
     void ItemSettingOnEvent()
     {
 
+        SGM.GetComponent<AudioSource>().pitch = 1f;
         SGM.GetComponent<SoundEvt>().soundItemSuccess();
         int a = 0;
         a = PlayerPrefs.GetInt("inventorynum", 0);
@@ -1105,6 +1118,7 @@ public class CheckPlayer : MonoBehaviour
     void ItemSettingOnEvents()
     {
 
+        SGM.GetComponent<AudioSource>().pitch = 1f;
         int a = 0;
         //빈공간저장하기
         a = PlayerPrefs.GetInt("itemgetpoint", 0);

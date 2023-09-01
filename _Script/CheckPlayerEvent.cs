@@ -64,7 +64,7 @@ public class CheckPlayerEvent : MonoBehaviour
 
     public GameObject laterEvent_obj;
 
-    public GameObject puzzle_obj;
+    public GameObject puzzle_obj,crow_obj;
 
     public GameObject hall_obj, hallFix_obj;
 
@@ -100,6 +100,8 @@ public class CheckPlayerEvent : MonoBehaviour
         PlayerPrefs.SetInt("whierestacking", 0);
         PlayerPrefs.SetInt("changeitem", 0);
         */
+
+
     }
 
     void OnDrawGizmos()
@@ -169,6 +171,21 @@ public class CheckPlayerEvent : MonoBehaviour
                     }
 
                 }
+            }
+        }
+
+
+        if (PlayerPrefs.GetInt("cursorActive", 0) == 1)
+        {
+            balloon_obj.SetActive(false);
+            if (Input.anyKey)
+            {
+                balloon_obj.SetActive(false);
+                talkBall_obj.SetActive(false);
+                PlayerPrefs.SetInt("cursorActive", 0);
+                GM.GetComponent<CharMove>().canMove = true;
+                GM.GetComponent<CharMove>().Speed = 2.5f;
+                this.gameObject.SetActive(false);
             }
         }
     }
@@ -524,8 +541,11 @@ public class CheckPlayerEvent : MonoBehaviour
                 break;
             case 19:// 까마귀 삽화
 
-                moveGM.SetActive(true);
+                //moveGM.SetActive(true);
                 PlayerPrefs.SetInt("cursorActive", 1);
+                crow_obj.SetActive(false);
+
+                //GM.GetComponent<CharMove>().canMove = false;
                 break;
             case 20://퍼즐 이벤트
 
@@ -533,7 +553,7 @@ public class CheckPlayerEvent : MonoBehaviour
                 //PlayerPrefs.SetInt("cursorActive", 1);
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                 {
-                    SGM.GetComponent<SoundEvt>().soundTalk();
+                    SGM.GetComponent<SoundEvt>().soundItemUse();
                     StopAndTalk();
                     a++;
                     GM.GetComponent<CharMove>().canMove = false;

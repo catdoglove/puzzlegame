@@ -27,8 +27,8 @@ public class MoveMap : MonoBehaviour
     public GameObject SGM;
     public GameObject BGM1, BGM2, BGM4;
 
-    public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b, rot_b;
-    public bool lakeOut_b, caveRoad_b, caveEnter_b, crowSet_b, setEff_b, hidden2_b, waterOut_b, flip_b, BGM_b;
+    public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b, rot_b, crowA_b;
+    public bool lakeOut_b, caveRoad_b, caveEnter_b, crowSet_b, setEff_b, hidden2_b, waterOut_b, flip_b, BGM_b, soundback_b;
 
 
     public GameObject door1_obj, door2_obj;
@@ -64,6 +64,8 @@ public class MoveMap : MonoBehaviour
         
             while (mapTime_i == 1)
             {
+            
+
                 wait = PlayerPrefs.GetInt("wait", 0);
                 if (wait == 0)
                 {
@@ -76,34 +78,50 @@ public class MoveMap : MonoBehaviour
                     {
 
 
-                    if (comeHere_b)
+                    if (crowA_b)
                     {
+                        //크로우어택 후 스페이스바 누르면 엔딩
+
+                        GM.GetComponent<CharMove>().Speed = 0f;
                         GM.GetComponent<CharMove>().canMove = false;
                         endEvent3_obj.SetActive(true);
-                        Invoke("MovingMap", 0.5f);
-                        BGM1.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0f;
+                        yield return new WaitForSeconds(0.5f);
+                        endEvent_obj.SetActive(true);
+                        yield return new WaitForSeconds(5f);
+                        endEvent2_obj.SetActive(true);
+                        this.gameObject.SetActive(false);
                     }
                     else
                     {
+                        if (comeHere_b)
+                        {
+                            GM.GetComponent<CharMove>().canMove = false;
+                            Invoke("MovingMap", 0.5f);
+                            BGM1.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0f;
+                        }
+                        else
+                        {
+                            wait = 1;
+                            PlayerPrefs.SetInt("wait", 1);
+                            hit = null;
+                            player_obj.transform.position = mapRespawn_obj[0].transform.position;
 
-                        wait = 1;
-                        PlayerPrefs.SetInt("wait", 1);
-                        hit = null;
-                        player_obj.transform.position = mapRespawn_obj[0].transform.position;
-
-                        Invoke("MovingMap", 0.02f);
-                        //position = player_obj.transform.position;
-                        //position.x = -5.66f;
-                        //position.y = -1.55f;
-                        //player_obj.transform.position = position;
-                        //Debug.Log("a");
-                        //-5.664642 -1.550424
-                        //StopCoroutine("CheckingMap");
+                            Invoke("MovingMap", 0.02f);
+                            //position = player_obj.transform.position;
+                            //position.x = -5.66f;
+                            //position.y = -1.55f;
+                            //player_obj.transform.position = position;
+                            //Debug.Log("a");
+                            //-5.664642 -1.550424
+                            //StopCoroutine("CheckingMap");
+                        }
                     }
 
-                }
+                    }
+                    
+            }
 
-                }
+
                 yield return new WaitForSeconds(0.1f);
             }
         
@@ -114,7 +132,7 @@ public class MoveMap : MonoBehaviour
     /// </summary>
     public void MovingMap()
     {
-        if (comeHere_b)
+        if (crowA_b)
         {
             //크로우어택 후 스페이스바 누르면 엔딩
             endEvent_obj.SetActive(true);
@@ -252,6 +270,7 @@ public class MoveMap : MonoBehaviour
         if (lakeOut_b)
         {
             GMC.GetComponent<ShaderEffect>().changeShader3();
+            BGM4.GetComponent<AudioSource>().volume = 0.5f;
         }
         if (caveRoad_b)
         {
@@ -264,6 +283,7 @@ public class MoveMap : MonoBehaviour
         if (hidden2_b)
         {
             GMC.GetComponent<ShaderEffect>().changeShader6();
+            BGM4.GetComponent<AudioSource>().volume = 0f;
         }
         if (setEff_b)
         {
@@ -283,6 +303,10 @@ public class MoveMap : MonoBehaviour
         if (crowSet_b)
         {
             PlayerPrefs.SetInt("lostbell", 1);
+        }
+        if (soundback_b)
+        {
+            BGM4.GetComponent<AudioSource>().volume = 1f;
         }
     }
 

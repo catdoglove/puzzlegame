@@ -127,8 +127,7 @@ public class Inventory : MonoBehaviour
         }
         */
 
-
-
+        
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (GM.GetComponent<CharMove>().canMove )
@@ -143,7 +142,6 @@ public class Inventory : MonoBehaviour
             {
             }
         }
-
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -166,7 +164,16 @@ public class Inventory : MonoBehaviour
                             StartCoroutine("Show");
 
                             CanMoveF();
-                            GM.GetComponent<CharMove>().charAni.Play("ani_char_stop");
+
+                            if (PlayerPrefs.GetInt("lostbell", 0) == 1)
+                            {
+                                GM.GetComponent<CharMove>().charAni.Play("ani_charnobell_stop");
+                            }
+                            else
+                            {
+                                GM.GetComponent<CharMove>().charAni.Play("ani_char_stop");
+                            }
+                            
                             GM.GetComponent<CharMove>().ckwalk = 0;
                         }
 
