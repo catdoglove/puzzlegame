@@ -88,7 +88,7 @@ public class CheckPlayer : MonoBehaviour
     public string aniTalk_str, ani_str;
     public Animator all_Ani;
 
-    public bool esterEgg_b, sheep_b,hidden_b;
+    public bool esterEgg_b, sheep_b,hidden_b, dontdis_b;
 
     public GameObject BGM1, pop_obj;
     public Animator stop_Ani;
@@ -314,6 +314,7 @@ public class CheckPlayer : MonoBehaviour
 
         //StartCoroutine("imgFadeOut");
         //}
+
         DelThis();
     }
 
@@ -349,33 +350,53 @@ public class CheckPlayer : MonoBehaviour
             }
             else
             {
-                //a번칸에 값저장
-                PlayerPrefs.SetInt("inventoryget" + a, SetItemPref_i);
-                PlayerPrefs.SetInt("changeitem", 1);
-                a++;
-                if (PlayerPrefs.GetInt("fillpotint", 0) < a)
-                {
-                    Debug.Log("fillpotint1" + a);
-                    PlayerPrefs.SetInt("fillpotint", a);
 
-                    Debug.Log("aaaaa" + a);
+                if ((PlayerPrefs.GetInt("itemnum" + 27, 0) == 1 || PlayerPrefs.GetInt("itemnum" + 27, 0) == 2) && SetItemPref_i == 27)
+                {
+                    int num = PlayerPrefs.GetInt("itemnum" + 27, 0);
+                    num++;
+                    PlayerPrefs.SetInt("itemnum" + 27, num);
                 }
-
-                Debug.Log("aaaaa" + a);
-                Debug.Log("fillpotint" + PlayerPrefs.GetInt("fillpotint", 0));
-                PlayerPrefs.SetInt("itemgetpoint", a);
-
-                //아이템갯수증가
-                int o = 0;
-                o = PlayerPrefs.GetInt("itemnum" + SetItemPref_i, 0);
-                PlayerPrefs.SetInt("inventorynum", a);
-                o++;
-                PlayerPrefs.SetInt("itemnum" + SetItemPref_i, o);
-
-
-                if (hel == 1)
+                else
                 {
-                    PlayerPrefs.SetInt("inventorynum", (a - 1));
+
+                    if ((PlayerPrefs.GetInt("itemnum" + 30, 0) == 1 || PlayerPrefs.GetInt("itemnum" + 30, 0) == 2) && SetItemPref_i == 30)
+                    {
+                        int num = PlayerPrefs.GetInt("itemnum" + 30, 0);
+                        num++;
+                        PlayerPrefs.SetInt("itemnum" + 30, num);
+                    }
+                    else
+                    {
+                        //a번칸에 값저장
+                        PlayerPrefs.SetInt("inventoryget" + a, SetItemPref_i);
+                        PlayerPrefs.SetInt("changeitem", 1);
+                        a++;
+                        if (PlayerPrefs.GetInt("fillpotint", 0) < a)
+                        {
+                            Debug.Log("fillpotint1" + a);
+                            PlayerPrefs.SetInt("fillpotint", a);
+
+                            Debug.Log("aaaaa" + a);
+                        }
+
+                        Debug.Log("aaaaa" + a);
+                        Debug.Log("fillpotint" + PlayerPrefs.GetInt("fillpotint", 0));
+                        PlayerPrefs.SetInt("itemgetpoint", a);
+
+                        //아이템갯수증가
+                        int o = 0;
+                        o = PlayerPrefs.GetInt("itemnum" + SetItemPref_i, 0);
+                        PlayerPrefs.SetInt("inventorynum", a);
+                        o++;
+                        PlayerPrefs.SetInt("itemnum" + SetItemPref_i, o);
+
+
+                        if (hel == 1)
+                        {
+                            PlayerPrefs.SetInt("inventorynum", (a - 1));
+                        }
+                    }
                 }
             }
         }
@@ -394,9 +415,19 @@ public class CheckPlayer : MonoBehaviour
         
 
         balloon_obj.SetActive(false);
-        this.gameObject.SetActive(false);
         candy();
-        DelThis();
+        if (dontdis_b)
+        {
+            if (PlayerPrefs.GetInt("itemnum27", 0) == 3)
+            {
+                this.gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            DelThis();
+            this.gameObject.SetActive(false);
+        }
     }
 
     void DelThis()
@@ -851,6 +882,26 @@ public class CheckPlayer : MonoBehaviour
                 StartCoroutine("talkBall");
                 StopAndTalk();
                 a++;
+                break;
+            case 25://말풍선띄우고 다음으로
+                a++;
+
+                StopAndTalk();
+                    TalkSound();
+                    if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                    {
+                        a++;
+                        GMI.GetComponent<Inventory>().DelItems();
+                        SetDogam2();
+                    PlayerPrefs.SetInt("foxq", 1);
+                    }
+
+                Debug.Log("awe" + a);
+                StopCoroutine("talkBall");
+                k = a;
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StartCoroutine("talkBall");
                 break;
             default:
                 break;

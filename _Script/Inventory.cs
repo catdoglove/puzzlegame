@@ -372,8 +372,28 @@ public class Inventory : MonoBehaviour
                 invenItem_obj[a].SetActive(true);
                 invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1];
             }
+            if (p == 30)
+            {
+                invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1];
+                items_i[a] = PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1;
 
-            
+                //PlayerPrefs.SetInt("inventoryget" + a, items_i[a]);
+
+                invenItem_obj[a].SetActive(true);
+                invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1];
+            }
+            if (p == 27)
+            {
+                invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1];
+                items_i[a] = PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1;
+
+                //PlayerPrefs.SetInt("inventoryget" + a, items_i[a]);
+
+                invenItem_obj[a].SetActive(true);
+                invenItem_obj[a].GetComponent<Image>().sprite = Item_spr[PlayerPrefs.GetInt("itemnum" + p, 0) + p - 1];
+            }
+
+
 
             PlayerPrefs.SetInt("stacking", 0);
             PlayerPrefs.SetInt("whierestacking", 0);
@@ -381,9 +401,9 @@ public class Inventory : MonoBehaviour
         else
         {
 
-            if (p == 13 || p == 1)
+            if (p == 13 || p == 1 || p == 30 || p == 27)
             {
-                if(PlayerPrefs.GetInt("itemnum" + p, 0) == 1)
+                if (PlayerPrefs.GetInt("itemnum" + p, 0) == 1)
                 {
                     invenItem_obj[a].SetActive(true);
                     if (invenItem_obj[a].GetComponent<Image>().sprite == null)

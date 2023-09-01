@@ -39,6 +39,9 @@ public class CheckEvent : MonoBehaviour
     public GameObject triger_obj, plank_obj, plankHall_obj, plankA_obj;
     public GameObject rage_obj;
 
+
+    public Vector3 position0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -82,9 +85,12 @@ public class CheckEvent : MonoBehaviour
 
                     if (pickup_b)
                     {
-                        if (PlayerPrefs.GetInt("broken", 0) == 0)
+                        if (PlayerPrefs.GetInt("foxclear", 0) == 0)
                         {
-                            block();
+                            if (PlayerPrefs.GetInt("foxq", 0) == 0)
+                            {
+                                block();
+                            }
                         }
 
                     }
@@ -146,8 +152,44 @@ public class CheckEvent : MonoBehaviour
     {
         
             move_obj.GetComponent<Animator>().Play("ani_npc_fox_stop");
-            SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
-            SGM.GetComponent<SoundEvt>().soundDamage();
-        PlayerPrefs.SetInt("block", 1);
+        PlayerPrefs.SetInt("foxclear", 1);
+        //StopCoroutine("EventDown");
+        StartCoroutine("EventDown");
     }
+
+
+    /// <summary>
+    /// 위로 올라가기
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator EventDown()
+    {
+
+        GM.GetComponent<CharMove>().canMove = false;
+        //talk_b = false;
+        int in_i = 1;
+        position0 = player_obj.transform.position;
+
+        yield return new WaitForSeconds(0.5f);
+        SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
+        SGM.GetComponent<SoundEvt>().soundDamage();
+        while (in_i == 1)
+        {
+            position0.x = position0.x - 6f * Time.deltaTime;
+            player_obj.transform.position = position0;
+
+            if (position0.x <= door1_obj.transform.position.x)
+            {
+                in_i = 0;
+            }
+
+            yield return new WaitForSeconds(0.01f);
+        }
+        //talk_b = true;
+        GM.GetComponent<CharMove>().canMove = true;
+        move_obj.GetComponent<Animator>().Play("ani_npc_fox");
+
+        PlayerPrefs.SetInt("foxclear", 0);
+    }
+
 }

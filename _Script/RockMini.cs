@@ -15,7 +15,7 @@ public class RockMini : MonoBehaviour
     public int pass_i,coin_i;
     public GameObject[] button_obj, pass_obj;
     public Sprite[] num_spr;
-    public GameObject numImg_obj;
+    public GameObject numImg_obj, japan_obj, rock_obj;
 
 
     // Start is called before the first frame update
@@ -147,28 +147,34 @@ public class RockMini : MonoBehaviour
             if (a == 4)
             {
                 puzzleWin_obj.SetActive(false);
-                GM.GetComponent<CharMove>().canMove = true;
+                GMM.GetComponent<CharMove>().canMove = true;
                 PlayerPrefs.SetInt("cursorActive", 0);
+                GM.GetComponent<CheckPlayerEvent>().ItemSettingOnEvent();
                 SGM.GetComponent<SoundEvt>().soundItemSuccess();
-            }
-            coin_i--;
-            if (coin_i == 0)
-            {
-                ClosePuzzle();
-                SGM.GetComponent<SoundEvt>().soundItemFail();
+                japan_obj.SetActive(false);
             }
             else
             {
-                for (int i = 0; i < 8; i++)
+                SGM.GetComponent<SoundEvt>().soundItemFail();
+                coin_i--;
+                if (coin_i == 0)
                 {
-                    button_obj[i].SetActive(true);
+                    ClosePuzzle();
+                    rock_obj.SetActive(true);
                 }
-                numImg_obj.GetComponent<SpriteRenderer>().sprite = num_spr[coin_i];
+                else
+                {
+                    for (int i = 0; i < 8; i++)
+                    {
+                        button_obj[i].SetActive(true);
+                    }
+                    numImg_obj.GetComponent<SpriteRenderer>().sprite = num_spr[coin_i];
 
-                pass_obj[0].SetActive(false);
-                pass_obj[1].SetActive(false);
-                pass_obj[2].SetActive(false);
-                pass_obj[3].SetActive(false);
+                    pass_obj[0].SetActive(false);
+                    pass_obj[1].SetActive(false);
+                    pass_obj[2].SetActive(false);
+                    pass_obj[3].SetActive(false);
+                }
             }
             number_i = 0;
         }
@@ -194,7 +200,7 @@ public class RockMini : MonoBehaviour
     public void ClosePuzzle()
     {
         PlayerPrefs.SetInt("cursorActive", 0);
-        GM.GetComponent<CharMove>().canMove = true;
+        GMM.GetComponent<CharMove>().canMove = true;
         puzzleWin_obj.SetActive(false);
         for (int i = 0; i < 8; i++)
         {

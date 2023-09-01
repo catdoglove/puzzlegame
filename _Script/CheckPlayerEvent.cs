@@ -17,7 +17,7 @@ public class CheckPlayerEvent : MonoBehaviour
     public float x_f, y_f;
     int a = 0;
     int k = 0;
-    public GameObject GMS,GM, GMI;
+    public GameObject GMS,GM, GMI,GMM;
 
     //
     public string SetItemPref_str = "text";
@@ -416,17 +416,29 @@ public class CheckPlayerEvent : MonoBehaviour
 
                 break;
             case 12://특수 아이템요구 
-                SGM.GetComponent<SoundEvt>().soundItemFail();
-                a++;
-                Debug.Log(PlayerPrefs.GetInt("selecteditemnum", 0)+"d" + getItemPref_i);
-                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == 36)
                 {
                     SGM.GetComponent<SoundEvt>().soundItemUse();
-                    Debug.Log(PlayerPrefs.GetInt("selecteditemnum", 0) + getItemPref_i);
-                    a++;
-                    move_obj.GetComponent<SpriteRenderer>().sprite = change_spr;
-                    move_obj.gameObject.SetActive(false);
+                    //move_obj.GetComponent<SpriteRenderer>().sprite = change_spr;
+                    //move_obj.gameObject.SetActive(false);
+                    GMI.GetComponent<Inventory>().DelItems();
                     ItemSettingOnEvent();
+                }
+                else
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemFail();
+                    a++;
+                    Debug.Log(PlayerPrefs.GetInt("selecteditemnum", 0) + "d" + getItemPref_i);
+
+                    if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                    {
+                        SGM.GetComponent<SoundEvt>().soundItemUse();
+                        Debug.Log(PlayerPrefs.GetInt("selecteditemnum", 0) + getItemPref_i);
+                        a++;
+                        move_obj.GetComponent<SpriteRenderer>().sprite = change_spr;
+                        move_obj.gameObject.SetActive(false);
+                        ItemSettingOnEvent();
+                    }
                 }
 
                 k = a;
@@ -517,8 +529,8 @@ public class CheckPlayerEvent : MonoBehaviour
                 break;
             case 20://퍼즐 이벤트
 
-                puzzle_obj.GetComponent<RockMini>().ShowPuzzle();
-                PlayerPrefs.SetInt("cursorActive", 1);
+                //puzzle_obj.GetComponent<RockMini>().ShowPuzzle();
+                //PlayerPrefs.SetInt("cursorActive", 1);
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                 {
                     SGM.GetComponent<SoundEvt>().soundTalk();
@@ -528,6 +540,7 @@ public class CheckPlayerEvent : MonoBehaviour
                     PlayerPrefs.SetInt("cursorActive", 1);
                     puzzle_obj.GetComponent<RockMini>().ShowPuzzle();
 
+                    GMI.GetComponent<Inventory>().DelItems();
                 }
                 else
                 {
