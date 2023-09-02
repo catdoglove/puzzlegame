@@ -70,7 +70,7 @@ public class CheckPlayerEvent : MonoBehaviour
 
     public GameObject rideGM, moveGM;
 
-    public bool d_b;
+    public bool d_b, water_b;
 
     private void OnEnable()
     {
@@ -185,6 +185,7 @@ public class CheckPlayerEvent : MonoBehaviour
                 PlayerPrefs.SetInt("cursorActive", 0);
                 GM.GetComponent<CharMove>().canMove = true;
                 GM.GetComponent<CharMove>().Speed = 2.5f;
+                SGM.GetComponent<SoundEvt>().soundCrowAttack();
                 this.gameObject.SetActive(false);
             }
         }
@@ -435,11 +436,17 @@ public class CheckPlayerEvent : MonoBehaviour
             case 12://특수 아이템요구 
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == 36)
                 {
-                    SGM.GetComponent<SoundEvt>().soundItemUse();
-                    //move_obj.GetComponent<SpriteRenderer>().sprite = change_spr;
-                    //move_obj.gameObject.SetActive(false);
-                    GMI.GetComponent<Inventory>().DelItems();
-                    ItemSettingOnEvent();
+                    if (water_b)
+                    {
+                        SGM.GetComponent<SoundEvt>().soundItemUse();
+                        GMI.GetComponent<Inventory>().DelItems();
+                        ItemSettingOnEvent();
+                    }
+                    else
+                    {
+                        SGM.GetComponent<SoundEvt>().soundItemFail();
+                        a++;
+                    }
                 }
                 else
                 {

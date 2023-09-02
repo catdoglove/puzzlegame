@@ -42,7 +42,7 @@ public class CheckEvent : MonoBehaviour
 
     public Vector3 position0;
 
-    public GameObject black_obj;
+    public GameObject black_obj, gameOff_obj;
 
     int in_i;
 
@@ -117,12 +117,16 @@ public class CheckEvent : MonoBehaviour
 
                     if (end_b)
                     {
-                        if (true)
+
+                        if (PlayerPrefs.GetInt("gametestover", 0) == 0)
                         {
+                            GM.GetComponent<CharMove>().canMove = false;
+                            GM.GetComponent<CharMove>().Speed = 0f;
+
+                            black_obj.SetActive(true);
+                            StartCoroutine("FadeIn");
+                            PlayerPrefs.SetInt("gametestover", 1);
                         }
-                        GM.GetComponent<CharMove>().canMove = false;
-                        GM.GetComponent<CharMove>().Speed = 0f;
-                        StartCoroutine("FadeIn");
                         //this.gameObject.SetActive(false);
                     }
 
@@ -237,9 +241,9 @@ public class CheckEvent : MonoBehaviour
             in_i = 0;
         }
 
-
-        SGM.GetComponent<SoundEvt>().soundCloseDoor();
-        black_obj.SetActive(false);
+        gameOff_obj.SetActive(true);
+        //SGM.GetComponent<SoundEvt>().soundCloseDoor();
+        //black_obj.SetActive(false);
 
 
         yield return new WaitForSeconds(1.5f); 

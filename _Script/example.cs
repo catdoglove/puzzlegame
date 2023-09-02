@@ -140,6 +140,8 @@ public class example : MonoBehaviour
 
     IEnumerator Action_go2()
     {
+
+        GMC.GetComponent<ShaderEffect>().changeShader1();
         int a = 1;
         while (a <= 230) //늘리기
         {
@@ -160,7 +162,6 @@ public class example : MonoBehaviour
         boatAni.Play("ani_boat2");
         //주인공 true
         player_obj.SetActive(true);
-        GMC.GetComponent<ShaderEffect>().changeShader1();
 
     }
 }

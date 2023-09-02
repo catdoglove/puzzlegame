@@ -138,14 +138,13 @@ public class ShaderEffect : MonoBehaviour
 
     public void ShaderFilp()
     {
-        if (effectShaderimg.transform.rotation.y==180)
+        if (effectShaderimg.transform.rotation.y == 0)
         {
-
-            effectShaderimg.transform.rotation = Quaternion.Euler(0, 0, 0);
+            effectShaderimg.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         else
         {
-            effectShaderimg.transform.rotation = Quaternion.Euler(0, 180, 0);
+            effectShaderimg.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 
