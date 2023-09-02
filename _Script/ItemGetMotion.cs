@@ -61,7 +61,7 @@ public class ItemGetMotion : MonoBehaviour
             moveY = moveY + 0.1f;
             yield return new WaitForSeconds(0.01f);
         }
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.5f);
         for (i_f = 1f; i_f > 0f; i_f -= 0.05f)
         {
             color.a = Mathf.Lerp(0f, 1f, i_f);
