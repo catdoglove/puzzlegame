@@ -174,7 +174,7 @@ public class CheckPlayerEvent : MonoBehaviour
             }
         }
 
-        if (PlayerPrefs.GetInt("lostbell", 0) == 0)
+        if (PlayerPrefs.GetInt("crowatted", 0) == 0)
         {
             if (PlayerPrefs.GetInt("crowatt", 0) == 1)
             {
@@ -187,7 +187,7 @@ public class CheckPlayerEvent : MonoBehaviour
                     GM.GetComponent<CharMove>().canMove = true;
                     GM.GetComponent<CharMove>().Speed = 2.5f;
                     SGM.GetComponent<SoundEvt>().soundCrowAttack();
-                    PlayerPrefs.SetInt("lostbell", 1);
+                    PlayerPrefs.SetInt("crowatted", 1);
                     this.gameObject.SetActive(false);
                 }
             }
@@ -598,6 +598,9 @@ public class CheckPlayerEvent : MonoBehaviour
                 break;
         }
         PlayerPrefs.SetInt(SetEventPref_str, a);
+
+
+
     }
 
     public void StopAndTalk()
@@ -699,6 +702,7 @@ public class CheckPlayerEvent : MonoBehaviour
         PlayerPrefs.SetInt("itemnum" + SetItemPref_i, o);
 
         PlayerPrefs.SetInt("changeitem", 1);
+
         if (hel==1)
         {
             PlayerPrefs.SetInt("inventorynum", (a-1));

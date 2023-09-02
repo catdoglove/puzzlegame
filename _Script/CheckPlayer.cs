@@ -1130,6 +1130,7 @@ public class CheckPlayer : MonoBehaviour
 
         
         Debug.Log("iiiiiiiiiiihelp" + PlayerPrefs.GetInt("fillpotint", 0));
+
         for (int i = 0; i < PlayerPrefs.GetInt("fillpotint", 0); i++)
         {
             if (GMI.GetComponent<Inventory>().items_i[i] == 11)

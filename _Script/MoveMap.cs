@@ -92,6 +92,7 @@ public class MoveMap : MonoBehaviour
 
                         endEvent3_obj.SetActive(false);
                         PlayerPrefs.SetInt("crowatt", 1);
+                        PlayerPrefs.SetInt("lostbell", 1);
                         this.gameObject.SetActive(false);
                     }
                     else
