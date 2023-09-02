@@ -174,15 +174,15 @@ public class CheckPlayerEvent : MonoBehaviour
             }
         }
 
-
-        if (PlayerPrefs.GetInt("cursorActive", 0) == 1)
+        
+        if (PlayerPrefs.GetInt("crowatt", 0) == 1)
         {
             balloon_obj.SetActive(false);
             if (Input.anyKey)
             {
+                crow_obj.SetActive(false);
                 balloon_obj.SetActive(false);
                 talkBall_obj.SetActive(false);
-                PlayerPrefs.SetInt("cursorActive", 0);
                 GM.GetComponent<CharMove>().canMove = true;
                 GM.GetComponent<CharMove>().Speed = 2.5f;
                 SGM.GetComponent<SoundEvt>().soundCrowAttack();
@@ -549,8 +549,6 @@ public class CheckPlayerEvent : MonoBehaviour
             case 19:// 까마귀 삽화
 
                 //moveGM.SetActive(true);
-                PlayerPrefs.SetInt("cursorActive", 1);
-                crow_obj.SetActive(false);
 
                 //GM.GetComponent<CharMove>().canMove = false;
                 break;

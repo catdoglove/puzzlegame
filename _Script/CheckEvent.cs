@@ -42,7 +42,7 @@ public class CheckEvent : MonoBehaviour
 
     public Vector3 position0;
 
-    public GameObject black_obj, gameOff_obj;
+    public GameObject black_obj, gameOff_obj, UIOff_obj;
 
     int in_i;
 
@@ -120,6 +120,7 @@ public class CheckEvent : MonoBehaviour
 
                         if (PlayerPrefs.GetInt("gametestover", 0) == 0)
                         {
+                            UIOff_obj.SetActive(false);
                             GM.GetComponent<CharMove>().canMove = false;
                             GM.GetComponent<CharMove>().Speed = 0f;
 
@@ -244,6 +245,7 @@ public class CheckEvent : MonoBehaviour
 
         GMC.GetComponent<ShaderEffect>().OffShader();
         gameOff_obj.SetActive(true);
+        PlayerPrefs.SetInt("cursorActive", 1);
         //SGM.GetComponent<SoundEvt>().soundCloseDoor();
         //black_obj.SetActive(false);
 

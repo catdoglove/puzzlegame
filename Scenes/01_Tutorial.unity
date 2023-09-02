@@ -1964,6 +1964,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28832419}
   m_CullTransparentMesh: 0
+--- !u!84 &34945996
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 864
+  m_Height: 486
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &39733573
 GameObject:
   m_ObjectHideFlags: 0
@@ -2949,7 +2984,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 486698214}
+  m_TargetTexture: {fileID: 34945996}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -12670,6 +12705,7 @@ MonoBehaviour:
   position0: {x: 0, y: 0, z: 0}
   black_obj: {fileID: 0}
   gameOff_obj: {fileID: 0}
+  UIOff_obj: {fileID: 0}
 --- !u!61 &339310463
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16562,6 +16598,7 @@ MonoBehaviour:
   position0: {x: 0, y: 0, z: 0}
   black_obj: {fileID: 0}
   gameOff_obj: {fileID: 0}
+  UIOff_obj: {fileID: 0}
 --- !u!61 &449278675
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17684,41 +17721,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!84 &486698214
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 864
-  m_Height: 486
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &490218760
 GameObject:
   m_ObjectHideFlags: 0
@@ -30982,6 +30984,7 @@ MonoBehaviour:
   position0: {x: 0, y: 0, z: 0}
   black_obj: {fileID: 1024082670}
   gameOff_obj: {fileID: 120630246}
+  UIOff_obj: {fileID: 1843623134}
 --- !u!61 &869629609
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40667,7 +40670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1107387874
 Transform:
   m_ObjectHideFlags: 0
@@ -44887,6 +44890,7 @@ MonoBehaviour:
   position0: {x: 0, y: 0, z: 0}
   black_obj: {fileID: 0}
   gameOff_obj: {fileID: 0}
+  UIOff_obj: {fileID: 0}
 --- !u!61 &1224281000
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52052,7 +52056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1482578063
 Transform:
   m_ObjectHideFlags: 0

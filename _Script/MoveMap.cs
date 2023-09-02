@@ -80,8 +80,7 @@ public class MoveMap : MonoBehaviour
 
                     if (crowA_b)
                     {
-                        //크로우어택 후 스페이스바 누르면 엔딩
-
+                        //크로우어택 후 
                         BGM2.SetActive(false);
                         GM.GetComponent<CharMove>().Speed = 0f;
                         GM.GetComponent<CharMove>().canMove = false;
@@ -90,6 +89,7 @@ public class MoveMap : MonoBehaviour
                         endEvent_obj.SetActive(true);
                         yield return new WaitForSeconds(5f);
                         endEvent2_obj.SetActive(true);
+                        PlayerPrefs.SetInt("crowatt", 1);
                         this.gameObject.SetActive(false);
                     }
                     else
@@ -138,6 +138,7 @@ public class MoveMap : MonoBehaviour
             //크로우어택 후 스페이스바 누르면 엔딩
             endEvent_obj.SetActive(true);
             endEvent2_obj.SetActive(true);
+
             BGM2.SetActive(false);
         }
         else
