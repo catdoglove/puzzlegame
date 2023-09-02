@@ -15,7 +15,7 @@ public class CheckEvent : MonoBehaviour
     int mapTime_i = 1;
     public Vector2 size;
     public LayerMask whatIsLayer;
-    public GameObject GM, GMI;
+    public GameObject GM, GMI, GMC;
 
     int nowMoving_i = 1;
     int nowDonMove_i = 0;
@@ -126,6 +126,7 @@ public class CheckEvent : MonoBehaviour
                             black_obj.SetActive(true);
                             StartCoroutine("FadeIn");
                             PlayerPrefs.SetInt("gametestover", 1);
+
                         }
                         //this.gameObject.SetActive(false);
                     }
@@ -241,6 +242,7 @@ public class CheckEvent : MonoBehaviour
             in_i = 0;
         }
 
+        GMC.GetComponent<ShaderEffect>().OffShader();
         gameOff_obj.SetActive(true);
         //SGM.GetComponent<SoundEvt>().soundCloseDoor();
         //black_obj.SetActive(false);
