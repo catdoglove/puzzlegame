@@ -180,7 +180,7 @@ public class CheckPlayerEvent : MonoBehaviour
             balloon_obj.SetActive(false);
             if (Input.anyKey)
             {
-                crow_obj.SetActive(false);
+                //crow_obj.SetActive(false);
                 balloon_obj.SetActive(false);
                 talkBall_obj.SetActive(false);
                 GM.GetComponent<CharMove>().canMove = true;
