@@ -307,7 +307,6 @@ public class MoveMap : MonoBehaviour
 
         if (crowSet_b)
         {
-            PlayerPrefs.SetInt("lostbell", 1);
         }
         if (soundback_b)
         {

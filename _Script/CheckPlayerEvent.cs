@@ -174,19 +174,22 @@ public class CheckPlayerEvent : MonoBehaviour
             }
         }
 
-        
-        if (PlayerPrefs.GetInt("crowatt", 0) == 1)
+        if (PlayerPrefs.GetInt("lostbell", 0) == 0)
         {
-            balloon_obj.SetActive(false);
-            if (Input.anyKey)
+            if (PlayerPrefs.GetInt("crowatt", 0) == 1)
             {
-                //crow_obj.SetActive(false);
-                balloon_obj.SetActive(false);
-                talkBall_obj.SetActive(false);
-                GM.GetComponent<CharMove>().canMove = true;
-                GM.GetComponent<CharMove>().Speed = 2.5f;
-                SGM.GetComponent<SoundEvt>().soundCrowAttack();
-                this.gameObject.SetActive(false);
+                if (Input.anyKey)
+                {
+                    //crow_obj.SetActive(false);
+
+                    balloon_obj.SetActive(false);
+                    talkBall_obj.SetActive(false);
+                    GM.GetComponent<CharMove>().canMove = true;
+                    GM.GetComponent<CharMove>().Speed = 2.5f;
+                    SGM.GetComponent<SoundEvt>().soundCrowAttack();
+                    PlayerPrefs.SetInt("lostbell", 1);
+                    this.gameObject.SetActive(false);
+                }
             }
         }
     }
