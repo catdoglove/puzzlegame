@@ -35,12 +35,18 @@ public class CheckEvent : MonoBehaviour
 
     public bool muteOff_b, muteOn_b;
 
-    public bool walk_b, walkW_b, pickup_b, broken_b;
+    public bool walk_b, walkW_b, pickup_b, broken_b, end_b;
     public GameObject triger_obj, plank_obj, plankHall_obj, plankA_obj;
     public GameObject rage_obj;
 
 
     public Vector3 position0;
+
+    public GameObject black_obj;
+
+    int in_i;
+
+    Color color;
 
     // Start is called before the first frame update
     void Start()
@@ -108,7 +114,17 @@ public class CheckEvent : MonoBehaviour
                             }
                         }
                     }
-                    
+
+                    if (end_b)
+                    {
+                        if (true)
+                        {
+                        }
+                        GM.GetComponent<CharMove>().canMove = false;
+                        GM.GetComponent<CharMove>().Speed = 0f;
+                        StartCoroutine("FadeIn");
+                        //this.gameObject.SetActive(false);
+                    }
 
 
 
@@ -190,6 +206,44 @@ public class CheckEvent : MonoBehaviour
         move_obj.GetComponent<Animator>().Play("ani_npc_fox");
 
         PlayerPrefs.SetInt("foxclear", 0);
+    }
+
+
+
+    IEnumerator FadeIn()
+    {
+
+        yield return new WaitForSeconds(0.5f);
+
+
+
+        in_i = 1;
+
+        black_obj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+
+
+        while (in_i == 1)
+        {
+
+            float i_f = 0f;
+
+            for (i_f = 0f; i_f < 1f; i_f += 0.05f)
+            {
+                color.a = Mathf.Lerp(0f, 1f, i_f);
+                black_obj.GetComponent<SpriteRenderer>().color = color;
+                yield return new WaitForSeconds(0.05f);
+            }
+            yield return new WaitForSeconds(1f);
+            in_i = 0;
+        }
+
+
+        SGM.GetComponent<SoundEvt>().soundCloseDoor();
+        black_obj.SetActive(false);
+
+
+        yield return new WaitForSeconds(1.5f); 
+        
     }
 
 }

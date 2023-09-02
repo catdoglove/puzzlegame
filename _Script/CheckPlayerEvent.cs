@@ -567,6 +567,24 @@ public class CheckPlayerEvent : MonoBehaviour
                     SGM.GetComponent<SoundEvt>().soundItemFail();
                 }
                 break;
+            case 21://특수 아이템요구 
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == 36)
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemUse();
+                    //move_obj.GetComponent<SpriteRenderer>().sprite = change_spr;
+                    //move_obj.gameObject.SetActive(false);
+                    GMI.GetComponent<Inventory>().DelItems();
+                    ItemSettingOnEvent();
+                }
+                else
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemFail();
+                    a++;
+                }
+
+                k = a;
+                //StopAndTalk();
+                break;
 
             default:
                 break;

@@ -2299,6 +2299,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!84 &46633182
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 864
+  m_Height: 486
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &48938279
 GameObject:
   m_ObjectHideFlags: 0
@@ -2948,7 +2983,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1240859650}
+  m_TargetTexture: {fileID: 46633182}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -12658,12 +12693,14 @@ MonoBehaviour:
   walkW_b: 0
   pickup_b: 0
   broken_b: 1
+  end_b: 0
   triger_obj: {fileID: 0}
   plank_obj: {fileID: 2098702265}
   plankHall_obj: {fileID: 1244180813}
   plankA_obj: {fileID: 1850516299}
   rage_obj: {fileID: 1648107670}
   position0: {x: 0, y: 0, z: 0}
+  black_obj: {fileID: 0}
 --- !u!61 &339310463
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16546,12 +16583,14 @@ MonoBehaviour:
   walkW_b: 0
   pickup_b: 0
   broken_b: 0
+  end_b: 0
   triger_obj: {fileID: 1801729191}
   plank_obj: {fileID: 0}
   plankHall_obj: {fileID: 0}
   plankA_obj: {fileID: 0}
   rage_obj: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  black_obj: {fileID: 0}
 --- !u!61 &449278675
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23238,7 +23277,7 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: raber3
-  EventNum_i: 0c000000050000000000000000000000000000000000000000000000000000000000000000000000
+  EventNum_i: 0c000000050000001500000005000000050000000000000000000000000000000000000000000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr: []
@@ -44583,12 +44622,14 @@ MonoBehaviour:
   walkW_b: 0
   pickup_b: 1
   broken_b: 0
+  end_b: 0
   triger_obj: {fileID: 0}
   plank_obj: {fileID: 2098702265}
   plankHall_obj: {fileID: 1244180813}
   plankA_obj: {fileID: 1850516299}
   rage_obj: {fileID: 1648107670}
   position0: {x: 0, y: 0, z: 0}
+  black_obj: {fileID: 0}
 --- !u!61 &1224281000
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -45381,41 +45422,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!84 &1240859650
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 569
-  m_Height: 320
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1244180813
 GameObject:
   m_ObjectHideFlags: 0
@@ -46993,8 +46999,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f69f87f9ad578cb459d185b4a3548918, type: 3}
   - {fileID: 21300000, guid: 680311d42bfb7074e9c1e1b497a477a2, type: 3}
   - {fileID: 21300000, guid: f69f87f9ad578cb459d185b4a3548918, type: 3}
-  - {fileID: 21300000, guid: 3447ae9c303c5654bb11568559642e6e, type: 3}
   - {fileID: 21300000, guid: 93e5cb18252be2047bbc767c83d1ec7b, type: 3}
+  - {fileID: 21300000, guid: 3447ae9c303c5654bb11568559642e6e, type: 3}
   - {fileID: 21300000, guid: cb2ec22f6f3c67449b7a382702c1ef36, type: 3}
   - {fileID: 21300000, guid: 4a8a7e7ecf2cf0c48a0a68ed65b91942, type: 3}
   - {fileID: 21300000, guid: 4c2c3c20ff8b3bf4bbb893463826d224, type: 3}
@@ -47036,8 +47042,8 @@ MonoBehaviour:
   selectedNow_i: -1
   items_i: 00000000000000000000000000000000000000000000000000000000
   itemsRot_spr:
-  - {fileID: 21300000, guid: 3447ae9c303c5654bb11568559642e6e, type: 3}
   - {fileID: 21300000, guid: 93e5cb18252be2047bbc767c83d1ec7b, type: 3}
+  - {fileID: 21300000, guid: 3447ae9c303c5654bb11568559642e6e, type: 3}
   - {fileID: 21300000, guid: cb2ec22f6f3c67449b7a382702c1ef36, type: 3}
   - {fileID: 21300000, guid: 4a8a7e7ecf2cf0c48a0a68ed65b91942, type: 3}
   selectWin_obj: {fileID: 1843623134}
@@ -50515,7 +50521,7 @@ MonoBehaviour:
   frontBG: {fileID: 1221732710}
   moveGM: {fileID: 560459893}
   SGM: {fileID: 879451249}
-  GMC: {fileID: 0}
+  GMC: {fileID: 201580947}
   player_obj: {fileID: 0}
 --- !u!61 &1426309074
 BoxCollider2D:
@@ -57006,7 +57012,7 @@ MonoBehaviour:
     m_Bits: 512
   GM: {fileID: 1236708166}
   GMI: {fileID: 0}
-  GMC: {fileID: 0}
+  GMC: {fileID: 201580947}
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
@@ -62354,7 +62360,7 @@ MonoBehaviour:
   frontBG: {fileID: 789295970}
   moveGM: {fileID: 0}
   SGM: {fileID: 879451249}
-  GMC: {fileID: 0}
+  GMC: {fileID: 201580947}
   player_obj: {fileID: 0}
 --- !u!95 &1807311261
 Animator:
@@ -69963,7 +69969,7 @@ MonoBehaviour:
   frontBG: {fileID: 0}
   moveGM: {fileID: 0}
   SGM: {fileID: 879451249}
-  GMC: {fileID: 0}
+  GMC: {fileID: 201580947}
   player_obj: {fileID: 1236708166}
 --- !u!1 &2071231024
 GameObject:
@@ -71846,7 +71852,7 @@ MonoBehaviour:
   onSound_b: 0
   SGM: {fileID: 0}
   BGM1: {fileID: 1221732710}
-  BGM2: {fileID: 0}
+  BGM2: {fileID: 1878541202}
   BGM4: {fileID: 0}
   door_b: 0
   char_b: 0

@@ -82,6 +82,7 @@ public class MoveMap : MonoBehaviour
                     {
                         //크로우어택 후 스페이스바 누르면 엔딩
 
+                        BGM2.SetActive(false);
                         GM.GetComponent<CharMove>().Speed = 0f;
                         GM.GetComponent<CharMove>().canMove = false;
                         endEvent3_obj.SetActive(true);
@@ -137,6 +138,7 @@ public class MoveMap : MonoBehaviour
             //크로우어택 후 스페이스바 누르면 엔딩
             endEvent_obj.SetActive(true);
             endEvent2_obj.SetActive(true);
+            BGM2.SetActive(false);
         }
         else
         {
