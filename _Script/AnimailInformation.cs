@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class AnimailInformation : MonoBehaviour
 {
     List<Dictionary<string, object>> data_animal; //csv파일
-    int allArr = 7; 
+    int allArr = 8; 
     string text_str;
-    public Text No_txt,basic_txt, detail_txt, detail_txt2;
+    public Text No_txt,basic_txt, basic_txt2, basic_txt3, detail_txt, detail_txt2, title_txt, name_txt;
     int pageNum = 0 , animalNum=3; //0토끼 2양 3곰, 
     public Sprite[] animalSpr, materialSpr;
-    public GameObject animalImg, material1, material2, material3, materialArea1, materialArea2, materialArea3, infoArea1, infoArea2;
+    public GameObject animalImg, material1, material2, material3, materialArea1, materialArea2, materialArea3, infoArea1, infoArea2, infoArea3, infoArea4;
     public SpriteRenderer spRer;
+    int sizeint, sizeint2, robotNum;
 
     private void OnEnable()
     {
@@ -26,10 +27,14 @@ public class AnimailInformation : MonoBehaviour
         if (PlayerPrefs.GetString("changeLanguage", "KOR") == "KOR")
         {
             data_animal = CSVReader.Read("CSV/animals_information");
+            title_txt.text = "알려지지 않은 맛";
+           // title_txt.text = "알려진 맛";
         }
         else if (PlayerPrefs.GetString("changeLanguage", "KOR") == "ENG")
         {
             data_animal = CSVReader.Read("CSV/animals_information_eng");
+            title_txt.text = "Unknown flavor";
+            //title_txt.text = "Known flavor";
         }
     }
 
@@ -55,7 +60,22 @@ public class AnimailInformation : MonoBehaviour
 
     }
 
-    public void showINFO_L()
+    void Update()
+    {
+
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            showINFO_L();
+        }
+
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            showINFO_R();
+        }
+
+    }
+
+        public void showINFO_L()
     {
 
         checkAnimal();
@@ -71,7 +91,10 @@ public class AnimailInformation : MonoBehaviour
 
         }
 
+
+
     }
+
 
     public void showINFO_R()
     {
@@ -92,6 +115,8 @@ public class AnimailInformation : MonoBehaviour
         materialArea3.SetActive(false);
         infoArea1.SetActive(false);
         infoArea2.SetActive(false);
+        infoArea3.SetActive(false);
+        infoArea4.SetActive(false);
         spRer.color = new Color(0, 0, 0, 1);
 
         animalImg.GetComponent<SpriteRenderer>().sprite = animalSpr[pageNum];
@@ -112,14 +137,46 @@ public class AnimailInformation : MonoBehaviour
         {
         }
 
+        changeTextSize();
+
         text_str = "" + data_animal[0]["No" + (pageNum + 1)];
-        basic_txt.text = text_str;
+        basic_txt.text = "<size="+sizeint+">" + text_str + "</size>";
 
 
         text_str = "" + data_animal[1]["No" + (pageNum + 1)];
-        detail_txt.text = text_str;
-        detail_txt2.text = text_str;
+        basic_txt2.text = "<size=" + sizeint + ">" + text_str + "</size>";
+        ;
+
+
+        if (true) //로봇자아
+        {
+            robotNum = 0; // 0은 꺼짐, 2는 켜짐
+        }
+
+        text_str = "" + data_animal[2 + robotNum]["No" + (pageNum + 1)];
+        basic_txt3.text = "<size=" + sizeint + ">" + text_str + "</size>";
+
+
+        text_str = "" + data_animal[3 + robotNum]["No" + (pageNum + 1)];
+        detail_txt.text = "<size=" + sizeint2 + ">" + text_str + "</size>";
+        detail_txt2.text = "<size=" + sizeint2 + ">" + text_str + "</size>";
     }
+
+    void changeTextSize()
+    {
+        
+        if (PlayerPrefs.GetString("changeLanguage", "KOR") == "KOR")
+        {
+            sizeint = 50;
+            sizeint2 = 45;
+        }
+        else if (PlayerPrefs.GetString("changeLanguage", "KOR") == "ENG")
+        {
+            sizeint = 43;
+            sizeint2 = 40;
+        }
+    }
+
 
     void unlockAnimal()
     {
@@ -140,7 +197,7 @@ public class AnimailInformation : MonoBehaviour
 
             if (PlayerPrefs.GetInt("canSeeInfo_detail" + pageNum, 0) == 99)//특수조건에서 보여지는 2번째 내용
             {
-                infoArea2.SetActive(true);
+                infoArea4.SetActive(true);
             }
 
         }
@@ -153,7 +210,7 @@ public class AnimailInformation : MonoBehaviour
 
     void showMaterial() //아이템 보여주기
     {
-        text_str = "" + data_animal[2]["No" + (pageNum + 1)];
+        text_str = "" + data_animal[6]["No" + (pageNum + 1)];
 
         if ((text_str == "x")) { }
         else
@@ -187,7 +244,7 @@ public class AnimailInformation : MonoBehaviour
         }
 
 
-        text_str = "" + data_animal[3]["No" + (pageNum + 1)];
+        text_str = "" + data_animal[7]["No" + (pageNum + 1)];
 
         if ((text_str == "x")) { }
         else
