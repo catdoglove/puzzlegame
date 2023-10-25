@@ -308,7 +308,7 @@ public class EventScenes : MonoBehaviour
     {
         int in_i = 1;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
 
 
 
@@ -327,7 +327,7 @@ public class EventScenes : MonoBehaviour
                 black_obj.GetComponent<SpriteRenderer>().color = color;
                 yield return new WaitForSeconds(0.05f);
             }
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f); //변경하기
             in_i = 0;
         }
 

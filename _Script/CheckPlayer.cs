@@ -1442,7 +1442,7 @@ public class CheckPlayer : MonoBehaviour
     /// 밀치기
     /// </summary>
     /// <returns></returns>
-    IEnumerator EventBack()
+    IEnumerator EventBack() //주인공이 밀려가는시간
     {
 
         PlayerPrefs.SetInt("bearbackmove", 0);
@@ -1453,7 +1453,7 @@ public class CheckPlayer : MonoBehaviour
         
         while (in_i == 1)
         {
-            position0.x = position0.x - 8f * Time.deltaTime;
+            position0.x = position0.x - 8f * Time.deltaTime;  //숫자가 작을수록 느리고 클수록 빠름
             player_obj.transform.position = position0;
 
             if (position0.x <= playerPos_obj.transform.position.x)
@@ -1467,16 +1467,16 @@ public class CheckPlayer : MonoBehaviour
         GM.GetComponent<CharMove>().canMove = true;
 
     }
-    IEnumerator BearL()
+    IEnumerator BearL()  //곰이 돌진하는 시간
     {
         //talk_b = false;
         int in_i = 1;
         position0 = bearM_obj.transform.position;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.7f); //곰딜레이
         while (in_i == 1)
         {
-            position0.x = position0.x - 10f * Time.deltaTime;
+            position0.x = position0.x - 10f * Time.deltaTime; //10f 무빙속도
             bearM_obj.transform.position = position0;
 
             if (position0.x <= b_position.x)
@@ -1489,10 +1489,10 @@ public class CheckPlayer : MonoBehaviour
         StartCoroutine("EventBack");
 
         SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
-        SGM.GetComponent<SoundEvt>().soundDamage();
+        SGM.GetComponent<SoundEvt>().soundBearPop();
 
     }
-    IEnumerator BearR()
+    IEnumerator BearR()  //곰이 뒷걸음치는 시간
     {
         StopTalk();
         talkBallB_obj.SetActive(false);
@@ -1504,7 +1504,7 @@ public class CheckPlayer : MonoBehaviour
 
         while (in_i == 1)
         {
-            position0.x = position0.x + 10f * Time.deltaTime;
+            position0.x = position0.x + 10f * Time.deltaTime; //10f 무빙속도
             bearM_obj.transform.position = position0;
 
             if (position0.x >= bbPos_obj.transform.position.x)

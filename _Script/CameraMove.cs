@@ -36,70 +36,75 @@ public class CameraMove : MonoBehaviour
     }
 
     
-    IEnumerator EventBack()
+    IEnumerator EventBack() //카메라 움직이기
     {
         moveY = c_obj.transform.position.y;
         moveX = c_obj.transform.position.x;
         while (c_obj.transform.position.x >= t_obj.position.x)
         {
-            moveX = moveX - 0.05f;
+            moveX = moveX - 0.04f;
             c_obj.transform.position = new Vector3(moveX, moveY,-10f);
             yield return new WaitForSeconds(0.01f);
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f); //양이 보는 시간
         CGM.GetComponent<SpriteRenderer>().flipX = true;
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(2.5f); //아이컨텍 시간
         s_obj.transform.rotation = Quaternion.Euler(0, 180, 0);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f); //양이 뒤돌아서 대기하는 시간
         StartCoroutine("EventFront");
     }
 
-    IEnumerator EventFront()
+    IEnumerator EventFront() //카메라 원래대로 돌아오기
     {
         moveY = c_obj.transform.position.y;
         moveX = c_obj.transform.position.x;
         while (c_obj.transform.position.x <= moveX1)
         {
-            moveX = moveX + 0.05f;
+            moveX = moveX + 0.04f;
             c_obj.transform.position = new Vector3(moveX, moveY, -10f);
             yield return new WaitForSeconds(0.01f);
         }
         StartCoroutine("move");
     }
 
-    IEnumerator move()
+    IEnumerator move() //주인공 걷는 시간
     {
         CGM.GetComponent<SpriteRenderer>().flipX = false;
         CGM.GetComponent<CharMove>().charAni.Play("ani_charnobell_walk");
         moveY = CGM.transform.position.y;
         moveX = CGM.transform.position.x;
-        for (int i = 0; i < 50; i++)
+
+        StartCoroutine("imgFadeOut");
+
+        for (int i = 0; i < 100; i++) //숫자가 클 수록 더 오래 걷는다.
         {
-            moveX = moveX + 0.05f;
+            moveX = moveX + 0.03f;
             CGM.transform.position = new Vector3(moveX, moveY, 0f);
             yield return new WaitForSeconds(0.01f);
         }
 
-        StartCoroutine("imgFadeOut");
     }
 
     IEnumerator imgFadeOut()
     {
-
+        yield return new WaitForSeconds(0.6f);
         moveY = CGM.transform.position.y;
         moveX = CGM.transform.position.x;
         b_obj.SetActive(true);
         color = b_obj.GetComponent<SpriteRenderer>().color;
-        for (float i = 0f; i < 1f; i += 0.05f)
+        for (float i = 0f; i <= 1f; i += 0.05f)
         {
             moveX = moveX + 0.01f;
-            CGM.transform.position = new Vector3(moveX, moveY, 0f);
+           // CGM.transform.position = new Vector3(moveX, moveY, 0f);
             color.a = Mathf.Lerp(0f, 1f, i);
             b_obj.GetComponent<SpriteRenderer>().color = color;
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.05f);
         }
+
+        StopCoroutine("move");
         CGM.GetComponent<CharMove>().canMove = true;
+        yield return new WaitForSeconds(0.8f);
         MGM.GetComponent<MoveMap>().MovingMap();
         MGM.GetComponent<MoveMap>().player_obj.transform.position = MGM.GetComponent<MoveMap>().mapRespawn_obj[0].transform.position;
         b_obj.SetActive(false);
