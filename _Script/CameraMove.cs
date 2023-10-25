@@ -65,14 +65,16 @@ public class CameraMove : MonoBehaviour
             c_obj.transform.position = new Vector3(moveX, moveY, -10f);
             yield return new WaitForSeconds(0.01f);
         }
-        StartCoroutine("imgFadeOut");
+        StartCoroutine("move");
     }
 
     IEnumerator move()
     {
+        CGM.GetComponent<SpriteRenderer>().flipX = false;
+        CGM.GetComponent<CharMove>().charAni.Play("ani_charnobell_walk");
         moveY = CGM.transform.position.y;
         moveX = CGM.transform.position.x;
-        while (CGM.transform.position.x <= e_obj.transform.position.x)
+        for (int i = 0; i < 50; i++)
         {
             moveX = moveX + 0.05f;
             CGM.transform.position = new Vector3(moveX, moveY, 0f);
@@ -85,8 +87,6 @@ public class CameraMove : MonoBehaviour
     IEnumerator imgFadeOut()
     {
 
-        CGM.GetComponent<SpriteRenderer>().flipX = false;
-        CGM.GetComponent<CharMove>().charAni.Play("ani_charnobell_walk");
         moveY = CGM.transform.position.y;
         moveX = CGM.transform.position.x;
         b_obj.SetActive(true);

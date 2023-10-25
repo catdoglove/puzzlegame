@@ -1174,6 +1174,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &15719632
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2157,6 +2158,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &44126564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2965,7 +2967,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 231569707}
+  m_TargetTexture: {fileID: 457790819}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -4918,6 +4920,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 1
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &117358293
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5549,6 +5552,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &120787851
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5761,6 +5765,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &125048855
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6567,6 +6572,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &146705587
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9345,41 +9351,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228424052}
   m_CullTransparentMesh: 0
---- !u!84 &231569707
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 640
-  m_Height: 480
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &241739185
 GameObject:
   m_ObjectHideFlags: 0
@@ -9580,6 +9551,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &243907410
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13062,6 +13034,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &341575721
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13961,6 +13934,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &365188950
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16953,6 +16927,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!84 &457790819
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 785
+  m_Height: 442
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &459734973
 GameObject:
   m_ObjectHideFlags: 0
@@ -17541,6 +17550,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &468955157
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18610,6 +18620,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 1
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &496115207
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19543,6 +19554,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &519273596
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20383,6 +20395,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &544538652
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21085,6 +21098,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &560459896
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24522,6 +24536,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &671445577
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26928,6 +26943,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &737438134
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33126,6 +33142,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &891097678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33551,6 +33568,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &896677059
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34032,6 +34050,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &906247536
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34294,6 +34313,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &909781963
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34884,6 +34904,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &929992913
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35607,6 +35628,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &946681229
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37372,6 +37394,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &974808699
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37551,6 +37574,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &979907017
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37765,9 +37789,9 @@ MonoBehaviour:
   GMI: {fileID: 1283954030}
   GMC: {fileID: 0}
   openSound_b: 1
-  onSound_b: 0
+  onSound_b: 1
   SGM: {fileID: 879451249}
-  BGM1: {fileID: 0}
+  BGM1: {fileID: 1221732710}
   BGM2: {fileID: 0}
   BGM4: {fileID: 0}
   door_b: 1
@@ -37801,6 +37825,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &988219815
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39568,6 +39593,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1044358946
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40870,6 +40896,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1083547894
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41468,6 +41495,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1094197552
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43604,6 +43632,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1161604708
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44633,6 +44662,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 168321466}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1188507385
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51204,6 +51234,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1346804527
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52320,6 +52351,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1400179496
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -53405,6 +53437,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1450581824
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -55828,7 +55861,7 @@ MonoBehaviour:
   - {fileID: 1687977670}
   - {fileID: 572611130}
   mapRespawn_obj:
-  - {fileID: 1083670301}
+  - {fileID: 1927013673}
   mapToGo_i: 3
   mapNow_i: 0
   mapRespawn_i: 0
@@ -55844,7 +55877,7 @@ MonoBehaviour:
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 879451249}
-  BGM1: {fileID: 0}
+  BGM1: {fileID: 1221732710}
   BGM2: {fileID: 0}
   BGM4: {fileID: 0}
   door_b: 0
@@ -55878,6 +55911,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 1
 --- !u!61 &1561230746
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -56103,8 +56137,8 @@ MonoBehaviour:
   map2_obj:
   - {fileID: 1213087001}
   - {fileID: 342330614}
-  - {fileID: 2028920183}
-  - {fileID: 818920354}
+  - {fileID: 1213087001}
+  - {fileID: 1687977670}
   - {fileID: 572611130}
   mapRespawn_obj:
   - {fileID: 280611915}
@@ -56121,9 +56155,9 @@ MonoBehaviour:
   GMI: {fileID: 0}
   GMC: {fileID: 0}
   openSound_b: 0
-  onSound_b: 0
+  onSound_b: 1
   SGM: {fileID: 0}
-  BGM1: {fileID: 0}
+  BGM1: {fileID: 1221732710}
   BGM2: {fileID: 0}
   BGM4: {fileID: 0}
   door_b: 0
@@ -56157,6 +56191,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1562199868
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -57600,6 +57635,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1600947036
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -58133,7 +58169,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614268504}
   m_LocalRotation: {x: -0, y: -0, z: 0.70714664, w: -0.707067}
-  m_LocalPosition: {x: 3.33, y: 0.07, z: 0}
+  m_LocalPosition: {x: 7.99, y: 0.07, z: 0}
   m_LocalScale: {x: 76.10861, y: 17.48565, z: 1}
   m_Children: []
   m_Father: {fileID: 1687977671}
@@ -58834,6 +58870,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 168321466}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1638960266
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59349,6 +59386,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1658599333
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59753,6 +59791,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 1
+  offSound_b: 0
 --- !u!61 &1666469026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60168,6 +60207,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1674407428
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62055,6 +62095,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1708340189
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -63756,6 +63797,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1764746793
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -66382,6 +66424,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1845382663
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -66954,6 +66997,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1859774569
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -68413,6 +68457,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1907654314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -71152,7 +71197,7 @@ MonoBehaviour:
   openSound_b: 0
   onSound_b: 0
   SGM: {fileID: 0}
-  BGM1: {fileID: 0}
+  BGM1: {fileID: 1221732710}
   BGM2: {fileID: 0}
   BGM4: {fileID: 0}
   door_b: 0
@@ -71186,6 +71231,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &1989034008
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -71943,6 +71989,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 1
+  offSound_b: 0
 --- !u!61 &2014545238
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -72959,6 +73006,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &2047061616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -74469,6 +74517,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &2082945986
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -75308,6 +75357,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &2109382158
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -75646,6 +75696,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &2116537374
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -76413,6 +76464,7 @@ MonoBehaviour:
   hideEvent1_obj: {fileID: 0}
   muteOff_b: 0
   muteOn_b: 0
+  offSound_b: 0
 --- !u!61 &2138150723
 BoxCollider2D:
   m_ObjectHideFlags: 0

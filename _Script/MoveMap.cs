@@ -35,7 +35,7 @@ public class MoveMap : MonoBehaviour
     public GameObject door1_obj, door2_obj;
     public GameObject endEvent_obj, endEvent2_obj, endEvent3_obj, hideEvent1_obj;
 
-    public bool muteOff_b, muteOn_b;
+    public bool muteOff_b, muteOn_b, offSound_b;
 
     
 
@@ -184,6 +184,12 @@ public class MoveMap : MonoBehaviour
             {
                 BGM1.SetActive(true);
             }
+
+            if (offSound_b == true)
+            {
+                BGM1.SetActive(false);
+            }
+
 
             if (muteOff_b)
             {

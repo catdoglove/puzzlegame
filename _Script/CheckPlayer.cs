@@ -1418,6 +1418,7 @@ public class CheckPlayer : MonoBehaviour
     /// </summary>
     void SetQuest()
     {
+        q3_obj.transform.position = new Vector2(o1_obj.transform.position.x, q3_obj.transform.position.y);
         q1_obj.SetActive(true);
         q2_obj.SetActive(true);
         q3_obj.SetActive(true);
@@ -1450,11 +1451,9 @@ public class CheckPlayer : MonoBehaviour
         int in_i = 1;
         position0 = player_obj.transform.position;
         
-        //SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
-        //SGM.GetComponent<SoundEvt>().soundDamage();
         while (in_i == 1)
         {
-            position0.x = position0.x - 20f * Time.deltaTime;
+            position0.x = position0.x - 8f * Time.deltaTime;
             player_obj.transform.position = position0;
 
             if (position0.x <= playerPos_obj.transform.position.x)
@@ -1473,10 +1472,11 @@ public class CheckPlayer : MonoBehaviour
         //talk_b = false;
         int in_i = 1;
         position0 = bearM_obj.transform.position;
-        
+
+        yield return new WaitForSeconds(1f);
         while (in_i == 1)
         {
-            position0.x = position0.x - 20f * Time.deltaTime;
+            position0.x = position0.x - 10f * Time.deltaTime;
             bearM_obj.transform.position = position0;
 
             if (position0.x <= b_position.x)
@@ -1487,6 +1487,9 @@ public class CheckPlayer : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         StartCoroutine("EventBack");
+
+        SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
+        SGM.GetComponent<SoundEvt>().soundDamage();
 
     }
     IEnumerator BearR()
@@ -1499,10 +1502,9 @@ public class CheckPlayer : MonoBehaviour
         int in_i = 1;
         position0 = bearM_obj.transform.position;
 
-        yield return new WaitForSeconds(0.1f);
         while (in_i == 1)
         {
-            position0.x = position0.x + 20f * Time.deltaTime;
+            position0.x = position0.x + 10f * Time.deltaTime;
             bearM_obj.transform.position = position0;
 
             if (position0.x >= bbPos_obj.transform.position.x)
