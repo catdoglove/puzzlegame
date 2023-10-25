@@ -297,6 +297,15 @@ public class CharMove : MonoBehaviour
         rigid2D.velocity = new Vector2(h, v) * Speed;
     }
 
+    public void Sub()
+    {
+        charAni.Play("ani_char_walk");
+    }
+    public void GoWalk()
+    {
+        rigid2D.velocity = new Vector2(1, v) * 10;
+    }
+
 
 /// <summary>
 /// 대기모션리스트

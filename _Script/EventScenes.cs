@@ -43,21 +43,28 @@ public class EventScenes : MonoBehaviour
 
     public GameObject black_obj;
 
+    public bool rand_b;
+
+    public GameObject[] rand_obj, rand2_obj;
+    public int rand_i;
 
     // Start is called before the first frame update
     void Start()
     {
         eventP_i = 0;
 
+        
         StartCoroutine("StartEvent");
 
         GM.GetComponent<CharMove>().canMove = false;
-
+        
 
         if (PlayerPrefs.GetString("changeLanguage", "") == "ENG")
         {
             note_obj.GetComponent<Image>().sprite = letter_spr;
         }
+
+        SetWorld();
     }
 
     // Update is called once per frame
@@ -362,5 +369,24 @@ public class EventScenes : MonoBehaviour
         }
         fade_obj.transform.position = new Vector2(15f, 15f);
         */
+    }
+
+    void SetWorld()
+    {
+        rand_i = Random.Range(0, 2);
+
+        if (rand_i==0)
+        {
+            for (int i = 0; i < rand_obj.Length; i++)
+            {
+                rand_obj[i].SetActive(false);
+                rand2_obj[i].SetActive(true);
+            }
+        }
+        else
+        {
+
+        }
+
     }
 }

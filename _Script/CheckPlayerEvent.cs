@@ -593,6 +593,11 @@ public class CheckPlayerEvent : MonoBehaviour
                 k = a;
                 //StopAndTalk();
                 break;
+            case 22:
+                moveGM.SetActive(true);
+
+                GM.GetComponent<CharMove>().canMove = false;
+                break;
 
             default:
                 break;

@@ -88,7 +88,7 @@ public class CheckPlayer : MonoBehaviour
     public string aniTalk_str, ani_str;
     public Animator all_Ani;
 
-    public bool esterEgg_b, sheep_b,hidden_b, dontdis_b, function_b;
+    public bool esterEgg_b, sheep_b, hidden_b, dontdis_b, function_b;
 
     public GameObject BGM1, pop_obj;
     public Animator stop_Ani;
@@ -99,6 +99,11 @@ public class CheckPlayer : MonoBehaviour
 
 
     public GameObject q1_obj, q2_obj, q3_obj, q4_obj, o1_obj, o2_obj, o3_obj, o4_obj;
+
+    public GameObject player_obj, playerPos_obj;
+
+    public GameObject bbPos_obj, bearM_obj;
+    public Vector3 b_position;
 
     private void OnEnable()
     {
@@ -114,7 +119,7 @@ public class CheckPlayer : MonoBehaviour
         else
         {
             //ani_str = all_Ani;
-            if (aniTalk_str=="")
+            if (aniTalk_str == "")
             {
                 aniTalk_str = ani_str + "_talk";
             }
@@ -345,9 +350,9 @@ public class CheckPlayer : MonoBehaviour
 
 
 
-        if ((PlayerPrefs.GetInt("itemnum" + 1, 0) == 1|| PlayerPrefs.GetInt("itemnum" + 1, 0)==2) && SetItemPref_i==1)
+        if ((PlayerPrefs.GetInt("itemnum" + 1, 0) == 1 || PlayerPrefs.GetInt("itemnum" + 1, 0) == 2) && SetItemPref_i == 1)
         {
-            int num =PlayerPrefs.GetInt("itemnum" + 1, 0);
+            int num = PlayerPrefs.GetInt("itemnum" + 1, 0);
             num++;
             PlayerPrefs.SetInt("itemnum" + 1, num);
         }
@@ -423,7 +428,7 @@ public class CheckPlayer : MonoBehaviour
         }
         GMI.GetComponent<ItemGetMotion>().fade_obj.transform.position = this.transform.position;
         GMI.GetComponent<ItemGetMotion>().FadeItem();
-        
+
 
         balloon_obj.SetActive(false);
         candy();
@@ -547,14 +552,14 @@ public class CheckPlayer : MonoBehaviour
                 }
             }
         }
-    
+
 
 
         //this.GetComponent<Animation>().Play();
 
         if (ani_str != "")
         {
-            if (all_Ani==null)
+            if (all_Ani == null)
             {
                 this.GetComponent<Animator>().Play(aniTalk_str);
             }
@@ -614,6 +619,11 @@ public class CheckPlayer : MonoBehaviour
                 StopTalk();
                 talkBallB_obj.SetActive(false);
                 a--;
+
+                if (PlayerPrefs.GetInt("bearbackmove", 0) == 1)
+                {
+                    StartCoroutine("BearR");
+                }   
                 break;
             case 6://아래 이동
                 StopTalk();
@@ -628,7 +638,7 @@ public class CheckPlayer : MonoBehaviour
                 break;
             case 8://말풍선 띄우고 특수 아이템요구 아이템제거
                 a++;
-                if (PlayerPrefs.GetInt("selecteditemnum", 0)==19)
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == 19)
                 {
                     PlayerPrefs.SetInt("selecteditemnum", 18);
                 }
@@ -704,7 +714,7 @@ public class CheckPlayer : MonoBehaviour
                 talkBallB_obj.SetActive(true);
                 StartCoroutine("talkBall");
 
-                
+
                 break;
             case 9://말풍선 띄우고 특수 플레그 요구
                 TalkSound();
@@ -805,13 +815,13 @@ public class CheckPlayer : MonoBehaviour
                 //this.GetComponent<Animation>().Play();
                 break;
             case 18://이동 오른쪽
-                
-                    StopTalk();
-                    talkBallB_obj.SetActive(false);
-                    StartCoroutine("EventR");
-                    a++;
-                    bearColl_obj.SetActive(true);
-                    bearColl_obj.GetComponent<SpriteRenderer>().sprite = candy_spr;
+
+                StopTalk();
+                talkBallB_obj.SetActive(false);
+                StartCoroutine("EventR");
+                a++;
+                bearColl_obj.SetActive(true);
+                bearColl_obj.GetComponent<SpriteRenderer>().sprite = candy_spr;
 
 
                 break;
@@ -835,9 +845,9 @@ public class CheckPlayer : MonoBehaviour
                     giveItemPref_i = 18;
                     SetItemPref_i = 21;
                     SetDogam2();
-                    
+
                     if (stick_b)
-                    { 
+                    {
                         stick_obj.SetActive(true);
                     }
                 }
@@ -899,14 +909,14 @@ public class CheckPlayer : MonoBehaviour
                 a++;
 
                 StopAndTalk();
-                    TalkSound();
-                    if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
-                    {
-                        a++;
-                        GMI.GetComponent<Inventory>().DelItems();
-                        SetDogam2();
+                TalkSound();
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    a++;
+                    GMI.GetComponent<Inventory>().DelItems();
+                    SetDogam2();
                     PlayerPrefs.SetInt("foxq", 1);
-                    }
+                }
 
                 Debug.Log("awe" + a);
                 StopCoroutine("talkBall");
@@ -914,6 +924,43 @@ public class CheckPlayer : MonoBehaviour
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StartCoroutine("talkBall");
+                break;
+            case 26://말풍선 띄우고 특수 아이템요구 아이템제거
+                a++;
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == 19)
+                {
+                    PlayerPrefs.SetInt("selecteditemnum", 18);
+                }
+
+                StopAndTalk();
+                
+                    TalkSound();
+                    if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                    {
+                        a++;
+                        GMI.GetComponent<Inventory>().DelItems();
+                        SetDogam2();
+                    /*
+                    if (stick_b)
+                    { //stick_obj, makeBoad_obj;
+                        makeBoad_obj.SetActive(true);
+                    }
+                    */
+                    PlayerPrefs.SetInt("bearbackmove", 0);
+                }
+                else
+                {
+                    PlayerPrefs.SetInt("bearbackmove",1);
+                }
+
+                Debug.Log("awe" + a);
+                StopCoroutine("talkBall");
+                k = a;
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StartCoroutine("talkBall");
+
+
                 break;
             default:
                 break;
@@ -985,7 +1032,7 @@ public class CheckPlayer : MonoBehaviour
                 all_Ani.Play(ani_str);
             }
         }
-        Debug.Log("a"+ ani_str);
+        Debug.Log("a" + ani_str);
 
 
         if (sheep_b)
@@ -1004,7 +1051,7 @@ public class CheckPlayer : MonoBehaviour
             SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
             SGM.GetComponent<SoundEvt>().soundDamage();
         }
-        
+
     }
 
 
@@ -1045,7 +1092,7 @@ public class CheckPlayer : MonoBehaviour
             if (GMI.GetComponent<Inventory>().items_i[k] == 11)
             {
 
-                Debug.Log("aaaaaaa"+SetItemPref_i);
+                Debug.Log("aaaaaaa" + SetItemPref_i);
                 PlayerPrefs.SetInt("inventoryget" + k, 6);
                 if (SetItemPref_i == 8)
                 {
@@ -1081,7 +1128,7 @@ public class CheckPlayer : MonoBehaviour
                     }
                 }
             }
-            
+
 
 
             //GetItem_obj.SetActive(true);
@@ -1101,9 +1148,9 @@ public class CheckPlayer : MonoBehaviour
         PlayerPrefs.SetInt("itemnum" + SetItemPref_i, o);
 
         PlayerPrefs.SetInt("changeitem", 1);
-        if (hel==1)
+        if (hel == 1)
         {
-            PlayerPrefs.SetInt("inventorynum", (a-1));
+            PlayerPrefs.SetInt("inventorynum", (a - 1));
         }
 
 
@@ -1128,7 +1175,7 @@ public class CheckPlayer : MonoBehaviour
 
         int hel = 0;
 
-        
+
         Debug.Log("iiiiiiiiiiihelp" + PlayerPrefs.GetInt("fillpotint", 0));
 
         for (int i = 0; i < PlayerPrefs.GetInt("fillpotint", 0); i++)
@@ -1159,12 +1206,12 @@ public class CheckPlayer : MonoBehaviour
                     Debug.Log(PlayerPrefs.GetInt("inventoryget" + i, 0));
                     PlayerPrefs.SetInt("inventoryget" + i, 6);
                     PlayerPrefs.SetInt("itemnum" + 6, 1);
-                GMI.GetComponent<Inventory>().items_i[i] = 6;
+                    GMI.GetComponent<Inventory>().items_i[i] = 6;
                     hel = 1;
                 }
                 else
                 {
-                    
+
 
                 }
             }
@@ -1183,9 +1230,9 @@ public class CheckPlayer : MonoBehaviour
 
 
 
-            if (hel == 1)
-            {
-                PlayerPrefs.SetInt("inventorynum", (a - 1));
+        if (hel == 1)
+        {
+            PlayerPrefs.SetInt("inventorynum", (a - 1));
         }
         else
         {
@@ -1197,7 +1244,7 @@ public class CheckPlayer : MonoBehaviour
             {
                 PlayerPrefs.SetInt("fillpotint", a);
             }
-            
+
             PlayerPrefs.SetInt("itemgetpoint", a);
 
             //아이템갯수증가
@@ -1208,10 +1255,10 @@ public class CheckPlayer : MonoBehaviour
             PlayerPrefs.SetInt("itemnum" + SetItemPref_i, o);
         }
 
-            if (PlayerPrefs.GetInt("inventoryget" + (a + 1), 0) > 0)
-            {
-                PlayerPrefs.SetInt("itemgetpoint", (PlayerPrefs.GetInt("fillpotint", 0) + 1));
-            }
+        if (PlayerPrefs.GetInt("inventoryget" + (a + 1), 0) > 0)
+        {
+            PlayerPrefs.SetInt("itemgetpoint", (PlayerPrefs.GetInt("fillpotint", 0) + 1));
+        }
         //}
 
 
@@ -1220,19 +1267,19 @@ public class CheckPlayer : MonoBehaviour
         GMI.GetComponent<ItemGetMotion>().fade_obj.GetComponent<SpriteRenderer>().sprite = item_spr;
         GMI.GetComponent<ItemGetMotion>().fade_obj.transform.position = this.transform.position;
         GMI.GetComponent<ItemGetMotion>().FadeItem();
-        
+
 
     }
 
 
 
-        IEnumerator talkBall()
+    IEnumerator talkBall()
     {
         int c = 1;
         int s = 0;
         while (c <= 20)
         {
-            if (s==0)
+            if (s == 0)
             {
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[k];
                 s = 1;
@@ -1380,4 +1427,93 @@ public class CheckPlayer : MonoBehaviour
         o3_obj.SetActive(false);
         o4_obj.SetActive(false);
     }
+
+    /// <summary>
+    /// 곰뒤로밀치기
+    /// </summary>
+    void SetMoveBack()
+    {
+
+    }
+
+
+    /// <summary>
+    /// 밀치기
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator EventBack()
+    {
+
+        PlayerPrefs.SetInt("bearbackmove", 0);
+        GM.GetComponent<CharMove>().canMove = false;
+        //talk_b = false;
+        int in_i = 1;
+        position0 = player_obj.transform.position;
+        
+        //SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
+        //SGM.GetComponent<SoundEvt>().soundDamage();
+        while (in_i == 1)
+        {
+            position0.x = position0.x - 20f * Time.deltaTime;
+            player_obj.transform.position = position0;
+
+            if (position0.x <= playerPos_obj.transform.position.x)
+            {
+                in_i = 0;
+            }
+
+            yield return new WaitForSeconds(0.01f);
+        }
+        //talk_b = true;
+        GM.GetComponent<CharMove>().canMove = true;
+
+    }
+    IEnumerator BearL()
+    {
+        //talk_b = false;
+        int in_i = 1;
+        position0 = bearM_obj.transform.position;
+        
+        while (in_i == 1)
+        {
+            position0.x = position0.x - 20f * Time.deltaTime;
+            bearM_obj.transform.position = position0;
+
+            if (position0.x <= b_position.x)
+            {
+                in_i = 0;
+            }
+
+            yield return new WaitForSeconds(0.01f);
+        }
+        StartCoroutine("EventBack");
+
+    }
+    IEnumerator BearR()
+    {
+        StopTalk();
+        talkBallB_obj.SetActive(false);
+        b_position = bearM_obj.transform.position;
+        GM.GetComponent<CharMove>().canMove = false;
+        //talk_b = false;
+        int in_i = 1;
+        position0 = bearM_obj.transform.position;
+
+        yield return new WaitForSeconds(0.1f);
+        while (in_i == 1)
+        {
+            position0.x = position0.x + 20f * Time.deltaTime;
+            bearM_obj.transform.position = position0;
+
+            if (position0.x >= bbPos_obj.transform.position.x)
+            {
+                in_i = 0;
+            }
+
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        StartCoroutine("BearL");
+    }
+
 }

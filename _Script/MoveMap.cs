@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
 
 public class MoveMap : MonoBehaviour
 {
@@ -27,12 +28,12 @@ public class MoveMap : MonoBehaviour
     public GameObject SGM;
     public GameObject BGM1, BGM2, BGM4;
 
-    public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b, rot_b, crowA_b;
+    public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b, rot_b, crowA_b, secret_b, secret2_b;
     public bool lakeOut_b, caveRoad_b, caveEnter_b, crowSet_b, setEff_b, hidden2_b, waterOut_b, flip_b, BGM_b, soundback_b;
 
 
     public GameObject door1_obj, door2_obj;
-    public GameObject endEvent_obj, endEvent2_obj, endEvent3_obj;
+    public GameObject endEvent_obj, endEvent2_obj, endEvent3_obj, hideEvent1_obj;
 
     public bool muteOff_b, muteOn_b;
 
@@ -77,6 +78,17 @@ public class MoveMap : MonoBehaviour
                     else
                     {
 
+                    if (secret_b)
+                    {
+
+                        if (PlayerPrefs.GetInt("firsthideevent", 0) == 0)
+                        {
+                            sec();
+                            PlayerPrefs.SetInt("firsthideevent", 1);
+                        }
+
+                        yield return new WaitForSeconds(0.3f);
+                    }
 
                     if (crowA_b)
                     {
@@ -136,6 +148,8 @@ public class MoveMap : MonoBehaviour
     /// </summary>
     public void MovingMap()
     {
+
+
         if (crowA_b)
         {
             //크로우어택 후 스페이스바 누르면 엔딩
@@ -313,6 +327,17 @@ public class MoveMap : MonoBehaviour
         {
             BGM4.GetComponent<AudioSource>().volume = 1f;
         }
+
+        if (secret2_b)
+        {
+            hideEvent1_obj.SetActive(false);
+        }
+    }
+
+    void sec()
+    {
+        hideEvent1_obj.SetActive(true);
+
     }
 
     void WaitSec()

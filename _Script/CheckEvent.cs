@@ -35,7 +35,7 @@ public class CheckEvent : MonoBehaviour
 
     public bool muteOff_b, muteOn_b;
 
-    public bool walk_b, walkW_b, pickup_b, broken_b, end_b;
+    public bool walk_b, walkW_b, pickup_b, broken_b, end_b,sheep_b;
     public GameObject triger_obj, plank_obj, plankHall_obj, plankA_obj;
     public GameObject rage_obj;
 
@@ -47,6 +47,8 @@ public class CheckEvent : MonoBehaviour
     int in_i;
 
     Color color;
+
+    public GameObject SheepC_obj;
 
     // Start is called before the first frame update
     void Start()
@@ -98,6 +100,12 @@ public class CheckEvent : MonoBehaviour
                                 block();
                             }
                         }
+
+                    }
+                    if (sheep_b)
+                    {
+                        GM.GetComponent<CharMove>().canMove = false;
+                        SheepC_obj.SetActive(true);
 
                     }
                     if (broken_b)
