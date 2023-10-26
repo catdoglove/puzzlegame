@@ -1421,7 +1421,7 @@ public class CheckPlayer : MonoBehaviour
     /// </summary>
     void SetQuest()
     {
-        q3_obj.transform.position = new Vector2(o1_obj.transform.position.x, q3_obj.transform.position.y);
+        q4_obj.transform.position = new Vector2(o4_obj.transform.position.x, q4_obj.transform.position.y);
         q1_obj.SetActive(true);
         q2_obj.SetActive(true);
         q3_obj.SetActive(true);
@@ -1490,10 +1490,8 @@ public class CheckPlayer : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         StartCoroutine("EventBack");
-
         SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
         SGM.GetComponent<SoundEvt>().soundBearPop();
-
     }
     IEnumerator BearR()  //곰이 뒷걸음치는 시간
     {
