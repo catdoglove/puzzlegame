@@ -19,8 +19,9 @@ public class CameraMove : MonoBehaviour
     void Start()
     {
 
+        PlayerPrefs.SetInt("escdont", 1);
         BGM1.SetActive(false);
-        CGM.GetComponent<CharMove>().charAni.Play("ani_charnobell_stop");
+        CGM.GetComponent<CharMove>().charAni.Play("ani_char_stop");
         CGM.GetComponent<CharMove>().Speed = 0f;
         color.a = Mathf.Lerp(0f, 1f, 0f);
         b_obj.GetComponent<SpriteRenderer>().color = color;
@@ -80,7 +81,7 @@ public class CameraMove : MonoBehaviour
     {
         yield return new WaitForSeconds(0.9f);
         CGM.GetComponent<SpriteRenderer>().flipX = false;
-        CGM.GetComponent<CharMove>().charAni.Play("ani_charnobell_walk");
+        CGM.GetComponent<CharMove>().charAni.Play("ani_char_walk");
         moveY = CGM.transform.position.y;
         moveX = CGM.transform.position.x;
 
@@ -123,6 +124,7 @@ public class CameraMove : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         MGM.GetComponent<MoveMap>().MovingMap();
         MGM.GetComponent<MoveMap>().player_obj.transform.position = MGM.GetComponent<MoveMap>().mapRespawn_obj[0].transform.position;
+        PlayerPrefs.SetInt("escdont", 0);
         b_obj.SetActive(false);
 
         CGM.GetComponent<CharMove>().Speed = 2.5f;

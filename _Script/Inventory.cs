@@ -97,10 +97,14 @@ public class Inventory : MonoBehaviour
             Cursor.visible = false;
         }
 
-        if (Input.GetKey(KeyCode.Escape))
+
+        if (PlayerPrefs.GetInt("escdont", 0) == 0)
         {
-            showESCwindow();
-        }
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                showESCwindow();
+            }
+        }   
         /*
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {

@@ -9,8 +9,8 @@ public class SoundEvt : MonoBehaviour {
 	public AudioSource se_start, se_pickup, se_damage, se_open_object, se_jump, se_water_walk;
 
 	//이벤트 관련
-	public AudioClip sp_box_etc, sp_box_open, sp_box_bell, sp_crow_attack, sp_hide1, sp_doorclose, sp_bear_pop;
-	public AudioSource se_box_etc, se_box_open, se_box_bell, se_crow_attack, se_hide1, se_doorclose, se_bear_pop;
+	public AudioClip sp_box_etc, sp_box_open, sp_box_bell, sp_crow_attack, sp_hide1, sp_doorclose, sp_bear_pop, sp_cotton;
+	public AudioSource se_box_etc, se_box_open, se_box_bell, se_crow_attack, se_hide1, se_doorclose, se_bear_pop, se_cotton;
 
 	//걷기 관련
 	public AudioClip sp_walk, sp_walk_wood;
@@ -266,9 +266,18 @@ public class SoundEvt : MonoBehaviour {
 	{
 		putSound(se_hide1, sp_hide1);
 		auSE.Play();
-	}
+    }
 
-	public void putSound(AudioSource audioSE, AudioClip audioCP)
+    /// <summary>
+    /// 숨는소리
+    /// </summary>
+    public void soundCotton()
+    {
+        putSound(se_cotton, sp_cotton);
+        auSE.Play();
+    }
+
+    public void putSound(AudioSource audioSE, AudioClip audioCP)
 	{
 		audioSE = gameObject.GetComponent<AudioSource>();
 		audioSE.clip = audioCP;
