@@ -40,9 +40,10 @@ public class CameraMove : MonoBehaviour
     IEnumerator EventBack() //카메라 움직이기
     {
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
-        SGM.GetComponent<SoundEvt>().soundWalk();
+        SGM.GetComponent<SoundEvt>().soundTalkLow();
+        yield return new WaitForSeconds(0.5f);
 
         yield return new WaitForSeconds(0.01f);
         moveY = c_obj.transform.position.y;
@@ -58,7 +59,7 @@ public class CameraMove : MonoBehaviour
         CGM.GetComponent<SpriteRenderer>().flipX = true;
         yield return new WaitForSeconds(2.5f); //아이컨텍 시간
         s_obj.transform.rotation = Quaternion.Euler(0, 180, 0);
-        yield return new WaitForSeconds(1f); //양이 뒤돌아서 대기하는 시간
+        yield return new WaitForSeconds(0.8f); //양이 뒤돌아서 대기하는 시간
         StartCoroutine("EventFront");
     }
 
@@ -90,7 +91,7 @@ public class CameraMove : MonoBehaviour
             moveX = moveX + 0.03f;
             CGM.transform.position = new Vector3(moveX, moveY, 0f);
             yield return new WaitForSeconds(0.01f);
-            if (i%30==29)
+            if (i%30==10)
             {
                 SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
                 SGM.GetComponent<SoundEvt>().soundWalk();
