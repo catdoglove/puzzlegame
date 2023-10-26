@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SheepMIni : MonoBehaviour
 {
-    public GameObject cottonWin_obj,cotton1_obj, cotton2_obj;
+    public GameObject cottonWin_obj,cotton1_obj, cotton2_obj, cottonKey1_obj, cottonKey2_obj;
     public Sprite[] cotton_spr;
     public int a_i;
     public GameObject SGM;
@@ -25,6 +25,7 @@ public class SheepMIni : MonoBehaviour
         cotton1_obj.SetActive(true);
         cotton2_obj.SetActive(false);
         cotton1_obj.GetComponent<SpriteRenderer>().sprite = cotton_spr[a_i];
+        cottonKey2_obj.SetActive(false);
     }
 
     void DPress()
@@ -32,6 +33,7 @@ public class SheepMIni : MonoBehaviour
         cotton1_obj.SetActive(false);
         cotton2_obj.SetActive(true);
         cotton2_obj.GetComponent<SpriteRenderer>().sprite = cotton_spr[a_i];
+        cottonKey1_obj.SetActive(false);
     }
 
 
@@ -39,7 +41,7 @@ public class SheepMIni : MonoBehaviour
     {
         while (a==0)
         {
-            if (a_i == 4)
+            if (a_i == 5)
             {
                 yield return new WaitForSeconds(0.8f);
                 a = 1;
@@ -52,10 +54,10 @@ public class SheepMIni : MonoBehaviour
                     if (a_i % 2 == 1)
                     {
                         SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
-                        SGM.GetComponent<SoundEvt>().soundBoxWASD();
-                        yield return new WaitForSeconds(0.8f);
+                        SGM.GetComponent<SoundEvt>().soundCotton();
                         APress();
                         a_i++;
+                        yield return new WaitForSeconds(0.8f);
                     }
 
                 }
@@ -65,10 +67,10 @@ public class SheepMIni : MonoBehaviour
                     if (a_i % 2 == 0)
                     {
                         SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
-                        SGM.GetComponent<SoundEvt>().soundBoxWASD();
-                        yield return new WaitForSeconds(0.8f);
+                        SGM.GetComponent<SoundEvt>().soundCotton();
                         DPress();
                         a_i++;
+                        yield return new WaitForSeconds(0.8f);
                     }
                 }
 
