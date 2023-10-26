@@ -13,12 +13,13 @@ public class CameraMove : MonoBehaviour
     Color color;
 
 
-    public GameObject CGM,MGM;
+    public GameObject CGM,MGM,BGM1;
 
     // Start is called before the first frame update
     void Start()
     {
 
+        BGM1.SetActive(false);
         CGM.GetComponent<CharMove>().charAni.Play("ani_charnobell_stop");
         CGM.GetComponent<CharMove>().Speed = 0f;
         color.a = Mathf.Lerp(0f, 1f, 0f);

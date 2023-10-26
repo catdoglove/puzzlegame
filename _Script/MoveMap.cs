@@ -28,7 +28,7 @@ public class MoveMap : MonoBehaviour
     public GameObject SGM;
     public GameObject BGM1, BGM2, BGM4;
 
-    public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b, rot_b, crowA_b, secret_b, secret2_b;
+    public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b, rot_b, crowA_b, secret_b, secret2_b, sheep_b,sheepOff_b;
     public bool lakeOut_b, caveRoad_b, caveEnter_b, crowSet_b, setEff_b, hidden2_b, waterOut_b, flip_b, BGM_b, soundback_b;
 
 
@@ -37,7 +37,8 @@ public class MoveMap : MonoBehaviour
 
     public bool muteOff_b, muteOn_b, offSound_b;
 
-    
+    public GameObject sheep_obj, sheep1_obj, sheep2_obj;
+    public Sprite sheep_spr, sheepO_spr;
 
     // Start is called before the first frame update
     void Start()
@@ -88,6 +89,21 @@ public class MoveMap : MonoBehaviour
                         }
 
                         yield return new WaitForSeconds(0.3f);
+                    }
+
+                    if (sheep_b)
+                    {
+                        sheep1_obj.GetComponent<SpriteRenderer>().sprite = sheep_spr;
+                        sheep2_obj.GetComponent<SpriteRenderer>().sprite = sheep_spr;
+                        sheep_obj.GetComponent<SpriteRenderer>().sprite = sheep_spr;
+                        yield return new WaitForSeconds(0.1f);
+                    }
+                    if (sheepOff_b)
+                    {
+
+                        sheep1_obj.GetComponent<SpriteRenderer>().sprite = sheepO_spr;
+                        sheep2_obj.GetComponent<SpriteRenderer>().sprite = sheepO_spr;
+                        sheep_obj.GetComponent<SpriteRenderer>().sprite = sheepO_spr;
                     }
 
                     if (crowA_b)
@@ -341,6 +357,12 @@ public class MoveMap : MonoBehaviour
     }
 
     void sec()
+    {
+        hideEvent1_obj.SetActive(true);
+
+    }
+
+    void SheepW()
     {
         hideEvent1_obj.SetActive(true);
 

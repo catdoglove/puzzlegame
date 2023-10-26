@@ -88,7 +88,7 @@ public class CheckPlayer : MonoBehaviour
     public string aniTalk_str, ani_str;
     public Animator all_Ani;
 
-    public bool esterEgg_b, sheep_b, hidden_b, dontdis_b, function_b;
+    public bool esterEgg_b, sheep_b, hidden_b, dontdis_b, function_b, bearmb;
 
     public GameObject BGM1, pop_obj;
     public Animator stop_Ani;
@@ -622,7 +622,10 @@ public class CheckPlayer : MonoBehaviour
 
                 if (PlayerPrefs.GetInt("bearbackmove", 0) == 1)
                 {
-                    StartCoroutine("BearR");
+                    if (bearmb)
+                    {
+                        StartCoroutine("BearR");
+                    }
                 }   
                 break;
             case 6://아래 이동
