@@ -111,12 +111,21 @@ public class SoundEvt : MonoBehaviour {
 	{
 		putSound(se_water_walk, sp_water_walk);
 		auSE.Play();
-	}
+    }
 
-	/// <summary>
-	/// 튜토리얼 상자관련 WASD
-	/// </summary>
-	public void soundBoxWASD()
+    /// <summary>
+    /// 걷는소리
+    /// </summary>
+    public void soundWalk()
+    {
+        putSound(se_walk, sp_walk);
+        auSE.Play();
+    }
+
+    /// <summary>
+    /// 튜토리얼 상자관련 WASD
+    /// </summary>
+    public void soundBoxWASD()
 	{
 		putSound(se_box_etc, sp_box_etc);
 		auSE.Play();

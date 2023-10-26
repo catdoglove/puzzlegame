@@ -13,7 +13,7 @@ public class CameraMove : MonoBehaviour
     Color color;
 
 
-    public GameObject CGM,MGM,BGM1;
+    public GameObject CGM,MGM,BGM1, SGM;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +39,12 @@ public class CameraMove : MonoBehaviour
     
     IEnumerator EventBack() //카메라 움직이기
     {
+
+        yield return new WaitForSeconds(0.5f);
+        SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
+        SGM.GetComponent<SoundEvt>().soundWalk();
+
+        yield return new WaitForSeconds(0.01f);
         moveY = c_obj.transform.position.y;
         moveX = c_obj.transform.position.x;
         while (c_obj.transform.position.x >= t_obj.position.x)
@@ -71,6 +77,7 @@ public class CameraMove : MonoBehaviour
 
     IEnumerator move() //주인공 걷는 시간
     {
+        yield return new WaitForSeconds(0.9f);
         CGM.GetComponent<SpriteRenderer>().flipX = false;
         CGM.GetComponent<CharMove>().charAni.Play("ani_charnobell_walk");
         moveY = CGM.transform.position.y;
@@ -83,6 +90,11 @@ public class CameraMove : MonoBehaviour
             moveX = moveX + 0.03f;
             CGM.transform.position = new Vector3(moveX, moveY, 0f);
             yield return new WaitForSeconds(0.01f);
+            if (i%30==29)
+            {
+                SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
+                SGM.GetComponent<SoundEvt>().soundWalk();
+            }
         }
 
     }
@@ -102,6 +114,8 @@ public class CameraMove : MonoBehaviour
             b_obj.GetComponent<SpriteRenderer>().color = color;
             yield return new WaitForSeconds(0.05f);
         }
+        color.a = Mathf.Lerp(0f, 1f, 1f);
+        b_obj.GetComponent<SpriteRenderer>().color = color;
 
         StopCoroutine("move");
         CGM.GetComponent<CharMove>().canMove = true;
