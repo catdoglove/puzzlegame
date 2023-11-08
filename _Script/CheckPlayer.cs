@@ -105,6 +105,9 @@ public class CheckPlayer : MonoBehaviour
     public GameObject bbPos_obj, bearM_obj;
     public Vector3 b_position;
 
+    public GameObject miniGame_obj;
+
+
     private void OnEnable()
     {
         //StartCoroutine("Checking");
@@ -525,7 +528,7 @@ public class CheckPlayer : MonoBehaviour
     /// <summary>
     /// 이벤트값받아오고 진행처리해준다.
     /// </summary>
-    void EventSetting()
+    public void EventSetting()
     {
         SetDogam1();
         int a = 0;
@@ -717,7 +720,6 @@ public class CheckPlayer : MonoBehaviour
                 talkBallB_obj.SetActive(true);
                 StartCoroutine("talkBall");
 
-
                 break;
             case 9://말풍선 띄우고 특수 플레그 요구
                 TalkSound();
@@ -887,6 +889,12 @@ public class CheckPlayer : MonoBehaviour
                 }
                 TalkSound();
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[3];
+
+                    k = 3;
+                }
                 talkBallB_obj.SetActive(true);
                 StopCoroutine("talkBall");
                 StartCoroutine("talkBall");
@@ -897,11 +905,21 @@ public class CheckPlayer : MonoBehaviour
                 StopTalk();
                 talkBallB_obj.SetActive(false);
                 a--;
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[3];
+                    k = 3;
+                }
                 break;
             case 24://말풍선띄우고 다음으로
                 crow_Ani.Play("ani_npc_crow_talk");
                 TalkSound();
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[3];
+                    k = 3;
+                }
                 talkBallB_obj.SetActive(true);
                 StopCoroutine("talkBall");
                 StartCoroutine("talkBall");
@@ -965,7 +983,111 @@ public class CheckPlayer : MonoBehaviour
 
 
                 break;
+            case 27://솜사탕 미니 퍼즐
+                miniGame_obj.SetActive(true);
+                StopAndTalk();
+                break;
             default:
+                break;
+
+
+            case 28://말풍선 띄우고 특수 아이템요구 아이템제거
+                a++;
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == 19)
+                {
+                    PlayerPrefs.SetInt("selecteditemnum", 18);
+                }
+
+                StopAndTalk();
+
+                if (esterEgg_b)
+                {
+
+                    if (PlayerPrefs.GetInt("poped", 0) == 1)
+                    {
+                        if (PlayerPrefs.GetInt("selecteditemnum", 0) == 17)
+                        {
+                            SGM.GetComponent<SoundEvt>().soundItemSuccess();
+                            bearColl_obj.SetActive(true);
+                            StopTalk();
+
+                            a++;
+                            GMI.GetComponent<Inventory>().DelItems();
+                            SetDogam2();
+
+                            if (stick_b)
+                            { //stick_obj, makeBoad_obj;
+                                makeBoad_obj.SetActive(true);
+                            }
+                        }
+                        else
+                        {
+                            SGM.GetComponent<SoundEvt>().soundItemFail();
+                            StopTalk();
+                            a--;
+                        }
+                    }
+                    else
+                    {
+                        TalkSound();
+                        if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                        {
+
+                            a++;
+                            a++;
+                            GMI.GetComponent<Inventory>().DelItems();
+                            SetDogam2();
+
+                            if (stick_b)
+                            { //stick_obj, makeBoad_obj;
+                                makeBoad_obj.SetActive(true);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    TalkSound();
+                    if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                    {
+                        a++;
+                        a++;
+                        GMI.GetComponent<Inventory>().DelItems();
+                        SetDogam2();
+                        /*
+                        if (stick_b)
+                        { //stick_obj, makeBoad_obj;
+                            makeBoad_obj.SetActive(true);
+                        }
+                        */
+                    }
+
+                }
+
+                Debug.Log("awe" + a);
+                StopCoroutine("talkBall");
+                k = a;
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StartCoroutine("talkBall");
+
+                break;
+
+            case 29://말풍선 띄우고 특수 플레그 요구
+                TalkSound();
+                a++;
+                if (PlayerPrefs.GetInt("" + SetItemPref_str, 0) == 1)
+                {
+                    a++;
+                    a++;
+                    //SetDogam2();
+                }
+                StopCoroutine("talkBall");
+                k = a;
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StartCoroutine("talkBall");
+                StopAndTalk();
                 break;
         }
         PlayerPrefs.SetInt(SetEventPref_str, a);

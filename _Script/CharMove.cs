@@ -130,7 +130,7 @@ public class CharMove : MonoBehaviour
 
         //Debug.Log(charAni.speed);
 
-        if (Input.GetKey(KeyCode.RightShift))
+        if (Input.GetKey(KeyCode.RightShift)|| Input.GetKey(KeyCode.LeftShift))
         {
             //  if (ckCrash == 1) charspeed = crushSpeed;
             //  else charspeed = runSpeed;

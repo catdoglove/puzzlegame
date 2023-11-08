@@ -7,7 +7,7 @@ public class SheepMIni : MonoBehaviour
     public GameObject cottonWin_obj,cotton1_obj, cotton2_obj, cottonKey1_obj, cottonKey2_obj;
     public Sprite[] cotton_spr;
     public int a_i;
-    public GameObject SGM;
+    public GameObject SGM,CPGM;
     int a = 0;
 
     // Start is called before the first frame update
@@ -43,9 +43,16 @@ public class SheepMIni : MonoBehaviour
         {
             if (a_i == 5)
             {
-                yield return new WaitForSeconds(0.8f);
+                yield return new WaitForSeconds(0.4f);
                 a = 1;
                 cottonWin_obj.SetActive(false);
+                CPGM.GetComponent<CheckPlayer>().EventNum_i[CPGM.GetComponent<CheckPlayer>().num] = 15;
+                CPGM.GetComponent<CheckPlayer>().EventSetting();
+                a_i = 0;
+                cotton1_obj.SetActive(true);
+                cotton2_obj.SetActive(false);
+                cotton1_obj.GetComponent<SpriteRenderer>().sprite = cotton_spr[a_i];
+                cottonKey2_obj.SetActive(false);
             }
             else
             {

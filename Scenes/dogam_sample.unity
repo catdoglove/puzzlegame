@@ -2210,12 +2210,16 @@ MonoBehaviour:
   sp_crow_attack: {fileID: 8300000, guid: 8901b74a3e724524fa924e8078b92972, type: 3}
   sp_hide1: {fileID: 0}
   sp_doorclose: {fileID: 0}
+  sp_bear_pop: {fileID: 0}
+  sp_cotton: {fileID: 0}
   se_box_etc: {fileID: 0}
   se_box_open: {fileID: 0}
   se_box_bell: {fileID: 0}
   se_crow_attack: {fileID: 0}
   se_hide1: {fileID: 0}
   se_doorclose: {fileID: 0}
+  se_bear_pop: {fileID: 0}
+  se_cotton: {fileID: 0}
   sp_walk: {fileID: 8300000, guid: 30d0f00afcbfb6640864880f816c549f, type: 3}
   sp_walk_wood: {fileID: 8300000, guid: 4b7ea87201152bc4292a9f2efd14c822, type: 3}
   se_walk: {fileID: 0}
