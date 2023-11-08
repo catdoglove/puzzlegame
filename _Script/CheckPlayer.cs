@@ -1598,7 +1598,7 @@ public class CheckPlayer : MonoBehaviour
         int in_i = 1;
         position0 = bearM_obj.transform.position;
 
-        yield return new WaitForSeconds(0.7f); //곰딜레이
+        yield return new WaitForSeconds(0.4f); //곰딜레이
         while (in_i == 1)
         {
             position0.x = position0.x - 10f * Time.deltaTime; //10f 무빙속도
