@@ -165,6 +165,8 @@ public class MoveMap : MonoBehaviour
     public void MovingMap()
     {
 
+        GM.GetComponent<CharMove>().mark1_obj.SetActive(false);
+        GM.GetComponent<CharMove>().mark2_obj.SetActive(false);
 
         if (crowA_b)
         {

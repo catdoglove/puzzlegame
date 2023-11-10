@@ -991,7 +991,7 @@ public class CheckPlayer : MonoBehaviour
                 break;
 
 
-            case 28://말풍선 띄우고 특수 아이템요구 아이템제거
+            case 28://말풍선 띄우고 특수 아이템요구 아이템제거 8
                 a++;
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == 19)
                 {
@@ -1082,6 +1082,33 @@ public class CheckPlayer : MonoBehaviour
                     a++;
                     //SetDogam2();
                 }
+                StopCoroutine("talkBall");
+                k = a;
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StartCoroutine("talkBall");
+                StopAndTalk();
+                break;
+
+            case 30://말풍선 띄우고 특수 아이템요구 아이템제거20
+                TalkSound();
+                a++;
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    a++;
+                    a++;
+                    GMI.GetComponent<Inventory>().DelItems();
+                    giveItemPref_i = 18;
+                    SetItemPref_i = 21;
+                    SetDogam2();
+
+                    if (stick_b)
+                    {
+                        stick_obj.SetActive(true);
+                    }
+                }
+
+                Debug.Log("awe" + a);
                 StopCoroutine("talkBall");
                 k = a;
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];

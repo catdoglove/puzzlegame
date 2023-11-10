@@ -1989,6 +1989,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28832419}
   m_CullTransparentMesh: 0
+--- !u!84 &34902080
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 825
+  m_Height: 464
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &39733573
 GameObject:
   m_ObjectHideFlags: 0
@@ -2985,7 +3020,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 143009225}
+  m_TargetTexture: {fileID: 34902080}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -6510,41 +6545,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!84 &143009225
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 639
-  m_Height: 359
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &146705584
 GameObject:
   m_ObjectHideFlags: 0
@@ -7314,9 +7314,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8eb1aa14c58df7d46b1549b3c7443ebc, type: 3}
   - {fileID: 21300000, guid: 7354f69f616e10b4082c7ace883108a2, type: 3}
   - {fileID: 21300000, guid: 871fcb9740505f54887f0935df9c1d6d, type: 3}
+  - {fileID: 21300000, guid: a5b173a6da0ffb0489f2472c8a57a86b, type: 3}
   a_i: 0
   SGM: {fileID: 879451249}
   CPGM: {fileID: 2072454497}
+  CPSGM: {fileID: 307177330}
+  a: 0
+  b: 0
 --- !u!1 &158074824
 GameObject:
   m_ObjectHideFlags: 0
@@ -12067,24 +12071,24 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: sheep2h
-  EventNum_i: 1b00000001000000010000000a0000000a0000000a0000000a0000000a00000005000000
+  EventNum_i: 010000001b00000001000000010000000a0000000a0000000a0000000a00000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
   - {fileID: 21300000, guid: fd1dff7b86843b841bb76c0adf7354c6, type: 3}
+  - {fileID: 21300000, guid: fd1dff7b86843b841bb76c0adf7354c6, type: 3}
   - {fileID: 21300000, guid: 4e91923eecbfca54b9a9c170c7ad7198, type: 3}
   - {fileID: 21300000, guid: e9a99f94d31defe4fb88733339c9e7fd, type: 3}
-  - {fileID: 21300000, guid: 4e91923eecbfca54b9a9c170c7ad7198, type: 3}
+  - {fileID: 21300000, guid: e9a99f94d31defe4fb88733339c9e7fd, type: 3}
   - {fileID: 21300000, guid: 1ff15a1c5bc88dc4fbd6da001ff9c0b8, type: 3}
   - {fileID: 21300000, guid: 1ff15a1c5bc88dc4fbd6da001ff9c0b8, type: 3}
-  - {fileID: 21300000, guid: 9d09c0524ecb75b4b87b189a14868720, type: 3}
   - {fileID: 21300000, guid: 9d09c0524ecb75b4b87b189a14868720, type: 3}
   Event2_spr:
   - {fileID: 21300000, guid: 9196ba97314f25e4aba725feaf488f03, type: 3}
+  - {fileID: 21300000, guid: 9196ba97314f25e4aba725feaf488f03, type: 3}
   - {fileID: 21300000, guid: f663df8f2ab367042862bb1ae85e2bd7, type: 3}
   - {fileID: 21300000, guid: 7750cb39b2afe86419cc82170344a605, type: 3}
-  - {fileID: 21300000, guid: f663df8f2ab367042862bb1ae85e2bd7, type: 3}
-  - {fileID: 21300000, guid: 050abac63ab19a748a3d34be25a31cea, type: 3}
+  - {fileID: 21300000, guid: 7750cb39b2afe86419cc82170344a605, type: 3}
   - {fileID: 21300000, guid: 050abac63ab19a748a3d34be25a31cea, type: 3}
   - {fileID: 21300000, guid: 2a92c0e391abb8547be0f2582309b9d5, type: 3}
   - {fileID: 21300000, guid: 2a92c0e391abb8547be0f2582309b9d5, type: 3}
@@ -16759,7 +16763,7 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: catfish2
-  EventNum_i: 01000000030000000100000014000000050000000300000001000000080000000a0000000f00000001000000050000000a000000050000000500000005000000
+  EventNum_i: 01000000030000001e0000001400000005000000030000001c000000080000000a0000000f00000001000000050000000a000000050000000500000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
@@ -16770,7 +16774,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6d4739cbd92027348b83f05df45cff69, type: 3}
   - {fileID: 21300000, guid: 8ffa3eab334c5d34aa2459a9275ae752, type: 3}
   - {fileID: 21300000, guid: 6713e4f3543307a48a3b562f1a7eb695, type: 3}
-  - {fileID: 21300000, guid: 77f1a51f887d81249897523c6dbe55d3, type: 3}
+  - {fileID: 21300000, guid: 6713e4f3543307a48a3b562f1a7eb695, type: 3}
   - {fileID: 21300000, guid: 77f1a51f887d81249897523c6dbe55d3, type: 3}
   - {fileID: 21300000, guid: 953b5234c6a03104c9c006f3ad259ae2, type: 3}
   - {fileID: 21300000, guid: f589934d4b04da548939259b5744d7f5, type: 3}
@@ -16787,7 +16791,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: de13ca07b81f7de429d09336acafa0fd, type: 3}
   - {fileID: 21300000, guid: 78b11490154735a4ca49078c5646b361, type: 3}
   - {fileID: 21300000, guid: aaa60f4a22fa5bd47aa7f571119aadea, type: 3}
-  - {fileID: 21300000, guid: 9cda60c1dc1a24a41b45f316e60e973f, type: 3}
+  - {fileID: 21300000, guid: aaa60f4a22fa5bd47aa7f571119aadea, type: 3}
   - {fileID: 21300000, guid: 9cda60c1dc1a24a41b45f316e60e973f, type: 3}
   - {fileID: 21300000, guid: 3026730e831dacd4397c18a854dcc52f, type: 3}
   - {fileID: 21300000, guid: e4b727ec6ceea1e4898d3af66f8d6ea0, type: 3}
@@ -19353,7 +19357,7 @@ GameObject:
   - component: {fileID: 513080951}
   - component: {fileID: 513080950}
   m_Layer: 0
-  m_Name: line
+  m_Name: startblack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21445,7 +21449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move_i: 1
-  size: {x: 4, y: 3}
+  size: {x: 4, y: 4}
   whatIsLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -47720,6 +47724,8 @@ MonoBehaviour:
   se_walk_wood: {fileID: 0}
   GM: {fileID: 879451249}
   GM_B: {fileID: 1221732710}
+  mark1_obj: {fileID: 1648107670}
+  mark2_obj: {fileID: 491186851}
 --- !u!61 &1236708168
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59053,7 +59059,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5682404}
+  m_Offset: {x: 0, y: 0.37021518}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -59064,7 +59070,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 3.173304}
+  m_Size: {x: 4, y: 3.5693545}
   m_EdgeRadius: 0
 --- !u!4 &1612718017
 Transform:
@@ -71821,7 +71827,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 9
   m_Sprite: {fileID: -3073677169614696991, guid: 5039e68360b9bcc45bd47b6eb93774b7,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -74761,10 +74767,11 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: sheep2
-  EventNum_i: 1b00000001000000010000000a0000000a0000000a0000000a0000000a00000005000000
+  EventNum_i: 010000001b00000001000000010000000a0000000a0000000a0000000a00000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
+  - {fileID: 21300000, guid: fd1dff7b86843b841bb76c0adf7354c6, type: 3}
   - {fileID: 21300000, guid: fd1dff7b86843b841bb76c0adf7354c6, type: 3}
   - {fileID: 21300000, guid: 4e91923eecbfca54b9a9c170c7ad7198, type: 3}
   - {fileID: 21300000, guid: 1ff15a1c5bc88dc4fbd6da001ff9c0b8, type: 3}
@@ -74772,13 +74779,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9d09c0524ecb75b4b87b189a14868720, type: 3}
   - {fileID: 21300000, guid: 9d09c0524ecb75b4b87b189a14868720, type: 3}
   - {fileID: 21300000, guid: 9d09c0524ecb75b4b87b189a14868720, type: 3}
-  - {fileID: 21300000, guid: 9d09c0524ecb75b4b87b189a14868720, type: 3}
   Event2_spr:
+  - {fileID: 21300000, guid: 9196ba97314f25e4aba725feaf488f03, type: 3}
   - {fileID: 21300000, guid: 9196ba97314f25e4aba725feaf488f03, type: 3}
   - {fileID: 21300000, guid: f663df8f2ab367042862bb1ae85e2bd7, type: 3}
   - {fileID: 21300000, guid: 050abac63ab19a748a3d34be25a31cea, type: 3}
   - {fileID: 21300000, guid: 050abac63ab19a748a3d34be25a31cea, type: 3}
-  - {fileID: 21300000, guid: 2a92c0e391abb8547be0f2582309b9d5, type: 3}
   - {fileID: 21300000, guid: 2a92c0e391abb8547be0f2582309b9d5, type: 3}
   - {fileID: 21300000, guid: 2a92c0e391abb8547be0f2582309b9d5, type: 3}
   - {fileID: 21300000, guid: 2a92c0e391abb8547be0f2582309b9d5, type: 3}
