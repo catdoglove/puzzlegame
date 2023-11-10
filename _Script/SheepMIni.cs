@@ -53,7 +53,6 @@ public class SheepMIni : MonoBehaviour
             if (a_i >= 5)
             {
                 yield return new WaitForSeconds(0.2f);
-                a = 1;
                 cottonWin_obj.SetActive(false);
                 if (b==0)
                 {
@@ -66,7 +65,7 @@ public class SheepMIni : MonoBehaviour
                     CPSGM.GetComponent<CheckPlayer>().EventNum_i[CPGM.GetComponent<CheckPlayer>().num] = 15;
                     CPSGM.GetComponent<CheckPlayer>().EventSetting();
                 }
-                a_i = 0;
+                a = 1;
             }
             else
             {
