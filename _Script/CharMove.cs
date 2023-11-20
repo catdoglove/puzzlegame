@@ -56,7 +56,7 @@ public class CharMove : MonoBehaviour
     int ran = 0;
 
     public GameObject mark1_obj, mark2_obj;
-
+    public GameObject bulb_obj;
 
     // Start is called before the first frame update
 

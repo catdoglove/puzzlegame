@@ -18,7 +18,9 @@ public class AnimailInformation : MonoBehaviour
     private void OnEnable()
     {
 
+        pageNum = 0;
         insideInformation();
+        //FirstSet();
     }
 
     private void Awake()
@@ -197,6 +199,16 @@ public class AnimailInformation : MonoBehaviour
 
             if (PlayerPrefs.GetInt("canSeeInfo_detail" + pageNum, 0) == 99)//특수조건에서 보여지는 2번째 내용
             {
+                infoArea2.SetActive(true);
+            }
+
+            if (PlayerPrefs.GetInt("canSeeInfo_detailo" + pageNum, 0) == 99)//특수조건에서 보여지는 3번째 내용
+            {
+                infoArea3.SetActive(true);
+            }
+
+            if (PlayerPrefs.GetInt("canSeeInfo_detailt" + pageNum, 0) == 99)//특수조건에서 보여지는 4번째 내용
+            {
                 infoArea4.SetActive(true);
             }
 
@@ -258,8 +270,13 @@ public class AnimailInformation : MonoBehaviour
                     material2.GetComponent<SpriteRenderer>().sprite = materialSpr[3];
                 }
             }
-
         }
-
     }
+
+    void FirstSet()
+    {
+        pageNum = 1;
+        //showINFO_L();
+    }
+
 }

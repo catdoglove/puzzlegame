@@ -99,6 +99,7 @@ public class CameraMove : MonoBehaviour
             }
         }
 
+        PlayerPrefs.SetInt("canSeeInfo_detailt" + 2, 99);
     }
 
     IEnumerator imgFadeOut()

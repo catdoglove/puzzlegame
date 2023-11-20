@@ -58,7 +58,7 @@ public class CheckPlayer : MonoBehaviour
 
 
 
-    public GameObject SGM;
+    public GameObject SGM, SGM2;
 
     public bool purple_b, soundLow_b;
 
@@ -107,7 +107,6 @@ public class CheckPlayer : MonoBehaviour
 
     public GameObject miniGame_obj;
 
-
     private void OnEnable()
     {
         //StartCoroutine("Checking");
@@ -127,10 +126,7 @@ public class CheckPlayer : MonoBehaviour
                 aniTalk_str = ani_str + "_talk";
             }
         }
-
         ori_spr = this.GetComponent<SpriteRenderer>().sprite;
-
-        //
         /*
         PlayerPrefs.SetInt("inventorynum", 0);
         PlayerPrefs.SetInt("inventoryget0", 0);
@@ -209,9 +205,7 @@ public class CheckPlayer : MonoBehaviour
                         balloon_obj.GetComponent<SpriteRenderer>().flipX = false;
                     }
                 }
-
                 balloon_obj.transform.position = position;
-
                 if (GM.GetComponent<CharMove>().canMove == true)
                 {
                     balloon_obj.SetActive(true);
@@ -227,7 +221,6 @@ public class CheckPlayer : MonoBehaviour
                     {
                         EventOrItem();
                     }
-
                 }
             }
         }
@@ -350,9 +343,6 @@ public class CheckPlayer : MonoBehaviour
         SGM.GetComponent<SoundEvt>().soundPickUp();
 
         int hel = 0;
-
-
-
         if ((PlayerPrefs.GetInt("itemnum" + 1, 0) == 1 || PlayerPrefs.GetInt("itemnum" + 1, 0) == 2) && SetItemPref_i == 1)
         {
             int num = PlayerPrefs.GetInt("itemnum" + 1, 0);
@@ -503,20 +493,59 @@ public class CheckPlayer : MonoBehaviour
         }
         PlayerPrefs.SetInt("inventorynum", a);
     }
+    void SetDogam0()
+    {
+        if (PlayerPrefs.GetInt("canSeeMaterial" + animalNum_i, 0) == 0)
+        {
+            StopCoroutine("FadeIn");
+            StartCoroutine("FadeIn");
+        }
+        PlayerPrefs.SetInt("showAnimal", animalNum_i); //0부터 해당 캐릭터 보여주기
+        PlayerPrefs.SetInt("AmImet" + animalNum_i, 99); //캐릭터 만났는가 체크
+        PlayerPrefs.SetInt("canSeeMaterial" + animalNum_i, 99); //퀘스트를 깼는가
+    }
 
     void SetDogam1()
     {
-        //PlayerPrefs.SetInt("showAnimal", animalNum_i); //0부터 해당 캐릭터 보여주기
-        PlayerPrefs.SetInt("AmImet" + animalNum_i, 99); //캐릭터 만났는가 체크
+        if (PlayerPrefs.GetInt("canSeeInfo_basic" + animalNum_i, 0) == 0)
+        {
+            StopCoroutine("FadeIn");
+            StartCoroutine("FadeIn");
+        }
+        PlayerPrefs.SetInt("canSeeInfo_basic" + animalNum_i, 99); //퀘스트를 깼는가
     }
     void SetDogam2()
     {
-
         //PlayerPrefs.SetInt("showAnimal", animalNum_i); //0부터 해당 캐릭터 보여주기
-        PlayerPrefs.SetInt("AmImet" + animalNum_i, 99); //캐릭터 만났는가 체크
-        PlayerPrefs.SetInt("canSeeMaterial" + animalNum_i, 99); //퀘스트를 깼는가
-        PlayerPrefs.SetInt("canSeeInfo_basic" + animalNum_i, 99); //퀘스트를 깼는가
+        //PlayerPrefs.SetInt("AmImet" + animalNum_i, 99); //캐릭터 만났는가 체크
+        //PlayerPrefs.SetInt("canSeeMaterial" + animalNum_i, 99); //퀘스트를 깼는가
         //PlayerPrefs.SetInt("canSeeInfo_detail" + animalNum_i, 0); //추가 퀘스트를 깼는가
+
+
+        if (PlayerPrefs.GetInt("canSeeInfo_detail" + animalNum_i, 0) == 0)
+        {
+            StopCoroutine("FadeIn");
+            StartCoroutine("FadeIn");
+        }
+        PlayerPrefs.SetInt("canSeeInfo_detail" + animalNum_i, 99); //퀘스트를 깼는가
+    }
+    void SetDogam3()
+    {
+        if (PlayerPrefs.GetInt("canSeeInfo_detailo" + animalNum_i, 0)==0)
+        {
+            StopCoroutine("FadeIn");
+            StartCoroutine("FadeIn");
+        }
+        PlayerPrefs.SetInt("canSeeInfo_detailo" + animalNum_i, 99); //퀘스트를 깼는가
+    }
+    void SetDogam4()
+    {
+        if (PlayerPrefs.GetInt("canSeeInfo_detailt" + animalNum_i, 0) == 0)
+        {
+            StopCoroutine("FadeIn");
+            StartCoroutine("FadeIn");
+        }
+        PlayerPrefs.SetInt("canSeeInfo_detailt" + animalNum_i, 99); //퀘스트를 깼는가
     }
 
 
@@ -530,7 +559,12 @@ public class CheckPlayer : MonoBehaviour
     /// </summary>
     public void EventSetting()
     {
+        SetDogam0();
         SetDogam1();
+        if (animalNum_i==8)
+        {
+            //SetDogam2();
+        }
         int a = 0;
         a = PlayerPrefs.GetInt(SetEventPref_str, 0);
         k = a;
@@ -555,11 +589,7 @@ public class CheckPlayer : MonoBehaviour
                 }
             }
         }
-
-
-
         //this.GetComponent<Animation>().Play();
-
         if (ani_str != "")
         {
             if (all_Ani == null)
@@ -591,6 +621,25 @@ public class CheckPlayer : MonoBehaviour
                 StartCoroutine("talkBall");
                 StopAndTalk();
                 a++;
+
+
+                if (animalNum_i == 4)
+                {
+                    if (PlayerPrefs.GetInt("canSeeInfo_detailo" + animalNum_i, 0) == 99)
+                    {
+                        SetDogam4();
+                    }
+                }
+
+
+
+                if (animalNum_i == 0)
+                {
+                    if (PlayerPrefs.GetInt("canSeeInfo_detailo" + animalNum_i, 0) == 99)
+                    {
+                        SetDogam4();
+                    }
+                }
                 break;
             case 2://말풍선 띄우고 아이템 요구
                 TalkSound();
@@ -603,6 +652,10 @@ public class CheckPlayer : MonoBehaviour
                 StopTalk();
                 talkBallB_obj.SetActive(false);
                 a++;
+                if (animalNum_i == 8 && num >= 3)
+                {
+                    SetDogam3();
+                }
                 break;
             case 4://말풍선 띄우고 특수 아이템요구
                 TalkSound();
@@ -615,7 +668,7 @@ public class CheckPlayer : MonoBehaviour
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                 {
                     a++;
-                    SetDogam2();
+                    //SetDogam2();
                 }
                 break;
             case 5://대화 종료
@@ -629,7 +682,15 @@ public class CheckPlayer : MonoBehaviour
                     {
                         StartCoroutine("BearR");
                     }
-                }   
+                }
+
+
+                if (animalNum_i == 1)
+                {
+                    SetDogam2();
+                }
+
+
                 break;
             case 6://아래 이동
                 StopTalk();
@@ -664,11 +725,16 @@ public class CheckPlayer : MonoBehaviour
 
                             a++;
                             GMI.GetComponent<Inventory>().DelItems();
-                            SetDogam2();
+                            //SetDogam2();
 
                             if (stick_b)
                             { //stick_obj, makeBoad_obj;
                                 makeBoad_obj.SetActive(true);
+                            }
+                            if (animalNum_i == 6)
+                            {
+                                SetDogam3();
+                                SetDogam4();
                             }
                         }
                         else
@@ -686,11 +752,17 @@ public class CheckPlayer : MonoBehaviour
 
                             a++;
                             GMI.GetComponent<Inventory>().DelItems();
-                            SetDogam2();
+                            //SetDogam2();
 
                             if (stick_b)
                             { //stick_obj, makeBoad_obj;
                                 makeBoad_obj.SetActive(true);
+                            }
+
+                            if (animalNum_i == 6)
+                            {
+                                SetDogam3();
+                                SetDogam4();
                             }
                         }
                     }
@@ -702,13 +774,18 @@ public class CheckPlayer : MonoBehaviour
                     {
                         a++;
                         GMI.GetComponent<Inventory>().DelItems();
-                        SetDogam2();
+                        //SetDogam2();
                         /*
                         if (stick_b)
                         { //stick_obj, makeBoad_obj;
                             makeBoad_obj.SetActive(true);
                         }
                         */
+                        if (animalNum_i == 6)
+                        {
+                            SetDogam3();
+                            SetDogam4();
+                        }
                     }
 
                 }
@@ -719,6 +796,8 @@ public class CheckPlayer : MonoBehaviour
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StartCoroutine("talkBall");
+
+
 
                 break;
             case 9://말풍선 띄우고 특수 플레그 요구
@@ -741,6 +820,11 @@ public class CheckPlayer : MonoBehaviour
                 talkBallB_obj.SetActive(false);
                 a--;
                 a--;
+
+                if (animalNum_i == 1)
+                {
+                    SetDogam4();
+                }
                 break;
             case 11://말풍선 띄우고 아이템 얻음
                 TalkSound();
@@ -774,6 +858,11 @@ public class CheckPlayer : MonoBehaviour
                 npc_obj[0].SetActive(false);
                 npc_obj[3].SetActive(true);
                 npc_obj[2].SetActive(false);
+
+                if (animalNum_i == 3)
+                {
+                    SetDogam2();
+                }
                 break;
             case 14://위 이동
                 StopTalk();
@@ -782,13 +871,21 @@ public class CheckPlayer : MonoBehaviour
                 a++;
                 if (hidden_b)
                 {
-
-                    PlayerPrefs.SetInt("canSeeInfo_detail" + animalNum_i, 99); //추가 퀘스트를 깼는가
+                    SetDogam4();
+                    //PlayerPrefs.SetInt("canSeeInfo_detail" + animalNum_i, 99); //추가 퀘스트를 깼는가
                 }
                 else
                 {
 
                     StartCoroutine("EventUp");
+                }
+
+                if (animalNum_i == 3)
+                {
+                    if (PlayerPrefs.GetInt("canSeeInfo_detailo" + animalNum_i, 0) == 99)
+                    {
+                        SetDogam4();
+                    }
                 }
                 break;
             case 15://아이템 얻기
@@ -800,6 +897,36 @@ public class CheckPlayer : MonoBehaviour
                 { //stick_obj, makeBoad_obj;
                     makeBoad_obj.SetActive(true);
                 }
+                if (animalNum_i==0)
+                {
+                    SetDogam3();
+                }
+
+                if (animalNum_i == 1)
+                {
+                    SetDogam3();
+                }
+
+                if (animalNum_i == 2)
+                {
+                    if (PlayerPrefs.GetInt("canSeeInfo_detail" + animalNum_i, 0) == 99)
+                    {
+                        SetDogam3();
+                    }
+                    SetDogam2();
+
+                }
+
+
+                if (animalNum_i == 4)
+                {
+                    if (PlayerPrefs.GetInt("canSeeInfo_detail" + animalNum_i, 0) == 99)
+                    {
+                        SetDogam3();
+                    }
+                    SetDogam2();
+                }
+
                 break;
             case 16://말풍선 띄우고 퀘스트 시작
                 TalkSound();
@@ -849,7 +976,7 @@ public class CheckPlayer : MonoBehaviour
                     GMI.GetComponent<Inventory>().DelItems();
                     giveItemPref_i = 18;
                     SetItemPref_i = 21;
-                    SetDogam2();
+                    //SetDogam2();
 
                     if (stick_b)
                     {
@@ -881,6 +1008,11 @@ public class CheckPlayer : MonoBehaviour
                     a++;
                     //SetDogam2();
                     crow_Ani.Play("ani_npc_crow_angry");
+
+                    if (animalNum_i == 5)
+                    {
+                            SetDogam3();
+                    }
                 }
                 else
                 {
@@ -925,6 +1057,11 @@ public class CheckPlayer : MonoBehaviour
                 StartCoroutine("talkBall");
                 StopAndTalk();
                 a++;
+
+                if (animalNum_i == 5)
+                {
+                    SetDogam2();
+                }
                 break;
             case 25://말풍선띄우고 다음으로
                 a++;
@@ -935,7 +1072,7 @@ public class CheckPlayer : MonoBehaviour
                 {
                     a++;
                     GMI.GetComponent<Inventory>().DelItems();
-                    SetDogam2();
+                    //SetDogam2();
                     PlayerPrefs.SetInt("foxq", 1);
                 }
 
@@ -945,6 +1082,13 @@ public class CheckPlayer : MonoBehaviour
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StartCoroutine("talkBall");
+
+                if (animalNum_i == 8)
+                {
+                    SetDogam2();
+                }
+
+
                 break;
             case 26://말풍선 띄우고 특수 아이템요구 아이템제거
                 a++;
@@ -960,7 +1104,7 @@ public class CheckPlayer : MonoBehaviour
                     {
                         a++;
                         GMI.GetComponent<Inventory>().DelItems();
-                        SetDogam2();
+                        //SetDogam2();
                     /*
                     if (stick_b)
                     { //stick_obj, makeBoad_obj;
@@ -993,6 +1137,11 @@ public class CheckPlayer : MonoBehaviour
 
             case 28://말풍선 띄우고 특수 아이템요구 아이템제거 8
                 a++;
+
+                if (animalNum_i == 6)
+                {
+                        SetDogam2();
+                }
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == 19)
                 {
                     PlayerPrefs.SetInt("selecteditemnum", 18);
@@ -1013,11 +1162,16 @@ public class CheckPlayer : MonoBehaviour
 
                             a++;
                             GMI.GetComponent<Inventory>().DelItems();
-                            SetDogam2();
+                            //SetDogam2();
 
                             if (stick_b)
                             { //stick_obj, makeBoad_obj;
                                 makeBoad_obj.SetActive(true);
+                            }
+                            if (animalNum_i == 6)
+                            {
+                                SetDogam3();
+                                SetDogam4();
                             }
                         }
                         else
@@ -1036,11 +1190,21 @@ public class CheckPlayer : MonoBehaviour
                             a++;
                             a++;
                             GMI.GetComponent<Inventory>().DelItems();
-                            SetDogam2();
+                            //SetDogam2();
 
                             if (stick_b)
                             { //stick_obj, makeBoad_obj;
                                 makeBoad_obj.SetActive(true);
+                            }
+                            if (animalNum_i == 7)
+                            {
+                                SetDogam3();
+                                SetDogam4();
+                            }
+                            if (animalNum_i == 6)
+                            {
+                                SetDogam3();
+                                SetDogam4();
                             }
                         }
                     }
@@ -1053,13 +1217,23 @@ public class CheckPlayer : MonoBehaviour
                         a++;
                         a++;
                         GMI.GetComponent<Inventory>().DelItems();
-                        SetDogam2();
+                        //SetDogam2();
                         /*
                         if (stick_b)
                         { //stick_obj, makeBoad_obj;
                             makeBoad_obj.SetActive(true);
                         }
                         */
+                        if (animalNum_i == 7)
+                        {
+                            SetDogam3();
+                            SetDogam4();
+                        }
+                        if (animalNum_i == 6)
+                        {
+                            SetDogam3();
+                            SetDogam4();
+                        }
                     }
 
                 }
@@ -1070,6 +1244,7 @@ public class CheckPlayer : MonoBehaviour
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StartCoroutine("talkBall");
+
 
                 break;
 
@@ -1100,11 +1275,16 @@ public class CheckPlayer : MonoBehaviour
                     GMI.GetComponent<Inventory>().DelItems();
                     giveItemPref_i = 18;
                     SetItemPref_i = 21;
-                    SetDogam2();
+                    //SetDogam2();
 
                     if (stick_b)
                     {
                         stick_obj.SetActive(true);
+                    }
+
+                    if (animalNum_i == 7)
+                    {
+                        SetDogam2();
                     }
                 }
 
@@ -1473,6 +1653,11 @@ public class CheckPlayer : MonoBehaviour
         talk_b = true;
 
         SetQuest();
+
+        if (animalNum_i == 3)
+        {
+            SetDogam3();
+        }
     }
 
 
@@ -1501,7 +1686,10 @@ public class CheckPlayer : MonoBehaviour
         }
         talk_b = true;
         GM.GetComponent<CharMove>().canMove = true;
-
+        if (animalNum_i==0)
+        {
+            SetDogam2();
+        }
     }
 
 
@@ -1668,4 +1856,37 @@ public class CheckPlayer : MonoBehaviour
         StartCoroutine("BearL");
     }
 
+
+    void ShowBulb()
+    {
+
+    }
+
+
+    IEnumerator FadeIn()
+    {
+
+        GM.GetComponent<CharMove>().bulb_obj.SetActive(true);
+        SGM2.GetComponent<SoundEvt>().soundStart();
+        int in_i = 1;
+        color = new Color(1f, 1f, 1f);
+        color.a = 1f;
+        GM.GetComponent<CharMove>().bulb_obj.GetComponent<SpriteRenderer>().color = color;
+        yield return new WaitForSeconds(0.5f);
+        while (in_i == 1)
+        {
+            float i_f = 1f;
+            for (i_f = 1f; i_f > 0f; i_f -= 0.05f)
+            {
+                color.a = Mathf.Lerp(0f, 1f, i_f);
+                GM.GetComponent<CharMove>().bulb_obj.GetComponent<SpriteRenderer>().color = color;
+                yield return new WaitForSeconds(0.01f);
+            }
+            //yield return new WaitForSeconds(2f);
+            in_i = 0;
+            GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
+        }
+        GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
+        
+    }
 }
