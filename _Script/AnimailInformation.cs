@@ -265,7 +265,7 @@ public class AnimailInformation : MonoBehaviour
         if ((text_str == "x")) { }
         else
         {
-            if (PlayerPrefs.GetInt("canSeeInfo_detail" + pageNum, 0) == 99)//특수조건에서 보여지는 2번째 내용 
+            if (PlayerPrefs.GetInt("canSeeInfo_detailt" + pageNum, 0) == 99)//특수조건에서 보여지는 2번째 내용 
             {
 
                 if (text_str == "jellyhidden")
