@@ -15,6 +15,8 @@ public class AnimailInformation : MonoBehaviour
     public SpriteRenderer spRer;
     int sizeint, sizeint2, robotNum;
 
+    public GameObject SGM;
+
     private void OnEnable()
     {
 
@@ -67,11 +69,13 @@ public class AnimailInformation : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            SGM.GetComponent<SoundEvt>().soundBook();
             showINFO_L();
         }
 
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
+            SGM.GetComponent<SoundEvt>().soundBook();
             showINFO_R();
         }
 

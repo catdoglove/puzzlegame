@@ -109,6 +109,7 @@ public class CheckPlayer : MonoBehaviour
 
     private void OnEnable()
     {
+        GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
         //StartCoroutine("Checking");
     }
 
@@ -377,6 +378,12 @@ public class CheckPlayer : MonoBehaviour
                     }
                     else
                     {
+
+                        if ((PlayerPrefs.GetInt("itemnum" + 1, 0) == 1 || PlayerPrefs.GetInt("itemnum" + 1, 0) == 2) && SetItemPref_i == 1)
+                        {
+
+                        }
+
                         //a번칸에 값저장
                         PlayerPrefs.SetInt("inventoryget" + a, SetItemPref_i);
                         PlayerPrefs.SetInt("changeitem", 1);
@@ -982,6 +989,10 @@ public class CheckPlayer : MonoBehaviour
                     {
                         stick_obj.SetActive(true);
                     }
+                    if (animalNum_i == 7)
+                    {
+                        SetDogam2();
+                    }
                 }
 
                 Debug.Log("awe" + a);
@@ -1556,6 +1567,7 @@ public class CheckPlayer : MonoBehaviour
                 hel = 1;
             }
         }
+        
 
         //if (PlayerPrefs.GetInt("fillpotint", 0) == 0)
         //{
@@ -1565,6 +1577,8 @@ public class CheckPlayer : MonoBehaviour
         if (hel == 1)
         {
             PlayerPrefs.SetInt("inventorynum", (a - 1));
+
+
         }
         else
         {
@@ -1593,6 +1607,14 @@ public class CheckPlayer : MonoBehaviour
         }
         //}
 
+
+        if (PlayerPrefs.GetInt("itemnum" + 11, 0) == 2)
+        {
+            PlayerPrefs.SetInt("inventoryget" + (a-1), 11);
+            PlayerPrefs.SetInt("itemnum" + 11, 1);
+            GMI.GetComponent<Inventory>().items_i[(a-1)] = 11;
+            PlayerPrefs.SetInt("inventorynum", (a-1));
+        }
 
         PlayerPrefs.SetInt("changeitem", 1);
 
@@ -1872,7 +1894,7 @@ public class CheckPlayer : MonoBehaviour
         color = new Color(1f, 1f, 1f);
         color.a = 1f;
         GM.GetComponent<CharMove>().bulb_obj.GetComponent<SpriteRenderer>().color = color;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.7f);
         while (in_i == 1)
         {
             float i_f = 1f;

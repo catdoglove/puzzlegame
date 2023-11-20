@@ -2180,6 +2180,7 @@ MonoBehaviour:
   infoArea3: {fileID: 1023063141}
   infoArea4: {fileID: 854167706}
   spRer: {fileID: 723389231}
+  SGM: {fileID: 896736638}
 --- !u!114 &896736643
 MonoBehaviour:
   m_ObjectHideFlags: 0
