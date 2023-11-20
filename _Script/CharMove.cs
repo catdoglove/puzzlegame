@@ -56,9 +56,15 @@ public class CharMove : MonoBehaviour
     int ran = 0;
 
     public GameObject mark1_obj, mark2_obj;
+
     public GameObject bulb_obj;
 
-    // Start is called before the first frame update
+
+    int stopint = 0;
+
+
+
+
 
     void Awake()
     {
@@ -100,7 +106,20 @@ public class CharMove : MonoBehaviour
             charWalk();
         }
 
+        if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Space)) //해결되었으나 스베이스바누르면 멈춘다stopint 는 단점이있음
+        {
+            rigid2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            stopint = 1;
+        }
+        else
+        {
+            if(stopint == 1)
+            {
+                Invoke("StopCharPlease", 0.1f);
+            }
+        }
 
+        //speed = 0; 주인공의 인스펙터를 살펴봐라 발싸될때 어느 값이 변하는지를 볼 수 있다.
 
         if (PlayerPrefs.GetInt("nowtalk", 0) == 1)
         {
@@ -117,6 +136,14 @@ public class CharMove : MonoBehaviour
         }
     }
 
+    void StopCharPlease()
+    {
+        rigid2D.constraints = RigidbodyConstraints2D.None;
+        rigid2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        stopint = 0;
+        Speed = 0;
+    }
 
     void charWalk()
     {
@@ -295,7 +322,10 @@ public class CharMove : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         rigid2D.velocity = new Vector2(h, v) * Speed;
+
+
     }
 
     public void Sub()
