@@ -47,6 +47,7 @@ public class CheckPlayer : MonoBehaviour
     /// </summary>
     public bool talk_b = true;
     int wait = 0;
+    int wait2 = 0;
 
 
     Color color;
@@ -107,6 +108,7 @@ public class CheckPlayer : MonoBehaviour
 
     public GameObject miniGame_obj;
 
+    public bool dogam_b;
     private void OnEnable()
     {
         GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
@@ -159,7 +161,7 @@ public class CheckPlayer : MonoBehaviour
     {
 
         wait = PlayerPrefs.GetInt("wait", 0);
-        if (wait == 0)
+        if (wait == 0&& wait2==0)
         {
 
             Collider2D hit = Physics2D.OverlapBox(transform.position, size, 0, whatIsLayer);
@@ -340,8 +342,20 @@ public class CheckPlayer : MonoBehaviour
         int a = 0;
         //빈공간저장하기
         a = PlayerPrefs.GetInt("itemgetpoint", 0);
-        //소리
-        SGM.GetComponent<SoundEvt>().soundPickUp();
+
+        for (int i = 0; i < 8; i++)
+        {
+            if (GMI.GetComponent<Inventory>().items_i[i] == 0)
+            {
+                a = 0 + i;
+
+                i = 10;
+            }
+        }
+
+
+            //소리
+            SGM.GetComponent<SoundEvt>().soundPickUp();
 
         int hel = 0;
         if ((PlayerPrefs.GetInt("itemnum" + 1, 0) == 1 || PlayerPrefs.GetInt("itemnum" + 1, 0) == 2) && SetItemPref_i == 1)
@@ -370,7 +384,7 @@ public class CheckPlayer : MonoBehaviour
                 else
                 {
 
-                    if ((PlayerPrefs.GetInt("itemnum" + 30, 0) == 1 || PlayerPrefs.GetInt("itemnum" + 30, 0) == 2) && SetItemPref_i == 30)
+                    if ((PlayerPrefs.GetInt("itemnum" + 30, 0) == 1 || PlayerPrefs.GetInt("itemnum" + 30, 0) == 2 || PlayerPrefs.GetInt("itemnum" + 30, 0) == 3) && SetItemPref_i == 30)
                     {
                         int num = PlayerPrefs.GetInt("itemnum" + 30, 0);
                         num++;
@@ -442,8 +456,15 @@ public class CheckPlayer : MonoBehaviour
         }
         else
         {
-            DelThis();
-            this.gameObject.SetActive(false);
+            if (dogam_b)
+            {
+
+            }
+            else
+            {
+                DelThis();
+                this.gameObject.SetActive(false);
+            }
         }
     }
 
@@ -566,8 +587,15 @@ public class CheckPlayer : MonoBehaviour
     /// </summary>
     public void EventSetting()
     {
-        SetDogam0();
-        SetDogam1();
+        if (dogam_b)
+        {
+
+        }
+        else
+        {
+            SetDogam0();
+            SetDogam1();
+        }
         if (animalNum_i==8)
         {
             //SetDogam2();
@@ -1307,6 +1335,52 @@ public class CheckPlayer : MonoBehaviour
                 StartCoroutine("talkBall");
                 StopAndTalk();
                 break;
+
+            case 31://말풍선 띄우고 특수 아이템요구 
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    //GMI.GetComponent<Inventory>().DelItems();
+                    k = a;
+                    ItemSettings();
+                    GetItem_obj.SetActive(false);
+                    balloon_obj.SetActive(false);
+                }
+                else
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemFail();
+                }
+                break;
+            case 32://말풍선 띄우고 특수 아이템요구 
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    giveItemPref_i = 36;
+                    //GMI.GetComponent<Inventory>().DelItems();
+                    k = a;
+                    ItemSettings();
+                    a++;
+                    //GetItem_obj.SetActive(false);
+                    //balloon_obj.SetActive(false);
+                    move_obj.SetActive(false);
+                }
+                else
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemFail();
+                }
+                break;
+            case 33://말풍선 띄우고 특수 아이템요구 
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    GMI.GetComponent<Inventory>().DelItems();
+                    k = a;
+                    ItemSettings();
+                    GetItem_obj.SetActive(false);
+                    balloon_obj.SetActive(false);
+                }
+                else
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemFail();
+                }
+                break;
         }
         PlayerPrefs.SetInt(SetEventPref_str, a);
     }
@@ -1315,8 +1389,15 @@ public class CheckPlayer : MonoBehaviour
     {
         PlayerPrefs.SetInt("nowtalk", 1);
         GM.GetComponent<CharMove>().canMove = false;
-
+        wait2 = 1;
+        Invoke("Wait", 2f);
     }
+
+    void Wait()
+    {
+        wait2 = 0;
+    }
+
 
     void TalkSound()
     {
@@ -1566,6 +1647,15 @@ public class CheckPlayer : MonoBehaviour
                 GMI.GetComponent<Inventory>().items_i[i] = 9;
                 hel = 1;
             }
+
+            if (GMI.GetComponent<Inventory>().items_i[i] == 8)
+            {
+                PlayerPrefs.SetInt("inventoryget" + i, 9);
+                PlayerPrefs.SetInt("itemnum" + 9, 1);
+                GMI.GetComponent<Inventory>().items_i[i] = 9;
+                hel = 1;
+            }
+
         }
         
 
@@ -1894,7 +1984,7 @@ public class CheckPlayer : MonoBehaviour
         color = new Color(1f, 1f, 1f);
         color.a = 1f;
         GM.GetComponent<CharMove>().bulb_obj.GetComponent<SpriteRenderer>().color = color;
-        yield return new WaitForSeconds(1.7f);
+        yield return new WaitForSeconds(1f);
         while (in_i == 1)
         {
             float i_f = 1f;
