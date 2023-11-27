@@ -82,7 +82,8 @@ public class AnimationSample : MonoBehaviour
 
     public void showFeedback()
     {
-        Application.OpenURL("https://forms.gle/CGuVE8nRbE1QaRSc6");
+        //Application.OpenURL("https://forms.gle/CGuVE8nRbE1QaRSc6");
+        Application.OpenURL("http://burningbeaver.plithus.com/survey_1.html?gameId=11030");
     }
 
     public void showESCwindow()

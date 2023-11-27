@@ -194,7 +194,7 @@ public class CheckEvent : MonoBehaviour
     /// <returns></returns>
     IEnumerator EventDown()
     {
-
+        PlayerPrefs.SetInt("wait", 1);
         GM.GetComponent<CharMove>().canMove = false;
         //talk_b = false;
         int in_i = 1;
@@ -220,6 +220,8 @@ public class CheckEvent : MonoBehaviour
         move_obj.GetComponent<Animator>().Play("ani_npc_fox");
 
         PlayerPrefs.SetInt("foxclear", 0);
+
+        PlayerPrefs.SetInt("wait", 0);
     }
 
 

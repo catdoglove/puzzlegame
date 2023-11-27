@@ -37,7 +37,7 @@ public class CheckPlayer : MonoBehaviour
     public GameObject char_obj;
 
 
-    public Vector3 position0;
+    public Vector3 position0, position_fox;
     public GameObject move_obj, moveOther_obj;
     public GameObject[] npc_obj;
 
@@ -108,7 +108,7 @@ public class CheckPlayer : MonoBehaviour
 
     public GameObject miniGame_obj;
 
-    public bool dogam_b;
+    public bool dogam_b, fox_b;
     private void OnEnable()
     {
         GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
@@ -154,7 +154,15 @@ public class CheckPlayer : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, size);
+        if (fox_b)
+        {
+            position_fox = new Vector3(transform.position.x - 2.5f, transform.position.y, transform.position.z);
+            Gizmos.DrawWireCube(position_fox, size);
+        }
+        else
+        {
+            Gizmos.DrawWireCube(transform.position, size);
+        }
     }
 
     private void Update()
@@ -163,8 +171,15 @@ public class CheckPlayer : MonoBehaviour
         wait = PlayerPrefs.GetInt("wait", 0);
         if (wait == 0&& wait2==0)
         {
-
-            Collider2D hit = Physics2D.OverlapBox(transform.position, size, 0, whatIsLayer);
+            Collider2D hit;
+            if (fox_b)
+            {
+                hit = Physics2D.OverlapBox(position_fox, size, 0, whatIsLayer);
+            }
+            else
+            {
+                hit = Physics2D.OverlapBox(transform.position, size, 0, whatIsLayer);
+            }
             if (hit == null)
             {
                 if (a == 1)
@@ -1353,13 +1368,11 @@ public class CheckPlayer : MonoBehaviour
             case 32://말풍선 띄우고 특수 아이템요구 
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                 {
-                    giveItemPref_i = 36;
                     //GMI.GetComponent<Inventory>().DelItems();
                     k = a;
                     ItemSettings();
-                    a++;
-                    //GetItem_obj.SetActive(false);
-                    //balloon_obj.SetActive(false);
+                    GetItem_obj.SetActive(false);
+                    balloon_obj.SetActive(false);
                     move_obj.SetActive(false);
                 }
                 else
@@ -1390,7 +1403,7 @@ public class CheckPlayer : MonoBehaviour
         PlayerPrefs.SetInt("nowtalk", 1);
         GM.GetComponent<CharMove>().canMove = false;
         wait2 = 1;
-        Invoke("Wait", 2f);
+        Invoke("Wait", 1f);
     }
 
     void Wait()
