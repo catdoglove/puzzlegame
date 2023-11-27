@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ani_npc_fox_stop
+  m_Name: ani_lake_bubble
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,18 +20,16 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: cd0e0092ea14b234cb37e4563d337486, type: 3}
-    - time: 0.25
-      value: {fileID: 21300000, guid: b699ad79113c4ef44ad4ed895f308e7e, type: 3}
+      value: {fileID: -3489945100601330013, guid: 94ec4be15893d784cbfedce59b94a5ff,
+        type: 3}
     - time: 0.5
-      value: {fileID: 21300000, guid: 9db0c8369e5588849b4dac0255aeedce, type: 3}
-    - time: 1.25
-      value: {fileID: 21300000, guid: 9db0c8369e5588849b4dac0255aeedce, type: 3}
+      value: {fileID: -7861349772318472079, guid: 94ec4be15893d784cbfedce59b94a5ff,
+        type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 4
+  m_SampleRate: 2
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -46,16 +44,14 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: cd0e0092ea14b234cb37e4563d337486, type: 3}
-    - {fileID: 21300000, guid: b699ad79113c4ef44ad4ed895f308e7e, type: 3}
-    - {fileID: 21300000, guid: 9db0c8369e5588849b4dac0255aeedce, type: 3}
-    - {fileID: 21300000, guid: 9db0c8369e5588849b4dac0255aeedce, type: 3}
+    - {fileID: -3489945100601330013, guid: 94ec4be15893d784cbfedce59b94a5ff, type: 3}
+    - {fileID: -7861349772318472079, guid: 94ec4be15893d784cbfedce59b94a5ff, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.5
+    m_StopTime: 1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
