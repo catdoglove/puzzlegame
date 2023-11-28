@@ -40,6 +40,8 @@ public class MoveMap : MonoBehaviour
     public GameObject sheep_obj, sheep1_obj, sheep2_obj;
     public Sprite sheep_spr, sheepO_spr;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -167,6 +169,7 @@ public class MoveMap : MonoBehaviour
 
         GM.GetComponent<CharMove>().mark1_obj.SetActive(false);
         GM.GetComponent<CharMove>().mark2_obj.SetActive(false);
+        GM.GetComponent<CharMove>().remove_obj.transform.position = GM.GetComponent<CharMove>().other_obj.transform.position;
 
         if (crowA_b)
         {

@@ -63,8 +63,7 @@ public class CharMove : MonoBehaviour
     int stopint = 0;
 
 
-
-
+    public GameObject remove_obj, other_obj;
 
     void Awake()
     {
