@@ -140,6 +140,7 @@ public class Inventory : MonoBehaviour
                 {
                     SGM.GetComponent<SoundEvt>().soundItemWndOpen();
                     MainGM.GetComponent<SceneAdd>().AtiveScene();
+                    GM.GetComponent<CharMove>().remove_obj.transform.position = GM.GetComponent<CharMove>().other_obj.transform.position;
                 }
             }
             else
