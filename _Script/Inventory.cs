@@ -40,6 +40,7 @@ public class Inventory : MonoBehaviour
 
 
     public GameObject ESCevent;
+    public GameObject sheep_obj;
 
     private void Awake()
     {
@@ -146,6 +147,11 @@ public class Inventory : MonoBehaviour
             else
             {
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.PageUp))
+        {
+            sheep_obj.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
