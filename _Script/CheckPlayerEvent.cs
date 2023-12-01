@@ -495,7 +495,7 @@ public class CheckPlayerEvent : MonoBehaviour
                 puzzle_obj.SetActive(true);
                 GM.GetComponent<CharMove>().canMove = false;
                 this.gameObject.SetActive(false);
-
+                PlayerPrefs.SetInt("escdont", 1);
                 balloon_obj.SetActive(false);
                 break;
 

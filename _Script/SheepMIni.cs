@@ -69,7 +69,7 @@ public class SheepMIni : MonoBehaviour
             }
             else
             {
-                if (Input.GetKeyDown(KeyCode.A))
+                if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                     if (a_i % 2 == 1)
                     {
@@ -82,7 +82,7 @@ public class SheepMIni : MonoBehaviour
 
                 }
 
-                if (Input.GetKeyDown(KeyCode.D))
+                if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     if (a_i % 2 == 0)
                     {

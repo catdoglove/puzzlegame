@@ -55,7 +55,7 @@ public class MiniGame : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if (x_i>0)
             {
@@ -81,7 +81,7 @@ public class MiniGame : MonoBehaviour
                 SGM.GetComponent<SoundEvt>().soundItemWndAD();
             }
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (x_i < 2)
             {
@@ -107,7 +107,7 @@ public class MiniGame : MonoBehaviour
                 SGM.GetComponent<SoundEvt>().soundItemWndAD();
             }
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (y_i > 0)
             {
@@ -134,7 +134,7 @@ public class MiniGame : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             if (y_i < 3)
             {
@@ -202,6 +202,7 @@ public class MiniGame : MonoBehaviour
                                             GM.GetComponent<CheckPlayerEvent>().ItemSettingOnEvent();
                                             pan.SetActive(false);
                                             GMM.GetComponent<CharMove>().canMove = true;
+                                            PlayerPrefs.SetInt("escdont", 0);
                                             SGM.GetComponent<SoundEvt>().soundItemSuccess();
                                             PlayerPrefs.SetInt("nowtalk", 0);
                                         }

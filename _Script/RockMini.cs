@@ -15,7 +15,7 @@ public class RockMini : MonoBehaviour
     public int pass_i,coin_i;
     public GameObject[] button_obj, pass_obj;
     public Sprite[] num_spr;
-    public GameObject numImg_obj, japan_obj, rock_obj;
+    public GameObject numImg_obj, japan_obj, rock_obj, hint_obj;
 
 
     // Start is called before the first frame update
@@ -147,6 +147,7 @@ public class RockMini : MonoBehaviour
             if (a == 4)
             {
                 puzzleWin_obj.SetActive(false);
+                PlayerPrefs.SetInt("escdont", 0);
                 GMM.GetComponent<CharMove>().canMove = true;
                 PlayerPrefs.SetInt("cursorActive", 0);
                 GM.GetComponent<CheckPlayerEvent>().ItemSettingOnEvent();
@@ -189,6 +190,7 @@ public class RockMini : MonoBehaviour
         coin_i = 3;
         numImg_obj.GetComponent<SpriteRenderer>().sprite = num_spr[coin_i];
         puzzleWin_obj.SetActive(true);
+        PlayerPrefs.SetInt("escdont", 1);
         coin_i = 3;
         numImg_obj.GetComponent<SpriteRenderer>().sprite = num_spr[coin_i];
 
@@ -202,6 +204,7 @@ public class RockMini : MonoBehaviour
         PlayerPrefs.SetInt("cursorActive", 0);
         GMM.GetComponent<CharMove>().canMove = true;
         puzzleWin_obj.SetActive(false);
+        PlayerPrefs.SetInt("escdont", 0);
         for (int i = 0; i < 8; i++)
         {
             button_obj[i].SetActive(true);
@@ -211,6 +214,8 @@ public class RockMini : MonoBehaviour
         pass_obj[2].SetActive(false);
         pass_obj[3].SetActive(false);
         puzzleWin_obj.SetActive(false);
+        PlayerPrefs.SetInt("escdont", 0);
+
     }
 
     void ClearPuzzle()
@@ -221,4 +226,16 @@ public class RockMini : MonoBehaviour
     //도감 삑삑삑소리 버튼 누를 때
     //얻어지는 소리공통 실패하는 소리 공통
 
+
+    public void ShowHint()
+    {
+        if (hint_obj.activeSelf)
+        {
+            hint_obj.SetActive(false);
+        }
+        else
+        {
+            hint_obj.SetActive(true);
+        }
+    }
 }

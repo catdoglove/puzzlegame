@@ -101,11 +101,18 @@ public class Inventory : MonoBehaviour
 
         if (PlayerPrefs.GetInt("escdont", 0) == 0)
         {
-            if (Input.GetKey(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                showESCwindow();
+                if (ESCevent.activeSelf)
+                {
+                    closeESCwindow();
+                }
+                else
+                {
+                    showESCwindow();
+                }
             }
-        }   
+        }
         /*
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -132,20 +139,24 @@ public class Inventory : MonoBehaviour
         }
         */
 
-        
-        if (Input.GetKeyDown(KeyCode.Tab))
+
+        if (PlayerPrefs.GetInt("escdont", 0) == 0)
         {
-            if (GM.GetComponent<CharMove>().canMove )
+
+            if (Input.GetKeyDown(KeyCode.Tab))
             {
-                if (in_i==0)
+                if (GM.GetComponent<CharMove>().canMove)
                 {
-                    SGM.GetComponent<SoundEvt>().soundItemWndOpen();
-                    MainGM.GetComponent<SceneAdd>().AtiveScene();
-                    GM.GetComponent<CharMove>().remove_obj.transform.position = GM.GetComponent<CharMove>().other_obj.transform.position;
+                    if (in_i == 0)
+                    {
+                        SGM.GetComponent<SoundEvt>().soundItemWndOpen();
+                        MainGM.GetComponent<SceneAdd>().AtiveScene();
+                        GM.GetComponent<CharMove>().remove_obj.transform.position = GM.GetComponent<CharMove>().other_obj.transform.position;
+                    }
                 }
-            }
-            else
-            {
+                else
+                {
+                }
             }
         }
 
@@ -154,76 +165,81 @@ public class Inventory : MonoBehaviour
             sheep_obj.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
 
-            if (itemGetting_b == false)
+        if (PlayerPrefs.GetInt("escdont", 0) == 0)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
             {
 
-
-                if (in_i == 0)
+                if (itemGetting_b == false)
                 {
-                    if (inout_i == 0)
-                    {
 
-                        if (GM.GetComponent<CharMove>().canMove)
+
+                    if (in_i == 0)
+                    {
+                        if (inout_i == 0)
+                        {
+
+                            if (GM.GetComponent<CharMove>().canMove)
+                            {
+                                in_i = 1;
+                                StopCoroutine("ShowWindow");
+                                StopCoroutine("Show");
+                                StartCoroutine("ShowWindow");
+                                StartCoroutine("Show");
+
+                                CanMoveF();
+
+                                if (PlayerPrefs.GetInt("lostbell", 0) == 1)
+                                {
+                                    GM.GetComponent<CharMove>().charAni.Play("ani_charnobell_stop");
+                                }
+                                else
+                                {
+                                    GM.GetComponent<CharMove>().charAni.Play("ani_char_stop");
+                                }
+
+                                GM.GetComponent<CharMove>().ckwalk = 0;
+                            }
+
+                            /*
+                            if (PlayerPrefs.GetInt("nowtalk", 0) == 0)
+                            {
+                                GM.GetComponent<CharMove>().canMove = true;
+                            }
+                            */
+
+                        }
+                        else
                         {
                             in_i = 1;
                             StopCoroutine("ShowWindow");
-                            StopCoroutine("Show");
-                            StartCoroutine("ShowWindow");
-                            StartCoroutine("Show");
+                            StopCoroutine("CloseWindow");
+                            StartCoroutine("CloseWindow");
+                            CanMoveT();
 
-                            CanMoveF();
-
-                            if (PlayerPrefs.GetInt("lostbell", 0) == 1)
+                            if (PlayerPrefs.GetInt("nowtalk", 0) == 1)
                             {
-                                GM.GetComponent<CharMove>().charAni.Play("ani_charnobell_stop");
+                                CanMoveF();
                             }
-                            else
-                            {
-                                GM.GetComponent<CharMove>().charAni.Play("ani_char_stop");
-                            }
-                            
-                            GM.GetComponent<CharMove>().ckwalk = 0;
                         }
-
-                        /*
-                        if (PlayerPrefs.GetInt("nowtalk", 0) == 0)
-                        {
-                            GM.GetComponent<CharMove>().canMove = true;
-                        }
-                        */
-
                     }
                     else
                     {
-                        in_i = 1;
-                        StopCoroutine("ShowWindow");
-                        StopCoroutine("CloseWindow");
-                        StartCoroutine("CloseWindow");
-                        CanMoveT();
 
-                        if (PlayerPrefs.GetInt("nowtalk", 0) == 1)
-                        {
-                            CanMoveF();
-                        }
                     }
-                }
-                else
-                {
+
+
+                    if (PlayerPrefs.GetInt("setselectone", 0) == 0)
+                    {
+                        selectWin_obj.SetActive(true);
+                        PlayerPrefs.SetInt("setselectone", 1);
+                    }
 
                 }
-
-
-                if (PlayerPrefs.GetInt("setselectone", 0) == 0)
-                {
-                    selectWin_obj.SetActive(true);
-                    PlayerPrefs.SetInt("setselectone", 1);
-                }
-
             }
         }
+
         CheckThePoint();
         //Sub();
         AddItem();
@@ -715,7 +731,7 @@ public class Inventory : MonoBehaviour
 
     void SelectMove()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             SGM.GetComponent<SoundEvt>().soundItemWndAD();
             for (int i = 0; i < 7; i++)
@@ -731,7 +747,7 @@ public class Inventory : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A)|| Input.GetKeyDown(KeyCode.LeftArrow))
             {
 
                 SGM.GetComponent<SoundEvt>().soundItemWndAD();
