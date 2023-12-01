@@ -935,7 +935,7 @@ public class Inventory : MonoBehaviour
             {
                 o = 1;
             }
-            Debug.Log("p" + p + "o" + o);
+           // Debug.Log("p" + p + "o" + o);
             if (o != 0)
             {
                 invenItem_obj[i].GetComponent<Image>().sprite = Item_spr[p + o - 1];
