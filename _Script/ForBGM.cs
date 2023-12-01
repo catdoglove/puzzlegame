@@ -19,6 +19,9 @@ public class ForBGM : MonoBehaviour
 
     int i; //bgmtest
 
+
+    public float vols_f = 0.8f;
+
     void Start()
     {
         //BGMfirst.clip = BGMList[2].audio;
@@ -55,7 +58,7 @@ public class ForBGM : MonoBehaviour
         BGMfirst.clip = BGMList[2].audio;
         BGM2.clip = BGMList[3].audio;
 
-        BGMfirst.GetComponent<AudioSource>().volume = 1f;
+        BGMfirst.GetComponent<AudioSource>().volume = 1f * vols_f;
 
         BGM2.GetComponent<AudioSource>().volume = 0f;
         BGM2.GetComponent<AudioSource>().pitch = 0.8f;

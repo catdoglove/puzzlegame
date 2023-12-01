@@ -1188,6 +1188,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &15719632
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2185,6 +2186,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 307177330}
   sheep_spr: {fileID: 21300000, guid: 3e4bce2cf1a910246b61ba1ba1a832a5, type: 3}
   sheepO_spr: {fileID: 21300000, guid: 62ef9847cbd05a9479d3d57e435621c9, type: 3}
+  vols_f: 0.8
 --- !u!61 &44126564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2994,7 +2996,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 667670729}
+  m_TargetTexture: {fileID: 1341901997}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -4961,6 +4963,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &117358293
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5600,6 +5603,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &120787851
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5820,6 +5824,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &125048855
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6640,6 +6645,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &146705587
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9890,6 +9896,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &243907410
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13529,6 +13536,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &341575721
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14517,6 +14525,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &365188950
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17947,7 +17956,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5ae72381d03dd3740aa081fb03c5197d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -19032,6 +19041,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &496115207
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20137,6 +20147,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &519273596
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20985,6 +20996,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &544538652
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21701,6 +21713,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &560459896
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24891,41 +24904,6 @@ Transform:
   m_Father: {fileID: 298548695}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &667670729
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 640
-  m_Height: 480
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &669515528
 GameObject:
   m_ObjectHideFlags: 0
@@ -25193,6 +25171,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &671445577
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27613,6 +27592,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &737438134
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31414,6 +31394,7 @@ MonoBehaviour:
   BGMfirst: {fileID: 1221732713}
   BGM2: {fileID: 1878541204}
   BGMbook: {fileID: 0}
+  vols_f: 0.8
 --- !u!1 &846667572
 GameObject:
   m_ObjectHideFlags: 0
@@ -33922,6 +33903,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &891097678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34355,6 +34337,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &896677059
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34844,6 +34827,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &906247536
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35114,6 +35098,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &909781963
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35712,6 +35697,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &929992913
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36525,6 +36511,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &946681229
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38384,6 +38371,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &974808699
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38571,6 +38559,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &979907017
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38829,6 +38818,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &988219815
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40750,6 +40740,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1044358946
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42153,6 +42144,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1083547894
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42759,6 +42751,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1094197552
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44985,6 +44978,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1161604708
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46107,6 +46101,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1188507385
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47862,6 +47857,7 @@ MonoBehaviour:
   BGMfirst: {fileID: 1221732713}
   BGM2: {fileID: 1878541204}
   BGMbook: {fileID: 0}
+  vols_f: 0.8
 --- !u!82 &1221732713
 AudioSource:
   m_ObjectHideFlags: 0
@@ -48618,6 +48614,7 @@ MonoBehaviour:
   bulb_obj: {fileID: 351560802}
   remove_obj: {fileID: 331962257}
   other_obj: {fileID: 406547544}
+  vols_f: 0.8
 --- !u!61 &1236708168
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52834,6 +52831,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337069870}
   m_CullTransparentMesh: 0
+--- !u!84 &1341901997
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 812
+  m_Height: 457
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1345888051
 GameObject:
   m_ObjectHideFlags: 0
@@ -53020,6 +53052,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1346804527
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54144,6 +54177,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1400179496
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -55542,6 +55576,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1450581824
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -57564,7 +57599,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bfdfe4a85d3253d459837b74b46c69ee, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -58104,6 +58139,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1561230746
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -58391,6 +58427,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1562199868
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59854,6 +59891,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1600947036
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61100,6 +61138,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1638960266
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61705,6 +61744,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1658599333
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62117,6 +62157,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1666469026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62540,6 +62581,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1674407428
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64436,6 +64478,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1708340189
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -66145,6 +66188,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1764746793
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -68785,6 +68829,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 307177330}
   sheep_spr: {fileID: 21300000, guid: 3e4bce2cf1a910246b61ba1ba1a832a5, type: 3}
   sheepO_spr: {fileID: 21300000, guid: 62ef9847cbd05a9479d3d57e435621c9, type: 3}
+  vols_f: 0.8
 --- !u!61 &1845382663
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -69365,6 +69410,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1859774569
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -70833,6 +70879,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1907654314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -73864,6 +73911,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &1989034008
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -74629,6 +74677,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &2014545238
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -75659,6 +75708,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &2047061616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -77183,6 +77233,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &2082945986
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -78030,6 +78081,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &2109382158
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -78376,6 +78428,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &2116537374
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -79151,6 +79204,7 @@ MonoBehaviour:
   sheep2_obj: {fileID: 0}
   sheep_spr: {fileID: 0}
   sheepO_spr: {fileID: 0}
+  vols_f: 0.8
 --- !u!61 &2138150723
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -65,6 +65,8 @@ public class CharMove : MonoBehaviour
 
     public GameObject remove_obj, other_obj;
 
+    public float vols_f=0.8f;
+
     void Awake()
     {
         myTransform = transform;
@@ -286,13 +288,13 @@ public class CharMove : MonoBehaviour
                 {
 
                     GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0f;
-                    GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 1f;
+                    GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 1f* vols_f;
                     ausrc.clip = walkSouneEvt("wood");
                 }
                 else
                 {
                     GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0f;
-                    GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 1f;
+                    GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 1f* vols_f;
                     ausrc.clip = walkSouneEvt("sand");
 
                 }
@@ -445,7 +447,7 @@ void charWaitingMotion()
 
         if (transform.position.x >= 6f)
         {
-            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0.2f;
+            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0.2f * vols_f;
         }
     }
 
@@ -455,7 +457,7 @@ void charWaitingMotion()
     {
         if (transform.position.x <= -1f) //위치 도달 전의 값
         {
-            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 1f;
+            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 1f * vols_f;
             GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0f;
 
             ausrc.clip = walkSouneEvt("sand");          
@@ -472,23 +474,23 @@ void charWaitingMotion()
         */
         if (transform.position.x >= 0f)
         {
-            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0.6f;
-            GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0.2f;
+            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0.6f * vols_f;
+            GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0.2f * vols_f;
 
             ausrc.clip = walkSouneEvt("wood");
         }
         if (transform.position.x >= 0.5f)
         {
-            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0.5f;
-            GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0.5f;
+            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0.5f * vols_f;
+            GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0.5f * vols_f;
 
             ausrc.clip = walkSouneEvt("wood");
         }
 
         if (transform.position.x >= 3f)
         {
-            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0.2f;
-            GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0.6f;
+            GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0.2f * vols_f;
+            GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0.6f * vols_f;
 
             ausrc.clip = walkSouneEvt("wood");
         }
@@ -496,14 +498,14 @@ void charWaitingMotion()
         if (transform.position.x >= 4.5f)
         {
             GM_B.GetComponent<ForBGM>().BGMfirst.GetComponent<AudioSource>().volume = 0f;
-            GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0.8f;
+            GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0.8f * vols_f;
 
             ausrc.clip = walkSouneEvt("wood");
         }
 
         if (transform.position.x >= 6f)
         {
-            GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 1f;
+            GM_B.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 1f * vols_f;
 
             ausrc.clip = walkSouneEvt("wood");
         }

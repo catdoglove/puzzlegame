@@ -40,7 +40,8 @@ public class MoveMap : MonoBehaviour
     public GameObject sheep_obj, sheep1_obj, sheep2_obj;
     public Sprite sheep_spr, sheepO_spr;
 
-    
+
+    public float vols_f = 0.8f;
 
     // Start is called before the first frame update
     void Start()
@@ -316,7 +317,7 @@ public class MoveMap : MonoBehaviour
         if (lakeOut_b)
         {
             GMC.GetComponent<ShaderEffect>().changeShader3();
-            BGM4.GetComponent<AudioSource>().volume = 0.5f;
+            BGM4.GetComponent<AudioSource>().volume = 0.5f*vols_f;
         }
         if (caveRoad_b)
         {
@@ -351,7 +352,7 @@ public class MoveMap : MonoBehaviour
         }
         if (soundback_b)
         {
-            BGM4.GetComponent<AudioSource>().volume = 1f;
+            BGM4.GetComponent<AudioSource>().volume = 1f * vols_f;
         }
 
         if (secret2_b)
