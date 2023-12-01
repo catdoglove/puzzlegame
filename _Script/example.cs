@@ -55,7 +55,7 @@ public class example : MonoBehaviour
     void smallBoatGO()
     {
         moveX = 0f;
-        if (Input.GetKey(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             moveX += 0.07f; boatSpr.GetComponent<SpriteRenderer>().flipX = false;
 

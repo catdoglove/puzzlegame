@@ -161,7 +161,6 @@ public class RockMini : MonoBehaviour
                 if (coin_i == 0)
                 {
                     ClosePuzzle();
-                    rock_obj.SetActive(true);
                 }
                 else
                 {
@@ -215,6 +214,9 @@ public class RockMini : MonoBehaviour
         pass_obj[3].SetActive(false);
         puzzleWin_obj.SetActive(false);
         PlayerPrefs.SetInt("escdont", 0);
+        rock_obj.SetActive(true);
+
+        SGM.GetComponent<SoundEvt>().soundItemFail();
 
     }
 
@@ -236,6 +238,7 @@ public class RockMini : MonoBehaviour
         else
         {
             hint_obj.SetActive(true);
+            SGM.GetComponent<SoundEvt>().soundStart();
         }
     }
 }
