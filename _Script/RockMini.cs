@@ -215,7 +215,7 @@ public class RockMini : MonoBehaviour
         puzzleWin_obj.SetActive(false);
         PlayerPrefs.SetInt("escdont", 0);
         rock_obj.SetActive(true);
-
+        number_i = 0;
         SGM.GetComponent<SoundEvt>().soundItemFail();
 
     }

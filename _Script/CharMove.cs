@@ -163,14 +163,14 @@ public class CharMove : MonoBehaviour
         {
             //  if (ckCrash == 1) charspeed = crushSpeed;
             //  else charspeed = runSpeed;
-            Speed = 6f;
+            Speed = 5f;
             ausrc.GetComponent<AudioSource>().pitch = 1.3f;
         }
         else
         {
           //  if (ckCrash == 1) charspeed = crushSpeed;
           //  else charspeed = normalSpeed;
-            Speed = 2.5f;
+            Speed = 3f;
             ausrc.GetComponent<AudioSource>().pitch = 1f;
         }
 
