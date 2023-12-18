@@ -11,17 +11,18 @@ public class RockMini : MonoBehaviour
     public GameObject point_obj;
 
     public int num1_i, num2_i, num3_i, num4_i, number_i;
-    public int[] num_i;
+    public int[] num_i, numC_i;
     public int pass_i,coin_i;
     public GameObject[] button_obj, pass_obj;
     public Sprite[] num_spr;
     public GameObject numImg_obj, japan_obj, rock_obj, hint_obj;
+    public Sprite[] color_spr;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetRandColor();
     }
 
     // Update is called once per frame
@@ -128,19 +129,19 @@ public class RockMini : MonoBehaviour
         {
             //0 7 4 6
             int a = 0;
-            if (num_i[0] == 0)
+            if (num_i[EventScenes.randColorF_i[0]] == numC_i[EventScenes.randColorF_i[0]])//06
             {
                 a++;
             }
-            if (num_i[1] == 7)
+            if (num_i[EventScenes.randColorF_i[1]] == numC_i[EventScenes.randColorF_i[1]])//64
             {
                 a++;
             }
-            if (num_i[2] == 4)
+            if (num_i[EventScenes.randColorF_i[2]] == numC_i[EventScenes.randColorF_i[2]])//47
             {
                 a++;
             }
-            if (num_i[3] == 6)
+            if (num_i[EventScenes.randColorF_i[3]] == numC_i[EventScenes.randColorF_i[3]])//70
             {
                 a++;
             }
@@ -240,5 +241,26 @@ public class RockMini : MonoBehaviour
             hint_obj.SetActive(true);
             SGM.GetComponent<SoundEvt>().soundStart();
         }
+    }
+
+    /// <summary>
+    ///  색깔설정
+    /// </summary>
+    void SetRandColor()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            pass_obj[i].GetComponent<SpriteRenderer>().sprite = color_spr[EventScenes.randColorF_i[i]];
+        }
+
+
+        Debug.Log(EventScenes.randColorF_i[0]);
+
+        Debug.Log(EventScenes.randColorF_i[1]);
+
+        Debug.Log(EventScenes.randColorF_i[2]);
+
+        Debug.Log(EventScenes.randColorF_i[3]);
+
     }
 }

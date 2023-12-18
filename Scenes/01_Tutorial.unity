@@ -2902,6 +2902,7 @@ MonoBehaviour:
   num4_i: 0
   number_i: 0
   num_i: 0000000000000000000000000000000000000000000000000000000000000000
+  numC_i: 00000000060000000400000007000000
   pass_i: 0
   coin_i: 3
   button_obj:
@@ -2928,6 +2929,11 @@ MonoBehaviour:
   japan_obj: {fileID: 1789449202}
   rock_obj: {fileID: 300728723}
   hint_obj: {fileID: 1428227922}
+  color_spr:
+  - {fileID: 4288251202495266317, guid: ec1249fa8200cd5438507c833e778a80, type: 3}
+  - {fileID: -3525211973513435581, guid: ec1249fa8200cd5438507c833e778a80, type: 3}
+  - {fileID: 9088280179941149637, guid: ec1249fa8200cd5438507c833e778a80, type: 3}
+  - {fileID: 4726984744648195207, guid: ec1249fa8200cd5438507c833e778a80, type: 3}
 --- !u!1 &61868296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2996,7 +3002,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1375297726}
+  m_TargetTexture: {fileID: 1071132615}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -42349,6 +42355,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!84 &1071132615
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 809
+  m_Height: 455
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1071574326
 GameObject:
   m_ObjectHideFlags: 0
@@ -54370,41 +54411,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!84 &1375297726
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 1090
-  m_Height: 613
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1377702209
 GameObject:
   m_ObjectHideFlags: 0
@@ -57059,6 +57065,7 @@ MonoBehaviour:
   - {fileID: 1257344155}
   - {fileID: 990794916}
   rand_i: 0
+  randCul_i: 0
 --- !u!4 &1470607495
 Transform:
   m_ObjectHideFlags: 0

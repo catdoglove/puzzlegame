@@ -46,7 +46,8 @@ public class EventScenes : MonoBehaviour
     public bool rand_b;
 
     public GameObject[] rand_obj, rand2_obj;
-    public int rand_i;
+    public int rand_i, randCul_i;
+    public static int[] randColorF_i = new int[4];
 
     // Start is called before the first frame update
     void Start()
@@ -387,6 +388,25 @@ public class EventScenes : MonoBehaviour
         {
 
         }
+
+        rand_i = Random.Range(0,4);
+        for (int i = 0; i < 4; i++)
+        {
+            randColorF_i[rand_i] = i;
+            rand_i++;
+            if (rand_i >= 4)
+            {
+                rand_i = 0;
+            }
+
+        }
+        if (randColorF_i[0] == 0)
+        {
+            randCul_i = randColorF_i[0];
+            randColorF_i[0] = randColorF_i[3];
+            randColorF_i[3] = randCul_i;
+        }
+
 
     }
 }
