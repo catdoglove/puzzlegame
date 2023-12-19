@@ -129,19 +129,19 @@ public class RockMini : MonoBehaviour
         {
             //0 7 4 6
             int a = 0;
-            if (num_i[EventScenes.randColorF_i[0]] == numC_i[EventScenes.randColorF_i[0]])//06
+            if (num_i[0] == numC_i[EventScenes.randColorF_i[0]])//06
             {
                 a++;
             }
-            if (num_i[EventScenes.randColorF_i[1]] == numC_i[EventScenes.randColorF_i[1]])//64
+            if (num_i[1] == numC_i[EventScenes.randColorF_i[1]])//64
             {
                 a++;
             }
-            if (num_i[EventScenes.randColorF_i[2]] == numC_i[EventScenes.randColorF_i[2]])//47
+            if (num_i[2] == numC_i[EventScenes.randColorF_i[2]])//47
             {
                 a++;
             }
-            if (num_i[EventScenes.randColorF_i[3]] == numC_i[EventScenes.randColorF_i[3]])//70
+            if (num_i[3] == numC_i[EventScenes.randColorF_i[3]])//70
             {
                 a++;
             }

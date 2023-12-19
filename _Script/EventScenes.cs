@@ -54,11 +54,11 @@ public class EventScenes : MonoBehaviour
     {
         eventP_i = 0;
 
-        
+        /*
         StartCoroutine("StartEvent");
 
         GM.GetComponent<CharMove>().canMove = false;
-        
+        */
         
         if (PlayerPrefs.GetString("changeLanguage", "") == "ENG")
         {

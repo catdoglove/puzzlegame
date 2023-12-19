@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
 
 public class MiniGame : MonoBehaviour
 {
@@ -25,6 +26,11 @@ public class MiniGame : MonoBehaviour
     public GameObject SGM;
 
     public bool eazy_b;
+
+
+    float time = 0;
+    public float _size = 1;
+    public float _upSizeTime;
 
     // Start is called before the first frame update
     void Start()
@@ -119,6 +125,9 @@ public class MiniGame : MonoBehaviour
                 if (num_i[x_i, y_i] != 0)
                 {
                     y_i++;
+                    //움직이지 못할 때
+                    time = 0;
+                    //StopMove();
                 }
                 else
                 {
@@ -147,6 +156,9 @@ public class MiniGame : MonoBehaviour
                 if (num_i[x_i, y_i] != 0)
                 {
                     y_i--;
+                    //움직이지 못할 때
+                    time = 0;
+                    //StopMove();
                 }
                 else
                 {
@@ -262,6 +274,50 @@ public class MiniGame : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    /// <summary>
+    /// 움직일 수 없을 때 바들바들 떤다
+    /// </summary>
+    void StopMove()
+    {
+        //StartCoroutine("FadeIn");
+    }
+    
+    IEnumerator FadeIn()
+    {
+
+        while (time < 1f)
+        {
+            Debug.Log(time);
+            if (time < 0.02f) //특정 위치에서 원점으로 이동
+            {
+                wood_obj[nowSelect_i].transform.position = new Vector3(0, select_obj.transform.position.y - time, 1);
+            }
+            else if (time < 0.03f) // 튕기고
+            {
+                wood_obj[nowSelect_i].transform.position = new Vector3(0, wood_obj[nowSelect_i].transform.position.y - 0.4f,1) * 4;
+            }
+            else if (time < 0.04f) //다시 제자리로
+            {
+                wood_obj[nowSelect_i].transform.position = new Vector3(0, select_obj.transform.position.y - time, 1) * 4;
+            }
+            else if (time < 0.05f) //튕기고
+            {
+                wood_obj[nowSelect_i].transform.position = new Vector3(0, (wood_obj[nowSelect_i].transform.position.y - 0.6f) / 2, 1) * 4;
+            }
+            else if (time < 0.06f) //다시 제자리
+            {
+                wood_obj[nowSelect_i].transform.position = new Vector3(0, select_obj.transform.position.y - (time - 0.7f) / 2, 1) * 4;
+            }
+            else
+            {
+                wood_obj[nowSelect_i].transform.position = select_obj.transform.position;
+            }
+            time += Time.deltaTime;
+            yield return new WaitForSeconds(0.001f);
+        }
+
     }
 
 }
