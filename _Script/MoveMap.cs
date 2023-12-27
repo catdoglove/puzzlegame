@@ -120,7 +120,7 @@ public class MoveMap : MonoBehaviour
                         endEvent_obj.SetActive(true);
                         yield return new WaitForSeconds(5f);
                         endEvent2_obj.SetActive(true);
-                        yield return new WaitForSeconds(2f);
+                        yield return new WaitForSeconds(4f);
 
                         endEvent3_obj.SetActive(false);
                         PlayerPrefs.SetInt("crowatt", 1);

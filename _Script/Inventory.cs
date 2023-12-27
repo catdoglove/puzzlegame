@@ -145,7 +145,7 @@ public class Inventory : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                if (GM.GetComponent<CharMove>().canMove)
+                if (GM.GetComponent<CharMove>().canMove && PlayerPrefs.GetInt("escdont", 0)==0)
                 {
                     if (in_i == 0)
                     {
@@ -265,7 +265,7 @@ public class Inventory : MonoBehaviour
                 
         }
 
-
+        SetNumSelect();
         CheckSelect();
         
     }
@@ -586,10 +586,7 @@ public class Inventory : MonoBehaviour
                 }
 
 
-                if (PlayerPrefs.GetInt("0", 0) == 0)
-                {
-
-                }
+                CloseSelected();
             }
         }
     }
@@ -1174,5 +1171,144 @@ public class Inventory : MonoBehaviour
         PlayerPrefs.SetInt("changeitem", 1);
         
 
+    }
+
+    /// <summary>
+    /// 아이템선택을 숫자키로함
+    /// </summary>
+    void SetNumSelect()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            if (inout_i == 1)
+            {
+                selected_i = 0;
+            }
+            SetSel();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (inout_i == 1)
+            {
+                selected_i = 1;
+            }
+            SetSel();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if (inout_i == 1)
+            {
+                selected_i = 2;
+            }
+            SetSel();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            if (inout_i == 1)
+            {
+                selected_i = 3;
+            }
+            SetSel();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            if (inout_i == 1)
+            {
+                selected_i = 4;
+            }
+            SetSel();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            if (inout_i == 1)
+            {
+                selected_i = 5;
+            }
+            SetSel();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            if (inout_i == 1)
+            {
+                selected_i = 6;
+            }
+            SetSel();
+        }
+    }
+
+
+    void SetSel()
+    {
+
+        if (GM.GetComponent<CharMove>().canMove == false)
+        {
+
+            if (inout_i == 1)
+            {
+
+                for (int i = 0; i < 7; i++)
+                {
+                    selectBox_obj[i].SetActive(false);
+                }
+                selectBox_obj[selected_i].SetActive(true);
+                if (selected_i == selectedNow_i)
+                {
+                    selected_obj.SetActive(false);
+                    PlayerPrefs.SetInt("selecteditemnum", 0);
+                    selectedNow_i = -1;
+                    SGM.GetComponent<SoundEvt>().soundItemWndSelectNO();
+                    CheckSelect();
+                }
+                else
+                {
+                    if (items_i[selected_i] != 0)
+                    {
+                        if (items_i[selected_i] == 8 || items_i[selected_i] == 10 || items_i[selected_i] == 11 || items_i[selected_i] == 9)
+                        {
+
+                            if (PlayerPrefs.GetInt("rotton", 0) == 1)
+                            {
+                                selectedNow_i = 0 + selected_i;
+                                RottonItem();
+                            }
+                            else
+                            {
+                                SGM.GetComponent<SoundEvt>().soundItemWndSelect();
+
+                                selected_obj.SetActive(true);
+                                selected_obj.GetComponent<Image>().sprite = invenItem_obj[selected_i].GetComponent<Image>().sprite;
+                                PlayerPrefs.SetInt("selecteditemnum", items_i[selected_i]);
+                                selectedNow_i = 0 + selected_i;
+                            }
+                        }
+                        else
+                        {
+                            SGM.GetComponent<SoundEvt>().soundItemWndSelect();
+
+                            selected_obj.SetActive(true);
+                            selected_obj.GetComponent<Image>().sprite = invenItem_obj[selected_i].GetComponent<Image>().sprite;
+                            PlayerPrefs.SetInt("selecteditemnum", items_i[selected_i]);
+                            selectedNow_i = 0 + selected_i;
+                        }
+                    }
+                    CloseSelected();
+                }
+            }
+
+        }
+    }
+
+    void CloseSelected()
+    {
+        in_i = 1;
+        StopCoroutine("ShowWindow");
+        StopCoroutine("CloseWindow");
+        StartCoroutine("CloseWindow");
+        CanMoveT();
+
+        if (PlayerPrefs.GetInt("nowtalk", 0) == 1)
+        {
+            CanMoveF();
+        }
     }
 }

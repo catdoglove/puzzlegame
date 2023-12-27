@@ -32,6 +32,8 @@ public class MiniGame : MonoBehaviour
     public float _size = 1;
     public float _upSizeTime;
 
+    public GameObject movef_obj,moveb_obj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +65,8 @@ public class MiniGame : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
+
+            time = 1;
             if (x_i>0)
             {
                 x_i--;
@@ -73,6 +77,8 @@ public class MiniGame : MonoBehaviour
                 if (num_i[x_i, y_i] != 0)
                 {
                     x_i++;
+                    //움직이지 못할 때
+                    time = 0;
                 }
                 else
                 {
@@ -86,9 +92,11 @@ public class MiniGame : MonoBehaviour
                 SetSelect();
                 SGM.GetComponent<SoundEvt>().soundItemWndAD();
             }
+            StopMove();
         }
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
+            time = 1;
             if (x_i < 2)
             {
                 x_i++;
@@ -99,6 +107,8 @@ public class MiniGame : MonoBehaviour
                 if (num_i[x_i, y_i] != 0)
                 {
                     x_i--;
+                    //움직이지 못할 때
+                    time = 0;
                 }
                 else
                 {
@@ -112,9 +122,11 @@ public class MiniGame : MonoBehaviour
                 SetSelect();
                 SGM.GetComponent<SoundEvt>().soundItemWndAD();
             }
+            StopMove();
         }
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
+            time = 1;
             if (y_i > 0)
             {
                 y_i--;
@@ -122,12 +134,12 @@ public class MiniGame : MonoBehaviour
 
             if (select_b)
             {
+                time = 1;
                 if (num_i[x_i, y_i] != 0)
                 {
                     y_i++;
                     //움직이지 못할 때
                     time = 0;
-                    //StopMove();
                 }
                 else
                 {
@@ -142,9 +154,11 @@ public class MiniGame : MonoBehaviour
                 SGM.GetComponent<SoundEvt>().soundItemWndAD();
             }
 
+            StopMove();
         }
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
+            time = 1;
             if (y_i < 3)
             {
                 y_i++;
@@ -158,7 +172,6 @@ public class MiniGame : MonoBehaviour
                     y_i--;
                     //움직이지 못할 때
                     time = 0;
-                    //StopMove();
                 }
                 else
                 {
@@ -172,6 +185,8 @@ public class MiniGame : MonoBehaviour
                 SetSelect();
                 SGM.GetComponent<SoundEvt>().soundItemWndAD();
             }
+
+            StopMove();
         }
         //1t5t3t4t6t2
         if (Input.GetKeyDown(KeyCode.Space))
@@ -281,7 +296,12 @@ public class MiniGame : MonoBehaviour
     /// </summary>
     void StopMove()
     {
-        //StartCoroutine("FadeIn");
+        if (time==0)
+        {
+            SGM.GetComponent<SoundEvt>().soundItemFail();
+        }
+        StopCoroutine("FadeIn");
+        StartCoroutine("FadeIn");
     }
     
     IEnumerator FadeIn()
@@ -289,31 +309,21 @@ public class MiniGame : MonoBehaviour
 
         while (time < 1f)
         {
-            Debug.Log(time);
-            if (time < 0.02f) //특정 위치에서 원점으로 이동
+            //Debug.Log(time);
+            float a = select_obj.transform.position.x;
+            if (time < 0.1f) //특정 위치에서 원점으로 이동
             {
-                wood_obj[nowSelect_i].transform.position = new Vector3(0, select_obj.transform.position.y - time, 1);
+                wood_obj[nowSelect_i].transform.position = movef_obj.transform.position;
             }
-            else if (time < 0.03f) // 튕기고
+            else if (time < 0.2f) // 튕기고
             {
-                wood_obj[nowSelect_i].transform.position = new Vector3(0, wood_obj[nowSelect_i].transform.position.y - 0.4f,1) * 4;
-            }
-            else if (time < 0.04f) //다시 제자리로
-            {
-                wood_obj[nowSelect_i].transform.position = new Vector3(0, select_obj.transform.position.y - time, 1) * 4;
-            }
-            else if (time < 0.05f) //튕기고
-            {
-                wood_obj[nowSelect_i].transform.position = new Vector3(0, (wood_obj[nowSelect_i].transform.position.y - 0.6f) / 2, 1) * 4;
-            }
-            else if (time < 0.06f) //다시 제자리
-            {
-                wood_obj[nowSelect_i].transform.position = new Vector3(0, select_obj.transform.position.y - (time - 0.7f) / 2, 1) * 4;
+                wood_obj[nowSelect_i].transform.position = moveb_obj.transform.position;
             }
             else
             {
                 wood_obj[nowSelect_i].transform.position = select_obj.transform.position;
             }
+            //wood_obj[nowSelect_i].transform.position.x / 2f
             time += Time.deltaTime;
             yield return new WaitForSeconds(0.001f);
         }
