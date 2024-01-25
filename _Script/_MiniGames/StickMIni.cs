@@ -10,6 +10,10 @@ public class StickMIni : MonoBehaviour
     //public GameObject SGM,CPGM, CPSGM;
     public int a = 0;
     public int b = 0;
+    public GameObject SGM, GM, GMM;
+    public GameObject s_obj;
+
+    float wait_f=0.3f;
 
     // Start is called before the first frame update
     void Start()
@@ -37,24 +41,55 @@ public class StickMIni : MonoBehaviour
 
     void WPress()
     {
-        sap1_obj.SetActive(false);
-        sap2_obj.SetActive(false);
-        stick2_obj.GetComponent<SpriteRenderer>().sprite = stick_spr[1];
-        stick1_obj.GetComponent<SpriteRenderer>().sprite = stick_spr[1];
+        if (a_i==0)
+        {
+            SGM.GetComponent<SoundEvt>().soundItemFail();
+            sap1_obj.SetActive(false);
+            stick1_obj.GetComponent<SpriteRenderer>().sprite = stick_spr[1];
+        }
+        else if (a_i==1)
+        {
+            SGM.GetComponent<SoundEvt>().soundItemFail();
+            sap1_obj.SetActive(false);
+            sap2_obj.SetActive(false);
+            stick2_obj.GetComponent<SpriteRenderer>().sprite = stick_spr[1];
+            stick1_obj.GetComponent<SpriteRenderer>().sprite = stick_spr[1];
+            stickKey1_obj.SetActive(true);
+        }
+
     }
 
 
 
     void APress()
     {
-        stick2_obj.GetComponent<SpriteRenderer>().sprite = stick_spr[3];
-        stickKey2_obj.SetActive(false);
+        if (a_i == 9)
+        {
+            SGM.GetComponent<SoundEvt>().soundItemFail();
+            stick2_obj.GetComponent<SpriteRenderer>().sprite = stick_spr[2];
+            stickKey2_obj.SetActive(false);
+        }
+        else if (a_i==12)
+        {
+            SGM.GetComponent<SoundEvt>().soundItemFail();
+            stick2_obj.GetComponent<SpriteRenderer>().sprite = stick_spr[3];
+        }
     }
 
     void DPress()
     {
-        stick1_obj.GetComponent<SpriteRenderer>().sprite = stick_spr[3];
-        stickKey1_obj.SetActive(false);
+        if (a_i == 3 )
+        {
+            SGM.GetComponent<SoundEvt>().soundItemFail();
+            stick1_obj.GetComponent<SpriteRenderer>().sprite = stick_spr[2];
+            stickKey1_obj.SetActive(false);
+        }
+        else if (a_i == 6)
+        {
+            SGM.GetComponent<SoundEvt>().soundItemFail();
+            stick1_obj.GetComponent<SpriteRenderer>().sprite = stick_spr[3];
+            stickKey2_obj.SetActive(true);
+        }
     }
 
 
@@ -62,10 +97,19 @@ public class StickMIni : MonoBehaviour
     {
         while (a==0)
         {
-            if (a_i >= 5)
+            if (a_i >= 13)
             {
                 yield return new WaitForSeconds(0.2f);
                 stickWin_obj.SetActive(false);
+                GM.GetComponent<CheckPlayerEvent>().GetS();
+                //pan.SetActive(false);
+                GMM.GetComponent<CharMove>().canMove = true;
+                PlayerPrefs.SetInt("escdont", 0);
+                SGM.GetComponent<SoundEvt>().soundItemSuccess();
+                PlayerPrefs.SetInt("nowtalk", 0);
+                s_obj.SetActive(false);
+
+
                 if (b==0)
                 {
                  //   CPGM.GetComponent<CheckPlayer>().EventNum_i[CPGM.GetComponent<CheckPlayer>().num] = 15;
@@ -90,7 +134,7 @@ public class StickMIni : MonoBehaviour
                         // SGM.GetComponent<SoundEvt>().soundstick();
                         WPress();
                         a_i++;
-                        yield return new WaitForSeconds(0.8f);
+                        yield return new WaitForSeconds(wait_f);
                     }
 
                 }
@@ -98,26 +142,26 @@ public class StickMIni : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    if (a_i > 1 && a_i < 4)
+                    if (a_i >= 7)
                     {
                     ///   SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
                        // SGM.GetComponent<SoundEvt>().soundstick();
                         APress();
                         a_i++;
-                        yield return new WaitForSeconds(0.8f);
+                        yield return new WaitForSeconds(wait_f);
                     }
 
                 }
 
                 if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                 {
-                    if (a_i >= 4)
+                    if (a_i > 1 && a_i < 7)
                     {
                      //   SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
                        // SGM.GetComponent<SoundEvt>().soundstick();
                         DPress();
                         a_i++;
-                        yield return new WaitForSeconds(0.8f);
+                        yield return new WaitForSeconds(wait_f);
                     }
                 }
 
@@ -128,7 +172,6 @@ public class StickMIni : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
     }
-
-
+    
 
 }

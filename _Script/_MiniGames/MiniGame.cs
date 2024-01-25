@@ -299,9 +299,12 @@ public class MiniGame : MonoBehaviour
         if (time==0)
         {
             SGM.GetComponent<SoundEvt>().soundItemFail();
+            StopCoroutine("FadeIn");
+            StartCoroutine("FadeIn");
         }
-        StopCoroutine("FadeIn");
-        StartCoroutine("FadeIn");
+        else
+        {
+        }
     }
     
     IEnumerator FadeIn()

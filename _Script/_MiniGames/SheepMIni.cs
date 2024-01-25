@@ -95,7 +95,7 @@ public class SheepMIni : MonoBehaviour
                 }
 
             }
-
+            Debug.Log("a_i"+ a_i);
             yield return new WaitForSeconds(0.01f);
         }
     }

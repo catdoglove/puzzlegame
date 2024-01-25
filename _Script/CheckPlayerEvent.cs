@@ -15,7 +15,7 @@ public class CheckPlayerEvent : MonoBehaviour
     public Sprite balloon_spr;
     public GameObject balloon_obj;
     public float x_f, y_f;
-    int a = 0;
+    public int a = 0;
     int k = 0;
     public GameObject GMS,GM, GMI,GMM;
 
@@ -444,6 +444,7 @@ public class CheckPlayerEvent : MonoBehaviour
                         SGM.GetComponent<SoundEvt>().soundItemUse();
                         GMI.GetComponent<Inventory>().DelItems();
                         ItemSettingOnEvent();
+                        this.gameObject.SetActive(false);
                     }
                     else
                     {
@@ -453,6 +454,11 @@ public class CheckPlayerEvent : MonoBehaviour
                 }
                 else
                 {
+                    if (SetItemPref_i == 17)
+                    {
+
+                        this.gameObject.SetActive(false);
+                    }
                     SGM.GetComponent<SoundEvt>().soundItemFail();
                     a++;
                     Debug.Log(PlayerPrefs.GetInt("selecteditemnum", 0) + "d" + getItemPref_i);
@@ -597,6 +603,17 @@ public class CheckPlayerEvent : MonoBehaviour
                 moveGM.SetActive(true);
 
                 GM.GetComponent<CharMove>().canMove = false;
+                break;
+            case 25://퍼즐 이벤트
+                //SGM.GetComponent<SoundEvt>().soundTalk();
+                StopAndTalk();
+                a++;
+                PlayerPrefs.SetInt("nowtalk", 1);
+                puzzle_obj.SetActive(true);
+                GM.GetComponent<CharMove>().canMove = false;
+                this.gameObject.SetActive(false);
+                PlayerPrefs.SetInt("escdont", 1);
+                balloon_obj.SetActive(false);
                 break;
 
             default:
@@ -816,4 +833,12 @@ public class CheckPlayerEvent : MonoBehaviour
     }
 
 
+    public void GetS()
+    {
+            SGM.GetComponent<SoundEvt>().soundItemUse();
+            a++;
+            GMI.GetComponent<Inventory>().DelItems();
+            ItemSettingOnEvent();
+            laterEvent_obj.SetActive(true);
+    }
 }

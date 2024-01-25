@@ -37,7 +37,7 @@ public class CheckPlayer : MonoBehaviour
     public GameObject char_obj;
 
 
-    public Vector3 position0, position_fox;
+    public Vector3 position0, position_fox, position_nomal;
     public GameObject move_obj, moveOther_obj;
     public GameObject[] npc_obj;
 
@@ -109,10 +109,18 @@ public class CheckPlayer : MonoBehaviour
     public GameObject miniGame_obj;
 
     public bool dogam_b, fox_b;
+
+
+    public float checkX_f, checkY_f, checkR_f;
+
     private void OnEnable()
     {
         GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
         //StartCoroutine("Checking");
+
+
+        position_fox = new Vector3(transform.position.x - 2.5f, transform.position.y, transform.position.z);
+        position_nomal = new Vector3(transform.position.x - checkX_f, transform.position.y - checkY_f, transform.position.z);
     }
 
     void Start()
@@ -161,7 +169,8 @@ public class CheckPlayer : MonoBehaviour
         }
         else
         {
-            Gizmos.DrawWireCube(transform.position, size);
+            //position_nomal = new Vector3(transform.position.x - checkX_f, transform.position.y - checkY_f, transform.position.z);
+            Gizmos.DrawWireCube(position_nomal, size);
         }
     }
 
@@ -178,7 +187,7 @@ public class CheckPlayer : MonoBehaviour
             }
             else
             {
-                hit = Physics2D.OverlapBox(transform.position, size, 0, whatIsLayer);
+                hit = Physics2D.OverlapBox(position_nomal, size, checkR_f, whatIsLayer);
             }
             if (hit == null)
             {
@@ -1396,6 +1405,9 @@ public class CheckPlayer : MonoBehaviour
                 break;
         }
         PlayerPrefs.SetInt(SetEventPref_str, a);
+
+        talk_b = false;
+        StartCoroutine("TalkBOff");
     }
 
     public void StopAndTalk()
@@ -1746,7 +1758,7 @@ public class CheckPlayer : MonoBehaviour
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event2_spr[k];
                 s = 0;
             }
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.3f);
             //c++;
         }
 
@@ -1773,16 +1785,17 @@ public class CheckPlayer : MonoBehaviour
                 in_i = 0;
             }
 
+            position_nomal = new Vector3(transform.position.x - checkX_f, transform.position.y - checkY_f, transform.position.z);
             yield return new WaitForSeconds(0.01f);
         }
         talk_b = true;
 
-        SetQuest();
 
         if (animalNum_i == 3)
         {
             SetDogam3();
         }
+        SetQuest();
     }
 
 
@@ -1801,6 +1814,7 @@ public class CheckPlayer : MonoBehaviour
         {
             position0.y = position0.y - 5f * Time.deltaTime;
             transform.position = position0;
+            position_nomal = new Vector3(transform.position.x - checkX_f, transform.position.y - checkY_f, transform.position.z);
 
             if (position0.y <= move_obj.transform.position.y)
             {
@@ -1883,6 +1897,8 @@ public class CheckPlayer : MonoBehaviour
     /// </summary>
     void SetQuest()
     {
+        StopCoroutine("FadeIn");
+        GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
         q4_obj.transform.position = new Vector2(o4_obj.transform.position.x, q4_obj.transform.position.y);
         q1_obj.SetActive(true);
         q2_obj.SetActive(true);
@@ -1934,6 +1950,7 @@ public class CheckPlayer : MonoBehaviour
     }
     IEnumerator BearL()  //곰이 돌진하는 시간
     {
+
         //talk_b = false;
         int in_i = 1;
         position0 = bearM_obj.transform.position;
@@ -1944,6 +1961,7 @@ public class CheckPlayer : MonoBehaviour
             position0.x = position0.x - 10f * Time.deltaTime; //10f 무빙속도
             bearM_obj.transform.position = position0;
 
+            position_nomal = new Vector3(transform.position.x - checkX_f, transform.position.y - checkY_f, transform.position.z);
             if (position0.x <= b_position.x)
             {
                 in_i = 0;
@@ -1969,6 +1987,7 @@ public class CheckPlayer : MonoBehaviour
         {
             position0.x = position0.x + 10f * Time.deltaTime; //10f 무빙속도
             bearM_obj.transform.position = position0;
+            position_nomal = new Vector3(transform.position.x - checkX_f, transform.position.y - checkY_f, transform.position.z);
 
             if (position0.x >= bbPos_obj.transform.position.x)
             {
@@ -2012,6 +2031,18 @@ public class CheckPlayer : MonoBehaviour
             GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
         }
         GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
-        
+
+    }
+    IEnumerator TalkBOff()  //대화딜레이
+    {
+        int in_i = 1;
+
+        while (in_i == 1)
+        {
+            yield return new WaitForSeconds(0.2f);
+            in_i = 0;
+        }
+
+        talk_b = true;
     }
 }

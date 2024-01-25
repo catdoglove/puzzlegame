@@ -42,6 +42,8 @@ public class Inventory : MonoBehaviour
     public GameObject ESCevent;
     public GameObject sheep_obj;
 
+    public GameObject door_obj, door2_obj;
+
     private void Awake()
     {
     }
@@ -145,6 +147,11 @@ public class Inventory : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Tab))
             {
+                if (PlayerPrefs.GetInt("rotton", 0)==1)
+                {
+                    door_obj.SetActive(false);
+                    door2_obj.SetActive(true);
+                }
                 if (GM.GetComponent<CharMove>().canMove && PlayerPrefs.GetInt("escdont", 0)==0)
                 {
                     if (in_i == 0)
@@ -482,6 +489,7 @@ public class Inventory : MonoBehaviour
             {
                 in_i = 0;
                 inout_i = 1;
+                itemWindow_obj.transform.position = itemWindowEnd_obj.transform.position;
             }
             yield return new WaitForSeconds(0.01f);
         }
