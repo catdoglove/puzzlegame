@@ -715,6 +715,8 @@ public class CheckPlayer : MonoBehaviour
                 {
                     SetDogam3();
                 }
+                talk_b = false;
+                StartCoroutine("TalkBOff");
                 break;
             case 4://말풍선 띄우고 특수 아이템요구
                 TalkSound();
@@ -749,6 +751,8 @@ public class CheckPlayer : MonoBehaviour
                     SetDogam2();
                 }
 
+                talk_b = false;
+                StartCoroutine("TalkBOff");
 
                 break;
             case 6://아래 이동
@@ -1406,8 +1410,8 @@ public class CheckPlayer : MonoBehaviour
         }
         PlayerPrefs.SetInt(SetEventPref_str, a);
 
-        talk_b = false;
-        StartCoroutine("TalkBOff");
+        //talk_b = false;
+        //StartCoroutine("TalkBOff");
     }
 
     public void StopAndTalk()
@@ -1758,7 +1762,7 @@ public class CheckPlayer : MonoBehaviour
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event2_spr[k];
                 s = 0;
             }
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.5f);
             //c++;
         }
 
@@ -2039,7 +2043,7 @@ public class CheckPlayer : MonoBehaviour
 
         while (in_i == 1)
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.8f);
             in_i = 0;
         }
 

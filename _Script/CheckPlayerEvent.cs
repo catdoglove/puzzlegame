@@ -550,9 +550,11 @@ public class CheckPlayerEvent : MonoBehaviour
                     char_obj.SetActive(false);
                     GMI.GetComponent<Inventory>().DelItems();
                     move_obj.GetComponent<SpriteRenderer>().sprite = change_spr;
-                }
+                    PlayerPrefs.SetInt("escdont", 1);
 
-                k = a;
+                    }
+
+                    k = a;
 
                 break;
             case 19:// 까마귀 삽화

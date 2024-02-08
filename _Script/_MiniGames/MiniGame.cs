@@ -191,6 +191,12 @@ public class MiniGame : MonoBehaviour
         //1t5t3t4t6t2
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            StopCoroutine("FadeIn");
+            if (time < 1f)
+            {
+                wood_obj[nowSelect_i].transform.position = select_obj.transform.position;
+                time = 1;
+            }
             if (num_i[x_i,y_i]!=0)
             {
                 if (select_b)

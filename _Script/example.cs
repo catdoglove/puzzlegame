@@ -163,5 +163,6 @@ public class example : MonoBehaviour
         //주인공 true
         player_obj.SetActive(true);
 
+        PlayerPrefs.SetInt("escdont", 0);
     }
 }
