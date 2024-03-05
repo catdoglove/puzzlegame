@@ -454,11 +454,6 @@ public class CheckPlayerEvent : MonoBehaviour
                 }
                 else
                 {
-                    if (SetItemPref_i == 17)
-                    {
-
-                        this.gameObject.SetActive(false);
-                    }
                     SGM.GetComponent<SoundEvt>().soundItemFail();
                     a++;
                     Debug.Log(PlayerPrefs.GetInt("selecteditemnum", 0) + "d" + getItemPref_i);
@@ -471,6 +466,13 @@ public class CheckPlayerEvent : MonoBehaviour
                         move_obj.GetComponent<SpriteRenderer>().sprite = change_spr;
                         move_obj.gameObject.SetActive(false);
                         ItemSettingOnEvent();
+
+                        if (SetItemPref_i == 17)
+                        {
+
+                            this.gameObject.SetActive(false);
+                            balloon_obj.gameObject.SetActive(false);
+                        }
                     }
                 }
 

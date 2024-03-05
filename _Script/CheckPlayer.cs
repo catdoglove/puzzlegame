@@ -884,10 +884,11 @@ public class CheckPlayer : MonoBehaviour
                 a--;
                 a--;
 
-                if (animalNum_i == 1)
+                if (animalNum_i == 1&& SetItemPref_i==8)
                 {
                     SetDogam4();
                 }
+                StartCoroutine("TalkBOff");
                 break;
             case 11://말풍선 띄우고 아이템 얻음
                 TalkSound();
@@ -1322,8 +1323,10 @@ public class CheckPlayer : MonoBehaviour
                 {
                     a++;
                     a++;
+                    a++;
                     //SetDogam2();
                 }
+
                 StopCoroutine("talkBall");
                 k = a;
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
