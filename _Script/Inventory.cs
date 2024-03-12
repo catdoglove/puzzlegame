@@ -341,6 +341,7 @@ public class Inventory : MonoBehaviour
 
             PlayerPrefs.SetInt("changeitem", 0);
         }
+
     }
 
 
@@ -558,7 +559,7 @@ public class Inventory : MonoBehaviour
     }
 
 
-    void SelectItem()
+   void SelectItem()
     {
         if (items_i[selected_i] != 0)
         {
@@ -596,6 +597,44 @@ public class Inventory : MonoBehaviour
 
                 CloseSelected();
             }
+        }
+    }
+
+    public void CallSelectItem()
+    {
+
+        Debug.Log("a"+ items_i[selected_i]);
+        if (items_i[selected_i] != 0)
+        {
+
+            if (items_i[selected_i] == 8 || items_i[selected_i] == 10 || items_i[selected_i] == 11 || items_i[selected_i] == 9)
+            {
+
+                if (PlayerPrefs.GetInt("rotton", 0) == 1)
+                {
+                    selectedNow_i = 0 + selected_i;
+                    RottonItem();
+                }
+                else
+                {
+
+                    selected_obj.SetActive(true);
+                    selected_obj.GetComponent<Image>().sprite = invenItem_obj[selected_i].GetComponent<Image>().sprite;
+                    PlayerPrefs.SetInt("selecteditemnum", items_i[selected_i]);
+                    selectedNow_i = 0 + selected_i;
+                }
+            }
+            else
+            {
+
+                selected_obj.SetActive(true);
+                selected_obj.GetComponent<Image>().sprite = invenItem_obj[selected_i].GetComponent<Image>().sprite;
+                PlayerPrefs.SetInt("selecteditemnum", items_i[selected_i]);
+                selectedNow_i = 0 + selected_i;
+            }
+
+            
+
         }
     }
 
@@ -972,6 +1011,15 @@ public class Inventory : MonoBehaviour
             }
 
 
+        }
+
+
+        if (PlayerPrefs.GetInt("selectN", 0) == 1)
+        {
+
+            Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            CallSelectItem();
+            PlayerPrefs.SetInt("selectN", 0);
         }
     }
     

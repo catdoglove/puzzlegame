@@ -490,6 +490,17 @@ public class CheckPlayer : MonoBehaviour
                 this.gameObject.SetActive(false);
             }
         }
+
+
+        Debug.Log("a" + GMI.GetComponent<Inventory>().selectedNow_i);
+        if (GMI.GetComponent<Inventory>().selectedNow_i < 0)
+        {
+            PlayerPrefs.SetInt("selectN", 1);
+            GMI.GetComponent<Inventory>().selected_i = a - 1;
+
+            Debug.Log("a" + GMI.GetComponent<Inventory>().selected_i);
+            //GMI.GetComponent<Inventory>().CallSelectItem();
+        }
     }
 
     void DelThis()
@@ -888,6 +899,7 @@ public class CheckPlayer : MonoBehaviour
                 {
                     SetDogam4();
                 }
+                talk_b = false;
                 StartCoroutine("TalkBOff");
                 break;
             case 11://말풍선 띄우고 아이템 얻음
@@ -990,7 +1002,8 @@ public class CheckPlayer : MonoBehaviour
                     }
                     SetDogam2();
                 }
-
+                talk_b = false;
+                StartCoroutine("TalkBOff");
                 break;
             case 16://말풍선 띄우고 퀘스트 시작
                 TalkSound();
@@ -1744,7 +1757,12 @@ public class CheckPlayer : MonoBehaviour
         GMI.GetComponent<ItemGetMotion>().fade_obj.transform.position = this.transform.position;
         GMI.GetComponent<ItemGetMotion>().FadeItem();
 
-
+        if (GMI.GetComponent<Inventory>().selectedNow_i < 0)
+        {
+            PlayerPrefs.SetInt("selectN", 1);
+            GMI.GetComponent<Inventory>().selected_i = a-1;
+            //GMI.GetComponent<Inventory>().CallSelectItem();
+        }
     }
 
 

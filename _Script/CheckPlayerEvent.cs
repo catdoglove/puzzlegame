@@ -729,15 +729,26 @@ public class CheckPlayerEvent : MonoBehaviour
 
         PlayerPrefs.SetInt("changeitem", 1);
 
-        if (hel==1)
+        if (hel == 1)
         {
-            PlayerPrefs.SetInt("inventorynum", (a-1));
+            PlayerPrefs.SetInt("inventorynum", (a - 1));
         }
 
 
         GMI.GetComponent<ItemGetMotion>().fade_obj.GetComponent<SpriteRenderer>().sprite = item_spr;
         GMI.GetComponent<ItemGetMotion>().fade_obj.transform.position = this.transform.position;
         GMI.GetComponent<ItemGetMotion>().FadeItem();
+
+
+        Debug.Log("a"+ GMI.GetComponent<Inventory>().selectedNow_i);
+        if (GMI.GetComponent<Inventory>().selectedNow_i < 0)
+        {
+            PlayerPrefs.SetInt("selectN", 1);
+            GMI.GetComponent<Inventory>().selected_i = a-1;
+            Debug.Log("a" + GMI.GetComponent<Inventory>().selected_i);
+            //GMI.GetComponent<Inventory>().CallSelectItem();
+        }
+
     }
 
 
