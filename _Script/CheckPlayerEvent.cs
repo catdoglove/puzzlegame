@@ -397,6 +397,7 @@ public class CheckPlayerEvent : MonoBehaviour
                     a++;
                     GMI.GetComponent<Inventory>().DelItems();
                     move_obj.GetComponent<SpriteRenderer>().sprite = change_spr;
+                    hall_obj.GetComponent<SpriteRenderer>().sprite = change_spr;
                 }
                 
                 k = a;
@@ -609,15 +610,23 @@ public class CheckPlayerEvent : MonoBehaviour
                 GM.GetComponent<CharMove>().canMove = false;
                 break;
             case 25://퍼즐 이벤트
-                //SGM.GetComponent<SoundEvt>().soundTalk();
-                StopAndTalk();
-                a++;
-                PlayerPrefs.SetInt("nowtalk", 1);
-                puzzle_obj.SetActive(true);
-                GM.GetComponent<CharMove>().canMove = false;
-                this.gameObject.SetActive(false);
-                PlayerPrefs.SetInt("escdont", 1);
-                balloon_obj.SetActive(false);
+
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == 15)
+                {
+                    StopAndTalk();
+                    a++;
+                    PlayerPrefs.SetInt("nowtalk", 1);
+                    puzzle_obj.SetActive(true);
+                    GM.GetComponent<CharMove>().canMove = false;
+                    this.gameObject.SetActive(false);
+                    PlayerPrefs.SetInt("escdont", 1);
+                    balloon_obj.SetActive(false);
+                }
+                else
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemFail();
+                }
+                    //SGM.GetComponent<SoundEvt>().soundTalk();
                 break;
 
             default:

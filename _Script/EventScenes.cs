@@ -59,7 +59,6 @@ public class EventScenes : MonoBehaviour
 
         GM.GetComponent<CharMove>().canMove = false;
         
-        
         if (PlayerPrefs.GetString("changeLanguage", "") == "ENG")
         {
             note_obj.GetComponent<Image>().sprite = letter_spr;

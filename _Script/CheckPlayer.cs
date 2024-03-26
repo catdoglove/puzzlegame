@@ -1123,6 +1123,9 @@ public class CheckPlayer : MonoBehaviour
                     talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[3];
                     k = 3;
                 }
+
+                talk_b = false;
+                StartCoroutine("TalkBOff");
                 break;
             case 24://말풍선띄우고 다음으로
                 crow_Ani.Play("ani_npc_crow_talk");

@@ -565,14 +565,29 @@ public class Inventory : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-
-                if (items_i[selected_i] == 8|| items_i[selected_i] == 10||items_i[selected_i] == 11|| items_i[selected_i] == 9)
+                if (items_i[selected_i] == 23 || items_i[selected_i] == 24 || items_i[selected_i] == 25 || items_i[selected_i] == 26)
                 {
-
-                    if (PlayerPrefs.GetInt("rotton", 0) == 1)
+                    RottonItem();
+                }
+                else
+                {
+                    if (items_i[selected_i] == 8 || items_i[selected_i] == 10 || items_i[selected_i] == 11 || items_i[selected_i] == 9)
                     {
-                        selectedNow_i = 0 + selected_i;
-                        RottonItem();
+
+                        if (PlayerPrefs.GetInt("rotton", 0) == 1)
+                        {
+                            selectedNow_i = 0 + selected_i;
+                            //RottonItem();
+                        }
+                        else
+                        {
+                            SGM.GetComponent<SoundEvt>().soundItemWndSelect();
+
+                            selected_obj.SetActive(true);
+                            selected_obj.GetComponent<Image>().sprite = invenItem_obj[selected_i].GetComponent<Image>().sprite;
+                            PlayerPrefs.SetInt("selecteditemnum", items_i[selected_i]);
+                            selectedNow_i = 0 + selected_i;
+                        }
                     }
                     else
                     {
@@ -583,20 +598,14 @@ public class Inventory : MonoBehaviour
                         PlayerPrefs.SetInt("selecteditemnum", items_i[selected_i]);
                         selectedNow_i = 0 + selected_i;
                     }
-                }
-                else
-                {
-                    SGM.GetComponent<SoundEvt>().soundItemWndSelect();
 
-                    selected_obj.SetActive(true);
-                    selected_obj.GetComponent<Image>().sprite = invenItem_obj[selected_i].GetComponent<Image>().sprite;
-                    PlayerPrefs.SetInt("selecteditemnum", items_i[selected_i]);
-                    selectedNow_i = 0 + selected_i;
+
+                    CloseSelected();
                 }
 
 
-                CloseSelected();
             }
+
         }
     }
 
@@ -1029,36 +1038,22 @@ public class Inventory : MonoBehaviour
     /// </summary>
     void RottonItem()
     {
-        a = 0 + selectedNow_i;
+
+        a = 0 + selected_i;
         int p = PlayerPrefs.GetInt("inventoryget" + a, 0);
         int o = PlayerPrefs.GetInt("itemnum" + p);
         int t = PlayerPrefs.GetInt("stacking", 0);
         int t2 = PlayerPrefs.GetInt("whierestacking", 0);
         PlayerPrefs.SetInt("inventoryget" + a, 0);
         PlayerPrefs.SetInt("itemnum" + p, 0);
-        Debug.Log("invenItem_obj" + a);
-        try
-        {
-            invenItem_obj[a].GetComponent<Image>().sprite = null;
-            invenItem_obj[a].SetActive(false);
-        }
-        catch (System.Exception)
-        {
-
-            throw;
-        }
+        invenItem_obj[a].GetComponent<Image>().sprite = null;
+        invenItem_obj[a].SetActive(false);
         items_i[a] = 0;
         selected_obj.SetActive(false);
         PlayerPrefs.SetInt("selecteditemnum", 0);
         selectedNow_i = -1;
         PlayerPrefs.SetInt("inventorynum", a);
-        if (PlayerPrefs.GetInt("itemgetpoint", 0) == PlayerPrefs.GetInt("fillpotint", 0) && PlayerPrefs.GetInt("itemgetpoint", 0) != 0)
-        {
-            PlayerPrefs.SetInt("fillpotint", (PlayerPrefs.GetInt("fillpotint", 0) - 1));
-        }
-        else
-        {
-        }
+
         for (int i = 6; i >= 0; i--)
         {
             if (items_i[i] == 0)
@@ -1067,6 +1062,9 @@ public class Inventory : MonoBehaviour
             }
         }
         PlayerPrefs.SetInt("changeitem", 1);
+
+
+        SGM.GetComponent<SoundEvt>().soundItemWndSelectNO();
     }
 
     /// <summary>
@@ -1302,30 +1300,46 @@ public class Inventory : MonoBehaviour
             if (inout_i == 1)
             {
 
-                for (int i = 0; i < 7; i++)
+                if (items_i[selected_i] == 23 || items_i[selected_i] == 24 || items_i[selected_i] == 25 || items_i[selected_i] == 26)
                 {
-                    selectBox_obj[i].SetActive(false);
-                }
-                selectBox_obj[selected_i].SetActive(true);
-                if (selected_i == selectedNow_i)
-                {
-                    selected_obj.SetActive(false);
-                    PlayerPrefs.SetInt("selecteditemnum", 0);
-                    selectedNow_i = -1;
-                    SGM.GetComponent<SoundEvt>().soundItemWndSelectNO();
-                    CheckSelect();
+                    RottonItem();
                 }
                 else
                 {
-                    if (items_i[selected_i] != 0)
+                    for (int i = 0; i < 7; i++)
                     {
-                        if (items_i[selected_i] == 8 || items_i[selected_i] == 10 || items_i[selected_i] == 11 || items_i[selected_i] == 9)
+                        selectBox_obj[i].SetActive(false);
+                    }
+                    selectBox_obj[selected_i].SetActive(true);
+                    if (selected_i == selectedNow_i)
+                    {
+                        selected_obj.SetActive(false);
+                        PlayerPrefs.SetInt("selecteditemnum", 0);
+                        selectedNow_i = -1;
+                        SGM.GetComponent<SoundEvt>().soundItemWndSelectNO();
+                        CheckSelect();
+                    }
+                    else
+                    {
+                        if (items_i[selected_i] != 0)
                         {
-
-                            if (PlayerPrefs.GetInt("rotton", 0) == 1)
+                            if (items_i[selected_i] == 8 || items_i[selected_i] == 10 || items_i[selected_i] == 11 || items_i[selected_i] == 9)
                             {
-                                selectedNow_i = 0 + selected_i;
-                                RottonItem();
+
+                                if (PlayerPrefs.GetInt("rotton", 0) == 1)
+                                {
+                                    selectedNow_i = 0 + selected_i;
+                                    //RottonItem();
+                                }
+                                else
+                                {
+                                    SGM.GetComponent<SoundEvt>().soundItemWndSelect();
+
+                                    selected_obj.SetActive(true);
+                                    selected_obj.GetComponent<Image>().sprite = invenItem_obj[selected_i].GetComponent<Image>().sprite;
+                                    PlayerPrefs.SetInt("selecteditemnum", items_i[selected_i]);
+                                    selectedNow_i = 0 + selected_i;
+                                }
                             }
                             else
                             {
@@ -1337,18 +1351,10 @@ public class Inventory : MonoBehaviour
                                 selectedNow_i = 0 + selected_i;
                             }
                         }
-                        else
-                        {
-                            SGM.GetComponent<SoundEvt>().soundItemWndSelect();
-
-                            selected_obj.SetActive(true);
-                            selected_obj.GetComponent<Image>().sprite = invenItem_obj[selected_i].GetComponent<Image>().sprite;
-                            PlayerPrefs.SetInt("selecteditemnum", items_i[selected_i]);
-                            selectedNow_i = 0 + selected_i;
-                        }
+                        CloseSelected();
                     }
-                    CloseSelected();
                 }
+                    
             }
 
         }

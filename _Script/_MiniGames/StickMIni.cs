@@ -130,6 +130,7 @@ public class StickMIni : MonoBehaviour
                 {
                     if (a_i <= 1)
                     {
+                        yield return new WaitForSeconds(0.2f);
                         ///   SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
                         // SGM.GetComponent<SoundEvt>().soundstick();
                         WPress();
