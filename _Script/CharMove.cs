@@ -324,10 +324,10 @@ public class CharMove : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (PlayerPrefs.GetInt("stopwhenitem", 0) == 0)
-        {
+        //if (PlayerPrefs.GetInt("stopwhenitem", 0) == 0)
+        //{
             rigid2D.velocity = new Vector2(h, v) * Speed;
-        }
+        //}
 
 
     }

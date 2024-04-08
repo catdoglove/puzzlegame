@@ -75,6 +75,6 @@ public class ItemGetMotion : MonoBehaviour
             fade2_obj.GetComponent<SpriteRenderer>().color = color;
             yield return null;
         }
-        fade_obj.transform.position = new Vector2(15f, 15f);
+        fade_obj.transform.position = new Vector2(25f, 25f);
     }
 }

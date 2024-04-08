@@ -611,8 +611,8 @@ public class Inventory : MonoBehaviour
 
     public void CallSelectItem()
     {
-
-        Debug.Log("a"+ items_i[selected_i]);
+        Debug.Log("selected_i" + selected_i);
+        //Debug.Log("a"+ items_i[selected_i]);
         if (items_i[selected_i] != 0)
         {
 
