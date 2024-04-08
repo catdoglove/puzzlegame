@@ -1175,6 +1175,22 @@ public class CheckPlayer : MonoBehaviour
 
                 break;
             case 26://말풍선 띄우고 특수 아이템요구 아이템제거
+
+
+                if (PlayerPrefs.GetInt("" + SetItemPref_str, 0) == 0)
+                {
+                    PlayerPrefs.SetInt("" + SetItemPref_str, 1);
+                    npc_obj[1].SetActive(true);
+                    npc_obj[0].SetActive(false);
+                    npc_obj[3].SetActive(true);
+                    npc_obj[2].SetActive(false);
+
+                    if (animalNum_i == 3)
+                    {
+                        SetDogam2();
+                    }
+                }
+
                 a++;
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == 19)
                 {

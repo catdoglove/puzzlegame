@@ -47,6 +47,9 @@ public class ItemGetMotion : MonoBehaviour
 
     IEnumerator imgFadeOut()
     {
+
+        PlayerPrefs.SetInt("stopwhenitem", 1);
+
         color = fade_obj.GetComponent<SpriteRenderer>().color;
         //color2 = fade_obj.GetComponent<SpriteRenderer>().color;
         moveX = fade_obj.transform.position.x;
@@ -61,7 +64,9 @@ public class ItemGetMotion : MonoBehaviour
             moveY = moveY + 0.1f;
             yield return new WaitForSeconds(0.01f);
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
+        PlayerPrefs.SetInt("stopwhenitem", 0);
+        yield return new WaitForSeconds(0.3f);
         for (i_f = 1f; i_f > 0f; i_f -= 0.05f)
         {
             color.a = Mathf.Lerp(0f, 1f, i_f);

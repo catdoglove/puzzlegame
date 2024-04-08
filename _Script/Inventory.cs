@@ -642,7 +642,12 @@ public class Inventory : MonoBehaviour
                 selectedNow_i = 0 + selected_i;
             }
 
-            
+
+            for (int i = 0; i < 7; i++)
+            {
+                selectBox_obj[i].SetActive(false);
+            }
+            selectBox_obj[selected_i].SetActive(true);
 
         }
     }
