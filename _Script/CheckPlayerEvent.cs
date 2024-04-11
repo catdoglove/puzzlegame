@@ -189,6 +189,8 @@ public class CheckPlayerEvent : MonoBehaviour
                     SGM.GetComponent<SoundEvt>().soundCrowAttack();
                     PlayerPrefs.SetInt("crowatted", 1);
                     this.gameObject.SetActive(false);
+                    PlayerPrefs.SetInt("escdont", 0);
+
                 }
             }
         }

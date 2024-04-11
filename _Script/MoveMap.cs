@@ -307,6 +307,8 @@ public class MoveMap : MonoBehaviour
         }
         if (crow_b)
         {
+
+            PlayerPrefs.SetInt("escdont", 1);
             move_obj.GetComponent<Animator>().Play("ani_npc_crow_surprise");
             Invoke("WaitSecCrow", 1f);
         }
