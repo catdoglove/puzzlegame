@@ -1030,8 +1030,7 @@ public class Inventory : MonoBehaviour
 
         if (PlayerPrefs.GetInt("selectN", 0) == 1)
         {
-
-            Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            
             CallSelectItem();
             PlayerPrefs.SetInt("selectN", 0);
         }

@@ -23,7 +23,7 @@ public class SheepMIni : MonoBehaviour
         cotton2_obj.SetActive(false);
         cotton1_obj.GetComponent<SpriteRenderer>().sprite = cotton_spr[5];
         a = 0;
-        a_i = 0;
+        //a_i = 0;
         StopCoroutine("Press");
         StartCoroutine("Press");
     }
@@ -66,6 +66,7 @@ public class SheepMIni : MonoBehaviour
                     CPSGM.GetComponent<CheckPlayer>().EventSetting();
                 }
                 a = 1;
+                a_i = 0;
             }
             else
             {

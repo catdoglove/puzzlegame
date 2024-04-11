@@ -495,9 +495,17 @@ public class CheckPlayer : MonoBehaviour
         Debug.Log("a" + GMI.GetComponent<Inventory>().selectedNow_i);
         if (GMI.GetComponent<Inventory>().selectedNow_i < 0)
         {
-            PlayerPrefs.SetInt("selectN", 1);
-            GMI.GetComponent<Inventory>().selected_i = a - 1;
 
+            if (a <= 0)
+            {
+
+            }
+            else
+            {
+
+                GMI.GetComponent<Inventory>().selected_i = a - 1;
+                PlayerPrefs.SetInt("selectN", 1);
+            }
             Debug.Log("a" + GMI.GetComponent<Inventory>().selected_i);
             //GMI.GetComponent<Inventory>().CallSelectItem();
         }
@@ -1802,7 +1810,7 @@ public class CheckPlayer : MonoBehaviour
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event2_spr[k];
                 s = 0;
             }
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.4f);
             //c++;
         }
 
@@ -2079,14 +2087,17 @@ public class CheckPlayer : MonoBehaviour
     }
     IEnumerator TalkBOff()  //대화딜레이
     {
+        PlayerPrefs.SetInt("escdont",1);
+
         int in_i = 1;
 
         while (in_i == 1)
         {
-            yield return new WaitForSeconds(0.8f);
+            yield return new WaitForSeconds(0.7f);
             in_i = 0;
         }
 
         talk_b = true;
+        PlayerPrefs.SetInt("escdont", 0);
     }
 }
