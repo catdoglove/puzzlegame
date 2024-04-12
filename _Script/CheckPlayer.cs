@@ -1824,6 +1824,8 @@ public class CheckPlayer : MonoBehaviour
     /// <returns></returns>
     IEnumerator EventUp()
     {
+
+        PlayerPrefs.SetInt("escdont", 1);
         talk_b = false;
         int in_i = 1;
         position0 = transform.position;
@@ -1841,7 +1843,7 @@ public class CheckPlayer : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         talk_b = true;
-
+        PlayerPrefs.SetInt("escdont", 0);
 
         if (animalNum_i == 3)
         {
