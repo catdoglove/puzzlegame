@@ -503,7 +503,7 @@ public class Inventory : MonoBehaviour
     /// <returns></returns>
     IEnumerator CloseWindow()
     {
-
+        CanMoveT();
         SGM.GetComponent<SoundEvt>().soundItemWndOpen();
         think_obj.SetActive(false);
         while (in_i == 1)
@@ -517,7 +517,6 @@ public class Inventory : MonoBehaviour
             }
             yield return new WaitForSeconds(0.01f);
         }
-        CanMoveT();
     }
 
 
@@ -546,6 +545,7 @@ public class Inventory : MonoBehaviour
         GM.GetComponent<CharMove>().crushSpeed = 0.05f;
         */
         GM.GetComponent<CharMove>().canMove = true;
+        PlayerPrefs.SetInt("wait", 0);
     }
     void CanMoveF()
     {
@@ -556,6 +556,7 @@ public class Inventory : MonoBehaviour
         GM.GetComponent<CharMove>().crushSpeed = 0f;
         */
         GM.GetComponent<CharMove>().canMove = false;
+        PlayerPrefs.SetInt("wait", 1);
     }
 
 

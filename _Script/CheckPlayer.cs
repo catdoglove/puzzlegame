@@ -1825,6 +1825,8 @@ public class CheckPlayer : MonoBehaviour
     IEnumerator EventUp()
     {
 
+        PlayerPrefs.SetInt("wait", 1);
+        balloon_obj.SetActive(false);
         PlayerPrefs.SetInt("escdont", 1);
         talk_b = false;
         int in_i = 1;
@@ -1843,6 +1845,7 @@ public class CheckPlayer : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         talk_b = true;
+        PlayerPrefs.SetInt("wait", 0);
         PlayerPrefs.SetInt("escdont", 0);
 
         if (animalNum_i == 3)
@@ -1859,7 +1862,6 @@ public class CheckPlayer : MonoBehaviour
     /// <returns></returns>
     IEnumerator EventDown()
     {
-
         GM.GetComponent<CharMove>().canMove = false;
         talk_b = false;
         int in_i = 1;
@@ -1879,6 +1881,7 @@ public class CheckPlayer : MonoBehaviour
         }
         talk_b = true;
         GM.GetComponent<CharMove>().canMove = true;
+
         if (animalNum_i==0)
         {
             SetDogam2();
