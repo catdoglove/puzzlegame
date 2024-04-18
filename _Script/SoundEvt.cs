@@ -31,8 +31,8 @@ public class SoundEvt : MonoBehaviour {
 
 
 	//대화 관련
-	public AudioClip sp_talk, sp_talk_low;
-	public AudioSource se_talk, se_talk_low;
+	public AudioClip sp_talk, sp_talk_low, sp_talk_low2;
+	public AudioSource se_talk, se_talk_low, se_talk_low2;
 
 	public AudioSource auSE;
 	public AudioClip auCP;
@@ -254,6 +254,15 @@ public class SoundEvt : MonoBehaviour {
 	public void soundTalkLow()
 	{
 		putSound(se_talk_low, sp_talk_low);
+		auSE.Play();
+	}
+
+	/// <summary>
+	/// 대화소리2 (몸집이 큰)
+	/// </summary>
+	public void soundTalkLow2()
+	{
+		putSound(se_talk_low2, sp_talk_low2);
 		auSE.Play();
 	}
 
