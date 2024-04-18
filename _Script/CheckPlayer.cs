@@ -61,7 +61,7 @@ public class CheckPlayer : MonoBehaviour
 
     public GameObject SGM, SGM2;
 
-    public bool purple_b, soundLow_b;
+    public bool purple_b, soundLow_b, soundLow2_b;
 
 
     public GameObject bearColl_obj;
@@ -363,6 +363,13 @@ public class CheckPlayer : MonoBehaviour
     /// </summary>
     void ItemSettings()
     {
+
+        if (PlayerPrefs.GetInt("setselectone", 0) == 0)
+        {
+            move_obj.SetActive(true);
+            PlayerPrefs.SetInt("setselectone", 1);
+        }
+
         int a = 0;
         //빈공간저장하기
         a = PlayerPrefs.GetInt("itemgetpoint", 0);
@@ -378,8 +385,10 @@ public class CheckPlayer : MonoBehaviour
         }
 
 
-            //소리
-            SGM.GetComponent<SoundEvt>().soundPickUp();
+
+
+        //소리
+        SGM.GetComponent<SoundEvt>().soundPickUp();
 
         int hel = 0;
         if ((PlayerPrefs.GetInt("itemnum" + 1, 0) == 1 || PlayerPrefs.GetInt("itemnum" + 1, 0) == 2) && SetItemPref_i == 1)
@@ -456,6 +465,35 @@ public class CheckPlayer : MonoBehaviour
         }
 
 
+        //Debug.Log("a" + GMI.GetComponent<Inventory>().selectedNow_i);
+        if (GMI.GetComponent<Inventory>().selectedNow_i < 0)
+        {
+
+            if (a <= 0)
+            {
+
+            }
+            else
+            {
+                if (SetItemPref_i == 13 || SetItemPref_i == 30)
+                {
+                    if (PlayerPrefs.GetInt("itemnum" + SetItemPref_i, 0) == 0)
+                    {
+                        GMI.GetComponent<Inventory>().selected_i = a-1;
+                        PlayerPrefs.SetInt("selectN", 1);
+                    }
+                }
+                else
+                {
+                    GMI.GetComponent<Inventory>().selected_i = a-1;
+                    PlayerPrefs.SetInt("selectN", 1);
+                }
+            }
+            //Debug.Log("a" + GMI.GetComponent<Inventory>().selected_i);
+            //GMI.GetComponent<Inventory>().CallSelectItem();
+        }
+
+
         PlayerPrefs.SetInt("changeitem", 1);
 
         GMI.GetComponent<ItemGetMotion>().fade_obj.GetComponent<SpriteRenderer>().sprite = this.GetComponent<SpriteRenderer>().sprite;
@@ -492,23 +530,8 @@ public class CheckPlayer : MonoBehaviour
         }
 
 
-        Debug.Log("a" + GMI.GetComponent<Inventory>().selectedNow_i);
-        if (GMI.GetComponent<Inventory>().selectedNow_i < 0)
-        {
 
-            if (a <= 0)
-            {
 
-            }
-            else
-            {
-
-                GMI.GetComponent<Inventory>().selected_i = a - 1;
-                PlayerPrefs.SetInt("selectN", 1);
-            }
-            Debug.Log("a" + GMI.GetComponent<Inventory>().selected_i);
-            //GMI.GetComponent<Inventory>().CallSelectItem();
-        }
     }
 
     void DelThis()
@@ -1485,7 +1508,14 @@ public class CheckPlayer : MonoBehaviour
         }
         else
         {
-            SGM.GetComponent<SoundEvt>().soundTalk();
+            if (soundLow2_b)
+            {
+                SGM.GetComponent<SoundEvt>().soundTalkLow2();
+            }
+            else
+            {
+                SGM.GetComponent<SoundEvt>().soundTalk();
+            }
         }
 
         if (esterEgg_b)

@@ -80,7 +80,7 @@ public class Inventory : MonoBehaviour
             }
             yield return new WaitForSeconds(0.1f);
             int i = PlayerPrefs.GetInt("cursorActive", 0);
-            Debug.Log("tt " + i);
+            //Debug.Log("tt " + i);
         }
 
     }
@@ -467,7 +467,7 @@ public class Inventory : MonoBehaviour
                 items_i[a] = p;
             }
 
-            Debug.Log("3a" + p);
+            //Debug.Log("3a" + p);
         }
 
 
@@ -610,13 +610,15 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 얻은 아이템을 손에 든다
+    /// </summary>
     public void CallSelectItem()
     {
-        Debug.Log("selected_i" + selected_i);
+        //Debug.Log("selected_i" + selected_i);
         //Debug.Log("a"+ items_i[selected_i]);
         if (items_i[selected_i] != 0)
         {
-
             if (items_i[selected_i] == 8 || items_i[selected_i] == 10 || items_i[selected_i] == 11 || items_i[selected_i] == 9)
             {
 
@@ -1365,6 +1367,9 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 아이템창닫기
+    /// </summary>
     void CloseSelected()
     {
         in_i = 1;
