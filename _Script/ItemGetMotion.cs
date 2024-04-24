@@ -25,7 +25,14 @@ public class ItemGetMotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (PlayerPrefs.GetInt("clearitemgetimg", 0) == 1)
+        {
+
+            Debug.Log("asdadasdsa");
+            fade_obj.transform.position = new Vector2(35f, 35f);
+            PlayerPrefs.SetInt("clearitemgetimg", 0);
+        }
     }
 
 
@@ -62,6 +69,8 @@ public class ItemGetMotion : MonoBehaviour
             //color2 = new Color(1f, 1f, 1f, 1f);
             fade_obj.transform.position = new Vector2(moveX, moveY);
             moveY = moveY + 0.1f;
+
+
             yield return new WaitForSeconds(0.01f);
         }
         yield return new WaitForSeconds(0.2f);

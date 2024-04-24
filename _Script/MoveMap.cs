@@ -76,11 +76,11 @@ public class MoveMap : MonoBehaviour
                 {
                     Collider2D hit = Physics2D.OverlapBox(transform.position, size, 0, whatIsLayer);
 
-                    if (hit == null)
-                    {
-                    }
-                    else
-                    {
+                if (hit == null)
+                {
+                }
+                else
+                {
 
                     if (secret_b)
                     {
@@ -132,6 +132,7 @@ public class MoveMap : MonoBehaviour
                         if (comeHere_b)
                         {
                             GM.GetComponent<CharMove>().canMove = false;
+                            PlayerPrefs.SetInt("clearitemgetimg", 1);
                             Invoke("MovingMap", 0.5f);
                             BGM1.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0f;
                         }
@@ -142,6 +143,7 @@ public class MoveMap : MonoBehaviour
                             hit = null;
                             player_obj.transform.position = mapRespawn_obj[0].transform.position;
 
+                            PlayerPrefs.SetInt("clearitemgetimg", 1);
                             Invoke("MovingMap", 0.02f);
                             //position = player_obj.transform.position;
                             //position.x = -5.66f;
@@ -153,7 +155,7 @@ public class MoveMap : MonoBehaviour
                         }
                     }
 
-                    }
+                }
                     
             }
 
