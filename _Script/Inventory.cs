@@ -141,31 +141,7 @@ public class Inventory : MonoBehaviour
         }
         */
 
-
-        if (PlayerPrefs.GetInt("escdont", 0) == 0)
-        {
-
-            if (Input.GetKeyDown(KeyCode.Tab))
-            {
-                if (PlayerPrefs.GetInt("rotton", 0)==1)
-                {
-                    door_obj.SetActive(false);
-                    door2_obj.SetActive(true);
-                }
-                if (GM.GetComponent<CharMove>().canMove && PlayerPrefs.GetInt("escdont", 0)==0)
-                {
-                    if (in_i == 0)
-                    {
-                        SGM.GetComponent<SoundEvt>().soundItemWndOpen();
-                        MainGM.GetComponent<SceneAdd>().AtiveScene();
-                        GM.GetComponent<CharMove>().remove_obj.transform.position = GM.GetComponent<CharMove>().other_obj.transform.position;
-                    }
-                }
-                else
-                {
-                }
-            }
-        }
+        
 
         if (Input.GetKeyDown(KeyCode.PageUp))
         {
@@ -243,6 +219,30 @@ public class Inventory : MonoBehaviour
                         PlayerPrefs.SetInt("setselectone", 1);
                     }
 
+                }
+            }
+            else
+            {
+
+                if (Input.GetKeyDown(KeyCode.Tab))
+                {
+                    if (PlayerPrefs.GetInt("rotton", 0) == 1)
+                    {
+                        door_obj.SetActive(false);
+                        door2_obj.SetActive(true);
+                    }
+                    if (GM.GetComponent<CharMove>().canMove && PlayerPrefs.GetInt("escdont", 0) == 0)
+                    {
+                        if (in_i == 0)
+                        {
+                            SGM.GetComponent<SoundEvt>().soundItemWndOpen();
+                            MainGM.GetComponent<SceneAdd>().AtiveScene();
+                            GM.GetComponent<CharMove>().remove_obj.transform.position = GM.GetComponent<CharMove>().other_obj.transform.position;
+                        }
+                    }
+                    else
+                    {
+                    }
                 }
             }
         }
