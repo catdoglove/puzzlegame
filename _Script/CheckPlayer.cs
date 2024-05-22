@@ -89,7 +89,7 @@ public class CheckPlayer : MonoBehaviour
     public string aniTalk_str, ani_str;
     public Animator all_Ani;
 
-    public bool esterEgg_b, sheep_b, hidden_b, dontdis_b, function_b, bearmb;
+    public bool esterEgg_b, sheep_b, hidden_b, dontdis_b, function_b, bearmb, donfalse_b;
 
     public GameObject BGM1, pop_obj;
     public Animator stop_Ani;
@@ -112,6 +112,8 @@ public class CheckPlayer : MonoBehaviour
 
 
     public float checkX_f, checkY_f, checkR_f;
+
+    public GameObject hallFix_obj, hall_obj;
 
     private void OnEnable()
     {
@@ -477,7 +479,7 @@ public class CheckPlayer : MonoBehaviour
             {
                 if (SetItemPref_i == 13 || SetItemPref_i == 30)
                 {
-                    if (PlayerPrefs.GetInt("itemnum" + SetItemPref_i, 0) == 0)
+                    if (PlayerPrefs.GetInt("itemnum" + SetItemPref_i, 0) <= 1)
                     {
                         GMI.GetComponent<Inventory>().selected_i = a-1;
                         PlayerPrefs.SetInt("selectN", 1);
@@ -508,24 +510,31 @@ public class CheckPlayer : MonoBehaviour
 
         balloon_obj.SetActive(false);
         candy();
-        if (dontdis_b)
+        if (donfalse_b)
         {
 
-            this.gameObject.SetActive(false);
-            if (PlayerPrefs.GetInt("itemnum27", 0) == 3)
-            {
-            }
         }
         else
         {
-            if (dogam_b)
+            if (dontdis_b)
             {
 
+                this.gameObject.SetActive(false);
+                if (PlayerPrefs.GetInt("itemnum27", 0) == 3)
+                {
+                }
             }
             else
             {
-                DelThis();
-                this.gameObject.SetActive(false);
+                if (dogam_b)
+                {
+
+                }
+                else
+                {
+                    DelThis();
+                    this.gameObject.SetActive(false);
+                }
             }
         }
 
@@ -1472,6 +1481,59 @@ public class CheckPlayer : MonoBehaviour
                 {
                     SGM.GetComponent<SoundEvt>().soundItemFail();
                 }
+                break;
+            case 34://특수 아이템요구 아이템제거 아이템획득
+                SGM.GetComponent<SoundEvt>().soundItemFail();
+                a++;
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == getItemPref_i)
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemUse();
+                    a = 2;
+                    GMI.GetComponent<Inventory>().DelItems();
+                    hallFix_obj.SetActive(true);
+                    hall_obj.SetActive(false);
+                    SetItemPref_i = getItemPref_i;
+                }
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == getItemPref_i + 1)
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemUse();
+                    a = 2;
+                    GMI.GetComponent<Inventory>().DelItems();
+                    hallFix_obj.SetActive(true);
+                    hall_obj.SetActive(false);
+                    SetItemPref_i = getItemPref_i + 1;
+                }
+                k = a;
+                break;
+            case 35://특수 아이템요구 아이템제거 아이템획득
+                SGM.GetComponent<SoundEvt>().soundPickUp();
+                a = 0;
+                ItemSettings();
+                hallFix_obj.SetActive(false);
+                hall_obj.SetActive(true);
+                k = a;
+                break;
+            case 36:
+                    SGM.GetComponent<SoundEvt>().soundItemFail();
+                    //a++;
+                    Debug.Log(PlayerPrefs.GetInt("selecteditemnum", 0) + "d" + getItemPref_i);
+
+                    if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                    {
+                        SGM.GetComponent<SoundEvt>().soundItemUse();
+                        Debug.Log(PlayerPrefs.GetInt("selecteditemnum", 0) + getItemPref_i);
+                        a++;
+                        move_obj.gameObject.SetActive(false);
+                    ItemSettings();
+
+                    if (SetItemPref_i == 17)
+                        {
+
+                            this.gameObject.SetActive(false);
+                            balloon_obj.gameObject.SetActive(false);
+                        }
+                    }
+                k = a;
                 break;
         }
         PlayerPrefs.SetInt(SetEventPref_str, a);

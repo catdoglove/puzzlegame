@@ -274,7 +274,14 @@ public class Inventory : MonoBehaviour
 
         SetNumSelect();
         CheckSelect();
-        
+        for (int i = 6; i >= 0; i--)
+        {
+            if (items_i[i] == 0)
+            {
+                PlayerPrefs.SetInt("fillpotint", a);
+                i = -1;
+            }
+        }
     }
 
     void Sub()

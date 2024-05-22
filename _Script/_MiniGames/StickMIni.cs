@@ -15,6 +15,12 @@ public class StickMIni : MonoBehaviour
 
     float wait_f=0.3f;
 
+
+    float time = 0;
+    public float _size = 1;
+    public float _upSizeTime;
+    public GameObject game_obj, select_obj, moveb_obj, movef_obj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -136,6 +142,9 @@ public class StickMIni : MonoBehaviour
                         WPress();
                         a_i++;
                         yield return new WaitForSeconds(wait_f);
+                        time = 0;
+                        StopCoroutine("FadeIn");
+                        StartCoroutine("FadeIn");
                     }
 
                 }
@@ -150,6 +159,9 @@ public class StickMIni : MonoBehaviour
                         APress();
                         a_i++;
                         yield return new WaitForSeconds(wait_f);
+                        time = 0;
+                        StopCoroutine("FadeIn");
+                        StartCoroutine("FadeIn");
                     }
 
                 }
@@ -163,6 +175,9 @@ public class StickMIni : MonoBehaviour
                         DPress();
                         a_i++;
                         yield return new WaitForSeconds(wait_f);
+                        time = 0;
+                        StopCoroutine("FadeIn");
+                        StartCoroutine("FadeIn");
                     }
                 }
 
@@ -173,6 +188,32 @@ public class StickMIni : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
     }
-    
+
+    IEnumerator FadeIn()
+    {
+
+        while (time < 1f)
+        {
+            //Debug.Log(time);
+            //float a = select_obj.transform.position.x;
+
+            if (time < 0.1f) //특정 위치에서 원점으로 이동
+            {
+                game_obj.transform.position = movef_obj.transform.position;
+            }
+            else if (time < 0.2f) // 튕기고
+            {
+                game_obj.transform.position = moveb_obj.transform.position;
+            }
+            else
+            {
+                game_obj.transform.position = select_obj.transform.position;
+            }
+            //wood_obj[nowSelect_i].transform.position.x / 2f
+            time += Time.deltaTime;
+            yield return new WaitForSeconds(0.001f);
+        }
+
+    }
 
 }

@@ -22,6 +22,15 @@ public class DogamStart : MonoBehaviour
             SceneAdd.dogamOpen_i = 0;
             PlayerPrefs.SetInt("dogamisopen", 0);
         }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) && PlayerPrefs.GetInt("dogamisopen", 0) == 1)
+            {
+                GM.SetActive(false);
+                SceneAdd.dogamOpen_i = 0;
+                PlayerPrefs.SetInt("dogamisopen", 0);
+            }
+        }
 
         if (PlayerPrefs.GetInt("helpdogam", 0) == 1)
         {
