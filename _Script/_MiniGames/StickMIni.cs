@@ -17,9 +17,10 @@ public class StickMIni : MonoBehaviour
 
 
     float time = 0;
+    float time2 = 0;
     public float _size = 1;
     public float _upSizeTime;
-    public GameObject game_obj, select_obj, moveb_obj, movef_obj;
+    public GameObject game_obj, game2_obj, select_obj, moveb_obj, movef_obj;
 
     // Start is called before the first frame update
     void Start()
@@ -142,9 +143,6 @@ public class StickMIni : MonoBehaviour
                         WPress();
                         a_i++;
                         yield return new WaitForSeconds(wait_f);
-                        time = 0;
-                        StopCoroutine("FadeIn");
-                        StartCoroutine("FadeIn");
                     }
 
                 }
@@ -158,10 +156,10 @@ public class StickMIni : MonoBehaviour
                        // SGM.GetComponent<SoundEvt>().soundstick();
                         APress();
                         a_i++;
+                        time2 = 0;
+                        StopCoroutine("FadeIn2");
+                        StartCoroutine("FadeIn2");
                         yield return new WaitForSeconds(wait_f);
-                        time = 0;
-                        StopCoroutine("FadeIn");
-                        StartCoroutine("FadeIn");
                     }
 
                 }
@@ -174,10 +172,10 @@ public class StickMIni : MonoBehaviour
                        // SGM.GetComponent<SoundEvt>().soundstick();
                         DPress();
                         a_i++;
-                        yield return new WaitForSeconds(wait_f);
                         time = 0;
                         StopCoroutine("FadeIn");
                         StartCoroutine("FadeIn");
+                        yield return new WaitForSeconds(wait_f);
                     }
                 }
 
@@ -211,6 +209,33 @@ public class StickMIni : MonoBehaviour
             }
             //wood_obj[nowSelect_i].transform.position.x / 2f
             time += Time.deltaTime;
+            yield return new WaitForSeconds(0.001f);
+        }
+
+    }
+
+    IEnumerator FadeIn2()
+    {
+
+        while (time2 < 1f)
+        {
+            //Debug.Log(time);
+            //float a = select_obj.transform.position.x;
+
+            if (time2 < 0.1f) //특정 위치에서 원점으로 이동
+            {
+                game2_obj.transform.position = movef_obj.transform.position;
+            }
+            else if (time2 < 0.2f) // 튕기고
+            {
+                game2_obj.transform.position = moveb_obj.transform.position;
+            }
+            else
+            {
+                game2_obj.transform.position = select_obj.transform.position;
+            }
+            //wood_obj[nowSelect_i].transform.position.x / 2f
+            time2 += Time.deltaTime;
             yield return new WaitForSeconds(0.001f);
         }
 
