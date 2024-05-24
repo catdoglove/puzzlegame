@@ -232,7 +232,7 @@ public class MiniGame : MonoBehaviour
                                         if (num_i[2, 1] == 2)
                                         {
                                             puzzleWin_obj.SetActive(false);
-                                            GM.GetComponent<CheckPlayerEvent>().ItemSettingOnEvent();
+                                            GM.GetComponent<CheckPlayer>().ItemSettings();
                                             pan.SetActive(false);
                                             GMM.GetComponent<CharMove>().canMove = true;
                                             PlayerPrefs.SetInt("escdont", 0);

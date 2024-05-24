@@ -151,7 +151,7 @@ public class RockMini : MonoBehaviour
                 PlayerPrefs.SetInt("escdont", 0);
                 GMM.GetComponent<CharMove>().canMove = true;
                 PlayerPrefs.SetInt("cursorActive", 0);
-                GM.GetComponent<CheckPlayerEvent>().ItemSettingOnEvent();
+                GM.GetComponent<CheckPlayer>().ItemSettings();
                 SGM.GetComponent<SoundEvt>().soundItemSuccess();
                 japan_obj.SetActive(false);
             }

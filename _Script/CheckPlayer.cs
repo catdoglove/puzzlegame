@@ -363,7 +363,7 @@ public class CheckPlayer : MonoBehaviour
     /// <summary>
     /// 아이템값받아오고 인벤토리에넣는다.
     /// </summary>
-    void ItemSettings()
+    public void ItemSettings()
     {
 
         if (PlayerPrefs.GetInt("setselectone", 0) == 0)
@@ -501,6 +501,10 @@ public class CheckPlayer : MonoBehaviour
         GMI.GetComponent<ItemGetMotion>().fade_obj.GetComponent<SpriteRenderer>().sprite = this.GetComponent<SpriteRenderer>().sprite;
 
         if (purple_b)
+        {
+            GMI.GetComponent<ItemGetMotion>().fade_obj.GetComponent<SpriteRenderer>().sprite = item_spr;
+        }
+        if (donfalse_b)
         {
             GMI.GetComponent<ItemGetMotion>().fade_obj.GetComponent<SpriteRenderer>().sprite = item_spr;
         }
@@ -1005,7 +1009,14 @@ public class CheckPlayer : MonoBehaviour
                 }
                 break;
             case 15://아이템 얻기
-                ItemSettingOnEvents();
+                if (donfalse_b)
+                {
+                    ItemSettings();
+                }
+                else
+                {
+                    ItemSettingOnEvents();
+                }
                 talkBallB_obj.SetActive(false);
                 a++;
                 StopTalk();
