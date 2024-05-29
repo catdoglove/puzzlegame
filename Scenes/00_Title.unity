@@ -213,8 +213,9 @@ GameObject:
   - component: {fileID: 246595590}
   - component: {fileID: 246595589}
   - component: {fileID: 246595588}
-  - component: {fileID: 246595591}
   - component: {fileID: 246595592}
+  - component: {fileID: 246595591}
+  - component: {fileID: 246595593}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -296,9 +297,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 246595587}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b9eeab708e0cf243bf82cc2f7d4ac3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SCShader: {fileID: 4800000, guid: 3cc67a7365ba35c42979700764bcb592, type: 3}
+  filterchoice: 6
+  FadeFX: 0.18
 --- !u!114 &246595592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +329,24 @@ MonoBehaviour:
   BGMfirst: {fileID: 0}
   BGM2: {fileID: 0}
   BGMbook: {fileID: 0}
+  vols_f: 0.8
+--- !u!114 &246595593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246595587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610faef28236b8f499d5eef8197318f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SCShader: {fileID: 4800000, guid: 683c8c04f11e65641849d72d5a2c6c35, type: 3}
+  Interferance_Size: 0
+  Interferance_Speed: 0
+  Contrast: 1
+  Fade: 0.06
 --- !u!1 &545251873
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,8 +855,10 @@ MonoBehaviour:
   se_item_select_no: {fileID: 0}
   sp_talk: {fileID: 8300000, guid: c3a0c02c780a9a844bfe6ce8f889d1ae, type: 3}
   sp_talk_low: {fileID: 8300000, guid: 288bbfb179e16994fb1e44234ca67c13, type: 3}
+  sp_talk_low2: {fileID: 0}
   se_talk: {fileID: 0}
   se_talk_low: {fileID: 0}
+  se_talk_low2: {fileID: 0}
   auSE: {fileID: 0}
   auCP: {fileID: 0}
   charGM: {fileID: 0}
