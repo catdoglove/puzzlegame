@@ -467,15 +467,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215478384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 120.32817}
-  m_LocalScale: {x: 0.015527377, y: 0.012234922, z: 0.012552757}
-  m_Children: []
-  m_Father: {fileID: 314669002}
-  m_RootOrder: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 314669002}
+  m_Father: {fileID: 2090493342}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.04, y: 0.102}
+  m_AnchoredPosition: {x: -453.42395, y: -306.66324}
   m_SizeDelta: {x: 499.12317, y: 113.76515}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &215478386
@@ -500,7 +501,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3f1e8be152c444d4fbaac29f3e870e49, type: 3}
     m_FontSize: 55
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 55
@@ -819,12 +820,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314669001}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -456, y: -315, z: -9585.797}
-  m_LocalScale: {x: 64.40237, y: 81.73324, z: 79.66378}
-  m_Children:
-  - {fileID: 215478385}
-  m_Father: {fileID: 2090493342}
-  m_RootOrder: 6
+  m_LocalPosition: {x: 3.7239075, y: -8.336761, z: -9585.799}
+  m_LocalScale: {x: 68.894165, y: 81.73324, z: 79.66378}
+  m_Children: []
+  m_Father: {fileID: 215478385}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &314669003
 SpriteRenderer:
@@ -2153,6 +2153,7 @@ MonoBehaviour:
   detail_txt2: {fileID: 856983843}
   title_txt: {fileID: 1077896129}
   name_txt: {fileID: 215478386}
+  title2_txt: {fileID: 1058091923}
   animalSpr:
   - {fileID: 21300000, guid: ff19886ac576dd346a60bf999cadfd70, type: 3}
   - {fileID: 21300000, guid: b5ed0d3c99f49f440a14b3d0f19b52e2, type: 3}
@@ -2182,6 +2183,9 @@ MonoBehaviour:
   infoArea4: {fileID: 854167706}
   spRer: {fileID: 723389231}
   SGM: {fileID: 896736638}
+  know_obj1: {fileID: 191492989}
+  know_obj2: {fileID: 1393707155}
+  lg_i: 0
 --- !u!114 &896736643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4160,7 +4164,7 @@ RectTransform:
   - {fileID: 1023063142}
   - {fileID: 191492990}
   - {fileID: 1393707156}
-  - {fileID: 314669002}
+  - {fileID: 215478385}
   m_Father: {fileID: 2128562261}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

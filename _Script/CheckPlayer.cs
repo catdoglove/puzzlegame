@@ -645,6 +645,16 @@ public class CheckPlayer : MonoBehaviour
         }
         PlayerPrefs.SetInt("canSeeInfo_detailo" + animalNum_i, 99); //퀘스트를 깼는가
     }
+
+    void SetDogam3h()
+    {
+        if (PlayerPrefs.GetInt("canSeeInfo_detailo" + animalNum_i, 0) == 0)
+        {
+            StopCoroutine("FadeIn");
+            StartCoroutine("FadeIn");
+        }
+        PlayerPrefs.SetInt("canSeeInfo_detailo" + animalNum_i, 98); //퀘스트를 깼는가
+    }
     void SetDogam4()
     {
         if (PlayerPrefs.GetInt("canSeeInfo_detailt" + animalNum_i, 0) == 0)
@@ -654,8 +664,27 @@ public class CheckPlayer : MonoBehaviour
         }
         PlayerPrefs.SetInt("canSeeInfo_detailt" + animalNum_i, 99); //퀘스트를 깼는가
     }
+    void SetDogam4h()
+    {
+        if (PlayerPrefs.GetInt("canSeeInfo_detailt" + animalNum_i, 0) == 0)
+        {
+            StopCoroutine("FadeIn");
+            StartCoroutine("FadeIn");
+        }
+        PlayerPrefs.SetInt("canSeeInfo_detailt" + animalNum_i, 98); //퀘스트를 깼는가
+        if (animalNum_i==7)
+        {
+            PlayerPrefs.SetInt("canSeeInfo_detailt" + 8, 98);
+        }
+    }
 
 
+    void SetDogam5()
+    {
+
+        PlayerPrefs.SetInt("canSeeInfo_detailo" + animalNum_i, 99); //퀘스트를 깼는가
+        
+    }
 
 
 
@@ -699,6 +728,8 @@ public class CheckPlayer : MonoBehaviour
                     GMS.SetActive(false);
                     PlayerPrefs.SetInt("poped", 1);
                     //BGM1.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0f;
+                    SetDogam3h();
+                    SetDogam4h();
                     return;
                 }
             }
@@ -1971,7 +2002,7 @@ public class CheckPlayer : MonoBehaviour
         position0 = transform.position;
         while (in_i == 1)
         {
-            position0.y = position0.y - 5f * Time.deltaTime;
+            position0.y = position0.y - 5.2f * Time.deltaTime;
             transform.position = position0;
             position_nomal = new Vector3(transform.position.x - checkX_f, transform.position.y - checkY_f, transform.position.z);
 
@@ -1982,13 +2013,15 @@ public class CheckPlayer : MonoBehaviour
 
             yield return new WaitForSeconds(0.01f);
         }
-        talk_b = true;
-        GM.GetComponent<CharMove>().canMove = true;
-
-        if (animalNum_i==0)
+        if (animalNum_i == 0)
         {
             SetDogam2();
         }
+
+        yield return new WaitForSeconds(0.2f);
+        talk_b = true;
+        GM.GetComponent<CharMove>().canMove = true;
+
     }
 
 

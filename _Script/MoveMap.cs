@@ -29,7 +29,7 @@ public class MoveMap : MonoBehaviour
     public GameObject BGM1, BGM2, BGM4;
 
     public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b, rot_b, crowA_b, secret_b, secret2_b, sheep_b,sheepOff_b;
-    public bool lakeOut_b, caveRoad_b, caveEnter_b, crowSet_b, setEff_b, hidden2_b, waterOut_b, flip_b, BGM_b, soundback_b;
+    public bool lakeOut_b, caveRoad_b, caveEnter_b, crowSet_b, setEff_b, hidden2_b, waterOut_b, flip_b, BGM_b, soundback_b,crow2_b, dont_b;
 
 
     public GameObject door1_obj, door2_obj;
@@ -42,6 +42,10 @@ public class MoveMap : MonoBehaviour
 
 
     public float vols_f = 0.8f;
+
+
+    public Animator crow_Ani;
+
 
     // Start is called before the first frame update
     void Start()
@@ -108,6 +112,13 @@ public class MoveMap : MonoBehaviour
                         sheep2_obj.GetComponent<SpriteRenderer>().sprite = sheepO_spr;
                         sheep_obj.GetComponent<SpriteRenderer>().sprite = sheepO_spr;
                     }
+                    if (crow2_b)
+                    {
+
+                        crow_Ani.Play("ani_npc_crow_bg052");
+
+                        this.gameObject.SetActive(false);
+                    }
 
                     if (crowA_b)
                     {
@@ -138,13 +149,20 @@ public class MoveMap : MonoBehaviour
                         }
                         else
                         {
-                            wait = 1;
-                            PlayerPrefs.SetInt("wait", 1);
-                            hit = null;
-                            player_obj.transform.position = mapRespawn_obj[0].transform.position;
+                            if (dont_b)
+                            {
 
-                            PlayerPrefs.SetInt("clearitemgetimg", 1);
-                            Invoke("MovingMap", 0.02f);
+                            }
+                            else
+                            {
+                                wait = 1;
+                                PlayerPrefs.SetInt("wait", 1);
+                                hit = null;
+                                player_obj.transform.position = mapRespawn_obj[0].transform.position;
+
+                                PlayerPrefs.SetInt("clearitemgetimg", 1);
+                                Invoke("MovingMap", 0.02f);
+                            }
                             //position = player_obj.transform.position;
                             //position.x = -5.66f;
                             //position.y = -1.55f;
