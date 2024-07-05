@@ -642,18 +642,20 @@ public class CheckPlayer : MonoBehaviour
         {
             StopCoroutine("FadeIn");
             StartCoroutine("FadeIn");
+            PlayerPrefs.SetInt("canSeeInfo_detailo" + animalNum_i, 99); //퀘스트를 깼는가
         }
-        PlayerPrefs.SetInt("canSeeInfo_detailo" + animalNum_i, 99); //퀘스트를 깼는가
     }
 
     void SetDogam3h()
     {
         if (PlayerPrefs.GetInt("canSeeInfo_detailo" + animalNum_i, 0) == 0)
         {
-            StopCoroutine("FadeIn");
-            StartCoroutine("FadeIn");
+            //StopCoroutine("FadeIn");
+            //StartCoroutine("FadeIn");
         }
         PlayerPrefs.SetInt("canSeeInfo_detailo" + animalNum_i, 98); //퀘스트를 깼는가
+
+        Debug.Log("asdpaldpwpdkpwakdapodk");
     }
     void SetDogam4()
     {
@@ -661,20 +663,20 @@ public class CheckPlayer : MonoBehaviour
         {
             StopCoroutine("FadeIn");
             StartCoroutine("FadeIn");
+            PlayerPrefs.SetInt("canSeeInfo_detailt" + animalNum_i, 99); //퀘스트를 깼는가
         }
-        PlayerPrefs.SetInt("canSeeInfo_detailt" + animalNum_i, 99); //퀘스트를 깼는가
     }
     void SetDogam4h()
     {
         if (PlayerPrefs.GetInt("canSeeInfo_detailt" + animalNum_i, 0) == 0)
         {
-            StopCoroutine("FadeIn");
-            StartCoroutine("FadeIn");
+            //StopCoroutine("FadeIn");
+            //StartCoroutine("FadeIn");
         }
         PlayerPrefs.SetInt("canSeeInfo_detailt" + animalNum_i, 98); //퀘스트를 깼는가
         if (animalNum_i==7)
         {
-            PlayerPrefs.SetInt("canSeeInfo_detailt" + 8, 98);
+            PlayerPrefs.SetInt("canSeeInfo_detailo" + 8, 98);
         }
     }
 
@@ -728,6 +730,7 @@ public class CheckPlayer : MonoBehaviour
                     GMS.SetActive(false);
                     PlayerPrefs.SetInt("poped", 1);
                     //BGM1.GetComponent<ForBGM>().BGM2.GetComponent<AudioSource>().volume = 0f;
+
                     SetDogam3h();
                     SetDogam4h();
                     return;
@@ -882,8 +885,11 @@ public class CheckPlayer : MonoBehaviour
                             }
                             if (animalNum_i == 6)
                             {
-                                SetDogam3();
-                                SetDogam4();
+                                //SetDogam3();
+                                //SetDogam4();
+
+                                SetDogam3h();
+                                SetDogam4h();
                             }
                         }
                         else
@@ -1352,8 +1358,11 @@ public class CheckPlayer : MonoBehaviour
                             }
                             if (animalNum_i == 6)
                             {
-                                SetDogam3();
-                                SetDogam4();
+                                //SetDogam3();
+                                //SetDogam4();
+
+                                SetDogam3h();
+                                SetDogam4h();
                             }
                         }
                         else

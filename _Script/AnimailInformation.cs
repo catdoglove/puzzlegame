@@ -180,7 +180,25 @@ public class AnimailInformation : MonoBehaviour
         detail_txt.text = "<size=" + sizeint2 + ">" + text_str + "</size>";
         detail_txt2.text = "<size=" + sizeint2 + ">" + text_str + "</size>";
 
-        
+
+        if (PlayerPrefs.GetInt("canSeeInfo_detailo" + pageNum, 0) == 98)//특수조건에서 보여지는 3번째 내용
+        {
+
+            Debug.Log("pageNum");
+            text_str = "" + data_animal[4]["No" + (pageNum + 1)];
+            basic_txt3.text = "<size=" + sizeint + ">" + text_str + "</size>";
+            
+        }
+        if (PlayerPrefs.GetInt("canSeeInfo_detailt" + pageNum, 0) == 98)//특수조건에서 보여지는 4번째 내용
+        {
+
+
+            text_str = "" + data_animal[5]["No" + (pageNum + 1)];
+            detail_txt.text = "<size=" + sizeint2 + ">" + text_str + "</size>";
+            detail_txt2.text = "<size=" + sizeint2 + ">" + text_str + "</size>";
+            
+        }
+
     }
 
     void changeTextSize()
@@ -203,6 +221,8 @@ public class AnimailInformation : MonoBehaviour
     {
         int ck = 0;
 
+        know_obj1.SetActive(true);
+        know_obj2.SetActive(false);
         name_txt.text = " ???";
         Debug.Log(PlayerPrefs.GetInt("AmImet" + pageNum, 0) + "ds" + PlayerPrefs.GetInt("canSeeMaterial" + pageNum, 0));
         if (PlayerPrefs.GetInt("AmImet" + pageNum, 0) == 99) //만난적이 있다면 열리기
@@ -234,10 +254,6 @@ public class AnimailInformation : MonoBehaviour
 
             if (PlayerPrefs.GetInt("canSeeInfo_detailo" + pageNum, 0) == 98)//특수조건에서 보여지는 3번째 내용
             {
-
-                text_str = "" + data_animal[6]["No" + (pageNum + 1)];
-                basic_txt3.text = "<size=" + sizeint + ">" + text_str + "</size>";
-
                 infoArea3.SetActive(true);
                 ck++;
             }
@@ -249,11 +265,7 @@ public class AnimailInformation : MonoBehaviour
 
             if (PlayerPrefs.GetInt("canSeeInfo_detailt" + pageNum, 0) == 98)//특수조건에서 보여지는 4번째 내용
             {
-
-
-                text_str = "" + data_animal[7]["No" + (pageNum + 1)];
-                detail_txt.text = "<size=" + sizeint2 + ">" + text_str + "</size>";
-                detail_txt2.text = "<size=" + sizeint2 + ">" + text_str + "</size>";
+                
                 infoArea4.SetActive(true);
                 ck++;
             }else if (PlayerPrefs.GetInt("canSeeInfo_detailt" + pageNum, 0) == 99)//특수조건에서 보여지는 4번째 내용
@@ -267,14 +279,16 @@ public class AnimailInformation : MonoBehaviour
                 know_obj1.SetActive(false);
                 know_obj2.SetActive(true);
             }
-            else
-            {
-                know_obj1.SetActive(true);
-                know_obj2.SetActive(false);
-            }
+
+            materialArea1.SetActive(true);
         }
         else
         {
+        }
+
+        if (pageNum>=5&& pageNum < 8)
+        {
+            materialArea1.SetActive(false);
         }
     }
 
