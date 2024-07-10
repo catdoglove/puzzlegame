@@ -115,6 +115,8 @@ public class CheckPlayer : MonoBehaviour
 
     public GameObject hallFix_obj, hall_obj;
 
+    public int events_i=0;
+
     private void OnEnable()
     {
         GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
@@ -654,8 +656,7 @@ public class CheckPlayer : MonoBehaviour
             //StartCoroutine("FadeIn");
         }
         PlayerPrefs.SetInt("canSeeInfo_detailo" + animalNum_i, 98); //퀘스트를 깼는가
-
-        Debug.Log("asdpaldpwpdkpwakdapodk");
+        
     }
     void SetDogam4()
     {
@@ -674,9 +675,9 @@ public class CheckPlayer : MonoBehaviour
             //StartCoroutine("FadeIn");
         }
         PlayerPrefs.SetInt("canSeeInfo_detailt" + animalNum_i, 98); //퀘스트를 깼는가
-        if (animalNum_i==7)
+        if (animalNum_i==6)
         {
-            PlayerPrefs.SetInt("canSeeInfo_detailo" + 8, 98);
+            PlayerPrefs.SetInt("canSeeInfo_detailt" + 7, 98);
         }
     }
 
@@ -1091,7 +1092,16 @@ public class CheckPlayer : MonoBehaviour
                     SetDogam2();
                 }
                 talk_b = false;
-                StartCoroutine("TalkBOff");
+                if (animalNum_i == 9)
+                {
+                    npc_obj[0].SetActive(true);
+                    this.gameObject.SetActive(false);
+                }
+                else
+                {
+
+                    StartCoroutine("TalkBOff");
+                }
                 break;
             case 16://말풍선 띄우고 퀘스트 시작
                 TalkSound();
@@ -1513,6 +1523,11 @@ public class CheckPlayer : MonoBehaviour
                     GetItem_obj.SetActive(false);
                     balloon_obj.SetActive(false);
                     move_obj.SetActive(false);
+                    if (events_i==1)
+                    {
+                        npc_obj[0].SetActive(false);
+                        npc_obj[1].SetActive(true);
+                    }
                 }
                 else
                 {
@@ -1586,11 +1601,109 @@ public class CheckPlayer : MonoBehaviour
                     }
                 k = a;
                 break;
+            case 37://말풍선 띄우고 특수 아이템요구 
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    GMI.GetComponent<Inventory>().DelItems();
+                    k = a;
+                    //ItemSettings();
+                    GetItem_obj.SetActive(false);
+                    balloon_obj.SetActive(false);
+                    move_obj.SetActive(true);
+                    //this.gameObject.SetActive(false);
+                }
+                else
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemFail();
+                }
+                break;
+
+
+            case 38://말풍선 띄우고 특수 아이템요구 
+
+                TalkSound();
+                a++;
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    a++;
+                    a++;
+                    GMI.GetComponent<Inventory>().DelItems();
+                    //giveItemPref_i = 18;
+                    //SetItemPref_i = 21;
+                    //SetDogam2();
+
+                    if (stick_b)
+                    {
+                        stick_obj.SetActive(true);
+                    }
+                    if (animalNum_i == 7)
+                    {
+                        SetDogam2();
+                    }
+                    //ani_str = "ani_npc_cat_get1";
+                    if (events_i==1)
+                    {
+                        all_Ani.Play("ani_npc_cat_get1");
+                    }
+                    else if (events_i==2)
+                    {
+
+                        all_Ani.Play("ani_npc_cat_get2");
+                    }
+                    if (events_i == 3)
+                    {
+
+                        move_obj.SetActive(true);
+                        fade_obj.SetActive(false);
+                        Invoke("SetB", 15f);
+                    }
+                    //move_obj.SetActive(true);
+                }
+
+                Debug.Log("awe" + a);
+                StopCoroutine("talkBall");
+                k = a;
+                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                talkBallB_obj.SetActive(true);
+                StartCoroutine("talkBall");
+                StopAndTalk();
+                break;
+            case 39://말풍선 띄우고 특수 아이템요구 
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    GMI.GetComponent<Inventory>().DelItems();
+                    k = a;
+                    //ItemSettings();
+                    GetItem_obj.SetActive(false);
+                    balloon_obj.SetActive(false);
+                    move_obj.SetActive(true);
+                    Invoke("WaitCook",15f);
+                }
+                else
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemFail();
+                }
+                break;
+
         }
         PlayerPrefs.SetInt(SetEventPref_str, a);
 
         //talk_b = false;
         //StartCoroutine("TalkBOff");
+    }
+
+    //void wa
+    void SetB()
+    {
+        PlayerPrefs.SetInt("bdone",1);
+        //move_obj.SetActive(false);
+        //fade_obj.SetActive(true);
+    }
+
+    void WaitCook()
+    {
+        move_obj.SetActive(false);
+        fade_obj.SetActive(true);
     }
 
     public void StopAndTalk()
@@ -2250,4 +2363,5 @@ public class CheckPlayer : MonoBehaviour
         talk_b = true;
         PlayerPrefs.SetInt("escdont", 0);
     }
+
 }

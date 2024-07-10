@@ -221,6 +221,7 @@ public class AnimailInformation : MonoBehaviour
     {
         int ck = 0;
 
+        //materialArea1.SetActive(false);
         know_obj1.SetActive(true);
         know_obj2.SetActive(false);
         name_txt.text = " ???";
@@ -280,7 +281,7 @@ public class AnimailInformation : MonoBehaviour
                 know_obj2.SetActive(true);
             }
 
-            materialArea1.SetActive(true);
+            //materialArea1.SetActive(true);
         }
         else
         {
@@ -325,6 +326,11 @@ public class AnimailInformation : MonoBehaviour
             if (text_str == "cotton")
             {
                 material1.GetComponent<SpriteRenderer>().sprite = materialSpr[4];
+            }
+
+            if (text_str == "pistachios")
+            {
+                //material1.GetComponent<SpriteRenderer>().sprite = materialSpr[5];
             }
         }
 

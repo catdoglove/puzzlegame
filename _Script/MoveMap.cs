@@ -31,6 +31,7 @@ public class MoveMap : MonoBehaviour
     public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b, rot_b, crowA_b, secret_b, secret2_b, sheep_b,sheepOff_b;
     public bool lakeOut_b, caveRoad_b, caveEnter_b, crowSet_b, setEff_b, hidden2_b, waterOut_b, flip_b, BGM_b, soundback_b,crow2_b, dont_b;
 
+    public int event_i = 0;
 
     public GameObject door1_obj, door2_obj;
     public GameObject endEvent_obj, endEvent2_obj, endEvent3_obj, hideEvent1_obj;
@@ -114,8 +115,18 @@ public class MoveMap : MonoBehaviour
                     }
                     if (crow2_b)
                     {
+                        if (event_i==0)
+                        {
+                            crow_Ani.Play("ani_npc_crow_bg052");
+                            Invoke("Oncrow", 0.5f);
+                        }
+                        if (event_i == 1)
+                        {
+                            endEvent3_obj.SetActive(true);
 
-                        crow_Ani.Play("ani_npc_crow_bg052");
+                            Invoke("OnBone", 0.5f);
+                            Invoke("OnBone2", 2.5f);
+                        }
 
                         this.gameObject.SetActive(false);
                     }
@@ -265,6 +276,24 @@ public class MoveMap : MonoBehaviour
         }
     }
 
+    void Oncrow()
+    {
+
+        SGM.GetComponent<SoundEvt>().soundCrowAttack();
+    }
+
+    void OnBone()
+    {
+
+        SGM.GetComponent<SoundEvt>().soundCrowAttack();
+        endEvent2_obj.SetActive(true);
+    }
+    void OnBone2()
+    {
+
+        endEvent3_obj.SetActive(false);
+    }
+
 
     void OnDrawGizmos()
     {
@@ -381,6 +410,15 @@ public class MoveMap : MonoBehaviour
         if (secret2_b)
         {
             hideEvent1_obj.SetActive(false);
+        }
+
+
+        if (PlayerPrefs.GetInt("bdone", 0) == 1&& crowA_b)
+        {
+            endEvent_obj.SetActive(false);
+            endEvent_obj.SetActive(false);
+            endEvent3_obj.SetActive(true);
+            PlayerPrefs.SetInt("bdone", 2);
         }
     }
 
