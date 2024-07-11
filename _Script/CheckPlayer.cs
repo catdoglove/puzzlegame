@@ -1611,6 +1611,7 @@ public class CheckPlayer : MonoBehaviour
                     balloon_obj.SetActive(false);
                     move_obj.SetActive(true);
                     //this.gameObject.SetActive(false);
+                    SGM.GetComponent<SoundEvt>().soundItemUse();
                 }
                 else
                 {
@@ -1647,8 +1648,7 @@ public class CheckPlayer : MonoBehaviour
                     }
                     else if (events_i==2)
                     {
-
-                        all_Ani.Play("ani_npc_cat_get2");
+                        all_Ani.Play("ani_npc_cat_get3");
                     }
                     if (events_i == 3)
                     {
@@ -1656,6 +1656,7 @@ public class CheckPlayer : MonoBehaviour
                         move_obj.SetActive(true);
                         fade_obj.SetActive(false);
                         Invoke("SetB", 15f);
+
                     }
                     //move_obj.SetActive(true);
                 }
@@ -1663,10 +1664,21 @@ public class CheckPlayer : MonoBehaviour
                 Debug.Log("awe" + a);
                 StopCoroutine("talkBall");
                 k = a;
-                talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
-                talkBallB_obj.SetActive(true);
-                StartCoroutine("talkBall");
-                StopAndTalk();
+
+                if (events_i == 3)
+                {
+
+                    StopTalk();
+                    talkBallB_obj.SetActive(false);
+                }
+                else
+                {
+                    talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                    talkBallB_obj.SetActive(true);
+                    StartCoroutine("talkBall");
+                    StopAndTalk();
+                }
+                    
                 break;
             case 39://말풍선 띄우고 특수 아이템요구 
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
@@ -1678,6 +1690,7 @@ public class CheckPlayer : MonoBehaviour
                     balloon_obj.SetActive(false);
                     move_obj.SetActive(true);
                     Invoke("WaitCook",15f);
+                    SGM.GetComponent<SoundEvt>().soundItemUse();
                 }
                 else
                 {
@@ -1696,6 +1709,8 @@ public class CheckPlayer : MonoBehaviour
     void SetB()
     {
         PlayerPrefs.SetInt("bdone",1);
+        npc_obj[0].SetActive(false);
+        npc_obj[1].SetActive(true);
         //move_obj.SetActive(false);
         //fade_obj.SetActive(true);
     }
@@ -1704,6 +1719,7 @@ public class CheckPlayer : MonoBehaviour
     {
         move_obj.SetActive(false);
         fade_obj.SetActive(true);
+        SGM.GetComponent<SoundEvt>().soundItemUse();
     }
 
     public void StopAndTalk()

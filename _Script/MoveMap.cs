@@ -413,10 +413,10 @@ public class MoveMap : MonoBehaviour
         }
 
 
-        if (PlayerPrefs.GetInt("bdone", 0) == 1&& crowA_b)
+        if (PlayerPrefs.GetInt("bdone", 0) == 1)
         {
             endEvent_obj.SetActive(false);
-            endEvent_obj.SetActive(false);
+            endEvent2_obj.SetActive(false);
             endEvent3_obj.SetActive(true);
             PlayerPrefs.SetInt("bdone", 2);
         }
