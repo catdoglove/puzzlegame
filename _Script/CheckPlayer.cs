@@ -117,6 +117,8 @@ public class CheckPlayer : MonoBehaviour
 
     public int events_i=0;
 
+    int ok = 0;
+
     private void OnEnable()
     {
         GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
@@ -744,6 +746,7 @@ public class CheckPlayer : MonoBehaviour
             if (all_Ani == null)
             {
                 this.GetComponent<Animator>().Play(aniTalk_str);
+                Debug.Log("aaa" + aniTalk_str);
             }
             else
             {
@@ -981,8 +984,21 @@ public class CheckPlayer : MonoBehaviour
                 {
                     SetDogam4();
                 }
-                talk_b = false;
-                StartCoroutine("TalkBOff");
+
+                if (events_i == 3 && ok == 1)
+                {
+                    StopCoroutine("talkBall");
+                    move_obj.SetActive(true);
+                    fade_obj.SetActive(false);
+                    Invoke("SetB", 15f);
+                    StopTalk();
+                    talkBallB_obj.SetActive(false);
+                }
+                else
+                {
+                    talk_b = false;
+                    StartCoroutine("TalkBOff");
+                }
                 break;
             case 11://말풍선 띄우고 아이템 얻음
                 TalkSound();
@@ -1644,41 +1660,41 @@ public class CheckPlayer : MonoBehaviour
                     //ani_str = "ani_npc_cat_get1";
                     if (events_i==1)
                     {
+                        StopTalk();
+                        talkBallB_obj.SetActive(false);
+                        talk_b = false;
+                        StartCoroutine("TalkBOff");
                         all_Ani.Play("ani_npc_cat_get1");
                     }
                     else if (events_i==2)
                     {
+                        StopTalk();
+                        talkBallB_obj.SetActive(false);
+                        talk_b = false;
+                        StartCoroutine("TalkBOff");
                         all_Ani.Play("ani_npc_cat_get3");
                     }
                     if (events_i == 3)
                     {
-
-                        move_obj.SetActive(true);
-                        fade_obj.SetActive(false);
-                        Invoke("SetB", 15f);
-
+                        ok = 1;
+                        
                     }
                     //move_obj.SetActive(true);
-                }
 
-                Debug.Log("awe" + a);
-                StopCoroutine("talkBall");
-                k = a;
-
-                if (events_i == 3)
-                {
-
-                    StopTalk();
-                    talkBallB_obj.SetActive(false);
                 }
                 else
                 {
+                    Debug.Log("awe" + a);
+                    StopCoroutine("talkBall");
+                    k = a;
+
+
                     talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                     talkBallB_obj.SetActive(true);
                     StartCoroutine("talkBall");
                     StopAndTalk();
                 }
-                    
+
                 break;
             case 39://말풍선 띄우고 특수 아이템요구 
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
@@ -1703,6 +1719,7 @@ public class CheckPlayer : MonoBehaviour
 
         //talk_b = false;
         //StartCoroutine("TalkBOff");
+
     }
 
     //void wa
@@ -1794,6 +1811,7 @@ public class CheckPlayer : MonoBehaviour
             if (all_Ani == null)
             {
                 this.GetComponent<Animator>().Play(ani_str);
+                Debug.Log("a" + ani_str);
             }
             else
             {

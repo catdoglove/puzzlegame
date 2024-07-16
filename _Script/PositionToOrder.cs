@@ -42,7 +42,7 @@ public class PositionToOrder : MonoBehaviour
                 }
                 else
                 {
-                    changeOrder_obj.GetComponent<SpriteRenderer>().sortingOrder = 8;
+                    changeOrder_obj.GetComponent<SpriteRenderer>().sortingOrder = 7;
                 }
             }
             yield return new WaitForSeconds(0.1f);
