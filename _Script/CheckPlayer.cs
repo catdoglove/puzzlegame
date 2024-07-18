@@ -789,7 +789,7 @@ public class CheckPlayer : MonoBehaviour
 
                     moveOther_obj.SetActive(true);
 
-                    color = new Color(1f, 1f, 0f);
+                    color = new Color(1f, 1f, 1f, 0f);
                     this.GetComponent<SpriteRenderer>().color = color;
                 }
 
