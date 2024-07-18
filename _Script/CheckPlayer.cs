@@ -766,6 +766,14 @@ public class CheckPlayer : MonoBehaviour
             case 0:
                 break;
             case 1://말풍선띄우고 다음으로
+
+
+                if (animalNum_i == 9 && num > 0 && PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    Event_spr[a] = Event_spr[(a + 1)];
+                    Event2_spr[a] = Event2_spr[(a + 1)];
+                }
+
                 TalkSound();
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
@@ -792,6 +800,9 @@ public class CheckPlayer : MonoBehaviour
                         SetDogam4();
                     }
                 }
+
+
+
                 break;
             case 2://말풍선 띄우고 아이템 요구
                 TalkSound();
@@ -986,13 +997,14 @@ public class CheckPlayer : MonoBehaviour
                 }
 
                 if (events_i == 3 && ok == 1)
-                {
+                {/*
                     StopCoroutine("talkBall");
                     move_obj.SetActive(true);
                     fade_obj.SetActive(false);
                     Invoke("SetB", 15f);
                     StopTalk();
                     talkBallB_obj.SetActive(false);
+                    */
                 }
                 else
                 {
@@ -1558,6 +1570,10 @@ public class CheckPlayer : MonoBehaviour
                     ItemSettings();
                     GetItem_obj.SetActive(false);
                     balloon_obj.SetActive(false);
+                    if (SetItemPref_i==46)
+                    {
+                        this.gameObject.SetActive(false);
+                    }
                 }
                 else
                 {
@@ -1677,7 +1693,13 @@ public class CheckPlayer : MonoBehaviour
                     if (events_i == 3)
                     {
                         ok = 1;
-                        
+
+                        StopCoroutine("talkBall");
+                        move_obj.SetActive(true);
+                        fade_obj.SetActive(false);
+                        Invoke("SetB", 15f);
+                        StopTalk();
+                        talkBallB_obj.SetActive(false);
                     }
                     //move_obj.SetActive(true);
 
@@ -1736,7 +1758,7 @@ public class CheckPlayer : MonoBehaviour
     {
         move_obj.SetActive(false);
         fade_obj.SetActive(true);
-        SGM.GetComponent<SoundEvt>().soundItemUse();
+        SGM.GetComponent<SoundEvt>().soundPickUp();
     }
 
     public void StopAndTalk()
