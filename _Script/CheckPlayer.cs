@@ -746,7 +746,7 @@ public class CheckPlayer : MonoBehaviour
             if (all_Ani == null)
             {
                 this.GetComponent<Animator>().Play(aniTalk_str);
-                Debug.Log("aaa" + aniTalk_str);
+                //Debug.Log("aaa" + aniTalk_str);
             }
             else
             {
@@ -768,10 +768,29 @@ public class CheckPlayer : MonoBehaviour
             case 1://말풍선띄우고 다음으로
 
 
-                if (animalNum_i == 9 && num > 0 && PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                if (animalNum_i == 9 && PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                 {
-                    Event_spr[a] = Event_spr[(a + 1)];
-                    Event2_spr[a] = Event2_spr[(a + 1)];
+                    if (num > 0)
+                    {
+                        Event_spr[a] = Event_spr[(a + 1)];
+                        Event2_spr[a] = Event2_spr[(a + 1)];
+                    }
+                    if (events_i == 2)
+                    {
+                        Event_spr[a] = Event_spr[(a + 1)];
+                        Event2_spr[a] = Event2_spr[(a + 1)];
+                    }
+                }
+
+                if (animalNum_i == 11 && PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    Event_spr[a] = Event_spr[(a + 4)];
+                    Event2_spr[a] = Event2_spr[(a + 4)];
+
+                    moveOther_obj.SetActive(true);
+
+                    color = new Color(1f, 1f, 0f);
+                    this.GetComponent<SpriteRenderer>().color = color;
                 }
 
                 TalkSound();

@@ -2173,6 +2173,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ea48d0149e04bc84a83dbf2f02f63afc, type: 3}
   - {fileID: 21300000, guid: c50b9b69ee8d40244b817c0da9bc8fa8, type: 3}
   - {fileID: 21300000, guid: f69f87f9ad578cb459d185b4a3548918, type: 3}
+  - {fileID: 21300000, guid: 604c0125966ada84cafdbf8afc314c0e, type: 3}
+  - {fileID: 21300000, guid: 9e2b32f2b21bdfb40b69e04290eb3d4c, type: 3}
   animalImg: {fileID: 723389229}
   material1: {fileID: 466258459}
   material2: {fileID: 235416142}
