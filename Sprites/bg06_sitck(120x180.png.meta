@@ -14,6 +14,9 @@ TextureImporter:
   - first:
       213: 7338677479755396128
     second: bg06_sitck(120x180_3
+  - first:
+      213: 1904019356993633481
+    second: bg06_sitck(120x180_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -190,6 +193,27 @@ TextureImporter:
       bones: []
       spriteID: 024bafd294838d560800000000000000
       internalID: 7338677479755396128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg06_sitck(120x180_4
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 120
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ccb21b648f6c6a10800000000000000
+      internalID: 1904019356993633481
       vertices: []
       indices: 
       edges: []
