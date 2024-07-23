@@ -189,7 +189,7 @@ public class CheckEvent : MonoBehaviour
 
 
     /// <summary>
-    /// 위로 올라가기
+    /// 뒤로 밀기
     /// </summary>
     /// <returns></returns>
     IEnumerator EventDown()

@@ -285,6 +285,10 @@ public class CheckPlayer : MonoBehaviour
             }
             else
             {
+                if (events_i == 8)
+                {
+                    move_obj.SetActive(true);
+                }
                 ItemSettings();
             }
             //ItemSettingOnEvents();
@@ -1593,6 +1597,11 @@ public class CheckPlayer : MonoBehaviour
                     {
                         this.gameObject.SetActive(false);
                     }
+                    if (events_i==5)
+                    {
+
+                        SGM.GetComponent<SoundEvt>().soundDamage();
+                    }
                 }
                 else
                 {
@@ -2438,5 +2447,8 @@ public class CheckPlayer : MonoBehaviour
         talk_b = true;
         PlayerPrefs.SetInt("escdont", 0);
     }
+
+
+
 
 }

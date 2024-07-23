@@ -48,6 +48,9 @@ public class MoveMap : MonoBehaviour
     public Animator crow_Ani;
 
 
+    public Vector3 position0;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -123,7 +126,7 @@ public class MoveMap : MonoBehaviour
                         if (event_i == 1)
                         {
                             endEvent3_obj.SetActive(true);
-
+                            door1_obj.SetActive(true);
                             Invoke("OnBone", 0.5f);
                             Invoke("OnBone2", 2.5f);
                         }
@@ -442,5 +445,7 @@ public class MoveMap : MonoBehaviour
     {
         move_obj.GetComponent<Animator>().Play("ani_npc_crow_talk");
     }
+
+
 
 }
