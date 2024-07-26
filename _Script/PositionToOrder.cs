@@ -7,7 +7,7 @@ public class PositionToOrder : MonoBehaviour
     int time_i=1;
     public Vector2 size;
     public LayerMask whatIsLayer;
-    public GameObject changeOrder_obj;
+    public GameObject changeOrder_obj,changeOrder2_obj;
 
     public bool IsUp_b;
 
@@ -53,10 +53,12 @@ public class PositionToOrder : MonoBehaviour
                 if (IsUp_b)
                 {
                     changeOrder_obj.GetComponent<SpriteRenderer>().sortingOrder = 13;
+                    changeOrder2_obj.GetComponent<SpriteRenderer>().sortingOrder = 13;
                 }
                 else
                 {
                     changeOrder_obj.GetComponent<SpriteRenderer>().sortingOrder = 7;
+                    changeOrder2_obj.GetComponent<SpriteRenderer>().sortingOrder = 7;
                 }
             }
             yield return new WaitForSeconds(0.1f);

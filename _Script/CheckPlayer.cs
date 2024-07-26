@@ -252,6 +252,7 @@ public class CheckPlayer : MonoBehaviour
 
                     if (GMI.GetComponent<Inventory>().inout_i == 0)
                     {
+                        balloon_obj.SetActive(false);
                         EventOrItem();
                     }
                 }
@@ -1709,6 +1710,9 @@ public class CheckPlayer : MonoBehaviour
                         talk_b = false;
                         StartCoroutine("TalkBOff");
                         all_Ani.Play("ani_npc_cat_get1");
+                        SGM.GetComponent<SoundEvt>().soundWaterWalk();
+                        Invoke("Anis", 3f);
+
                     }
                     else if (events_i==2)
                     {
@@ -1717,6 +1721,8 @@ public class CheckPlayer : MonoBehaviour
                         talk_b = false;
                         StartCoroutine("TalkBOff");
                         all_Ani.Play("ani_npc_cat_get3");
+                        SGM.GetComponent<SoundEvt>().soundWaterWalk();
+                        Invoke("Anis", 3f);
                     }
                     if (events_i == 3)
                     {
@@ -1770,6 +1776,13 @@ public class CheckPlayer : MonoBehaviour
         //talk_b = false;
         //StartCoroutine("TalkBOff");
 
+    }
+
+    void Anis()
+    {
+        move_obj.SetActive(true);
+        color = new Color(1f, 1f, 1f, 0f);
+        this.GetComponent<SpriteRenderer>().color = color;
     }
 
     //void wa

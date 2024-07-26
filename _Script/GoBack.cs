@@ -41,6 +41,9 @@ public class GoBack : MonoBehaviour
         //SGM.GetComponent<SoundEvt>().soundDamage();
         while (in_i == 1)
         {
+
+            GM.GetComponent<CharMove>().Speed = 0f;
+            GM.GetComponent<CharMove>().canMove = false;
             position0.x = position0.x - 8f * Time.deltaTime;
             player_obj.transform.position = position0;
 
