@@ -127,6 +127,7 @@ public class MoveMap : MonoBehaviour
                         {
                             endEvent3_obj.SetActive(true);
                             door1_obj.SetActive(true);
+                            SGM.GetComponent<SoundEvt>().soundCrowAttack();
                             Invoke("OnBone", 0.5f);
                             Invoke("OnBone2", 2.5f);
                         }
@@ -288,7 +289,6 @@ public class MoveMap : MonoBehaviour
     void OnBone()
     {
 
-        SGM.GetComponent<SoundEvt>().soundCrowAttack();
         endEvent2_obj.SetActive(true);
     }
     void OnBone2()

@@ -252,7 +252,6 @@ public class CheckPlayer : MonoBehaviour
 
                     if (GMI.GetComponent<Inventory>().inout_i == 0)
                     {
-                        balloon_obj.SetActive(false);
                         EventOrItem();
                     }
                 }
@@ -766,6 +765,8 @@ public class CheckPlayer : MonoBehaviour
         }
 
         num = a;
+
+
         switch (EventNum_i[a])
         {
             case 0:
@@ -1804,6 +1805,7 @@ public class CheckPlayer : MonoBehaviour
 
     public void StopAndTalk()
     {
+        balloon_obj.SetActive(false);
         PlayerPrefs.SetInt("nowtalk", 1);
         GM.GetComponent<CharMove>().canMove = false;
         wait2 = 1;

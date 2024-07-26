@@ -34,8 +34,9 @@ public class GoBack : MonoBehaviour
         GM.GetComponent<CharMove>().canMove = false;
         //talk_b = false;
         int in_i = 1;
-        position0 = player_obj.transform.position;
 
+        yield return new WaitForSeconds(0.3f);
+        position0 = player_obj.transform.position;
         //yield return new WaitForSeconds(0.5f);
         //SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
         //SGM.GetComponent<SoundEvt>().soundDamage();
