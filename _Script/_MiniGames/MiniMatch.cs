@@ -136,7 +136,7 @@ public class MiniMatch : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
 
-            if (selet_i == 15)
+            if (selet_i == 11)
             {
 
             }
@@ -156,7 +156,7 @@ public class MiniMatch : MonoBehaviour
                     else
                     {
 
-                        if (selet_i == 15)
+                        if (selet_i == 11)
                         {
                             i = 1;
                             selet_i = k;
@@ -253,7 +253,7 @@ public class MiniMatch : MonoBehaviour
                         pieceOri_obj[name_i - 1].SetActive(true);
                         pieceOri_obj[name_i - 1].GetComponent<SpriteRenderer>().sprite = piece3_spr[name2_i];
                         
-                        p3_i = name_i;
+                        p3_i = selet_i;
 
                     }
                     else
@@ -285,7 +285,7 @@ public class MiniMatch : MonoBehaviour
                         pieceOri_obj[name_i - 1].SetActive(true);
                         pieceOri_obj[name_i - 1].GetComponent<SpriteRenderer>().sprite = piece4_spr[name2_i];
                         
-                        p4_i = name_i;
+                        p4_i = selet_i;
                     }
                     else
                     {
@@ -312,7 +312,7 @@ public class MiniMatch : MonoBehaviour
             }
             SelectS();
         }
-        if (p1_i==12&& p2_i == 9 && p3_i == 7 && p4_i == 2 )
+        if (p1_i==9&& p2_i == 5 && p3_i == 4 && p4_i == 10 )
         {
                 fi = 1;
             SGM.GetComponent<SoundEvt>().soundItemSuccess();
