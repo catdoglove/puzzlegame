@@ -281,6 +281,7 @@ public class AnimailInformation : MonoBehaviour
                 know_obj2.SetActive(true);
             }
 
+
             //materialArea1.SetActive(true);
         }
         else

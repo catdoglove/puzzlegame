@@ -259,6 +259,7 @@ public class CheckPlayer : MonoBehaviour
         }
     }
 
+
     IEnumerator Checking()
     {
         while (move_i == 1)
