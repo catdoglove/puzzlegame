@@ -396,7 +396,7 @@ public class MiniMatch : MonoBehaviour
         {
                 fi = 1;
             SGM.GetComponent<SoundEvt>().soundItemSuccess();
-            Invoke("Wait",2f);
+            Invoke("Wait",1f);
         }
 
 
@@ -414,6 +414,7 @@ public class MiniMatch : MonoBehaviour
         //SGM.GetComponent<SoundEvt>().soundItemSuccess();
         //japan_obj.SetActive(false);
         back_obj.SetActive(false);
+        PlayerPrefs.SetInt("nowtalk", 0);
         //GM.SetActive(false);
     }
 

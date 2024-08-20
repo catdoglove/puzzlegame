@@ -2400,7 +2400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 26526357}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -0.04, z: 0}
+  m_LocalPosition: {x: 0.14, y: -0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2042900928}
@@ -2419,7 +2419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move_i: 1
-  size: {x: 3.4, y: 3}
+  size: {x: 3.6, y: 3}
   whatIsLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -2514,7 +2514,7 @@ MonoBehaviour:
   dogam_b: 1
   fox_b: 0
   checkX_f: 0
-  checkY_f: 2
+  checkY_f: 0.5
   checkR_f: 0
   hallFix_obj: {fileID: 0}
   hall_obj: {fileID: 0}
@@ -4000,7 +4000,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 225508872}
+  m_TargetTexture: {fileID: 859609925}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -11756,41 +11756,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!84 &225508872
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 851
-  m_Height: 479
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &225774917
 GameObject:
   m_ObjectHideFlags: 0
@@ -20167,7 +20132,7 @@ MonoBehaviour:
   SGM: {fileID: 879451249}
   SGM2: {fileID: 2143147724}
   purple_b: 0
-  soundLow_b: 0
+  soundLow_b: 1
   soundLow2_b: 0
   bearColl_obj: {fileID: 429390213}
   candyBar_obj: {fileID: 0}
@@ -41663,6 +41628,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!84 &859609925
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 851
+  m_Height: 479
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &860329685
 GameObject:
   m_ObjectHideFlags: 0
@@ -62000,6 +62000,7 @@ GameObject:
   - component: {fileID: 1242781648}
   - component: {fileID: 1242781647}
   - component: {fileID: 1242781646}
+  - component: {fileID: 1242781649}
   m_Layer: 0
   m_Name: "npc\uC5EC\uC6B0 \uAE38\uB9C9"
   m_TagString: Untagged
@@ -62034,7 +62035,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.018896818, y: -0.31179714}
+  m_Offset: {x: 0.4749611, y: -0.31179714}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -62045,7 +62046,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.6377935, y: 4.205943}
+  m_Size: {x: 2.6500778, y: 4.205943}
   m_EdgeRadius: 0
 --- !u!95 &1242781647
 Animator:
@@ -62116,6 +62117,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1242781649
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242781644}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.84112793, y: -1.4094368}
+  serializedVersion: 2
+  m_Radius: 1.2205945
 --- !u!1 &1244003335
 GameObject:
   m_ObjectHideFlags: 0
@@ -72374,7 +72391,7 @@ MonoBehaviour:
   SGM: {fileID: 879451249}
   SGM2: {fileID: 2143147724}
   purple_b: 0
-  soundLow_b: 0
+  soundLow_b: 1
   soundLow2_b: 0
   bearColl_obj: {fileID: 429390213}
   candyBar_obj: {fileID: 0}
