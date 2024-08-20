@@ -1734,6 +1734,7 @@ public class CheckPlayer : MonoBehaviour
                         move_obj.SetActive(true);
                         fade_obj.SetActive(false);
                         Invoke("SetB", 15f);
+                        SGM.GetComponent<SoundEvt>().soundDamage2();
                         StopTalk();
                         talkBallB_obj.SetActive(false);
                     }
@@ -1771,6 +1772,27 @@ public class CheckPlayer : MonoBehaviour
                     SGM.GetComponent<SoundEvt>().soundItemFail();
                 }
                 break;
+            case 40://퍼즐
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemUse();
+                    StopAndTalk();
+                    a++;
+                    GM.GetComponent<CharMove>().canMove = false;
+                    //PlayerPrefs.SetInt("cursorActive", 1);
+                    //puzzle_obj.GetComponent<RockMini>().ShowPuzzle();
+                    miniGame_obj.SetActive(true);
+                    PlayerPrefs.SetInt("escdont", 1);
+                    GMI.GetComponent<Inventory>().DelItems();
+                    this.gameObject.SetActive(false);
+                }
+                else
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemFail();
+                }
+                break;
+
+
 
         }
         PlayerPrefs.SetInt(SetEventPref_str, a);
@@ -1801,7 +1823,7 @@ public class CheckPlayer : MonoBehaviour
     {
         move_obj.SetActive(false);
         fade_obj.SetActive(true);
-        SGM.GetComponent<SoundEvt>().soundPickUp();
+        SGM.GetComponent<SoundEvt>().soundDamagex();
     }
 
     public void StopAndTalk()

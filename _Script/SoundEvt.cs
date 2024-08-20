@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class SoundEvt : MonoBehaviour {
 
 	//시스템 소리
-	public AudioClip sp_start, sp_pickup, sp_damage, sp_open_object, sp_jump, sp_water_walk;
-	public AudioSource se_start, se_pickup, se_damage, se_open_object, se_jump, se_water_walk;
+	public AudioClip sp_start, sp_pickup, sp_damage, sp_damagex, sp_damage2, sp_open_object, sp_jump, sp_water_walk;
+	public AudioSource se_start, se_pickup, se_damage, se_damagex, se_damage2, se_open_object, se_jump, se_water_walk;
 
 	//이벤트 관련
 	public AudioClip sp_box_etc, sp_box_open, sp_box_bell, sp_crow_attack, sp_hide1, sp_doorclose, sp_bear_pop, sp_cotton;
@@ -283,6 +283,24 @@ public class SoundEvt : MonoBehaviour {
     public void soundCotton()
     {
         putSound(se_cotton, sp_cotton);
+        auSE.Play();
+    }
+
+    /// <summary>
+    /// 데미지 소리2
+    /// </summary>
+    public void soundDamagex()
+    {
+        putSound(se_damagex, sp_damagex);
+        auSE.Play();
+    }
+
+    /// <summary>
+    /// 데미지 소리2
+    /// </summary>
+    public void soundDamage2()
+    {
+        putSound(se_damage2, sp_damage2);
         auSE.Play();
     }
 

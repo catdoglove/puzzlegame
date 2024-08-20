@@ -10,7 +10,7 @@ public class MiniMatch : MonoBehaviour
     public Sprite[] pieceOri_spr;
     public int p_i;
 
-    public GameObject[] piece_obj;
+    public GameObject[] piece_obj, piecePos_obj;
     public GameObject[] pieceOri_obj;
     public GameObject select_obj, back_obj;
 
@@ -18,7 +18,7 @@ public class MiniMatch : MonoBehaviour
 
     public int name_i;
 
-    public GameObject SGM;
+    public GameObject SGM,GM, GMM;
 
     int fi = 0;
 
@@ -54,7 +54,7 @@ public class MiniMatch : MonoBehaviour
                 {
                     if (piece_obj[selet_i].activeSelf)
                     {
-                        select_obj.transform.position = piece_obj[selet_i].transform.position;
+                        select_obj.transform.position = piecePos_obj[selet_i].transform.position;
                         i = 1;
                     }
                     else
@@ -78,60 +78,140 @@ public class MiniMatch : MonoBehaviour
         else
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            /*
-            while (i == 0)
-            {
-                if (piece_obj[selet_i].activeSelf)
+
+                if (selet_i == 0|| selet_i == 1 || selet_i == 2 || selet_i == 3)
                 {
-                    select_obj.transform.position = piece_obj[selet_i].transform.position;
-                    i = 1;
+
                 }
                 else
                 {
 
-                    if (selet_i == 0)
+                    SGM.GetComponent<SoundEvt>().soundItemWndAD();
+                    int k = selet_i;
+                    int i = 0;
+                    while (i == 0)
                     {
-                        i = 1;
-                        selet_i = k;
-                    }
-                    else
-                    {
-                        selet_i--;
-                    }
+                        switch (selet_i)
+                        {
+                            case 4:
+                                selet_i = 0;
+                                break;
+                            case 5:
+                                selet_i = 2;
+                                break;
+                            case 6:
+                                selet_i = 4;
+                                break;
+                            case 7:
+                                selet_i = 4;
+                                break;
+                            case 8:
+                                selet_i = 5;
+                                break;
+                            case 9:
+                                selet_i = 5;
+                                break;
+                            case 10:
+                                selet_i = 6;
+                                break;
+                            case 11:
+                                selet_i = 9;
+                                break;
+                            default:
+                                break;
+                        }
 
+
+                        if (piece_obj[selet_i].activeSelf)
+                        {
+                            select_obj.transform.position = piecePos_obj[selet_i].transform.position;
+                            i = 1;
+                        }
+                        else
+                        {
+
+                            if (selet_i == 0 || selet_i == 2)
+                            {
+                                i = 1;
+                                selet_i = k;
+                            }
+                        }
+
+
+                    }
                 }
+
             }
-            */
-        }
         else
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            /*
-            while (i == 0)
             {
-                if (piece_obj[selet_i].activeSelf)
+                if (selet_i == 10 || selet_i == 11)
                 {
-                    select_obj.transform.position = piece_obj[selet_i].transform.position;
-                    i = 1;
+
                 }
                 else
                 {
 
-                    if (selet_i == 0)
+
+                    SGM.GetComponent<SoundEvt>().soundItemWndAD();
+                    int k = selet_i;
+                    int i = 0;
+                    while (i == 0)
                     {
-                        i = 1;
-                        selet_i = k;
-                    }
-                    else
-                    {
-                        selet_i--;
+                        switch (selet_i)
+                        {
+                            case 0:
+                                selet_i = 4;
+                                break;
+                            case 1:
+                                selet_i = 4;
+                                break;
+                            case 2:
+                                selet_i = 5;
+                                break;
+                            case 3:
+                                selet_i = 5;
+                                break;
+                            case 4:
+                                selet_i = 6;
+                                break;
+                            case 5:
+                                selet_i = 8;
+                                break;
+                            case 6:
+                                selet_i = 10;
+                                break;
+                            case 7:
+                                selet_i = 10;
+                                break;
+                            case 8:
+                                selet_i = 11;
+                                break;
+                            case 9:
+                                selet_i = 11;
+                                break;
+                            default:
+                                break;
+                        }
+                        if (piece_obj[selet_i].activeSelf)
+                        {
+                            select_obj.transform.position = piecePos_obj[selet_i].transform.position;
+                            i = 1;
+                        }
+                        else
+                        {
+
+                            if (selet_i == 10 || selet_i == 11)
+                            {
+                                i = 1;
+                                selet_i = k;
+                            }
+                        }
                     }
 
                 }
-            }
-            */
 
-        }
+            }
         else
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -150,7 +230,7 @@ public class MiniMatch : MonoBehaviour
                 {
                     if (piece_obj[selet_i].activeSelf)
                     {
-                        select_obj.transform.position = piece_obj[selet_i].transform.position;
+                        select_obj.transform.position = piecePos_obj[selet_i].transform.position;
                         i = 1;
                     }
                     else
@@ -325,7 +405,16 @@ public class MiniMatch : MonoBehaviour
 
     void Wait()
     {
+
+        //puzzleWin_obj.SetActive(false);
+        PlayerPrefs.SetInt("escdont", 0);
+        GMM.GetComponent<CharMove>().canMove = true;
+        //PlayerPrefs.SetInt("cursorActive", 0);
+        GM.GetComponent<CheckPlayer>().ItemSettings();
+        //SGM.GetComponent<SoundEvt>().soundItemSuccess();
+        //japan_obj.SetActive(false);
         back_obj.SetActive(false);
+        //GM.SetActive(false);
     }
 
     void SelectS()
@@ -342,7 +431,7 @@ public class MiniMatch : MonoBehaviour
             }
             if (piece_obj[selet_i].activeSelf)
             {
-                select_obj.transform.position = piece_obj[selet_i].transform.position;
+                select_obj.transform.position = piecePos_obj[selet_i].transform.position;
                 i = 1;
             }
             else
@@ -355,7 +444,7 @@ public class MiniMatch : MonoBehaviour
                         selet_i++;
                         if (piece_obj[selet_i].activeSelf)
                         {
-                            select_obj.transform.position = piece_obj[selet_i].transform.position;
+                            select_obj.transform.position = piecePos_obj[selet_i].transform.position;
                             i = 1;
                         }
                     }
