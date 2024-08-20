@@ -17,6 +17,7 @@ public class CharMove : MonoBehaviour
     public float Speed;
     float h;
     float v;
+    float waitFloat;
 
 
 
@@ -165,6 +166,7 @@ public class CharMove : MonoBehaviour
             //  else charspeed = runSpeed;
             Speed = 5f;
             ausrc.GetComponent<AudioSource>().pitch = 1.3f;
+            charAni.speed = 1.4f;
         }
         else
         {
@@ -172,6 +174,7 @@ public class CharMove : MonoBehaviour
           //  else charspeed = normalSpeed;
             Speed = 3f;
             ausrc.GetComponent<AudioSource>().pitch = 1f;
+            charAni.speed = 1f;
         }
 
         if (Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.UpArrow))
@@ -214,12 +217,14 @@ public class CharMove : MonoBehaviour
                 {
                     ran = 3;
                     StopCoroutine("charwaitAnimation");
+                    StopCoroutine("charwaitAnimation2");
                     StartCoroutine("charwaitAnimation2");
                 }
                 else
                 {
                     ran = 0;
                     StopCoroutine("charwaitAnimation2");
+                    StopCoroutine("charwaitAnimation");
                     StartCoroutine("charwaitAnimation");
                 }
 
@@ -359,25 +364,39 @@ void charWaitingMotion()
 
     /// <summary>
     /// 순서대로 대기모션 불러오기
+    /// 나중에 봐서 속도 조절할 것 waitFloat
     /// </summary>
     IEnumerator charwaitAnimation()
     {
         while (true)
         {
+            waitFloat++;
                 switch (ran)
                 {
                     case 0:
-                        yield return new WaitForSeconds(30f);
+                        yield return new WaitForSeconds(1f);
+                    if (waitFloat >= 30)
+                    {
                         ran = 1;
+                        waitFloat = 0;
+                    }
                         break;
                     case 1:
-                        yield return new WaitForSeconds(30f);
+                    yield return new WaitForSeconds(1f);
+                    if (waitFloat >= 30)
+                    {
                         ran = 2;
-                        break;
+                        waitFloat = 0;
+                    }
+                    break;
                     case 2:
-                        yield return new WaitForSeconds(30f);
+                    yield return new WaitForSeconds(1f);
+                    if (waitFloat >= 30)
+                    {
                         ran = 0;
-                        break;
+                        waitFloat = 0;
+                    }
+                    break;
                 
             }
         }
