@@ -307,6 +307,18 @@ public class CharMove : MonoBehaviour
             }
         }
 
+        //거미 동굴 관련
+
+        if (PlayerPrefs.GetInt("spiderWebWalk", 0)==1)
+        {
+            spiderWebSlow();
+        }
+
+        if (PlayerPrefs.GetInt("spiderChaseRun", 0) == 1)
+        {
+            spiderChaseAni();
+            charSpr.SetActive(false);
+        }
     }
 
     void SetWalk()
@@ -533,6 +545,19 @@ void charWaitingMotion()
         }
     }
 
+
+    public void spiderWebSlow()
+    {
+        Speed = 1f;
+        ausrc.GetComponent<AudioSource>().pitch = 0.5f;
+        charAni.speed = 0.6f;
+    }
+
+    public void spiderChaseAni()
+    {
+        Debug.Log("애니메이션스타트");
+    }
+    
 
 
     private void OnCollisionEnter2D(Collision2D collision)

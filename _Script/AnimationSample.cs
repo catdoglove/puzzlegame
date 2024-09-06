@@ -8,7 +8,7 @@ public class AnimationSample : MonoBehaviour
     // Start is called before the first frame update
 
     public Animator doorAni, NPC_hedgehogAni, NPC_rabbit1Ani, NPC_rabbit2Ani, NPC_cat1Ani, NPC_bear1Ani, NPC_bear2Ani, NPC_cat2Ani;
-    public GameObject NPC_sheep1, lakeboat;
+    public GameObject NPC_sheep1, lakeboat, spider_test, spider_test2, char_test;
     public Sprite[] NPC_sheepSpr;
     public GameObject testBtnobj, ESCevent;
 
@@ -73,6 +73,20 @@ public class AnimationSample : MonoBehaviour
             showESCwindow();
         }
 
+
+        //거미동굴관련
+        if (PlayerPrefs.GetInt("spiderChaseRun", 0) == 1)
+        {
+            spider_test.SetActive(true);
+            char_test.SetActive(true);
+        }
+
+
+        if (PlayerPrefs.GetInt("spiderAppearDown", 0) == 1)
+        {
+            spider_test2.SetActive(true);
+        }
+
     }
 
     public void quitGame()
@@ -95,5 +109,6 @@ public class AnimationSample : MonoBehaviour
     {
         ESCevent.SetActive(false);
     }
+
 
 }
