@@ -95,6 +95,19 @@ public class CharMove : MonoBehaviour
 
     void Update()
     {
+
+        //거미동굴관련
+        if (PlayerPrefs.GetInt("autoBGstart", 0) == 1 || PlayerPrefs.GetInt("spiderAppearDown", 0) == 1)
+        {
+            rigid2D.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        }
+        else
+        {
+            rigid2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+
+
+
         if (canMove == false)
         {
            // charspeed = 0;
@@ -190,10 +203,19 @@ public class CharMove : MonoBehaviour
         }
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-          //  moveX -= charspeed; 
-            charSpr.GetComponent<SpriteRenderer>().flipX = true;
-            SetWalk();
+        {//거미동굴 씬으로 인해 여기만 차이 있음
+         //  moveX -= charspeed; 
+            if (PlayerPrefs.GetInt("autoBGstart", 0) == 1)
+            {
+                charAni.Play("ani_charnobell_stop");
+                charSpr.GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else
+            {
+                charSpr.GetComponent<SpriteRenderer>().flipX = true;
+                SetWalk();
+            }
+
         }
 
         if (Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.RightArrow))
@@ -307,16 +329,17 @@ public class CharMove : MonoBehaviour
             }
         }
 
-        //거미 동굴 관련
-
-        if (PlayerPrefs.GetInt("spiderWebWalk", 0)==1)
+        //거미줄에 닿았을 때 속도 감소
+        if (PlayerPrefs.GetInt("spiderWebWalk", 0) == 1)
         {
-            spiderWebSlow();
+            Speed = 1f;
+            ausrc.GetComponent<AudioSource>().pitch = 0.5f;
+            charAni.speed = 0.6f;
         }
 
+        //거미 서식지 벗어날 때
         if (PlayerPrefs.GetInt("spiderChaseRun", 0) == 1)
         {
-            spiderChaseAni();
             charSpr.SetActive(false);
         }
     }
@@ -546,17 +569,6 @@ void charWaitingMotion()
     }
 
 
-    public void spiderWebSlow()
-    {
-        Speed = 1f;
-        ausrc.GetComponent<AudioSource>().pitch = 0.5f;
-        charAni.speed = 0.6f;
-    }
-
-    public void spiderChaseAni()
-    {
-        Debug.Log("애니메이션스타트");
-    }
     
 
 
