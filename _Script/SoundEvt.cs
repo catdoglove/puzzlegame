@@ -5,16 +5,16 @@ using UnityEngine.UI;
 public class SoundEvt : MonoBehaviour {
 
 	//시스템 소리
-	public AudioClip sp_start, sp_pickup, sp_damage, sp_damagex, sp_damage2, sp_open_object, sp_jump, sp_water_walk;
-	public AudioSource se_start, se_pickup, se_damage, se_damagex, se_damage2, se_open_object, se_jump, se_water_walk;
+	public AudioClip sp_start, sp_pickup, sp_damage, sp_damagex, sp_damage2, sp_damage3, sp_open_object, sp_jump, sp_water_walk;
+	public AudioSource se_start, se_pickup, se_damage, se_damagex, se_damage2, se_damage3, se_open_object, se_jump, se_water_walk;
 
 	//이벤트 관련
-	public AudioClip sp_box_etc, sp_box_open, sp_box_bell, sp_crow_attack, sp_hide1, sp_doorclose, sp_bear_pop, sp_cotton;
-	public AudioSource se_box_etc, se_box_open, se_box_bell, se_crow_attack, se_hide1, se_doorclose, se_bear_pop, se_cotton;
+	public AudioClip sp_box_etc, sp_box_open, sp_box_bell, sp_crow_attack, sp_hide1, sp_doorclose, sp_bear_pop, sp_cotton, sp_boom, sp_cave_secret, sp_moving, sp_spider_catch, sp_spider_change, sp_spider_charse;
+	public AudioSource se_box_etc, se_box_open, se_box_bell, se_crow_attack, se_hide1, se_doorclose, se_bear_pop, se_cotton, se_boom, se_cave_secret, se_moving, se_spider_catch, se_spider_change, se_spider_charse;
 
 	//걷기 관련
-	public AudioClip sp_walk, sp_walk_wood;
-	public AudioSource se_walk, se_walk_wood;
+	public AudioClip sp_walk, sp_walk_wood, sp_walk_cave;
+	public AudioSource se_walk, se_walk_wood, se_walk_cave;
 
 
 
@@ -304,7 +304,78 @@ public class SoundEvt : MonoBehaviour {
         auSE.Play();
     }
 
-    public void putSound(AudioSource audioSE, AudioClip audioCP)
+	/// <summary>
+	/// 데미지 소리3
+	/// </summary>
+	public void soundDamage3()
+	{
+		putSound(se_damage3, sp_damage3);
+		auSE.Play();
+	}
+
+
+	/// <summary>
+	/// 폭탄 터지는 소리
+	/// </summary>
+	public void soundBoom()
+	{
+		putSound(se_boom, sp_boom);
+		auSE.Play();
+	}
+
+
+	/// <summary>
+	/// 동굴 히든 소리
+	/// </summary>
+	public void soundCaveSecret()
+	{
+		putSound(se_cave_secret, sp_cave_secret);
+		auSE.Play();
+	}
+
+
+	/// <summary>
+	/// 움직이는 소리
+	/// </summary>
+	public void soundMoving()
+	{
+		putSound(se_moving, sp_moving);
+		auSE.Play();
+	}
+
+	/// <summary>
+	/// 거미한테 잡히는 소리
+	/// </summary>
+	public void soundSpiderCatch()
+	{
+		putSound(se_spider_catch, sp_spider_catch);
+		auSE.Play();
+	}
+
+	/// <summary>
+	/// 거미 변신 소리
+	/// </summary>
+	public void soundSpiderChange()
+	{
+		putSound(se_spider_change, sp_spider_change);
+		auSE.Play();
+	}
+
+
+	/// <summary>
+	/// 거미 발걸음 소리
+	/// </summary>
+	public void soundSpiderCharse()
+	{
+		putSound(se_spider_charse, sp_spider_charse);
+		auSE.Play();
+	}
+
+
+
+	
+
+	public void putSound(AudioSource audioSE, AudioClip audioCP)
 	{
 		audioSE = gameObject.GetComponent<AudioSource>();
 		audioSE.clip = audioCP;

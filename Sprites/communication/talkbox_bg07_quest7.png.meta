@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: b8db83c215f6e0b4cb1e4597097c86b9
+guid: cecb8f275d02fdd49871c930ba9e5a0e
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -6614276078429030424
-    second: bg07_cave17_chair(280x480_0
-  - first:
-      213: 5808096354283593648
-    second: bg07_cave17_chair(280x480_1
-  - first:
-      213: 1236509396228641935
-    second: bg07_cave17_chair(280x480_2
-  - first:
-      213: -7825775855658827788
-    second: bg07_cave17_chair(280x480_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -52,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -109,91 +97,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: bg07_cave17_chair(280x480_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 280
-        height: 480
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e7bfda53fe5534a0800000000000000
-      internalID: -6614276078429030424
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg07_cave17_chair(280x480_1
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 0
-        width: 280
-        height: 480
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0bf90529cd08a9050800000000000000
-      internalID: 5808096354283593648
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg07_cave17_chair(280x480_2
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 0
-        width: 280
-        height: 480
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8414ab9eb6f82110800000000000000
-      internalID: 1236509396228641935
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bg07_cave17_chair(280x480_3
-      rect:
-        serializedVersion: 2
-        x: 840
-        y: 0
-        width: 280
-        height: 480
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ff70af6252456390800000000000000
-      internalID: -7825775855658827788
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
