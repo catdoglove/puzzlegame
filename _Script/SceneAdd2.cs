@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneAdd2 : MonoBehaviour
+public class SceneAdd : MonoBehaviour
 {
     public static int dogamOpen_i;
 
@@ -52,7 +52,7 @@ public class SceneAdd2 : MonoBehaviour
 
     public void ChangeMainScene()
     {
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("02_game"));
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("01_Tutorial"));
         main_obj.SetActive(true);
         SceneAdd.dogamOpen_i = 0;
     }

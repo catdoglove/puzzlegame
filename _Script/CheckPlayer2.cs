@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckPlayer : MonoBehaviour
+public class CheckPlayer2 : MonoBehaviour
 {
     public int move_i = 1;
     // Start is called before the first frame update
@@ -828,15 +828,6 @@ public class CheckPlayer : MonoBehaviour
                 }
 
 
-                if (animalNum_i == 11&&events_i==1)
-                {
-                    SetDogam4();
-                }
-
-                if (animalNum_i == 10)
-                {
-                    SetDogam2();
-                }
 
                 break;
             case 2://말풍선 띄우고 아이템 요구
@@ -1159,7 +1150,6 @@ public class CheckPlayer : MonoBehaviour
                 {
                     npc_obj[0].SetActive(true);
                     this.gameObject.SetActive(false);
-                    
                 }
                 else
                 {
@@ -1599,18 +1589,6 @@ public class CheckPlayer : MonoBehaviour
                 }
                 break;
             case 33://말풍선 띄우고 특수 아이템요구 
-                if (giveItemPref_i==35&& PlayerPrefs.GetInt("selecteditemnum", 0) == 40)
-                {
-                    GMI.GetComponent<Inventory>().DelItems();
-                    k = a;
-                    SetItemPref_i = 41;
-                    ItemSettings();
-                    //SetItemPref_i = 42;
-                    //ItemSettings();
-                    SetItemPref_i = 47;
-                    GetItem_obj.SetActive(false);
-                    balloon_obj.SetActive(false);
-                }
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                 {
                     GMI.GetComponent<Inventory>().DelItems();
@@ -1696,14 +1674,7 @@ public class CheckPlayer : MonoBehaviour
                     balloon_obj.SetActive(false);
                     move_obj.SetActive(true);
                     //this.gameObject.SetActive(false);
-                    if (giveItemPref_i==41)
-                    {
-                        SGM.GetComponent<SoundEvt>().soundDamage();
-                    }
-                    else
-                    {
-                        SGM.GetComponent<SoundEvt>().soundItemUse();
-                    }
+                    SGM.GetComponent<SoundEvt>().soundItemUse();
                 }
                 else
                 {
@@ -1732,20 +1703,6 @@ public class CheckPlayer : MonoBehaviour
                     if (animalNum_i == 7)
                     {
                         SetDogam2();
-                    }
-                    if (animalNum_i == 9)
-                    {
-                        SetDogam2();
-                        if (events_i == 2)
-                        {
-                            SetDogam3();
-                        }
-                    }
-                    
-                    if (animalNum_i == 11)
-                    {
-                        SetDogam2();
-                        SetDogam3();
                     }
                     //ani_str = "ani_npc_cat_get1";
                     if (events_i==1)
@@ -1777,8 +1734,6 @@ public class CheckPlayer : MonoBehaviour
                         move_obj.SetActive(true);
                         fade_obj.SetActive(false);
                         Invoke("SetB", 15f);
-                        npc_obj[0].SetActive(false);
-                        npc_obj[1].SetActive(true);
                         SGM.GetComponent<SoundEvt>().soundDamage2();
                         StopTalk();
                         talkBallB_obj.SetActive(false);
@@ -1881,6 +1836,8 @@ public class CheckPlayer : MonoBehaviour
     void SetB()
     {
         PlayerPrefs.SetInt("bdone",1);
+        npc_obj[0].SetActive(false);
+        npc_obj[1].SetActive(true);
         //move_obj.SetActive(false);
         //fade_obj.SetActive(true);
     }

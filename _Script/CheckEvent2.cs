@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class CheckEvent : MonoBehaviour
+public class CheckEvent2 : MonoBehaviour
 {
     public GameObject[] map_obj;
     public GameObject[] map2_obj;
@@ -127,10 +126,6 @@ public class CheckEvent : MonoBehaviour
                     if (end_b)
                     {
 
-
-                        SceneManager.LoadScene("02_game");
-
-                        /*
                         if (PlayerPrefs.GetInt("gametestover", 0) == 0)
                         {
                             UIOff_obj.SetActive(false);
@@ -142,7 +137,6 @@ public class CheckEvent : MonoBehaviour
                             PlayerPrefs.SetInt("gametestover", 1);
 
                         }
-                        */
                         //this.gameObject.SetActive(false);
                     }
 

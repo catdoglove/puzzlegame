@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
 
-public class MoveMap : MonoBehaviour
+public class MoveMap2 : MonoBehaviour
 {
     public GameObject[] map_obj;
     public GameObject[] map2_obj;
@@ -29,7 +29,7 @@ public class MoveMap : MonoBehaviour
     public GameObject BGM1, BGM2, BGM4;
 
     public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b, rot_b, crowA_b, secret_b, secret2_b, sheep_b,sheepOff_b;
-    public bool lakeOut_b, caveRoad_b, caveEnter_b, crowSet_b, setEff_b, hidden2_b, waterOut_b, flip_b, BGM_b, soundback_b,crow2_b, dont_b, sup_b;
+    public bool lakeOut_b, caveRoad_b, caveEnter_b, crowSet_b, setEff_b, hidden2_b, waterOut_b, flip_b, BGM_b, soundback_b,crow2_b, dont_b;
 
     public int event_i = 0;
 
@@ -50,11 +50,13 @@ public class MoveMap : MonoBehaviour
 
     public Vector3 position0;
 
+    public bool caveMove_b;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
 
         StopCoroutine("CheckingMap");
         StartCoroutine("CheckingMap");
@@ -89,7 +91,6 @@ public class MoveMap : MonoBehaviour
                 }
                 else
                 {
-
                     if (secret_b)
                     {
 
@@ -221,6 +222,12 @@ public class MoveMap : MonoBehaviour
             {
                 map2_obj[mapToGo_i].SetActive(true);
                 map2_obj[mapNow_i].SetActive(false);
+                if (caveMove_b)
+                {
+
+                    map_obj[mapToGo_i].SetActive(true);
+                    map_obj[mapNow_i].SetActive(false);
+                }
 
                 int k = mapRespawn_obj.Length;
                 k--;
@@ -309,14 +316,6 @@ public class MoveMap : MonoBehaviour
     void OpenDoor()
     {
 
-        if (sup_b)
-        {
-            if (PlayerPrefs.GetInt("supportonce", 0) == 0)
-            {
-                player_obj.SetActive(false);
-                PlayerPrefs.SetInt("supportonce", 1);
-            }
-        }
         if (door_b)
         {
             if (PlayerPrefs.GetInt("opendoorone", 0)==1)

@@ -17,6 +17,7 @@ public class Inventory : MonoBehaviour
     Vector3 position;
     public int in_i=0;
     public int inout_i = 0;
+    public int num_i;
 
     public GameObject GM, MainGM;
     public GameObject think_obj;
@@ -236,7 +237,14 @@ public class Inventory : MonoBehaviour
                         if (in_i == 0)
                         {
                             SGM.GetComponent<SoundEvt>().soundItemWndOpen();
-                            MainGM.GetComponent<SceneAdd>().AtiveScene();
+                            if (num_i==0)
+                            {
+                                MainGM.GetComponent<SceneAdd>().AtiveScene();
+                            }
+                            if (num_i == 2)
+                            {
+                                MainGM.GetComponent<SceneAdd2>().AtiveScene();
+                            }
                             GM.GetComponent<CharMove>().remove_obj.transform.position = GM.GetComponent<CharMove>().other_obj.transform.position;
                         }
                     }
