@@ -9,9 +9,10 @@ public class AniHandler : MonoBehaviour
     #region Fields
 
     public GameObject map1_obj, map2_obj, mapRespawn_obj;
-    public GameObject b_obj,in_obj;
+    public GameObject b_obj, in_obj;
     public GameObject player_obj, ani_obj;
     public Color color;
+    public GameObject BGM, SGM;
 
 
     #endregion Fields
@@ -74,6 +75,18 @@ public class AniHandler : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
+    public void BackSound()
+    {
+
+        SGM.GetComponent<SoundEvt>().soundCrowAttack();
+    }
+
+    public void WalkSound()
+    {
+
+        SGM.GetComponent<SoundEvt>().soundWalk();
+    }
+
 
     IEnumerator imgFadeOut()
     {
@@ -105,5 +118,24 @@ public class AniHandler : MonoBehaviour
         Invoke("af", 0.8f);
         yield return new WaitForSeconds(0.8f);
         //CGM.GetComponent<CharMove>().Speed = 2.5f;
+    }
+
+    public void TurnOffB()
+    {
+
+        StartCoroutine("BGMFadeOut");
+    }
+
+
+    IEnumerator BGMFadeOut()
+    {
+
+        for (float i = BGM.GetComponent<AudioSource>().volume; i >= 0f; i -= 0.01f)
+        {
+            BGM.GetComponent<AudioSource>().volume = i;
+            yield return new WaitForSeconds(0.05f);
+        }
+
+        
     }
 }

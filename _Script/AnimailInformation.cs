@@ -140,7 +140,7 @@ public class AnimailInformation : MonoBehaviour
 
         animalImg.GetComponent<SpriteRenderer>().sprite = animalSpr[pageNum];
 
-        if(pageNum < 10) //일의자리
+        if(pageNum < 9) //일의자리
         {
             No_txt.text = "No.0" + (pageNum + 1);
         }
@@ -289,6 +289,11 @@ public class AnimailInformation : MonoBehaviour
         }
 
         if (pageNum>=5&& pageNum < 8)
+        {
+            materialArea1.SetActive(false);
+        }
+
+        if (pageNum >=9)
         {
             materialArea1.SetActive(false);
         }
