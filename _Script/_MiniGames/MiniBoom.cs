@@ -9,13 +9,15 @@ public class MiniBoom : MonoBehaviour
 
     public int selet_i, type_i, level_i;
 
-    public GameObject SGM,GM, GMM;
+    public GameObject SGM,GM, GMM,Main;
 
     public GameObject[] block0_obj, block1_obj, block2_obj, block3_obj, block4_obj;
+    public GameObject[] block0T_obj, block1T_obj, block2T_obj, block3T_obj, block4T_obj;
+    public GameObject[] block0B_obj, block1B_obj, block2B_obj, block3B_obj, block4B_obj;
 
     public GameObject[] select_obj,selectOn_obj;
 
-    public GameObject back_obj,main_obj;
+    public GameObject back_obj, main_obj, ori_obj, this_obj;
 
     public int where_i;
 
@@ -33,7 +35,10 @@ public class MiniBoom : MonoBehaviour
 
     public void SelectButton()
     {
-
+        Main.GetComponent<MiniBoom>().main_obj = ori_obj;
+        Main.GetComponent<MiniBoom>().where_i = where_i;
+        Main.GetComponent<MiniBoom>().level_i = level_i;
+        Main.GetComponent<MiniBoom>().this_obj = this.gameObject;
         for (int i = 0; i < select_obj.Length; i++)
         {
             select_obj[i].SetActive(true);
@@ -54,27 +59,348 @@ public class MiniBoom : MonoBehaviour
             case 0:
                 break;
             case 1:
+                if (p0_i[where_i] != 1 && p0_i[where_i + 1] != 1)
+                {
+                    main_obj.transform.position = block0_obj[where_i].transform.position;
+                    p0_i[where_i] = 1;
+                    p0_i[where_i + 1] = 1;
+                    p1_i[where_i] = 0;
+                    p1_i[where_i + 1] = 0;
+                    MinUp();
+                }
                 break;
             case 2:
+                if (p1_i[where_i] != 1 && p1_i[where_i + 1] != 1)
+                {
+                    main_obj.transform.position = block1_obj[where_i].transform.position;
+                    p1_i[where_i] = 1;
+                    p1_i[where_i + 1] = 1;
+                    p2_i[where_i] = 0;
+                    p2_i[where_i + 1] = 0;
+                    MinUp();
+                }
                 break;
             case 3:
+                if (p2_i[where_i] != 1 && p2_i[where_i + 1] != 1)
+                {
+                    main_obj.transform.position = block2_obj[where_i].transform.position;
+                    p2_i[where_i] = 1;
+                    p2_i[where_i + 1] = 1;
+                    p3_i[where_i] = 0;
+                    p3_i[where_i + 1] = 0;
+                    MinUp();
+                }
+                break;
+            case 4:
+                if (p3_i[where_i] != 1 && p3_i[where_i + 1] != 1)
+                {
+                    main_obj.transform.position = block3_obj[where_i].transform.position;
+                    p3_i[where_i] = 1;
+                    p3_i[where_i + 1] = 1;
+                    p4_i[where_i] = 0;
+                    p4_i[where_i + 1] = 0;
+                    MinUp();
+                }
+
                 break;
             default:
                 break;
         }
+    }
 
-        switch (type_i)
+    public void UpS()
+    {
+        switch (level_i)
         {
             case 0:
                 break;
+            case 1:
+                if (p0_i[where_i] != 1)
+                {
+                    main_obj.transform.position = block0T_obj[where_i-2].transform.position;
+                    p0_i[where_i] = 1;
+                    p2_i[where_i] = 0;
+                    MinUp();
+                }
+                break;
+            case 2:
+                if ( p1_i[where_i] != 1)
+                {
+                    main_obj.transform.position = block1T_obj[where_i-2].transform.position;
+                    p1_i[where_i] = 1;
+                    p3_i[where_i] = 0;
+                    MinUp();
+                }
+                break;
+            case 3:
+                if (p2_i[where_i] != 1)
+                {
+                    main_obj.transform.position = block2T_obj[where_i-2].transform.position;
+                    p2_i[where_i] = 1;
+                    p4_i[where_i] = 0;
+                    MinUp();
+                }
+                break;
+            case 4:
+                break;
             default:
                 break;
         }
     }
+
+    public void UpSB()
+    {
+        switch (level_i)
+        {
+            case 0:
+                break;
+            case 1:
+                if (p0_i[where_i] != 1 && p0_i[where_i + 1] != 1 && p0_i[where_i -1] != 1)
+                {
+                    main_obj.transform.position = block0B_obj[where_i-3].transform.position;
+
+                    p0_i[where_i - 1] = 1;
+                    p0_i[where_i] = 1;
+                    p0_i[where_i + 1] = 1;
+
+                    p1_i[where_i - 1] = 0;
+                    p1_i[where_i] = 0;
+                    p1_i[where_i + 1] = 0;
+                    MinUp();
+                }
+                break;
+            case 2:
+                if (p1_i[where_i] != 1 && p1_i[where_i + 1] != 1 && p1_i[where_i - 1] != 1)
+                {
+                    main_obj.transform.position = block1B_obj[where_i-3].transform.position;
+
+                    p1_i[where_i - 1] = 1;
+                    p1_i[where_i] = 1;
+                    p1_i[where_i + 1] = 1;
+
+                    p2_i[where_i - 1] = 0;
+                    p2_i[where_i] = 0;
+                    p2_i[where_i + 1] = 0;
+                    MinUp();
+                }
+                break;
+            case 3:
+                if (p2_i[where_i] != 1 && p2_i[where_i + 1] !=1 && p2_i[where_i - 1] != 1)
+                {
+                    main_obj.transform.position = block2B_obj[where_i-3].transform.position;
+                    p2_i[where_i - 1] = 1;
+                    p2_i[where_i] = 1;
+                    p2_i[where_i + 1] = 1;
+
+                    p3_i[where_i - 1] = 0;
+                    p3_i[where_i] = 0;
+                    p3_i[where_i + 1] = 0;
+                    MinUp();
+                }
+                break;
+            case 4:
+                if (p3_i[where_i] != 1 && p3_i[where_i + 1] != 1 && p3_i[where_i - 1] != 1)
+                {
+                    main_obj.transform.position = block3B_obj[where_i-3].transform.position;
+                    p3_i[where_i - 1] = 1;
+                    p3_i[where_i] = 1;
+                    p3_i[where_i + 1] = 1;
+
+                    p4_i[where_i - 1] = 0;
+                    p4_i[where_i] = 0;
+                    p4_i[where_i + 1] = 0;
+                    MinUp();
+                }
+
+                break;
+            default:
+                break;
+        }
+    }
+
+    void MinUp()
+    {
+        level_i--;
+        this_obj.GetComponent<MiniBoom>().level_i = level_i;
+        SGM.GetComponent<SoundEvt>().soundItemWndAD();
+        check();
+    }
+
+
     public void Down()
     {
+        switch (level_i)
+        {
+            case 0:
+                if (p1_i[where_i] != 1&& p1_i[where_i + 1] != 1)
+                {
+                    main_obj.transform.position = block1_obj[where_i].transform.position;
+                    p1_i[where_i] = 1;
+                    p1_i[where_i + 1] = 1;
+                    p0_i[where_i] = 0;
+                    p0_i[where_i+1] = 0;
+                    SumDown();
+                }
+                break;
+            case 1:
+                if (p2_i[where_i] != 1 && p2_i[where_i + 1] != 1)
+                {
+                    main_obj.transform.position = block2_obj[where_i].transform.position;
+                    p2_i[where_i] = 1;
+                    p2_i[where_i + 1] = 1;
+                    p1_i[where_i] = 0;
+                    p1_i[where_i + 1] = 0;
+                    SumDown();
+                }
+                break;
+            case 2:
+                if (p3_i[where_i] != 1 && p3_i[where_i + 1] != 1)
+                {
+                    main_obj.transform.position = block3_obj[where_i].transform.position;
+                    p3_i[where_i] = 1;
+                    p3_i[where_i + 1] = 1;
+                    p2_i[where_i] = 0;
+                    p2_i[where_i + 1] = 0;
+                    SumDown();
+                }
+                break;
+            case 3:
+                if (p4_i[where_i] != 1 && p4_i[where_i + 1] != 1)
+                {
+                    main_obj.transform.position = block4_obj[where_i].transform.position;
+                    p4_i[where_i] = 1;
+                    p4_i[where_i + 1] = 1;
+                    p3_i[where_i] = 0;
+                    p3_i[where_i + 1] = 0;
+                    SumDown();
+                }
+                break;
+            case 4:
 
+                break;
+            default:
+                break;
+        }
     }
+
+    public void DownS()
+    {
+        switch (level_i)
+        {
+            case 0:
+                if (p2_i[where_i] != 1)
+                {
+                    main_obj.transform.position = block1T_obj[where_i-2].transform.position;
+                    p2_i[where_i] = 1;
+                    p0_i[where_i] = 0;
+                    SumDown();
+                }
+                break;
+            case 1:
+                if (p3_i[where_i] != 1)
+                {
+                    main_obj.transform.position = block2T_obj[where_i-2].transform.position;
+                    p3_i[where_i] = 1;
+                    p1_i[where_i] = 0;
+                    SumDown();
+                }
+                break;
+            case 2:
+                if (p4_i[where_i] != 1)
+                {
+                    main_obj.transform.position = block3T_obj[where_i-2].transform.position;
+                    p4_i[where_i] = 1;
+                    p2_i[where_i] = 0;
+                    SumDown();
+                }
+                break;
+            case 3:
+                break;
+            case 4:
+
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void DownSB()
+    {
+        switch (level_i)
+        {
+            case 0:
+                if (p1_i[where_i] != 1 && p1_i[where_i + 1] != 1 && p1_i[where_i - 1] != 1)
+                {
+                    main_obj.transform.position = block1B_obj[where_i-3].transform.position;
+                    p1_i[where_i-1] = 1;
+                    p1_i[where_i] = 1;
+                    p1_i[where_i + 1] = 1;
+
+                    p0_i[where_i-1] = 0;
+                    p0_i[where_i] = 0;
+                    p0_i[where_i + 1] = 0;
+                    SumDown();
+                }
+                break;
+            case 1:
+                if (p2_i[where_i] != 1 && p2_i[where_i + 1] != 1 && p2_i[where_i - 1] != 1)
+                {
+                    main_obj.transform.position = block2B_obj[where_i-3].transform.position;
+                    p2_i[where_i - 1] = 1;
+                    p2_i[where_i] = 1;
+                    p2_i[where_i + 1] = 1;
+
+                    p1_i[where_i - 1] = 0;
+                    p1_i[where_i] = 0;
+                    p1_i[where_i + 1] = 0;
+                    SumDown();
+                }
+                break;
+            case 2:
+                if (p3_i[where_i] != 1 && p3_i[where_i + 1] != 1 && p3_i[where_i - 1] != 1)
+                {
+                    main_obj.transform.position = block3B_obj[where_i-3].transform.position;
+                    p3_i[where_i - 1] = 1;
+                    p3_i[where_i] = 1;
+                    p3_i[where_i + 1] = 1;
+
+                    p2_i[where_i - 1] = 0;
+                    p2_i[where_i] = 0;
+                    p2_i[where_i + 1] = 0;
+                    SumDown();
+                }
+                break;
+            case 3:
+                if (p4_i[where_i] != 1 && p4_i[where_i + 1] != 1 && p4_i[where_i - 1] != 1)
+                {
+                    main_obj.transform.position = block4B_obj[where_i - 3].transform.position;
+                    p4_i[where_i - 1] = 1;
+                    p4_i[where_i] = 1;
+                    p4_i[where_i + 1] = 1;
+
+                    p3_i[where_i - 1] = 0;
+                    p3_i[where_i] = 0;
+                    p3_i[where_i + 1] = 0;
+                    SumDown();
+                }
+
+                break;
+            case 4:
+
+                break;
+            default:
+                break;
+        }
+    }
+    void SumDown()
+    {
+        level_i++;
+        this_obj.GetComponent<MiniBoom>().level_i = level_i;
+        SGM.GetComponent<SoundEvt>().soundItemWndAD();
+        check();
+    }
+
+
     public void R()
     {
         switch (level_i)
@@ -85,75 +411,217 @@ public class MiniBoom : MonoBehaviour
                     main_obj.transform.position = block0_obj[where_i+1].transform.position;
                     p0_i[where_i + 2] = 1;
                     p0_i[where_i] = 0;
-                    where_i++;
+                    Sum();
                 }
                 break;
             case 1:
-                if (p1_i[where_i + 1] != 1)
+                if (p1_i[where_i + 2] != 1)
                 {
                     main_obj.transform.position = block1_obj[where_i + 1].transform.position;
+                    p1_i[where_i + 2] = 1;
+                    p1_i[where_i] = 0;
+                    Sum();
                 }
                 break;
             case 2:
-                if (p2_i[where_i + 1] != 1)
+                if (p2_i[where_i + 2] != 1)
                 {
                     main_obj.transform.position = block2_obj[where_i + 1].transform.position;
+                    p2_i[where_i + 2] = 1;
+                    p2_i[where_i] = 0;
+                    Sum();
                 }
                 break;
             case 3:
-                if (p3_i[where_i + 1] != 1)
+                if (p3_i[where_i + 2] != 1)
                 {
                     main_obj.transform.position = block3_obj[where_i + 1].transform.position;
+                    p3_i[where_i + 2] = 1;
+                    p3_i[where_i] = 0;
+                    Sum();
                 }
                 break;
             case 4:
-                if (p4_i[where_i + 1] != 1)
+                if (p4_i[where_i + 2] != 1)
                 {
                     main_obj.transform.position = block4_obj[where_i + 1].transform.position;
+                    p4_i[where_i + 2] = 1;
+                    p4_i[where_i] = 0;
+                    Sum();
                 }
                 break;
             default:
                 break;
         }
     }
+    public void RS()
+    {
+        switch (level_i)
+        {
+            case 0:
+                if (p0_i[where_i + 1] != 1&&p1_i[where_i + 1] != 1)
+                {
+                    main_obj.transform.position = block0T_obj[where_i -1].transform.position;
+                    p0_i[where_i + 1] = 1;
+                    p0_i[where_i] = 0;
+                    p1_i[where_i + 1] = 1;
+                    p1_i[where_i] = 0;
+                    Sum();
+                }
+                break;
+            case 1:
+                if (p1_i[where_i + 1] != 1 && p2_i[where_i + 1] != 1)
+                {
+                    main_obj.transform.position = block1T_obj[where_i -1].transform.position;
+                    p1_i[where_i + 1] = 1;
+                    p1_i[where_i] = 0;
+                    p2_i[where_i + 1] = 1;
+                    p2_i[where_i] = 0;
+                    Sum();
+                }
+                break;
+            case 2:
+                if (p2_i[where_i + 1] != 1 && p3_i[where_i + 1] != 1)
+                {
+                    main_obj.transform.position = block2T_obj[where_i -1].transform.position;
+                    p2_i[where_i + 1] = 1;
+                    p2_i[where_i] = 0;
+                    p3_i[where_i + 1] = 1;
+                    p3_i[where_i] = 0;
+                    Sum();
+                }
+                break;
+            case 3:
+                if (p3_i[where_i + 1] != 1 && p4_i[where_i + 1] != 1)
+                {
+                    main_obj.transform.position = block3T_obj[where_i -1].transform.position;
+                    p3_i[where_i + 1] = 1;
+                    p3_i[where_i] = 0;
+                    p4_i[where_i + 1] = 1;
+                    p4_i[where_i] = 0;
+                    Sum();
+                }
+                break;
+            case 4:
+                break;
+            default:
+                break;
+        }
+    }
+
+
+    public void RSB()
+    {
+        switch (level_i)
+        {
+            case 0:
+                if (p0_i[where_i + 2] != 1)
+                {
+                    main_obj.transform.position = block0B_obj[where_i-2].transform.position;
+                    p0_i[where_i + 2] = 1;
+                    p0_i[where_i-1] = 0;
+                    Sum();
+                }
+                break;
+            case 1:
+                if (p1_i[where_i + 2] != 1)
+                {
+                    main_obj.transform.position = block1B_obj[where_i - 2].transform.position;
+                    p1_i[where_i + 2] = 1;
+                    p1_i[where_i-1] = 0;
+                    Sum();
+                }
+                break;
+            case 2:
+                if (p2_i[where_i + 2] != 1)
+                {
+                    main_obj.transform.position = block2B_obj[where_i - 2].transform.position;
+                    p2_i[where_i + 2] = 1;
+                    p2_i[where_i-1] = 0;
+                    Sum();
+                }
+                break;
+            case 3:
+                if (p3_i[where_i + 2] != 1)
+                {
+                    main_obj.transform.position = block3B_obj[where_i - 2].transform.position;
+                    p3_i[where_i + 2] = 1;
+                    p3_i[where_i-1] = 0;
+                    Sum();
+                }
+                break;
+            case 4:
+                if (p4_i[where_i + 2] != 1)
+                {
+                    main_obj.transform.position = block4B_obj[where_i - 2].transform.position;
+                    p4_i[where_i + 2] = 1;
+                    p4_i[where_i-1] = 0;
+                    Sum();
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    void Sum()
+    {
+        where_i++;
+        this_obj.GetComponent<MiniBoom>().where_i = where_i;
+        SGM.GetComponent<SoundEvt>().soundItemWndAD();
+        check();
+    }
+
     public void L()
     {
         switch (level_i)
         {
             case 0:
-                if (where_i>0)
+                if (where_i>1)
                 {
                     if (p0_i[where_i - 1] != 1)
                     {
                         main_obj.transform.position = block0_obj[where_i - 1].transform.position;
                         p0_i[where_i - 1] = 1;
                         p0_i[where_i+1] = 0;
-                        where_i--;
+                        Min();
                     }
                 }
                 break;
             case 1:
-                if (p1_i[where_i + 1] != 1)
+                if (p1_i[where_i -1] != 1)
                 {
-                    main_obj.transform.position = block1_obj[where_i + 1].transform.position;
+                    main_obj.transform.position = block1_obj[where_i -1].transform.position;
+                    p1_i[where_i - 1] = 1;
+                    p1_i[where_i + 1] = 0;
+                    Min();
                 }
                 break;
             case 2:
-                if (p2_i[where_i + 1] != 1)
+                if (p2_i[where_i -1] != 1)
                 {
-                    main_obj.transform.position = block2_obj[where_i + 1].transform.position;
+                    main_obj.transform.position = block2_obj[where_i -1].transform.position;
+                    p2_i[where_i - 1] = 1;
+                    p2_i[where_i + 1] = 0;
+                    Min();
                 }
                 break;
             case 3:
-                if (p3_i[where_i + 1] != 1)
+                if (p3_i[where_i -1] != 1)
                 {
-                    main_obj.transform.position = block3_obj[where_i + 1].transform.position;
+                    main_obj.transform.position = block3_obj[where_i -1].transform.position;
+                    p3_i[where_i - 1] = 1;
+                    p3_i[where_i + 1] = 0;
+                    Min();
                 }
                 break;
             case 4:
-                if (p4_i[where_i + 1] != 1)
+                if (p4_i[where_i -1] != 1)
                 {
-                    main_obj.transform.position = block4_obj[where_i + 1].transform.position;
+                    main_obj.transform.position = block4_obj[where_i -1].transform.position;
+                    p4_i[where_i - 1] = 1;
+                    p4_i[where_i + 1] = 0;
+                    Min();
                 }
                 break;
             default:
@@ -161,18 +629,151 @@ public class MiniBoom : MonoBehaviour
         }
     }
 
+    public void LS()
+    {
+        switch (level_i)
+        {
+            case 0:
+                if (where_i > 2)
+                {
+                    if (p0_i[where_i - 1] != 1&& p1_i[where_i - 1] != 1)
+                    {
+                        main_obj.transform.position = block0T_obj[where_i - 3].transform.position;
+                        p0_i[where_i - 1] = 1;
+                        p0_i[where_i] = 0;
+                        p1_i[where_i - 1] = 1;
+                        p1_i[where_i] = 0;
+                        Min();
+                    }
+                }
+                break;
+            case 1:
+                if (p1_i[where_i - 1] != 1 && p2_i[where_i - 1] != 1)
+                {
+                    main_obj.transform.position = block1T_obj[where_i - 3].transform.position;
+                    p1_i[where_i - 1] = 1;
+                    p1_i[where_i] = 0;
+                    p2_i[where_i - 1] = 1;
+                    p2_i[where_i] = 0;
+                    Min();
+                }
+                break;
+            case 2:
+                if (p2_i[where_i - 1] != 1 && p3_i[where_i - 1] != 1)
+                {
+                    main_obj.transform.position = block2T_obj[where_i - 3].transform.position;
+                    p2_i[where_i - 1] = 1;
+                    p2_i[where_i] = 0;
+                    p3_i[where_i - 1] = 1;
+                    p3_i[where_i] = 0;
+                    Min();
+                }
+                break;
+            case 3:
+                if (p3_i[where_i - 1] != 1 && p4_i[where_i - 1] != 1)
+                {
+                    main_obj.transform.position = block3T_obj[where_i - 3].transform.position;
+                    p3_i[where_i - 1] = 1;
+                    p3_i[where_i] = 0;
+                    p4_i[where_i - 1] = 1;
+                    p4_i[where_i] = 0;
+                    Min();
+                }
+                break;
+            case 4:
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void LSB()
+    {
+        switch (level_i)
+        {
+            case 0:
+                if (where_i > 3)
+                {
+                    if (p0_i[where_i - 2] != 1)
+                    {
+                        main_obj.transform.position = block0B_obj[where_i - 4].transform.position;
+                        p0_i[where_i - 2] = 1;
+                        p0_i[where_i+1] = 0;
+                        Min();
+                    }
+                }
+                break;
+            case 1:
+                if (p1_i[where_i - 2] != 1)
+                {
+                    main_obj.transform.position = block1B_obj[where_i - 4].transform.position;
+                    p1_i[where_i - 2] = 1;
+                    p1_i[where_i+1] = 0;
+                    Min();
+                }
+                break;
+            case 2:
+                if (p2_i[where_i - 2] != 1)
+                {
+                    main_obj.transform.position = block2B_obj[where_i - 4].transform.position;
+                    p2_i[where_i - 2] = 1;
+                    p2_i[where_i+1] = 0;
+                    Min();
+                }
+                break;
+            case 3:
+                if (p3_i[where_i - 2] != 1)
+                {
+                    main_obj.transform.position = block3B_obj[where_i - 4].transform.position;
+                    p3_i[where_i - 2] = 1;
+                    p3_i[where_i+1] = 0;
+                    Min();
+                }
+                break;
+            case 4:
+                if (p4_i[where_i - 2] != 1)
+                {
+                    main_obj.transform.position = block4B_obj[where_i - 4].transform.position;
+                    p4_i[where_i - 2] = 1;
+                    p4_i[where_i+1] = 0;
+                    Min();
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+
+
+
+    void Min()
+    {
+        where_i--;
+        this_obj.GetComponent<MiniBoom>().where_i = where_i;
+        SGM.GetComponent<SoundEvt>().soundItemWndAD();
+        check();
+    }
+
+    void check()
+    {
+        if (p4_i[7]==1)
+        {
+            SGM.GetComponent<SoundEvt>().soundItemSuccess();
+            Invoke("Wait", 0.8f);
+        }
+    }
+
     void Wait()
     {
-
         //puzzleWin_obj.SetActive(false);
-        PlayerPrefs.SetInt("escdont", 0);
-        GMM.GetComponent<CharMove>().canMove = true;
+        //PlayerPrefs.SetInt("escdont", 0);
+        //GMM.GetComponent<CharMove>().canMove = true;
         //PlayerPrefs.SetInt("cursorActive", 0);
-        GM.GetComponent<CheckPlayer>().ItemSettings();
-        //SGM.GetComponent<SoundEvt>().soundItemSuccess();
+        //GM.GetComponent<CheckPlayer>().ItemSettings();
         //japan_obj.SetActive(false);
         back_obj.SetActive(false);
-        PlayerPrefs.SetInt("nowtalk", 0);
+        //PlayerPrefs.SetInt("nowtalk", 0);
         //GM.SetActive(false);
     }
     
