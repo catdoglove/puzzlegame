@@ -1785,6 +1785,14 @@ public class CheckPlayer : MonoBehaviour
                     }
                     //move_obj.SetActive(true);
 
+                    if (events_i == 4)
+                    {
+                        StopCoroutine("talkBall");
+                        miniGame_obj.SetActive(true);
+                        StopTalk();
+                        talkBallB_obj.SetActive(false);
+                    }
+
                 }
                 else
                 {

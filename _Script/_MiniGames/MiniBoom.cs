@@ -17,7 +17,7 @@ public class MiniBoom : MonoBehaviour
 
     public GameObject[] select_obj,selectOn_obj;
 
-    public GameObject back_obj, main_obj, ori_obj, this_obj;
+    public GameObject back_obj, main_obj, ori_obj, this_obj, rock_obj, broken_obj, mark_obj;
 
     public int where_i;
 
@@ -54,6 +54,8 @@ public class MiniBoom : MonoBehaviour
 
     public void Up()
     {
+
+        SGM.GetComponent<SoundEvt>().soundItemFail();
         switch (level_i)
         {
             case 0:
@@ -110,6 +112,7 @@ public class MiniBoom : MonoBehaviour
 
     public void UpS()
     {
+        SGM.GetComponent<SoundEvt>().soundItemFail();
         switch (level_i)
         {
             case 0:
@@ -150,6 +153,7 @@ public class MiniBoom : MonoBehaviour
 
     public void UpSB()
     {
+        SGM.GetComponent<SoundEvt>().soundItemFail();
         switch (level_i)
         {
             case 0:
@@ -229,6 +233,7 @@ public class MiniBoom : MonoBehaviour
 
     public void Down()
     {
+        SGM.GetComponent<SoundEvt>().soundItemFail();
         switch (level_i)
         {
             case 0:
@@ -285,6 +290,7 @@ public class MiniBoom : MonoBehaviour
 
     public void DownS()
     {
+        SGM.GetComponent<SoundEvt>().soundItemFail();
         switch (level_i)
         {
             case 0:
@@ -326,6 +332,7 @@ public class MiniBoom : MonoBehaviour
 
     public void DownSB()
     {
+        SGM.GetComponent<SoundEvt>().soundItemFail();
         switch (level_i)
         {
             case 0:
@@ -403,6 +410,7 @@ public class MiniBoom : MonoBehaviour
 
     public void R()
     {
+        SGM.GetComponent<SoundEvt>().soundItemFail();
         switch (level_i)
         {
             case 0:
@@ -456,6 +464,7 @@ public class MiniBoom : MonoBehaviour
     }
     public void RS()
     {
+        SGM.GetComponent<SoundEvt>().soundItemFail();
         switch (level_i)
         {
             case 0:
@@ -512,6 +521,7 @@ public class MiniBoom : MonoBehaviour
 
     public void RSB()
     {
+        SGM.GetComponent<SoundEvt>().soundItemFail();
         switch (level_i)
         {
             case 0:
@@ -574,6 +584,7 @@ public class MiniBoom : MonoBehaviour
 
     public void L()
     {
+        SGM.GetComponent<SoundEvt>().soundItemFail();
         switch (level_i)
         {
             case 0:
@@ -631,6 +642,7 @@ public class MiniBoom : MonoBehaviour
 
     public void LS()
     {
+        SGM.GetComponent<SoundEvt>().soundItemFail();
         switch (level_i)
         {
             case 0:
@@ -689,6 +701,7 @@ public class MiniBoom : MonoBehaviour
 
     public void LSB()
     {
+        SGM.GetComponent<SoundEvt>().soundItemFail();
         switch (level_i)
         {
             case 0:
@@ -759,7 +772,7 @@ public class MiniBoom : MonoBehaviour
     {
         if (p4_i[7]==1)
         {
-            SGM.GetComponent<SoundEvt>().soundItemSuccess();
+            SGM.GetComponent<SoundEvt>().soundBoom();
             Invoke("Wait", 0.8f);
         }
     }
@@ -773,6 +786,9 @@ public class MiniBoom : MonoBehaviour
         //GM.GetComponent<CheckPlayer>().ItemSettings();
         //japan_obj.SetActive(false);
         back_obj.SetActive(false);
+        rock_obj.SetActive(false);
+        broken_obj.SetActive(true);
+        mark_obj.SetActive(false);
         //PlayerPrefs.SetInt("nowtalk", 0);
         //GM.SetActive(false);
     }

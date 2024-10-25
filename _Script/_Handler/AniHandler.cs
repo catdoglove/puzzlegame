@@ -74,11 +74,17 @@ public class AniHandler : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
+    public void Jump()
+    {
+        SGM.GetComponent<SoundEvt>().soundJump();
+    }
+
+    
 
     public void BackSound()
     {
 
-        SGM.GetComponent<SoundEvt>().soundCrowAttack();
+        SGM.GetComponent<SoundEvt>().soundHide1();
     }
 
     public void WalkSound()

@@ -2895,7 +2895,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1590679180}
+  m_TargetTexture: {fileID: 85503711}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -4208,6 +4208,41 @@ MonoBehaviour:
   color: {r: 0, g: 0, b: 0, a: 0}
   BGM: {fileID: 0}
   SGM: {fileID: 0}
+--- !u!84 &85503711
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 928
+  m_Height: 522
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &87483808
 GameObject:
   m_ObjectHideFlags: 0
@@ -9624,23 +9659,23 @@ MonoBehaviour:
   GMS: {fileID: 1648107670}
   GM: {fileID: 1236708166}
   GMI: {fileID: 1283954030}
-  SetItemPref_str: beeber3
+  SetItemPref_str: beeber33
   SetItemPref_i: 38
   itemQ_b: 0
   GetItem_obj: {fileID: 0}
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
-  SetEventPref_str: catfish4
-  EventNum_i: 010000000300000001000000260000000a000000030000000f00000003000000050000000a0000000f00000001000000050000000a0000000500000005000000
+  SetEventPref_str: beeber33
+  EventNum_i: 01000000010000000300000001000000260000000a0000000300000005000000050000000a0000000f00000001000000050000000a0000000500000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
+  - {fileID: 21300000, guid: 8608a46b67c8a10458517c2d6ae6d38e, type: 3}
+  - {fileID: 21300000, guid: e1ada76ac9e388a4ea7c61ae82555f2c, type: 3}
+  - {fileID: 21300000, guid: e1ada76ac9e388a4ea7c61ae82555f2c, type: 3}
   - {fileID: 21300000, guid: 9085458fae1857d489a35016b8bb3d55, type: 3}
-  - {fileID: 21300000, guid: 624f9559d09b21a4f9293024c52e8ffa, type: 3}
-  - {fileID: 21300000, guid: 624f9559d09b21a4f9293024c52e8ffa, type: 3}
-  - {fileID: 21300000, guid: 8dfa5b2958cf09f42a7931117f6d419a, type: 3}
-  - {fileID: 21300000, guid: 8dfa5b2958cf09f42a7931117f6d419a, type: 3}
-  - {fileID: 21300000, guid: 8dfa5b2958cf09f42a7931117f6d419a, type: 3}
+  - {fileID: 21300000, guid: 9085458fae1857d489a35016b8bb3d55, type: 3}
+  - {fileID: 21300000, guid: ba6a30e637191494aa147d24e9e0447b, type: 3}
   - {fileID: 21300000, guid: 8dfa5b2958cf09f42a7931117f6d419a, type: 3}
   - {fileID: 21300000, guid: 8dfa5b2958cf09f42a7931117f6d419a, type: 3}
   - {fileID: 21300000, guid: 8dfa5b2958cf09f42a7931117f6d419a, type: 3}
@@ -9649,12 +9684,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6aeae853d2325534cb66c444a4241feb, type: 3}
   - {fileID: 21300000, guid: 6aeae853d2325534cb66c444a4241feb, type: 3}
   Event2_spr:
+  - {fileID: 21300000, guid: c71847f4165ff594293fbe3358d0918b, type: 3}
+  - {fileID: 21300000, guid: 7ea9708e65d4dd44a9a84c5796049bb0, type: 3}
+  - {fileID: 21300000, guid: 7ea9708e65d4dd44a9a84c5796049bb0, type: 3}
   - {fileID: 21300000, guid: e7600da9eb0e2e343a3ea74706371f96, type: 3}
-  - {fileID: 21300000, guid: a8c4e5606e73fd8449382300a34ef30f, type: 3}
-  - {fileID: 21300000, guid: a8c4e5606e73fd8449382300a34ef30f, type: 3}
-  - {fileID: 21300000, guid: 721f6719b28e4a84480bdb61f6a2169b, type: 3}
-  - {fileID: 21300000, guid: 721f6719b28e4a84480bdb61f6a2169b, type: 3}
-  - {fileID: 21300000, guid: 721f6719b28e4a84480bdb61f6a2169b, type: 3}
+  - {fileID: 21300000, guid: e7600da9eb0e2e343a3ea74706371f96, type: 3}
+  - {fileID: 21300000, guid: 8e727fc88977d834da0076828179cef4, type: 3}
   - {fileID: 21300000, guid: 721f6719b28e4a84480bdb61f6a2169b, type: 3}
   - {fileID: 21300000, guid: 721f6719b28e4a84480bdb61f6a2169b, type: 3}
   - {fileID: 21300000, guid: 721f6719b28e4a84480bdb61f6a2169b, type: 3}
@@ -9664,7 +9699,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 15e422bb5da711444964cb20fe9a0654, type: 3}
   talkBall_obj: {fileID: 1023558435}
   talkBallB_obj: {fileID: 2064328744}
-  giveItemPref_i: 37
+  giveItemPref_i: 48
   getItemPref_i: 0
   char_obj: {fileID: 1236708166}
   position0: {x: 0, y: 0, z: 0}
@@ -9698,8 +9733,8 @@ MonoBehaviour:
   flipX_b: 0
   stick_obj: {fileID: 0}
   makeBoad_obj: {fileID: 0}
-  stick_b: 1
-  board_b: 1
+  stick_b: 0
+  board_b: 0
   aniTalk_str: 
   ani_str: ani_npc_cat_forest
   all_Ani: {fileID: 383973172}
@@ -9728,7 +9763,7 @@ MonoBehaviour:
   bbPos_obj: {fileID: 0}
   bearM_obj: {fileID: 0}
   b_position: {x: 0, y: 0, z: 0}
-  miniGame_obj: {fileID: 0}
+  miniGame_obj: {fileID: 1372082078}
   dogam_b: 0
   fox_b: 0
   checkX_f: 0
@@ -9736,7 +9771,7 @@ MonoBehaviour:
   checkR_f: 0
   hallFix_obj: {fileID: 0}
   hall_obj: {fileID: 0}
-  events_i: 1
+  events_i: 4
 --- !u!1 &243907407
 GameObject:
   m_ObjectHideFlags: 0
@@ -11791,6 +11826,9 @@ MonoBehaviour:
   main_obj: {fileID: 0}
   ori_obj: {fileID: 190941369}
   this_obj: {fileID: 0}
+  rock_obj: {fileID: 0}
+  broken_obj: {fileID: 0}
+  mark_obj: {fileID: 0}
   where_i: 5
 --- !u!1 &280611915
 GameObject:
@@ -14697,6 +14735,9 @@ MonoBehaviour:
   main_obj: {fileID: 0}
   ori_obj: {fileID: 1873599708}
   this_obj: {fileID: 0}
+  rock_obj: {fileID: 0}
+  broken_obj: {fileID: 0}
+  mark_obj: {fileID: 0}
   where_i: 5
 --- !u!1 &338288988
 GameObject:
@@ -15730,6 +15771,9 @@ MonoBehaviour:
   main_obj: {fileID: 0}
   ori_obj: {fileID: 2106290207}
   this_obj: {fileID: 0}
+  rock_obj: {fileID: 0}
+  broken_obj: {fileID: 0}
+  mark_obj: {fileID: 0}
   where_i: 5
 --- !u!1 &364353878
 GameObject:
@@ -38736,7 +38780,7 @@ MonoBehaviour:
   sp_doorclose: {fileID: 8300000, guid: cc59dc41bd423c0489b56c00b154b996, type: 3}
   sp_bear_pop: {fileID: 8300000, guid: a220d2abbfe503b4ca5200b05dd22708, type: 3}
   sp_cotton: {fileID: 8300000, guid: baed6e9ac8e7ae744a7944c5ec1b35b0, type: 3}
-  sp_boom: {fileID: 0}
+  sp_boom: {fileID: 8300000, guid: e6f2bf4fcd2dbd047b40a151e2a01f07, type: 3}
   sp_cave_secret: {fileID: 0}
   sp_moving: {fileID: 0}
   sp_spider_catch: {fileID: 0}
@@ -38750,7 +38794,7 @@ MonoBehaviour:
   se_doorclose: {fileID: 0}
   se_bear_pop: {fileID: 0}
   se_cotton: {fileID: 0}
-  se_boom: {fileID: 0}
+  se_boom: {fileID: 879451252}
   se_cave_secret: {fileID: 0}
   se_moving: {fileID: 0}
   se_spider_catch: {fileID: 0}
@@ -48522,6 +48566,9 @@ MonoBehaviour:
   main_obj: {fileID: 0}
   ori_obj: {fileID: 261164343}
   this_obj: {fileID: 0}
+  rock_obj: {fileID: 0}
+  broken_obj: {fileID: 0}
+  mark_obj: {fileID: 0}
   where_i: 0
 --- !u!1 &1108272118
 GameObject:
@@ -51368,6 +51415,9 @@ MonoBehaviour:
   main_obj: {fileID: 261164343}
   ori_obj: {fileID: 0}
   this_obj: {fileID: 0}
+  rock_obj: {fileID: 2034796793}
+  broken_obj: {fileID: 69086181}
+  mark_obj: {fileID: 1648107670}
   where_i: 0
 --- !u!1 &1182109807
 GameObject:
@@ -59379,7 +59429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1372082079
 Transform:
   m_ObjectHideFlags: 0
@@ -62451,6 +62501,9 @@ MonoBehaviour:
   main_obj: {fileID: 0}
   ori_obj: {fileID: 1162758150}
   this_obj: {fileID: 0}
+  rock_obj: {fileID: 0}
+  broken_obj: {fileID: 0}
+  mark_obj: {fileID: 0}
   where_i: 3
 --- !u!1 &1459306436
 GameObject:
@@ -68974,41 +69027,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!84 &1590679180
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 928
-  m_Height: 522
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1597650709
 GameObject:
   m_ObjectHideFlags: 0
@@ -73238,7 +73256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1686226108
 Transform:
   m_ObjectHideFlags: 0
@@ -76285,6 +76303,9 @@ MonoBehaviour:
   main_obj: {fileID: 0}
   ori_obj: {fileID: 557431728}
   this_obj: {fileID: 0}
+  rock_obj: {fileID: 0}
+  broken_obj: {fileID: 0}
+  mark_obj: {fileID: 0}
   where_i: 2
 --- !u!1 &1770299107
 GameObject:
@@ -84337,6 +84358,9 @@ MonoBehaviour:
   main_obj: {fileID: 0}
   ori_obj: {fileID: 1003188226}
   this_obj: {fileID: 0}
+  rock_obj: {fileID: 0}
+  broken_obj: {fileID: 0}
+  mark_obj: {fileID: 0}
   where_i: 4
 --- !u!1 &1997089461
 GameObject:
