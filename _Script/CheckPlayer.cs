@@ -1787,6 +1787,8 @@ public class CheckPlayer : MonoBehaviour
 
                     if (events_i == 4)
                     {
+
+                        SGM.GetComponent<SoundEvt>().soundItemUse();
                         StopCoroutine("talkBall");
                         miniGame_obj.SetActive(true);
                         StopTalk();

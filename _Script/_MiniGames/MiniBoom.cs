@@ -770,7 +770,7 @@ public class MiniBoom : MonoBehaviour
 
     void check()
     {
-        if (p4_i[7]==1)
+        if (p4_i[8]==1)
         {
             SGM.GetComponent<SoundEvt>().soundBoom();
             Invoke("Wait", 0.8f);
