@@ -119,6 +119,8 @@ public class CheckPlayer : MonoBehaviour
 
     int ok = 0;
 
+    public Sprite[] items_spr;
+
     private void OnEnable()
     {
         GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
@@ -1599,17 +1601,29 @@ public class CheckPlayer : MonoBehaviour
                 }
                 break;
             case 33://말풍선 띄우고 특수 아이템요구 
+                if (giveItemPref_i == 35)
+                {
+                    item_spr = items_spr[0];
+                }
                 if (giveItemPref_i==35&& PlayerPrefs.GetInt("selecteditemnum", 0) == 40)
                 {
+
+                    //
+
+                    if (PlayerPrefs.GetInt("selecteditemnum", 0) == 40)
+                    {
+                        item_spr = items_spr[1];
+                    }
+
                     GMI.GetComponent<Inventory>().DelItems();
                     k = a;
                     SetItemPref_i = 41;
                     ItemSettings();
-                    //SetItemPref_i = 42;
-                    //ItemSettings();
+                    Invoke("get",0.1f);
                     SetItemPref_i = 47;
                     GetItem_obj.SetActive(false);
                     balloon_obj.SetActive(false);
+                    SGM.GetComponent<SoundEvt>().soundDamage();
                 }
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                 {
@@ -1704,6 +1718,12 @@ public class CheckPlayer : MonoBehaviour
                     {
                         SGM.GetComponent<SoundEvt>().soundItemUse();
                     }
+                    if (giveItemPref_i==44)
+                    {
+
+                    }
+
+
                 }
                 else
                 {
@@ -1716,98 +1736,134 @@ public class CheckPlayer : MonoBehaviour
 
                 TalkSound();
                 a++;
-                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+
+                if (SetItemPref_i == 38 && PlayerPrefs.GetInt("selecteditemnum", 0) == 42)
                 {
-                    a++;
-                    a++;
                     GMI.GetComponent<Inventory>().DelItems();
-                    //giveItemPref_i = 18;
-                    //SetItemPref_i = 21;
-                    //SetDogam2();
-
-                    if (stick_b)
-                    {
-                        stick_obj.SetActive(true);
-                    }
-                    if (animalNum_i == 7)
-                    {
-                        SetDogam2();
-                    }
-                    if (animalNum_i == 9)
-                    {
-                        SetDogam2();
-                        if (events_i == 2)
-                        {
-                            SetDogam3();
-                        }
-                    }
                     
-                    if (animalNum_i == 11)
-                    {
-                        SetDogam2();
-                        SetDogam3();
-                    }
-                    //ani_str = "ani_npc_cat_get1";
-                    if (events_i==1)
+
+                    if (events_i == 1 || events_i == 2)
                     {
                         StopTalk();
                         talkBallB_obj.SetActive(false);
                         talk_b = false;
                         StartCoroutine("TalkBOff");
-                        all_Ani.Play("ani_npc_cat_get1");
+                        all_Ani.Play("ani_npc_cat_get2");
                         SGM.GetComponent<SoundEvt>().soundWaterWalk();
-                        Invoke("Anis", 3f);
-
+                        Invoke("Anis2", 2f);
                     }
-                    else if (events_i==2)
-                    {
-                        StopTalk();
-                        talkBallB_obj.SetActive(false);
-                        talk_b = false;
-                        StartCoroutine("TalkBOff");
-                        all_Ani.Play("ani_npc_cat_get3");
-                        SGM.GetComponent<SoundEvt>().soundWaterWalk();
-                        Invoke("Anis", 3f);
-                    }
-                    if (events_i == 3)
-                    {
-                        ok = 1;
 
-                        StopCoroutine("talkBall");
-                        move_obj.SetActive(true);
-                        fade_obj.SetActive(false);
-                        Invoke("SetB", 15f);
-                        npc_obj[0].SetActive(false);
-                        npc_obj[1].SetActive(true);
-                        SGM.GetComponent<SoundEvt>().soundDamage2();
-                        StopTalk();
-                        talkBallB_obj.SetActive(false);
-                    }
-                    //move_obj.SetActive(true);
 
-                    if (events_i == 4)
-                    {
-
-                        SGM.GetComponent<SoundEvt>().soundItemUse();
-                        StopCoroutine("talkBall");
-                        miniGame_obj.SetActive(true);
-                        StopTalk();
-                        talkBallB_obj.SetActive(false);
-                    }
 
                 }
                 else
                 {
-                    Debug.Log("awe" + a);
-                    StopCoroutine("talkBall");
-                    k = a;
+                    if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                    {
+                        a++;
+                        a++;
+                        GMI.GetComponent<Inventory>().DelItems();
+                        //giveItemPref_i = 18;
+                        //SetItemPref_i = 21;
+                        //SetDogam2();
+
+                        if (stick_b)
+                        {
+                            stick_obj.SetActive(true);
+                        }
+                        if (animalNum_i == 7)
+                        {
+                            SetDogam2();
+                        }
+                        if (animalNum_i == 9)
+                        {
+                            SetDogam2();
+                            if (events_i == 2)
+                            {
+                                SetDogam3();
+                            }
+                        }
+
+                        if (animalNum_i == 11)
+                        {
+                            SetDogam2();
+                            SetDogam3();
+                        }
+                        //ani_str = "ani_npc_cat_get1";
+                        if (events_i == 1)
+                        {
+                            StopTalk();
+                            talkBallB_obj.SetActive(false);
+                            talk_b = false;
+                            StartCoroutine("TalkBOff");
+                            all_Ani.Play("ani_npc_cat_get1");
+                            SGM.GetComponent<SoundEvt>().soundWaterWalk();
+                            Invoke("Anis", 3f);
+
+                        }
+                        else if (events_i == 2)
+                        {
+                            StopTalk();
+                            talkBallB_obj.SetActive(false);
+                            talk_b = false;
+                            StartCoroutine("TalkBOff");
+                            all_Ani.Play("ani_npc_cat_get3");
+                            SGM.GetComponent<SoundEvt>().soundWaterWalk();
+                            Invoke("Anis", 3f);
+                        }
+                        if (events_i == 3)
+                        {
+                            ok = 1;
+
+                            StopCoroutine("talkBall");
+                            move_obj.SetActive(true);
+                            fade_obj.SetActive(false);
+                            Invoke("SetB", 15f);
+                            npc_obj[0].SetActive(false);
+                            npc_obj[1].SetActive(true);
+                            SGM.GetComponent<SoundEvt>().soundDamage2();
+                            StopTalk();
+                            talkBallB_obj.SetActive(false);
+                        }
+                        //move_obj.SetActive(true);
+
+                        if (events_i == 4)
+                        {
+
+                            SGM.GetComponent<SoundEvt>().soundItemUse();
+                            StopCoroutine("talkBall");
+                            miniGame_obj.SetActive(true);
+                            StopTalk();
+                            talkBallB_obj.SetActive(false);
+                        }
+
+                        if (events_i == 5)
+                        {
+                            //StopTalk();
+                            //talkBallB_obj.SetActive(false);
+                           // talk_b = false;
+                           // StartCoroutine("TalkBOff");
+                            all_Ani.Play("ani_npc_purple_good");
+                            Invoke("fox2", 0.1f);
+
+                        }
+
+                    }
+                    else
+                    {
+                        Debug.Log("awe" + a);
+                        StopCoroutine("talkBall");
+                        k = a;
 
 
-                    talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
-                    talkBallB_obj.SetActive(true);
-                    StartCoroutine("talkBall");
-                    StopAndTalk();
+                        talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+                        talkBallB_obj.SetActive(true);
+                        StartCoroutine("talkBall");
+                        StopAndTalk();
+                    }
                 }
+
+                
 
                 break;
             case 39://말풍선 띄우고 특수 아이템요구 
@@ -1885,6 +1941,11 @@ public class CheckPlayer : MonoBehaviour
         move_obj.SetActive(true);
         color = new Color(1f, 1f, 1f, 0f);
         this.GetComponent<SpriteRenderer>().color = color;
+    }
+
+    void Anis2()
+    {
+        other_obj.SetActive(true);
     }
 
     //void wa
@@ -2564,5 +2625,17 @@ public class CheckPlayer : MonoBehaviour
 
 
 
+    void get()
+    {
+        SetItemPref_i = 42;
+        ItemSettings();
+        SetItemPref_i = 47;
+    }
 
+
+    void fox2()
+    {
+        SetDogam3();
+        SetDogam4();
+    }
 }

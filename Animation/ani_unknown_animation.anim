@@ -500,7 +500,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 8.6
+  - time: 8.4
     functionName: AniFin
     data: 
     objectReferenceParameter: {fileID: 0}

@@ -21,6 +21,8 @@ public class MiniBoom : MonoBehaviour
 
     public int where_i;
 
+    public Sprite boom_spr;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -773,7 +775,10 @@ public class MiniBoom : MonoBehaviour
         if (p4_i[8]==1)
         {
             SGM.GetComponent<SoundEvt>().soundBoom();
+            main_obj.GetComponent<SpriteRenderer>().sprite = boom_spr;
             Invoke("Wait", 0.8f);
+
+
         }
     }
 

@@ -62,6 +62,7 @@ public class AniHandler : MonoBehaviour
         b_obj.SetActive(false);
         player_obj.GetComponent<SpriteRenderer>().flipX = true;
         player_obj.GetComponent<CharMove>().canMove = true;
+        SGM.GetComponent<SoundEvt>().soundDamagex();
     }
     public void AniStart()
     {
@@ -113,6 +114,8 @@ public class AniHandler : MonoBehaviour
         b_obj.GetComponent<SpriteRenderer>().color = color;
 
         //StopCoroutine("move");
+
+        yield return new WaitForSeconds(1.2f);
 
         ani_obj.gameObject.SetActive(false);
         b_obj.SetActive(false);
