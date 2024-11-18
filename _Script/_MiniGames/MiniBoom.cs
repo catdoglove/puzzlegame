@@ -37,6 +37,7 @@ public class MiniBoom : MonoBehaviour
 
     public void SelectButton()
     {
+        SGM.GetComponent<SoundEvt>().soundItemWndAD();
         Main.GetComponent<MiniBoom>().main_obj = ori_obj;
         Main.GetComponent<MiniBoom>().where_i = where_i;
         Main.GetComponent<MiniBoom>().level_i = level_i;
@@ -776,8 +777,10 @@ public class MiniBoom : MonoBehaviour
         {
             SGM.GetComponent<SoundEvt>().soundBoom();
             main_obj.GetComponent<SpriteRenderer>().sprite = boom_spr;
+            Main.GetComponent<SpriteRenderer>().sprite = boom_spr;
             Invoke("Wait", 0.8f);
 
+            GM.GetComponent<CharMove>().canMove = true;
 
         }
     }

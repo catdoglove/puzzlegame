@@ -4191,7 +4191,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 575271960}
+  m_TargetTexture: {fileID: 1546433071}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -11408,7 +11408,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191261502}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.67, y: -0.82799155, z: 0}
+  m_LocalPosition: {x: -4.97, y: -0.82799155, z: 0}
   m_LocalScale: {x: 1.0590751, y: 1.0590749, z: 1.059075}
   m_Children:
   - {fileID: 886766693}
@@ -19241,7 +19241,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 3029806944372387118, guid: 170aef2cb6442fe4b870e0ec89d92a99,
+  m_Sprite: {fileID: 8506081892811697573, guid: 170aef2cb6442fe4b870e0ec89d92a99,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -30868,41 +30868,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!84 &575271960
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 1038
-  m_Height: 584
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &583449742
 GameObject:
   m_ObjectHideFlags: 0
@@ -45466,7 +45431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move_i: 1
-  size: {x: 2, y: 3}
+  size: {x: 1.8, y: 3}
   whatIsLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -51237,7 +51202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &977632497
 Transform:
   m_ObjectHideFlags: 0
@@ -75902,7 +75867,7 @@ MonoBehaviour:
   candyBar_obj: {fileID: 0}
   broken_b: 0
   candy_spr: {fileID: 0}
-  other_obj: {fileID: 0}
+  other_obj: {fileID: 1970931575}
   animalNum_i: 9
   crow_Ani: {fileID: 0}
   flipX_b: 0
@@ -77889,6 +77854,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542429753}
   m_CullTransparentMesh: 0
+--- !u!84 &1546433071
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 789
+  m_Height: 444
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1546923980
 GameObject:
   m_ObjectHideFlags: 0
@@ -90901,7 +90901,7 @@ MonoBehaviour:
   candyBar_obj: {fileID: 0}
   broken_b: 0
   candy_spr: {fileID: 0}
-  other_obj: {fileID: 0}
+  other_obj: {fileID: 344208075}
   animalNum_i: 0
   crow_Ani: {fileID: 0}
   flipX_b: 0
@@ -97035,7 +97035,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: e2fd0c87fe9e5a14988662f8a8178baf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

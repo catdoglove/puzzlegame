@@ -135,6 +135,11 @@ public class AniHandler : MonoBehaviour
         StartCoroutine("BGMFadeOut");
     }
 
+    public void Sound()
+    {
+        SGM.GetComponent<SoundEvt>().soundMoving();
+    }
+
 
     IEnumerator BGMFadeOut()
     {

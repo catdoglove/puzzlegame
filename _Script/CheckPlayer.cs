@@ -1720,10 +1720,8 @@ public class CheckPlayer : MonoBehaviour
                     }
                     if (giveItemPref_i==44)
                     {
-
+                        other_obj.SetActive(true);
                     }
-
-
                 }
                 else
                 {
@@ -1736,8 +1734,25 @@ public class CheckPlayer : MonoBehaviour
 
                 TalkSound();
                 a++;
+                if (SetItemPref_i == 45 && PlayerPrefs.GetInt("selecteditemnum", 0) == 42)
+                {
+                    GMI.GetComponent<Inventory>().DelItems();
 
-                if (SetItemPref_i == 38 && PlayerPrefs.GetInt("selecteditemnum", 0) == 42)
+
+                    if (events_i == 1 || events_i == 2)
+                    {
+                        StopTalk();
+                        talkBallB_obj.SetActive(false);
+                        talk_b = false;
+                        StartCoroutine("TalkBOff");
+                        all_Ani.Play("ani_npc_cat_get2");
+                        SGM.GetComponent<SoundEvt>().soundWaterWalk();
+                        Invoke("Anis2", 2f);
+                    }
+
+
+
+                }else if (SetItemPref_i == 38 && PlayerPrefs.GetInt("selecteditemnum", 0) == 42)
                 {
                     GMI.GetComponent<Inventory>().DelItems();
                     
@@ -1835,6 +1850,7 @@ public class CheckPlayer : MonoBehaviour
                             miniGame_obj.SetActive(true);
                             StopTalk();
                             talkBallB_obj.SetActive(false);
+                            GM.GetComponent<CharMove>().canMove = false;
                         }
 
                         if (events_i == 5)

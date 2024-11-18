@@ -88,9 +88,9 @@ public class CameraMove : MonoBehaviour
 
         StartCoroutine("imgFadeOut");
 
-        for (int i = 0; i < 100; i++) //숫자가 클 수록 더 오래 걷는다.
+        for (int i = 0; i < 120; i++) //숫자가 클 수록 더 오래 걷는다.
         {
-            moveX = moveX + 0.03f;
+            moveX = moveX + 0.02f;
             CGM.transform.position = new Vector3(moveX, moveY, 0f);
             yield return new WaitForSeconds(0.01f);
             if (i%30==10)

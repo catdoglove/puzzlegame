@@ -338,6 +338,7 @@ public class MoveMap : MonoBehaviour
         if (char_b)
         {
             //player_obj.SetActive(true);
+            GM.SetActive(false);
             GM.GetComponent<CharMove>().canMove = false;
             Invoke("WaitSec", 1f);
         }
@@ -454,8 +455,10 @@ public class MoveMap : MonoBehaviour
 
     void WaitSec()
     {
+        GM.SetActive(true);
         GM.GetComponent<CharMove>().canMove = true;
     }
+
     void WaitSecCrow()
     {
         move_obj.GetComponent<Animator>().Play("ani_npc_crow_talk");
