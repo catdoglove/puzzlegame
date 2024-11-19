@@ -157,6 +157,7 @@ public class MoveMap : MonoBehaviour
                     {
                         if (comeHere_b)
                         {
+                            GM.SetActive(false);
                             GM.GetComponent<CharMove>().canMove = false;
                             PlayerPrefs.SetInt("clearitemgetimg", 1);
                             Invoke("MovingMap", 0.5f);
@@ -170,6 +171,7 @@ public class MoveMap : MonoBehaviour
                             }
                             else
                             {
+                                GM.SetActive(false);
                                 wait = 1;
                                 PlayerPrefs.SetInt("wait", 1);
                                 hit = null;
@@ -204,6 +206,7 @@ public class MoveMap : MonoBehaviour
     public void MovingMap()
     {
 
+        GM.SetActive(true);
         GM.GetComponent<CharMove>().mark1_obj.SetActive(false);
         GM.GetComponent<CharMove>().mark2_obj.SetActive(false);
 

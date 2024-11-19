@@ -177,9 +177,19 @@ public class CharMove : MonoBehaviour
         {
             //  if (ckCrash == 1) charspeed = crushSpeed;
             //  else charspeed = runSpeed;
-            Speed = 5f;
-            ausrc.GetComponent<AudioSource>().pitch = 1.3f;
-            charAni.speed = 1.4f;
+
+            if (PlayerPrefs.GetInt("nowwalkdont ", 0) == 1)
+            {
+                Speed = 3f;
+                ausrc.GetComponent<AudioSource>().pitch = 1f;
+                charAni.speed = 1f;
+            }
+            else
+            {
+                Speed = 5f;
+                ausrc.GetComponent<AudioSource>().pitch = 1.3f;
+                charAni.speed = 1.4f;
+            }
         }
         else
         {

@@ -292,6 +292,19 @@ public class CheckPlayer : MonoBehaviour
                 {
                     move_obj.SetActive(true);
                 }
+                if (events_i == 9)
+                {
+                    if (PlayerPrefs.GetInt("cats2", 0) == 0)
+                    {
+                        color = new Color(1f, 1f, 1f, 1f);
+                        move_obj.GetComponent<SpriteRenderer>().color = color;
+                    }
+                    else
+                    {
+                        color = new Color(1f, 1f, 1f, 1f);
+                        moveOther_obj.GetComponent<SpriteRenderer>().color = color;
+                    }
+                }
                 ItemSettings();
             }
             //ItemSettingOnEvents();
@@ -376,7 +389,6 @@ public class CheckPlayer : MonoBehaviour
     /// </summary>
     public void ItemSettings()
     {
-
         if (PlayerPrefs.GetInt("setselectone", 0) == 0)
         {
             move_obj.SetActive(true);
@@ -769,6 +781,7 @@ public class CheckPlayer : MonoBehaviour
 
         num = a;
 
+        PlayerPrefs.SetInt("aplus", 0);
 
         switch (EventNum_i[a])
         {
@@ -802,7 +815,19 @@ public class CheckPlayer : MonoBehaviour
                     this.GetComponent<SpriteRenderer>().color = color;
                 }
 
-                TalkSound();
+
+                if (SetItemPref_i == 45 && PlayerPrefs.GetInt("selecteditemnum", 0) == 42)
+                {
+                    PlayerPrefs.SetInt("aplus", 1);
+                }
+                if (SetItemPref_i == 38 && PlayerPrefs.GetInt("selecteditemnum", 0) == 42)
+                {
+                    PlayerPrefs.SetInt("aplus", 1);
+                }
+
+
+
+                    TalkSound();
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
                 talkBallB_obj.SetActive(true);
                 StopCoroutine("talkBall");
@@ -1623,7 +1648,6 @@ public class CheckPlayer : MonoBehaviour
                     SetItemPref_i = 47;
                     GetItem_obj.SetActive(false);
                     balloon_obj.SetActive(false);
-                    SGM.GetComponent<SoundEvt>().soundDamage();
                 }
                 if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                 {
@@ -1737,8 +1761,7 @@ public class CheckPlayer : MonoBehaviour
                 if (SetItemPref_i == 45 && PlayerPrefs.GetInt("selecteditemnum", 0) == 42)
                 {
                     GMI.GetComponent<Inventory>().DelItems();
-
-
+                    
                     if (events_i == 1 || events_i == 2)
                     {
                         StopTalk();
@@ -1748,6 +1771,9 @@ public class CheckPlayer : MonoBehaviour
                         all_Ani.Play("ani_npc_cat_get2");
                         SGM.GetComponent<SoundEvt>().soundWaterWalk();
                         Invoke("Anis2", 2f);
+                        PlayerPrefs.SetInt("cats2", 1);
+
+                        
                     }
 
 
@@ -1766,6 +1792,7 @@ public class CheckPlayer : MonoBehaviour
                         all_Ani.Play("ani_npc_cat_get2");
                         SGM.GetComponent<SoundEvt>().soundWaterWalk();
                         Invoke("Anis2", 2f);
+                        
                     }
 
 
@@ -1961,6 +1988,10 @@ public class CheckPlayer : MonoBehaviour
 
     void Anis2()
     {
+        //this.gameObject.SetActive(false);
+
+        color = new Color(1f, 1f, 1f, 0f);
+        this.GetComponent<SpriteRenderer>().color = color;
         other_obj.SetActive(true);
     }
 
@@ -2327,12 +2358,18 @@ public class CheckPlayer : MonoBehaviour
 
     IEnumerator talkBall()
     {
+        if (PlayerPrefs.GetInt("aplus", 0) == 1)
+        {
+            k = k + 2;
+        }
+
         int c = 1;
         int s = 0;
         while (c <= 20)
         {
             if (s == 0)
             {
+                
                 talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[k];
                 s = 1;
             }
@@ -2646,6 +2683,7 @@ public class CheckPlayer : MonoBehaviour
         SetItemPref_i = 42;
         ItemSettings();
         SetItemPref_i = 47;
+        SGM.GetComponent<SoundEvt>().soundDamage();
     }
 
 
@@ -2654,4 +2692,12 @@ public class CheckPlayer : MonoBehaviour
         SetDogam3();
         SetDogam4();
     }
+
+
+    void attack()
+    {
+        all_Ani.StopPlayback();
+    }
+
+
 }

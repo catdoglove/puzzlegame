@@ -80,6 +80,8 @@ public class CameraMove : MonoBehaviour
 
     IEnumerator move() //주인공 걷는 시간
     {
+
+        PlayerPrefs.SetInt("nowwalkdont", 1);
         yield return new WaitForSeconds(0.9f);
         CGM.GetComponent<SpriteRenderer>().flipX = false;
         CGM.GetComponent<CharMove>().charAni.Play("ani_char_walk");
@@ -101,6 +103,7 @@ public class CameraMove : MonoBehaviour
         }
 
         PlayerPrefs.SetInt("canSeeInfo_detailt" + 2, 99);
+        PlayerPrefs.SetInt("nowwalkdont", 0);
     }
 
     IEnumerator imgFadeOut()
