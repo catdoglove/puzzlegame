@@ -298,11 +298,13 @@ public class CheckPlayer : MonoBehaviour
                     {
                         color = new Color(1f, 1f, 1f, 1f);
                         move_obj.GetComponent<SpriteRenderer>().color = color;
+                        fade_obj.GetComponent<SpriteRenderer>().color = color;
                     }
                     else
                     {
                         color = new Color(1f, 1f, 1f, 1f);
                         moveOther_obj.GetComponent<SpriteRenderer>().color = color;
+                        fade_obj.GetComponent<SpriteRenderer>().color = color;
                     }
                 }
                 ItemSettings();
@@ -1889,6 +1891,11 @@ public class CheckPlayer : MonoBehaviour
                             all_Ani.Play("ani_npc_purple_good");
                             Invoke("fox2", 0.1f);
 
+                            StopCoroutine("talkBall");
+                            k = a+1;
+                            talkBallB_obj.SetActive(true);
+                            StartCoroutine("talkBall");
+                            StopAndTalk();
                         }
 
                     }
@@ -1984,6 +1991,7 @@ public class CheckPlayer : MonoBehaviour
         move_obj.SetActive(true);
         color = new Color(1f, 1f, 1f, 0f);
         this.GetComponent<SpriteRenderer>().color = color;
+        balloon_obj.GetComponent<SpriteRenderer>().color = color;
     }
 
     void Anis2()
@@ -1992,6 +2000,7 @@ public class CheckPlayer : MonoBehaviour
 
         color = new Color(1f, 1f, 1f, 0f);
         this.GetComponent<SpriteRenderer>().color = color;
+        balloon_obj.GetComponent<SpriteRenderer>().color = color;
         other_obj.SetActive(true);
     }
 

@@ -19,10 +19,12 @@ public class CameraMove : MonoBehaviour
     void Start()
     {
 
+        PlayerPrefs.SetInt("nowwalkdont", 1);
         PlayerPrefs.SetInt("escdont", 1);
         BGM1.SetActive(false);
         CGM.GetComponent<CharMove>().charAni.Play("ani_char_stop");
         CGM.GetComponent<CharMove>().Speed = 0f;
+        CGM.GetComponent<CharMove>().charAni.speed = 1f;
         color.a = Mathf.Lerp(0f, 1f, 0f);
         b_obj.GetComponent<SpriteRenderer>().color = color;
         moveY1 = c_obj.transform.position.y;
@@ -81,7 +83,6 @@ public class CameraMove : MonoBehaviour
     IEnumerator move() //주인공 걷는 시간
     {
 
-        PlayerPrefs.SetInt("nowwalkdont", 1);
         yield return new WaitForSeconds(0.9f);
         CGM.GetComponent<SpriteRenderer>().flipX = false;
         CGM.GetComponent<CharMove>().charAni.Play("ani_char_walk");

@@ -336,7 +336,7 @@ public class AnimailInformation : MonoBehaviour
 
             if (text_str == "pistachios")
             {
-                //material1.GetComponent<SpriteRenderer>().sprite = materialSpr[5];
+                material1.GetComponent<SpriteRenderer>().sprite = materialSpr[5];
             }
         }
 

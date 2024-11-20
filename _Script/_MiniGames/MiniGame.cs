@@ -19,6 +19,8 @@ public class MiniGame : MonoBehaviour
 
     public int nowSelect_i;
 
+    public int fistMove = 0;
+
 
     public GameObject puzzleWin_obj;
     public GameObject GM, GMM, GMS;
@@ -56,6 +58,34 @@ public class MiniGame : MonoBehaviour
             num_i[0, 3] = 5;
             num_i[1, 3] = 4;
         }
+
+        time = 1;
+        if (x_i > 0)
+        {
+            x_i--;
+        }
+
+        if (select_b)
+        {
+            if (num_i[x_i, y_i] != 0)
+            {
+                x_i++;
+                //움직이지 못할 때
+                time = 0;
+            }
+            else
+            {
+
+                SGM.GetComponent<SoundEvt>().soundItemWndAD();
+            }
+            SetRow();
+        }
+        else
+        {
+            SetSelect();
+            SGM.GetComponent<SoundEvt>().soundItemWndAD();
+        }
+        StopMove();
     }
 
     // Update is called once per frame

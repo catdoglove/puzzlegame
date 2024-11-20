@@ -869,6 +869,7 @@ public class Inventory : MonoBehaviour
     {
         ESCevent.SetActive(true);
 
+        GM.GetComponent<CharMove>().canMove = false;
         if (ESCevent.activeSelf == true)
         {
             PlayerPrefs.SetInt("cursorActive", 1);
@@ -878,6 +879,8 @@ public class Inventory : MonoBehaviour
 
     public void closeESCwindow()
     {
+
+        GM.GetComponent<CharMove>().canMove = true;
         ESCevent.SetActive(false);
         PlayerPrefs.SetInt("cursorActive",0);
     }
