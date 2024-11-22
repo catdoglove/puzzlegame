@@ -293,7 +293,12 @@ public class AnimailInformation : MonoBehaviour
             materialArea1.SetActive(false);
         }
 
-        if (pageNum >=9)
+        if (pageNum == 9)
+        {
+            materialArea1.SetActive(false);
+        }
+
+        if (pageNum > 10)
         {
             materialArea1.SetActive(false);
         }
@@ -337,6 +342,11 @@ public class AnimailInformation : MonoBehaviour
             if (text_str == "pistachios")
             {
                 material1.GetComponent<SpriteRenderer>().sprite = materialSpr[5];
+            }
+
+            if (text_str == "pistachios2")
+            {
+                material1.GetComponent<SpriteRenderer>().sprite = materialSpr[6];
             }
         }
 

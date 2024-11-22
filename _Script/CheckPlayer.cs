@@ -298,13 +298,15 @@ public class CheckPlayer : MonoBehaviour
                     {
                         color = new Color(1f, 1f, 1f, 1f);
                         move_obj.GetComponent<SpriteRenderer>().color = color;
-                        fade_obj.GetComponent<SpriteRenderer>().color = color;
+                        move_obj.GetComponent<CheckPlayer>().wait2 = 0;
+                        //fade_obj.GetComponent<SpriteRenderer>().color = color;
                     }
                     else
                     {
                         color = new Color(1f, 1f, 1f, 1f);
                         moveOther_obj.GetComponent<SpriteRenderer>().color = color;
-                        fade_obj.GetComponent<SpriteRenderer>().color = color;
+                        moveOther_obj.GetComponent<CheckPlayer>().wait2 = 0;
+                        //fade_obj.GetComponent<SpriteRenderer>().color = color;
                     }
                 }
                 ItemSettings();
@@ -921,6 +923,15 @@ public class CheckPlayer : MonoBehaviour
 
                 talk_b = false;
                 StartCoroutine("TalkBOff");
+
+                if (events_i == 5 && animalNum_i == 10)
+                {
+                    StopCoroutine("TalkBOff");
+                    PlayerPrefs.SetInt("escdont", 0);
+                    this.gameObject.SetActive(false);
+                    move_obj.SetActive(true);
+                }
+
 
                 break;
             case 6://아래 이동
@@ -1758,6 +1769,10 @@ public class CheckPlayer : MonoBehaviour
 
             case 38://말풍선 띄우고 특수 아이템요구 
 
+                if (animalNum_i == 10)
+                {
+                    SetDogam2();
+                }
                 TalkSound();
                 a++;
                 if (SetItemPref_i == 45 && PlayerPrefs.GetInt("selecteditemnum", 0) == 42)
@@ -1882,13 +1897,13 @@ public class CheckPlayer : MonoBehaviour
                             GM.GetComponent<CharMove>().canMove = false;
                         }
 
+
                         if (events_i == 5)
                         {
                             //StopTalk();
                             //talkBallB_obj.SetActive(false);
                            // talk_b = false;
                            // StartCoroutine("TalkBOff");
-                            all_Ani.Play("ani_npc_purple_good");
                             Invoke("fox2", 0.1f);
 
                             StopCoroutine("talkBall");
@@ -1896,6 +1911,8 @@ public class CheckPlayer : MonoBehaviour
                             talkBallB_obj.SetActive(true);
                             StartCoroutine("talkBall");
                             StopAndTalk();
+                            a++;
+                            all_Ani.Play("ani_npc_fox_purple_good");
                         }
 
                     }
@@ -1991,7 +2008,8 @@ public class CheckPlayer : MonoBehaviour
         move_obj.SetActive(true);
         color = new Color(1f, 1f, 1f, 0f);
         this.GetComponent<SpriteRenderer>().color = color;
-        balloon_obj.GetComponent<SpriteRenderer>().color = color;
+        balloon_obj.SetActive(false);
+        wait2 = 1;
     }
 
     void Anis2()
@@ -2000,7 +2018,8 @@ public class CheckPlayer : MonoBehaviour
 
         color = new Color(1f, 1f, 1f, 0f);
         this.GetComponent<SpriteRenderer>().color = color;
-        balloon_obj.GetComponent<SpriteRenderer>().color = color;
+        balloon_obj.SetActive(false);
+        wait2 = 1;
         other_obj.SetActive(true);
     }
 

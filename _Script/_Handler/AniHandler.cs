@@ -124,6 +124,7 @@ public class AniHandler : MonoBehaviour
         player_obj.SetActive(true);
         player_obj.transform.position = mapRespawn_obj.transform.position;
 
+        PlayerPrefs.SetInt("escdont", 0);
         Invoke("af", 0.8f);
         yield return new WaitForSeconds(0.8f);
         //CGM.GetComponent<CharMove>().Speed = 2.5f;
@@ -132,6 +133,7 @@ public class AniHandler : MonoBehaviour
     public void TurnOffB()
     {
 
+        PlayerPrefs.SetInt("escdont", 1);
         StartCoroutine("BGMFadeOut");
     }
 
