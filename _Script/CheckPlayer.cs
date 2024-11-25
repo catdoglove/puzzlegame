@@ -1788,6 +1788,7 @@ public class CheckPlayer : MonoBehaviour
                         all_Ani.Play("ani_npc_cat_get2");
                         SGM.GetComponent<SoundEvt>().soundWaterWalk();
                         Invoke("Anis2", 2f);
+                        wait2 = 1;
                         PlayerPrefs.SetInt("cats2", 1);
 
                         
@@ -1809,7 +1810,8 @@ public class CheckPlayer : MonoBehaviour
                         all_Ani.Play("ani_npc_cat_get2");
                         SGM.GetComponent<SoundEvt>().soundWaterWalk();
                         Invoke("Anis2", 2f);
-                        
+                        wait2 = 1;
+
                     }
 
 
@@ -2018,10 +2020,9 @@ public class CheckPlayer : MonoBehaviour
 
         color = new Color(1f, 1f, 1f, 0f);
         this.GetComponent<SpriteRenderer>().color = color;
-
+        StopCoroutine("talkBall");
         all_Ani.Play("ani_npc_cat_forest");
         balloon_obj.SetActive(false);
-        wait2 = 1;
         other_obj.SetActive(true);
         
     }

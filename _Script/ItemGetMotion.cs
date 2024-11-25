@@ -28,8 +28,6 @@ public class ItemGetMotion : MonoBehaviour
 
         if (PlayerPrefs.GetInt("clearitemgetimg", 0) == 1)
         {
-
-            Debug.Log("asdadasdsa");
             fade_obj.transform.position = new Vector2(35f, 35f);
             PlayerPrefs.SetInt("clearitemgetimg", 0);
         }
