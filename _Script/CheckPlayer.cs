@@ -2008,8 +2008,8 @@ public class CheckPlayer : MonoBehaviour
         move_obj.SetActive(true);
         color = new Color(1f, 1f, 1f, 0f);
         this.GetComponent<SpriteRenderer>().color = color;
-        balloon_obj.SetActive(false);
-        wait2 = 1;
+        //balloon_obj.SetActive(false);
+        //wait2 = 1;
     }
 
     void Anis2()
@@ -2018,9 +2018,12 @@ public class CheckPlayer : MonoBehaviour
 
         color = new Color(1f, 1f, 1f, 0f);
         this.GetComponent<SpriteRenderer>().color = color;
+
+        all_Ani.Play("ani_npc_cat_forest");
         balloon_obj.SetActive(false);
         wait2 = 1;
         other_obj.SetActive(true);
+        
     }
 
     //void wa
