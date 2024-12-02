@@ -774,6 +774,15 @@ public class CheckPlayer : MonoBehaviour
                 }
             }
         }
+
+
+        scFalse_b = false;
+
+        if (animalNum_i == 9 && PlayerPrefs.GetInt("selecteditemnum", 0) == 41)
+        {
+            scFalse_b = true;
+        }
+
         //this.GetComponent<Animation>().Play();
         if (ani_str != "")
         {
@@ -784,7 +793,14 @@ public class CheckPlayer : MonoBehaviour
             }
             else
             {
-                all_Ani.Play(aniTalk_str);
+
+                if (scFalse_b)
+                {
+                }
+                else
+                {
+                    all_Ani.Play(aniTalk_str);
+                }
             }
         }
 
@@ -798,16 +814,12 @@ public class CheckPlayer : MonoBehaviour
 
         PlayerPrefs.SetInt("aplus", 0);
 
-        scFalse_b = false;
-
-        if (animalNum_i == 9 && PlayerPrefs.GetInt("selecteditemnum", 0) == 41)
-        {
-            scFalse_b = true;
-        }
 
 
         if (scFalse_b)
         {
+
+            all_Ani.Play("ani_npc_cat_forest_danger");
             if (PlayerPrefs.GetInt("poped", 0) == 1)
             {
                 SetDogam4h();
@@ -817,7 +829,7 @@ public class CheckPlayer : MonoBehaviour
                 SetDogam4();
             }
             SGM.GetComponent<SoundEvt>().soundItemFail();
-            Invoke("danger", 0.01f);
+            Invoke("danger", 0.1f);
         }
         else
         {
