@@ -750,6 +750,7 @@ public class CheckPlayer : MonoBehaviour
         int a = 0;
         a = PlayerPrefs.GetInt(SetEventPref_str, 0);
         k = a;
+         
 
 
         if (PlayerPrefs.GetInt("selecteditemnum", 0) == 12)
