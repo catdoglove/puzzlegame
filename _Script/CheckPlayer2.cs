@@ -1816,6 +1816,30 @@ public class CheckPlayer2 : MonoBehaviour
                 }
                 break;
 
+            case 42://특수 아이템요구 두가지의 경우
+                if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                {
+                    GMI.GetComponent<Inventory>().DelItems();
+                    k = a;
+                    ItemSettings();
+                    GetItem_obj.SetActive(false);
+                    balloon_obj.SetActive(false);
+                    if (SetItemPref_i == 46)
+                    {
+                        this.gameObject.SetActive(false);
+                    }
+                    if (events_i == 5)
+                    {
+
+                        SGM.GetComponent<SoundEvt>().soundDamage();
+                    }
+                }
+                else
+                {
+                    SGM.GetComponent<SoundEvt>().soundItemFail();
+                }
+                break;
+
 
         }
         PlayerPrefs.SetInt(SetEventPref_str, a);
