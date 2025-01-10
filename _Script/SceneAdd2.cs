@@ -12,6 +12,7 @@ public class SceneAdd : MonoBehaviour
     {
         LoadSceneAdditive();
         StartCoroutine("dogamOpenTab");
+
     }
 
     private void Update()

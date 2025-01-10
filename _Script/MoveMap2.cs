@@ -29,8 +29,8 @@ public class MoveMap2 : MonoBehaviour
     public GameObject BGM1, BGM2, BGM4;
 
     public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b, rot_b, crowA_b, secret_b, secret2_b, sheep_b,sheepOff_b;
-    public bool lakeOut_b, caveRoad_b, caveEnter_b, crowSet_b, setEff_b, hidden2_b, waterOut_b, flip_b, BGM_b, soundback_b,crow2_b, dont_b;
-
+    public bool lakeOut_b, caveRoad_b, caveEnter_b, crowSet_b, setEff_b, hidden2_b, hidden3_b, hidden4_b, hidden5_b, hidden6_b, hidden7_b, waterOut_b, flip_b, BGM_b, soundback_b,crow2_b, dont_b;
+    public bool nomalCave_b;
     public int event_i = 0;
 
     public GameObject door1_obj, door2_obj;
@@ -394,6 +394,44 @@ public class MoveMap2 : MonoBehaviour
             GMC.GetComponent<ShaderEffect>().changeShader6();
             BGM4.GetComponent<AudioSource>().volume = 0f;
         }
+
+        if (hidden3_b)
+        {
+            GMC.GetComponent<ShaderEffect>().changeShader9();
+
+        }
+
+
+        if (hidden4_b)
+        {
+            GMC.GetComponent<ShaderEffect>().changeShader10();
+
+        }
+        if (hidden5_b)
+        {
+            GMC.GetComponent<ShaderEffect>().changeShader11();
+
+        }
+        if (hidden6_b)
+        {
+            GMC.GetComponent<ShaderEffect>().changeShader12();
+
+        }
+        if (hidden7_b)
+        {
+            GMC.GetComponent<ShaderEffect>().changeShader14();
+
+        }
+
+
+
+
+        if (nomalCave_b)
+        {
+            GMC.GetComponent<ShaderEffect>().changeShader8();
+
+        }
+
         if (setEff_b)
         {
             GMC.GetComponent<ShaderEffect>().OffShader();

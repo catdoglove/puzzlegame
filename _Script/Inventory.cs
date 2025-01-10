@@ -52,6 +52,8 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        PlayerPrefs.DeleteAll();
         position = itemWindow_obj.transform.position;
         //StartCoroutine("cursorState");
     }

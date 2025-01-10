@@ -29,7 +29,7 @@ public class MoveMap : MonoBehaviour
     public GameObject BGM1, BGM2, BGM4;
 
     public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b, rot_b, crowA_b, secret_b, secret2_b, sheep_b,sheepOff_b;
-    public bool lakeOut_b, caveRoad_b, caveEnter_b, crowSet_b, setEff_b, hidden2_b, hidden3_b, waterOut_b, flip_b, BGM_b, soundback_b,crow2_b, dont_b, sup_b;
+    public bool lakeOut_b, caveRoad_b, caveEnter_b, crowSet_b, setEff_b, hidden2_b, hidden3_b, hidden4_b, waterOut_b, flip_b, BGM_b, soundback_b,crow2_b, dont_b, sup_b;
 
     public int event_i = 0;
 
@@ -403,7 +403,7 @@ public class MoveMap : MonoBehaviour
         if (hidden3_b)
         {
             GMC.GetComponent<ShaderEffect>().changeShader7();
-            
+
         }
 
         if (setEff_b)

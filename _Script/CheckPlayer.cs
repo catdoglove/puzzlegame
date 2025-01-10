@@ -278,6 +278,14 @@ public class CheckPlayer : MonoBehaviour
 
         if (itemQ_b)
         {
+
+            if (SetItemPref_i >= 50 && SetItemPref_i <= 55)
+            {
+                int a= PlayerPrefs.GetInt("stackdish",0);
+                a++;
+                PlayerPrefs.SetInt("stackdish", a);
+            }
+
             if (function_b)
             {
 
@@ -301,7 +309,7 @@ public class CheckPlayer : MonoBehaviour
                         move_obj.GetComponent<CheckPlayer>().wait2 = 0;
                         PlayerPrefs.SetInt("sss", 1);
                         //move_obj.GetComponent<CheckPlayer>().all_Ani.Play("ani_npc_cat_forest");
-                       //move_obj.GetComponent<CheckPlayer>().StopTalk();
+                        //move_obj.GetComponent<CheckPlayer>().StopTalk();
                     }
                     else
                     {
@@ -2048,6 +2056,45 @@ public class CheckPlayer : MonoBehaviour
 
                             SGM.GetComponent<SoundEvt>().soundDamage();
                         }
+                    }
+                    else
+                    {
+                        SGM.GetComponent<SoundEvt>().soundItemFail();
+                    }
+                    break;
+                case 42://돌부수기
+                    if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                    {
+
+                        k = a;
+
+                        balloon_obj.SetActive(false);
+                        //잔해
+                        fade_obj.SetActive(true);
+                        //돌
+                        GetItem_obj.SetActive(false);
+
+
+                        SGM.GetComponent<SoundEvt>().soundDamage();
+                    }
+                    else
+                    {
+                        SGM.GetComponent<SoundEvt>().soundItemFail();
+                    }
+                    break;
+                case 43://퍼즐
+                    if (PlayerPrefs.GetInt("selecteditemnum", 0) >=50 && PlayerPrefs.GetInt("selecteditemnum", 0) <= 55&& PlayerPrefs.GetInt("stackdish", 0)==5)
+                    {
+                        SGM.GetComponent<SoundEvt>().soundItemUse();
+                        StopAndTalk();
+                        a++;
+                        GM.GetComponent<CharMove>().canMove = false;
+                        //PlayerPrefs.SetInt("cursorActive", 1);
+                        //puzzle_obj.GetComponent<RockMini>().ShowPuzzle();
+                        miniGame_obj.SetActive(true);
+                        PlayerPrefs.SetInt("escdont", 1);
+                        GMI.GetComponent<Inventory>().DelItems();
+                        this.gameObject.SetActive(false);
                     }
                     else
                     {

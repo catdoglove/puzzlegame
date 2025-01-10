@@ -140,6 +140,132 @@ public class ShaderEffect : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// 동굴안
+    /// </summary>
+    public void changeShader8()
+    {
+        Mcamera.SetActive(false);
+
+
+        photo.SwitchCameraToCamera2 = 1f;
+        photo.BlendFX = 1f;
+        effectShaderimg.GetComponent<Image>().sprite = effectImg[6];
+
+        photo.SCShader = Shader.Find("CameraFilterPack/Blend2Camera_Overlay");
+        photo.filterchoice = CameraFilterPack_Blend2Camera_PhotoshopFilters.filters.Multiply;
+
+        Mcamera.SetActive(true);
+    }
+
+
+    /// <summary>
+    /// 동굴안B1
+    /// </summary>
+    public void changeShader9()
+    {
+        Mcamera.SetActive(false);
+
+
+        photo.SwitchCameraToCamera2 = 1f;
+        photo.BlendFX = 1f;
+        effectShaderimg.GetComponent<Image>().sprite = effectImg[7];
+
+        photo.SCShader = Shader.Find("CameraFilterPack/Blend2Camera_Multiply");
+        photo.filterchoice = CameraFilterPack_Blend2Camera_PhotoshopFilters.filters.Multiply;
+
+        Mcamera.SetActive(true);
+    }
+    /// <summary>
+    /// 동굴안B2
+    /// </summary>
+    public void changeShader10()
+    {
+        Mcamera.SetActive(false);
+
+
+        photo.SwitchCameraToCamera2 = 1f;
+        photo.BlendFX = 1f;
+        effectShaderimg.GetComponent<Image>().sprite = effectImg[8];
+
+        photo.SCShader = Shader.Find("CameraFilterPack/Blend2Camera_Multiply");
+        photo.filterchoice = CameraFilterPack_Blend2Camera_PhotoshopFilters.filters.Multiply;
+
+        Mcamera.SetActive(true);
+    }
+
+    /// <summary>
+    /// 동굴안D5
+    /// </summary>
+    public void changeShader11()
+    {
+        Mcamera.SetActive(false);
+
+
+        photo.SwitchCameraToCamera2 = 1f;
+        photo.BlendFX = 1f;
+        effectShaderimg.GetComponent<Image>().sprite = effectImg[9];
+
+        photo.SCShader = Shader.Find("CameraFilterPack/Blend2Camera_Multiply");
+        photo.filterchoice = CameraFilterPack_Blend2Camera_PhotoshopFilters.filters.Multiply;
+
+        Mcamera.SetActive(true);
+    }
+
+    /// <summary>
+    /// 동굴안D6
+    /// </summary>
+    public void changeShader12()
+    {
+        Mcamera.SetActive(false);
+
+
+        photo.SwitchCameraToCamera2 = 1f;
+        photo.BlendFX = 1f;
+        effectShaderimg.GetComponent<Image>().sprite = effectImg[10];
+
+        photo.SCShader = Shader.Find("CameraFilterPack/Blend2Camera_Multiply");
+        photo.filterchoice = CameraFilterPack_Blend2Camera_PhotoshopFilters.filters.Multiply;
+
+        Mcamera.SetActive(true);
+    }
+
+    /// <summary>
+    /// 동굴안C
+    /// </summary>
+    public void changeShader13()
+    {
+        Mcamera.SetActive(false);
+
+
+        photo.SwitchCameraToCamera2 = 1f;
+        photo.BlendFX = 1f;
+        effectShaderimg.GetComponent<Image>().sprite = effectImg[8];
+
+        photo.SCShader = Shader.Find("CameraFilterPack/Blend2Camera_Multiply");
+        photo.filterchoice = CameraFilterPack_Blend2Camera_PhotoshopFilters.filters.Multiply;
+
+        Mcamera.SetActive(true);
+    }
+
+    /// <summary>
+    /// 동굴안C
+    /// </summary>
+    public void changeShader14()
+    {
+        Mcamera.SetActive(false);
+
+
+        photo.SwitchCameraToCamera2 = 1f;
+        photo.BlendFX = 1f;
+        effectShaderimg.GetComponent<Image>().sprite = effectImg[11];
+
+        photo.SCShader = Shader.Find("CameraFilterPack/Blend2Camera_Multiply");
+        photo.filterchoice = CameraFilterPack_Blend2Camera_PhotoshopFilters.filters.Multiply;
+
+        Mcamera.SetActive(true);
+    }
+
     public void OffShader()
     {
         Mcamera.SetActive(false);
