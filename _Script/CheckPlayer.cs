@@ -2101,8 +2101,6 @@ public class CheckPlayer : MonoBehaviour
                         SGM.GetComponent<SoundEvt>().soundItemFail();
                     }
                     break;
-
-
             }
         }
 
