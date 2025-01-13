@@ -8,7 +8,7 @@ public class DishMini : MonoBehaviour
 
     public GameObject win_obj;
 
-    public GameObject[] al_obj;
+    public GameObject[] al_obj,sl_obj;
     public Sprite[] al_spr;
     public int num_i;
     public int select_i = 0;
@@ -32,6 +32,15 @@ public class DishMini : MonoBehaviour
     //24031
     public void SetSel()
     {
+
+        sl_obj[0].SetActive(false);
+        sl_obj[1].SetActive(false);
+        sl_obj[2].SetActive(false);
+        sl_obj[3].SetActive(false);
+        sl_obj[4].SetActive(false);
+        sl_obj[num_i].SetActive(true);
+
+
         if (PlayerPrefs.GetInt("findish", 0)==0)
         {
             select_i++;
