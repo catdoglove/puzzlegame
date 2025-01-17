@@ -4632,7 +4632,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1231749029}
+  m_TargetTexture: {fileID: 1996202266}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -12078,7 +12078,9 @@ MonoBehaviour:
   save_i: 
   SGM: {fileID: 879451249}
   GM: {fileID: 1402283753}
-  GMM: {fileID: 0}
+  GMM: {fileID: 1236708166}
+  spider_obj: {fileID: 0}
+  spider2_obj: {fileID: 0}
 --- !u!114 &191659227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13911,7 +13913,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
-  animalNum_i: 9
+  animalNum_i: 12
   crow_Ani: {fileID: 0}
   flipX_b: 0
   stick_obj: {fileID: 0}
@@ -16304,6 +16306,7 @@ MonoBehaviour:
   mark_obj: {fileID: 0}
   where_i: 5
   boom_spr: {fileID: 0}
+  be_obj: {fileID: 0}
 --- !u!1 &280611915
 GameObject:
   m_ObjectHideFlags: 0
@@ -20102,6 +20105,7 @@ MonoBehaviour:
   mark_obj: {fileID: 0}
   where_i: 5
   boom_spr: {fileID: 0}
+  be_obj: {fileID: 0}
 --- !u!1 &338288988
 GameObject:
   m_ObjectHideFlags: 0
@@ -21533,6 +21537,7 @@ MonoBehaviour:
   mark_obj: {fileID: 0}
   where_i: 5
   boom_spr: {fileID: 0}
+  be_obj: {fileID: 0}
 --- !u!1 &363417782
 GameObject:
   m_ObjectHideFlags: 0
@@ -33110,7 +33115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &544251602
 Transform:
   m_ObjectHideFlags: 0
@@ -33647,23 +33652,23 @@ MonoBehaviour:
   GMS: {fileID: 1648107670}
   GM: {fileID: 1236708166}
   GMI: {fileID: 1283954030}
-  SetItemPref_str: beeber33
+  SetItemPref_str: spider1
   SetItemPref_i: 38
   itemQ_b: 0
   GetItem_obj: {fileID: 0}
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
-  SetEventPref_str: beeber33
-  EventNum_i: 01000000010000000300000026000000260000000a0000000300000005000000050000000a0000000f00000001000000050000000a0000000500000005000000
+  SetEventPref_str: spider1
+  EventNum_i: 010000000300000026000000260000000a0000000300000005000000050000000a0000000f00000001000000050000000a000000050000000500000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
-  - {fileID: 21300000, guid: f51616c1d5ac55f4dada359b1077ca49, type: 3}
+  - {fileID: 21300000, guid: 8ffa3eab334c5d34aa2459a9275ae752, type: 3}
   - {fileID: 21300000, guid: e1ada76ac9e388a4ea7c61ae82555f2c, type: 3}
-  - {fileID: 21300000, guid: e1ada76ac9e388a4ea7c61ae82555f2c, type: 3}
-  - {fileID: 21300000, guid: 9085458fae1857d489a35016b8bb3d55, type: 3}
-  - {fileID: 21300000, guid: 9085458fae1857d489a35016b8bb3d55, type: 3}
-  - {fileID: 21300000, guid: ba6a30e637191494aa147d24e9e0447b, type: 3}
+  - {fileID: 21300000, guid: 474f1d08be40f4e48b486e2a2e8c8ca1, type: 3}
+  - {fileID: 21300000, guid: 474f1d08be40f4e48b486e2a2e8c8ca1, type: 3}
+  - {fileID: 21300000, guid: cecb8f275d02fdd49871c930ba9e5a0e, type: 3}
+  - {fileID: 21300000, guid: cecb8f275d02fdd49871c930ba9e5a0e, type: 3}
   - {fileID: 21300000, guid: 8dfa5b2958cf09f42a7931117f6d419a, type: 3}
   - {fileID: 21300000, guid: 8dfa5b2958cf09f42a7931117f6d419a, type: 3}
   - {fileID: 21300000, guid: 8dfa5b2958cf09f42a7931117f6d419a, type: 3}
@@ -33672,12 +33677,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6aeae853d2325534cb66c444a4241feb, type: 3}
   - {fileID: 21300000, guid: 6aeae853d2325534cb66c444a4241feb, type: 3}
   Event2_spr:
-  - {fileID: 21300000, guid: c71847f4165ff594293fbe3358d0918b, type: 3}
+  - {fileID: 21300000, guid: 78b11490154735a4ca49078c5646b361, type: 3}
   - {fileID: 21300000, guid: 7ea9708e65d4dd44a9a84c5796049bb0, type: 3}
-  - {fileID: 21300000, guid: 7ea9708e65d4dd44a9a84c5796049bb0, type: 3}
-  - {fileID: 21300000, guid: e7600da9eb0e2e343a3ea74706371f96, type: 3}
-  - {fileID: 21300000, guid: e7600da9eb0e2e343a3ea74706371f96, type: 3}
-  - {fileID: 21300000, guid: 8e727fc88977d834da0076828179cef4, type: 3}
+  - {fileID: 21300000, guid: 34047809218449148bb48ff00f041347, type: 3}
+  - {fileID: 21300000, guid: 34047809218449148bb48ff00f041347, type: 3}
+  - {fileID: 21300000, guid: cfe641c54efdb8d4b96c76a99370ae55, type: 3}
+  - {fileID: 21300000, guid: cfe641c54efdb8d4b96c76a99370ae55, type: 3}
   - {fileID: 21300000, guid: 721f6719b28e4a84480bdb61f6a2169b, type: 3}
   - {fileID: 21300000, guid: 721f6719b28e4a84480bdb61f6a2169b, type: 3}
   - {fileID: 21300000, guid: 721f6719b28e4a84480bdb61f6a2169b, type: 3}
@@ -33694,7 +33699,7 @@ MonoBehaviour:
   position_fox: {x: 0, y: 0, z: 0}
   position_nomal: {x: 0.53509146, y: 0.37505984, z: 0}
   move_obj: {fileID: 239898203}
-  moveOther_obj: {fileID: 0}
+  moveOther_obj: {fileID: 1951455627}
   npc_obj:
   - {fileID: 239898203}
   - {fileID: 0}
@@ -33716,7 +33721,7 @@ MonoBehaviour:
   broken_b: 0
   candy_spr: {fileID: 0}
   other_obj: {fileID: 0}
-  animalNum_i: 9
+  animalNum_i: 13
   crow_Ani: {fileID: 0}
   flipX_b: 0
   stick_obj: {fileID: 0}
@@ -33754,14 +33759,14 @@ MonoBehaviour:
   bearM_obj: {fileID: 0}
   b_position: {x: 0, y: 0, z: 0}
   miniGame_obj: {fileID: 1372082078}
-  dogam_b: 0
+  dogam_b: 1
   fox_b: 0
   checkX_f: 0
   checkY_f: 1.2
   checkR_f: 0
   hallFix_obj: {fileID: 0}
   hall_obj: {fileID: 0}
-  events_i: 4
+  events_i: 21
   items_spr: []
 --- !u!1 &550857382
 GameObject:
@@ -36110,7 +36115,9 @@ MonoBehaviour:
   save_i: 
   SGM: {fileID: 879451249}
   GM: {fileID: 1402283753}
-  GMM: {fileID: 0}
+  GMM: {fileID: 1236708166}
+  spider_obj: {fileID: 0}
+  spider2_obj: {fileID: 0}
 --- !u!114 &602546463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54417,7 +54424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &897150958
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -67283,6 +67290,7 @@ MonoBehaviour:
   mark_obj: {fileID: 0}
   where_i: 0
   boom_spr: {fileID: 0}
+  be_obj: {fileID: 0}
 --- !u!1 &1108272118
 GameObject:
   m_ObjectHideFlags: 0
@@ -71721,6 +71729,7 @@ MonoBehaviour:
   mark_obj: {fileID: 1648107670}
   where_i: 0
   boom_spr: {fileID: 21300000, guid: ffcf59e82321f3f478cd80e53a93f881, type: 3}
+  be_obj: {fileID: 0}
 --- !u!1 &1182109807
 GameObject:
   m_ObjectHideFlags: 0
@@ -74441,41 +74450,6 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 1
   items_spr: []
---- !u!84 &1231749029
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 901
-  m_Height: 507
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1232016087
 GameObject:
   m_ObjectHideFlags: 0
@@ -79975,7 +79949,9 @@ MonoBehaviour:
   save_i: 
   SGM: {fileID: 879451249}
   GM: {fileID: 1402283753}
-  GMM: {fileID: 0}
+  GMM: {fileID: 1236708166}
+  spider_obj: {fileID: 0}
+  spider2_obj: {fileID: 0}
 --- !u!114 &1331748158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83195,6 +83171,8 @@ MonoBehaviour:
   SGM: {fileID: 879451249}
   GM: {fileID: 0}
   GMM: {fileID: 1236708166}
+  spider_obj: {fileID: 549838853}
+  spider2_obj: {fileID: 1795091327}
 --- !u!1 &1402915351
 GameObject:
   m_ObjectHideFlags: 0
@@ -86260,6 +86238,7 @@ MonoBehaviour:
   mark_obj: {fileID: 0}
   where_i: 3
   boom_spr: {fileID: 0}
+  be_obj: {fileID: 0}
 --- !u!1 &1459306436
 GameObject:
   m_ObjectHideFlags: 0
@@ -102719,7 +102698,9 @@ MonoBehaviour:
   save_i: 
   SGM: {fileID: 879451249}
   GM: {fileID: 1402283753}
-  GMM: {fileID: 0}
+  GMM: {fileID: 1236708166}
+  spider_obj: {fileID: 0}
+  spider2_obj: {fileID: 0}
 --- !u!114 &1733740278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105025,6 +105006,7 @@ MonoBehaviour:
   mark_obj: {fileID: 0}
   where_i: 2
   boom_spr: {fileID: 0}
+  be_obj: {fileID: 0}
 --- !u!1 &1768739894
 GameObject:
   m_ObjectHideFlags: 0
@@ -114110,7 +114092,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1951455628
 Transform:
   m_ObjectHideFlags: 0
@@ -114119,7 +114101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951455627}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.35, y: 1.3, z: 0}
+  m_LocalPosition: {x: -1.82, y: 2.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 114092949}
@@ -114138,7 +114120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move_i: 1
-  size: {x: 5.4, y: 3.5}
+  size: {x: 2.8, y: 4}
   whatIsLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -114234,7 +114216,7 @@ MonoBehaviour:
   miniGame_obj: {fileID: 2038134319}
   dogam_b: 1
   fox_b: 0
-  checkX_f: 0
+  checkX_f: 2
   checkY_f: 0
   checkR_f: 0
   hallFix_obj: {fileID: 0}
@@ -115574,7 +115556,9 @@ MonoBehaviour:
   save_i: 
   SGM: {fileID: 879451249}
   GM: {fileID: 1402283753}
-  GMM: {fileID: 0}
+  GMM: {fileID: 1236708166}
+  spider_obj: {fileID: 0}
+  spider2_obj: {fileID: 0}
 --- !u!114 &1980243952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117152,6 +117136,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!84 &1996202266
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 640
+  m_Height: 480
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1996507877
 GameObject:
   m_ObjectHideFlags: 0
@@ -117348,6 +117367,7 @@ MonoBehaviour:
   mark_obj: {fileID: 0}
   where_i: 4
   boom_spr: {fileID: 0}
+  be_obj: {fileID: 0}
 --- !u!1 &1997089461
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,8 @@ public class DishMini : MonoBehaviour
 
     public GameObject SGM, GM, GMM;
 
+    public GameObject spider_obj, spider2_obj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -90,6 +92,42 @@ public class DishMini : MonoBehaviour
             PlayerPrefs.SetInt("findish",1);
             Invoke("Wait", 0.8f);
         }
+        else
+        {
+            a = 0;
+
+            if (save_i[0] == 2)
+            {
+                a++;
+            }
+            if (save_i[1] == 3)
+            {
+                a++;
+            }
+            if (save_i[2] == 0)
+            {
+                a++;
+            }
+            if (save_i[3] == 4)
+            {
+                a++;
+            }
+            if (save_i[4] == 1)
+            {
+                a++;
+            }
+            if (a == 5)
+            {
+
+                SGM.GetComponent<SoundEvt>().soundItemSuccess();
+                PlayerPrefs.SetInt("findish", 1);
+                spider_obj.SetActive(false);
+                spider2_obj.SetActive(true);
+                GMM.GetComponent<CharMove>().canMove = true;
+                Invoke("Wait", 0.8f);
+            }
+
+        }
 
     }
 
@@ -98,5 +136,7 @@ public class DishMini : MonoBehaviour
     {
         win_obj.SetActive(false);
         GMM.GetComponent<CharMove>().canMove = true;
+        PlayerPrefs.SetInt("cursorActive", 0);
+        PlayerPrefs.SetInt("escdont", 0);
     }
 }

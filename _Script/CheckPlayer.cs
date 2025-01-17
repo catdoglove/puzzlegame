@@ -923,6 +923,11 @@ public class CheckPlayer : MonoBehaviour
                     {
                         SetDogam2();
                     }
+                    if (animalNum_i == 13)
+                    {
+
+                        SetDogam0();
+                    }
 
                     break;
                 case 2://말풍선 띄우고 아이템 요구
@@ -1828,9 +1833,18 @@ public class CheckPlayer : MonoBehaviour
 
                 case 38://말풍선 띄우고 특수 아이템요구 
 
-                    if (animalNum_i == 10)
+                    if (events_i==21)
+                    {
+                        moveOther_obj.SetActive(true);
+                    }
+
+                    if (animalNum_i == 10|| animalNum_i == 12)
                     {
                         SetDogam2();
+                    }
+                    if (animalNum_i == 13)
+                    {
+                        SetDogam1();
                     }
                     TalkSound();
                     a++;
@@ -1961,6 +1975,7 @@ public class CheckPlayer : MonoBehaviour
                                 SGM.GetComponent<SoundEvt>().soundItemUse();
                                 StopCoroutine("talkBall");
                                 miniGame_obj.SetActive(true);
+                                PlayerPrefs.SetInt("escdont", 1);
                                 StopTalk();
                                 talkBallB_obj.SetActive(false);
                                 GM.GetComponent<CharMove>().canMove = false;
