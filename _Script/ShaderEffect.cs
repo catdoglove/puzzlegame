@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class ShaderEffect : MonoBehaviour
 {
     public CameraFilterPack_Blend2Camera_PhotoshopFilters photo;
+    public CameraFilterPack_Colors_Adjust_PreFilters photoF;
     public GameObject Mcamera, effectShaderimg;
     public Sprite[] effectImg;
 
@@ -289,9 +291,21 @@ public class ShaderEffect : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 맵 분위기 필터 효과 (깊은 숲에서 필요)
+    /// </summary>
+    public void changePhotoFilter()
+    {
+        photoF.filterchoice = CameraFilterPack_Colors_Adjust_PreFilters.filters.PopRocket;
+        photoF.FadeFX = 0.5f;
+
+        /* 기본값
+         * photoF.filterchoice = CameraFilterPack_Colors_Adjust_PreFilters.filters.DarkPink;  
+         * photoF.FadeFX = 0.4f; */
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
