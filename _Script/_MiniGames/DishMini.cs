@@ -17,12 +17,12 @@ public class DishMini : MonoBehaviour
 
     public GameObject SGM, GM, GMM;
 
-    public GameObject spider_obj, spider2_obj;
+    public GameObject spider_obj, spider2_obj, ball_obj;
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetInt("cursorActive", 1);
+        //PlayerPrefs.SetInt("cursorActive", 1);
     }
 
     // Update is called once per frame
@@ -87,10 +87,7 @@ public class DishMini : MonoBehaviour
         }
         if (a == 5)
         {
-
-            SGM.GetComponent<SoundEvt>().soundItemSuccess();
-            PlayerPrefs.SetInt("findish",1);
-            Invoke("Wait", 0.8f);
+            Fin();
         }
         else
         {
@@ -118,13 +115,7 @@ public class DishMini : MonoBehaviour
             }
             if (a == 5)
             {
-
-                SGM.GetComponent<SoundEvt>().soundItemSuccess();
-                PlayerPrefs.SetInt("findish", 1);
-                spider_obj.SetActive(false);
-                spider2_obj.SetActive(true);
-                GMM.GetComponent<CharMove>().canMove = true;
-                Invoke("Wait", 0.8f);
+                Fin();
             }
 
         }
@@ -138,5 +129,18 @@ public class DishMini : MonoBehaviour
         GMM.GetComponent<CharMove>().canMove = true;
         PlayerPrefs.SetInt("cursorActive", 0);
         PlayerPrefs.SetInt("escdont", 0);
+    }
+
+    void Fin()
+    {
+
+        SGM.GetComponent<SoundEvt>().soundItemSuccess();
+        PlayerPrefs.SetInt("findish", 1);
+        spider_obj.SetActive(false);
+        spider2_obj.SetActive(true);
+        ball_obj.SetActive(false);
+        //GMM.GetComponent<CharMove>().canMove = true;
+        PlayerPrefs.SetInt("canSeeInfo_detail" + 13, 99);
+        Invoke("Wait", 0.8f);
     }
 }

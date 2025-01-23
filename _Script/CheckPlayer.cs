@@ -2101,14 +2101,26 @@ public class CheckPlayer : MonoBehaviour
                     if (PlayerPrefs.GetInt("selecteditemnum", 0) >=50 && PlayerPrefs.GetInt("selecteditemnum", 0) <= 55&& PlayerPrefs.GetInt("stackdish", 0)==5)
                     {
                         SGM.GetComponent<SoundEvt>().soundItemUse();
-                        StopAndTalk();
+                        //StopAndTalk();
                         a++;
-                        GM.GetComponent<CharMove>().canMove = false;
-                        //PlayerPrefs.SetInt("cursorActive", 1);
+                        PlayerPrefs.SetInt("cursorActive", 1);
                         //puzzle_obj.GetComponent<RockMini>().ShowPuzzle();
-                        miniGame_obj.SetActive(true);
+
+                        for (int i = 6; i >= 0; i--)
+                        {
+                            if (GMI.GetComponent<Inventory>().items_i[i] >= 50 && GMI.GetComponent<Inventory>().items_i[i] <= 55)
+                            {
+                                GMI.GetComponent<Inventory>().selectedNow_i = i;
+                                GMI.GetComponent<Inventory>().DelItems();
+
+
+                                //GMI.GetComponent<Inventory>().CheckSelect();
+                            }
+                        }
+
+                        GM.GetComponent<CharMove>().canMove = false;
                         PlayerPrefs.SetInt("escdont", 1);
-                        GMI.GetComponent<Inventory>().DelItems();
+                        miniGame_obj.SetActive(true);
                         this.gameObject.SetActive(false);
                     }
                     else
