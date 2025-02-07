@@ -12,6 +12,7 @@ public class Inventory : MonoBehaviour
     /// 인벤토리번호
     /// </summary>
     public int a = 0;
+    int sc = 0;
 
     public GameObject itemWindow_obj, itemWindowEnd_obj, itemWindowStart_obj;
     Vector3 position;
@@ -55,7 +56,6 @@ public class Inventory : MonoBehaviour
 
         PlayerPrefs.DeleteAll();
         position = itemWindow_obj.transform.position;
-        //StartCoroutine("cursorState");
     }
 
     public void WaitSec()
@@ -65,42 +65,30 @@ public class Inventory : MonoBehaviour
      //   PlayerPrefs.SetInt("helpdogam",1);
     }
 
-    /// <summary>
-    /// 커서상태
-    /// </summary>
-    /// <returns></returns>
-    IEnumerator cursorState() 
+
+    void setCursor()
     {
-        while (true)
-        {
-            if (PlayerPrefs.GetInt("cursorActive", 0) == 1)
-            {
-                Cursor.visible = true;
-            }
-            else if (PlayerPrefs.GetInt("cursorActive", 0) == 0)
-            {
-                Cursor.visible = false;
-            }
-            yield return new WaitForSeconds(0.1f);
-            int i = PlayerPrefs.GetInt("cursorActive", 0);
-            //Debug.Log("tt " + i);
-        }
-
+        Cursor.lockState = CursorLockMode.Confined;
     }
-
 
     // Update is called once per frame
     void Update()
     {
 
-
         if (PlayerPrefs.GetInt("cursorActive", 0) == 1)
         {
+            if (sc == 0)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Invoke("setCursor",0.1f);
+                sc = 1;
+            }
             Cursor.visible = true;
         }
         else if (PlayerPrefs.GetInt("cursorActive", 0) == 0)
         {
             Cursor.visible = false;
+            sc = 0;
         }
 
 

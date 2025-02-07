@@ -7,7 +7,7 @@ public class Dialogue : MonoBehaviour
 {
     public Text txt;
     string txt_str;
-    int i = 0;
+    int iline = 0; //줄 수
     bool isTalk = false; //대화 중첩 방지
     public int cnt = 0;
 
@@ -61,19 +61,34 @@ public class Dialogue : MonoBehaviour
 
     void TextClear() //대화가 이어져서 출력되지 않도록 클리어 해주는 역할
     {
-        txt_str = "" + data_talk[i]["No1"];
+        txt_str = "" + data_talk[iline]["No1"];
         txt.text = txt_str;
         text = targetText.text.ToString();
         targetText.text = " ";
-        if (i > 6)
+
+
+        if (iline < 10)  //전체(8줄) - 1 = 7
         {
-            i = 0;
+            iline++;
         }
         else
         {
-            i++;
+            iline = 0;
         }
+    
+
+
+    /*
+    if (iline > 6)
+    {
+        iline = 0;
     }
+    else
+    {
+        iline++;
+    }
+    */
+}
 
 
     public void showTextDialogue() //대화창 출력
