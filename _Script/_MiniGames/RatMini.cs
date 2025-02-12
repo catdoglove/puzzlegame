@@ -17,7 +17,7 @@ public class RatMini : MonoBehaviour
     public GameObject f_obj, f1_obj, f2_obj, b_obj, b1_obj, b2_obj;
 
 
-    public float wait_f = 0.3f;
+    public float wait_f = 0.1f;
 
     public float time = 0;
 
@@ -99,7 +99,6 @@ public class RatMini : MonoBehaviour
                 {
                     if (a_i < 1)
                     {
-                        yield return new WaitForSeconds(0.2f);
                         ///   SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
                         SGM.GetComponent<SoundEvt>().soundCotton();
                         WPress();
@@ -111,7 +110,6 @@ public class RatMini : MonoBehaviour
 
                     if (a_i >= 2 && a_i < 3)
                     {
-                        yield return new WaitForSeconds(0.2f);
                         ///   SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
                         SGM.GetComponent<SoundEvt>().soundCotton();
                         WPress();
@@ -155,7 +153,6 @@ public class RatMini : MonoBehaviour
                     if (a_i >= 1 && a_i < 2)
                     {
                         SGM.GetComponent<SoundEvt>().soundCotton();
-                        yield return new WaitForSeconds(0.2f);
                         //   SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
                         // SGM.GetComponent<SoundEvt>().soundstick();
                         SPress();
@@ -185,7 +182,7 @@ public class RatMini : MonoBehaviour
 
         while (f_obj.transform.position.y > nife_obj.transform.position.y)
         {
-            y_f= y_f + 0.05f;
+            y_f= y_f + 0.1f;
             position.y= y_f;
             nife_obj.transform.position = position;
             
@@ -203,7 +200,7 @@ public class RatMini : MonoBehaviour
         while (b_obj.transform.position.y < nife_obj.transform.position.y)
         {
 
-            y_f = y_f - 0.05f;
+            y_f = y_f - 0.1f;
             position.y = y_f;
 
             nife_obj.transform.position = position;
