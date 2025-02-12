@@ -53,8 +53,17 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        int lng = 0;
+        if (PlayerPrefs.GetString("changeLanguage", "KOR").Equals("ENG"))
+        {
+            lng = 1;
+        }
         PlayerPrefs.DeleteAll();
+
+        if (lng==1)
+        {
+            PlayerPrefs.SetString("changeLanguage", "ENG");
+        }
         position = itemWindow_obj.transform.position;
     }
 
