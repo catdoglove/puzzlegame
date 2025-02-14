@@ -29,6 +29,8 @@ public class RatMini : MonoBehaviour
     public Vector3 position;
 
     public int k = 0;
+    public int t = 0;
+    public int ck = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -63,11 +65,14 @@ public class RatMini : MonoBehaviour
         SGM.GetComponent<SoundEvt>().soundItemSuccess();
 
         ball_obj.SetActive(false);
-        knife_obj.SetActive(true);
 
         GMM.GetComponent<CharMove>().canMove = true;
 
         PlayerPrefs.SetInt("canSeeInfo_detail" + 13, 99);
+
+
+        PlayerPrefs.SetInt("helprat", 1);
+
         Invoke("Wait", 0.8f);
     }
 
@@ -75,6 +80,7 @@ public class RatMini : MonoBehaviour
 
     void Wait()
     {
+        knife_obj.SetActive(true);
         ratWin_obj.SetActive(false);
         GMM.GetComponent<CharMove>().canMove = true;
         
@@ -94,8 +100,24 @@ public class RatMini : MonoBehaviour
             }
             else
             {
+                ck = 0;
+                if (t==1)
+                {
+                if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+                    {
+                        ck = 1;
+                    }
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+                    {
+                        ck = 1;
+                    }
+                }
 
-                if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+
+                if (ck==1)
                 {
                     if (a_i < 1)
                     {
@@ -103,8 +125,16 @@ public class RatMini : MonoBehaviour
                         SGM.GetComponent<SoundEvt>().soundCotton();
                         WPress();
                         a_i++;
-                        StopCoroutine("FadeIn");
-                        StartCoroutine("FadeIn");
+                        if (t == 1)
+                        {
+                            StopCoroutine("FadeOut");
+                            StartCoroutine("FadeOut");
+                        }
+                        else
+                        {
+                            StopCoroutine("FadeIn");
+                            StartCoroutine("FadeIn");
+                        }
                         yield return new WaitForSeconds(wait_f);
                     }
 
@@ -114,41 +144,79 @@ public class RatMini : MonoBehaviour
                         SGM.GetComponent<SoundEvt>().soundCotton();
                         WPress();
                         a_i++;
-                        StopCoroutine("FadeIn");
-                        StartCoroutine("FadeIn");
-                        yield return new WaitForSeconds(wait_f);
-
-                        k++;
-                        if (k>=3)
+                        if (t == 1)
                         {
-                            FinWeb();
+                            StopCoroutine("FadeOut");
+                            StartCoroutine("FadeOut");
                         }
                         else
                         {
+                            StopCoroutine("FadeIn");
+                            StartCoroutine("FadeIn");
+                        }
+                        yield return new WaitForSeconds(wait_f);
 
-                            ratweb_obj.GetComponent<SpriteRenderer>().sprite = web_spr[0];
-                            web_spr[0] = web_spr[1];
-                            web_spr[1] = web_spr[2];
+                        if (t == 1)
+                        {
 
-                            yield return new WaitForSeconds(0.2f);
-                            nife_obj.transform.position = nife1_obj.transform.position;
-                            nife1_obj.transform.position = nife2_obj.transform.position;
 
-                            f_obj.transform.position = f1_obj.transform.position;
-                            f1_obj.transform.position = f2_obj.transform.position;
+                            k++;
+                            if (k >= 3)
+                            {
+                                FinWeb();
+                                ratweb_obj.GetComponent<SpriteRenderer>().sprite = web_spr[0];
+                                web_spr[0] = web_spr[1];
+                                web_spr[1] = web_spr[2];
+                            }
+                            else
+                            {
 
-                            b_obj.transform.position = b1_obj.transform.position;
-                            b1_obj.transform.position = b2_obj.transform.position;
+                                ratweb_obj.GetComponent<SpriteRenderer>().sprite = web_spr[0];
+                                web_spr[0] = web_spr[1];
+                                web_spr[1] = web_spr[2];
 
-                            yield return new WaitForSeconds(wait_f);
+                                yield return new WaitForSeconds(0.1f);
+                                nife_obj.transform.position = nife1_obj.transform.position;
+                                nife1_obj.transform.position = nife2_obj.transform.position;
+
+                                f_obj.transform.position = f1_obj.transform.position;
+                                f1_obj.transform.position = f2_obj.transform.position;
+
+                                b_obj.transform.position = b1_obj.transform.position;
+                                b1_obj.transform.position = b2_obj.transform.position;
+
+                                yield return new WaitForSeconds(wait_f);
+                                a_i = 0;
+                            }
+                            t = 0;
+                        }
+                        else
+                        {
+                            t = 1;
                             a_i = 0;
                         }
                     }
 
                 }
-                
 
-                if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+
+                ck = 0;
+                if (t == 1)
+                {
+                    if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+                    {
+                        ck = 1;
+                    }
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+                    {
+                        ck = 1;
+                    }
+                }
+
+                if (ck==1)
                 {
                     if (a_i >= 1 && a_i < 2)
                     {
@@ -157,8 +225,16 @@ public class RatMini : MonoBehaviour
                         // SGM.GetComponent<SoundEvt>().soundstick();
                         SPress();
                         a_i++;
-                        StopCoroutine("FadeOut");
-                        StartCoroutine("FadeOut");
+                        if (t == 1)
+                        {
+                            StopCoroutine("FadeIn");
+                            StartCoroutine("FadeIn");
+                        }
+                        else
+                        {
+                            StopCoroutine("FadeOut");
+                            StartCoroutine("FadeOut");
+                        }
 
                         yield return new WaitForSeconds(wait_f);
                     }

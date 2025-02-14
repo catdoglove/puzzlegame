@@ -2895,6 +2895,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 302c455e1d3c53e42b71e422a5b6b3df, type: 3}
   - {fileID: 21300000, guid: 5d4327cf496cb5b45bcb375843a8c69c, type: 3}
   - {fileID: 21300000, guid: d10d581fdc4d33648a8aac943dab7e2a, type: 3}
+  - {fileID: 21300000, guid: 826b84c8f7bc3e044a3fabc0ef65d8f0, type: 3}
   - {fileID: 21300000, guid: d10d581fdc4d33648a8aac943dab7e2a, type: 3}
   materialSpr:
   - {fileID: 21300000, guid: 8159c1316e3e3a447998d3051a77fe57, type: 3}

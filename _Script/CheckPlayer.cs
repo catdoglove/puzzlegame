@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CheckPlayer : MonoBehaviour
 {
@@ -2091,6 +2092,11 @@ public class CheckPlayer : MonoBehaviour
 
 
                         SGM.GetComponent<SoundEvt>().soundDamage();
+
+                        if (events_i==96)
+                        {
+                            PlayerPrefs.SetInt("killrat", 1);
+                        }
                     }
                     else
                     {
@@ -2122,6 +2128,39 @@ public class CheckPlayer : MonoBehaviour
                         PlayerPrefs.SetInt("escdont", 1);
                         miniGame_obj.SetActive(true);
                         this.gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        SGM.GetComponent<SoundEvt>().soundItemFail();
+                    }
+                    break;
+                case 44://퍼즐
+                    if (PlayerPrefs.GetInt("selecteditemnum", 0) >= 50 && PlayerPrefs.GetInt("selecteditemnum", 0) <= 55)
+                    {
+                        SGM.GetComponent<SoundEvt>().soundItemUse();
+                        //StopAndTalk();
+                        a++;
+                        PlayerPrefs.SetInt("cursorActive", 1);
+                        //puzzle_obj.GetComponent<RockMini>().ShowPuzzle();
+                        
+
+                        GMI.GetComponent<Inventory>().Item_spr[PlayerPrefs.GetInt("selecteditemnum", 0)] = GMI.GetComponent<Inventory>().Item_spr[55];
+
+
+                        for (int i = 6; i >= 0; i--)
+                        {
+                            if (GMI.GetComponent<Inventory>().items_i[i] >= 50 && GMI.GetComponent<Inventory>().items_i[i] <= 55)
+                            {
+                                GMI.GetComponent<Inventory>().invenItem_obj[GMI.GetComponent<Inventory>().selectedNow_i].GetComponent<Image>().sprite = GMI.GetComponent<Inventory>().Item_spr[55];
+
+
+
+                            }
+                        }
+
+                        GM.GetComponent<CharMove>().canMove = false;
+                        PlayerPrefs.SetInt("escdont", 1);
+                        miniGame_obj.SetActive(true);
                     }
                     else
                     {

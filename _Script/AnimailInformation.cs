@@ -7,7 +7,7 @@ public class AnimailInformation : MonoBehaviour
 {
     List<Dictionary<string, object>> data_animal; //csv파일
     List<Dictionary<string, object>> data_animal_name; //csv파일
-    int allArr = 13; 
+    int allArr = 14; 
     string text_str;
 
     string textname_str;

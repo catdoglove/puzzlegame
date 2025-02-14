@@ -91,6 +91,26 @@ public class MoveMap2 : MonoBehaviour
                 }
                 else
                 {
+
+                    if (event_i==96)
+                    {
+                        if (PlayerPrefs.GetInt("helprat", 0) == 1)
+                        {
+                            if (PlayerPrefs.GetInt("killrat", 0) == 1)
+                            {
+                                endEvent_obj.SetActive(true);
+                            }
+                            else
+                            {
+                                endEvent2_obj.SetActive(true);
+                                door1_obj.SetActive(false);
+                            }
+                            endEvent3_obj.SetActive(true);
+                            hideEvent1_obj.SetActive(false);
+                        }
+                    }
+
+
                     if (secret_b)
                     {
 
