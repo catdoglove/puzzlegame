@@ -930,6 +930,11 @@ public class CheckPlayer : MonoBehaviour
                         SetDogam0();
                     }
 
+                    if (events_i==119)
+                    {
+                        npc_obj[0].GetComponent<SpriteRenderer>().sprite= items_spr[0];
+                    }
+
                     break;
                 case 2://말풍선 띄우고 아이템 요구
                     TalkSound();
@@ -2138,12 +2143,7 @@ public class CheckPlayer : MonoBehaviour
                     if (PlayerPrefs.GetInt("selecteditemnum", 0) >= 50 && PlayerPrefs.GetInt("selecteditemnum", 0) <= 55)
                     {
                         SGM.GetComponent<SoundEvt>().soundItemUse();
-                        //StopAndTalk();
                         a++;
-                        PlayerPrefs.SetInt("cursorActive", 1);
-                        //puzzle_obj.GetComponent<RockMini>().ShowPuzzle();
-                        
-
                         GMI.GetComponent<Inventory>().Item_spr[PlayerPrefs.GetInt("selecteditemnum", 0)] = GMI.GetComponent<Inventory>().Item_spr[55];
 
 

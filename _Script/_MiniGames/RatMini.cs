@@ -68,7 +68,7 @@ public class RatMini : MonoBehaviour
 
         GMM.GetComponent<CharMove>().canMove = true;
 
-        PlayerPrefs.SetInt("canSeeInfo_detail" + 13, 99);
+        //PlayerPrefs.SetInt("canSeeInfo_detail" + 13, 99);
 
 
         PlayerPrefs.SetInt("helprat", 1);
@@ -175,7 +175,7 @@ public class RatMini : MonoBehaviour
                                 web_spr[0] = web_spr[1];
                                 web_spr[1] = web_spr[2];
 
-                                yield return new WaitForSeconds(0.1f);
+                                //yield return new WaitForSeconds(0.1f);
                                 nife_obj.transform.position = nife1_obj.transform.position;
                                 nife1_obj.transform.position = nife2_obj.transform.position;
 
