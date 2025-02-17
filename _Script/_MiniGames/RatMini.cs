@@ -17,7 +17,7 @@ public class RatMini : MonoBehaviour
     public GameObject f_obj, f1_obj, f2_obj, b_obj, b1_obj, b2_obj;
 
 
-    public float wait_f = 0.1f;
+    public float wait_f = 0.08f;
 
     public float time = 0;
 
@@ -185,7 +185,7 @@ public class RatMini : MonoBehaviour
                                 b_obj.transform.position = b1_obj.transform.position;
                                 b1_obj.transform.position = b2_obj.transform.position;
 
-                                yield return new WaitForSeconds(wait_f);
+                                //yield return new WaitForSeconds(wait_f);
                                 a_i = 0;
                             }
                             t = 0;

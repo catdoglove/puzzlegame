@@ -998,6 +998,10 @@ public class CheckPlayer : MonoBehaviour
                         move_obj.SetActive(true);
                     }
 
+                    if (events_i == 119)
+                    {
+                        npc_obj[0].GetComponent<SpriteRenderer>().sprite = items_spr[1];
+                    }
 
                     break;
                 case 6://아래 이동

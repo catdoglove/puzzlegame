@@ -19,6 +19,11 @@ public class DishMini : MonoBehaviour
 
     public GameObject spider_obj, spider2_obj, ball_obj;
 
+
+    public GameObject table_obj;
+
+    public Sprite table_spr;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -133,6 +138,11 @@ public class DishMini : MonoBehaviour
 
     void Fin()
     {
+
+        if (PlayerPrefs.GetInt("helprat", 0) == 1)
+        {
+            table_obj.GetComponent<SpriteRenderer>().sprite = table_spr;
+        }
 
         SGM.GetComponent<SoundEvt>().soundItemSuccess();
         PlayerPrefs.SetInt("findish", 1);
