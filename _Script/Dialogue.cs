@@ -22,12 +22,12 @@ public class Dialogue : MonoBehaviour
 
     public Sprite [] subCharSpr;
     public GameObject subDlg,charDlg, subCursor;
-    int placeNum = 3; //숫자에 따라 장소 인지 임시?
+    int placeNum = 1; //숫자에 따라 장소 인지 임시?
 
     // Start is called before the first frame update
     void Start()
     {
-
+       // PlayerPrefs.SetInt("caveFeatherWalk", 0);
         data_talk = CSVReader.Read("CSV/talk_text");
         PlayerPrefs.SetInt("charDlgIsWork", 99);
         Invoke("JustOne",1f); //임시위치 :  이벶트 진입했을 때 스페이스바 없이 대사가 자동으로 뜨게해야함
