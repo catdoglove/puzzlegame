@@ -25,10 +25,16 @@ public class AnimailInformation : MonoBehaviour
     public int lg_i;
 
 
+    public Sprite change_spr;
+
 
     private void OnEnable()
     {
 
+        if (PlayerPrefs.GetInt("meetrat", 0) == 1)
+        {
+            animalSpr[14] = change_spr;
+        }
         pageNum = 0;
         insideInformation();
         //FirstSet();
@@ -49,7 +55,7 @@ public class AnimailInformation : MonoBehaviour
             data_animal = CSVReader.Read("CSV/animals_information_eng");
             title_txt.text = "Unknown flavor";
             title2_txt.text = "Known flavor";
-            lg_i = 2;
+            lg_i = 1;
         }
 
         data_animal_name = CSVReader.Read("CSV/animals_name");

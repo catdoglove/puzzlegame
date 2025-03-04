@@ -16,7 +16,7 @@ public class spiderCaveEvent : MonoBehaviour
     /// </summary>
     void Start()
     {
-        WebTrapfirst.SetActive(false);
+        //WebTrapfirst.SetActive(false);
         PlayerPrefs.SetInt("spiderAppearDown", 0);
         PlayerPrefs.SetInt("spiderChaseRun", 0);
         PlayerPrefs.SetInt("spiderWebWalk", 0);

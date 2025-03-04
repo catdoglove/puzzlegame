@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class spiderEventStart : MonoBehaviour
 {
+    int a = 0;
+    public GameObject d_obj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +17,12 @@ public class spiderEventStart : MonoBehaviour
     {
         PlayerPrefs.SetInt("spiderEventStart", 1);
 
+        if (a==0)
+        {
+
+            d_obj.GetComponent<Animator>().Play("ani_npc_spider_change");
+            a = 1;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

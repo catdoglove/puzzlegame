@@ -80,7 +80,6 @@ public class ShaderEffect : MonoBehaviour
     /// </summary>
     public void changeShader4()
     {
-        Mcamera.SetActive(false);
 
         photo.SwitchCameraToCamera2 = 1f;
         photo.BlendFX = 1f;
@@ -90,6 +89,7 @@ public class ShaderEffect : MonoBehaviour
         photo.SCShader = Shader.Find("CameraFilterPack/Blend2Camera_Multiply");
         photo.filterchoice = CameraFilterPack_Blend2Camera_PhotoshopFilters.filters.Multiply;
 
+        Mcamera.SetActive(false);
         Mcamera.SetActive(true);
     }
 
@@ -183,8 +183,6 @@ public class ShaderEffect : MonoBehaviour
     /// </summary>
     public void changeShader10()
     {
-        Mcamera.SetActive(false);
-
 
         photo.SwitchCameraToCamera2 = 1f;
         photo.BlendFX = 1f;
@@ -193,13 +191,21 @@ public class ShaderEffect : MonoBehaviour
         photo.SCShader = Shader.Find("CameraFilterPack/Blend2Camera_Multiply");
         photo.filterchoice = CameraFilterPack_Blend2Camera_PhotoshopFilters.filters.Multiply;
 
+        Mcamera.SetActive(false);
         Mcamera.SetActive(true);
+        //Invoke("w10", 0.26f);
+
     }
 
-    /// <summary>
-    /// 동굴안D5
-    /// </summary>
-    public void changeShader11()
+
+    void w10()
+    {
+    }
+
+        /// <summary>
+        /// 동굴안D5
+        /// </summary>
+        public void changeShader11()
     {
         Mcamera.SetActive(false);
 
@@ -255,8 +261,6 @@ public class ShaderEffect : MonoBehaviour
     /// </summary>
     public void changeShader14()
     {
-        Mcamera.SetActive(false);
-
 
         photo.SwitchCameraToCamera2 = 1f;
         photo.BlendFX = 1f;
@@ -265,7 +269,15 @@ public class ShaderEffect : MonoBehaviour
         photo.SCShader = Shader.Find("CameraFilterPack/Blend2Camera_Multiply");
         photo.filterchoice = CameraFilterPack_Blend2Camera_PhotoshopFilters.filters.Multiply;
 
+        Mcamera.SetActive(false);
         Mcamera.SetActive(true);
+
+       //Invoke("w14", 0.26f);
+    }
+
+    void w14()
+    {
+
     }
 
     public void OffShader()

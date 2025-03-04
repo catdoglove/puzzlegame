@@ -130,6 +130,35 @@ public class CheckPlayer : MonoBehaviour
 
         position_fox = new Vector3(transform.position.x - 2.5f, transform.position.y, transform.position.z);
         position_nomal = new Vector3(transform.position.x - checkX_f, transform.position.y - checkY_f, transform.position.z);
+
+        if (events_i == 1193 && PlayerPrefs.GetInt("killrat", 0) == 1)
+        {
+            SetDogam0();
+            SetDogam3();
+            SetDogam4h();
+        }
+
+        if (events_i == 1192&& PlayerPrefs.GetInt("meetrat", 0) == 0)
+        {
+
+            if (PlayerPrefs.GetInt("helprat", 0) == 1)
+            {
+                if (PlayerPrefs.GetInt("killrat", 0) == 1)
+                {
+                    //SetDogam0();
+                    //SetDogam3();
+                    //SetDogam4h();
+                }
+                else
+                {
+                    SetDogam0();
+                    SetDogam3();
+                    SetDogam4();
+                    PlayerPrefs.SetInt("meetrat", 1);
+                }
+            }
+        }
+
     }
 
     void Start()
@@ -924,6 +953,14 @@ public class CheckPlayer : MonoBehaviour
                     {
                         SetDogam2();
                     }
+
+                    if (animalNum_i == 14)
+                    {
+                        SetDogam0();
+                        SetDogam1();
+                        SetDogam2();
+                    }
+
                     if (animalNum_i == 13)
                     {
 
@@ -2090,6 +2127,11 @@ public class CheckPlayer : MonoBehaviour
                 case 42://돌부수기
                     if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                     {
+                        if (events_i == 96)
+                        {
+                            PlayerPrefs.SetInt("killrat", 1);
+
+                        }
 
                         k = a;
 
@@ -2102,10 +2144,6 @@ public class CheckPlayer : MonoBehaviour
 
                         SGM.GetComponent<SoundEvt>().soundDamage();
 
-                        if (events_i==96)
-                        {
-                            PlayerPrefs.SetInt("killrat", 1);
-                        }
                     }
                     else
                     {

@@ -53,6 +53,9 @@ public class MoveMap2 : MonoBehaviour
     public bool caveMove_b;
 
 
+    Color color;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -191,6 +194,28 @@ public class MoveMap2 : MonoBehaviour
                             }
                             else
                             {
+
+                                if (hidden4_b)
+                                {
+                                    color = new Color(1f, 1f, 1f, 0f);
+                                    player_obj.GetComponent<SpriteRenderer>().color = color;
+
+                                    GMC.GetComponent<ShaderEffect>().changeShader10();
+
+                                    Invoke("waitC", 0.01f);
+                                }
+
+                                if (hidden7_b)
+                                {
+                                    color = new Color(1f, 1f, 1f, 0f);
+                                    player_obj.GetComponent<SpriteRenderer>().color = color;
+
+                                    GMC.GetComponent<ShaderEffect>().changeShader14();
+
+                                    Invoke("waitC", 0.01f);
+
+                                }
+
                                 wait = 1;
                                 PlayerPrefs.SetInt("wait", 1);
                                 hit = null;
@@ -422,11 +447,6 @@ public class MoveMap2 : MonoBehaviour
         }
 
 
-        if (hidden4_b)
-        {
-            GMC.GetComponent<ShaderEffect>().changeShader10();
-
-        }
         if (hidden5_b)
         {
             GMC.GetComponent<ShaderEffect>().changeShader11();
@@ -435,11 +455,6 @@ public class MoveMap2 : MonoBehaviour
         if (hidden6_b)
         {
             GMC.GetComponent<ShaderEffect>().changeShader12();
-
-        }
-        if (hidden7_b)
-        {
-            GMC.GetComponent<ShaderEffect>().changeShader14();
 
         }
 
@@ -488,6 +503,12 @@ public class MoveMap2 : MonoBehaviour
             endEvent3_obj.SetActive(true);
             PlayerPrefs.SetInt("bdone", 2);
         }
+    }
+
+    void waitC()
+    {
+        color = new Color(1f, 1f, 1f, 1f);
+        player_obj.GetComponent<SpriteRenderer>().color = color;
     }
 
     void sec()
