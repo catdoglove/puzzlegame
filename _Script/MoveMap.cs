@@ -99,7 +99,7 @@ public class MoveMap : MonoBehaviour
                             PlayerPrefs.SetInt("firsthideevent", 1);
                         }
 
-                        yield return new WaitForSeconds(0.3f);
+                        yield return new WaitForSeconds(0.2f);
                     }
 
                     if (sheep_b)
