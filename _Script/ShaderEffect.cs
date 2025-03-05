@@ -193,14 +193,10 @@ public class ShaderEffect : MonoBehaviour
 
         Mcamera.SetActive(false);
         Mcamera.SetActive(true);
-        //Invoke("w10", 0.26f);
 
     }
 
-
-    void w10()
-    {
-    }
+    
 
         /// <summary>
         /// 동굴안D5
@@ -271,14 +267,9 @@ public class ShaderEffect : MonoBehaviour
 
         Mcamera.SetActive(false);
         Mcamera.SetActive(true);
-
-       //Invoke("w14", 0.26f);
+        
     }
-
-    void w14()
-    {
-
-    }
+    
 
     public void OffShader()
     {

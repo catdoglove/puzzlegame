@@ -133,9 +133,13 @@ public class CheckPlayer : MonoBehaviour
 
         if (events_i == 1193 && PlayerPrefs.GetInt("killrat", 0) == 1)
         {
-            SetDogam0();
-            SetDogam3();
-            SetDogam4h();
+
+            if (PlayerPrefs.GetInt("helprat", 0) == 1)
+            {
+                SetDogam0();
+                SetDogam3();
+                SetDogam4h();
+            }
         }
 
         if (events_i == 1192&& PlayerPrefs.GetInt("meetrat", 0) == 0)

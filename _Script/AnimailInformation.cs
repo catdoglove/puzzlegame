@@ -238,6 +238,21 @@ public class AnimailInformation : MonoBehaviour
 
             textname_str = "" + data_animal_name[lg_i]["No" + (pageNum + 1)];
 
+
+            if (PlayerPrefs.GetInt("meetrat", 0) == 1&& pageNum==14)
+            {
+
+
+                if (PlayerPrefs.GetString("changeLanguage", "KOR") == "KOR")
+                {
+                    textname_str = "마이츠&마이치";
+                }
+                else
+                {
+                    textname_str = "Maitsu&Maichi";
+                }
+            }
+
             name_txt.text = "" + textname_str;
 
             if (PlayerPrefs.GetInt("canSeeMaterial" + pageNum, 0) == 99) //조건에 따라 보여지는 재료

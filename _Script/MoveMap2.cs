@@ -194,27 +194,7 @@ public class MoveMap2 : MonoBehaviour
                             }
                             else
                             {
-
-                                if (hidden4_b)
-                                {
-                                    color = new Color(1f, 1f, 1f, 0f);
-                                    player_obj.GetComponent<SpriteRenderer>().color = color;
-
-                                    GMC.GetComponent<ShaderEffect>().changeShader10();
-
-                                    Invoke("waitC", 0.01f);
-                                }
-
-                                if (hidden7_b)
-                                {
-                                    color = new Color(1f, 1f, 1f, 0f);
-                                    player_obj.GetComponent<SpriteRenderer>().color = color;
-
-                                    GMC.GetComponent<ShaderEffect>().changeShader14();
-
-                                    Invoke("waitC", 0.01f);
-
-                                }
+                                SColl();
 
                                 wait = 1;
                                 PlayerPrefs.SetInt("wait", 1);
@@ -242,6 +222,86 @@ public class MoveMap2 : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
             }
         
+    }
+
+    void SColl()
+    {
+        if (caveRoad_b)
+        {
+            GMC.GetComponent<ShaderEffect>().changeShader4();
+        }
+        if (caveEnter_b)
+        {
+            GMC.GetComponent<ShaderEffect>().changeShader5();
+        }
+
+        if (waterOut_b)
+        {
+            GMC.GetComponent<ShaderEffect>().changeShader1();
+        }
+
+        if (hidden2_b)
+        {
+            ColorC();
+            GMC.GetComponent<ShaderEffect>().changeShader6();
+            BGM4.GetComponent<AudioSource>().volume = 0f;
+            Invoke("waitC", 0.01f);
+        }
+        if (hidden3_b)
+        {
+            ColorC();
+            GMC.GetComponent<ShaderEffect>().changeShader9();
+            Invoke("waitC", 0.01f);
+
+        }
+
+        if (hidden5_b)
+        {
+            ColorC();
+            GMC.GetComponent<ShaderEffect>().changeShader11();
+
+            Invoke("waitC", 0.01f);
+        }
+        if (hidden6_b)
+        {
+            ColorC();
+
+            GMC.GetComponent<ShaderEffect>().changeShader12();
+
+            Invoke("waitC", 0.01f);
+
+        }
+        if (hidden4_b)
+        {
+            ColorC();
+
+            GMC.GetComponent<ShaderEffect>().changeShader10();
+
+            Invoke("waitC", 0.02f);
+        }
+
+        if (hidden7_b)
+        {
+            ColorC();
+
+            GMC.GetComponent<ShaderEffect>().changeShader14();
+
+            Invoke("waitC", 0.01f);
+
+        }
+
+        if (nomalCave_b)
+        {
+            GMC.GetComponent<ShaderEffect>().changeShader8();
+
+        }
+
+    }
+
+    void ColorC()
+    {
+        color = new Color(1f, 1f, 1f, 0f);
+        player_obj.GetComponent<SpriteRenderer>().color = color;
     }
 
     /// <summary>
@@ -426,56 +486,16 @@ public class MoveMap2 : MonoBehaviour
             GMC.GetComponent<ShaderEffect>().changeShader3();
             BGM4.GetComponent<AudioSource>().volume = 0.5f*vols_f;
         }
-        if (caveRoad_b)
-        {
-            GMC.GetComponent<ShaderEffect>().changeShader4();
-        }
-        if (caveEnter_b)
-        {
-            GMC.GetComponent<ShaderEffect>().changeShader5();
-        }
-        if (hidden2_b)
-        {
-            GMC.GetComponent<ShaderEffect>().changeShader6();
-            BGM4.GetComponent<AudioSource>().volume = 0f;
-        }
-
-        if (hidden3_b)
-        {
-            GMC.GetComponent<ShaderEffect>().changeShader9();
-
-        }
-
-
-        if (hidden5_b)
-        {
-            GMC.GetComponent<ShaderEffect>().changeShader11();
-
-        }
-        if (hidden6_b)
-        {
-            GMC.GetComponent<ShaderEffect>().changeShader12();
-
-        }
 
 
 
 
-        if (nomalCave_b)
-        {
-            GMC.GetComponent<ShaderEffect>().changeShader8();
-
-        }
 
         if (setEff_b)
         {
             GMC.GetComponent<ShaderEffect>().OffShader();
         }
 
-        if (waterOut_b)
-        {
-            GMC.GetComponent<ShaderEffect>().changeShader1();
-        }
         if (flip_b)
         {
 
