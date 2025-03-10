@@ -73,14 +73,19 @@ public class RatMini : MonoBehaviour
 
         PlayerPrefs.SetInt("helprat", 1);
 
-        Invoke("Wait", 0.8f);
+        Invoke("Wait2", 0.5f);
+        Invoke("Wait", 0.7f);
     }
 
 
 
-    void Wait()
+    void Wait2()
     {
         knife_obj.SetActive(true);
+    }
+
+    void Wait()
+    {
         ratWin_obj.SetActive(false);
         GMM.GetComponent<CharMove>().canMove = true;
         
@@ -122,7 +127,7 @@ public class RatMini : MonoBehaviour
                     if (a_i < 1)
                     {
                         ///   SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
-                        SGM.GetComponent<SoundEvt>().soundCotton();
+                        SGM.GetComponent<SoundEvt>().soundMoving();
                         WPress();
                         a_i++;
                         if (t == 1)
@@ -141,7 +146,7 @@ public class RatMini : MonoBehaviour
                     if (a_i >= 2 && a_i < 3)
                     {
                         ///   SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
-                        SGM.GetComponent<SoundEvt>().soundCotton();
+                        SGM.GetComponent<SoundEvt>().soundMoving();
                         WPress();
                         a_i++;
                         if (t == 1)
@@ -220,7 +225,7 @@ public class RatMini : MonoBehaviour
                 {
                     if (a_i >= 1 && a_i < 2)
                     {
-                        SGM.GetComponent<SoundEvt>().soundCotton();
+                        SGM.GetComponent<SoundEvt>().soundMoving();
                         //   SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
                         // SGM.GetComponent<SoundEvt>().soundstick();
                         SPress();
