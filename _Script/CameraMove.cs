@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    public GameObject c_obj, s_obj, b_obj, e_obj;
+    public GameObject c_obj, s_obj, b_obj, e_obj, dogam_obj;
     public Transform t_obj;
     public Sprite s_spr;
 
@@ -109,6 +109,7 @@ public class CameraMove : MonoBehaviour
 
     IEnumerator imgFadeOut()
     {
+        dogam_obj.SetActive(true);
         yield return new WaitForSeconds(0.6f);
         moveY = CGM.transform.position.y;
         moveX = CGM.transform.position.x;

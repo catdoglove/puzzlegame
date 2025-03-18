@@ -131,6 +131,21 @@ public class CheckPlayer : MonoBehaviour
         position_fox = new Vector3(transform.position.x - 2.5f, transform.position.y, transform.position.z);
         position_nomal = new Vector3(transform.position.x - checkX_f, transform.position.y - checkY_f, transform.position.z);
 
+
+
+        if (events_i == 1293)
+        {
+            SetDogam0();
+            SetDogam4();
+        }
+
+        if (events_i == 1294)
+        {
+            SetDogam3();
+        }
+
+
+
         if (events_i == 1193 && PlayerPrefs.GetInt("killrat", 0) == 1)
         {
 
@@ -1251,7 +1266,7 @@ public class CheckPlayer : MonoBehaviour
 
                         StartCoroutine("EventUp");
                     }
-
+                    /*
                     if (animalNum_i == 3)
                     {
                         if (PlayerPrefs.GetInt("canSeeInfo_detailo" + animalNum_i, 0) == 99)
@@ -1259,6 +1274,7 @@ public class CheckPlayer : MonoBehaviour
                             SetDogam4();
                         }
                     }
+                    */
                     break;
                 case 15://아이템 얻기
                     if (donfalse_b)
@@ -1501,6 +1517,7 @@ public class CheckPlayer : MonoBehaviour
                         if (animalNum_i == 3)
                         {
                             SetDogam2();
+
                         }
                     }
 
@@ -1541,7 +1558,15 @@ public class CheckPlayer : MonoBehaviour
 
                     break;
                 case 27://솜사탕 미니 퍼즐
-                    miniGame_obj.SetActive(true);
+
+                    if (events_i==299)
+                    {
+                        move_obj.SetActive(true);
+                    }
+                    else
+                    {
+                        miniGame_obj.SetActive(true);
+                    }
                     StopAndTalk();
                     break;
                 default:
@@ -2676,7 +2701,7 @@ public class CheckPlayer : MonoBehaviour
 
         if (animalNum_i == 3)
         {
-            SetDogam3();
+            miniGame_obj.SetActive(true);
         }
         SetQuest();
     }
@@ -2782,8 +2807,8 @@ public class CheckPlayer : MonoBehaviour
     /// </summary>
     void SetQuest()
     {
-        StopCoroutine("FadeIn");
-        GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
+        //StopCoroutine("FadeIn");
+        //GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
         q4_obj.transform.position = new Vector2(o4_obj.transform.position.x, q4_obj.transform.position.y);
         q1_obj.SetActive(true);
         q2_obj.SetActive(true);
