@@ -109,7 +109,6 @@ public class CameraMove : MonoBehaviour
 
     IEnumerator imgFadeOut()
     {
-        dogam_obj.SetActive(true);
         yield return new WaitForSeconds(0.6f);
         moveY = CGM.transform.position.y;
         moveX = CGM.transform.position.x;
@@ -135,5 +134,17 @@ public class CameraMove : MonoBehaviour
         b_obj.SetActive(false);
 
         CGM.GetComponent<CharMove>().Speed = 2.5f;
+
+
+        Invoke("SetDogam", 0.2f);
     }
+
+
+    void SetDogam()
+    {
+
+        dogam_obj.SetActive(true);
+    }
+
+
 }

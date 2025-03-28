@@ -142,6 +142,7 @@ public class CheckPlayer : MonoBehaviour
         if (events_i == 1294)
         {
             SetDogam3();
+
         }
 
 
@@ -731,6 +732,14 @@ public class CheckPlayer : MonoBehaviour
         {
             StopCoroutine("FadeIn");
             StartCoroutine("FadeIn");
+
+
+            if (events_i == 1294)
+            {
+                StopCoroutine("FadeIn2");
+                StartCoroutine("FadeIn2");
+            }
+
             PlayerPrefs.SetInt("canSeeInfo_detailo" + animalNum_i, 99); //퀘스트를 깼는가
         }
     }
@@ -2702,6 +2711,7 @@ public class CheckPlayer : MonoBehaviour
         if (animalNum_i == 3)
         {
             miniGame_obj.SetActive(true);
+
         }
         SetQuest();
     }
@@ -2857,10 +2867,13 @@ public class CheckPlayer : MonoBehaviour
         //talk_b = true;
         GM.GetComponent<CharMove>().canMove = true;
 
+        PlayerPrefs.SetInt("wait", 0);
+
     }
     IEnumerator BearL()  //곰이 돌진하는 시간
     {
 
+        PlayerPrefs.SetInt("wait", 1);
         //talk_b = false;
         int in_i = 1;
         position0 = bearM_obj.transform.position;
@@ -2930,6 +2943,7 @@ public class CheckPlayer : MonoBehaviour
         while (in_i == 1)
         {
             float i_f = 1f;
+            
             for (i_f = 1f; i_f > 0f; i_f -= 0.05f)
             {
                 color.a = Mathf.Lerp(0f, 1f, i_f);
@@ -2943,6 +2957,38 @@ public class CheckPlayer : MonoBehaviour
         GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
 
     }
+
+
+    IEnumerator FadeIn2()
+    {
+
+        miniGame_obj.SetActive(true);
+        SGM2.GetComponent<SoundEvt>().soundStart();
+        int in_i = 1;
+        color = new Color(1f, 1f, 1f);
+        color.a = 1f;
+        miniGame_obj.GetComponent<SpriteRenderer>().color = color;
+        yield return new WaitForSeconds(1f);
+        while (in_i == 1)
+        {
+            float i_f = 1f;
+
+            for (i_f = 1f; i_f > 0f; i_f -= 0.05f)
+            {
+                color.a = Mathf.Lerp(0f, 1f, i_f);
+                miniGame_obj.GetComponent<SpriteRenderer>().color = color;
+                yield return new WaitForSeconds(0.01f);
+            }
+            //yield return new WaitForSeconds(2f);
+            in_i = 0;
+            miniGame_obj.SetActive(false);
+        }
+        miniGame_obj.SetActive(false);
+
+    }
+
+
+
     IEnumerator TalkBOff()  //대화딜레이
     {
         PlayerPrefs.SetInt("escdont",1);

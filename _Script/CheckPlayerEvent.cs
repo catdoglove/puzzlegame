@@ -540,6 +540,14 @@ public class CheckPlayerEvent : MonoBehaviour
                     ItemSettingOnEvent();
                 hallFix_obj.SetActive(false);
                 hall_obj.SetActive(true);
+                if (GM.transform.position.y > rideGM.transform.position.y)
+                {
+                    if (GM.transform.position.y < moveGM.transform.position.y)
+                    {
+
+                        GM.transform.position = new Vector2(GM.transform.position.x, moveGM.transform.position.y);
+                    }
+                }
                 k = a;
                 break;
             case 18://외부 함수 실행
