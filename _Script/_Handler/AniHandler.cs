@@ -123,6 +123,7 @@ public class AniHandler : MonoBehaviour
         map2_obj.SetActive(false);
         player_obj.SetActive(true);
         player_obj.transform.position = mapRespawn_obj.transform.position;
+        BGM.GetComponent<AudioSource>().volume = 1;
 
         PlayerPrefs.SetInt("escdont", 0);
         Invoke("af", 0.8f);
@@ -146,7 +147,7 @@ public class AniHandler : MonoBehaviour
     IEnumerator BGMFadeOut()
     {
 
-        for (float i = BGM.GetComponent<AudioSource>().volume; i >= 0f; i -= 0.01f)
+        for (float i = BGM.GetComponent<AudioSource>().volume; i > 0f; i -= 0.01f)
         {
             BGM.GetComponent<AudioSource>().volume = i;
             yield return new WaitForSeconds(0.05f);

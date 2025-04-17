@@ -900,12 +900,24 @@ public class CheckPlayer : MonoBehaviour
         }
         else
         {
+            
+            
             switch (EventNum_i[a])
             {
                 case 0:
                     break;
                 case 1://말풍선띄우고 다음으로
-
+                    if (animalNum_i==8&& PlayerPrefs.GetInt("selecteditemnum", 0) == 48)
+                    {
+                        if (a>2)
+                        {
+                            Event_spr[a] = Event_spr[8];
+                            Event2_spr[a] = Event2_spr[8];
+                            a = 8;
+                            GMI.GetComponent<Inventory>().DelItems();
+                            SetDogam4();
+                        }
+                    }
 
                     if (animalNum_i == 9 && PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                     {
@@ -919,6 +931,7 @@ public class CheckPlayer : MonoBehaviour
                             Event_spr[a] = Event_spr[(a + 1)];
                             Event2_spr[a] = Event2_spr[(a + 1)];
                         }
+
                     }
 
                     if (animalNum_i == 11 && PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
@@ -1695,7 +1708,6 @@ public class CheckPlayer : MonoBehaviour
                     talkBallB_obj.SetActive(true);
                     StartCoroutine("talkBall");
 
-
                     break;
 
                 case 29://말풍선 띄우고 특수 플레그 요구
@@ -1948,11 +1960,9 @@ public class CheckPlayer : MonoBehaviour
                             Invoke("Anis2", 2f);
                             wait2 = 1;
                             PlayerPrefs.SetInt("cats2", 1);
-
-
                         }
 
-
+                        
 
                     }
                     else if (SetItemPref_i == 38 && PlayerPrefs.GetInt("selecteditemnum", 0) == 42)
@@ -1971,9 +1981,11 @@ public class CheckPlayer : MonoBehaviour
                             Invoke("Anis2", 2f);
                             wait2 = 1;
 
+                            //a = 2;
+                            
                         }
 
-
+                        
 
                     }
                     else
@@ -2027,6 +2039,7 @@ public class CheckPlayer : MonoBehaviour
                                 SGM.GetComponent<SoundEvt>().soundWaterWalk();
                                 Invoke("Anis", 3f);
 
+
                             }
                             else if (events_i == 2)
                             {
@@ -2051,6 +2064,8 @@ public class CheckPlayer : MonoBehaviour
                                 SGM.GetComponent<SoundEvt>().soundDamage2();
                                 StopTalk();
                                 talkBallB_obj.SetActive(false);
+
+                                Invoke("Bulbfalse", 1f);
                             }
                             //move_obj.SetActive(true);
 
@@ -2097,6 +2112,7 @@ public class CheckPlayer : MonoBehaviour
                             StartCoroutine("talkBall");
                             StopAndTalk();
                         }
+
                     }
 
 
@@ -2284,7 +2300,21 @@ public class CheckPlayer : MonoBehaviour
         all_Ani.Play("ani_npc_cat_forest");
         balloon_obj.SetActive(false);
         other_obj.SetActive(true);
-        
+        //PlayerPrefs.SetInt("checktalk", 1);
+    }
+
+    void Anis3()
+    {
+        balloon_obj.SetActive(false);
+
+        StopCoroutine("talkBall");
+        k = a;
+
+
+        talkBall_obj.GetComponent<SpriteRenderer>().sprite = Event_spr[a];
+        talkBallB_obj.SetActive(true);
+        StartCoroutine("talkBall");
+        StopAndTalk();
     }
 
     //void wa
@@ -2997,7 +3027,7 @@ public class CheckPlayer : MonoBehaviour
 
         while (in_i == 1)
         {
-            yield return new WaitForSeconds(0.7f);
+            yield return new WaitForSeconds(0.8f);
             in_i = 0;
         }
 
@@ -3043,5 +3073,11 @@ public class CheckPlayer : MonoBehaviour
         all_Ani.Play("ani_npc_cat_forest_danger");
     }
 
+
+    void Bulbfalse()
+    {
+
+        GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
+    }
 
 }
