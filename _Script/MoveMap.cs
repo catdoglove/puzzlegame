@@ -50,6 +50,8 @@ public class MoveMap : MonoBehaviour
 
     public Vector3 position0;
 
+    public int a_i =0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -456,10 +458,15 @@ public class MoveMap : MonoBehaviour
 
     }
 
+    //
     void WaitSec()
     {
         GM.SetActive(true);
         GM.GetComponent<CharMove>().canMove = true;
+        if (a_i == 1)
+        {
+            GM.SetActive(false);
+        }
     }
 
     void WaitSecCrow()

@@ -34,7 +34,7 @@ public class CharHandler : MonoBehaviour
         if (event_i==2)
         {
 
-            BGM.GetComponent<AudioSource>().volume = 0.4f;
+            BGM.GetComponent<AudioSource>().volume = 0.3f;
         }
 
         if (event_i == 3)

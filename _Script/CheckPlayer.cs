@@ -122,6 +122,10 @@ public class CheckPlayer : MonoBehaviour
 
     public Sprite[] items_spr;
 
+
+
+    public int cut_i = 0;
+
     private void OnEnable()
     {
         GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
@@ -380,7 +384,14 @@ public class CheckPlayer : MonoBehaviour
         {
             if (talk_b)
             {
-                EventSetting();
+                if (cut_i>0)
+                {
+
+                }
+                else
+                {
+                    EventSetting();
+                }
             }
         }
 
@@ -907,7 +918,7 @@ public class CheckPlayer : MonoBehaviour
                 case 0:
                     break;
                 case 1://말풍선띄우고 다음으로
-                    if (animalNum_i==8&& PlayerPrefs.GetInt("selecteditemnum", 0) == 48)
+                    if (animalNum_i==8&& PlayerPrefs.GetInt("selecteditemnum", 0) == 49)
                     {
                         if (a>2)
                         {

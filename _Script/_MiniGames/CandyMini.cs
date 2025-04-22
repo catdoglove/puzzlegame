@@ -10,6 +10,7 @@ public class CandyMini : MonoBehaviour
     public GameObject SGM, CPGM, CPSGM;
     public int a = 0;
     public int b = 0;
+    public int c = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -27,8 +28,9 @@ public class CandyMini : MonoBehaviour
         a = 0;
         a_i = 0;
         b = 0;
-        StopCoroutine("Press");
-        StartCoroutine("Press");
+        c = 0;
+        StopCoroutine("PressCh");
+        StartCoroutine("PressCh");
     }
 
 
@@ -41,6 +43,7 @@ public class CandyMini : MonoBehaviour
         cotton1_obj.GetComponent<SpriteRenderer>().sprite = cotton_spr[a_i];
         cottonKey2_obj.SetActive(false);
         a_i++;
+        c = 0;
     }
 
     public void DPress()
@@ -52,6 +55,7 @@ public class CandyMini : MonoBehaviour
         cotton2_obj.GetComponent<SpriteRenderer>().sprite = cotton_spr[a_i];
         cottonKey1_obj.SetActive(false);
         a_i++;
+        c = 0;
     }
 
 
@@ -120,5 +124,75 @@ public class CandyMini : MonoBehaviour
         }
     }
 
+    IEnumerator PressCh()
+    {
+        while (a == 0)
+        {
+            if (c == 0)
+            {
+
+                if (a_i >= 5)
+                {
+                    yield return new WaitForSeconds(0.2f);
+                    cottonWin_obj.SetActive(false);
+                    if (b == 0)
+                    {
+                        CPSGM.GetComponent<CheckPlayer>().EventNum_i[CPGM.GetComponent<CheckPlayer>().num] = 15;
+                        CPSGM.GetComponent<CheckPlayer>().EventSetting();
+                        b = 1;
+                    }
+                    a = 1;
+                    a_i = 0;
+                }
+                else
+                {
+
+                    if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+                    {
+                        if (a_i == 5)
+                        {
+                            c = 1;
+                            Invoke("APress", 0.1f);
+                        }
+                        if (a_i == 3)
+                        {
+                            c = 1;
+                            Invoke("APress", 0.1f);
+                        }
+                        if (a_i == 1)
+                        {
+                            c = 1;
+                            Invoke("APress", 0.1f);
+                        }
+
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+                    {
+                        if (a_i == 4)
+                        {
+                            c = 1;
+                            Invoke("DPress", 0.1f);
+                        }
+                        if (a_i == 2)
+                        {
+                            c = 1;
+                            Invoke("DPress", 0.1f);
+                        }
+                        if (a_i == 0)
+                        {
+                            c = 1;
+                            Invoke("DPress", 0.1f);
+                        }
+                    }
+                }
+
+            }
+
+
+
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
 
 }

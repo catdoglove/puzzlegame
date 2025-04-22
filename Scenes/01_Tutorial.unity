@@ -886,6 +886,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!70 &5119185
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1132,6 +1133,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &5679505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1567,6 +1569,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &15719632
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2101,6 +2104,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!1 &21825430
 GameObject:
   m_ObjectHideFlags: 0
@@ -2642,6 +2646,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &26526360
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3065,6 +3070,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &44126564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4225,7 +4231,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1831563885}
+  m_TargetTexture: {fileID: 1045972607}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -4888,6 +4894,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!61 &69023235
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6667,6 +6674,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &117358293
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7211,6 +7219,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &120787851
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7521,6 +7530,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &125048855
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8155,6 +8165,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 1293
   items_spr: []
+  cut_i: 0
 --- !u!95 &135811437
 Animator:
   serializedVersion: 3
@@ -8344,6 +8355,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &136428051
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8708,6 +8720,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &137990810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9047,6 +9060,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &146705587
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9581,6 +9595,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!1 &151579041
 GameObject:
   m_ObjectHideFlags: 0
@@ -11209,6 +11224,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 5
   items_spr: []
+  cut_i: 0
 --- !u!1 &185226332
 GameObject:
   m_ObjectHideFlags: 0
@@ -11621,6 +11637,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &189148207
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12452,6 +12469,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &207283135
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13545,6 +13563,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &225494350
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13828,6 +13847,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!1 &226644110
 GameObject:
   m_ObjectHideFlags: 0
@@ -14322,6 +14342,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &243907410
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16189,6 +16210,7 @@ MonoBehaviour:
   hall_obj: {fileID: 627362695}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &289864551
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16785,6 +16807,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &293978917
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17600,6 +17623,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &300728728
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18012,6 +18036,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 299
   items_spr: []
+  cut_i: 0
 --- !u!70 &307177332
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -18535,6 +18560,7 @@ MonoBehaviour:
   hall_obj: {fileID: 627362695}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &317566849
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19682,6 +19708,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &341575721
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21030,6 +21057,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &365188950
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22087,6 +22115,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &379195331
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22697,6 +22726,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 1
   items_spr: []
+  cut_i: 0
 --- !u!1 &386919613
 GameObject:
   m_ObjectHideFlags: 0
@@ -25342,6 +25372,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!1 &445257477
 GameObject:
   m_ObjectHideFlags: 0
@@ -27685,6 +27716,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &496115207
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29094,6 +29126,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &519273596
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30032,6 +30065,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &544538652
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30827,6 +30861,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!1 &560459893
 GameObject:
   m_ObjectHideFlags: 0
@@ -30949,6 +30984,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &560459896
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31312,6 +31348,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!61 &566376290
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33213,6 +33250,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &609945045
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34496,6 +34534,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &629741296
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35310,6 +35349,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &658475974
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36212,6 +36252,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &671445577
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37952,6 +37993,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!70 &699976670
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -38467,6 +38509,87 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712792492}
   m_CullTransparentMesh: 0
+--- !u!1 &713432207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 713432208}
+  - component: {fileID: 713432209}
+  m_Layer: 0
+  m_Name: "\uCEF7\uC52C"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &713432208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713432207}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1618348495}
+  m_RootOrder: 43
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &713432209
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713432207}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 99
+  m_Sprite: {fileID: 21300000, guid: e32dd3dacc82732479f2002433742347, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 13, y: 9}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &720480306
 GameObject:
   m_ObjectHideFlags: 0
@@ -39287,6 +39410,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &737438134
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39623,6 +39747,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &741481523
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -40658,6 +40783,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &762454627
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -41045,6 +41171,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!1 &772151736
 GameObject:
   m_ObjectHideFlags: 0
@@ -43988,6 +44115,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &843167568
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -44898,6 +45026,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!1 &855270425
 GameObject:
   m_ObjectHideFlags: 0
@@ -45328,6 +45457,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &858163630
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -47049,6 +47179,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &891097678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47490,6 +47621,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &896677059
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -48133,6 +48265,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &904920376
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -48306,6 +48439,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 1
 --- !u!61 &906247536
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -48585,6 +48719,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &909781963
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49295,6 +49430,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &929992913
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50239,6 +50375,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &946681229
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50985,6 +51122,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 8
   items_spr: []
+  cut_i: 0
 --- !u!212 &953679644
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -52619,6 +52757,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &974808699
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52843,6 +52982,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &977632499
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53013,6 +53153,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &979907017
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -53280,6 +53421,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &988219815
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54187,6 +54329,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!1 &1005509628
 GameObject:
   m_ObjectHideFlags: 0
@@ -54452,6 +54595,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!1 &1006602531
 GameObject:
   m_ObjectHideFlags: 0
@@ -54682,6 +54826,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1012171222
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -55608,6 +55753,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1024296525
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -56013,6 +56159,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1044358946
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -56275,6 +56422,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1044864061
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -56562,6 +56710,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!84 &1045972607
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 934
+  m_Height: 525
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1046993860
 GameObject:
   m_ObjectHideFlags: 0
@@ -57529,6 +57712,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1080766758
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -57699,6 +57883,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1083547894
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -58476,6 +58661,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1094197552
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59319,6 +59505,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1108257003
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61499,6 +61686,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1161604708
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62176,6 +62364,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!1 &1173727219
 GameObject:
   m_ObjectHideFlags: 0
@@ -62817,6 +63006,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1188507385
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -63150,6 +63340,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 1
   items_spr: []
+  cut_i: 0
 --- !u!1 &1191850897
 GameObject:
   m_ObjectHideFlags: 0
@@ -63595,6 +63786,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1196254236
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64118,6 +64310,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1202256422
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -64933,6 +65126,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1216092549
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -65976,6 +66170,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 1
   items_spr: []
+  cut_i: 0
 --- !u!1 &1232016087
 GameObject:
   m_ObjectHideFlags: 0
@@ -67820,6 +68015,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1255337625
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -68057,6 +68253,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1255413182
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -68616,6 +68813,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!95 &1272785577
 Animator:
   serializedVersion: 3
@@ -69755,6 +69953,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1285010634
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -70579,6 +70778,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!61 &1313099850
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -71000,6 +71200,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1330220732
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -71457,6 +71658,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1336244582
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -72003,6 +72205,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1346804527
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -73917,6 +74120,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1400179496
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -74135,6 +74339,7 @@ MonoBehaviour:
   hall_obj: {fileID: 1335026043}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1404936700
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -74494,6 +74699,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1416773311
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -75144,6 +75350,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1426394052
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -75411,6 +75618,7 @@ MonoBehaviour:
   hall_obj: {fileID: 1335026043}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1434041721
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -76163,6 +76371,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1450581824
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -77312,6 +77521,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1481105512
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -77789,6 +77999,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 3
   items_spr: []
+  cut_i: 0
 --- !u!1 &1486635889
 GameObject:
   m_ObjectHideFlags: 0
@@ -78096,6 +78307,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 2
   items_spr: []
+  cut_i: 0
 --- !u!70 &1486836961
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -79494,6 +79706,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1521865164
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -81072,6 +81285,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1561230746
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -81368,6 +81582,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1562199868
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -82176,6 +82391,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1580937979
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -82960,6 +83176,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!95 &1593957968
 Animator:
   serializedVersion: 3
@@ -83393,6 +83610,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1600947036
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -84224,6 +84442,7 @@ Transform:
   - {fileID: 1631896183}
   - {fileID: 1236708172}
   - {fileID: 1697545155}
+  - {fileID: 713432208}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -84988,6 +85207,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1638960266
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -85538,6 +85758,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1646458689
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -85888,6 +86109,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1658599333
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -86309,6 +86531,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1666469026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -86947,6 +87170,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1674407428
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -88275,6 +88499,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7df8e0eb7420b8844ab7e47b9391df72, type: 3}
   - {fileID: 21300000, guid: b43fbfb290fa0444db2910355118aebb, type: 3}
   - {fileID: 21300000, guid: ced11ffbdbbe0344cacbc600eb3b71e7, type: 3}
+  cut_i: 0
 --- !u!1 &1694764515
 GameObject:
   m_ObjectHideFlags: 0
@@ -88421,6 +88646,7 @@ MonoBehaviour:
   CPSGM: {fileID: 307177330}
   a: 0
   b: 0
+  c: 0
 --- !u!1 &1698205354
 GameObject:
   m_ObjectHideFlags: 0
@@ -88961,6 +89187,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1708340189
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -90276,6 +90503,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1744337146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -91086,6 +91314,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1764746793
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -92081,6 +92310,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 1294
   items_spr: []
+  cut_i: 0
 --- !u!95 &1781262466
 Animator:
   serializedVersion: 3
@@ -92897,6 +93127,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1803993276
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -93671,6 +93902,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1822364510
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -93721,41 +93953,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!84 &1831563885
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 934
-  m_Height: 525
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1831638391
 GameObject:
   m_ObjectHideFlags: 0
@@ -94616,6 +94813,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1845382663
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -95421,6 +95619,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1859774569
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -97323,6 +97522,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1907654314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -98298,6 +98498,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1946993484
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -99282,6 +99483,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!1 &1963083308
 GameObject:
   m_ObjectHideFlags: 0
@@ -99811,6 +100013,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 9
   items_spr: []
+  cut_i: 0
 --- !u!212 &1970931577
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -100151,6 +100354,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1976230106
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -100501,6 +100705,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1982360304
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -100738,6 +100943,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &1983094533
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -101098,6 +101304,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!111 &1987721204
 Animation:
   m_ObjectHideFlags: 0
@@ -101310,6 +101517,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &1989034008
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -102587,6 +102795,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &2014545238
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -102931,6 +103140,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &2018758036
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -103518,6 +103728,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &2031141986
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -103818,6 +104029,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!212 &2037648346
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -104382,6 +104594,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &2047061616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -105329,6 +105542,7 @@ MonoBehaviour:
   hall_obj: {fileID: 0}
   events_i: 0
   items_spr: []
+  cut_i: 0
 --- !u!70 &2072454499
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -106196,6 +106410,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &2082945986
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -107359,6 +107574,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &2109382158
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -107712,6 +107928,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 2044584715}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &2110121703
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -108076,6 +108293,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &2116537374
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -108355,6 +108573,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 2044584715}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &2124184652
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -109314,6 +109533,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &2138150723
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -110109,6 +110329,7 @@ MonoBehaviour:
   vols_f: 0.8
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
+  a_i: 0
 --- !u!61 &2147406797
 BoxCollider2D:
   m_ObjectHideFlags: 0
