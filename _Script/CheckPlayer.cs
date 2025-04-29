@@ -126,6 +126,14 @@ public class CheckPlayer : MonoBehaviour
 
     public int cut_i = 0;
 
+
+
+    public Sprite[] cutS_spr;
+    public int dr_i;
+    public GameObject ori_obj, scene_obj;
+    public GameObject cutS_obj;
+
+
     private void OnEnable()
     {
         GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
@@ -238,6 +246,13 @@ public class CheckPlayer : MonoBehaviour
 
     private void Update()
     {
+
+        if (PlayerPrefs.GetInt("bhelpon", 0) == 1&&events_i==2727)
+        {
+            SetDogam2();
+            SetDogam3();
+            PlayerPrefs.SetInt("bhelpon", 0);
+        }
 
         wait = PlayerPrefs.GetInt("wait", 0);
         if (wait == 0&& wait2==0)
@@ -1312,15 +1327,38 @@ public class CheckPlayer : MonoBehaviour
                 case 15://아이템 얻기
                     if (donfalse_b)
                     {
-                        ItemSettings();
+                        if (animalNum_i==7)
+                        {
+                            cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[0];
+                            cutS_obj.SetActive(true);
+                            if (dr_i==1)
+                            {
+                                cutS_obj.SetActive(false);
+                                ItemSettings();
+                                a++;
+                                StopTalk();
+                            }
+                        }
+                        else
+                        {
+                            ItemSettings();
+                        }
                     }
                     else
                     {
                         ItemSettingOnEvents();
                     }
                     talkBallB_obj.SetActive(false);
-                    a++;
-                    StopTalk();
+
+                    if (animalNum_i == 7)
+                    {
+                        dr_i = 1;
+                    }
+                    else
+                    {
+                        a++;
+                        StopTalk();
+                    }
                     if (board_b)
                     { //stick_obj, makeBoad_obj;
                         makeBoad_obj.SetActive(true);
@@ -1835,11 +1873,34 @@ public class CheckPlayer : MonoBehaviour
                     {
                         if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
                         {
-                            GMI.GetComponent<Inventory>().DelItems();
-                            k = a;
-                            ItemSettings();
-                            GetItem_obj.SetActive(false);
-                            balloon_obj.SetActive(false);
+                            if (giveItemPref_i == 36)
+                            {
+
+                                cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[0];
+                                cutS_obj.SetActive(true);
+                                if (dr_i==1)
+                                {
+                                    cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[1];
+                                }
+                                if (dr_i==2)
+                                {
+                                    cutS_obj.SetActive(false);
+                                    GMI.GetComponent<Inventory>().DelItems();
+                                    k = a;
+                                    ItemSettings();
+                                    GetItem_obj.SetActive(false);
+                                    balloon_obj.SetActive(false);
+                                }
+                                dr_i++;
+                            }
+                            else
+                            {
+                                GMI.GetComponent<Inventory>().DelItems();
+                                k = a;
+                                ItemSettings();
+                                GetItem_obj.SetActive(false);
+                                balloon_obj.SetActive(false);
+                            }
                             if (SetItemPref_i == 46)
                             {
                                 this.gameObject.SetActive(false);
@@ -2036,8 +2097,9 @@ public class CheckPlayer : MonoBehaviour
 
                             if (animalNum_i == 11)
                             {
-                                SetDogam2();
-                                SetDogam3();
+                                PlayerPrefs.SetInt("bhelpon",1);
+                                //SetDogam2();
+                                //SetDogam3();
                             }
                             //ani_str = "ani_npc_cat_get1";
                             if (events_i == 1)
@@ -2076,7 +2138,7 @@ public class CheckPlayer : MonoBehaviour
                                 StopTalk();
                                 talkBallB_obj.SetActive(false);
 
-                                Invoke("Bulbfalse", 1f);
+                                //Invoke("Bulbfalse", 1f);
                             }
                             //move_obj.SetActive(true);
 
@@ -2273,6 +2335,39 @@ public class CheckPlayer : MonoBehaviour
                     {
                         SGM.GetComponent<SoundEvt>().soundItemFail();
                     }
+                    break;
+                case 45://컷씬
+
+                    StopAndTalk();
+                    cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[0];
+                    cutS_obj.SetActive(true);
+                    a++;
+                    break;
+                case 46://컷씬
+
+                    StopAndTalk();
+                    cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[1];
+                    cutS_obj.SetActive(true);
+
+                    a++;
+                    break;
+                case 47://컷씬
+
+                    StopTalk();
+                    scene_obj.SetActive(false);
+                    cutS_obj.SetActive(false);
+                    ori_obj.SetActive(true);
+                    a++;
+                    break;
+                case 48://종이
+                    StopAndTalk();
+                    cutS_obj.SetActive(true);
+                    a++;
+                    break;
+                case 49://종이
+                    StopTalk();
+                    cutS_obj.SetActive(false);
+                    a--;
                     break;
             }
         }

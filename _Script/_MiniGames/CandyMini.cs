@@ -152,17 +152,17 @@ public class CandyMini : MonoBehaviour
                         if (a_i == 5)
                         {
                             c = 1;
-                            Invoke("APress", 0.1f);
+                            Invoke("APress", 0.8f);
                         }
                         if (a_i == 3)
                         {
                             c = 1;
-                            Invoke("APress", 0.1f);
+                            Invoke("APress", 0.8f);
                         }
                         if (a_i == 1)
                         {
                             c = 1;
-                            Invoke("APress", 0.1f);
+                            Invoke("APress", 0.8f);
                         }
 
                     }
@@ -172,17 +172,17 @@ public class CandyMini : MonoBehaviour
                         if (a_i == 4)
                         {
                             c = 1;
-                            Invoke("DPress", 0.1f);
+                            Invoke("DPress", 0.8f);
                         }
                         if (a_i == 2)
                         {
                             c = 1;
-                            Invoke("DPress", 0.1f);
+                            Invoke("DPress", 0.8f);
                         }
                         if (a_i == 0)
                         {
                             c = 1;
-                            Invoke("DPress", 0.1f);
+                            Invoke("DPress", 0.8f);
                         }
                     }
                 }

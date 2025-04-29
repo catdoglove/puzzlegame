@@ -19,6 +19,12 @@ public class RockMini : MonoBehaviour
     public Sprite[] color_spr;
 
 
+
+    public Sprite[] cutS_spr;
+    public int dr_i=0;
+    public GameObject cutS_obj;
+    public GameObject ori_obj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +34,28 @@ public class RockMini : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (Input.GetKeyUp(KeyCode.Space)&& dr_i>=1)
+        {
+            if (dr_i==1)
+            {
+
+                cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[1];
+                dr_i++;
+            }
+            else
+            {
+                ori_obj.SetActive(true);
+                cutS_obj.SetActive(false);
+                puzzleWin_obj.SetActive(false);
+                PlayerPrefs.SetInt("escdont", 0);
+                GMM.GetComponent<CharMove>().canMove = true;
+                PlayerPrefs.SetInt("cursorActive", 0);
+                GM.GetComponent<CheckPlayer>().ItemSettings();
+                SGM.GetComponent<SoundEvt>().soundItemSuccess();
+                japan_obj.SetActive(false);
+            }
+        }
     }
 
     public void Button1()
@@ -147,13 +174,11 @@ public class RockMini : MonoBehaviour
             }
             if (a == 4)
             {
-                puzzleWin_obj.SetActive(false);
-                PlayerPrefs.SetInt("escdont", 0);
-                GMM.GetComponent<CharMove>().canMove = true;
-                PlayerPrefs.SetInt("cursorActive", 0);
-                GM.GetComponent<CheckPlayer>().ItemSettings();
-                SGM.GetComponent<SoundEvt>().soundItemSuccess();
-                japan_obj.SetActive(false);
+
+                ori_obj.SetActive(false);
+                cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[0];
+                cutS_obj.SetActive(true);
+                dr_i = 1;
             }
             else
             {

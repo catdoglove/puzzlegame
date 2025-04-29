@@ -8,6 +8,10 @@ public class CharHandler : MonoBehaviour
     public GameObject char_obj, f_obj, BGM;
 
     public int event_i;
+
+
+    public GameObject talkscene_obj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,12 +46,38 @@ public class CharHandler : MonoBehaviour
 
             BGM.GetComponent<AudioSource>().volume = 1f;
         }
+        
+        if (event_i == 4)
+        {
+
+            Cutscene1();
+        }
     }
     
     void wait()
     {
         char_obj.SetActive(false);
         f_obj.SetActive(false);
+    }
+
+
+    /// <summary>
+    /// 컷씬을 띄워줌
+    /// </summary>
+    void Cutscene1()
+    {
+        talkscene_obj.SetActive(true);
+        talkscene_obj.SetActive(false);
+    }
+
+
+    /// <summary>
+    /// 컷씬을 띄워줌
+    /// </summary>
+    void Cutscene2()
+    {
+        talkscene_obj.SetActive(true);
+        talkscene_obj.SetActive(false);
     }
 
 }

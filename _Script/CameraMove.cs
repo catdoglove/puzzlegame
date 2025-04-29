@@ -15,6 +15,12 @@ public class CameraMove : MonoBehaviour
 
     public GameObject CGM,MGM,BGM1, SGM;
 
+
+    public GameObject cutS_obj;
+    public Sprite[] cutS_spr;
+    public GameObject note_obj;
+    public GameObject ch_obj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,13 +64,55 @@ public class CameraMove : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
 
+
+
         yield return new WaitForSeconds(0.8f); //양이 보는 시간
         CGM.GetComponent<SpriteRenderer>().flipX = true;
+
+
+        yield return new WaitForSeconds(0.6f);
+        int a = 0;
+        while (a <= 2)
+        {
+            if (a == 0)
+            {
+                cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[0];
+                cutS_obj.SetActive(true);
+                a++;
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+
+                if (a == 1)
+                {
+                    cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[1];
+                    a++;
+                }
+                else
+                {
+                    if (a == 2)
+                    {
+                        cutS_obj.SetActive(false);
+
+                        a++;
+                    }
+                }
+                
+            }
+
+            Debug.Log("a"+a);
+            yield return new WaitForSeconds(0.01f);
+        }
+
+
         yield return new WaitForSeconds(2.5f); //아이컨텍 시간
         //s_obj.transform.rotation = Quaternion.Euler(0, 180, 0);
         s_obj.GetComponent<SpriteRenderer>().sprite = s_spr;
         yield return new WaitForSeconds(0.8f); //양이 뒤돌아서 대기하는 시간
+
+
         StartCoroutine("EventFront");
+        StopCoroutine("EventBack");
     }
 
     IEnumerator EventFront() //카메라 원래대로 돌아오기
@@ -77,7 +125,17 @@ public class CameraMove : MonoBehaviour
             c_obj.transform.position = new Vector3(moveX, moveY, -10f);
             yield return new WaitForSeconds(0.01f);
         }
-        StartCoroutine("move");
+        ch_obj.SetActive(false);
+        yield return new WaitForSeconds(0.01f);
+        note_obj.SetActive(true);
+        PlayerPrefs.SetInt("canSeeInfo_detailt" + 2, 99);
+        PlayerPrefs.SetInt("nowwalkdont", 0);
+        PlayerPrefs.SetInt("escdont", 0);
+        CGM.GetComponent<CharMove>().canMove = true;
+        CGM.GetComponent<CharMove>().Speed = 2.5f;
+
+        //Invoke("can", 0.2f);
+        //StartCoroutine("move");
     }
 
     IEnumerator move() //주인공 걷는 시간
@@ -103,8 +161,6 @@ public class CameraMove : MonoBehaviour
             }
         }
 
-        PlayerPrefs.SetInt("canSeeInfo_detailt" + 2, 99);
-        PlayerPrefs.SetInt("nowwalkdont", 0);
     }
 
     IEnumerator imgFadeOut()
@@ -136,9 +192,15 @@ public class CameraMove : MonoBehaviour
         CGM.GetComponent<CharMove>().Speed = 2.5f;
 
 
-        Invoke("SetDogam", 0.2f);
+        //Invoke("SetDogam", 0.2f);
+
+        dogam_obj.SetActive(true);
     }
 
+    void can()
+    {
+        CGM.GetComponent<CharMove>().canMove = true;
+    }
 
     void SetDogam()
     {
