@@ -11,6 +11,7 @@ public class CandyMini : MonoBehaviour
     public int a = 0;
     public int b = 0;
     public int c = 0;
+    public int d = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -152,17 +153,17 @@ public class CandyMini : MonoBehaviour
                         if (a_i == 5)
                         {
                             c = 1;
-                            Invoke("APress", 0.8f);
+                            Invoke("APress", 0.7f);
                         }
                         if (a_i == 3)
                         {
                             c = 1;
-                            Invoke("APress", 0.8f);
+                            Invoke("APress", 0.7f);
                         }
                         if (a_i == 1)
                         {
                             c = 1;
-                            Invoke("APress", 0.8f);
+                            Invoke("APress", 0.7f);
                         }
 
                     }
@@ -172,27 +173,49 @@ public class CandyMini : MonoBehaviour
                         if (a_i == 4)
                         {
                             c = 1;
-                            Invoke("DPress", 0.8f);
+                            Invoke("DPress", 0.7f);
                         }
                         if (a_i == 2)
                         {
                             c = 1;
-                            Invoke("DPress", 0.8f);
+                            Invoke("DPress", 0.7f);
                         }
                         if (a_i == 0)
                         {
                             c = 1;
-                            Invoke("DPress", 0.8f);
+                            Invoke("DPress", 0.7f);
                         }
                     }
                 }
 
             }
 
-
+            if (d==0)
+            {
+                d = 1;
+                Invoke("helpme", 4f);
+            }
 
             yield return new WaitForSeconds(0.01f);
         }
+    }
+
+
+    void helpme()
+    {
+        if (a_i >= 5)
+        {
+            cottonWin_obj.SetActive(false);
+            if (b == 0)
+            {
+                CPSGM.GetComponent<CheckPlayer>().EventNum_i[CPGM.GetComponent<CheckPlayer>().num] = 15;
+                CPSGM.GetComponent<CheckPlayer>().EventSetting();
+                b = 1;
+            }
+            a = 1;
+            a_i = 0;
+        }
+        d = 0;
     }
 
 }

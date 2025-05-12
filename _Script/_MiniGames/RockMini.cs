@@ -24,6 +24,7 @@ public class RockMini : MonoBehaviour
     public int dr_i=0;
     public GameObject cutS_obj;
     public GameObject ori_obj;
+    public GameObject con_obj;
 
     // Start is called before the first frame update
     void Start()
@@ -178,6 +179,8 @@ public class RockMini : MonoBehaviour
                 ori_obj.SetActive(false);
                 cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[0];
                 cutS_obj.SetActive(true);
+                con_obj.SetActive(false);
+
                 dr_i = 1;
             }
             else

@@ -147,7 +147,7 @@ public class AniHandler : MonoBehaviour
     IEnumerator BGMFadeOut()
     {
 
-        for (float i = BGM.GetComponent<AudioSource>().volume; i > 0f; i -= 0.02f)
+        for (float i = BGM.GetComponent<AudioSource>().volume; i > 0f; i -= 0.017f)
         {
             BGM.GetComponent<AudioSource>().volume = i;
             yield return new WaitForSeconds(0.05f);

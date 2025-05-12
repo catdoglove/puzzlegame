@@ -53,10 +53,27 @@ public class MoveMap : MonoBehaviour
     public int a_i =0;
 
 
-    // Start is called before the first frame update
+
+
+    /// <summary>
+    /// 페이드 아웃
+    /// </summary>
+    public GameObject  b_obj, dogam_obj;
+    public float moveY, moveX;
+    Color color;
+    public GameObject CGM, MGM;
+
+
+
+
+    /// <summary>
+    /// 맵이동에서 할일을 정한다
+    /// </summary>
+    public int eventMap_i,aa_i;
+
+    
     void Start()
     {
-
 
         StopCoroutine("CheckingMap");
         StartCoroutine("CheckingMap");
@@ -169,6 +186,14 @@ public class MoveMap : MonoBehaviour
                         {
                             if (dont_b)
                             {
+                                if (eventMap_i==1)
+                                {
+                                    if (aa_i==0)
+                                    {
+                                        StartCoroutine("imgFadeOut");
+                                        aa_i = 1;
+                                    }
+                                }
 
                             }
                             else
@@ -473,6 +498,42 @@ public class MoveMap : MonoBehaviour
     {
         move_obj.GetComponent<Animator>().Play("ani_npc_crow_talk");
     }
+
+
+
+    IEnumerator imgFadeOut()
+    {
+        CGM.GetComponent<CharMove>().canMove = false;
+        yield return new WaitForSeconds(0.6f);
+        moveY = CGM.transform.position.y;
+        moveX = CGM.transform.position.x;
+        b_obj.SetActive(true);
+        color = b_obj.GetComponent<SpriteRenderer>().color;
+        for (float i = 0f; i <= 1f; i += 0.05f)
+        {
+            moveX = moveX + 0.01f;
+            color.a = Mathf.Lerp(0f, 1f, i);
+            b_obj.GetComponent<SpriteRenderer>().color = color;
+            yield return new WaitForSeconds(0.05f);
+        }
+        color.a = Mathf.Lerp(0f, 1f, 1f);
+        b_obj.GetComponent<SpriteRenderer>().color = color;
+
+        //StopCoroutine("move");
+        CGM.GetComponent<CharMove>().canMove = true;
+        yield return new WaitForSeconds(0.8f);
+        MGM.GetComponent<MoveMap>().MovingMap();
+        MGM.GetComponent<MoveMap>().player_obj.transform.position = MGM.GetComponent<MoveMap>().mapRespawn_obj[0].transform.position;
+
+
+        PlayerPrefs.SetInt("escdont", 0);
+        b_obj.SetActive(false);
+
+
+        CGM.GetComponent<CharMove>().Speed = 2.5f;
+        dogam_obj.SetActive(true);
+    }
+
 
 
 

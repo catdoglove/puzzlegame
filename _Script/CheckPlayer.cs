@@ -1878,6 +1878,7 @@ public class CheckPlayer : MonoBehaviour
 
                                 cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[0];
                                 cutS_obj.SetActive(true);
+                                GM.GetComponent<CharMove>().canMove = false;
                                 if (dr_i==1)
                                 {
                                     cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[1];
@@ -1885,6 +1886,7 @@ public class CheckPlayer : MonoBehaviour
                                 if (dr_i==2)
                                 {
                                     cutS_obj.SetActive(false);
+                                    GM.GetComponent<CharMove>().canMove = true;
                                     GMI.GetComponent<Inventory>().DelItems();
                                     k = a;
                                     ItemSettings();
@@ -2349,14 +2351,28 @@ public class CheckPlayer : MonoBehaviour
                     cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[1];
                     cutS_obj.SetActive(true);
 
+                    if (animalNum_i==0)
+                    {
+                        ori_obj.SetActive(true);
+
+                        color = new Color(1f, 1f, 1f, 0f);
+                        other_obj.GetComponent<SpriteRenderer>().color = color;
+                    }
+
                     a++;
                     break;
                 case 47://컷씬
 
-                    StopTalk();
+                    if (animalNum_i == 0)
+                    {
+                    }
+                    else
+                    {
+                        ori_obj.SetActive(true);
+                        StopTalk();
+                    }
                     scene_obj.SetActive(false);
                     cutS_obj.SetActive(false);
-                    ori_obj.SetActive(true);
                     a++;
                     break;
                 case 48://종이

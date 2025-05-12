@@ -66,11 +66,11 @@ public class CameraMove : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(0.8f); //양이 보는 시간
+        yield return new WaitForSeconds(1.4f); //양이 보는 시간
         CGM.GetComponent<SpriteRenderer>().flipX = true;
 
 
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(1.0f);
         int a = 0;
         while (a <= 2)
         {
@@ -105,7 +105,7 @@ public class CameraMove : MonoBehaviour
         }
 
 
-        yield return new WaitForSeconds(2.5f); //아이컨텍 시간
+        yield return new WaitForSeconds(1f); //아이컨텍 시간
         //s_obj.transform.rotation = Quaternion.Euler(0, 180, 0);
         s_obj.GetComponent<SpriteRenderer>().sprite = s_spr;
         yield return new WaitForSeconds(0.8f); //양이 뒤돌아서 대기하는 시간

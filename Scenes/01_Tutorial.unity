@@ -1139,6 +1139,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &5679505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1575,6 +1583,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &15719632
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3183,6 +3199,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &44126564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4212,9 +4236,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1925042289}
-  - {fileID: 1707171884}
-  - {fileID: 948125333}
+  - {fileID: 703875267}
   - {fileID: 762454628}
   m_Father: {fileID: 1618348495}
   m_RootOrder: 30
@@ -4281,6 +4303,7 @@ MonoBehaviour:
   dr_i: 0
   cutS_obj: {fileID: 713432207}
   ori_obj: {fileID: 1789449202}
+  con_obj: {fileID: 703875266}
 --- !u!1 &61868296
 GameObject:
   m_ObjectHideFlags: 0
@@ -4300,7 +4323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &61868297
 Transform:
   m_ObjectHideFlags: 0
@@ -4349,7 +4372,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1654512164}
+  m_TargetTexture: {fileID: 963093723}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -6798,6 +6821,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &117358293
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7343,6 +7374,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &120787851
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7654,6 +7693,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &125048855
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8484,6 +8531,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &136428051
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9194,6 +9249,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &146705587
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14684,6 +14747,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &243907410
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17154,6 +17225,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &293978917
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20426,6 +20505,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &341575721
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21871,6 +21958,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &365188950
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24648,7 +24743,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 199
+  m_SortingOrder: 399
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.41960785}
   m_FlipX: 0
@@ -26197,7 +26292,7 @@ MonoBehaviour:
   items_spr: []
   cut_i: 0
   cutS_spr:
-  - {fileID: 21300000, guid: 395c1fee3fe98394a8a3efc63cfb8bf6, type: 3}
+  - {fileID: 21300000, guid: 61eb34273bb09f5428a4d6f84fa7dd35, type: 3}
   dr_i: 0
   ori_obj: {fileID: 0}
   scene_obj: {fileID: 0}
@@ -28546,6 +28641,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &496115207
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29957,6 +30060,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &519273596
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30896,6 +31007,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &544538652
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31820,6 +31939,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &560459896
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34092,6 +34219,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &609945045
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35383,6 +35518,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &629741296
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36198,6 +36341,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &658475974
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37101,6 +37252,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &671445577
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38047,8 +38206,9 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -1.4984558, y: 0.6212584}
-      - {x: 5.271258, y: 0.58105713}
-      - {x: 4.6101847, y: -0.016242303}
+      - {x: 5.709206, y: 0.6227923}
+      - {x: 5.515245, y: 0.09048113}
+      - {x: 5.008033, y: -0.10160643}
       - {x: 4.7873025, y: -0.46972358}
       - {x: 4.6199694, y: -0.78644985}
       - {x: 4.3519087, y: -0.8769237}
@@ -38949,6 +39109,39 @@ Transform:
   m_Father: {fileID: 1213087003}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &703875266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 703875267}
+  m_Layer: 0
+  m_Name: "\uCEE8\uD14C\uC774\uB108"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &703875267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703875266}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1925042289}
+  - {fileID: 1707171884}
+  - {fileID: 948125333}
+  m_Father: {fileID: 59681809}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &704150118
 GameObject:
   m_ObjectHideFlags: 0
@@ -39434,7 +39627,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 299
-  m_Sprite: {fileID: 21300000, guid: e32dd3dacc82732479f2002433742347, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 61eb34273bb09f5428a4d6f84fa7dd35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -40266,6 +40459,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &737438134
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41712,7 +41913,7 @@ Transform:
   m_LocalScale: {x: 0.94, y: 0.94, z: 1}
   m_Children: []
   m_Father: {fileID: 59681809}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &765536963
 GameObject:
@@ -42570,7 +42771,7 @@ GameObject:
   - component: {fileID: 784304968}
   - component: {fileID: 784304970}
   m_Layer: 0
-  m_Name: "\uC0BD\uD654"
+  m_Name: "\uAFC8\uC0BD\uD654"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48066,6 +48267,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &891097678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -48508,6 +48717,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &896677059
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49331,6 +49548,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 1
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &906247536
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49611,6 +49836,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &909781963
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50322,6 +50555,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &929992913
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51267,6 +51508,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &946681229
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51384,7 +51633,7 @@ RectTransform:
   - {fileID: 1002369290}
   - {fileID: 2067862071}
   - {fileID: 1737353257}
-  m_Father: {fileID: 59681809}
+  m_Father: {fileID: 703875267}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -52554,6 +52803,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!84 &963093723
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 950
+  m_Height: 534
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &963200144
 GameObject:
   m_ObjectHideFlags: 0
@@ -53654,6 +53938,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &974808699
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54055,6 +54347,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &979907017
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54302,7 +54602,7 @@ MonoBehaviour:
   BGM_b: 0
   soundback_b: 0
   crow2_b: 0
-  dont_b: 0
+  dont_b: 1
   sup_b: 0
   event_i: 0
   door1_obj: {fileID: 1615615392}
@@ -54323,6 +54623,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 513080949}
+  dogam_obj: {fileID: 135811434}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 1236708166}
+  MGM: {fileID: 988219813}
+  eventMap_i: 1
+  aa_i: 0
 --- !u!61 &988219815
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54407,7 +54715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988219813}
   m_LocalRotation: {x: -0, y: -0, z: 0.70714664, w: -0.707067}
-  m_LocalPosition: {x: 12.865843, y: -0.49614736, z: 0}
+  m_LocalPosition: {x: 12.4, y: -0.49614736, z: 0}
   m_LocalScale: {x: 76.10848, y: 17.48565, z: 1}
   m_Children: []
   m_Father: {fileID: 1687977671}
@@ -55864,7 +56172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1007755946
 Transform:
   m_ObjectHideFlags: 0
@@ -57601,6 +57909,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1044358946
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59300,6 +59616,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1083547894
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60078,6 +60402,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1094197552
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60922,6 +61254,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1108257003
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -63103,6 +63443,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1161604708
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64469,7 +64817,7 @@ MonoBehaviour:
   candyBar_obj: {fileID: 0}
   broken_b: 0
   candy_spr: {fileID: 0}
-  other_obj: {fileID: 0}
+  other_obj: {fileID: 324442040}
   animalNum_i: 0
   crow_Ani: {fileID: 0}
   flipX_b: 0
@@ -64681,6 +65029,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1188507385
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65466,6 +65822,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1196254236
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -73939,6 +74303,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1346804527
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -76016,6 +76388,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1400179496
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -76600,6 +76980,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1416773311
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -78282,6 +78670,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1450581824
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -79528,6 +79924,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1481105512
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -81825,6 +82229,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1521865164
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -83404,6 +83816,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1561230746
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -83701,6 +84121,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1562199868
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -85739,6 +86167,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1600947036
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -87336,6 +87772,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1638960266
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -88039,41 +88483,6 @@ Transform:
   m_Father: {fileID: 1618348495}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &1654512164
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 934
-  m_Height: 525
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1657443779
 GameObject:
   m_ObjectHideFlags: 0
@@ -88278,6 +88687,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1658599333
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -88700,6 +89117,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1666469026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -89339,6 +89764,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1674407428
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -90822,6 +91255,7 @@ MonoBehaviour:
   a: 0
   b: 0
   c: 0
+  d: 0
 --- !u!1 &1698205354
 GameObject:
   m_ObjectHideFlags: 0
@@ -91084,10 +91518,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707171883}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.028, y: -0.245, z: 10}
+  m_LocalPosition: {x: 0.028, y: -0.245, z: 0}
   m_LocalScale: {x: 18.716703, y: 11.0216255, z: 1}
   m_Children: []
-  m_Father: {fileID: 59681809}
+  m_Father: {fileID: 703875267}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1707171885
@@ -91363,6 +91797,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1708340189
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -92679,6 +93121,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1744337146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -93683,6 +94133,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1764746793
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -97199,6 +97657,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1845382663
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -98005,6 +98471,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1859774569
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -100164,6 +100638,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1907654314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -100253,7 +100735,7 @@ GameObject:
   - component: {fileID: 1924944928}
   - component: {fileID: 1924944927}
   m_Layer: 2
-  m_Name: "NPC\uD1A0\uB07C (1)"
+  m_Name: "\uD638\uC218 \uAD6C\uACBD"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100267,8 +100749,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924944925}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.66, y: 2.14, z: 0}
-  m_LocalScale: {x: 0.94, y: 0.94, z: 1}
+  m_LocalPosition: {x: 5.85, y: 0.45, z: 0}
+  m_LocalScale: {x: 0.15586935, y: 0.17438297, z: 1}
   m_Children:
   - {fileID: 27751447}
   m_Father: {fileID: 1765995835}
@@ -100287,11 +100769,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move_i: 1
-  size: {x: 4, y: 1.6}
+  size: {x: 1.3, y: 3}
   whatIsLayer:
     serializedVersion: 2
     m_Bits: 512
-  balloon_spr: {fileID: 21300000, guid: 626b9cddb29049e4cac50cd87b419945, type: 3}
+  balloon_spr: {fileID: 21300000, guid: 3de8a0634e55df8499c88204001cb0dd, type: 3}
   balloon_obj: {fileID: 1648107670}
   x_f: 0
   y_f: 0
@@ -100335,7 +100817,7 @@ MonoBehaviour:
   char_obj: {fileID: 1236708166}
   position0: {x: 0, y: 0, z: 0}
   position_fox: {x: -4.9069247, y: 2.4156613, z: 0}
-  position_nomal: {x: -4.9069247, y: 2.415661, z: 0}
+  position_nomal: {x: 0, y: 0, z: 0}
   move_obj: {fileID: 1096630889}
   moveOther_obj: {fileID: 0}
   npc_obj: []
@@ -100395,8 +100877,8 @@ MonoBehaviour:
   miniGame_obj: {fileID: 0}
   dogam_b: 0
   fox_b: 0
-  checkX_f: 0
-  checkY_f: 1.3
+  checkX_f: -0.5
+  checkY_f: -1
   checkR_f: 0
   hallFix_obj: {fileID: 0}
   hall_obj: {fileID: 0}
@@ -100425,7 +100907,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.96, y: 3.2}
+    oldSize: {x: 3.2, y: 3.6}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -100473,7 +100955,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 21300000, guid: 822d41d8ea9951b4b9272c7c58711968, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aaecc246108f21c45898e0fcdb808481, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
@@ -100590,13 +101072,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925042288}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 69745026}
   - {fileID: 1926534838}
   - {fileID: 961553613}
-  m_Father: {fileID: 59681809}
+  m_Father: {fileID: 703875267}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1925042290
@@ -101384,6 +101866,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1946993484
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -103250,6 +103740,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1976230106
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -104428,6 +104926,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &1989034008
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -105787,6 +106293,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &2014545238
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -106725,6 +107239,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &2031141986
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -107596,6 +108118,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &2047061616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -109417,6 +109947,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &2082945986
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -110581,6 +111119,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &2109382158
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -110935,6 +111481,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 2044584715}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &2110121703
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -111300,6 +111854,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &2116537374
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -111580,6 +112142,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 2044584715}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &2124184652
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -112540,6 +113110,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &2138150723
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -113336,6 +113914,14 @@ MonoBehaviour:
   crow_Ani: {fileID: 0}
   position0: {x: 0, y: 0, z: 0}
   a_i: 0
+  b_obj: {fileID: 0}
+  dogam_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  CGM: {fileID: 0}
+  MGM: {fileID: 0}
+  eventMap_i: 0
+  aa_i: 0
 --- !u!61 &2147406797
 BoxCollider2D:
   m_ObjectHideFlags: 0
