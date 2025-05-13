@@ -132,7 +132,7 @@ public class CheckPlayer : MonoBehaviour
     public int dr_i;
     public GameObject ori_obj, scene_obj;
     public GameObject cutS_obj;
-
+    public int w_i=0;
 
     private void OnEnable()
     {
@@ -1107,6 +1107,13 @@ public class CheckPlayer : MonoBehaviour
                         npc_obj[0].GetComponent<SpriteRenderer>().sprite = items_spr[1];
                     }
 
+
+                    if (events_i == 833)
+                    {
+                        moveOther_obj.SetActive(true);
+                        this.gameObject.SetActive(false);
+                    }
+
                     break;
                 case 6://아래 이동
                     StopTalk();
@@ -1893,7 +1900,11 @@ public class CheckPlayer : MonoBehaviour
                                     GetItem_obj.SetActive(false);
                                     balloon_obj.SetActive(false);
                                 }
-                                Invoke("WaitCut", 1.2f);
+                                if (w_i==0)
+                                {
+                                    w_i = 1;
+                                    Invoke("WaitCut", 1.2f);
+                                }
                                 //
                             }
                             else
@@ -3217,6 +3228,7 @@ public class CheckPlayer : MonoBehaviour
     void WaitCut()
     {
         dr_i++;
+        w_i = 0;
     }
 
 }

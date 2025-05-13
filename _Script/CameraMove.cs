@@ -21,6 +21,8 @@ public class CameraMove : MonoBehaviour
     public GameObject note_obj;
     public GameObject ch_obj;
 
+    int a = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -71,7 +73,7 @@ public class CameraMove : MonoBehaviour
 
 
         yield return new WaitForSeconds(1.0f);
-        int a = 0;
+         a = 0;
         while (a <= 2)
         {
             if (a == 0)
@@ -85,16 +87,13 @@ public class CameraMove : MonoBehaviour
 
                 if (a == 1)
                 {
-                    cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[1];
-                    a++;
+                    Invoke("del1", 1f);
                 }
                 else
                 {
                     if (a == 2)
                     {
-                        cutS_obj.SetActive(false);
-
-                        a++;
+                        Invoke("del2", 1f);
                     }
                 }
                 
@@ -208,5 +207,15 @@ public class CameraMove : MonoBehaviour
         dogam_obj.SetActive(true);
     }
 
+    void del1()
+    {
+        cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[1];
+        a=2;
+    }
+    void del2()
+    {
+        cutS_obj.SetActive(false);
 
+        a++;
+    }
 }

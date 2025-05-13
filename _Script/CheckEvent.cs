@@ -144,6 +144,7 @@ public class CheckEvent : MonoBehaviour
                         }
                         */
                         //this.gameObject.SetActive(false);
+                        //데모용
                     }
 
 

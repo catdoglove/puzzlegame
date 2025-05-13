@@ -54,10 +54,18 @@ public class EventScenes : MonoBehaviour
     {
         eventP_i = 0;
         
+
+
+
+
         StartCoroutine("StartEvent");
 
         GM.GetComponent<CharMove>().canMove = false;
 
+
+
+
+        
         if (PlayerPrefs.GetString("changeLanguage", "") == "ENG")
         {
             note_obj.GetComponent<Image>().sprite = letter_spr;
@@ -299,7 +307,7 @@ public class EventScenes : MonoBehaviour
 
         black_obj.SetActive(true);
         black_obj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(2.5f);
         StartCoroutine("FadeIn");
 
     }
@@ -315,6 +323,7 @@ public class EventScenes : MonoBehaviour
 
         black_obj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
 
+        black_obj.SetActive(false);
 
         while (in_i == 1)
         {
