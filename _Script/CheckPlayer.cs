@@ -1893,7 +1893,8 @@ public class CheckPlayer : MonoBehaviour
                                     GetItem_obj.SetActive(false);
                                     balloon_obj.SetActive(false);
                                 }
-                                dr_i++;
+                                Invoke("WaitCut", 1.2f);
+                                //
                             }
                             else
                             {
@@ -2351,19 +2352,21 @@ public class CheckPlayer : MonoBehaviour
                     cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[1];
                     cutS_obj.SetActive(true);
 
-                    if (animalNum_i==0)
+                    if (animalNum_i==0|| animalNum_i == 1)
                     {
                         ori_obj.SetActive(true);
 
                         color = new Color(1f, 1f, 1f, 0f);
                         other_obj.GetComponent<SpriteRenderer>().color = color;
+                        PlayerPrefs.SetInt("wait", 1);
+                        Invoke("WaitTalk", 1f);
                     }
 
                     a++;
                     break;
                 case 47://컷씬
 
-                    if (animalNum_i == 0)
+                    if (animalNum_i == 0 || animalNum_i == 1)
                     {
                     }
                     else
@@ -3200,6 +3203,20 @@ public class CheckPlayer : MonoBehaviour
     {
 
         GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
+
+
+    }
+
+
+    void WaitTalk()
+    {
+        PlayerPrefs.SetInt("wait", 0);
+    }
+
+
+    void WaitCut()
+    {
+        dr_i++;
     }
 
 }

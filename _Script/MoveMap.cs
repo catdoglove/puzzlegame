@@ -108,7 +108,7 @@ public class MoveMap : MonoBehaviour
                 }
                 else
                 {
-
+                    GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
                     if (secret_b)
                     {
 

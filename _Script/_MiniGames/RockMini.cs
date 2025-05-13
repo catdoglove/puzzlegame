@@ -42,7 +42,7 @@ public class RockMini : MonoBehaviour
             {
 
                 cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[1];
-                dr_i++;
+                Invoke("WaitCut2", 1.2f);
             }
             else
             {
@@ -181,7 +181,8 @@ public class RockMini : MonoBehaviour
                 cutS_obj.SetActive(true);
                 con_obj.SetActive(false);
 
-                dr_i = 1;
+
+                Invoke("WaitCut", 1.2f);
             }
             else
             {
@@ -290,5 +291,16 @@ public class RockMini : MonoBehaviour
 
         Debug.Log(EventScenes.randColorF_i[3]);
 
+    }
+
+
+
+    void WaitCut()
+    {
+        dr_i = 1;
+    }
+    void WaitCut2()
+    {
+        dr_i = 2;
     }
 }

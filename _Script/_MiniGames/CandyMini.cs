@@ -66,7 +66,7 @@ public class CandyMini : MonoBehaviour
         {
             if (a_i >= 5)
             {
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.6f);
                 cottonWin_obj.SetActive(false);
                 if (b == 0)
                 {
@@ -134,7 +134,7 @@ public class CandyMini : MonoBehaviour
 
                 if (a_i >= 5)
                 {
-                    yield return new WaitForSeconds(0.2f);
+                    yield return new WaitForSeconds(0.8f);
                     cottonWin_obj.SetActive(false);
                     if (b == 0)
                     {
@@ -193,7 +193,7 @@ public class CandyMini : MonoBehaviour
             if (d==0)
             {
                 d = 1;
-                Invoke("helpme", 4f);
+                Invoke("helpme", 6f);
             }
 
             yield return new WaitForSeconds(0.01f);

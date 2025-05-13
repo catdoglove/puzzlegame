@@ -53,12 +53,10 @@ public class EventScenes : MonoBehaviour
     void Start()
     {
         eventP_i = 0;
-
-        /*
+        
         StartCoroutine("StartEvent");
 
         GM.GetComponent<CharMove>().canMove = false;
-        */
 
         if (PlayerPrefs.GetString("changeLanguage", "") == "ENG")
         {
@@ -301,6 +299,7 @@ public class EventScenes : MonoBehaviour
 
         black_obj.SetActive(true);
         black_obj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+        yield return new WaitForSeconds(4.5f);
         StartCoroutine("FadeIn");
 
     }
