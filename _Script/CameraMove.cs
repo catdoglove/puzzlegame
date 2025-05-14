@@ -87,13 +87,13 @@ public class CameraMove : MonoBehaviour
 
                 if (a == 1)
                 {
-                    Invoke("del1", 1f);
+                    Invoke("del1", 0.8f);
                 }
                 else
                 {
                     if (a == 2)
                     {
-                        Invoke("del2", 1f);
+                        Invoke("del2", 0.8f);
                     }
                 }
                 

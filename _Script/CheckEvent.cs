@@ -128,9 +128,9 @@ public class CheckEvent : MonoBehaviour
                     {
 
 
-                        SceneManager.LoadScene("02_game");
+                        //SceneManager.LoadScene("02_game");
 
-                        /*
+                        
                         if (PlayerPrefs.GetInt("gametestover", 0) == 0)
                         {
                             UIOff_obj.SetActive(false);
@@ -142,7 +142,6 @@ public class CheckEvent : MonoBehaviour
                             PlayerPrefs.SetInt("gametestover", 1);
 
                         }
-                        */
                         //this.gameObject.SetActive(false);
                         //데모용
                     }

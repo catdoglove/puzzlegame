@@ -4375,7 +4375,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1768923971}
+  m_TargetTexture: {fileID: 1179571599}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -32768,7 +32768,7 @@ MonoBehaviour:
   stop_Ani: {fileID: 0}
   num: 0
   ori_spr: {fileID: 0}
-  q1_obj: {fileID: 349671669}
+  q1_obj: {fileID: 699976667}
   q2_obj: {fileID: 307177330}
   q3_obj: {fileID: 5119183}
   q4_obj: {fileID: 566376288}
@@ -56122,7 +56122,7 @@ MonoBehaviour:
   stop_Ani: {fileID: 0}
   num: 0
   ori_spr: {fileID: 0}
-  q1_obj: {fileID: 349671669}
+  q1_obj: {fileID: 699976667}
   q2_obj: {fileID: 307177330}
   q3_obj: {fileID: 5119183}
   q4_obj: {fileID: 566376288}
@@ -64904,6 +64904,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!84 &1179571599
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 708
+  m_Height: 398
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1182109807
 GameObject:
   m_ObjectHideFlags: 0
@@ -68170,7 +68205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224280997}
   m_LocalRotation: {x: -0, y: -0, z: 0.70714664, w: -0.707067}
-  m_LocalPosition: {x: 7.22, y: -1.2, z: 0}
+  m_LocalPosition: {x: 7.86, y: -1.2, z: 0}
   m_LocalScale: {x: 76.108604, y: 17.48565, z: 1}
   m_Children: []
   m_Father: {fileID: 1681071711}
@@ -95152,41 +95187,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1766798553}
   m_CullTransparentMesh: 0
---- !u!84 &1768923971
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 708
-  m_Height: 398
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1770299107
 GameObject:
   m_ObjectHideFlags: 0
@@ -101239,7 +101239,7 @@ MonoBehaviour:
   GetItemS_obj: {fileID: 0}
   GetItemO_obj: {fileID: 0}
   SetEventPref_str: tokki3h
-  EventNum_i: 0f0000000300000001000000010000000a000000010000000a0000000a0000000a00000005000000
+  EventNum_i: 0b0000000f00000001000000010000000a000000010000000a0000000a0000000a00000005000000
   EventNum1_i: 
   EventNum2_i: 
   Event_spr:
@@ -112983,7 +112983,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124184649}
   m_LocalRotation: {x: -0, y: -0, z: 0.70714664, w: -0.707067}
-  m_LocalPosition: {x: -3.8, y: -2.3399997, z: 0}
+  m_LocalPosition: {x: -3.14, y: -2.3399997, z: 0}
   m_LocalScale: {x: 76.108604, y: 17.48565, z: 1}
   m_Children: []
   m_Father: {fileID: 583449743}
