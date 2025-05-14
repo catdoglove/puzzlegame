@@ -1903,7 +1903,7 @@ public class CheckPlayer : MonoBehaviour
                                 if (w_i==0)
                                 {
                                     w_i = 1;
-                                    Invoke("WaitCut", 1f);
+                                    Invoke("WaitCut", 0.9f);
                                 }
                                 //
                             }
