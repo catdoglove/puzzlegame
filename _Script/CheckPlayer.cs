@@ -1275,6 +1275,10 @@ public class CheckPlayer : MonoBehaviour
                     StopCoroutine("talkBall");
                     StartCoroutine("talkBall");
                     StopAndTalk();
+                    if (animalNum_i==1)
+                    {
+                        talkBallB_obj.SetActive(false);
+                    }
                     a++;
                     break;
                 case 12://말풍선 띄우고 퀘스트 시작
@@ -2372,7 +2376,7 @@ public class CheckPlayer : MonoBehaviour
                         PlayerPrefs.SetInt("wait", 1);
                         Invoke("WaitTalk", 1f);
                     }
-
+                    talkBallB_obj.SetActive(false);
                     a++;
                     break;
                 case 47://컷씬
@@ -2387,6 +2391,7 @@ public class CheckPlayer : MonoBehaviour
                     }
                     scene_obj.SetActive(false);
                     cutS_obj.SetActive(false);
+                    talkBallB_obj.SetActive(false);
                     a++;
                     break;
                 case 48://종이

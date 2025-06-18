@@ -21,7 +21,6 @@ public class EventScenes : MonoBehaviour
 
     Color color, color2;
 
-
     //char
     public Vector3 cPosition;
     public GameObject cMain_obj;
@@ -57,12 +56,12 @@ public class EventScenes : MonoBehaviour
 
 
 
-
+        /*
         StartCoroutine("StartEvent");
 
         GM.GetComponent<CharMove>().canMove = false;
 
-
+        */
 
 
         
