@@ -138,7 +138,7 @@ public class CandyMini : MonoBehaviour
                     cottonWin_obj.SetActive(false);
                     if (b == 0)
                     {
-                        CPSGM.GetComponent<CheckPlayer>().EventNum_i[CPGM.GetComponent<CheckPlayer>().num] = 15;
+                        CPSGM.GetComponent<CheckPlayer>().EventNum_i[CPSGM.GetComponent<CheckPlayer>().num] = 15;
                         CPSGM.GetComponent<CheckPlayer>().EventSetting();
                         b = 1;
                     }
@@ -208,7 +208,7 @@ public class CandyMini : MonoBehaviour
             cottonWin_obj.SetActive(false);
             if (b == 0)
             {
-                CPSGM.GetComponent<CheckPlayer>().EventNum_i[CPGM.GetComponent<CheckPlayer>().num] = 15;
+                CPSGM.GetComponent<CheckPlayer>().EventNum_i[CPSGM.GetComponent<CheckPlayer>().num] = 15;
                 CPSGM.GetComponent<CheckPlayer>().EventSetting();
                 b = 1;
             }

@@ -520,18 +520,25 @@ public class MoveMap : MonoBehaviour
         b_obj.GetComponent<SpriteRenderer>().color = color;
 
         //StopCoroutine("move");
-        CGM.GetComponent<CharMove>().canMove = true;
         yield return new WaitForSeconds(0.8f);
         MGM.GetComponent<MoveMap>().MovingMap();
+        PlayerPrefs.SetInt("wait", 1);
+
+
         MGM.GetComponent<MoveMap>().player_obj.transform.position = MGM.GetComponent<MoveMap>().mapRespawn_obj[0].transform.position;
 
 
+        CGM.GetComponent<CharMove>().canMove = true;
         PlayerPrefs.SetInt("escdont", 0);
         b_obj.SetActive(false);
 
 
         CGM.GetComponent<CharMove>().Speed = 2.5f;
         dogam_obj.SetActive(true);
+
+
+
+        PlayerPrefs.SetInt("wait", 0);
     }
 
 

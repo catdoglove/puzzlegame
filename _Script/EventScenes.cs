@@ -36,7 +36,6 @@ public class EventScenes : MonoBehaviour
     /// 캐릭터 방울 착용
     /// </summary>
     public GameObject noneBell_obj;
-
     public GameObject letter_obj;
     public Sprite letter_spr;
 

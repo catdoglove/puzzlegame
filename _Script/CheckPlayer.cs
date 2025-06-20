@@ -1415,6 +1415,13 @@ public class CheckPlayer : MonoBehaviour
 
                         StartCoroutine("TalkBOff");
                     }
+
+
+                    if (animalNum_i == 1)
+                    {
+                        Invoke("DontAni2",0.1f);
+                        a++;
+                    }
                     break;
                 case 16://말풍선 띄우고 퀘스트 시작
                     TalkSound();
@@ -2360,6 +2367,7 @@ public class CheckPlayer : MonoBehaviour
                     cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[0];
                     cutS_obj.SetActive(true);
                     a++;
+                    talkBallB_obj.SetActive(false);
                     break;
                 case 46://컷씬
 
@@ -3207,6 +3215,14 @@ public class CheckPlayer : MonoBehaviour
     {
         StopTalk();
         all_Ani.Play("ani_npc_cat_forest");
+    }
+
+    public void DontAni2()
+    {
+        if (animalNum_i == 1)
+        {
+            all_Ani.Play("ani_npc_rabbit2");
+        }
     }
 
     void danger()
