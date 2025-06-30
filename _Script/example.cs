@@ -57,12 +57,12 @@ public class example : MonoBehaviour
         moveX = 0f;
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            moveX += 0.07f; boatSpr.GetComponent<SpriteRenderer>().flipX = false;
+            moveX += 0.046f; boatSpr.GetComponent<SpriteRenderer>().flipX = false;
 
-            if (transform.position.x >= -6f) //위치 도달 이후 부터 ~~
+            if (transform.position.x >= -6.5f) //위치 도달 이후 부터 ~~
             {
-                frontBG.transform.Translate(new Vector3(moveX, 0, 0) * -0.24f);
-                backBG.transform.Translate(new Vector3(moveX, 0, 0) * -0.20f);
+                frontBG.transform.Translate(new Vector3(moveX, 0, 0) * -0.48f);
+                backBG.transform.Translate(new Vector3(moveX, 0, 0) * -0.36f);
             }
 
         }
@@ -72,11 +72,11 @@ public class example : MonoBehaviour
 
 
         float ff = 0;
-        if (transform.position.x >= 4.5f) //위치 도달 이후 부터 ~~
+        if (transform.position.x >= 5f) //위치 도달 이후 부터 ~~
         {
             if (PlayerPrefs.GetInt("hide_sound1", 0) == 0) //한번만 실행되게
             {
-                SGM.GetComponent<SoundEvt>().soundHide1(); //배에 audioaouscer선언
+               // SGM.GetComponent<SoundEvt>().soundHide1(); //배에 audioaouscer선언
                 PlayerPrefs.SetInt("hide_sound1", 99);
             }
             ff--;
