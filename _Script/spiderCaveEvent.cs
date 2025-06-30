@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class spiderCaveEvent : MonoBehaviour
@@ -7,6 +8,14 @@ public class spiderCaveEvent : MonoBehaviour
     float spiderX;
     public GameObject WebTrapfirst, spiderPosition, chaseArea, spiderChaseSpr, spiderDownSpr, charFallSpr;
     bool caveCheck;
+
+
+    public GameObject b_obj;
+
+    public GameObject m1_obj, m2_obj;
+
+    UnityEngine.Color color;
+
 
     /// <summary>
     /// spiderAppearDown : 거미 추격씬 마지막 부분 거미
@@ -130,6 +139,35 @@ public class spiderCaveEvent : MonoBehaviour
             PlayerPrefs.SetInt("autoBGstart", 99);
         }
 
+    }
+
+    IEnumerator imgFadeOut()
+    {
+        yield return new WaitForSeconds(0.6f);
+
+
+        b_obj.SetActive(true);
+        color = b_obj.GetComponent<SpriteRenderer>().color;
+
+
+        for (float i = 0f; i <= 1f; i += 0.05f)
+        {
+            // CGM.transform.position = new Vector3(moveX, moveY, 0f);
+            color.a = Mathf.Lerp(0f, 1f, i);
+            b_obj.GetComponent<SpriteRenderer>().color = color;
+            yield return new WaitForSeconds(0.05f);
+        }
+        color.a = Mathf.Lerp(0f, 1f, 1f);
+        b_obj.GetComponent<SpriteRenderer>().color = color;
+        yield return new WaitForSeconds(0.6f);
+
+        PlayerPrefs.SetInt("escdont", 0);
+        
+
+        b_obj.SetActive(false);
+
+        m1_obj.SetActive(false);
+        m2_obj.SetActive(true);
     }
 
 }

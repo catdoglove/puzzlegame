@@ -6,6 +6,7 @@ public class spiderEventStart : MonoBehaviour
 {
     int a = 0;
     public GameObject d_obj;
+    public GameObject startS_obj;
 
     // Start is called before the first frame update
     void Start()
@@ -15,18 +16,18 @@ public class spiderEventStart : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        PlayerPrefs.SetInt("spiderEventStart", 1);
+        //PlayerPrefs.SetInt("spiderEventStart", 1);
 
         if (a==0)
         {
-
-            d_obj.GetComponent<Animator>().Play("ani_npc_spider_change");
+            startS_obj.SetActive(true);
+            //d_obj.GetComponent<Animator>().Play("ani_npc_spider_change");
             a = 1;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        PlayerPrefs.SetInt("spiderEventStart", 0);
+        //PlayerPrefs.SetInt("spiderEventStart", 0);
     }
 }
