@@ -28,6 +28,9 @@ public class CaveCameraMove : MonoBehaviour
 
     public GameObject m1_obj, m2_obj;
 
+    public GameObject triger_obj;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +42,7 @@ public class CaveCameraMove : MonoBehaviour
         CGM.GetComponent<CharMove>().charAni.Play("ani_char_stop");
         CGM.GetComponent<CharMove>().Speed = 0f;
         CGM.GetComponent<CharMove>().charAni.speed = 1f;
+        CGM.GetComponent<CharMove>().canMove = false;
         //color.a = Mathf.Lerp(0f, 1f, 0f);
         //b_obj.GetComponent<SpriteRenderer>().color = color;
         moveY1 = c_obj.transform.position.y;
@@ -78,6 +82,7 @@ public class CaveCameraMove : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         sp_obj.GetComponent<Animator>().Play("ani_npc_spider_change");
+        yield return new WaitForSeconds(2f);
 
         /*
         yield return new WaitForSeconds(1.4f); //양이 보는 시간
@@ -106,6 +111,8 @@ public class CaveCameraMove : MonoBehaviour
             c_obj.transform.position = new Vector3(moveX, moveY, -10f);
             yield return new WaitForSeconds(0.01f);
         }
+        triger_obj.SetActive(true);
+
         //ch_obj.SetActive(false);
         yield return new WaitForSeconds(0.01f);
         //note_obj.SetActive(true);
@@ -117,8 +124,8 @@ public class CaveCameraMove : MonoBehaviour
         CGM.GetComponent<CharMove>().canMove = true;
         CGM.GetComponent<CharMove>().Speed = 2.5f;
 
-        m1_obj.SetActive(false);
-        m2_obj.SetActive(true);
+        //m1_obj.SetActive(false);
+        //m2_obj.SetActive(true);
 
         //Invoke("can", 0.2f);
         //StartCoroutine("move");

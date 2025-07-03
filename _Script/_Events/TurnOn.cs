@@ -27,6 +27,7 @@ public class TurnOn : MonoBehaviour
         s_obj.SetActive(false);
         c_obj.SetActive(false);
         yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(4f);
 
 
         //b_obj.SetActive(true);
