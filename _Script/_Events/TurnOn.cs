@@ -9,8 +9,12 @@ public class TurnOn : MonoBehaviour
 
     UnityEngine.Color color;
 
+    public GameObject GMC;
+
     private void Awake()
     {
+
+        GMC.GetComponent<ShaderEffect>().changeShader17();
         Invoke("Wait", 0.1f);
     }
 
@@ -26,8 +30,7 @@ public class TurnOn : MonoBehaviour
     {
         s_obj.SetActive(false);
         c_obj.SetActive(false);
-        yield return new WaitForSeconds(0.6f);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
 
 
         //b_obj.SetActive(true);

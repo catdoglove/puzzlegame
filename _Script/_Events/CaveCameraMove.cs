@@ -124,8 +124,8 @@ public class CaveCameraMove : MonoBehaviour
         CGM.GetComponent<CharMove>().canMove = true;
         CGM.GetComponent<CharMove>().Speed = 2.5f;
 
-        //m1_obj.SetActive(false);
-        //m2_obj.SetActive(true);
+        m1_obj.SetActive(false);
+        m2_obj.SetActive(true);
 
         //Invoke("can", 0.2f);
         //StartCoroutine("move");

@@ -56,7 +56,7 @@ public class spiderCaveEvent : MonoBehaviour
 
         if (PlayerPrefs.GetInt("autoBGstart", 0) == 1)
         {
-            StartCoroutine("ShowWeb");
+            //StartCoroutine("ShowWeb");
             StartCoroutine("SpiderChaseEnd");
             chaseArea.SetActive(false);
         }
@@ -97,7 +97,7 @@ public class spiderCaveEvent : MonoBehaviour
     IEnumerator ShowWeb() //거미줄 초반부분은 처음에 안나와야함 
     {
         yield return new WaitForSeconds(5f);
-        WebTrapfirst.SetActive(true);
+        //WebTrapfirst.SetActive(true);
     }
 
 
@@ -131,7 +131,7 @@ public class spiderCaveEvent : MonoBehaviour
     /// <returns></returns>
     IEnumerator SpiderChaseEnd()
     {
-        yield return new WaitForSeconds(7f); //나중에 시간늘려야함
+        yield return new WaitForSeconds(17f); //나중에 시간늘려야함
 
         if (caveCheck == false)
         {
