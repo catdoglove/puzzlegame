@@ -10,6 +10,8 @@ public class CaveAllEvent : MonoBehaviour
 
     UnityEngine.Color color;
 
+    public GameObject cut_obj;
+
     IEnumerator imgFadeOut()
     {
         yield return new WaitForSeconds(0.6f);
@@ -42,6 +44,26 @@ public class CaveAllEvent : MonoBehaviour
     {
 
         b_obj.SetActive(true);
+        //color.a = Mathf.Lerp(0f, 1f, 1f);
+        //b_obj.GetComponent<SpriteRenderer>().color = color;
+        m1_obj.SetActive(false);
+        m2_obj.SetActive(true);
+    }
+
+    public void ShowCut()
+    {
+
+        //b_obj.SetActive(true);
+        //color.a = Mathf.Lerp(0f, 1f, 1f);
+        //b_obj.GetComponent<SpriteRenderer>().color = color;
+        //m1_obj.SetActive(false);
+        //m2_obj.SetActive(true);
+        cut_obj.SetActive(true);
+    }
+    public void MoveTo2()
+    {
+
+        cut_obj.SetActive(false);
         //color.a = Mathf.Lerp(0f, 1f, 1f);
         //b_obj.GetComponent<SpriteRenderer>().color = color;
         m1_obj.SetActive(false);

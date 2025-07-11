@@ -11,6 +11,8 @@ public class TurnOn : MonoBehaviour
 
     public GameObject GMC;
 
+    public GameObject BMC;
+
     private void Awake()
     {
 
@@ -49,6 +51,7 @@ public class TurnOn : MonoBehaviour
 
         PlayerPrefs.SetInt("escdont", 0);
 
+        BMC.SetActive(true);
         b_obj.SetActive(false);
 
 
