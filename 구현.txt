@@ -1,0 +1,54 @@
+
+------------위에 선언부분--------------------
+    public GameObject subChar_Ani, subChar_spr;
+    public Animator subAni_real, subAni_fake;
+
+
+
+----------void TextClear() 안에 넣을 case-------------
+case 4: //깊은숲 조력자 본모습 맵
+                txt_str = "" + data_talk[iline]["No7"];
+                txt.text = txt_str;
+                text = targetText.text.ToString();
+                targetText.text = " ";
+                PlayerPrefs.SetInt("charHide", 0);
+
+                //조력자 대화에 따른 모습변화  0말하기 1웃음 2머쓱 3기본  4정리
+                txt_char = "" + data_talk[iline]["No6"];
+                if (txt_char == "0")
+                {
+                    subAni_real.Play("ani_npc_family_talk");
+                }
+                else if (txt_char == "1")
+                {
+                    subAni_real.Play("ani_npc_family_smile");
+                }
+                else if (txt_char == "2")
+                {
+                    subAni_real.Play("ani_npc_family_think");
+                }
+                else if (txt_char == "3")
+                {
+                    subAni_real.Play("ani_npc_family_normal");
+                }
+                else if (txt_char == "4")
+                {
+                    subAni_real.Play("char_family_hide");
+                    subAni_fake.Play("char_unknown_hide");
+                    PlayerPrefs.SetInt("charHide",1);
+                }
+                else if (txt_char == "5")
+                {
+                    subChar_Ani.SetActive(false);
+                    subChar_spr.SetActive(true);
+                }
+
+                break;
+
+
+-------------------벗겨지고 나타나게하는 함수 (애니메이션에 추가)---------------------
+    public void showSubChar()
+    {
+        subChar_Ani.SetActive(true);
+        Invoke("JustOne", 1.5f); 
+    }

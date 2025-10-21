@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ani_npc_deepbear_normal
+  m_Name: ani_npc_deepbear_eat
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 2837408e94053c443bc335de09494863, type: 3}
+      value: {fileID: 21300000, guid: a64ea9f0fa0bd394f8e50384801cf269, type: 3}
     - time: 0.33333334
-      value: {fileID: 21300000, guid: 0f1b5565feea79b4186ad1f9b52fb93c, type: 3}
+      value: {fileID: 21300000, guid: 609d29653ede68943a0626df6e15c0cf, type: 3}
     - time: 0.6666667
-      value: {fileID: 21300000, guid: fa7bee49c8f2f894a922d5387b873987, type: 3}
+      value: {fileID: 21300000, guid: 61c4cf17e94658143b2a4ed97cb625a4, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,9 +44,9 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 2837408e94053c443bc335de09494863, type: 3}
-    - {fileID: 21300000, guid: 0f1b5565feea79b4186ad1f9b52fb93c, type: 3}
-    - {fileID: 21300000, guid: fa7bee49c8f2f894a922d5387b873987, type: 3}
+    - {fileID: 21300000, guid: a64ea9f0fa0bd394f8e50384801cf269, type: 3}
+    - {fileID: 21300000, guid: 609d29653ede68943a0626df6e15c0cf, type: 3}
+    - {fileID: 21300000, guid: 61c4cf17e94658143b2a4ed97cb625a4, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
