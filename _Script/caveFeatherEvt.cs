@@ -7,17 +7,18 @@ public class caveFeatherEvt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetInt("caveFeatherWalk", 0);
+        //PlayerPrefs.SetInt("caveFeatherWalk", 0);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        PlayerPrefs.SetInt("caveFeatherWalk", 1);
+        PlayerPrefs.SetInt("startdialogfirst3", 1);
+        this.gameObject.SetActive(false);
 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        PlayerPrefs.SetInt("caveFeatherWalk", 0);
+        //PlayerPrefs.SetInt("caveFeatherWalk", 0);
     }
 }

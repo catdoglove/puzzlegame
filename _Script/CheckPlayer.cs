@@ -2412,6 +2412,34 @@ public class CheckPlayer : MonoBehaviour
                     cutS_obj.SetActive(false);
                     a--;
                     break;
+                case 50://대화
+
+                    StopAndTalk();
+
+                    PlayerPrefs.SetInt("startdialogfirst2", 1);
+                    //a++;
+                    talkBallB_obj.SetActive(false);
+                    cutS_obj.SetActive(false);
+                    break;
+                case 51://대화
+
+                    StopAndTalk();
+
+                    PlayerPrefs.SetInt("startdialogfirst3", 1);
+                    //a++;
+                    talkBallB_obj.SetActive(false);
+                    cutS_obj.SetActive(false);
+                    break;
+
+
+                case 52://퍼즐
+
+                    SGM.GetComponent<SoundEvt>().soundItemUse();
+                    GM.GetComponent<CharMove>().canMove = false;
+                    PlayerPrefs.SetInt("escdont", 1);
+                    miniGame_obj.SetActive(true);
+
+                    break;
             }
         }
 

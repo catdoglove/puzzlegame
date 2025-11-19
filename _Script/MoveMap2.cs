@@ -53,6 +53,8 @@ public class MoveMap2 : MonoBehaviour
     public bool caveMove_b;
 
 
+    public bool caveOut_b, caveIn_b;
+
     Color color;
 
 
@@ -504,7 +506,17 @@ public class MoveMap2 : MonoBehaviour
         }
 
 
+        if (caveOut_b)
+        {
+            GMC.GetComponent<ShaderEffect>().photo.BlendFX = 0.4f;
+            BGM4.GetComponent<AudioSource>().volume = 0.8f;
+        }
 
+        if (caveIn_b)
+        {
+            GMC.GetComponent<ShaderEffect>().photo.BlendFX = 0;
+            BGM4.GetComponent<AudioSource>().volume = 0;
+        }
 
 
         if (setEff_b)

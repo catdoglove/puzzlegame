@@ -22,7 +22,10 @@ public class Dialogue : MonoBehaviour
 
     public Sprite [] subCharSpr;
     public GameObject subDlg,charDlg, subCursor;
-    int placeNum = 1; //숫자에 따라 장소 인지 임시?
+    public int placeNum; //숫자에 따라 장소 인지 임시?
+
+
+    public GameObject event_obj, char_obj, subChar_obj,m1,m2;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +33,7 @@ public class Dialogue : MonoBehaviour
        // PlayerPrefs.SetInt("caveFeatherWalk", 0);
         data_talk = CSVReader.Read("CSV/talk_text");
         PlayerPrefs.SetInt("charDlgIsWork", 99);
-        Invoke("JustOne",1f); //임시위치 :  이벶트 진입했을 때 스페이스바 없이 대사가 자동으로 뜨게해야함
+        //Invoke("JustOne",1f); //임시위치 :  이벶트 진입했을 때 스페이스바 없이 대사가 자동으로 뜨게해야함
     }
 
 
@@ -51,6 +54,10 @@ public class Dialogue : MonoBehaviour
     void subDlgDelay()
     {
         subDlg.SetActive(false);
+
+        char_obj.SetActive(false);
+        char_obj.GetComponent<CharMove>().canMove = true;
+        char_obj.SetActive(true);
     }
 
     private void Update()
@@ -91,7 +98,35 @@ public class Dialogue : MonoBehaviour
             }
             */
         }
+        if (PlayerPrefs.GetInt("startdialogfirst", 0)==1)
+        {
+            event_obj.SetActive(true);
+            char_obj.SetActive(false);
+            subChar_obj.SetActive(false);
+            Invoke("JustOne", 0f);
+            PlayerPrefs.SetInt("startdialogfirst", 0);
+        }
 
+        if (PlayerPrefs.GetInt("startdialogfirst2", 0) == 1)
+        {
+            //event_obj.SetActive(true);
+            //char_obj.SetActive(false);
+            //subChar_obj.SetActive(false);
+            Invoke("JustOne", 0f);
+            PlayerPrefs.SetInt("startdialogfirst2", 0);
+        }
+
+        if (PlayerPrefs.GetInt("startdialogfirst3", 0) == 1)
+        {
+            //event_obj.SetActive(true);
+            //char_obj.SetActive(false);
+            subChar_obj.SetActive(false);
+            Invoke("JustOne", 0f);
+            PlayerPrefs.SetInt("startdialogfirst3", 0);
+            char_obj.GetComponent<CharMove>().canMove = false;
+            char_obj.GetComponent<CharMove>().Speed = 0f;
+            char_obj.GetComponent<CharMove>().charAni.StopPlayback();
+        }
     }
 
 
@@ -177,13 +212,17 @@ public class Dialogue : MonoBehaviour
                 break;
 
             case 3: //조력자탈출 맵
-                if(PlayerPrefs.GetInt("caveFeatherWalk", 0) == 1)
-                {
+                //if(PlayerPrefs.GetInt("caveFeatherWalk", 0) == 1)
+                //{
                     subChar4.SetActive(true);
                     txt_str = "" + data_talk[iline]["No5"];
                     PlayerPrefs.SetInt("charDlgIsWork", 0);
-                    /********캐릭터 못 움직이게******/
-                }
+
+                    //char_obj.GetComponent<CharMove>().canMove = false;
+                    subChar_obj.SetActive(false);
+
+                /********캐릭터 못 움직이게******/
+                //}
                 break;
 
             default:
@@ -209,10 +248,19 @@ public class Dialogue : MonoBehaviour
         else if (txt_str.Contains("Z")) //대화끝
         {
             subDlg.SetActive(false);
+            char_obj.GetComponent<CharMove>().canMove = true;
+            char_obj.GetComponent<CharMove>().Speed = 1f;
+            if (placeNum==3)
+            {
+                subChar4.SetActive(false);
+                subChar_obj.SetActive(true);
+                m1.SetActive(false);
+                m2.SetActive(true);
+            }
         }
         else
         {
-           // subDlg.SetActive(true);
+            subDlg.SetActive(true);
         }
 
         

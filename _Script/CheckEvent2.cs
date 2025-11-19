@@ -35,7 +35,7 @@ public class CheckEvent2 : MonoBehaviour
 
     public bool muteOff_b, muteOn_b;
 
-    public bool walk_b, walkW_b, pickup_b, broken_b, end_b,sheep_b;
+    public bool walk_b, walkW_b, pickup_b, broken_b, end_b,sheep_b, backDown_b;
     public GameObject triger_obj, plank_obj, plankHall_obj, plankA_obj;
     public GameObject rage_obj;
 
@@ -140,6 +140,14 @@ public class CheckEvent2 : MonoBehaviour
                         //this.gameObject.SetActive(false);
                     }
 
+                    if (backDown_b)
+                    {
+                        if (PlayerPrefs.GetInt("foxclear", 0) == 0)
+                        {
+                                block2();
+                        }
+
+                    }
 
 
                 }
@@ -188,6 +196,14 @@ public class CheckEvent2 : MonoBehaviour
     }
 
 
+    void block2()
+    {
+        PlayerPrefs.SetInt("foxclear", 1);
+        //StopCoroutine("EventDown");
+        StartCoroutine("EventDown2");
+    }
+
+
     /// <summary>
     /// 뒤로 밀기
     /// </summary>
@@ -219,6 +235,51 @@ public class CheckEvent2 : MonoBehaviour
         GM.GetComponent<CharMove>().canMove = true;
         move_obj.GetComponent<Animator>().Play("ani_npc_fox");
 
+        PlayerPrefs.SetInt("foxclear", 0);
+
+        PlayerPrefs.SetInt("wait", 0);
+    }
+
+
+
+    /// <summary>
+    /// 뒤로 밀기
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator EventDown2()
+    {
+
+        GM.GetComponent<CharMove>().Speed = 0f;
+        PlayerPrefs.SetInt("wait", 1);
+        GM.GetComponent<CharMove>().canMove = false;
+        //talk_b = false;
+        int in_i = 1;
+        position0 = player_obj.transform.position;
+
+        //yield return new WaitForSeconds(0.5f);
+        SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
+        SGM.GetComponent<SoundEvt>().soundDamage();
+        while (in_i == 1)
+        {
+
+
+            position0.y = position0.y - 7f * Time.deltaTime;
+            position0.x = position0.x - 7f * Time.deltaTime;
+            player_obj.transform.position = position0;
+
+            if (position0.y <= door1_obj.transform.position.y)
+            {
+                in_i = 0;
+            }
+
+            yield return new WaitForSeconds(0.01f);
+        }
+        //talk_b = true;
+
+
+        GM.GetComponent<CharMove>().Speed = 0f;
+        yield return new WaitForSeconds(0.3f);
+        GM.GetComponent<CharMove>().canMove = true;
         PlayerPrefs.SetInt("foxclear", 0);
 
         PlayerPrefs.SetInt("wait", 0);

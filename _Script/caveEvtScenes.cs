@@ -29,6 +29,7 @@ public class caveEvtScenes : MonoBehaviour
         subCharAni.Play("ani_npc_unknown_cave1");
         subCharAni.Play("ani_npc_unknown_default");
         mainCharAni.SetActive(false);
-        mainChar.SetActive(true);
+        //mainChar.SetActive(true);
+        PlayerPrefs.SetInt("startdialogfirst",1);
     }
 }
