@@ -61,11 +61,12 @@ public class AnimationSample : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (doorAni.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f)
         {
             testBtnobj.SetActive(true);
         }//애니메이션이 종료됨을 감지하는 코드
-
+        */
 
 
         if (Input.GetKey(KeyCode.Escape))
