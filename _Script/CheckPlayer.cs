@@ -134,6 +134,13 @@ public class CheckPlayer : MonoBehaviour
     public GameObject cutS_obj;
     public int w_i=0;
 
+
+    [Tooltip("이동 속도")]
+    public float moveSpeed = 5f;
+
+    [Tooltip("회전 속도 보정값")]
+    public float rotationMultiplier = 50f;
+
     private void OnEnable()
     {
         GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
@@ -2440,6 +2447,53 @@ public class CheckPlayer : MonoBehaviour
                     miniGame_obj.SetActive(true);
 
                     break;
+
+                case 53://배타기뒤로
+
+                    //SGM.GetComponent<SoundEvt>().soundItemUse();
+
+                    GM.GetComponent<CharMove>().canMove = false;
+                    PlayerPrefs.SetInt("escdont", 1);
+                    //
+                    //
+                    //
+                    //miniGame_obj.SetActive(true);
+
+                    StartCoroutine("BoatMoveL");
+                    GM.SetActive(false);
+
+                    all_Ani.Play("ani_boat_river_up");
+
+
+                    o3_obj.SetActive(true);
+                    o4_obj.SetActive(false);
+                    all_Ani.Play("ani_boat_river_up");
+
+                    break;
+
+                case 54://돌굴리기
+
+                    //SGM.GetComponent<SoundEvt>().soundItemUse();
+
+
+                    //miniGame_obj.SetActive(true);
+
+                    GM.GetComponent<CharMove>().canMove = false;
+                    PlayerPrefs.SetInt("escdont", 1);
+                    other_obj.SetActive(true);
+                    StartCoroutine("RollProcess");
+                    //StartCoroutine("BoatMoveL");
+                    //GM.SetActive(false);
+
+                    //all_Ani.Play("ani_npc_cat_get2");
+
+                    break;
+
+                case 55://배타기부르기
+                    moveOther_obj.GetComponent<CheckPlayer>().EventSetting();
+                    balloon_obj.SetActive(false);
+
+                    break;
             }
         }
 
@@ -3131,6 +3185,124 @@ public class CheckPlayer : MonoBehaviour
     }
 
 
+
+    /// <summary>
+    /// 배이동
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator BoatMoveL()
+    {
+        PlayerPrefs.SetInt("wait", 1);
+        GM.GetComponent<CharMove>().canMove = false;
+        //talk_b = false;
+
+        int in_i = 1;
+        position0 = moveOther_obj.transform.position;
+
+        yield return new WaitForSeconds(0.5f);
+        //SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
+        //SGM.GetComponent<SoundEvt>().soundDamage();
+        while (in_i == 1)
+        {
+            position0.x = position0.x - 15f * Time.deltaTime;
+            moveOther_obj.transform.position = position0;
+
+            if (position0.x <= other_obj.transform.position.x)
+            {
+                in_i = 0;
+            }
+
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        moveOther_obj.transform.position = o1_obj.transform.position;
+        yield return new WaitForSeconds(0.01f);
+        q1_obj.SetActive(false);
+        q2_obj.SetActive(true);
+
+
+        yield return new WaitForSeconds(0.01f);
+        StartCoroutine("BoatMoveL2");
+
+        //GM.GetComponent<CharMove>().canMove = true;
+        //PlayerPrefs.SetInt("wait", 0);
+    }
+
+
+    /// <summary>
+    /// 배이동
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator BoatMoveL2()
+    {
+        int in_i = 1;
+        position0 = moveOther_obj.transform.position;
+
+        //yield return new WaitForSeconds(0.5f);
+        //SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
+        //SGM.GetComponent<SoundEvt>().soundDamage();
+        while (in_i == 1)
+        {
+            position0.x = position0.x - 15f * Time.deltaTime;
+            moveOther_obj.transform.position = position0;
+
+            if (position0.x <= other_obj.transform.position.x)
+            {
+                in_i = 0;
+            }
+
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        moveOther_obj.transform.position = o1_obj.transform.position;
+        yield return new WaitForSeconds(0.01f);
+        q2_obj.SetActive(false);
+        q3_obj.SetActive(true);
+
+        yield return new WaitForSeconds(0.01f);
+        StartCoroutine("BoatMoveL3");
+
+    }
+
+    /// <summary>
+    /// 배이동
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator BoatMoveL3()
+    {
+        PlayerPrefs.SetInt("wait", 1);
+        GM.GetComponent<CharMove>().canMove = false;
+        //talk_b = false;
+
+        int in_i = 1;
+        position0 = moveOther_obj.transform.position;
+
+        //yield return new WaitForSeconds(0.5f);
+        //SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
+        //SGM.GetComponent<SoundEvt>().soundDamage();
+        while (in_i == 1)
+        {
+            position0.x = position0.x - 15f * Time.deltaTime;
+            moveOther_obj.transform.position = position0;
+
+            if (position0.x <= o2_obj.transform.position.x)
+            {
+                in_i = 0;
+            }
+
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        GM.GetComponent<CharMove>().canMove = true;
+        PlayerPrefs.SetInt("wait", 0);
+        GM.SetActive(true);
+
+        PlayerPrefs.SetInt("escdont", 0);
+        all_Ani.Play("ani_boat_river");
+
+    }
+
+
     void ShowBulb()
     {
 
@@ -3212,6 +3384,36 @@ public class CheckPlayer : MonoBehaviour
         PlayerPrefs.SetInt("escdont", 0);
     }
 
+    // 실제 굴러가는 로직이 담긴 코루틴
+    IEnumerator RollProcess()
+    {
+        // 좌측 하단 방향 벡터 (-1, -1)
+        Vector3 dir = new Vector3(-1, -1, 0).normalized;
+
+        bool isRolling = true;
+        bool isRolling2 = true;
+
+
+        while (isRolling)
+        {
+            // 1. 이동 (Time.deltaTime 사용)
+            // Space.World를 써야 회전축과 상관없이 절대 좌표로 이동합니다.
+            other_obj.transform.Translate(dir * moveSpeed * Time.deltaTime, Space.World);
+
+            // 2. 회전
+            // 왼쪽으로 진행하므로 시계 반대 방향(Z축 +)으로 회전해야 자연스럽습니다.
+            // Vector3.forward = (0, 0, 1) -> Z축 기준 회전
+            other_obj.transform.Rotate(Vector3.forward * moveSpeed * rotationMultiplier * Time.deltaTime);
+
+            if (isRolling2)
+            {
+                isRolling2 = false;
+                Invoke("OnMoveInv", 4f);
+            }
+            yield return new WaitForSeconds(0.01f);
+        }
+
+    }
 
 
     void get()
@@ -3251,6 +3453,14 @@ public class CheckPlayer : MonoBehaviour
         {
             all_Ani.Play("ani_npc_rabbit2");
         }
+    }
+
+    public void OnMoveInv()
+    {
+        other_obj.SetActive(false);
+        StopCoroutine("RollProcess");
+        GM.GetComponent<CharMove>().canMove = true;
+        PlayerPrefs.SetInt("escdont", 0);
     }
 
     void danger()

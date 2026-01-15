@@ -128,24 +128,17 @@ public class TreeMini : MonoBehaviour
     void rottz()
     {
         SGM.GetComponent<SoundEvt>().soundItemWndAD();
-        if (target.rotation.z == 0)
+        if (target.rotation.z < 0.01f && target.rotation.z > -0.01f)
         {
 
-            if (target2.rotation.z == 0)
+            if (target2.rotation.z < 0.01f && target2.rotation.z > -0.01f)
             {
 
-                if (target3.rotation.z == 0)
+                if (target3.rotation.z < 0.01f && target3.rotation.z > -0.01f)
                 {
                     SGM.GetComponent<SoundEvt>().soundItemSuccess();
-                    puzzleWin_obj.SetActive(false);
-                    PlayerPrefs.SetInt("escdont", 0);
-                    //GMM.GetComponent<CharMove>().canMove = true;
-                    PlayerPrefs.SetInt("cursorActive", 0);
-                    //GM.GetComponent<CheckPlayer>().ItemSettings();
-                    //japan_obj.SetActive(false);
-                    //back_obj.SetActive(false);
 
-                    GM.GetComponent<CharMove>().canMove = true;
+                    Invoke("Wait", 1.8f);
                 }
             }
         }
@@ -884,21 +877,16 @@ public class TreeMini : MonoBehaviour
 
     void Wait()
     {
-        //puzzleWin_obj.SetActive(false);
+
+        puzzleWin_obj.SetActive(false);
         PlayerPrefs.SetInt("escdont", 0);
         //GMM.GetComponent<CharMove>().canMove = true;
         PlayerPrefs.SetInt("cursorActive", 0);
         //GM.GetComponent<CheckPlayer>().ItemSettings();
         //japan_obj.SetActive(false);
-        back_obj.SetActive(false);
-        rock_obj.SetActive(false);
-        broken_obj.SetActive(true);
-        mark_obj.SetActive(false);
-        PlayerPrefs.SetInt("canSeeInfo_detailo" + 12, 99);
-        PlayerPrefs.SetInt("canSeeInfo_detailt" + 12, 99);
+        //back_obj.SetActive(false);
 
-        //PlayerPrefs.SetInt("nowtalk", 0);
-        //GM.SetActive(false);
+        GM.GetComponent<CharMove>().canMove = true;
     }
 
 }

@@ -6,6 +6,8 @@ public class deepForestBearEvt : MonoBehaviour
 {
     public Animator BearAni;
 
+    public GameObject brock_0bj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +22,13 @@ public class deepForestBearEvt : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        brock_0bj.SetActive(true);
         Invoke("changeNormal",5f);
     }
 
     void changeNormal()
     {
+        brock_0bj.SetActive(false);
         BearAni.Play("ani_npc_deepbear_normal");
     }
 }

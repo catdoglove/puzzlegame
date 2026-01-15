@@ -30,7 +30,7 @@ public class MoveMap2 : MonoBehaviour
 
     public bool door_b, char_b, comeHere_b, dogam_b, bridge_b, bridgeback_b, lake_b, lake1_b, crow_b, rot_b, crowA_b, secret_b, secret2_b, sheep_b,sheepOff_b;
     public bool lakeOut_b, caveRoad_b, caveEnter_b, crowSet_b, setEff_b, hidden2_b, hidden3_b, hidden4_b, hidden5_b, hidden6_b, hidden7_b, waterOut_b, flip_b, BGM_b, soundback_b,crow2_b, dont_b;
-    public bool nomalCave_b, caveRun1_b, caveRun2_b, caveRun_b;
+    public bool nomalCave_b, caveRun1_b, caveRun2_b, caveRun_b, rockRoll_b;
     public int event_i = 0;
 
     public GameObject door1_obj, door2_obj;
@@ -543,6 +543,14 @@ public class MoveMap2 : MonoBehaviour
             hideEvent1_obj.SetActive(false);
         }
 
+        if (rockRoll_b)
+        {
+            endEvent_obj.SetActive(false);
+            endEvent2_obj.SetActive(false);
+            endEvent3_obj.SetActive(true);
+        }
+
+        
 
         if (PlayerPrefs.GetInt("bdone", 0) == 1)
         {
