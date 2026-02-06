@@ -50,6 +50,9 @@ public class CheckEvent2 : MonoBehaviour
 
     public GameObject SheepC_obj;
 
+
+    public GameObject block_obj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -196,11 +199,15 @@ public class CheckEvent2 : MonoBehaviour
     }
 
 
-    void block2()
+    public void block2()
     {
-        PlayerPrefs.SetInt("foxclear", 1);
-        //StopCoroutine("EventDown");
-        StartCoroutine("EventDown2");
+
+        if (PlayerPrefs.GetInt("foxclear", 0) == 0)
+        {
+
+            StartCoroutine("EventDown2");
+            PlayerPrefs.SetInt("foxclear", 1);
+        }
     }
 
 
@@ -269,6 +276,7 @@ public class CheckEvent2 : MonoBehaviour
 
             if (position0.y <= door1_obj.transform.position.y)
             {
+                block_obj.SetActive(true);
                 in_i = 0;
             }
 

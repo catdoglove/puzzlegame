@@ -31,6 +31,8 @@ public class TreeMini : MonoBehaviour
 
     public GameObject puzzleWin_obj;
 
+    public GameObject compleWin_obj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -93,35 +95,35 @@ public class TreeMini : MonoBehaviour
 
     public void RotateLeft()
     {
-        target.Rotate(0, 0, 45f);   // Z축 기준 +45도 회전
+        target.Rotate(0, 0, 36f);   // Z축 기준 +45도 회전
         rottz();
     }
 
     public void RotateRight()
     {
-        target.Rotate(0, 0, -45f);  // Z축 기준 -45도 회전
+        target.Rotate(0, 0, -36f);  // Z축 기준 -45도 회전
         rottz();
     }
     public void RotateLeft2()
     {
-        target2.Rotate(0, 0, 45f);   // Z축 기준 +45도 회전
+        target2.Rotate(0, 0, 36f);   // Z축 기준 +45도 회전
         rottz();
     }
 
     public void RotateRight2()
     {
-        target2.Rotate(0, 0, -45f);  // Z축 기준 -45도 회전
+        target2.Rotate(0, 0, -36f);  // Z축 기준 -45도 회전
         rottz();
     }
     public void RotateLeft3()
     {
-        target3.Rotate(0, 0, 45f);   // Z축 기준 +45도 회전
+        target3.Rotate(0, 0, 36f);   // Z축 기준 +45도 회전
         rottz();
     }
 
     public void RotateRight3()
     {
-        target3.Rotate(0, 0, -45f);  // Z축 기준 -45도 회전
+        target3.Rotate(0, 0, -36f);  // Z축 기준 -45도 회전
         rottz();
     }
 
@@ -868,6 +870,10 @@ public class TreeMini : MonoBehaviour
             SGM.GetComponent<SoundEvt>().soundBoom();
             main_obj.GetComponent<SpriteRenderer>().sprite = boom_spr;
             Main.GetComponent<SpriteRenderer>().sprite = boom_spr;
+            compleWin_obj.SetActive(true);
+            select_obj[0].SetActive(false);
+            select_obj[1].SetActive(false);
+            select_obj[2].SetActive(false);
             Invoke("Wait", 0.8f);
 
             GM.GetComponent<CharMove>().canMove = true;

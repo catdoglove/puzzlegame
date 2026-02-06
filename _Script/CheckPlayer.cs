@@ -26,7 +26,6 @@ public class CheckPlayer : MonoBehaviour
     public bool itemQ_b;
     public GameObject GetItem_obj, GetItemS_obj, GetItemO_obj;
 
-
     public string SetEventPref_str = "text";
     public int[] EventNum_i, EventNum1_i, EventNum2_i;
     public Sprite[] Event_spr, Event2_spr;
