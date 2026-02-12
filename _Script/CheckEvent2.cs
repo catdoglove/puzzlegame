@@ -145,9 +145,13 @@ public class CheckEvent2 : MonoBehaviour
 
                     if (backDown_b)
                     {
-                        if (PlayerPrefs.GetInt("foxclear", 0) == 0)
+
+                        if (PlayerPrefs.GetInt("beartrap", 0) == 0)
                         {
+                            if (PlayerPrefs.GetInt("foxclear", 0) == 0)
+                            {
                                 block2();
+                            }
                         }
 
                     }

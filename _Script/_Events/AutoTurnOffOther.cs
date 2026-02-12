@@ -5,10 +5,17 @@ using UnityEngine;
 public class AutoTurnOffOther : MonoBehaviour
 {
     public GameObject targetToTurnOff; // 인스펙터에서 끌 오브젝트를 연결하세요
+    public GameObject targetToTurnON;
+
+    public bool b;
 
     // 이 스크립트가 붙은 오브젝트가 활성화(SetActive true)될 때 실행됨
     private void OnEnable()
     {
-            targetToTurnOff.SetActive(false);
+        targetToTurnOff.SetActive(false);
+        if (b)
+        {
+            targetToTurnON.SetActive(true);
+        }
     }
 }

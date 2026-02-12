@@ -142,6 +142,7 @@ public class CheckPlayer : MonoBehaviour
 
     private void OnEnable()
     {
+
         GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
         //StartCoroutine("Checking");
 
@@ -2459,38 +2460,126 @@ public class CheckPlayer : MonoBehaviour
                     //miniGame_obj.SetActive(true);
 
                     StartCoroutine("BoatMoveL");
-                    GM.SetActive(false);
-
-                    all_Ani.Play("ani_boat_river_up");
-
-
-                    o3_obj.SetActive(true);
-                    o4_obj.SetActive(false);
-                    all_Ani.Play("ani_boat_river_up");
 
                     break;
 
                 case 54://돌굴리기
 
-                    //SGM.GetComponent<SoundEvt>().soundItemUse();
 
 
-                    //miniGame_obj.SetActive(true);
 
-                    GM.GetComponent<CharMove>().canMove = false;
-                    PlayerPrefs.SetInt("escdont", 1);
-                    other_obj.SetActive(true);
-                    StartCoroutine("RollProcess");
-                    //StartCoroutine("BoatMoveL");
-                    //GM.SetActive(false);
+                    if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                    {
+                        GM.GetComponent<CharMove>().canMove = false;
+                        PlayerPrefs.SetInt("escdont", 1);
+                        other_obj.SetActive(true);
+                        StartCoroutine("RollProcess");
+                        GMI.GetComponent<Inventory>().DelItems();
 
-                    //all_Ani.Play("ani_npc_cat_get2");
+
+                        SGM.GetComponent<SoundEvt>().soundDamage();
+
+                    }
+                    else
+                    {
+                        SGM.GetComponent<SoundEvt>().soundItemFail();
+                    }
 
                     break;
 
                 case 55://배타기부르기
                     moveOther_obj.GetComponent<CheckPlayer>().EventSetting();
                     balloon_obj.SetActive(false);
+
+                    break;
+
+                case 56://배타기부르기
+                    moveOther_obj.GetComponent<CheckPlayer>().EventSetting();
+                    balloon_obj.SetActive(false);
+
+                    break;
+
+                case 57://컷씬
+
+                    ori_obj.SetActive(false);
+                    cutS_obj.SetActive(true);
+
+                    break;
+
+                case 58://잼 얻기
+                    if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                    {
+
+
+                        if (cut_i<2)
+                        {
+                            GMI.GetComponent<Inventory>().DelItems();
+                            SGM.GetComponent<SoundEvt>().soundDamage();
+
+                            cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[cut_i];
+                            cut_i++;
+                        }
+                        else
+                        {
+                            SGM.GetComponent<SoundEvt>().soundItemFail();
+                        }
+                        Invoke("GetGem", 0.1f);
+                    }
+                    else
+                    {
+                        SGM.GetComponent<SoundEvt>().soundItemFail();
+                    }
+
+                    break;
+                case 59://잼 부숨
+                    if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                    {
+                        GMI.GetComponent<Inventory>().DelItems();
+                        SGM.GetComponent<SoundEvt>().soundDamage();
+                        cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[0];
+                        PlayerPrefs.SetInt("beartrap", 1);
+                        other_obj.SetActive(true);
+                        moveOther_obj.SetActive(false);
+                        o1_obj.SetActive(false);
+                    }
+                    else
+                    {
+                        SGM.GetComponent<SoundEvt>().soundItemFail();
+                    }
+
+                    break;
+                case 60://잼 부숨
+                    if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                    {
+                        GMI.GetComponent<Inventory>().DelItems();
+                        SGM.GetComponent<SoundEvt>().soundDamage();
+                        cutS_obj.GetComponent<SpriteRenderer>().sprite = cutS_spr[0];
+                        PlayerPrefs.SetInt("beartrap", 2);
+
+                        other_obj.SetActive(true);
+                        moveOther_obj.SetActive(false);
+                        o1_obj.SetActive(false);
+                    }
+                    else
+                    {
+                        SGM.GetComponent<SoundEvt>().soundItemFail();
+                    }
+
+                    break;
+                case 61://잼 부숨
+
+                    if (PlayerPrefs.GetInt("beartrap", 0) == 0)
+                    {
+                        if (PlayerPrefs.GetInt("selecteditemnum", 0) == giveItemPref_i)
+                        {
+                            GMI.GetComponent<Inventory>().DelItems();
+                            SGM.GetComponent<SoundEvt>().soundItemUse();
+
+                            all_Ani.Play("ani_npc_rabbit_df_qclear");
+                            PlayerPrefs.SetInt("bearrabbitq", 1);
+                            Invoke("GetGem", 0.1f);
+                        }
+                    }
 
                     break;
             }
@@ -2508,6 +2597,11 @@ public class CheckPlayer : MonoBehaviour
         }
 
 
+    }
+
+    void GetGem()
+    {
+        ItemSettings();
     }
 
     void Anis()
@@ -3191,6 +3285,16 @@ public class CheckPlayer : MonoBehaviour
     /// <returns></returns>
     IEnumerator BoatMoveL()
     {
+
+        yield return new WaitForSeconds(0.5f);
+        GM.SetActive(false);
+
+        all_Ani.Play("ani_boat_river_up");
+
+
+        o3_obj.SetActive(true);
+        o4_obj.SetActive(false);
+        all_Ani.Play("ani_boat_river_up");
         PlayerPrefs.SetInt("wait", 1);
         GM.GetComponent<CharMove>().canMove = false;
         //talk_b = false;
@@ -3291,7 +3395,7 @@ public class CheckPlayer : MonoBehaviour
 
             yield return new WaitForSeconds(0.01f);
         }
-
+        yield return new WaitForSeconds(0.5f);
         GM.GetComponent<CharMove>().canMove = true;
         PlayerPrefs.SetInt("wait", 0);
         GM.SetActive(true);
