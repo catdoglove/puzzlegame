@@ -90,7 +90,9 @@ public class CharMove : MonoBehaviour
         //숲 이후로
 
         ckwalk = 0;
-        ausrc = GetComponent<AudioSource>();
+        ausrc = GetComponent<AudioSource>();            
+        PlayerPrefs.SetInt("autoBGstartLast", 0);//초기화해줘야다른데서안먹힘
+        PlayerPrefs.SetInt("triggerCameraSizeOn", 0);
     }
 
     void Update()
@@ -98,6 +100,16 @@ public class CharMove : MonoBehaviour
 
         //거미동굴관련
         if (PlayerPrefs.GetInt("autoBGstart", 0) == 1 || PlayerPrefs.GetInt("spiderAppearDown", 0) == 1)
+        {
+            rigid2D.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        }
+        else
+        {
+            rigid2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+
+        //최종무한맵관련
+        if (PlayerPrefs.GetInt("autoBGstartLast", 0) == 1)
         {
             rigid2D.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         }
