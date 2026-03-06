@@ -67,12 +67,15 @@ public class CharMove : MonoBehaviour
     public GameObject remove_obj, other_obj;
 
     public float vols_f=0.8f;
+    int autoRun;
 
     void Awake()
     {
         myTransform = transform;
         rigid2D = GetComponent<Rigidbody2D>();
         PlayerPrefs.SetInt("movmovmeme", 0);
+
+        autoRun = PlayerPrefs.GetInt("isAutoRunOn", 0);        
     }
 
     void Start()
@@ -185,7 +188,8 @@ public class CharMove : MonoBehaviour
 
         //Debug.Log(charAni.speed);
 
-        if (Input.GetKey(KeyCode.RightShift)|| Input.GetKey(KeyCode.LeftShift))
+
+        if (Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift))
         {
             //  if (ckCrash == 1) charspeed = crushSpeed;
             //  else charspeed = runSpeed;
@@ -210,6 +214,15 @@ public class CharMove : MonoBehaviour
             Speed = 3f;
             ausrc.GetComponent<AudioSource>().pitch = 1f;
             charAni.speed = 1f;
+        }
+
+
+        if (autoRun == 1) //설정
+        {
+            Speed = 5f;
+            ausrc.GetComponent<AudioSource>().pitch = 1.3f;
+            charAni.speed = 1.4f;
+            PlayerPrefs.SetInt("isAutoRunOn", 1);
         }
 
         if (Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.UpArrow))

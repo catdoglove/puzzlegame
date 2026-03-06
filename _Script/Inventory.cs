@@ -58,7 +58,7 @@ public class Inventory : MonoBehaviour
         {
             lng = 1;
         }
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll(); 임시
 
         if (lng==1)
         {
