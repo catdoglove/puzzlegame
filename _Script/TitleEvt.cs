@@ -6,12 +6,13 @@ using UnityEngine.UI;
 
 public class TitleEvt : MonoBehaviour
 {
-    public GameObject GM,startObj, bgStarImg1, bgStarImg2, escWnd, escBGImg;
+    public GameObject GM,startObj, bgStarImg1, bgStarImg2, saveBtns, chapterBtns, titleTxt, cloudImg;
     public GameObject optionImg, optionBtn, titleImg, menuImg, backMenuImg, charImg;
 
-    public Button[] menuBtn, backMenuBtn ,escBtn;
-    [SerializeField] private Sprite[] langSpaceBar,langKorSpr, langEngSpr, langJpSpr, langChSpr, langRuSpr, escBGSpr, langKorEsc, langEngEsc, langJpEsc, langChEsc, langRuEsc;
+    public Button[] menuBtn, backMenuBtn;
+    [SerializeField] private Sprite[] langSpaceBar, langKorSpr, langEngSpr, langJpSpr, langChSpr, langRuSpr;
     [SerializeField] private Sprite[] langKorSpr2, langEngSpr2, langJpSpr2, langChSpr2, langRuSpr2;
+    
 
 
     // Start is called before the first frame update
@@ -30,32 +31,6 @@ public class TitleEvt : MonoBehaviour
 
     }
 
-    void Update()  //임시
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            escWnd.SetActive(true);
-            int num = PlayerPrefs.GetInt("settingRealLanguageSave", 0 -1); // 언어 번호 저장
-            switch (num)
-            {
-                case 1:
-                    escBGImg.GetComponent<SpriteRenderer>().sprite = escBGSpr[0];
-                    break;
-                case 2:
-                    escBGImg.GetComponent<SpriteRenderer>().sprite = escBGSpr[1];
-                    break;
-                case 3:
-                    escBGImg.GetComponent<SpriteRenderer>().sprite = escBGSpr[2];
-                    break;
-                case 4:
-                    escBGImg.GetComponent<SpriteRenderer>().sprite = escBGSpr[3];
-                    break;
-                case 5:
-                    escBGImg.GetComponent<SpriteRenderer>().sprite = escBGSpr[4];
-                    break;
-            }
-        }
-    }
 
     void Awake()
     {
@@ -81,7 +56,6 @@ public class TitleEvt : MonoBehaviour
                 {
                     menuBtn[i].image.sprite = langKorSpr[i];
                     backMenuBtn[i].image.sprite = langKorSpr2[i];
-                    escBtn[i].image.sprite = langKorEsc[i];
                     startObj.GetComponent<SpriteRenderer>().sprite = langSpaceBar[num];
                 }
                 break;
@@ -90,7 +64,6 @@ public class TitleEvt : MonoBehaviour
                 {
                     menuBtn[i].image.sprite = langEngSpr[i];
                     backMenuBtn[i].image.sprite = langEngSpr2[i];
-                    escBtn[i].image.sprite = langEngEsc[i];
                     startObj.GetComponent<SpriteRenderer>().sprite = langSpaceBar[num];
                 }
                 break;
@@ -99,7 +72,6 @@ public class TitleEvt : MonoBehaviour
                 {
                     menuBtn[i].image.sprite = langJpSpr[i];
                     backMenuBtn[i].image.sprite = langJpSpr2[i];
-                    escBtn[i].image.sprite = langJpEsc[i];
                     startObj.GetComponent<SpriteRenderer>().sprite = langSpaceBar[num];
                 }
                 break;
@@ -108,7 +80,6 @@ public class TitleEvt : MonoBehaviour
                 {
                     menuBtn[i].image.sprite = langChSpr[i];
                     backMenuBtn[i].image.sprite = langChSpr2[i];
-                    escBtn[i].image.sprite = langChEsc[i];
                     startObj.GetComponent<SpriteRenderer>().sprite = langSpaceBar[num];
                 }
                 break;
@@ -117,12 +88,13 @@ public class TitleEvt : MonoBehaviour
                 {
                     menuBtn[i].image.sprite = langRuSpr[i];
                     backMenuBtn[i].image.sprite = langRuSpr2[i];
-                    escBtn[i].image.sprite = langRuEsc[i];
                     startObj.GetComponent<SpriteRenderer>().sprite = langSpaceBar[num];
                 }
                 break;
         }
     }
+
+
 
     public void openOption()
     {
@@ -130,16 +102,6 @@ public class TitleEvt : MonoBehaviour
         titleImg.SetActive(false);
         bgStarImg1.GetComponent<SpriteRenderer>().sortingOrder = 17;
         bgStarImg2.GetComponent<SpriteRenderer>().sortingOrder = 17;
-    }
-
-    public void changeLanguageKOR()
-    {
-        PlayerPrefs.SetString("changeLanguage","KOR");
-    }
-
-    public void changeLanguageENG()
-    {
-        PlayerPrefs.SetString("changeLanguage", "ENG");
     }
 
     public void resolutionSetting()
@@ -185,5 +147,30 @@ public class TitleEvt : MonoBehaviour
     {
         GM.GetComponent<SoundEvt>().soundStart();
         SceneManager.LoadScene("01_Tutorial");
+    }
+
+    public void selectSaveSlot()
+    {
+        saveBtns.SetActive(true);
+        menuImg.SetActive(false);
+        titleTxt.SetActive(false);
+        cloudImg.SetActive(false);
+    }
+    public void backMainMenu()
+    {
+        saveBtns.SetActive(false);
+        menuImg.SetActive(true);
+        titleTxt.SetActive(true);
+        cloudImg.SetActive(true);
+    }
+    public void selectChapter()
+    {
+        chapterBtns.SetActive(true);
+        saveBtns.SetActive(false);
+    }
+    public void backMainMenu2()
+    {
+        chapterBtns.SetActive(false);
+        saveBtns.SetActive(true);
     }
 }

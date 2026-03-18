@@ -3095,6 +3095,8 @@ MonoBehaviour:
   know_obj2: {fileID: 1393707155}
   lg_i: 0
   change_spr: {fileID: 21300000, guid: 54f63f70fd0632d49b37603cec07ed1d, type: 3}
+  basicFont: {fileID: 12800000, guid: 3f1e8be152c444d4fbaac29f3e870e49, type: 3}
+  changeFont: {fileID: 12800000, guid: 76f9a3db63407054295362b24381c843, type: 3}
 --- !u!114 &896736643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3176,9 +3178,11 @@ MonoBehaviour:
   sp_talk: {fileID: 8300000, guid: c3a0c02c780a9a844bfe6ce8f889d1ae, type: 3}
   sp_talk_low: {fileID: 8300000, guid: 288bbfb179e16994fb1e44234ca67c13, type: 3}
   sp_talk_low2: {fileID: 0}
+  sp_mutantTalk: {fileID: 0}
   se_talk: {fileID: 0}
   se_talk_low: {fileID: 0}
   se_talk_low2: {fileID: 0}
+  se_mutantTalk: {fileID: 0}
   auSE: {fileID: 0}
   auCP: {fileID: 0}
   charGM: {fileID: 0}

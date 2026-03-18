@@ -26,14 +26,45 @@ public class Dialogue : MonoBehaviour
 
 
     public GameObject event_obj, char_obj, subChar_obj,m1,m2;
+    public Font basicFont, changeFont;
 
     // Start is called before the first frame update
     void Start()
     {
        // PlayerPrefs.SetInt("caveFeatherWalk", 0);
-        data_talk = CSVReader.Read("CSV/talk_text");
-        PlayerPrefs.SetInt("charDlgIsWork", 99);
         //Invoke("JustOne",1f); //임시위치 :  이벶트 진입했을 때 스페이스바 없이 대사가 자동으로 뜨게해야함
+        int num = PlayerPrefs.GetInt("settingRealLanguageSave", 0) - 1; // 언어 번호 저장
+        switch (num)
+        {
+            case 0: //추후폰트 인스펙터에 넣어야한다 밑에 주석해제하고
+                data_talk = CSVReader.Read("CSV/talk_text");
+                //txt.font = basicFont;
+                //targetText.font = basicFont;
+                break;
+            case 1:
+                data_talk = CSVReader.Read("CSV/talk_text_eng");
+               // txt.font = basicFont;
+               // targetText.font = basicFont;
+                break;
+            case 2:
+                data_talk = CSVReader.Read("CSV/talk_text_jp");
+               // txt.font = basicFont;
+              //  targetText.font = basicFont;
+                break;
+            case 3:
+                data_talk = CSVReader.Read("CSV/talk_text_ch");  
+              //  txt.font = changeFont;
+             //   targetText.font = changeFont;
+                break;
+            case 4:
+                data_talk = CSVReader.Read("CSV/talk_text_ru");
+             //   txt.font = basicFont;
+            //    targetText.font = basicFont;
+                break;
+        }
+
+
+        PlayerPrefs.SetInt("charDlgIsWork", 99);
     }
 
 

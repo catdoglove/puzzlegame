@@ -26,6 +26,7 @@ public class AnimailInformation : MonoBehaviour
 
 
     public Sprite change_spr;
+    public Font basicFont, changeFont;
 
 
     private void OnEnable()
@@ -43,20 +44,76 @@ public class AnimailInformation : MonoBehaviour
     private void Awake()
     {
         PlayerPrefs.SetInt("cursorActive",0);
-        if (PlayerPrefs.GetString("changeLanguage", "KOR") == "KOR")
+        int num = PlayerPrefs.GetInt("settingRealLanguageSave", 0) - 1; // 언어 번호 저장
+        basic_txt.font = basicFont;
+        basic_txt2.font = basicFont;
+        basic_txt3.font = basicFont;
+        detail_txt.font = basicFont;
+        detail_txt2.font = basicFont;
+        title_txt.font = basicFont;
+        name_txt.font = basicFont;
+        title2_txt.font = basicFont;
+        switch (num)
         {
-            lg_i = 0;
-            data_animal = CSVReader.Read("CSV/animals_information");
-            title_txt.text = "알려지지 않은 맛";
-            title2_txt.text = "알려진 맛";
+            case 0:
+
+                lg_i = 0;
+                data_animal = CSVReader.Read("CSV/animals_information");
+                title_txt.text = "알려지지 않은 맛";
+                title2_txt.text = "알려진 맛";
+
+                break;
+            case 1:
+                data_animal = CSVReader.Read("CSV/animals_information_eng");
+                title_txt.text = "Unknown flavor";
+                title2_txt.text = "Discovered flavor";
+                lg_i = 1;
+                break;
+            case 2:
+                data_animal = CSVReader.Read("CSV/animals_information_jp");
+                title_txt.text = "未知のフレーバー";
+                title2_txt.text = "発見済みフレーバー";
+                lg_i = 2;
+                break;
+            case 3:
+                basic_txt.font = changeFont;
+                basic_txt2.font = changeFont;
+                basic_txt3.font = changeFont;
+                detail_txt.font = changeFont;
+                detail_txt2.font = changeFont;
+                title_txt.font = changeFont;
+                name_txt.font = changeFont;
+                title2_txt.font = changeFont;
+
+                basic_txt.lineSpacing = 1f;
+                basic_txt2.lineSpacing = 1f;
+                basic_txt3.lineSpacing = 1f;
+                detail_txt.lineSpacing = 1f;
+                detail_txt2.lineSpacing = 1f;
+                data_animal = CSVReader.Read("CSV/animals_information_ch");
+                title_txt.text = "未发现口味";
+                title2_txt.text = "已发现口味";
+                lg_i = 3;
+                break;
+            case 4:
+                data_animal = CSVReader.Read("CSV/animals_information_ru");
+                title_txt.text = "Неизвестный вкус";
+                title2_txt.text = "Обнаруженный вкус";
+                lg_i = 4;
+                break;
         }
-        else if (PlayerPrefs.GetString("changeLanguage", "KOR") == "ENG")
-        {
-            data_animal = CSVReader.Read("CSV/animals_information_eng");
-            title_txt.text = "Unknown flavor";
-            title2_txt.text = "Known flavor";
-            lg_i = 1;
-        }
+
+
+
+
+
+
+
+
+
+
+
+
 
         data_animal_name = CSVReader.Read("CSV/animals_name");
     }
@@ -209,17 +266,35 @@ public class AnimailInformation : MonoBehaviour
 
     void changeTextSize()
     {
-        
-        if (PlayerPrefs.GetString("changeLanguage", "KOR") == "KOR")
+        int num = PlayerPrefs.GetInt("settingRealLanguageSave", 0) - 1; // 언어 번호 저장
+        switch (num)
         {
-            sizeint = 50;
-            sizeint2 = 45;
+            case 0:
+                sizeint = 50;
+                sizeint2 = 45;
+                break;
+            case 1:
+                sizeint = 43;
+                sizeint2 = 40;
+                break;
+            case 2:
+                sizeint = 47;
+                sizeint2 = 47;
+                break;
+            case 3:
+                sizeint = 50;
+                sizeint2 = 50;
+                break;
+            case 4:
+                sizeint = 43;
+                sizeint2 = 40;
+                break;
         }
-        else if (PlayerPrefs.GetString("changeLanguage", "KOR") == "ENG")
-        {
-            sizeint = 43;
-            sizeint2 = 40;
-        }
+
+
+
+
+
     }
 
 
@@ -241,16 +316,27 @@ public class AnimailInformation : MonoBehaviour
 
             if (PlayerPrefs.GetInt("meetrat", 0) == 1&& pageNum==14)
             {
-
-
-                if (PlayerPrefs.GetString("changeLanguage", "KOR") == "KOR")
+                int num = PlayerPrefs.GetInt("settingRealLanguageSave", 0) - 1; // 언어 번호 저장
+                name_txt.font = basicFont;
+                switch (num)
                 {
-                    textname_str = "마이츠&마이치";
+                    case 0:
+                        textname_str = "마이츠&마이치";
+                        break;
+                    case 1:
+                        textname_str = "Maitsu&Maichi";
+                        break;
+                    case 2:
+                        textname_str = "マイツとマイチ";
+                        break;
+                    case 3:
+                        textname_str = "迈茨和迈琪";
+                        break;
+                    case 4:
+                        textname_str = "Майц и Майчи";
+                        break;
                 }
-                else
-                {
-                    textname_str = "Maitsu&Maichi";
-                }
+
             }
 
             name_txt.text = "" + textname_str;

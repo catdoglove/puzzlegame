@@ -463,10 +463,6 @@ public class MoveMap2 : MonoBehaviour
             GM.GetComponent<CharMove>().canMove = false;
             Invoke("WaitSec", 1f);
         }
-        if (dogam_b)
-        {
-            GMI.GetComponent<Inventory>().WaitSec();
-        }
         if (bridge_b)
         {
             GMC.GetComponent<ShaderEffect>().changeShader1();

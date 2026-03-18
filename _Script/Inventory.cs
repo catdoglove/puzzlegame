@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
@@ -46,6 +47,11 @@ public class Inventory : MonoBehaviour
 
     public GameObject door_obj, door2_obj;
 
+    public GameObject escWnd, escBGImg;
+    [SerializeField] private Sprite[] escBGSpr;
+    public Button[] escBtn;
+    [SerializeField] private Sprite[] langKorEsc, langEngEsc, langJpEsc, langChEsc, langRuEsc;
+
     private void Awake()
     {
     }
@@ -53,27 +59,48 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int lng = 0;
-        if (PlayerPrefs.GetString("changeLanguage", "KOR").Equals("ENG"))
-        {
-            lng = 1;
-        }
-        //PlayerPrefs.DeleteAll(); 임시
-
-        if (lng==1)
-        {
-            PlayerPrefs.SetString("changeLanguage", "ENG");
-        }
         position = itemWindow_obj.transform.position;
+
+        changeBtnLang();
     }
 
-    public void WaitSec()
+    public void changeBtnLang()
     {
-
-       // MainGM.GetComponent<SceneAdd>().AtiveScene();
-     //   PlayerPrefs.SetInt("helpdogam",1);
+        int num = PlayerPrefs.GetInt("settingRealLanguageSave", 0) - 1; // 언어 번호 저장
+        switch (num)
+        {
+            case 0:
+                for (int i = 0; i < escBtn.Length && i < langKorEsc.Length; i++)
+                {
+                    escBtn[i].image.sprite = langKorEsc[i];
+                }
+                break;
+            case 1:
+                for (int i = 0; i < escBtn.Length && i < langEngEsc.Length; i++)
+                {
+                    escBtn[i].image.sprite = langEngEsc[i];
+                }
+                break;
+            case 2:
+                for (int i = 0; i < escBtn.Length && i < langJpEsc.Length; i++)
+                {
+                    escBtn[i].image.sprite = langJpEsc[i];
+                }
+                break;
+            case 3:
+                for (int i = 0; i < escBtn.Length && i < langChEsc.Length; i++)
+                {
+                    escBtn[i].image.sprite = langChEsc[i];
+                }
+                break;
+            case 4:
+                for (int i = 0; i < escBtn.Length && i < langRuEsc.Length; i++)
+                {
+                    escBtn[i].image.sprite = langRuEsc[i];
+                }
+                break;
+        }
     }
-
 
     void setCursor()
     {
@@ -113,6 +140,28 @@ public class Inventory : MonoBehaviour
                 {
                     showESCwindow();
                 }
+
+                int num = PlayerPrefs.GetInt("settingRealLanguageSave", 0 - 1); // 언어 번호 저장
+                switch (num)
+                {
+                    case 1:
+                        escBGImg.GetComponent<SpriteRenderer>().sprite = escBGSpr[0];
+                        break;
+                    case 2:
+                        escBGImg.GetComponent<SpriteRenderer>().sprite = escBGSpr[1];
+                        break;
+                    case 3:
+                        escBGImg.GetComponent<SpriteRenderer>().sprite = escBGSpr[2];
+                        break;
+                    case 4:
+                        escBGImg.GetComponent<SpriteRenderer>().sprite = escBGSpr[3];
+                        break;
+                    case 5:
+                        escBGImg.GetComponent<SpriteRenderer>().sprite = escBGSpr[4];
+                        break;
+                }
+
+
             }
         }
         /*
@@ -856,6 +905,12 @@ public class Inventory : MonoBehaviour
     public void quitGame()
     {
         Application.Quit();
+    }
+
+
+    public void goTitleScene()
+    {
+        SceneManager.LoadScene("00_Title");
     }
 
     public void showFeedback()

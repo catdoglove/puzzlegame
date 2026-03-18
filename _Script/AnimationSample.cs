@@ -71,7 +71,7 @@ public class AnimationSample : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Escape))
         {
-            showESCwindow();
+          //  showESCwindow();
         }
 
 
@@ -89,7 +89,7 @@ public class AnimationSample : MonoBehaviour
 
     public void showESCwindow()
     {
-        ESCevent.SetActive(true);
+       // ESCevent.SetActive(true);
     }
 
 
