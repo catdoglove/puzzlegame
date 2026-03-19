@@ -3327,12 +3327,13 @@ public class CheckPlayer : MonoBehaviour
         int in_i = 1;
         position0 = moveOther_obj.transform.position;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
+        SGM.GetComponent<SoundEvt>().soundWaterWalk();
         //SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
         //SGM.GetComponent<SoundEvt>().soundDamage();
         while (in_i == 1)
         {
-            position0.x = position0.x - 13f * Time.deltaTime;
+            position0.x = position0.x - 5f * Time.deltaTime;
             moveOther_obj.transform.position = position0;
 
             if (position0.x <= other_obj.transform.position.x)
@@ -3376,11 +3377,13 @@ public class CheckPlayer : MonoBehaviour
         int in_i = 1;
         position0 = moveOther_obj.transform.position;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
+
+        SGM.GetComponent<SoundEvt>().soundWaterWalk();
 
         while (in_i == 1)
         {
-            position0.x = position0.x + 13f * Time.deltaTime;
+            position0.x = position0.x + 5f * Time.deltaTime;
             moveOther_obj.transform.position = position0;
 
             if (position0.x >= other_obj.transform.position.x)
@@ -3410,6 +3413,8 @@ public class CheckPlayer : MonoBehaviour
     /// <returns></returns>
     IEnumerator BoatMoveL2()
     {
+
+        SGM.GetComponent<SoundEvt>().soundWaterWalk();
         int in_i = 1;
         position0 = moveOther_obj.transform.position;
 
@@ -3418,7 +3423,7 @@ public class CheckPlayer : MonoBehaviour
         //SGM.GetComponent<SoundEvt>().soundDamage();
         while (in_i == 1)
         {
-            position0.x = position0.x - 13f * Time.deltaTime;
+            position0.x = position0.x - 5f * Time.deltaTime;
             moveOther_obj.transform.position = position0;
 
             if (position0.x <= other_obj.transform.position.x)
@@ -3445,6 +3450,8 @@ public class CheckPlayer : MonoBehaviour
     /// <returns></returns>
     IEnumerator BoatMoveR2()
     {
+
+        SGM.GetComponent<SoundEvt>().soundWaterWalk();
         int in_i = 1;
         position0 = moveOther_obj.transform.position;
 
@@ -3453,7 +3460,7 @@ public class CheckPlayer : MonoBehaviour
         //SGM.GetComponent<SoundEvt>().soundDamage();
         while (in_i == 1)
         {
-            position0.x = position0.x + 13f * Time.deltaTime;
+            position0.x = position0.x + 5f * Time.deltaTime;
             moveOther_obj.transform.position = position0;
 
             if (position0.x >= other_obj.transform.position.x)
@@ -3480,6 +3487,8 @@ public class CheckPlayer : MonoBehaviour
     /// <returns></returns>
     IEnumerator BoatMoveL3()
     {
+
+        SGM.GetComponent<SoundEvt>().soundWaterWalk();
         PlayerPrefs.SetInt("wait", 1);
         GM.GetComponent<CharMove>().canMove = false;
         //talk_b = false;
@@ -3492,7 +3501,7 @@ public class CheckPlayer : MonoBehaviour
         //SGM.GetComponent<SoundEvt>().soundDamage();
         while (in_i == 1)
         {
-            position0.x = position0.x - 13f * Time.deltaTime;
+            position0.x = position0.x - 5f * Time.deltaTime;
             moveOther_obj.transform.position = position0;
 
             if (position0.x <= o2_obj.transform.position.x)
@@ -3502,7 +3511,7 @@ public class CheckPlayer : MonoBehaviour
 
             yield return new WaitForSeconds(0.01f);
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         GM.GetComponent<CharMove>().canMove = true;
         PlayerPrefs.SetInt("wait", 0);
         GM.SetActive(true);
@@ -3518,6 +3527,8 @@ public class CheckPlayer : MonoBehaviour
     /// <returns></returns>
     IEnumerator BoatMoveR3()
     {
+
+        SGM.GetComponent<SoundEvt>().soundWaterWalk();
         PlayerPrefs.SetInt("wait", 1);
         GM.GetComponent<CharMove>().canMove = false;
         //talk_b = false;
@@ -3530,7 +3541,7 @@ public class CheckPlayer : MonoBehaviour
         //SGM.GetComponent<SoundEvt>().soundDamage();
         while (in_i == 1)
         {
-            position0.x = position0.x + 13f * Time.deltaTime;
+            position0.x = position0.x + 5f * Time.deltaTime;
             moveOther_obj.transform.position = position0;
 
             if (position0.x >= o2_obj.transform.position.x)
@@ -3540,7 +3551,7 @@ public class CheckPlayer : MonoBehaviour
 
             yield return new WaitForSeconds(0.01f);
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         GM.GetComponent<CharMove>().canMove = true;
         PlayerPrefs.SetInt("wait", 0);
         GM.SetActive(true);

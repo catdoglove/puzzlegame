@@ -274,8 +274,8 @@ public class CheckEvent2 : MonoBehaviour
         {
 
 
-            position0.y = position0.y - 7f * Time.deltaTime;
-            position0.x = position0.x - 7f * Time.deltaTime;
+            position0.y = position0.y - 9f * Time.deltaTime;
+            position0.x = position0.x - 9f * Time.deltaTime;
             player_obj.transform.position = position0;
 
             if (position0.y <= door1_obj.transform.position.y)

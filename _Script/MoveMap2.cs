@@ -204,7 +204,8 @@ public class MoveMap2 : MonoBehaviour
                                 player_obj.transform.position = mapRespawn_obj[0].transform.position;
 
                                 PlayerPrefs.SetInt("clearitemgetimg", 1);
-                                Invoke("MovingMap", 0.02f);
+                                player_obj.SetActive(false);
+                                Invoke("MovingMap", 0.001f);
                             }
                             //position = player_obj.transform.position;
                             //position.x = -5.66f;
@@ -408,6 +409,7 @@ public class MoveMap2 : MonoBehaviour
 
             OpenDoor();
         }
+        player_obj.SetActive(true);
     }
 
     void Oncrow()

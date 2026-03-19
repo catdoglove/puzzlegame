@@ -29,7 +29,7 @@ public class deepForestBearEvt : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         //brock_0bj.SetActive(true);
-        Invoke("changeNormal",5f);
+        Invoke("changeNormal",3f);
     }
 
     public void Help()
