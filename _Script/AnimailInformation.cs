@@ -37,7 +37,7 @@ public class AnimailInformation : MonoBehaviour
             animalSpr[14] = change_spr;
         }
         pageNum = 0;
-        insideInformation();
+        //insideInformation();
         //FirstSet();
     }
 
@@ -122,8 +122,8 @@ public class AnimailInformation : MonoBehaviour
     void Start()
     {
         //spRer = animalImg.GetComponent<SpriteRenderer>();
-        checkAnimal();
-        Invoke("insideInformation", 2f);
+        //checkAnimal();
+        //Invoke("insideInformation", 2f);
         //insideInformation();
 
     }
