@@ -22,7 +22,7 @@ public class deepForestBearEvt : MonoBehaviour
     {
         BearAni.Play("ani_npc_deepbear_appear");
 
-        Invoke("Help", 0.25f);
+        //Invoke("Help", 0.25f);
         //GM.GetComponent<CheckEvent2>().
     }
 

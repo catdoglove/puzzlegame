@@ -149,6 +149,7 @@ public class TreeMini : MonoBehaviour
                     select_obj[0].SetActive(false);
                     select_obj[1].SetActive(false);
                     select_obj[2].SetActive(false);
+                    compleWin_obj.SetActive(true);
                     Invoke("Wait", 1.8f);
                 }
             }
@@ -164,7 +165,6 @@ public class TreeMini : MonoBehaviour
             SGM.GetComponent<SoundEvt>().soundBoom();
             main_obj.GetComponent<SpriteRenderer>().sprite = boom_spr;
             Main.GetComponent<SpriteRenderer>().sprite = boom_spr;
-            compleWin_obj.SetActive(true);
             Invoke("Wait", 0.8f);
 
 

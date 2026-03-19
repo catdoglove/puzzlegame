@@ -2493,9 +2493,19 @@ public class CheckPlayer : MonoBehaviour
 
                     break;
 
-                case 56://배타기부르기
-                    moveOther_obj.GetComponent<CheckPlayer>().EventSetting();
-                    balloon_obj.SetActive(false);
+
+                case 56://배타기앞으로
+
+                    //SGM.GetComponent<SoundEvt>().soundItemUse();
+
+                    GM.GetComponent<CharMove>().canMove = false;
+                    PlayerPrefs.SetInt("escdont", 1);
+                    //
+                    //
+                    //
+                    //miniGame_obj.SetActive(true);
+
+                    StartCoroutine("BoatMoveR");
 
                     break;
 
@@ -2541,6 +2551,9 @@ public class CheckPlayer : MonoBehaviour
                         other_obj.SetActive(true);
                         moveOther_obj.SetActive(false);
                         o1_obj.SetActive(false);
+                        Invoke("GetGem", 0.1f);
+                        balloon_obj.SetActive(false);
+                        this.gameObject.SetActive(false);
                     }
                     else
                     {
@@ -2559,6 +2572,9 @@ public class CheckPlayer : MonoBehaviour
                         other_obj.SetActive(true);
                         moveOther_obj.SetActive(false);
                         o1_obj.SetActive(false);
+                        Invoke("GetGem", 0.1f);
+                        balloon_obj.SetActive(false);
+                        this.gameObject.SetActive(false);
                     }
                     else
                     {
@@ -2582,6 +2598,14 @@ public class CheckPlayer : MonoBehaviour
                     }
 
                     break;
+                case 62://수풀부숨
+
+                    balloon_obj.SetActive(false);
+                    o1_obj.SetActive(false);
+                    o2_obj.SetActive(true);
+                    SGM.GetComponent<SoundEvt>().soundDamage();
+
+                    break;
             }
         }
 
@@ -2602,6 +2626,7 @@ public class CheckPlayer : MonoBehaviour
     void GetGem()
     {
         ItemSettings();
+
     }
 
     void Anis()
@@ -3307,7 +3332,7 @@ public class CheckPlayer : MonoBehaviour
         //SGM.GetComponent<SoundEvt>().soundDamage();
         while (in_i == 1)
         {
-            position0.x = position0.x - 15f * Time.deltaTime;
+            position0.x = position0.x - 13f * Time.deltaTime;
             moveOther_obj.transform.position = position0;
 
             if (position0.x <= other_obj.transform.position.x)
@@ -3331,6 +3356,53 @@ public class CheckPlayer : MonoBehaviour
         //PlayerPrefs.SetInt("wait", 0);
     }
 
+    /// <summary>
+    /// 배 이동 (오른쪽 방향)
+    /// </summary>
+    IEnumerator BoatMoveR()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GM.SetActive(false);
+
+        all_Ani.Play("ani_boat_river_up");
+
+        o3_obj.SetActive(true);
+        o4_obj.SetActive(false);
+        all_Ani.Play("ani_boat_river_up");
+
+        PlayerPrefs.SetInt("wait", 1);
+        GM.GetComponent<CharMove>().canMove = false;
+
+        int in_i = 1;
+        position0 = moveOther_obj.transform.position;
+
+        yield return new WaitForSeconds(0.5f);
+
+        while (in_i == 1)
+        {
+            position0.x = position0.x + 13f * Time.deltaTime;
+            moveOther_obj.transform.position = position0;
+
+            if (position0.x >= other_obj.transform.position.x)
+            {
+                in_i = 0;
+            }
+
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        moveOther_obj.transform.position = o1_obj.transform.position;
+
+        yield return new WaitForSeconds(0.01f);
+        q1_obj.SetActive(false);
+        q2_obj.SetActive(true);
+
+        yield return new WaitForSeconds(0.01f);
+
+        // 다음 단계 코루틴 호출 (이름 확인 필요)
+        StartCoroutine("BoatMoveR2");
+    }
+
 
     /// <summary>
     /// 배이동
@@ -3346,7 +3418,7 @@ public class CheckPlayer : MonoBehaviour
         //SGM.GetComponent<SoundEvt>().soundDamage();
         while (in_i == 1)
         {
-            position0.x = position0.x - 15f * Time.deltaTime;
+            position0.x = position0.x - 13f * Time.deltaTime;
             moveOther_obj.transform.position = position0;
 
             if (position0.x <= other_obj.transform.position.x)
@@ -3371,6 +3443,41 @@ public class CheckPlayer : MonoBehaviour
     /// 배이동
     /// </summary>
     /// <returns></returns>
+    IEnumerator BoatMoveR2()
+    {
+        int in_i = 1;
+        position0 = moveOther_obj.transform.position;
+
+        //yield return new WaitForSeconds(0.5f);
+        //SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
+        //SGM.GetComponent<SoundEvt>().soundDamage();
+        while (in_i == 1)
+        {
+            position0.x = position0.x + 13f * Time.deltaTime;
+            moveOther_obj.transform.position = position0;
+
+            if (position0.x >= other_obj.transform.position.x)
+            {
+                in_i = 0;
+            }
+
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        moveOther_obj.transform.position = o1_obj.transform.position;
+        yield return new WaitForSeconds(0.01f);
+        q2_obj.SetActive(false);
+        q3_obj.SetActive(true);
+
+        yield return new WaitForSeconds(0.01f);
+        StartCoroutine("BoatMoveR3");
+
+    }
+
+    /// <summary>
+    /// 배이동
+    /// </summary>
+    /// <returns></returns>
     IEnumerator BoatMoveL3()
     {
         PlayerPrefs.SetInt("wait", 1);
@@ -3385,7 +3492,7 @@ public class CheckPlayer : MonoBehaviour
         //SGM.GetComponent<SoundEvt>().soundDamage();
         while (in_i == 1)
         {
-            position0.x = position0.x - 15f * Time.deltaTime;
+            position0.x = position0.x - 13f * Time.deltaTime;
             moveOther_obj.transform.position = position0;
 
             if (position0.x <= o2_obj.transform.position.x)
@@ -3405,6 +3512,43 @@ public class CheckPlayer : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// 배이동
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator BoatMoveR3()
+    {
+        PlayerPrefs.SetInt("wait", 1);
+        GM.GetComponent<CharMove>().canMove = false;
+        //talk_b = false;
+
+        int in_i = 1;
+        position0 = moveOther_obj.transform.position;
+
+        //yield return new WaitForSeconds(0.5f);
+        //SGM.GetComponent<SoundEvt>().auSE.GetComponent<AudioSource>().pitch = 1f;
+        //SGM.GetComponent<SoundEvt>().soundDamage();
+        while (in_i == 1)
+        {
+            position0.x = position0.x + 13f * Time.deltaTime;
+            moveOther_obj.transform.position = position0;
+
+            if (position0.x >= o2_obj.transform.position.x)
+            {
+                in_i = 0;
+            }
+
+            yield return new WaitForSeconds(0.01f);
+        }
+        yield return new WaitForSeconds(0.5f);
+        GM.GetComponent<CharMove>().canMove = true;
+        PlayerPrefs.SetInt("wait", 0);
+        GM.SetActive(true);
+
+        PlayerPrefs.SetInt("escdont", 0);
+        all_Ani.Play("ani_boat_river");
+
+    }
 
     void ShowBulb()
     {
