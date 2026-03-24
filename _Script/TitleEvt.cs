@@ -8,11 +8,18 @@ public class TitleEvt : MonoBehaviour
 {
     public GameObject GM,startObj, bgStarImg1, bgStarImg2, saveBtns, chapterBtns, titleTxt, cloudImg;
     public GameObject optionImg, optionBtn, titleImg, menuImg, backMenuImg, charImg;
+    public GameObject resetWndImg, countBtn, ynBtn, yesBtn, noBtn;
+    public Text resetCountTxt;
 
     public Button[] menuBtn, backMenuBtn;
     [SerializeField] private Sprite[] langSpaceBar, langKorSpr, langEngSpr, langJpSpr, langChSpr, langRuSpr;
     [SerializeField] private Sprite[] langKorSpr2, langEngSpr2, langJpSpr2, langChSpr2, langRuSpr2;
-    
+
+
+    public Image resetBG;
+    [SerializeField] private Sprite[] resetBGSpr, resetBtnSprY, resetBtnSprN, resetCancelSpr;
+
+
 
 
     // Start is called before the first frame update
@@ -57,6 +64,10 @@ public class TitleEvt : MonoBehaviour
                     menuBtn[i].image.sprite = langKorSpr[i];
                     backMenuBtn[i].image.sprite = langKorSpr2[i];
                     startObj.GetComponent<SpriteRenderer>().sprite = langSpaceBar[num];
+                    resetBG.GetComponent<Image>().sprite = resetBGSpr[num];
+                    yesBtn.GetComponent<Image>().sprite = resetBtnSprY[num];
+                    noBtn.GetComponent<Image>().sprite = resetBtnSprN[num];
+                    countBtn.GetComponent<Image>().sprite = resetCancelSpr[num];
                 }
                 break;
             case 1:
@@ -65,6 +76,10 @@ public class TitleEvt : MonoBehaviour
                     menuBtn[i].image.sprite = langEngSpr[i];
                     backMenuBtn[i].image.sprite = langEngSpr2[i];
                     startObj.GetComponent<SpriteRenderer>().sprite = langSpaceBar[num];
+                    resetBG.GetComponent<Image>().sprite = resetBGSpr[num];
+                    yesBtn.GetComponent<Image>().sprite = resetBtnSprY[num];
+                    noBtn.GetComponent<Image>().sprite = resetBtnSprN[num];
+                    countBtn.GetComponent<Image>().sprite = resetCancelSpr[num];
                 }
                 break;
             case 2:
@@ -73,6 +88,10 @@ public class TitleEvt : MonoBehaviour
                     menuBtn[i].image.sprite = langJpSpr[i];
                     backMenuBtn[i].image.sprite = langJpSpr2[i];
                     startObj.GetComponent<SpriteRenderer>().sprite = langSpaceBar[num];
+                    resetBG.GetComponent<Image>().sprite = resetBGSpr[num];
+                    yesBtn.GetComponent<Image>().sprite = resetBtnSprY[num];
+                    noBtn.GetComponent<Image>().sprite = resetBtnSprN[num];
+                    countBtn.GetComponent<Image>().sprite = resetCancelSpr[num];
                 }
                 break;
             case 3:
@@ -81,6 +100,10 @@ public class TitleEvt : MonoBehaviour
                     menuBtn[i].image.sprite = langChSpr[i];
                     backMenuBtn[i].image.sprite = langChSpr2[i];
                     startObj.GetComponent<SpriteRenderer>().sprite = langSpaceBar[num];
+                    resetBG.GetComponent<Image>().sprite = resetBGSpr[num];
+                    yesBtn.GetComponent<Image>().sprite = resetBtnSprY[num];
+                    noBtn.GetComponent<Image>().sprite = resetBtnSprN[num];
+                    countBtn.GetComponent<Image>().sprite = resetCancelSpr[num];
                 }
                 break;
             case 4:
@@ -89,6 +112,10 @@ public class TitleEvt : MonoBehaviour
                     menuBtn[i].image.sprite = langRuSpr[i];
                     backMenuBtn[i].image.sprite = langRuSpr2[i];
                     startObj.GetComponent<SpriteRenderer>().sprite = langSpaceBar[num];
+                    resetBG.GetComponent<Image>().sprite = resetBGSpr[num];
+                    yesBtn.GetComponent<Image>().sprite = resetBtnSprY[num];
+                    noBtn.GetComponent<Image>().sprite = resetBtnSprN[num];
+                    countBtn.GetComponent<Image>().sprite = resetCancelSpr[num];
                 }
                 break;
         }
@@ -172,5 +199,42 @@ public class TitleEvt : MonoBehaviour
     {
         chapterBtns.SetActive(false);
         saveBtns.SetActive(true);
+    }
+
+    public void showCredits()
+    {
+        Debug.Log("크레딧 보여주기");
+    }
+    public void showResetWnd()
+    {
+        resetWndImg.SetActive(true);
+        countBtn.SetActive(false);
+        ynBtn.SetActive(true);
+    }
+
+    public void hideResetWnd()
+    {
+        resetWndImg.SetActive(false);
+        StopCoroutine("CountdownCoroutine");
+    }
+
+    public void countReset()
+    {
+        StartCoroutine("CountdownCoroutine");
+        countBtn.SetActive(true);
+        ynBtn.SetActive(false);
+    }
+
+
+    IEnumerator CountdownCoroutine()
+    {
+        for (int i = 5; i > 0; i--)
+        {
+            resetCountTxt.text = i.ToString();
+            yield return new WaitForSeconds(1f);
+        }
+
+        Debug.Log("데이터삭제완료");
+        hideResetWnd();
     }
 }
