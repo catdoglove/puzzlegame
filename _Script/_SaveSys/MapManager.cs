@@ -10,6 +10,9 @@ public class MapManager : MonoBehaviour
 
     void Start()
     {
+
+        PlayerPrefs.DeleteAll();
+
         if (SaveLoadManager.isNewGame)
         {
             return; 
