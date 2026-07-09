@@ -57,20 +57,41 @@ public class TreeMini : MonoBehaviour
     }
     public void SelectButton2()
     {
+
+        if (select_obj[0].activeSelf)
+        {
+        }
+        else
+        {
+            SGM.GetComponent<SoundEvt>().soundItemWndAD();
+        }
         select_obj[1].SetActive(false);
         select_obj[2].SetActive(false);
         select_obj[0].SetActive(true);
-        SGM.GetComponent<SoundEvt>().soundItemWndAD();
     }
     public void SelectButton3()
     {
+
+        if (select_obj[1].activeSelf)
+        {
+        }
+        else
+        {
+            SGM.GetComponent<SoundEvt>().soundItemWndAD();
+        }
         select_obj[0].SetActive(false);
         select_obj[2].SetActive(false);
         select_obj[1].SetActive(true);
-        SGM.GetComponent<SoundEvt>().soundItemWndAD();
     }
     public void SelectButton4()
     {
+        if (select_obj[2].activeSelf)
+        {
+        }
+        else
+        {
+            SGM.GetComponent<SoundEvt>().soundItemWndAD();
+        }
         select_obj[0].SetActive(false);
         select_obj[1].SetActive(false);
         select_obj[2].SetActive(true);

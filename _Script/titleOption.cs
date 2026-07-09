@@ -33,6 +33,9 @@ public class titleOption : MonoBehaviour
 
     private void Awake()
     {
+        SettingsSyncManager.ImportFileToPrefs();
+
+
         optionLanguage = CSVReader.Read("CSV/optionTxt");
 
         text_str = PlayerPrefs.GetString("settingLanguage", "No1"); //기본 언어
@@ -290,8 +293,10 @@ public class titleOption : MonoBehaviour
         PlayerPrefs.SetInt("settingRealLanguageSave", PlayerPrefs.GetInt("settingLanguageNum", 0)); // 언어 번호 저장
         defaultLanguage();
 
+        SettingsSyncManager.ExportPrefsToFile();
 
         PlayerPrefs.Save();
+        SettingsSyncManager.ExportPrefsToFile();
         //Debug.Log("Options saved to PlayerPrefs");
     }
 
@@ -411,6 +416,7 @@ public class titleOption : MonoBehaviour
         PlayerPrefs.SetInt("settingLanguageNum", num); // 언어 번호 저장
 
         PlayerPrefs.SetInt("isOptionSave", 2);
+        SettingsSyncManager.ExportPrefsToFile();
 
         Image btnImage = menuBtn.GetComponent<Image>() ?? menuBtn.targetGraphic as Image;
         if (btnImage != null)
@@ -437,6 +443,8 @@ public class titleOption : MonoBehaviour
         PlayerPrefs.SetInt("isOptionSave", 2);
         PlayerPrefs.SetInt("settingLanguageNum", num); // 언어 번호 저장
 
+        SettingsSyncManager.ExportPrefsToFile();
+
         Image btnImage = menuBtn.GetComponent<Image>() ?? menuBtn.targetGraphic as Image;
         if (btnImage != null)
         {
@@ -448,6 +456,7 @@ public class titleOption : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
+        SettingsSyncManager.ExportPrefsToFile();
         Debug.Log("PlayerPrefs data deleted.");
     }
 
