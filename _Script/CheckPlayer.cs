@@ -134,6 +134,9 @@ public class CheckPlayer : MonoBehaviour
     public int w_i=0;
 
 
+    public bool isload_b;
+
+
     [Tooltip("이동 속도")]
     public float moveSpeed = 5f;
 
@@ -510,10 +513,16 @@ public class CheckPlayer : MonoBehaviour
         }
 
 
+        if (isload_b)
+        {
+            isload_b= false;
+        }
+        else
+        {
+            //소리
+            SGM.GetComponent<SoundEvt>().soundPickUp();
+        }
 
-
-        //소리
-        SGM.GetComponent<SoundEvt>().soundPickUp();
 
         int hel = 0;
         if ((PlayerPrefs.GetInt("itemnum" + 1, 0) == 1 || PlayerPrefs.GetInt("itemnum" + 1, 0) == 2) && SetItemPref_i == 1)

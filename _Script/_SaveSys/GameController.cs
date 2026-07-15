@@ -6,8 +6,18 @@ public class GameController : MonoBehaviour
 {
     public ChapterSaveData currentSaveData;
 
+    public GameObject GM, player_obj, mapRespawn_obj;
+
+
+
     [Header("In-Game Status")]
     public int activeChapter;
+
+    private void Awake()
+    {
+
+        PlayerPrefs.DeleteAll();
+    }
 
     void Start()
     {
@@ -31,6 +41,25 @@ public class GameController : MonoBehaviour
         }
 
         Debug.Log($"[GameController] 인게임 세팅 완료! 현재 플레이 중인 챕터는 {activeChapter}입니다.");
+
+        if(activeChapter >= 5)
+        {
+            GM.GetComponent<CheckPlayer>().isload_b = true;
+            GM.GetComponent<CheckPlayer>().ItemSettings();
+
+        }
+
+        if (activeChapter == 3)
+        {
+
+            player_obj.transform.position = mapRespawn_obj.transform.position;
+        }
+        if (activeChapter == 5)
+        {
+
+            player_obj.transform.position = mapRespawn_obj.transform.position;
+        }
+        SettingsSyncManager.ImportFileToPrefs();
     }
 
     // 챕터를 클리어하고 다음 챕터로 넘어갈 때

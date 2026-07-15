@@ -893,6 +893,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!70 &5119185
@@ -2216,6 +2217,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &21825430
@@ -2766,6 +2768,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &26526360
@@ -4462,7 +4465,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 2021247239}
+  m_TargetTexture: {fileID: 2105819690}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -5132,6 +5135,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!61 &69023235
@@ -8517,6 +8521,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!95 &135811437
@@ -9088,6 +9093,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &137990810
@@ -9979,6 +9985,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &151579041
@@ -11712,6 +11719,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &185226332
@@ -12133,6 +12141,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &189148207
@@ -12973,6 +12982,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &207283135
@@ -14362,6 +14372,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &225494350
@@ -14654,6 +14665,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &226644110
@@ -17033,6 +17045,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &289864551
@@ -18462,6 +18475,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &300728728
@@ -18980,6 +18994,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!70 &307177332
@@ -19512,6 +19527,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &317566849
@@ -21658,6 +21674,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!70 &349671671
@@ -23932,6 +23949,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &379195331
@@ -24551,6 +24569,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &386919613
@@ -27271,6 +27290,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 713432207}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &445257477
@@ -32793,6 +32813,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &560459893
@@ -33296,6 +33317,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!61 &566376290
@@ -39870,6 +39892,7 @@ MonoBehaviour:
   scene_obj: {fileID: 699976667}
   cutS_obj: {fileID: 713432207}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!70 &699976670
@@ -41673,6 +41696,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &741481523
@@ -42717,6 +42741,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &762454627
@@ -43113,6 +43138,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &772151736
@@ -46067,6 +46093,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &843167568
@@ -46986,6 +47013,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &855270425
@@ -47425,6 +47453,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &858163630
@@ -48677,6 +48706,208 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &882286696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 882286697}
+  - component: {fileID: 882286699}
+  - component: {fileID: 882286698}
+  m_Layer: 0
+  m_Name: "\uC544\uC774\uD15C"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &882286697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882286696}
+  m_LocalRotation: {x: -0, y: -0, z: 0.004363274, w: 0.9999905}
+  m_LocalPosition: {x: 17.89, y: -10.98, z: 59.61125}
+  m_LocalScale: {x: 0.93999994, y: 0.93999994, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1079808777}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.5}
+--- !u!114 &882286698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882286696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 311ec5dd68229684a8c426dee23c929b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move_i: 1
+  size: {x: 2, y: 1.5}
+  whatIsLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  balloon_spr: {fileID: 21300000, guid: 9ce84ff0fdeb13d4a83f077d075dd9a5, type: 3}
+  balloon_obj: {fileID: 0}
+  x_f: 0
+  y_f: 0
+  GMS: {fileID: 0}
+  GM: {fileID: 0}
+  GMI: {fileID: 0}
+  SetItemPref_str: 
+  SetItemPref_i: 49
+  itemQ_b: 1
+  GetItem_obj: {fileID: 882286696}
+  GetItemS_obj: {fileID: 0}
+  GetItemO_obj: {fileID: 882286696}
+  SetEventPref_str: text
+  EventNum_i: 
+  EventNum1_i: 
+  EventNum2_i: 
+  Event_spr: []
+  Event2_spr: []
+  talkBall_obj: {fileID: 0}
+  talkBallB_obj: {fileID: 0}
+  giveItemPref_i: 0
+  getItemPref_i: 0
+  char_obj: {fileID: 0}
+  position0: {x: 0, y: 0, z: 0}
+  position_fox: {x: 0, y: 0, z: 0}
+  position_nomal: {x: 6.9364, y: -3.29, z: 0}
+  move_obj: {fileID: 0}
+  moveOther_obj: {fileID: 0}
+  npc_obj: []
+  talk_b: 1
+  fade_obj: {fileID: 0}
+  moveY: 0
+  moveX: 0
+  wldObjectPos: {x: 0, y: 0}
+  item_spr: {fileID: 21300000, guid: 4fc874598ff0fb24a975fb2af72212e3, type: 3}
+  SGM: {fileID: 0}
+  SGM2: {fileID: 0}
+  purple_b: 1
+  soundLow_b: 0
+  soundLow2_b: 0
+  bearColl_obj: {fileID: 0}
+  candyBar_obj: {fileID: 0}
+  broken_b: 0
+  candy_spr: {fileID: 0}
+  other_obj: {fileID: 0}
+  animalNum_i: 0
+  crow_Ani: {fileID: 0}
+  flipX_b: 0
+  stick_obj: {fileID: 0}
+  makeBoad_obj: {fileID: 0}
+  stick_b: 0
+  board_b: 0
+  aniTalk_str: 
+  ani_str: 
+  all_Ani: {fileID: 0}
+  esterEgg_b: 0
+  sheep_b: 0
+  hidden_b: 0
+  dontdis_b: 0
+  function_b: 0
+  bearmb: 0
+  donfalse_b: 0
+  event_b: 0
+  scFalse_b: 0
+  BGM1: {fileID: 0}
+  pop_obj: {fileID: 0}
+  stop_Ani: {fileID: 0}
+  num: 0
+  ori_spr: {fileID: 0}
+  q1_obj: {fileID: 0}
+  q2_obj: {fileID: 0}
+  q3_obj: {fileID: 0}
+  q4_obj: {fileID: 0}
+  o1_obj: {fileID: 0}
+  o2_obj: {fileID: 0}
+  o3_obj: {fileID: 0}
+  o4_obj: {fileID: 0}
+  player_obj: {fileID: 0}
+  playerPos_obj: {fileID: 0}
+  bbPos_obj: {fileID: 0}
+  bearM_obj: {fileID: 0}
+  b_position: {x: 0, y: 0, z: 0}
+  miniGame_obj: {fileID: 0}
+  dogam_b: 0
+  fox_b: 0
+  checkX_f: 0
+  checkY_f: 0
+  checkR_f: 0
+  hallFix_obj: {fileID: 0}
+  hall_obj: {fileID: 0}
+  events_i: 0
+  items_spr: []
+  cut_i: 0
+  cutS_spr: []
+  dr_i: 0
+  ori_obj: {fileID: 0}
+  scene_obj: {fileID: 0}
+  cutS_obj: {fileID: 0}
+  w_i: 0
+  isload_b: 0
+  moveSpeed: 5
+  rotationMultiplier: 50
+--- !u!212 &882286699
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882286696}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 7
+  m_Sprite: {fileID: 21300000, guid: 4fc874598ff0fb24a975fb2af72212e3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 9.08, y: 10.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &883102150
 GameObject:
   m_ObjectHideFlags: 0
@@ -50259,6 +50490,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &904920376
@@ -53315,6 +53547,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &953679644
@@ -55287,6 +55520,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &977632499
@@ -56722,6 +56956,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &1005509628
@@ -56996,6 +57231,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &1006602531
@@ -57268,6 +57504,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!95 &1006748181
@@ -57604,6 +57841,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 1359291243}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &1012171219
@@ -57761,6 +57999,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1012171222
@@ -58696,6 +58935,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1024296525
@@ -59381,6 +59621,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1044864061
@@ -60485,6 +60726,9 @@ MonoBehaviour:
     currentChapter: 1
     lastPlayedDate: 2026-06-08 02:45:40
     unlockedItems: []
+  GM: {fileID: 882286696}
+  player_obj: {fileID: 1236708166}
+  mapRespawn_obj: {fileID: 2000043775}
   activeChapter: 0
 --- !u!4 &1079808777
 Transform:
@@ -60496,7 +60740,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.44416988, y: 0.068955876, z: -59.61125}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 882286697}
+  - {fileID: 2000043777}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60693,6 +60939,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1080766758
@@ -65567,6 +65814,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &1173727219
@@ -66309,6 +66557,7 @@ MonoBehaviour:
   scene_obj: {fileID: 1187425626}
   cutS_obj: {fileID: 713432207}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1187425630
@@ -66815,6 +67064,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &1191850897
@@ -67801,6 +68051,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1202256422
@@ -68630,6 +68881,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 713432207}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1216092549
@@ -69682,6 +69934,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &1232016087
@@ -71632,6 +71885,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1255337625
@@ -71878,6 +72132,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1255413182
@@ -72446,6 +72701,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!95 &1272785577
@@ -73632,6 +73888,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1285010634
@@ -74466,6 +74723,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!61 &1313099850
@@ -74896,6 +75154,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1330220732
@@ -75362,6 +75621,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1336244582
@@ -78229,6 +78489,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1404936700
@@ -79256,6 +79517,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1426394052
@@ -79532,6 +79794,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1434041721
@@ -82033,6 +82296,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &1486635889
@@ -82349,6 +82613,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!70 &1486836961
@@ -86917,6 +87182,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1580937979
@@ -87710,6 +87976,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!95 &1593957968
@@ -90317,6 +90584,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1646458689
@@ -93094,6 +93362,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &1694764515
@@ -97417,6 +97686,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!95 &1781262466
@@ -98467,6 +98737,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1803993276
@@ -99352,6 +99623,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1822364510
@@ -103107,6 +103379,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!70 &1905452398
@@ -103583,6 +103856,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 1993522645}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!61 &1924944928
@@ -105560,6 +105834,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!1 &1963083308
@@ -106098,6 +106373,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1970931577
@@ -106851,6 +107127,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1982360304
@@ -107097,6 +107374,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &1983094533
@@ -107500,6 +107778,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!111 &1987721204
@@ -108302,6 +108581,87 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2000043775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2000043777}
+  - component: {fileID: 2000043776}
+  m_Layer: 8
+  m_Name: "\uB9F5\uB9AC\uC2A4\uD3F03"
+  m_TagString: Map
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &2000043776
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000043775}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2, y: 2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &2000043777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000043775}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.83, y: -1.76, z: 59.61125}
+  m_LocalScale: {x: 1.42583, y: 1.42583, z: 1.42583}
+  m_Children: []
+  m_Father: {fileID: 1079808777}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2001039382
 GameObject:
   m_ObjectHideFlags: 0
@@ -109442,6 +109802,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &2018758036
@@ -109610,41 +109971,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!84 &2021247239
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 860
-  m_Height: 484
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &2022129894
 GameObject:
   m_ObjectHideFlags: 0
@@ -110382,6 +110708,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!212 &2037648346
@@ -112070,6 +112397,7 @@ MonoBehaviour:
   scene_obj: {fileID: 0}
   cutS_obj: {fileID: 0}
   w_i: 0
+  isload_b: 0
   moveSpeed: 5
   rotationMultiplier: 50
 --- !u!70 &2072454499
@@ -113911,6 +114239,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!84 &2105819690
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 873
+  m_Height: 491
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &2106744370
 GameObject:
   m_ObjectHideFlags: 0
