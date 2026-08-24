@@ -12,7 +12,16 @@ public class CheckCh : MonoBehaviour
 
     void Start()
     {
+        if (PlayerPrefs.GetInt("nextchsave", 0) == 1)
+        {
+
+            InventorySaveManager.SaveInventory(i);
+        }
+
         GameObject.GetComponent<GameController>().CompleteChapter(i);
+
+        PlayerPrefs.SetInt("nextchsave", 1);
+
     }
 
 

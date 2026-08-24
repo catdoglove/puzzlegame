@@ -30,6 +30,16 @@ public class titleOption : MonoBehaviour
     public Button menuBtn;
     public Sprite[] sprite; // 인스펙터에서 설정할 스프라이트
 
+    public bool inGame_b;
+
+
+
+
+    public AudioSource bgmAudioSource1, bgmAudioSource2, bgmAudioSource3, bgmAudioSource4, sfxAudioSource1, sfxAudioSource2;
+
+    public float master_f;
+
+
 
     private void Awake()
     {
@@ -56,9 +66,28 @@ public class titleOption : MonoBehaviour
         bgmSlider.value = bgmVolume;
         sfxSlider.value = sfxVolume;
 
-        masterAudioSource.volume = masterVolume;
-        bgmAudioSource.volume = bgmVolume;
-        sfxAudioSource.volume = sfxVolume;
+
+
+        if (inGame_b == true)
+        {
+            bgmAudioSource1.volume = bgmVolume * masterVolume;
+            bgmAudioSource2.volume = bgmVolume * masterVolume;
+            bgmAudioSource3.volume = bgmVolume * masterVolume;
+            bgmAudioSource4.volume = bgmVolume * masterVolume;
+
+            sfxAudioSource1.volume = sfxVolume * masterVolume;
+            sfxAudioSource2.volume = sfxVolume * masterVolume;
+
+
+        }
+        else
+        {
+            masterAudioSource.volume = masterVolume;
+            bgmAudioSource.volume = bgmVolume;
+            sfxAudioSource.volume = sfxVolume;
+        }
+
+
 
 
         masterSlider.onValueChanged.AddListener(SetMasterVolume);
@@ -86,9 +115,19 @@ public class titleOption : MonoBehaviour
         }
         else
         {
-            if (btnMaster_img != null) btnMaster_img.sprite = EnableSprite;
-            masterAudioSource.volume = 0f;
-            ckMaster = 1;
+
+            if (inGame_b == true)
+            {
+                if (btnMaster_img != null) btnMaster_img.sprite = EnableSprite;
+                masterVolume = 0f;
+                ckMaster = 1;
+            }
+            else
+            {
+                if (btnMaster_img != null) btnMaster_img.sprite = EnableSprite;
+                masterAudioSource.volume = 0f;
+                ckMaster = 1;
+            }
         }
 
         // BGM
@@ -99,9 +138,22 @@ public class titleOption : MonoBehaviour
         }
         else
         {
-            if (btnBgm_img != null) btnBgm_img.sprite = EnableSprite;
-            bgmAudioSource.volume = 0f;
-            ckBgm = 1;
+            if (inGame_b == true)
+            {
+                if (btnBgm_img != null) btnBgm_img.sprite = EnableSprite;
+                bgmAudioSource1.volume = 0f;
+                bgmAudioSource2.volume = 0f;
+                bgmAudioSource3.volume = 0f;
+                bgmAudioSource4.volume = 0f;
+                ckBgm = 1;
+
+            }
+            else
+            {
+                if (btnBgm_img != null) btnBgm_img.sprite = EnableSprite;
+                bgmAudioSource.volume = 0f;
+                ckBgm = 1;
+            }
         }
 
         // SFX
@@ -112,9 +164,22 @@ public class titleOption : MonoBehaviour
         }
         else
         {
-            if (btnSfx_img != null) btnSfx_img.sprite = EnableSprite;
-            sfxAudioSource.volume = 0f;
-            ckSfx = 1;
+
+
+            if (inGame_b == true)
+            {
+
+                if (btnSfx_img != null) btnSfx_img.sprite = EnableSprite;
+                sfxAudioSource1.volume = 0f;
+                sfxAudioSource2.volume = 0f;
+                ckSfx = 1;
+            }
+            else
+            {
+                if (btnSfx_img != null) btnSfx_img.sprite = EnableSprite;
+                sfxAudioSource.volume = 0f;
+                ckSfx = 1;
+            }
         }
 
         // Fullscreen
@@ -176,8 +241,24 @@ public class titleOption : MonoBehaviour
 
     public void SetMasterVolume(float value)
     {
-        masterAudioSource.volume = value;
-        valueBar1 = masterAudioSource.volume;
+
+
+        if (inGame_b == true)
+        {
+            masterVolume = value;
+            bgmAudioSource1.volume = value * masterVolume;
+            bgmAudioSource2.volume = value * masterVolume;
+            bgmAudioSource3.volume = value * masterVolume;
+            bgmAudioSource4.volume = value * masterVolume;
+            sfxAudioSource1.volume = value * masterVolume;
+            sfxAudioSource2.volume = value * masterVolume;
+            valueBar1 = value;
+        }
+        else
+        {
+            masterAudioSource.volume = value;
+            valueBar1 = masterAudioSource.volume;
+        }
 
         // 슬라이더를 움직이면 자동으로 mute 해제
         if (value > 0.0001f)
@@ -190,8 +271,20 @@ public class titleOption : MonoBehaviour
 
     public void SetBgmVolume(float value)
     {
-        bgmAudioSource.volume = value;
-        valueBar2 = bgmAudioSource.volume;
+        if (inGame_b == true)
+        {
+            bgmAudioSource1.volume = value * masterVolume;
+            bgmAudioSource2.volume = value * masterVolume;
+            bgmAudioSource3.volume = value * masterVolume;
+            bgmAudioSource4.volume = value * masterVolume;
+            valueBar2 = bgmAudioSource4.volume;
+        }
+        else
+        {
+            bgmAudioSource.volume = value;
+            valueBar2 = bgmAudioSource.volume;
+        }
+
         if (value > 0.0001f)
         {
             Debug.Log("BGM volume unmuted");
@@ -202,8 +295,18 @@ public class titleOption : MonoBehaviour
 
     public void SetSfxVolume(float value)
     {
-        sfxAudioSource.volume = value;
-        valueBar3 = sfxAudioSource.volume;
+        if (inGame_b == true)
+        {
+
+            sfxAudioSource1.volume = value * masterVolume;
+            sfxAudioSource2.volume = value * masterVolume;
+            valueBar3 = sfxAudioSource2.volume;
+        }
+        else
+        {
+            sfxAudioSource.volume = value;
+            valueBar3 = sfxAudioSource.volume;
+        }
         if (value > 0.0001f)
         {
             Debug.Log("SFX volume unmuted");
@@ -215,9 +318,18 @@ public class titleOption : MonoBehaviour
     {
         PlayerPrefs.SetInt("isOptionSave", 1);
         optionImg.SetActive(false);
-        titleImg.SetActive(true);
-        bgStarImg1.GetComponent<SpriteRenderer>().sortingOrder = 11;
-        bgStarImg2.GetComponent<SpriteRenderer>().sortingOrder = 11;
+
+        if (inGame_b == true)
+        {
+
+        }
+        else
+        {
+            titleImg.SetActive(true);
+            bgStarImg1.GetComponent<SpriteRenderer>().sortingOrder = 11;
+            bgStarImg2.GetComponent<SpriteRenderer>().sortingOrder = 11;
+        }
+
 
         PlayerPrefs.SetFloat("MasterVolume", masterSlider.value);
         PlayerPrefs.SetFloat("BgmVolume", bgmSlider.value);
@@ -288,10 +400,18 @@ public class titleOption : MonoBehaviour
             PlayerPrefs.SetInt("isAutoRunOn", 1);
         }
 
-        //Language
-        PlayerPrefs.SetString("settingLanguage", text_str);
-        PlayerPrefs.SetInt("settingRealLanguageSave", PlayerPrefs.GetInt("settingLanguageNum", 0)); // 언어 번호 저장
-        defaultLanguage();
+
+
+        if (inGame_b == true)
+        {
+        }
+        else
+        {
+            //Language
+            PlayerPrefs.SetString("settingLanguage", text_str);
+            PlayerPrefs.SetInt("settingRealLanguageSave", PlayerPrefs.GetInt("settingLanguageNum", 0)); // 언어 번호 저장
+            defaultLanguage();
+        }
 
         SettingsSyncManager.ExportPrefsToFile();
 
@@ -306,15 +426,31 @@ public class titleOption : MonoBehaviour
         {
             if (btnMaster_img != null) btnMaster_img.sprite = EnableSprite;
             ckMaster = 1;
-           // masterSlider.value = 0f;
-            masterAudioSource.volume = 0f;
+            // masterSlider.value = 0f;
+
+            if (inGame_b == true)
+            {
+                masterVolume = 0f;
+            }
+            else
+            {
+                masterAudioSource.volume = 0f;
+            }
         }
         else
         {
             if (btnMaster_img != null) btnMaster_img.sprite = DisableSprite;
             ckMaster = 0;
-           // masterSlider.value = 1f;
-            masterAudioSource.volume = valueBar1;
+            // masterSlider.value = 1f;
+
+            if (inGame_b == true)
+            {
+                masterVolume = valueBar1;
+            }
+            else
+            {
+                masterAudioSource.volume = valueBar1;
+            }
         }
     }
 
@@ -325,14 +461,38 @@ public class titleOption : MonoBehaviour
             if (btnBgm_img != null) btnBgm_img.sprite = EnableSprite;
             ckBgm = 1;
             //bgmSlider.value = 0f;
-            bgmAudioSource.volume = 0f;
+            if (inGame_b == true)
+            {
+
+                bgmAudioSource1.volume = 0f;
+                bgmAudioSource2.volume = 0f;
+                bgmAudioSource3.volume = 0f;
+                bgmAudioSource4.volume = 0f;
+            }
+            else
+            {
+                bgmAudioSource.volume = 0f;
+            }
         }
         else
         {            
             if (btnBgm_img != null) btnBgm_img.sprite = DisableSprite;
             ckBgm = 0;
-           // bgmSlider.value = 1f;
-            bgmAudioSource.volume = valueBar2;
+            // bgmSlider.value = 1f;
+
+            if (inGame_b == true)
+            {
+
+                bgmAudioSource1.volume = valueBar2 * masterVolume;
+                bgmAudioSource2.volume = valueBar2 * masterVolume;
+                bgmAudioSource3.volume = valueBar2 * masterVolume;
+                bgmAudioSource4.volume = valueBar2 * masterVolume;
+
+            }
+            else
+            {
+                bgmAudioSource.volume = valueBar2;
+            }
         }
     }
 
@@ -343,14 +503,32 @@ public class titleOption : MonoBehaviour
             if (btnSfx_img != null) btnSfx_img.sprite = EnableSprite;
             ckSfx = 1;
             //sfxSlider.value = 0f;
-            sfxAudioSource.volume = 0f;
+
+            if (inGame_b == true)
+            {
+                sfxAudioSource1.volume = 0f;
+                sfxAudioSource2.volume = 0f;
+            }
+            else
+            {
+                sfxAudioSource.volume = 0f;
+            }
         }
         else
         {            
             if (btnSfx_img != null) btnSfx_img.sprite = DisableSprite;
             ckSfx = 0;
-          //  sfxSlider.value = 1f;
-            sfxAudioSource.volume = valueBar3;
+            //  sfxSlider.value = 1f;
+
+            if (inGame_b == true)
+            {
+                sfxAudioSource1.volume = valueBar3 * masterVolume;
+                sfxAudioSource2.volume = valueBar3 * masterVolume;
+            }
+            else
+            {
+                sfxAudioSource.volume = valueBar3;
+            }
         }
     }
 

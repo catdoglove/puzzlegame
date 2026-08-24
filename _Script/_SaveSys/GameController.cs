@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
 
     public GameObject GM, player_obj, mapRespawn_obj;
 
-
+    public GameObject mapRespawn1_obj,mapRespawn2_obj;
 
     [Header("In-Game Status")]
     public int activeChapter;
@@ -38,6 +38,8 @@ public class GameController : MonoBehaviour
         else
         {
             activeChapter = SaveLoadManager.selectedChapterToPlay; // 챕터 선택으로 들어왔으면 고른 챕터 시작
+
+
         }
 
         Debug.Log($"[GameController] 인게임 세팅 완료! 현재 플레이 중인 챕터는 {activeChapter}입니다.");
@@ -45,7 +47,7 @@ public class GameController : MonoBehaviour
         if(activeChapter >= 5)
         {
             GM.GetComponent<CheckPlayer>().isload_b = true;
-            GM.GetComponent<CheckPlayer>().ItemSettings();
+            //GM.GetComponent<CheckPlayer>().ItemSettings();
 
         }
 
@@ -58,6 +60,12 @@ public class GameController : MonoBehaviour
         {
 
             player_obj.transform.position = mapRespawn_obj.transform.position;
+        }
+
+
+        if (activeChapter == 7)
+        {
+            player_obj.transform.position = mapRespawn1_obj.transform.position;
         }
         SettingsSyncManager.ImportFileToPrefs();
     }
@@ -85,6 +93,7 @@ public class GameController : MonoBehaviour
             SaveLoadManager.SaveGame(currentSaveData);
 
             Debug.Log($"[세이브 갱신] 성공! 이제 챕터 {targetChapterToUnlock} 까지 진입할 수 있습니다.");
+
         }
         else
         {

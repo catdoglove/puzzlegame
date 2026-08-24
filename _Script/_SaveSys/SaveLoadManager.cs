@@ -68,6 +68,7 @@ public static class SaveLoadManager
             ChapterSaveData loadedData = JsonUtility.FromJson<ChapterSaveData>(json);
             Debug.Log("[SaveManager] 게임 데이터를 성공적으로 불러왔습니다.");
 
+            InventorySaveManager.LoadInventory(selectedChapterToPlay);
             return loadedData;
         }
         else

@@ -145,8 +145,10 @@ public class CheckPlayer : MonoBehaviour
 
     private void OnEnable()
     {
-
-        GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
+        if (GM.GetComponent<CharMove>().bulb_obj!=null)
+        {
+            GM.GetComponent<CharMove>().bulb_obj.SetActive(false);
+        }
         //StartCoroutine("Checking");
 
 

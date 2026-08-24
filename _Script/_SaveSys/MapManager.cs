@@ -48,6 +48,18 @@ public class MapManager : MonoBehaviour
             map[5].SetActive(true);
             Invoke("tsr", 0.1f);
         }
+
+
+        if (currentChapter == 5)
+        {
+            map[8].SetActive(false);
+            map[7].SetActive(true);
+            map[6].SetActive(false);
+        }
+        if (targetIndex>=4)
+        {
+            gm[1].SetActive(false);
+        }
         gm[0].SetActive(false);
 
         Debug.Log($"[MapManager] 성공! 챕터 {currentChapter} 맵이 세팅되었습니다.");

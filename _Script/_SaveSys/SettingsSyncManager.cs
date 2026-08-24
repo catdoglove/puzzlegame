@@ -19,6 +19,9 @@ public class SettingsData
     public int sfxMute;       // 효과음 음소거
     public int bgmMute;       // 배경음 음소거
     public string customText; // SetString으로 저장되는 텍스트 데이터
+
+
+
 }
 
 public static class SettingsSyncManager
@@ -39,6 +42,9 @@ public static class SettingsSyncManager
     private const string KEY_MUTE_SFX = "isSfxOn";
     private const string KEY_MUTE_BGM = "isBgmOn";
     private const string KEY_TEXT_DATA = "settingLanguage";
+
+
+
 
     private static string GetFilePath()
     {
@@ -65,6 +71,10 @@ public static class SettingsSyncManager
         data.masterMute = PlayerPrefs.GetInt(KEY_MUTE_MASTER, 0);
         data.sfxMute = PlayerPrefs.GetInt(KEY_MUTE_SFX, 0);
         data.bgmMute = PlayerPrefs.GetInt(KEY_MUTE_BGM, 0);
+
+
+
+
 
         // 주의: 텍스트는 GetInt가 아니라 GetString을 사용합니다.
         data.customText = PlayerPrefs.GetString(KEY_TEXT_DATA, "No1");
@@ -101,6 +111,8 @@ public static class SettingsSyncManager
             PlayerPrefs.SetInt(KEY_MUTE_MASTER, data.masterMute);
             PlayerPrefs.SetInt(KEY_MUTE_SFX, data.sfxMute);
             PlayerPrefs.SetInt(KEY_MUTE_BGM, data.bgmMute);
+
+
 
             // 주의: 텍스트는 SetInt가 아니라 SetString을 사용합니다.
             PlayerPrefs.SetString(KEY_TEXT_DATA, data.customText);
